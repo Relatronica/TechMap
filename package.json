@@ -1,0 +1,19 @@
+{
+  "name": "astro-map",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "astro": "^4.16.18",
+    "maplibre-gl": "^6.9.1"
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7424,
+          45.5202
+        ]
+      },
+      "properties": {
+        "id": "ep_001",
+        "name": "Turbigo - Centrale a Ciclo Combinato",
+        "type": "energy_plant",
+        "subtype": "gas",
+        "operator": "Iren",
+        "capacity": "1.280-1.334 MW",
+        "description_it": "Centrale termoelettrica a gas a ciclo combinato a Turbigo, Lombardia, vicino a Milano e Torino. Capacità totale di circa 1.280-1.334 MW, inclusa una nuova unità da 430 MW aggiunta nel 2022 con investimento di 105 milioni di euro. Importante fonte di energia per il cluster di data center della zona di Milano.",
+        "country": "IT",
+        "city": "Turbigo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.29,
+          45.19
+        ]
+      },
+      "properties": {
+        "id": "ep_002",
+        "name": "Enel Trino Solar Park",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Enel Green Power",
+        "capacity": "87 MW",
+        "description_it": "Il più grande parco fotovoltaico del nord Italia, a Trino (Vercelli), Piemonte. 160.000 pannelli solari con sistema di accumulo a batterie al litio. Produce circa 130 GWh all'anno. Operativo da giugno 2024, costruito sul sito di una ex centrale termoelettrica, simbolo della transizione energetica.",
+        "country": "IT",
+        "city": "Trino"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.6,
+          42.35
+        ]
+      },
+      "properties": {
+        "id": "ep_003",
+        "name": "Montalto di Castro - Hub Solare",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Enel / EDP Renewables / Iberdrola / CCE Italia",
+        "capacity": "125+ MW (combinato)",
+        "description_it": "Hub solare a Montalto di Castro, Lazio, con molteplici installazioni: Enel (9-10 MW nel complesso Alessandro Volta con moduli bifacciali), Castrum 13 di EDP Renewables (41 MW), Iberdrola (23 MW), CCE Italia (42 MW). Capacità combinata superiore a 125 MW, importante polo di energia rinnovabile nel Lazio.",
+        "country": "IT",
+        "city": "Montalto di Castro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.8997,
+          41.2648
+        ]
+      },
+      "properties": {
+        "id": "ep_004",
+        "name": "Cerignola Wind Farm",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "BKW",
+        "capacity": "125 MW",
+        "description_it": "Parco eolico di Cerignola in Puglia, circa 100 km a ovest di Bari. 29 turbine distribuite tra Cerignola Nord e Cerignola Sud, con produzione annua di oltre 310 GWh. Il più grande parco eolico di BKW fuori dalla Svizzera, commissionato nel gennaio 2026. La Puglia è leader in Italia per capacità eolica installata con 2,5 GW.",
+        "country": "IT",
+        "city": "Cerignola"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.0579,
+          41.3584
+        ]
+      },
+      "properties": {
+        "id": "ep_005",
+        "name": "Fortore Wind Farm (Repowering)",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "IVPC Group / Eurus Energy",
+        "capacity": "134 MW",
+        "description_it": "Parco eolico nel Fortore, provincia di Benevento, Campania. Progetto di repowering da 187 milioni di euro che sostituisce 140 turbine legacy con 17 turbine GE Vernova da 6,1 MW ciascuna. Chiusura finanziaria nel giugno 2026, consegne turbine previste dal Q2 2027. Uno dei più grandi progetti eolici in Italia.",
+        "country": "IT",
+        "city": "Montefalcone di Val Fortore"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.08,
+          41.37
+        ]
+      },
+      "properties": {
+        "id": "ep_006",
+        "name": "Presenzano - Centrale a Gas Edison",
+        "type": "energy_plant",
+        "subtype": "gas",
+        "operator": "Edison",
+        "capacity": "770 MW",
+        "description_it": "Centrale termoelettrica a gas a ciclo combinato di ultima generazione a Presenzano, Caserta, Campania. Investimento di 450 milioni di euro, inaugurata nell'ottobre 2024. Utilizza turbina a gas GT36 H-class di Ansaldo Energia, una delle centrali a gas più efficienti d'Italia.",
+        "country": "IT",
+        "city": "Presenzano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8147,
+          66.9541
+        ]
+      },
+      "properties": {
+        "id": "ep_007",
+        "name": "Harsprånget - Centrale Idroelettrica",
+        "type": "energy_plant",
+        "subtype": "hydro",
+        "operator": "Vattenfall",
+        "capacity": "811 MW",
+        "description_it": "Una delle più grandi centrali idroelettriche della Svezia, sul fiume Lule (Lule Älv) nella contea di Norrbotten, circa 8 km a valle di Porjus. Parte del portafoglio idroelettrico di Vattenfall di circa 100 centrali in Svezia (8.500 MW totali). Fonte di energia rinnovabile chiave per i data center del nord della Svezia, incluso il data center Meta di Luleå.",
+        "country": "SE",
+        "city": "Jokkmokk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8008,
+          66.9587
+        ]
+      },
+      "properties": {
+        "id": "ep_008",
+        "name": "Porjus - Centrale Idroelettrica",
+        "type": "energy_plant",
+        "subtype": "hydro",
+        "operator": "Vattenfall",
+        "capacity": "422 MW",
+        "description_it": "Centrale idroelettrica sotterranea sul fiume Stora Luleälv nel comune di Jokkmokk, Svezia. Parte del sistema idroelettrico del fiume Lule che alimenta i data center nel nord della Svezia. Vattenfall sta pianificando espansioni con capacità aggiuntiva di 720 MW a partire dal 2026.",
+        "country": "SE",
+        "city": "Jokkmokk"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.1108,
+          57.2597
+        ]
+      },
+      "properties": {
+        "id": "ep_009",
+        "name": "Ringhals - Centrale Nucleare",
+        "type": "energy_plant",
+        "subtype": "nuclear",
+        "operator": "Vattenfall (70,4%) / Uniper (29,6%)",
+        "capacity": "2.190 MW (2 reattori operativi)",
+        "description_it": "La più grande centrale elettrica della Scandinavia, sulla penisola di Värö, circa 60 km a sud di Göteborg. Due reattori operativi (Unità 3: 1.074 MW, Unità 4: 1.130 MW) che generano circa il 20% dell'energia elettrica svedese (circa 24 TWh/anno). Vattenfall sta esplorando nuova capacità nucleare con piccoli reattori modulari (SMR) per ulteriori 1.500 MW.",
+        "country": "SE",
+        "city": "Varberg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.4433,
+          61.2371
+        ]
+      },
+      "properties": {
+        "id": "ep_010",
+        "name": "Olkiluoto - Centrale Nucleare",
+        "type": "energy_plant",
+        "subtype": "nuclear",
+        "operator": "Teollisuuden Voima (TVO)",
+        "capacity": "2.800 MW (3 reattori)",
+        "description_it": "Centrale nucleare a Eurajoki, Satakunta, nel sud-ovest della Finlandia. Tre reattori: Olkiluoto 1 e 2 (BWR, 860-890 MW ciascuno) e Olkiluoto 3 (EPR, 1.600 MW), il primo reattore EPR in Europa, operativo commercialmente dall'aprile 2023. Olkiluoto 3 produce circa il 14% dell'elettricità finlandese.",
+        "country": "FI",
+        "city": "Eurajoki"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.76,
+          42.25
+        ]
+      },
+      "properties": {
+        "id": "ep_011",
+        "name": "Tarquinia - Impianto Agrivoltaico Enel",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Enel Green Power",
+        "capacity": "170 MW (circa)",
+        "description_it": "Il più grande impianto agrivoltaico d'Italia, in costruzione a Tarquinia, Lazio. Circa 170 MW di capacità, annunciato nel marzo 2023 da Enel Green Power. Combina produzione di energia solare con attività agricole, rappresentando un modello innovativo di uso del suolo.",
+        "country": "IT",
+        "city": "Tarquinia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.0,
+          41.1
+        ]
+      },
+      "properties": {
+        "id": "ep_012",
+        "name": "Edison Wind Operations - Sud Italia",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Edison",
+        "capacity": "1.100 MW (installati totali)",
+        "description_it": "Edison è il secondo operatore eolico in Italia con 1.100 MW di capacità installata, principalmente nel Sud Italia tra Puglia e Sicilia. Ha annunciato 600 milioni di euro in nuovi progetti rinnovabili, inclusi circa 300 MW di nuova capacità eolica concentrata in Puglia e Sicilia.",
+        "country": "IT",
+        "city": "Puglia (distribuito)"
+      }
+    }
+  ]
+}

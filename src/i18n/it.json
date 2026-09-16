@@ -1,0 +1,88 @@
+{
+  "app": {
+    "title": "L'Infrastruttura Invisibile",
+    "subtitle": "La Mappa Fisica del Digitale e dell'IA"
+  },
+  "narrative": {
+    "intro": "Ogni volta che utilizziamo un servizio cloud, interroghiamo un'intelligenza artificiale o semplicemente inviamo un'email, attiviamo una catena fisica che si estende attraverso continenti. Dietro il \"cloud\" si nascondono data center che consumano enormi quantità di energia, alimentati da centrali a gas, parchi solari, impianti eolici e centrali nucleari. I server al loro interno contengono semiconduttori prodotti in fabbriche altamente specializzate, che a loro volta dipendono da materie prime — litio, cobalto, terre rare — estratte in miniere dall'Australia al Cile, dalla Repubblica Democratica del Congo alla Cina.",
+    "intro_2": "Questa mappa interattiva rende visibile questa infrastruttura nascosta, con un focus particolare sull'Italia e l'Europa. Mostra dove si trovano i data center che ospitano i nostri dati, quali impianti energetici li alimentano, e da dove provengono i materiali e i componenti che li rendono possibili. È uno strumento pensato per giornalisti, cittadini e decisori che vogliono comprendere la dimensione materiale della trasformazione digitale.",
+    "data_caption": "La mappa visualizza {dc_count} data center, {rm_count} siti di estrazione e produzione, {ep_count} impianti energetici e {conn_count} connessioni tra queste infrastrutture in Europa e nel mondo."
+  },
+  "layers": {
+    "data_centers": "Data Center",
+    "raw_materials": "Materie Prime e Produzione",
+    "energy_plants": "Impianti Energetici",
+    "connections": "Connessioni"
+  },
+  "subtypes": {
+    "colocation": "Colocation",
+    "hyperscale": "Hyperscale",
+    "enterprise": "Enterprise",
+    "semiconductor_fab": "Fabbrica di semiconduttori",
+    "component_manufacturing": "Produzione componenti",
+    "lithium_mine": "Miniera di litio",
+    "cobalt_mine": "Miniera di cobalto",
+    "rare_earth_mine": "Miniera di terre rare",
+    "gas": "Gas naturale (ciclo combinato)",
+    "solar": "Solare fotovoltaico",
+    "wind": "Eolico",
+    "hydro": "Idroelettrico",
+    "nuclear": "Nucleare"
+  },
+  "relationships": {
+    "powers": "Alimenta",
+    "supplies": "Fornisce materiali",
+    "manufactures_for": "Produce componenti per"
+  },
+  "popup": {
+    "operator": "Operatore",
+    "type": "Tipo",
+    "capacity": "Capacità",
+    "city": "Città",
+    "country": "Paese",
+    "description": "Descrizione",
+    "connections": "Connessioni",
+    "powered_by": "Alimentato da",
+    "components_from": "Componenti da",
+    "powers_to": "Alimenta",
+    "supplies_to": "Fornisce a",
+    "receives_from": "Riceve da",
+    "relationship": "Relazione",
+    "close": "Chiudi"
+  },
+  "controls": {
+    "toggle_layers": "Livelli",
+    "legend": "Legenda",
+    "zoom_in": "Ingrandisci",
+    "zoom_out": "Riduci",
+    "reset_view": "Vista iniziale",
+    "show_all": "Mostra tutto",
+    "hide_all": "Nascondi tutto"
+  },
+  "legend": {
+    "title": "Legenda",
+    "points": "Punti",
+    "lines": "Connessioni",
+    "line_powers": "Alimentazione energetica",
+    "line_supplies": "Fornitura materiali",
+    "line_manufactures": "Produzione componenti"
+  },
+  "countries": {
+    "IT": "Italia",
+    "DE": "Germania",
+    "NL": "Paesi Bassi",
+    "AT": "Austria",
+    "FI": "Finlandia",
+    "SE": "Svezia",
+    "IE": "Irlanda",
+    "FR": "Francia",
+    "PT": "Portogallo",
+    "RS": "Serbia",
+    "TW": "Taiwan",
+    "AU": "Australia",
+    "CL": "Cile",
+    "CD": "Rep. Dem. del Congo",
+    "GL": "Groenlandia",
+    "CN": "Cina"
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.35,
+          45.5667
+        ]
+      },
+      "properties": {
+        "id": "rm_001",
+        "name": "STMicroelectronics - Agrate Brianza",
+        "type": "raw_material",
+        "subtype": "semiconductor_fab",
+        "operator": "STMicroelectronics",
+        "capacity": "Fab 200mm e 300mm (R3)",
+        "description_it": "Principale impianto di produzione semiconduttori STMicroelectronics ad Agrate Brianza (Monza e Brianza). Include fab MEMS per accelerometri e giroscopi, e il nuovo fab R3 da 300mm per semiconduttori analogici e di potenza. In partnership con Tower Semiconductor per accelerare la produzione.",
+        "country": "IT",
+        "city": "Agrate Brianza"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.05,
+          37.45
+        ]
+      },
+      "properties": {
+        "id": "rm_002",
+        "name": "STMicroelectronics - Catania (Silicon Carbide Campus)",
+        "type": "raw_material",
+        "subtype": "semiconductor_fab",
+        "operator": "STMicroelectronics",
+        "capacity": "Fab 200mm SiC (investimento 5,4 miliardi USD)",
+        "description_it": "Centro di produzione semiconduttori STMicroelectronics a Catania, Sicilia, in Strada Primosole 50. Ospita due fab, R&D e progettazione. Nel 2024 annunciato il primo impianto integrato al mondo per carburo di silicio (SiC) da 200mm, con 2 miliardi di euro di aiuti di stato italiani. Circa 5.000 dipendenti.",
+        "country": "IT",
+        "city": "Catania"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.73,
+          51.05
+        ]
+      },
+      "properties": {
+        "id": "rm_003",
+        "name": "ESMC/TSMC Fab - Dresda",
+        "type": "raw_material",
+        "subtype": "semiconductor_fab",
+        "operator": "ESMC (TSMC, Bosch, Infineon, NXP)",
+        "capacity": "Fab 300mm (investimento 10-11 miliardi USD)",
+        "description_it": "Primo impianto di produzione TSMC in Europa, a Dresda nella regione 'Silicon Saxony'. Joint venture ESMC tra TSMC, Bosch, Infineon e NXP. Costruzione iniziata nell'agosto 2024, approvata nell'ambito dell'EU Chips Act per rafforzare la sovranità digitale europea.",
+        "country": "DE",
+        "city": "Dresda"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7847,
+          51.1289
+        ]
+      },
+      "properties": {
+        "id": "rm_004",
+        "name": "GlobalFoundries Fab 1 - Dresda",
+        "type": "raw_material",
+        "subtype": "semiconductor_fab",
+        "operator": "GlobalFoundries",
+        "capacity": "Fab 300mm",
+        "description_it": "Impianto di produzione semiconduttori GlobalFoundries Fab 1 a Dresda-Klotzsche, Wilschdorfer Landstraße 101. Uno dei siti di produzione di semiconduttori più produttivi e moderni d'Europa. Tecnologie affidabili ad alto volume per applicazioni a lungo ciclo di vita.",
+        "country": "DE",
+        "city": "Dresda"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.46,
+          51.41
+        ]
+      },
+      "properties": {
+        "id": "rm_005",
+        "name": "ASML - Veldhoven (Sede centrale)",
+        "type": "raw_material",
+        "subtype": "component_manufacturing",
+        "operator": "ASML",
+        "capacity": "Principale sito R&D e produzione",
+        "description_it": "Sede centrale mondiale di ASML a De Run 6501, Veldhoven, Paesi Bassi. Il più grande sito R&D dell'azienda, che ospita più della metà di tutti i dipendenti ASML. Fornitore monopolista di macchine litografiche EUV essenziali per la produzione di chip avanzati. Nuove strutture in costruzione vicino all'aeroporto di Eindhoven (settembre 2026).",
+        "country": "NL",
+        "city": "Veldhoven"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.78,
+          46.61
+        ]
+      },
+      "properties": {
+        "id": "rm_006",
+        "name": "Infineon - Villach",
+        "type": "raw_material",
+        "subtype": "semiconductor_fab",
+        "operator": "Infineon Technologies Austria AG",
+        "capacity": "Fab 300mm (investimento 1,6 miliardi EUR)",
+        "description_it": "Fabbrica di chip Infineon a Siemensstraße 2, Villach, Austria. Impianto completamente automatizzato per wafer sottili da 300mm, inaugurato nel settembre 2021. Uno dei più grandi impianti di microelettronica in Europa, specializzato in elettronica di potenza.",
+        "country": "AT",
+        "city": "Villach"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.014,
+          24.773
+        ]
+      },
+      "properties": {
+        "id": "rm_007",
+        "name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)",
+        "type": "raw_material",
+        "subtype": "semiconductor_fab",
+        "operator": "Taiwan Semiconductor Manufacturing Company",
+        "capacity": "Produzione semiconduttori avanzati",
+        "description_it": "Sede centrale e impianto Fab 12A di TSMC a Hsinchu Science Park, Taiwan. Il più grande produttore di semiconduttori al mondo per conto terzi, produce i chip più avanzati utilizzati nei processori AI e nei server dei data center globali.",
+        "country": "TW",
+        "city": "Hsinchu"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.6678,
+          41.6872
+        ]
+      },
+      "properties": {
+        "id": "rm_008",
+        "name": "Mina do Barroso - Progetto Litio",
+        "type": "raw_material",
+        "subtype": "lithium_mine",
+        "operator": "Savannah Resources",
+        "capacity": "Riserva di 20 milioni di tonnellate",
+        "description_it": "Progetto minerario di litio a Boticas, nel nord del Portogallo. Studio di fattibilità definitivo completato nel luglio 2026. Comprende due concessioni minerarie: C-100 Mina do Barroso e C-190 Canedo-Covas. Progetto controverso con opposizione locale e questioni ambientali in corso.",
+        "country": "PT",
+        "city": "Boticas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7067,
+          63.5544
+        ]
+      },
+      "properties": {
+        "id": "rm_009",
+        "name": "Keliber - Progetto Litio Kaustinen",
+        "type": "raw_material",
+        "subtype": "lithium_mine",
+        "operator": "Sibanye-Stillwater",
+        "capacity": "Investimento 588 milioni EUR",
+        "description_it": "Progetto litio avanzato a Kaustinen e Kokkola, nella regione dell'Ostrobotnia Centrale in Finlandia. Mira a diventare il primo produttore europeo di litio per batterie. Depositi su oltre 500 km², con raffineria nel Parco Industriale di Kokkola. Finanziamento UE di 150 milioni di euro (agosto 2024).",
+        "country": "FI",
+        "city": "Kaustinen"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.3,
+          44.5333
+        ]
+      },
+      "properties": {
+        "id": "rm_010",
+        "name": "Jadar - Progetto Litio-Boro",
+        "type": "raw_material",
+        "subtype": "lithium_mine",
+        "operator": "Rio Tinto",
+        "capacity": "N/D (progetto sospeso)",
+        "description_it": "Giacimento di litio e boro nella valle di Jadar, Serbia occidentale, vicino a Loznica. Progetto sospeso da Rio Tinto a settembre 2024 a causa della forte opposizione locale degli agricoltori serbi. Destinato alla produzione di carbonato di litio per batterie EV europee. L'investimento più controverso nella storia recente della Serbia.",
+        "country": "RS",
+        "city": "Loznica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.0633,
+          -33.8564
+        ]
+      },
+      "properties": {
+        "id": "rm_011",
+        "name": "Greenbushes - Miniera di Litio",
+        "type": "raw_material",
+        "subtype": "lithium_mine",
+        "operator": "Talison Lithium (Albemarle 49%)",
+        "capacity": "1,95 milioni di tonnellate/anno di spodumene",
+        "description_it": "La più grande miniera di litio hard-rock al mondo, situata 250 km a sud di Perth in Australia Occidentale. Fornisce circa il 20% dell'approvvigionamento mondiale di litio hard-rock. Operativa da oltre 30 anni, produce anche tantalio e stagno.",
+        "country": "AU",
+        "city": "Greenbushes"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.2,
+          -23.5
+        ]
+      },
+      "properties": {
+        "id": "rm_012",
+        "name": "Salar de Atacama - Estrazione Litio",
+        "type": "raw_material",
+        "subtype": "lithium_mine",
+        "operator": "SQM / Albemarle",
+        "capacity": "36% quota mercato globale combinata (2022)",
+        "description_it": "Il più grande salar del Cile, 55 km a sud di San Pedro de Atacama. SQM (20% mercato globale) e Albemarle (16%) estraggono litio dalla salamoia. La più grande operazione di estrazione di litio visibile da satellite al mondo. Prima operazione mineraria di litio a ottenere la certificazione IRMA 75 (settembre 2023).",
+        "country": "CL",
+        "city": "San Pedro de Atacama"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.8082,
+          -10.7858
+        ]
+      },
+      "properties": {
+        "id": "rm_013",
+        "name": "Mutanda - Miniera di Cobalto",
+        "type": "raw_material",
+        "subtype": "cobalt_mine",
+        "operator": "Glencore (95%)",
+        "capacity": "27.300 tonnellate cobalto/anno (2018)",
+        "description_it": "Il più grande produttore di cobalto al mondo, situato nella provincia di Lualaba, RDC, circa 40 km a est di Kolwezi. Copre circa il 20% dell'approvvigionamento globale di cobalto. Produce anche 199.000 tonnellate di rame all'anno. Oltre 3.500 dipendenti, il 96% congolesi.",
+        "country": "CD",
+        "city": "Kolwezi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.3855,
+          -10.7148
+        ]
+      },
+      "properties": {
+        "id": "rm_014",
+        "name": "Kamoto - Miniera Rame-Cobalto",
+        "type": "raw_material",
+        "subtype": "cobalt_mine",
+        "operator": "Katanga Mining / Glencore",
+        "capacity": "270.000 tonnellate rame (riserve 2020)",
+        "description_it": "Miniera di rame e cobalto a cielo aperto nella provincia di Lualaba, RDC, nella regione di Kolwezi. Gestita da Kamoto Copper Company (KCC), joint venture associata a Glencore. La produzione di cobalto è stata sospesa nel novembre 2018 per contaminazione.",
+        "country": "CD",
+        "city": "Kolwezi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5667,
+          58.1
+        ]
+      },
+      "properties": {
+        "id": "rm_015",
+        "name": "Norra Kärr - Deposito Terre Rare",
+        "type": "raw_material",
+        "subtype": "rare_earth_mine",
+        "operator": "Leading Edge Materials",
+        "capacity": "Concessione mineraria 25 anni (luglio 2026)",
+        "description_it": "Uno dei più ricchi depositi di terre rare in Europa, situato nel sud della Svezia, 11 km a nord-est di Gränna, nella contea di Jönköping, vicino al lago Vättern. Contiene concentrazioni significative di disprosio, terbio e ittrio. Leading Edge Materials ha ottenuto una concessione mineraria di 25 anni nel luglio 2026, posizionandolo come la prima miniera europea di terre rare pesanti.",
+        "country": "SE",
+        "city": "Gränna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.0486,
+          60.9122
+        ]
+      },
+      "properties": {
+        "id": "rm_016",
+        "name": "Kvanefjeld (Kuannersuit) - Deposito Terre Rare",
+        "type": "raw_material",
+        "subtype": "rare_earth_mine",
+        "operator": "Energy Transition Minerals",
+        "capacity": "Seconda più grande fonte mondiale di terre rare (potenziale)",
+        "description_it": "Deposito di terre rare, uranio e zinco nel sud della Groenlandia, vicino a Narsaq. Sarebbe la seconda più grande fonte mondiale di terre rare e la quinta più grande miniera di uranio. Dopo 13 anni di lavoro, le autorità groenlandesi hanno rifiutato la licenza mineraria nel giugno 2026. Progetto strategico per l'indipendenza europea dalle terre rare cinesi.",
+        "country": "GL",
+        "city": "Narsaq"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.9736,
+          41.7828
+        ]
+      },
+      "properties": {
+        "id": "rm_017",
+        "name": "Bayan Obo - Miniera Terre Rare",
+        "type": "raw_material",
+        "subtype": "rare_earth_mine",
+        "operator": "China Northern Rare Earth Group",
+        "capacity": "Oltre 80% delle riserve cinesi di terre rare",
+        "description_it": "Il più grande deposito e miniera di terre rare al mondo, situato nel distretto minerario di Bayan Obo, circa 150 km a nord di Baotou, Mongolia Interna, Cina. Area mineraria di circa 48 km². Baotou è conosciuta come la 'capitale delle terre rare della Cina'. Scoperto negli anni '30, domina la produzione globale di terre rare.",
+        "country": "CN",
+        "city": "Baotou"
+      }
+    }
+  ]
+}

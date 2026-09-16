@@ -1,0 +1,185 @@
+---
+/**
+ * MapView.astro — Componente mappa MapLibre GL JS
+ * 
+ * Questo componente contiene il contenitore della mappa e tutti i pannelli UI sovrapposti.
+ * La logica client-side è implementata tramite un tag <script is:inline> che utilizza
+ * l'oggetto globale `maplibregl` caricato dal CDN nel Layout.
+ * 
+ * Struttura i18n: tutte le stringhe sono caricate da src/i18n/it.json
+ */
+import i18n from '../i18n/it.json';
+---
+
+<!-- Map Container -->
+<div id="map"></div>
+
+<!-- Tooltip -->
+<div id="map-tooltip" class="map-tooltip"></div>
+
+<!-- Narrative Panel -->
+<div id="narrative-panel" class="panel narrative-panel">
+  <button id="narrative-close" class="panel-close-btn" aria-label={i18n.popup.close}>✕</button>
+  <h1>{i18n.app.title}</h1>
+  <h2>{i18n.app.subtitle}</h2>
+  <p>{i18n.narrative.intro}</p>
+  <p>{i18n.narrative.intro_2}</p>
+  <p class="data-caption">
+    La mappa visualizza <strong>19</strong> data center, <strong>17</strong> siti di estrazione e produzione, <strong>12</strong> impianti energetici e <strong>25</strong> connessioni tra queste infrastrutture in Europa e nel mondo.
+  </p>
+</div>
+
+<!-- Reopen Narrative Button -->
+<button id="narrative-reopen" class="narrative-reopen-btn" aria-label="Apri pannello informativo">
+  <span>ℹ️</span> <span>Info</span>
+</button>
+
+<!-- Layer Toggle Panel -->
+<div class="panel layer-toggle-panel">
+  <h3>{i18n.controls.toggle_layers}</h3>
+
+  <label class="layer-toggle-item">
+    <span class="toggle-switch" style="--toggle-color: #2563EB;">
+      <input type="checkbox" id="toggle-data-centers" checked />
+      <span class="toggle-slider"></span>
+    </span>
+    <span class="layer-color-dot" style="background: #2563EB;"></span>
+    <span class="layer-toggle-label">{i18n.layers.data_centers}</span>
+  </label>
+
+  <label class="layer-toggle-item">
+    <span class="toggle-switch" style="--toggle-color: #EA580C;">
+      <input type="checkbox" id="toggle-raw-materials" checked />
+      <span class="toggle-slider"></span>
+    </span>
+    <span class="layer-color-dot" style="background: #EA580C;"></span>
+    <span class="layer-toggle-label">{i18n.layers.raw_materials}</span>
+  </label>
+
+  <label class="layer-toggle-item">
+    <span class="toggle-switch" style="--toggle-color: #16A34A;">
+      <input type="checkbox" id="toggle-energy-plants" checked />
+      <span class="toggle-slider"></span>
+    </span>
+    <span class="layer-color-dot" style="background: #16A34A;"></span>
+    <span class="layer-toggle-label">{i18n.layers.energy_plants}</span>
+  </label>
+
+  <label class="layer-toggle-item" style="margin-top: 4px; padding-top: 8px; border-top: 1px solid #E5E7EB;">
+    <span class="toggle-switch" style="--toggle-color: #6B7280;">
+      <input type="checkbox" id="toggle-connections" checked />
+      <span class="toggle-slider"></span>
+    </span>
+    <span class="layer-color-dot" style="background: #6B7280; border: 1px dashed #374151;"></span>
+    <span class="layer-toggle-label">{i18n.layers.connections}</span>
+  </label>
+</div>
+
+<!-- Legend Panel -->
+<div id="legend-panel" class="panel legend-panel">
+  <div id="legend-header" class="legend-header">
+    <h3>{i18n.legend.title}</h3>
+    <span class="legend-toggle-icon">▼</span>
+  </div>
+  <div class="legend-content">
+    <!-- Point layers -->
+    <div class="legend-section">
+      <div class="legend-section-title">{i18n.legend.points}</div>
+      <div class="legend-item">
+        <span class="legend-circle" style="background: #2563EB;"></span>
+        {i18n.layers.data_centers}
+      </div>
+      <div class="legend-subtype-list">
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #2563EB;"></span>
+          {i18n.subtypes.colocation}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #2563EB;"></span>
+          {i18n.subtypes.hyperscale}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #2563EB;"></span>
+          {i18n.subtypes.enterprise}
+        </div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-circle" style="background: #EA580C;"></span>
+        {i18n.layers.raw_materials}
+      </div>
+      <div class="legend-subtype-list">
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #EA580C;"></span>
+          {i18n.subtypes.semiconductor_fab}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #EA580C;"></span>
+          {i18n.subtypes.component_manufacturing}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #EA580C;"></span>
+          {i18n.subtypes.lithium_mine}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #EA580C;"></span>
+          {i18n.subtypes.cobalt_mine}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #EA580C;"></span>
+          {i18n.subtypes.rare_earth_mine}
+        </div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-circle" style="background: #16A34A;"></span>
+        {i18n.layers.energy_plants}
+      </div>
+      <div class="legend-subtype-list">
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #16A34A;"></span>
+          {i18n.subtypes.gas}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #16A34A;"></span>
+          {i18n.subtypes.solar}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #16A34A;"></span>
+          {i18n.subtypes.wind}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #16A34A;"></span>
+          {i18n.subtypes.hydro}
+        </div>
+        <div class="legend-item legend-subitem">
+          <span class="legend-sub-dot" style="background: #16A34A;"></span>
+          {i18n.subtypes.nuclear}
+        </div>
+      </div>
+    </div>
+    <!-- Connection lines -->
+    <div class="legend-section">
+      <div class="legend-section-title">{i18n.legend.lines}</div>
+      <div class="legend-item">
+        <span class="legend-line" style="border-color: #16A34A;"></span>
+        {i18n.legend.line_powers}
+      </div>
+      <div class="legend-item">
+        <span class="legend-line" style="border-color: #EA580C;"></span>
+        {i18n.legend.line_supplies}
+      </div>
+      <div class="legend-item">
+        <span class="legend-line" style="border-color: #2563EB;"></span>
+        {i18n.legend.line_manufactures}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail Sidebar -->
+<div id="detail-sidebar" class="panel detail-sidebar">
+  <div class="detail-sidebar-header">
+    <h2 id="detail-title"></h2>
+    <button id="detail-close" class="panel-close-btn" aria-label={i18n.popup.close}>✕</button>
+  </div>
+  <div id="detail-body" class="detail-sidebar-body"></div>
+</div>

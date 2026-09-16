@@ -1,0 +1,630 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.09,
+            45.52
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_001",
+        "source_id": "ep_001",
+        "target_id": "dc_005",
+        "relationship_type": "powers",
+        "description_it": "La centrale a gas di Turbigo (1.280 MW) è una delle principali fonti di energia per il cluster di data center nell'area di Milano, inclusa la regione AWS Europe (Milano) a Rho/Pero.",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "AWS Europe (Milano) - Rho/Pero"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.38,
+            45.45
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_002",
+        "source_id": "ep_001",
+        "target_id": "dc_004",
+        "relationship_type": "powers",
+        "description_it": "La centrale di Turbigo contribuisce all'alimentazione della rete elettrica lombarda che serve i data center Microsoft Azure Italy North nella zona di Milano.",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "Microsoft Azure Italy North - Settala"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.0387,
+            45.4755
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_003",
+        "source_id": "ep_001",
+        "target_id": "dc_006",
+        "relationship_type": "powers",
+        "description_it": "La centrale di Turbigo alimenta la rete elettrica che serve il campus Equinix ML5 a Settimo Milanese, vicino a Milano.",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "Equinix ML5 - Settimo Milanese"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.29,
+            45.19
+          ],
+          [
+            9.5878,
+            45.6955
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_004",
+        "source_id": "ep_002",
+        "target_id": "dc_002",
+        "relationship_type": "powers",
+        "description_it": "Il parco solare Enel di Trino (87 MW) contribuisce alla rete rinnovabile del nord Italia che alimenta il campus Aruba di Ponte San Pietro, che opera al 100% con energia rinnovabile.",
+        "source_name": "Enel Trino Solar Park",
+        "target_name": "Aruba Global Cloud Data Center IT3 - Ponte San Pietro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            19.8147,
+            66.9541
+          ],
+          [
+            22.1547,
+            65.5848
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_005",
+        "source_id": "ep_007",
+        "target_id": "dc_013",
+        "relationship_type": "powers",
+        "description_it": "La centrale idroelettrica di Harsprånget (811 MW) sul fiume Lule è una fonte chiave di energia rinnovabile per il data center Meta di Luleå, nel nord della Svezia. L'energia idroelettrica nordica è il motivo principale della localizzazione dei data center in questa regione.",
+        "source_name": "Harsprånget - Centrale Idroelettrica",
+        "target_name": "Meta Data Center - Luleå, Svezia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            19.8008,
+            66.9587
+          ],
+          [
+            22.1547,
+            65.5848
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_006",
+        "source_id": "ep_008",
+        "target_id": "dc_013",
+        "relationship_type": "powers",
+        "description_it": "La centrale idroelettrica di Porjus (422 MW), insieme a Harsprånget, fa parte del sistema idroelettrico del fiume Lule che alimenta il data center Meta di Luleå e altri data center nel nord della Svezia.",
+        "source_name": "Porjus - Centrale Idroelettrica",
+        "target_name": "Meta Data Center - Luleå, Svezia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            21.4433,
+            61.2371
+          ],
+          [
+            27.2,
+            60.57
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_007",
+        "source_id": "ep_010",
+        "target_id": "dc_012",
+        "relationship_type": "powers",
+        "description_it": "La centrale nucleare di Olkiluoto (2.800 MW) contribuisce significativamente alla rete elettrica finlandese che alimenta il data center Google di Hamina, che opera con il 97% di energia carbon-free.",
+        "source_name": "Olkiluoto - Centrale Nucleare",
+        "target_name": "Google Data Center - Hamina, Finlandia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            12.1108,
+            57.2597
+          ],
+          [
+            16.5099,
+            59.3716
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_008",
+        "source_id": "ep_009",
+        "target_id": "dc_019",
+        "relationship_type": "powers",
+        "description_it": "La centrale nucleare di Ringhals (2.190 MW), la più grande della Scandinavia, contribuisce alla rete elettrica svedese che alimenta i data center AWS nella regione di Stoccolma.",
+        "source_name": "Ringhals - Centrale Nucleare",
+        "target_name": "AWS Europe (Stoccolma) - Eskilstuna"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            15.8997,
+            41.2648
+          ],
+          [
+            12.4975,
+            41.6797
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_009",
+        "source_id": "ep_004",
+        "target_id": "dc_011",
+        "relationship_type": "powers",
+        "description_it": "Il parco eolico di Cerignola (125 MW) in Puglia contribuisce alla rete elettrica del sud Italia che serve i data center TIM nella regione di Roma, incluso il centro di Pomezia.",
+        "source_name": "Cerignola Wind Farm",
+        "target_name": "TIM Data Center - Pomezia (Roma)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.35,
+            45.5667
+          ],
+          [
+            9.09,
+            45.52
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_010",
+        "source_id": "rm_001",
+        "target_id": "dc_005",
+        "relationship_type": "manufactures_for",
+        "description_it": "STMicroelectronics ad Agrate Brianza produce semiconduttori di potenza e MEMS utilizzati nei server e nelle infrastrutture dei data center, inclusi quelli della regione AWS Milano.",
+        "source_name": "STMicroelectronics - Agrate Brianza",
+        "target_name": "AWS Europe (Milano) - Rho/Pero"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.35,
+            45.5667
+          ],
+          [
+            9.38,
+            45.45
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_011",
+        "source_id": "rm_001",
+        "target_id": "dc_004",
+        "relationship_type": "manufactures_for",
+        "description_it": "I semiconduttori prodotti da STMicroelectronics ad Agrate Brianza sono componenti essenziali per i server e le infrastrutture di alimentazione dei data center Microsoft Azure in Italia.",
+        "source_name": "STMicroelectronics - Agrate Brianza",
+        "target_name": "Microsoft Azure Italy North - Settala"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            15.05,
+            37.45
+          ],
+          [
+            9.19,
+            45.4642
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_012",
+        "source_id": "rm_002",
+        "target_id": "dc_003",
+        "relationship_type": "manufactures_for",
+        "description_it": "STMicroelectronics a Catania produce semiconduttori in carburo di silicio (SiC) per dispositivi di potenza utilizzati nelle infrastrutture dei data center e nei sistemi di alimentazione, inclusa la regione Google Cloud Milano.",
+        "source_name": "STMicroelectronics - Catania (Silicon Carbide Campus)",
+        "target_name": "Google Cloud Region - Milano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.014,
+            24.773
+          ],
+          [
+            27.2,
+            60.57
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_013",
+        "source_id": "rm_007",
+        "target_id": "dc_012",
+        "relationship_type": "manufactures_for",
+        "description_it": "TSMC a Hsinchu produce i processori avanzati (inclusi chip AI) utilizzati nei server del data center Google di Hamina e in tutti i data center Google a livello globale.",
+        "source_name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)",
+        "target_name": "Google Data Center - Hamina, Finlandia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.014,
+            24.773
+          ],
+          [
+            22.1547,
+            65.5848
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_014",
+        "source_id": "rm_007",
+        "target_id": "dc_013",
+        "relationship_type": "manufactures_for",
+        "description_it": "TSMC produce i chip avanzati utilizzati nei server del data center Meta di Luleå, inclusi processori personalizzati per l'infrastruttura AI di Meta.",
+        "source_name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)",
+        "target_name": "Meta Data Center - Luleå, Svezia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            5.46,
+            51.41
+          ],
+          [
+            121.014,
+            24.773
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_015",
+        "source_id": "rm_005",
+        "target_id": "rm_007",
+        "relationship_type": "supplies",
+        "description_it": "ASML a Veldhoven è il fornitore monopolista delle macchine litografiche EUV indispensabili per la produzione dei chip più avanzati di TSMC. Senza le macchine ASML, la produzione di semiconduttori avanzati sarebbe impossibile.",
+        "source_name": "ASML - Veldhoven (Sede centrale)",
+        "target_name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            5.46,
+            51.41
+          ],
+          [
+            13.73,
+            51.05
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_016",
+        "source_id": "rm_005",
+        "target_id": "rm_003",
+        "relationship_type": "supplies",
+        "description_it": "ASML fornisce le macchine litografiche essenziali al nuovo fab ESMC/TSMC di Dresda, abilitando la produzione di semiconduttori avanzati in Europa.",
+        "source_name": "ASML - Veldhoven (Sede centrale)",
+        "target_name": "ESMC/TSMC Fab - Dresda"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.0633,
+            -33.8564
+          ],
+          [
+            9.35,
+            45.5667
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_017",
+        "source_id": "rm_011",
+        "target_id": "rm_001",
+        "relationship_type": "supplies",
+        "description_it": "Il litio estratto dalla miniera di Greenbushes in Australia entra nella catena di approvvigionamento globale delle batterie e dei componenti elettronici utilizzati nelle infrastrutture dei data center, inclusi i semiconduttori prodotti da STMicroelectronics.",
+        "source_name": "Greenbushes - Miniera di Litio",
+        "target_name": "STMicroelectronics - Agrate Brianza"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -68.2,
+            -23.5
+          ],
+          [
+            13.78,
+            46.61
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_018",
+        "source_id": "rm_012",
+        "target_id": "rm_006",
+        "relationship_type": "supplies",
+        "description_it": "Il litio estratto dal Salar de Atacama in Cile alimenta la catena di approvvigionamento globale delle batterie al litio utilizzate nei sistemi UPS dei data center e nei componenti elettronici prodotti da Infineon a Villach.",
+        "source_name": "Salar de Atacama - Estrazione Litio",
+        "target_name": "Infineon - Villach"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            25.8082,
+            -10.7858
+          ],
+          [
+            121.014,
+            24.773
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_019",
+        "source_id": "rm_013",
+        "target_id": "rm_007",
+        "relationship_type": "supplies",
+        "description_it": "Il cobalto estratto dalla miniera di Mutanda nella RDC è un materiale critico per le batterie al litio-cobalto utilizzate nei sistemi di backup dei data center e nei dispositivi elettronici che dipendono dai chip TSMC.",
+        "source_name": "Mutanda - Miniera di Cobalto",
+        "target_name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.9736,
+            41.7828
+          ],
+          [
+            121.014,
+            24.773
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_020",
+        "source_id": "rm_017",
+        "target_id": "rm_007",
+        "relationship_type": "supplies",
+        "description_it": "Le terre rare estratte da Bayan Obo in Cina sono essenziali per la produzione di magneti permanenti, componenti ottici e altri materiali utilizzati nella fabbricazione di semiconduttori da TSMC e altri produttori.",
+        "source_name": "Bayan Obo - Miniera Terre Rare",
+        "target_name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            13.7847,
+            51.1289
+          ],
+          [
+            8.6821,
+            50.1109
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_021",
+        "source_id": "rm_004",
+        "target_id": "dc_014",
+        "relationship_type": "manufactures_for",
+        "description_it": "GlobalFoundries a Dresda produce semiconduttori utilizzati nelle infrastrutture di rete e nei server dei data center Equinix a Francoforte, il più grande hub di interconnessione Internet in Europa.",
+        "source_name": "GlobalFoundries Fab 1 - Dresda",
+        "target_name": "Equinix FR13 - Francoforte"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            13.78,
+            46.61
+          ],
+          [
+            9.5878,
+            45.6955
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_022",
+        "source_id": "rm_006",
+        "target_id": "dc_002",
+        "relationship_type": "manufactures_for",
+        "description_it": "Infineon a Villach produce semiconduttori di potenza utilizzati nei sistemi di alimentazione e gestione energetica dei data center, incluso il campus Aruba di Ponte San Pietro.",
+        "source_name": "Infineon - Villach",
+        "target_name": "Aruba Global Cloud Data Center IT3 - Ponte San Pietro"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            11.6,
+            42.35
+          ],
+          [
+            12.4975,
+            41.6797
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_023",
+        "source_id": "ep_003",
+        "target_id": "dc_011",
+        "relationship_type": "powers",
+        "description_it": "L'hub solare di Montalto di Castro (125+ MW) nel Lazio contribuisce alla rete elettrica che alimenta i data center TIM nella regione di Roma, incluso il centro di Pomezia.",
+        "source_name": "Montalto di Castro - Hub Solare",
+        "target_name": "TIM Data Center - Pomezia (Roma)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            14.08,
+            41.37
+          ],
+          [
+            12.4975,
+            41.6797
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_024",
+        "source_id": "ep_006",
+        "target_id": "dc_011",
+        "relationship_type": "powers",
+        "description_it": "La centrale a gas Edison di Presenzano (770 MW) in Campania contribuisce alla rete elettrica del centro-sud Italia che serve i data center nella regione di Roma.",
+        "source_name": "Presenzano - Centrale a Gas Edison",
+        "target_name": "TIM Data Center - Pomezia (Roma)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            25.3855,
+            -10.7148
+          ],
+          [
+            25.8082,
+            -10.7858
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_025",
+        "source_id": "rm_014",
+        "target_id": "rm_013",
+        "relationship_type": "supplies",
+        "description_it": "La miniera di Kamoto nella RDC, come Mutanda, è una fonte importante di cobalto che entra nella catena di approvvigionamento globale per batterie e componenti elettronici essenziali per l'infrastruttura digitale.",
+        "source_name": "Kamoto - Miniera Rame-Cobalto",
+        "target_name": "Mutanda - Miniera di Cobalto"
+      }
+    }
+  ]
+}
