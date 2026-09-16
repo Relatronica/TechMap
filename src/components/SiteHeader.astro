@@ -1,0 +1,96 @@
+---
+/**
+ * Header condiviso — home (sticky + ancore) e mappa (compatto)
+ */
+import i18n from '../i18n/it.json';
+
+interface Props {
+  variant?: 'home' | 'map';
+}
+
+const { variant = 'home' } = Astro.props;
+const h = i18n.home;
+const isMap = variant === 'map';
+
+const anchors = [
+  { href: '/#problema', label: h.nav_problem },
+  { href: '/#dati', label: h.nav_data },
+  { href: '/#azioni', label: h.nav_actions },
+  { href: '/#roadmap', label: h.nav_roadmap },
+  { href: '/#faq', label: h.nav_faq },
+  { href: '/#diffondi', label: h.nav_share }
+];
+---
+
+<header class:list={['site-header', isMap && 'site-header--map']} id="site-header" data-variant={variant}>
+  <div class="site-header-inner">
+    <a class="site-header-brand" href="/" aria-label={h.nav_home}>
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="site-header-brand-text">
+        <strong>{i18n.app.title}</strong>
+        {isMap && <span>{i18n.app.subtitle}</span>}
+      </span>
+    </a>
+
+    {!isMap && (
+      <nav class="site-header-nav" aria-label="Sezioni">
+        {anchors.map((a) => (
+          <a href={a.href}>{a.label}</a>
+        ))}
+      </nav>
+    )}
+
+    <div class="site-header-actions">
+      {isMap ? (
+        <a class="site-header-link" href="/">{h.nav_home}</a>
+      ) : (
+        <button type="button" class="site-header-menu" id="site-header-menu" aria-expanded="false" aria-controls="site-header-drawer">
+          Menu
+        </button>
+      )}
+      <a class:list={['site-header-cta', isMap && 'is-active']} href="/mappa">{h.nav_map}</a>
+    </div>
+  </div>
+
+  {!isMap && (
+    <div class="site-header-drawer" id="site-header-drawer" hidden>
+      <nav aria-label="Sezioni mobile">
+        {anchors.map((a) => (
+          <a href={a.href} class="site-header-drawer-link">{a.label}</a>
+        ))}
+        <a href="/mappa" class="site-header-drawer-link is-cta">{h.cta_map}</a>
+      </nav>
+    </div>
+  )}
+</header>
+
+{!isMap && (
+  <script>
+    const header = document.getElementById('site-header');
+    const menuBtn = document.getElementById('site-header-menu');
+    const drawer = document.getElementById('site-header-drawer');
+
+    function onScroll() {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 24);
+    }
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      if (drawer) drawer.hidden = open;
+      header?.classList.toggle('is-menu-open', !open);
+    });
+
+    drawer?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuBtn?.setAttribute('aria-expanded', 'false');
+        if (drawer) drawer.hidden = true;
+        header?.classList.remove('is-menu-open');
+      });
+    });
+  </script>
+)}

@@ -19,7 +19,39 @@
         "capacity": "1.280-1.334 MW",
         "description_it": "Centrale termoelettrica a gas a ciclo combinato a Turbigo, Lombardia, vicino a Milano e Torino. Capacità totale di circa 1.280-1.334 MW, inclusa una nuova unità da 430 MW aggiunta nel 2022 con investimento di 105 milioni di euro. Importante fonte di energia per il cluster di data center della zona di Milano.",
         "country": "IT",
-        "city": "Turbigo"
+        "city": "Turbigo",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-16",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 1300,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Gas a ciclo combinato: elevata densità di potenza, emissioni di CO₂ e dipendenza dal gas."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Impianti termoelettrici: organico operativo contenuto rispetto alla potenza; manutenzione e appalti rilevanti.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "Iren — centrale Turbigo",
+            "accessed_at": "2026-09-16",
+            "note": "Capacità ~1.280–1.334 MW inclusa unità 2022"
+          }
+        ]
       }
     },
     {

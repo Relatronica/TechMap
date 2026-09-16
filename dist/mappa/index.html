@@ -1,0 +1,1003 @@
+<!DOCTYPE html><html lang="it"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="L'infrastruttura fisica dietro cloud e intelligenza artificiale: data center, energia, materie prime."><title>L&#39;Infrastruttura Invisibile — Mappa</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><link rel="stylesheet" href="/assets/index.CAUeJspE.css"></head> <body class="is-map">  <div id="map"></div> <div id="map-tooltip" class="map-tooltip"></div> <div class="map-chrome"> <header class="site-header site-header--map" id="site-header" data-variant="map"> <div class="site-header-inner"> <a class="site-header-brand" href="/" aria-label="Home"> <span class="brand-mark" aria-hidden="true"></span> <span class="site-header-brand-text"> <strong>L&#39;Infrastruttura Invisibile</strong> <span>La Mappa Fisica del Digitale e dell&#39;IA</span> </span> </a>  <div class="site-header-actions"> <a class="site-header-link" href="/">Home</a> <a class="site-header-cta is-active" href="/mappa">Mappa</a> </div> </div>  </header>  <div class="panel filters-panel" id="filters-panel"> <div class="filters-header"> <h3>Filtri</h3> <button type="button" id="filters-reset" class="filters-reset">Reimposta</button> </div> <p class="filters-count" id="filters-count"></p> <details class="filter-group" open data-group="data_centers"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-dc" aria-hidden="true"></span> <span class="filter-group-title">Data Center</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="data_centers">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--dc);"> <input type="checkbox" class="group-enabled" data-group="data_centers" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="data_centers"> <button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="hyperscale" aria-pressed="true" title="Hyperscale"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M4 20V9.5L12 4l8 5.5V20M9 20v-5h6v5M9.5 11h.01M12 11h.01M14.5 11h.01"></path> </svg> <span>Hyperscale</span> </button><button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="colocation" aria-pressed="true" title="Colocation"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 4.5h14v4.5H5zM5 10h14v4H5zM5 15.5h14V20H5zM7.5 6.75h.01M7.5 12h.01M7.5 17.75h.01"></path> </svg> <span>Colocation</span> </button><button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="enterprise" aria-pressed="true" title="Enterprise"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 20V8l7-4 7 4v12M9.5 20v-4.5h5V20M10 10.5h.01M14 10.5h.01M12 10.5h.01"></path> </svg> <span>Enterprise</span> </button> </div> </details><details class="filter-group" open data-group="energy_plants"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-ep" aria-hidden="true"></span> <span class="filter-group-title">Impianti Energetici</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="energy_plants">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--ep);"> <input type="checkbox" class="group-enabled" data-group="energy_plants" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="energy_plants"> <button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="gas" aria-pressed="true" title="Gas naturale (ciclo combinato)"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z"></path> </svg> <span>Gas</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="solar" aria-pressed="true" title="Solare fotovoltaico"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.4 6.4l1.4 1.4M16.2 16.2l1.4 1.4M6.4 17.6l1.4-1.4M16.2 7.8l1.4-1.4M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path> </svg> <span>Solare</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="wind" aria-pressed="true" title="Eolico"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z"></path> </svg> <span>Eolico</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="hydro" aria-pressed="true" title="Idroelettrico"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0"></path> </svg> <span>Idro</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="nuclear" aria-pressed="true" title="Nucleare"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 12m-1.8 0a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0M12 4.8v2.2M12 17v2.2M6.2 8.2l1.8 1.1M16 14.7l1.8 1.1M6.2 15.8l1.8-1.1M16 9.3l1.8-1.1"></path> </svg> <span>Nucleare</span> </button> </div> </details><details class="filter-group" open data-group="raw_materials"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-rm" aria-hidden="true"></span> <span class="filter-group-title">Materie Prime e Produzione</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="raw_materials">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--rm);"> <input type="checkbox" class="group-enabled" data-group="raw_materials" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="raw_materials"> <button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="semiconductor_fab" aria-pressed="true" title="Fabbrica di semiconduttori"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M8 8h8v8H8zM10.5 10.5h3v3h-3zM9.5 4.5v3M14.5 4.5v3M9.5 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 14.5h3M16.5 9.5h3M16.5 14.5h3"></path> </svg> <span>Semiconduttori</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="component_manufacturing" aria-pressed="true" title="Produzione componenti"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3.5l2.2 2.2L12 7.9 9.8 5.7 12 3.5zM12 16.1l2.2 2.2-2.2 2.2-2.2-2.2 2.2-2.2zM3.5 12l2.2-2.2L7.9 12l-2.2 2.2L3.5 12zM16.1 12l2.2-2.2 2.2 2.2-2.2 2.2-2.2-2.2zM12 8.2v7.6M8.2 12h7.6"></path> </svg> <span>Componenti</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="lithium_mine" aria-pressed="true" title="Miniera di litio"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8"></path> </svg> <span>Litio</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="cobalt_mine" aria-pressed="true" title="Miniera di cobalto"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5"></path> </svg> <span>Cobalto</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="rare_earth_mine" aria-pressed="true" title="Miniera di terre rare"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"></path> </svg> <span>Terre rare</span> </button> </div> </details> <details class="filter-group" open data-group="connections"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span> <span class="filter-group-title">Connessioni</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="connections">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--conn);"> <input type="checkbox" class="group-enabled" data-group="connections" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="connections"> <button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="powers" aria-pressed="true" title="Alimenta"> <span class="conn-swatch conn-powers" aria-hidden="true"></span> <span> Alimentazione energetica </span> </button><button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="supplies" aria-pressed="true" title="Fornisce materiali"> <span class="conn-swatch conn-supplies" aria-hidden="true"></span> <span> Fornitura materiali </span> </button><button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="manufactures_for" aria-pressed="true" title="Produce componenti per"> <span class="conn-swatch conn-manufactures_for" aria-hidden="true"></span> <span> Produzione componenti </span> </button> </div> </details> </div> <div id="legend-panel" class="panel legend-panel"> <div id="legend-header" class="legend-header"> <h3>Legenda</h3> <span class="legend-toggle-icon" aria-hidden="true"> <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg> </span> </div> <div class="legend-content" id="legend-content"> <div class="legend-section"> <div class="legend-section-title">Data Center</div> <div class="legend-item" data-legend-subtype="hyperscale"> <span class="legend-icon-badge badge-dc"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M4 20V9.5L12 4l8 5.5V20M9 20v-5h6v5M9.5 11h.01M12 11h.01M14.5 11h.01"></path> </svg> </span> <span>Hyperscale</span> </div><div class="legend-item" data-legend-subtype="colocation"> <span class="legend-icon-badge badge-dc"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 4.5h14v4.5H5zM5 10h14v4H5zM5 15.5h14V20H5zM7.5 6.75h.01M7.5 12h.01M7.5 17.75h.01"></path> </svg> </span> <span>Colocation</span> </div><div class="legend-item" data-legend-subtype="enterprise"> <span class="legend-icon-badge badge-dc"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 20V8l7-4 7 4v12M9.5 20v-4.5h5V20M10 10.5h.01M14 10.5h.01M12 10.5h.01"></path> </svg> </span> <span>Enterprise</span> </div> </div><div class="legend-section"> <div class="legend-section-title">Impianti Energetici</div> <div class="legend-item" data-legend-subtype="gas"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z"></path> </svg> </span> <span>Gas</span> </div><div class="legend-item" data-legend-subtype="solar"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.4 6.4l1.4 1.4M16.2 16.2l1.4 1.4M6.4 17.6l1.4-1.4M16.2 7.8l1.4-1.4M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path> </svg> </span> <span>Solare</span> </div><div class="legend-item" data-legend-subtype="wind"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z"></path> </svg> </span> <span>Eolico</span> </div><div class="legend-item" data-legend-subtype="hydro"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0"></path> </svg> </span> <span>Idro</span> </div><div class="legend-item" data-legend-subtype="nuclear"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 12m-1.8 0a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0M12 4.8v2.2M12 17v2.2M6.2 8.2l1.8 1.1M16 14.7l1.8 1.1M6.2 15.8l1.8-1.1M16 9.3l1.8-1.1"></path> </svg> </span> <span>Nucleare</span> </div> </div><div class="legend-section"> <div class="legend-section-title">Materie Prime e Produzione</div> <div class="legend-item" data-legend-subtype="semiconductor_fab"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M8 8h8v8H8zM10.5 10.5h3v3h-3zM9.5 4.5v3M14.5 4.5v3M9.5 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 14.5h3M16.5 9.5h3M16.5 14.5h3"></path> </svg> </span> <span>Semiconduttori</span> </div><div class="legend-item" data-legend-subtype="component_manufacturing"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3.5l2.2 2.2L12 7.9 9.8 5.7 12 3.5zM12 16.1l2.2 2.2-2.2 2.2-2.2-2.2 2.2-2.2zM3.5 12l2.2-2.2L7.9 12l-2.2 2.2L3.5 12zM16.1 12l2.2-2.2 2.2 2.2-2.2 2.2-2.2-2.2zM12 8.2v7.6M8.2 12h7.6"></path> </svg> </span> <span>Componenti</span> </div><div class="legend-item" data-legend-subtype="lithium_mine"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8"></path> </svg> </span> <span>Litio</span> </div><div class="legend-item" data-legend-subtype="cobalt_mine"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5"></path> </svg> </span> <span>Cobalto</span> </div><div class="legend-item" data-legend-subtype="rare_earth_mine"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"></path> </svg> </span> <span>Terre rare</span> </div> </div> <div class="legend-section"> <div class="legend-section-title">Connessioni</div> <div class="legend-item"> <span class="legend-line" style="border-color: var(--ep);"></span> Alimentazione energetica </div> <div class="legend-item"> <span class="legend-line" style="border-color: var(--rm);"></span> Fornitura materiali </div> <div class="legend-item"> <span class="legend-line" style="border-color: var(--dc);"></span> Produzione componenti </div> </div> </div> </div> <aside id="detail-sidebar" class="panel detail-sidebar" aria-live="polite"> <div class="detail-sidebar-header"> <div> <h2 id="detail-title"></h2> <div id="detail-type" class="detail-type-chip" hidden></div> </div> <button id="detail-close" class="panel-close-btn" type="button" aria-label="Chiudi"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg> </button> </div> <div id="detail-body" class="detail-sidebar-body"></div> </aside> </div>  <script>(function(){const ICON_PATHS = {"hyperscale":"M4 20V9.5L12 4l8 5.5V20M9 20v-5h6v5M9.5 11h.01M12 11h.01M14.5 11h.01","colocation":"M5 4.5h14v4.5H5zM5 10h14v4H5zM5 15.5h14V20H5zM7.5 6.75h.01M7.5 12h.01M7.5 17.75h.01","enterprise":"M5 20V8l7-4 7 4v12M9.5 20v-4.5h5V20M10 10.5h.01M14 10.5h.01M12 10.5h.01","gas":"M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z","solar":"M12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.4 6.4l1.4 1.4M16.2 16.2l1.4 1.4M6.4 17.6l1.4-1.4M16.2 7.8l1.4-1.4M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z","wind":"M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z","hydro":"M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0","nuclear":"M12 12m-1.8 0a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0M12 4.8v2.2M12 17v2.2M6.2 8.2l1.8 1.1M16 14.7l1.8 1.1M6.2 15.8l1.8-1.1M16 9.3l1.8-1.1","semiconductor_fab":"M8 8h8v8H8zM10.5 10.5h3v3h-3zM9.5 4.5v3M14.5 4.5v3M9.5 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 14.5h3M16.5 9.5h3M16.5 14.5h3","component_manufacturing":"M12 3.5l2.2 2.2L12 7.9 9.8 5.7 12 3.5zM12 16.1l2.2 2.2-2.2 2.2-2.2-2.2 2.2-2.2zM3.5 12l2.2-2.2L7.9 12l-2.2 2.2L3.5 12zM16.1 12l2.2-2.2 2.2 2.2-2.2 2.2-2.2-2.2zM12 8.2v7.6M8.2 12h7.6","lithium_mine":"M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8","cobalt_mine":"M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5","rare_earth_mine":"M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"};
+const FILTER_GROUPS = {"data_centers":{"id":"data_centers","layerId":"data-centers-layer","colorVar":"dc","color":"#1a5f82","subtypes":["hyperscale","colocation","enterprise"]},"energy_plants":{"id":"energy_plants","layerId":"energy-plants-layer","colorVar":"ep","color":"#1f6b55","subtypes":["gas","solar","wind","hydro","nuclear"]},"raw_materials":{"id":"raw_materials","layerId":"raw-materials-layer","colorVar":"rm","color":"#b04a2c","subtypes":["semiconductor_fab","component_manufacturing","lithium_mine","cobalt_mine","rare_earth_mine"]}};
+const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
+
+    // MapLibre GL JS loaded from CDN as global `maplibregl`
+    var MaplibreMap = maplibregl.Map;
+    var NavigationControl = maplibregl.NavigationControl;
+    var Popup = maplibregl.Popup;
+
+    // i18n strings loaded inline for client-side use
+    const i18n = {
+      app: {
+        title: "L'Infrastruttura Invisibile",
+        subtitle: "La Mappa Fisica del Digitale e dell'IA"
+      },
+      layers: {
+        data_centers: "Data Center",
+        raw_materials: "Materie Prime e Produzione",
+        energy_plants: "Impianti Energetici",
+        connections: "Connessioni"
+      },
+      subtypes: {
+        colocation: "Colocation",
+        hyperscale: "Hyperscale",
+        enterprise: "Enterprise",
+        semiconductor_fab: "Fabbrica di semiconduttori",
+        component_manufacturing: "Produzione componenti",
+        lithium_mine: "Miniera di litio",
+        cobalt_mine: "Miniera di cobalto",
+        rare_earth_mine: "Miniera di terre rare",
+        gas: "Gas naturale (ciclo combinato)",
+        solar: "Solare fotovoltaico",
+        wind: "Eolico",
+        hydro: "Idroelettrico",
+        nuclear: "Nucleare"
+      },
+      relationships: {
+        powers: "Alimenta",
+        supplies: "Fornisce materiali",
+        manufactures_for: "Produce componenti per"
+      },
+      popup: {
+        operator: "Operatore",
+        type: "Tipo",
+        capacity: "Capacità",
+        city: "Città",
+        country: "Paese",
+        description: "Descrizione",
+        connections: "Connessioni",
+        powered_by: "Alimentato da",
+        components_from: "Componenti da",
+        powers_to: "Alimenta",
+        supplies_to: "Fornisce a",
+        receives_from: "Riceve da",
+        relationship: "Relazione",
+        close: "Chiudi",
+        impact: "Impatto",
+        capacity_mw: "Potenza (MW)",
+        pue: "PUE",
+        water_use: "Acqua (m³/anno)",
+        land: "Suolo (ha)",
+        co2: "CO₂ stimata (t/anno)",
+        energy_mix: "Mix / note energia",
+        employment: "Lavoro",
+        jobs_direct: "Occupati diretti",
+        jobs_indirect: "Indiretti (stima)",
+        jobs_contractors: "Appalti / temporanei (stima)",
+        labor_risks: "Rischi lavoro / territorio",
+        community: "Impatto di comunità",
+        sources: "Fonti",
+        confidence: "Affidabilità dato",
+        certainty: "Certezza del legame",
+        evidence: "Evidenza",
+        updated_at: "Aggiornato",
+        status: "Stato"
+      },
+      confidence: {
+        high: "Alta",
+        medium: "Media",
+        low: "Bassa",
+        estimated: "Stima"
+      },
+      certainty: {
+        confirmed: "Confermato",
+        likely: "Probabile",
+        inferred: "Inferito",
+        disputed: "Conteso"
+      },
+      status: {
+        planned: "Pianificato",
+        under_construction: "In costruzione",
+        operational: "Operativo",
+        decommissioned: "Disattivato",
+        unknown: "Sconosciuto"
+      },
+      countries: {
+        IT: "Italia", DE: "Germania", NL: "Paesi Bassi", AT: "Austria",
+        FI: "Finlandia", SE: "Svezia", IE: "Irlanda", FR: "Francia",
+        PT: "Portogallo", RS: "Serbia", TW: "Taiwan", AU: "Australia",
+        CL: "Cile", CD: "Rep. Dem. del Congo", GL: "Groenlandia", CN: "Cina"
+      }
+    };
+
+    // Store loaded GeoJSON data for cross-referencing connections
+    let connectionsData = null;
+    let dataCentersData = null;
+    let rawMaterialsData = null;
+    let energyPlantsData = null;
+
+    const COLORS = {
+      dc: '#1a5f82',
+      rm: '#b04a2c',
+      ep: '#1f6b55',
+      conn: '#5c6570'
+    };
+
+    // Initialize map
+    const map = new MaplibreMap({
+      container: 'map',
+      style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+      center: [11.0, 44.5],
+      zoom: 5,
+      minZoom: 2,
+      maxZoom: 18,
+      attributionControl: true
+    });
+
+    // Add navigation controls bottom-right
+    map.addControl(new NavigationControl({ showCompass: false }), 'bottom-right');
+
+    // Tooltip element
+    const tooltip = document.getElementById('map-tooltip');
+
+    // Legend panel toggle
+    const legendPanel = document.getElementById('legend-panel');
+    const legendHeader = document.getElementById('legend-header');
+
+    legendHeader.addEventListener('click', () => {
+      legendPanel.classList.toggle('collapsed');
+    });
+
+    // Detail sidebar
+    const detailSidebar = document.getElementById('detail-sidebar');
+    const detailTitle = document.getElementById('detail-title');
+    const detailType = document.getElementById('detail-type');
+    const detailBody = document.getElementById('detail-body');
+    const detailClose = document.getElementById('detail-close');
+
+    detailClose.addEventListener('click', closeDetailSidebar);
+
+    function closeDetailSidebar() {
+      detailSidebar.classList.remove('open');
+      document.body.classList.remove('detail-open');
+      resetHighlights();
+    }
+
+    function createMapIconImage(pathD, color, size = 72) {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const cx = size / 2;
+      const cy = size / 2;
+      const r = size * 0.36;
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.lineWidth = size * 0.045;
+      ctx.strokeStyle = 'rgba(255,255,255,0.95)';
+      ctx.stroke();
+
+      const scale = (size * 0.4) / 24;
+      ctx.save();
+      ctx.translate(cx - 12 * scale, cy - 12 * scale);
+      ctx.scale(scale, scale);
+      const path = new Path2D(pathD);
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.85;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.stroke(path);
+      ctx.restore();
+
+      return {
+        width: size,
+        height: size,
+        data: ctx.getImageData(0, 0, size, size).data
+      };
+    }
+
+    function iconImageId(subtype) {
+      return 'icon-' + subtype;
+    }
+
+    function buildIconMatch(subtypes, fallback) {
+      const expr = ['match', ['get', 'subtype']];
+      subtypes.forEach((s) => {
+        expr.push(s, iconImageId(s));
+      });
+      expr.push(fallback);
+      return expr;
+    }
+
+    function resetHighlights() {
+      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setPaintProperty(layerId, 'line-opacity', 0.55);
+          map.setPaintProperty(layerId, 'line-width', 1.6);
+        }
+      });
+      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setLayoutProperty(layerId, 'icon-size', 0.48);
+          map.setPaintProperty(layerId, 'icon-opacity', 0.95);
+        }
+      });
+    }
+
+    // Helper: get country name
+    function getCountryName(code) {
+      return i18n.countries[code] || code;
+    }
+
+    // Helper: get subtype label
+    function getSubtypeLabel(subtype) {
+      return i18n.subtypes[subtype] || subtype;
+    }
+
+    // Helper: get relationship label
+    function getRelationshipLabel(type) {
+      return i18n.relationships[type] || type;
+    }
+
+    // Helper: find connections for a feature
+    function findConnections(featureId) {
+      if (!connectionsData) return { incoming: [], outgoing: [] };
+      const incoming = connectionsData.features.filter(f => f.properties.target_id === featureId);
+      const outgoing = connectionsData.features.filter(f => f.properties.source_id === featureId);
+      return { incoming, outgoing };
+    }
+
+    // Helper: highlight connections for a feature
+    function highlightConnections(featureId) {
+      if (!connectionsData) return;
+
+      const relatedIds = new Set();
+      relatedIds.add(featureId);
+
+      connectionsData.features.forEach(conn => {
+        const props = conn.properties;
+        if (props.source_id === featureId || props.target_id === featureId) {
+          relatedIds.add(props.source_id);
+          relatedIds.add(props.target_id);
+        }
+      });
+
+      // Dim all connections, then highlight related ones
+      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setPaintProperty(layerId, 'line-opacity', [
+            'case',
+            ['any',
+              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
+              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
+            ],
+            0.9,
+            0.15
+          ]);
+          map.setPaintProperty(layerId, 'line-width', [
+            'case',
+            ['any',
+              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
+              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
+            ],
+            3,
+            1
+          ]);
+        }
+      });
+
+      // Highlight connected points
+      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setLayoutProperty(layerId, 'icon-size', [
+            'case',
+            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
+            0.62,
+            0.38
+          ]);
+          map.setPaintProperty(layerId, 'icon-opacity', [
+            'case',
+            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
+            1,
+            0.45
+          ]);
+        }
+      });
+    }
+
+    /** MapLibre stringifies nested props — prefer raw GeoJSON by id. */
+    function resolveSiteProperties(mapProps, featureType) {
+      const collections = {
+        data_center: dataCentersData,
+        raw_material: rawMaterialsData,
+        energy_plant: energyPlantsData
+      };
+      const collection = collections[featureType];
+      if (collection && mapProps?.id) {
+        const match = collection.features.find(f => f.properties.id === mapProps.id);
+        if (match) return match.properties;
+      }
+      return mapProps;
+    }
+
+    function resolveConnectionProperties(mapProps) {
+      if (connectionsData && mapProps?.id) {
+        const match = connectionsData.features.find(f => f.properties.id === mapProps.id);
+        if (match) return match.properties;
+      }
+      return mapProps;
+    }
+
+    function formatNumber(value) {
+      if (value === null || value === undefined || value === '') return null;
+      return typeof value === 'number' ? value.toLocaleString('it-IT') : String(value);
+    }
+
+    function buildSourcesHtml(sources) {
+      if (!Array.isArray(sources) || sources.length === 0) return '';
+      let html = `<div class="detail-section">
+        <h4>${i18n.popup.sources}</h4>
+        <ul class="detail-sources">`;
+      sources.forEach(src => {
+        const title = src.url
+          ? `<a href="${src.url}" target="_blank" rel="noopener noreferrer">${src.title}</a>`
+          : src.title;
+        const meta = [src.accessed_at, src.note].filter(Boolean).join(' — ');
+        html += `<li>${title}${meta ? `<span class="detail-source-meta">${meta}</span>` : ''}</li>`;
+      });
+      html += '</ul></div>';
+      return html;
+    }
+
+    function buildImpactHtml(impact) {
+      if (!impact || typeof impact !== 'object') return '';
+      const rows = [
+        [i18n.popup.capacity_mw, formatNumber(impact.capacity_mw)],
+        [i18n.popup.pue, formatNumber(impact.pue)],
+        [i18n.popup.water_use, formatNumber(impact.water_use_m3_year)],
+        [i18n.popup.land, formatNumber(impact.land_ha)],
+        [i18n.popup.co2, formatNumber(impact.co2_t_year_est)]
+      ].filter(([, v]) => v !== null);
+
+      let html = `<div class="detail-section"><h4>${i18n.popup.impact}</h4>`;
+      if (rows.length === 0 && !impact.energy_mix_note_it) {
+        html += `<p class="detail-empty">Dati di impatto non ancora compilati.</p>`;
+      }
+      rows.forEach(([label, value]) => {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${label}</div>
+          <div class="detail-field-value">${value}</div>
+        </div>`;
+      });
+      if (impact.energy_mix_note_it) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.energy_mix}</div>
+          <div class="detail-field-value">${impact.energy_mix_note_it}</div>
+        </div>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function buildEmploymentHtml(properties) {
+      const emp = properties.employment;
+      const risks = properties.labor_risks;
+      const community = properties.community_impact_it;
+      if (!emp && !(risks && risks.length) && !community) return '';
+
+      let html = `<div class="detail-section"><h4>${i18n.popup.employment}</h4>`;
+      if (emp) {
+        const rows = [
+          [i18n.popup.jobs_direct, formatNumber(emp.direct)],
+          [i18n.popup.jobs_indirect, formatNumber(emp.indirect_est)],
+          [i18n.popup.jobs_contractors, formatNumber(emp.contractors_est)]
+        ].filter(([, v]) => v !== null);
+        rows.forEach(([label, value]) => {
+          html += `<div class="detail-field">
+            <div class="detail-field-label">${label}</div>
+            <div class="detail-field-value">${value}</div>
+          </div>`;
+        });
+        if (emp.note_it) {
+          html += `<p class="detail-note">${emp.note_it}</p>`;
+        }
+        if (Array.isArray(emp.conditions_tags) && emp.conditions_tags.length) {
+          html += `<div class="detail-tags">${emp.conditions_tags.map(t => `<span class="detail-tag">${t}</span>`).join('')}</div>`;
+        }
+      }
+      if (Array.isArray(risks) && risks.length) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.labor_risks}</div>
+          <div class="detail-tags">${risks.map(t => `<span class="detail-tag detail-tag-risk">${t}</span>`).join('')}</div>
+        </div>`;
+      }
+      if (community) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.community}</div>
+          <div class="detail-field-value">${community}</div>
+        </div>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
+    // Build detail sidebar HTML for a point feature
+    function buildPointDetail(properties, featureType) {
+      const accentColor = featureType === 'data_center' ? COLORS.dc :
+                          featureType === 'raw_material' ? COLORS.rm : COLORS.ep;
+      const shapeClass = featureType === 'data_center' ? '' :
+                         featureType === 'raw_material' ? 'shape-rm' : 'shape-ep';
+      const typeLabel = featureType === 'data_center' ? i18n.layers.data_centers :
+                        featureType === 'raw_material' ? i18n.layers.raw_materials :
+                        i18n.layers.energy_plants;
+
+      let html = '';
+
+      // Fields
+      html += `<div class="detail-field">
+        <div class="detail-field-label">${i18n.popup.operator}</div>
+        <div class="detail-field-value">${properties.operator || 'N/D'}</div>
+      </div>`;
+
+      html += `<div class="detail-field">
+        <div class="detail-field-label">${i18n.popup.type}</div>
+        <div class="detail-field-value">${getSubtypeLabel(properties.subtype)}</div>
+      </div>`;
+
+      if (properties.status && i18n.status[properties.status]) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.status}</div>
+          <div class="detail-field-value">${i18n.status[properties.status]}</div>
+        </div>`;
+      }
+
+      if (properties.capacity) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.capacity}</div>
+          <div class="detail-field-value">${properties.capacity}</div>
+        </div>`;
+      }
+
+      html += `<div class="detail-field">
+        <div class="detail-field-label">${i18n.popup.city}</div>
+        <div class="detail-field-value">${properties.city}, ${getCountryName(properties.country)}</div>
+      </div>`;
+
+      if (properties.confidence && i18n.confidence[properties.confidence]) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.confidence}</div>
+          <div class="detail-field-value"><span class="certainty-badge certainty-${properties.confidence}">${i18n.confidence[properties.confidence]}</span></div>
+        </div>`;
+      }
+
+      if (properties.updated_at) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.updated_at}</div>
+          <div class="detail-field-value">${properties.updated_at}</div>
+        </div>`;
+      }
+
+      // Description
+      if (properties.description_it) {
+        html += `<div class="detail-description">${properties.description_it}</div>`;
+      }
+
+      html += buildImpactHtml(properties.impact);
+      html += buildEmploymentHtml(properties);
+      html += buildSourcesHtml(properties.sources);
+
+      // Connections
+      const { incoming, outgoing } = findConnections(properties.id);
+
+      if (incoming.length > 0 || outgoing.length > 0) {
+        html += `<div class="detail-connections">
+          <h4>${i18n.popup.connections}</h4>`;
+
+        if (featureType === 'data_center') {
+          const poweredBy = incoming.filter(c => c.properties.relationship_type === 'powers');
+          const componentsFrom = incoming.filter(c => c.properties.relationship_type === 'manufactures_for');
+
+          if (poweredBy.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.powered_by}</div>`;
+            poweredBy.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-power"></span>
+                ${c.properties.source_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+
+          if (componentsFrom.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.components_from}</div>`;
+            componentsFrom.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-mfg"></span>
+                ${c.properties.source_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+        } else if (featureType === 'raw_material') {
+          if (outgoing.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.supplies_to}</div>`;
+            outgoing.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-supply"></span>
+                ${c.properties.target_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+          if (incoming.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.receives_from}</div>`;
+            incoming.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-supply"></span>
+                ${c.properties.source_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+        } else if (featureType === 'energy_plant') {
+          if (outgoing.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.powers_to}</div>`;
+            outgoing.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-power"></span>
+                ${c.properties.target_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+        }
+
+        html += '</div>';
+      }
+
+      return { html, accentColor, shapeClass, typeLabel };
+    }
+
+    // Open detail sidebar for a point feature
+    function openPointDetail(properties, featureType) {
+      const resolved = resolveSiteProperties(properties, featureType);
+      const { html, accentColor, shapeClass, typeLabel } = buildPointDetail(resolved, featureType);
+      detailTitle.textContent = resolved.name;
+      detailSidebar.style.setProperty('--accent', accentColor);
+      if (detailType) {
+        detailType.hidden = false;
+        detailType.innerHTML = `<i class="${shapeClass}"></i>${typeLabel}`;
+      }
+      detailBody.innerHTML = html;
+      detailSidebar.classList.add('open');
+      document.body.classList.add('detail-open');
+      highlightConnections(resolved.id);
+    }
+
+    // Show connection popup (native MapLibre popup for lines)
+    function showConnectionPopup(e, properties) {
+      const props = resolveConnectionProperties(properties);
+      const relType = props.relationship_type;
+      const typeColor = relType === 'powers' ? COLORS.ep :
+                        relType === 'supplies' ? COLORS.rm : COLORS.dc;
+      const typeBg = relType === 'powers' ? 'rgba(31, 107, 85, 0.12)' :
+                     relType === 'supplies' ? 'rgba(176, 74, 44, 0.12)' : 'rgba(26, 95, 130, 0.12)';
+      const certainty = props.certainty && i18n.certainty[props.certainty]
+        ? `<span class="certainty-badge certainty-${props.certainty}">${i18n.popup.certainty}: ${i18n.certainty[props.certainty]}</span>`
+        : '';
+      const evidence = props.evidence_note_it
+        ? `<p class="conn-evidence"><strong>${i18n.popup.evidence}:</strong> ${props.evidence_note_it}</p>`
+        : '';
+
+      const popupHtml = `
+        <div class="connection-popup">
+          <h3>${props.source_name} → ${props.target_name}</h3>
+          <span class="conn-type" style="background: ${typeBg}; color: ${typeColor};">${getRelationshipLabel(relType)}</span>
+          ${certainty}
+          <p class="conn-desc">${props.description_it || ''}</p>
+          ${evidence}
+        </div>
+      `;
+
+      new Popup({ closeOnClick: true, maxWidth: '320px' })
+        .setLngLat(e.lngLat)
+        .setHTML(popupHtml)
+        .addTo(map);
+    }
+
+    // Show tooltip
+    function showTooltip(e, text) {
+      tooltip.textContent = text;
+      tooltip.style.left = e.point.x + 'px';
+      tooltip.style.top = e.point.y + 'px';
+      tooltip.classList.add('visible');
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('visible');
+    }
+
+    // Load data and add layers
+    map.on('load', async () => {
+      // Fetch all GeoJSON data
+      const [dcRes, rmRes, epRes, connRes] = await Promise.all([
+        fetch('./data/data_centers.geojson'),
+        fetch('./data/raw_materials.geojson'),
+        fetch('./data/energy_plants.geojson'),
+        fetch('./data/connections.geojson')
+      ]);
+
+      dataCentersData = await dcRes.json();
+      rawMaterialsData = await rmRes.json();
+      energyPlantsData = await epRes.json();
+      connectionsData = await connRes.json();
+
+      // Marker icons by subtype
+      Object.values(FILTER_GROUPS).forEach((group) => {
+        group.subtypes.forEach((subtype) => {
+          const path = ICON_PATHS[subtype];
+          if (path) {
+            map.addImage(iconImageId(subtype), createMapIconImage(path, group.color));
+          }
+        });
+      });
+
+      // Add sources
+      map.addSource('data-centers', { type: 'geojson', data: dataCentersData });
+      map.addSource('raw-materials', { type: 'geojson', data: rawMaterialsData });
+      map.addSource('energy-plants', { type: 'geojson', data: energyPlantsData });
+      map.addSource('connections', { type: 'geojson', data: connectionsData });
+
+      // Add connection line layers (below points)
+      map.addLayer({
+        id: 'connections-powers',
+        type: 'line',
+        source: 'connections',
+        filter: ['==', ['get', 'relationship_type'], 'powers'],
+        paint: {
+          'line-color': COLORS.ep,
+          'line-width': 1.6,
+          'line-dasharray': [2, 2.5],
+          'line-opacity': 0.55
+        }
+      });
+
+      map.addLayer({
+        id: 'connections-supplies',
+        type: 'line',
+        source: 'connections',
+        filter: ['==', ['get', 'relationship_type'], 'supplies'],
+        paint: {
+          'line-color': COLORS.rm,
+          'line-width': 1.6,
+          'line-dasharray': [1.5, 2.5],
+          'line-opacity': 0.55
+        }
+      });
+
+      map.addLayer({
+        id: 'connections-manufactures',
+        type: 'line',
+        source: 'connections',
+        filter: ['==', ['get', 'relationship_type'], 'manufactures_for'],
+        paint: {
+          'line-color': COLORS.dc,
+          'line-width': 1.6,
+          'line-dasharray': [4, 3],
+          'line-opacity': 0.55
+        }
+      });
+
+      // Point layers as subtype icons
+      map.addLayer({
+        id: 'data-centers-layer',
+        type: 'symbol',
+        source: 'data-centers',
+        layout: {
+          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale')),
+          'icon-size': 0.48,
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true
+        },
+        paint: {
+          'icon-opacity': 0.95
+        }
+      });
+
+      map.addLayer({
+        id: 'raw-materials-layer',
+        type: 'symbol',
+        source: 'raw-materials',
+        layout: {
+          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine')),
+          'icon-size': 0.48,
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true
+        },
+        paint: {
+          'icon-opacity': 0.95
+        }
+      });
+
+      map.addLayer({
+        id: 'energy-plants-layer',
+        type: 'symbol',
+        source: 'energy-plants',
+        layout: {
+          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas')),
+          'icon-size': 0.48,
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true
+        },
+        paint: {
+          'icon-opacity': 0.95
+        }
+      });
+
+      // --- Interactivity ---
+
+      const pointLayers = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'];
+      const connectionLayers = ['connections-powers', 'connections-supplies', 'connections-manufactures'];
+      const allInteractiveLayers = [...pointLayers, ...connectionLayers];
+      const connLayerByRel = {
+        powers: 'connections-powers',
+        supplies: 'connections-supplies',
+        manufactures_for: 'connections-manufactures'
+      };
+
+      // Cursor pointer on hover
+      allInteractiveLayers.forEach(layerId => {
+        map.on('mouseenter', layerId, () => {
+          map.getCanvas().style.cursor = 'pointer';
+        });
+        map.on('mouseleave', layerId, () => {
+          map.getCanvas().style.cursor = '';
+          hideTooltip();
+        });
+      });
+
+      // Tooltip on hover for points
+      pointLayers.forEach(layerId => {
+        map.on('mousemove', layerId, (e) => {
+          if (e.features && e.features.length > 0) {
+            const name = e.features[0].properties.name;
+            showTooltip(e, name);
+          }
+        });
+        map.on('mouseleave', layerId, () => {
+          hideTooltip();
+        });
+      });
+
+      // Tooltip on hover for connections
+      connectionLayers.forEach(layerId => {
+        map.on('mousemove', layerId, (e) => {
+          if (e.features && e.features.length > 0) {
+            const props = e.features[0].properties;
+            showTooltip(e, `${props.source_name} → ${props.target_name}`);
+          }
+        });
+        map.on('mouseleave', layerId, () => {
+          hideTooltip();
+        });
+      });
+
+      // Click on data center points
+      map.on('click', 'data-centers-layer', (e) => {
+        if (e.features && e.features.length > 0) {
+          const properties = e.features[0].properties;
+          openPointDetail(properties, 'data_center');
+          e.originalEvent.stopPropagation();
+        }
+      });
+
+      // Click on raw material points
+      map.on('click', 'raw-materials-layer', (e) => {
+        if (e.features && e.features.length > 0) {
+          const properties = e.features[0].properties;
+          openPointDetail(properties, 'raw_material');
+          e.originalEvent.stopPropagation();
+        }
+      });
+
+      // Click on energy plant points
+      map.on('click', 'energy-plants-layer', (e) => {
+        if (e.features && e.features.length > 0) {
+          const properties = e.features[0].properties;
+          openPointDetail(properties, 'energy_plant');
+          e.originalEvent.stopPropagation();
+        }
+      });
+
+      // Click on connection lines
+      connectionLayers.forEach(layerId => {
+        map.on('click', layerId, (e) => {
+          if (e.features && e.features.length > 0) {
+            const properties = e.features[0].properties;
+            showConnectionPopup(e, properties);
+            e.originalEvent.stopPropagation();
+          }
+        });
+      });
+
+      // Click on map background to close sidebar
+      map.on('click', (e) => {
+        // Check if click was on any interactive layer
+        const features = map.queryRenderedFeatures(e.point, { layers: allInteractiveLayers });
+        if (features.length === 0) {
+          closeDetailSidebar();
+        }
+      });
+
+      // --- Filters ---
+      const filterState = {
+        data_centers: {
+          on: true,
+          subtypes: new Set(FILTER_GROUPS.data_centers.subtypes)
+        },
+        energy_plants: {
+          on: true,
+          subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes)
+        },
+        raw_materials: {
+          on: true,
+          subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes)
+        },
+        connections: {
+          on: true,
+          types: new Set(CONNECTION_TYPES)
+        }
+      };
+
+      const dataByGroup = {
+        data_centers: () => dataCentersData,
+        energy_plants: () => energyPlantsData,
+        raw_materials: () => rawMaterialsData,
+        connections: () => connectionsData
+      };
+
+      function countVisible(groupId) {
+        const data = dataByGroup[groupId]();
+        if (!data) return 0;
+        if (groupId === 'connections') {
+          if (!filterState.connections.on) return 0;
+          return data.features.filter(f =>
+            filterState.connections.types.has(f.properties.relationship_type)
+          ).length;
+        }
+        const state = filterState[groupId];
+        if (!state.on) return 0;
+        return data.features.filter(f => state.subtypes.has(f.properties.subtype)).length;
+      }
+
+      function updateFilterCounts() {
+        let total = 0;
+        ['data_centers', 'energy_plants', 'raw_materials', 'connections'].forEach((id) => {
+          const n = countVisible(id);
+          total += n;
+          const el = document.querySelector(`[data-count-for="${id}"]`);
+          if (el) el.textContent = String(n);
+        });
+        const summary = document.getElementById('filters-count');
+        if (summary) {
+          summary.textContent = `Visibili ${total} elementi`;
+        }
+      }
+
+      function updateLegendDim() {
+        document.querySelectorAll('[data-legend-subtype]').forEach((el) => {
+          const subtype = el.getAttribute('data-legend-subtype');
+          let active = false;
+          Object.keys(FILTER_GROUPS).forEach((gid) => {
+            const g = FILTER_GROUPS[gid];
+            if (g.subtypes.includes(subtype)) {
+              active = filterState[gid].on && filterState[gid].subtypes.has(subtype);
+            }
+          });
+          el.classList.toggle('is-dimmed', !active);
+        });
+      }
+
+      function applyFilters() {
+        Object.keys(FILTER_GROUPS).forEach((gid) => {
+          const group = FILTER_GROUPS[gid];
+          const state = filterState[gid];
+          const visible = state.on && state.subtypes.size > 0;
+          map.setLayoutProperty(group.layerId, 'visibility', visible ? 'visible' : 'none');
+          if (visible) {
+            map.setFilter(group.layerId, [
+              'in',
+              ['get', 'subtype'],
+              ['literal', Array.from(state.subtypes)]
+            ]);
+          }
+        });
+
+        CONNECTION_TYPES.forEach((rel) => {
+          const layerId = connLayerByRel[rel];
+          const show = filterState.connections.on && filterState.connections.types.has(rel);
+          map.setLayoutProperty(layerId, 'visibility', show ? 'visible' : 'none');
+        });
+
+        updateFilterCounts();
+        updateLegendDim();
+      }
+
+      function syncChipUI() {
+        document.querySelectorAll('.filter-chip[data-subtype]').forEach((btn) => {
+          const group = btn.getAttribute('data-group');
+          const subtype = btn.getAttribute('data-subtype');
+          const on = filterState[group].subtypes.has(subtype);
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.filter-chip[data-rel]').forEach((btn) => {
+          const rel = btn.getAttribute('data-rel');
+          const on = filterState.connections.types.has(rel);
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.group-enabled').forEach((input) => {
+          const group = input.getAttribute('data-group');
+          input.checked = filterState[group].on;
+        });
+      }
+
+      function resetFilters() {
+        Object.keys(FILTER_GROUPS).forEach((gid) => {
+          filterState[gid].on = true;
+          filterState[gid].subtypes = new Set(FILTER_GROUPS[gid].subtypes);
+        });
+        filterState.connections.on = true;
+        filterState.connections.types = new Set(CONNECTION_TYPES);
+        syncChipUI();
+        applyFilters();
+      }
+
+      document.querySelectorAll('.filter-group-toggle').forEach((label) => {
+        label.addEventListener('click', (e) => e.stopPropagation());
+      });
+
+      document.querySelectorAll('.group-enabled').forEach((input) => {
+        input.addEventListener('change', () => {
+          const group = input.getAttribute('data-group');
+          filterState[group].on = input.checked;
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll('.filter-chip[data-subtype]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const group = btn.getAttribute('data-group');
+          const subtype = btn.getAttribute('data-subtype');
+          const set = filterState[group].subtypes;
+          if (set.has(subtype)) set.delete(subtype);
+          else set.add(subtype);
+          if (set.size === 0) {
+            filterState[group].on = false;
+          } else if (!filterState[group].on) {
+            filterState[group].on = true;
+          }
+          syncChipUI();
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll('.filter-chip[data-rel]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const rel = btn.getAttribute('data-rel');
+          const set = filterState.connections.types;
+          if (set.has(rel)) set.delete(rel);
+          else set.add(rel);
+          if (set.size === 0) filterState.connections.on = false;
+          else if (!filterState.connections.on) filterState.connections.on = true;
+          syncChipUI();
+          applyFilters();
+        });
+      });
+
+      const resetBtn = document.getElementById('filters-reset');
+      if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+
+      applyFilters();
+    });
+  })();</script>  </body></html>

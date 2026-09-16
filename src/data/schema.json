@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://techmap.local/schemas/site-feature.json",
+  "title": "TechMap Site Feature (v0.2)",
+  "description": "Feature GeoJSON Point per data center, impianti energetici e siti di estrazione/produzione. Campi nuovi opzionali; null = sconosciuto.",
+  "type": "object",
+  "required": ["type", "geometry", "properties"],
+  "properties": {
+    "type": { "const": "Feature" },
+    "geometry": {
+      "type": "object",
+      "required": ["type", "coordinates"],
+      "properties": {
+        "type": { "const": "Point" },
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": { "type": "number" },
+          "description": "[lon, lat] WGS84"
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "required": ["id", "name", "type", "subtype", "operator", "country", "city"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(dc|ep|rm)_[0-9]{3,}$" },
+        "name": { "type": "string" },
+        "type": { "enum": ["data_center", "energy_plant", "raw_material"] },
+        "subtype": { "type": "string" },
+        "operator": { "type": "string" },
+        "capacity": {
+          "type": "string",
+          "description": "Etichetta display legacy; preferire impact.capacity_mw per confronti"
+        },
+        "description_it": { "type": "string" },
+        "country": { "type": "string", "minLength": 2, "maxLength": 2 },
+        "city": { "type": "string" },
+        "status": {
+          "enum": ["planned", "under_construction", "operational", "decommissioned", "unknown"]
+        },
+        "site_category": {
+          "enum": ["extraction", "manufacturing", "infrastructure"]
+        },
+        "opened_year": { "type": ["integer", "null"] },
+        "updated_at": { "type": "string", "format": "date" },
+        "confidence": { "enum": ["high", "medium", "low", "estimated"] },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceRef" }
+        },
+        "impact": { "$ref": "#/$defs/impact" },
+        "employment": { "$ref": "#/$defs/employment" },
+        "community_impact_it": { "type": "string" },
+        "labor_risks": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Codici curati: conflict_zone, artisanal_mining, water_stress, land_use_conflict, precarious_contracts, ..."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sourceRef": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": { "type": "string" },
+        "url": { "type": "string" },
+        "accessed_at": { "type": "string", "format": "date" },
+        "note": { "type": "string" }
+      }
+    },
+    "impact": {
+      "type": "object",
+      "properties": {
+        "capacity_mw": { "type": ["number", "null"] },
+        "power_draw_mw_est": { "type": ["number", "null"] },
+        "pue": { "type": ["number", "null"] },
+        "water_use_m3_year": { "type": ["number", "null"] },
+        "land_ha": { "type": ["number", "null"] },
+        "co2_t_year_est": { "type": ["number", "null"] },
+        "energy_mix_note_it": { "type": "string" }
+      }
+    },
+    "employment": {
+      "type": "object",
+      "properties": {
+        "direct": { "type": ["integer", "null"] },
+        "indirect_est": { "type": ["integer", "null"] },
+        "contractors_est": { "type": ["integer", "null"] },
+        "note_it": { "type": "string" },
+        "conditions_tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "connectionProperties": {
+      "type": "object",
+      "required": ["id", "source_id", "target_id", "source_name", "target_name", "relationship_type"],
+      "properties": {
+        "id": { "type": "string" },
+        "source_id": { "type": "string" },
+        "target_id": { "type": "string" },
+        "source_name": { "type": "string" },
+        "target_name": { "type": "string" },
+        "relationship_type": {
+          "enum": ["powers", "supplies", "manufactures_for"]
+        },
+        "description_it": { "type": "string" },
+        "certainty": {
+          "enum": ["confirmed", "likely", "inferred", "disputed"]
+        },
+        "evidence_note_it": { "type": "string" },
+        "as_of": { "type": "string", "format": "date" },
+        "updated_at": { "type": "string", "format": "date" },
+        "sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceRef" }
+        }
+      }
+    }
+  }
+}

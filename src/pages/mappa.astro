@@ -1,0 +1,1014 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import '../styles/site-header.css';
+import MapView from '../components/MapView.astro';
+import i18n from '../i18n/it.json';
+import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
+---
+
+<Layout title={`${i18n.app.title} — Mappa`} withMap={true} bodyClass="is-map">
+  <MapView />
+
+  <!-- Client-side MapLibre Script -->
+  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES }}>
+    // MapLibre GL JS loaded from CDN as global `maplibregl`
+    var MaplibreMap = maplibregl.Map;
+    var NavigationControl = maplibregl.NavigationControl;
+    var Popup = maplibregl.Popup;
+
+    // i18n strings loaded inline for client-side use
+    const i18n = {
+      app: {
+        title: "L'Infrastruttura Invisibile",
+        subtitle: "La Mappa Fisica del Digitale e dell'IA"
+      },
+      layers: {
+        data_centers: "Data Center",
+        raw_materials: "Materie Prime e Produzione",
+        energy_plants: "Impianti Energetici",
+        connections: "Connessioni"
+      },
+      subtypes: {
+        colocation: "Colocation",
+        hyperscale: "Hyperscale",
+        enterprise: "Enterprise",
+        semiconductor_fab: "Fabbrica di semiconduttori",
+        component_manufacturing: "Produzione componenti",
+        lithium_mine: "Miniera di litio",
+        cobalt_mine: "Miniera di cobalto",
+        rare_earth_mine: "Miniera di terre rare",
+        gas: "Gas naturale (ciclo combinato)",
+        solar: "Solare fotovoltaico",
+        wind: "Eolico",
+        hydro: "Idroelettrico",
+        nuclear: "Nucleare"
+      },
+      relationships: {
+        powers: "Alimenta",
+        supplies: "Fornisce materiali",
+        manufactures_for: "Produce componenti per"
+      },
+      popup: {
+        operator: "Operatore",
+        type: "Tipo",
+        capacity: "Capacità",
+        city: "Città",
+        country: "Paese",
+        description: "Descrizione",
+        connections: "Connessioni",
+        powered_by: "Alimentato da",
+        components_from: "Componenti da",
+        powers_to: "Alimenta",
+        supplies_to: "Fornisce a",
+        receives_from: "Riceve da",
+        relationship: "Relazione",
+        close: "Chiudi",
+        impact: "Impatto",
+        capacity_mw: "Potenza (MW)",
+        pue: "PUE",
+        water_use: "Acqua (m³/anno)",
+        land: "Suolo (ha)",
+        co2: "CO₂ stimata (t/anno)",
+        energy_mix: "Mix / note energia",
+        employment: "Lavoro",
+        jobs_direct: "Occupati diretti",
+        jobs_indirect: "Indiretti (stima)",
+        jobs_contractors: "Appalti / temporanei (stima)",
+        labor_risks: "Rischi lavoro / territorio",
+        community: "Impatto di comunità",
+        sources: "Fonti",
+        confidence: "Affidabilità dato",
+        certainty: "Certezza del legame",
+        evidence: "Evidenza",
+        updated_at: "Aggiornato",
+        status: "Stato"
+      },
+      confidence: {
+        high: "Alta",
+        medium: "Media",
+        low: "Bassa",
+        estimated: "Stima"
+      },
+      certainty: {
+        confirmed: "Confermato",
+        likely: "Probabile",
+        inferred: "Inferito",
+        disputed: "Conteso"
+      },
+      status: {
+        planned: "Pianificato",
+        under_construction: "In costruzione",
+        operational: "Operativo",
+        decommissioned: "Disattivato",
+        unknown: "Sconosciuto"
+      },
+      countries: {
+        IT: "Italia", DE: "Germania", NL: "Paesi Bassi", AT: "Austria",
+        FI: "Finlandia", SE: "Svezia", IE: "Irlanda", FR: "Francia",
+        PT: "Portogallo", RS: "Serbia", TW: "Taiwan", AU: "Australia",
+        CL: "Cile", CD: "Rep. Dem. del Congo", GL: "Groenlandia", CN: "Cina"
+      }
+    };
+
+    // Store loaded GeoJSON data for cross-referencing connections
+    let connectionsData = null;
+    let dataCentersData = null;
+    let rawMaterialsData = null;
+    let energyPlantsData = null;
+
+    const COLORS = {
+      dc: '#1a5f82',
+      rm: '#b04a2c',
+      ep: '#1f6b55',
+      conn: '#5c6570'
+    };
+
+    // Initialize map
+    const map = new MaplibreMap({
+      container: 'map',
+      style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+      center: [11.0, 44.5],
+      zoom: 5,
+      minZoom: 2,
+      maxZoom: 18,
+      attributionControl: true
+    });
+
+    // Add navigation controls bottom-right
+    map.addControl(new NavigationControl({ showCompass: false }), 'bottom-right');
+
+    // Tooltip element
+    const tooltip = document.getElementById('map-tooltip');
+
+    // Legend panel toggle
+    const legendPanel = document.getElementById('legend-panel');
+    const legendHeader = document.getElementById('legend-header');
+
+    legendHeader.addEventListener('click', () => {
+      legendPanel.classList.toggle('collapsed');
+    });
+
+    // Detail sidebar
+    const detailSidebar = document.getElementById('detail-sidebar');
+    const detailTitle = document.getElementById('detail-title');
+    const detailType = document.getElementById('detail-type');
+    const detailBody = document.getElementById('detail-body');
+    const detailClose = document.getElementById('detail-close');
+
+    detailClose.addEventListener('click', closeDetailSidebar);
+
+    function closeDetailSidebar() {
+      detailSidebar.classList.remove('open');
+      document.body.classList.remove('detail-open');
+      resetHighlights();
+    }
+
+    function createMapIconImage(pathD, color, size = 72) {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const cx = size / 2;
+      const cy = size / 2;
+      const r = size * 0.36;
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.lineWidth = size * 0.045;
+      ctx.strokeStyle = 'rgba(255,255,255,0.95)';
+      ctx.stroke();
+
+      const scale = (size * 0.4) / 24;
+      ctx.save();
+      ctx.translate(cx - 12 * scale, cy - 12 * scale);
+      ctx.scale(scale, scale);
+      const path = new Path2D(pathD);
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.85;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.stroke(path);
+      ctx.restore();
+
+      return {
+        width: size,
+        height: size,
+        data: ctx.getImageData(0, 0, size, size).data
+      };
+    }
+
+    function iconImageId(subtype) {
+      return 'icon-' + subtype;
+    }
+
+    function buildIconMatch(subtypes, fallback) {
+      const expr = ['match', ['get', 'subtype']];
+      subtypes.forEach((s) => {
+        expr.push(s, iconImageId(s));
+      });
+      expr.push(fallback);
+      return expr;
+    }
+
+    function resetHighlights() {
+      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setPaintProperty(layerId, 'line-opacity', 0.55);
+          map.setPaintProperty(layerId, 'line-width', 1.6);
+        }
+      });
+      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setLayoutProperty(layerId, 'icon-size', 0.48);
+          map.setPaintProperty(layerId, 'icon-opacity', 0.95);
+        }
+      });
+    }
+
+    // Helper: get country name
+    function getCountryName(code) {
+      return i18n.countries[code] || code;
+    }
+
+    // Helper: get subtype label
+    function getSubtypeLabel(subtype) {
+      return i18n.subtypes[subtype] || subtype;
+    }
+
+    // Helper: get relationship label
+    function getRelationshipLabel(type) {
+      return i18n.relationships[type] || type;
+    }
+
+    // Helper: find connections for a feature
+    function findConnections(featureId) {
+      if (!connectionsData) return { incoming: [], outgoing: [] };
+      const incoming = connectionsData.features.filter(f => f.properties.target_id === featureId);
+      const outgoing = connectionsData.features.filter(f => f.properties.source_id === featureId);
+      return { incoming, outgoing };
+    }
+
+    // Helper: highlight connections for a feature
+    function highlightConnections(featureId) {
+      if (!connectionsData) return;
+
+      const relatedIds = new Set();
+      relatedIds.add(featureId);
+
+      connectionsData.features.forEach(conn => {
+        const props = conn.properties;
+        if (props.source_id === featureId || props.target_id === featureId) {
+          relatedIds.add(props.source_id);
+          relatedIds.add(props.target_id);
+        }
+      });
+
+      // Dim all connections, then highlight related ones
+      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setPaintProperty(layerId, 'line-opacity', [
+            'case',
+            ['any',
+              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
+              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
+            ],
+            0.9,
+            0.15
+          ]);
+          map.setPaintProperty(layerId, 'line-width', [
+            'case',
+            ['any',
+              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
+              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
+            ],
+            3,
+            1
+          ]);
+        }
+      });
+
+      // Highlight connected points
+      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setLayoutProperty(layerId, 'icon-size', [
+            'case',
+            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
+            0.62,
+            0.38
+          ]);
+          map.setPaintProperty(layerId, 'icon-opacity', [
+            'case',
+            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
+            1,
+            0.45
+          ]);
+        }
+      });
+    }
+
+    /** MapLibre stringifies nested props — prefer raw GeoJSON by id. */
+    function resolveSiteProperties(mapProps, featureType) {
+      const collections = {
+        data_center: dataCentersData,
+        raw_material: rawMaterialsData,
+        energy_plant: energyPlantsData
+      };
+      const collection = collections[featureType];
+      if (collection && mapProps?.id) {
+        const match = collection.features.find(f => f.properties.id === mapProps.id);
+        if (match) return match.properties;
+      }
+      return mapProps;
+    }
+
+    function resolveConnectionProperties(mapProps) {
+      if (connectionsData && mapProps?.id) {
+        const match = connectionsData.features.find(f => f.properties.id === mapProps.id);
+        if (match) return match.properties;
+      }
+      return mapProps;
+    }
+
+    function formatNumber(value) {
+      if (value === null || value === undefined || value === '') return null;
+      return typeof value === 'number' ? value.toLocaleString('it-IT') : String(value);
+    }
+
+    function buildSourcesHtml(sources) {
+      if (!Array.isArray(sources) || sources.length === 0) return '';
+      let html = `<div class="detail-section">
+        <h4>${i18n.popup.sources}</h4>
+        <ul class="detail-sources">`;
+      sources.forEach(src => {
+        const title = src.url
+          ? `<a href="${src.url}" target="_blank" rel="noopener noreferrer">${src.title}</a>`
+          : src.title;
+        const meta = [src.accessed_at, src.note].filter(Boolean).join(' — ');
+        html += `<li>${title}${meta ? `<span class="detail-source-meta">${meta}</span>` : ''}</li>`;
+      });
+      html += '</ul></div>';
+      return html;
+    }
+
+    function buildImpactHtml(impact) {
+      if (!impact || typeof impact !== 'object') return '';
+      const rows = [
+        [i18n.popup.capacity_mw, formatNumber(impact.capacity_mw)],
+        [i18n.popup.pue, formatNumber(impact.pue)],
+        [i18n.popup.water_use, formatNumber(impact.water_use_m3_year)],
+        [i18n.popup.land, formatNumber(impact.land_ha)],
+        [i18n.popup.co2, formatNumber(impact.co2_t_year_est)]
+      ].filter(([, v]) => v !== null);
+
+      let html = `<div class="detail-section"><h4>${i18n.popup.impact}</h4>`;
+      if (rows.length === 0 && !impact.energy_mix_note_it) {
+        html += `<p class="detail-empty">Dati di impatto non ancora compilati.</p>`;
+      }
+      rows.forEach(([label, value]) => {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${label}</div>
+          <div class="detail-field-value">${value}</div>
+        </div>`;
+      });
+      if (impact.energy_mix_note_it) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.energy_mix}</div>
+          <div class="detail-field-value">${impact.energy_mix_note_it}</div>
+        </div>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function buildEmploymentHtml(properties) {
+      const emp = properties.employment;
+      const risks = properties.labor_risks;
+      const community = properties.community_impact_it;
+      if (!emp && !(risks && risks.length) && !community) return '';
+
+      let html = `<div class="detail-section"><h4>${i18n.popup.employment}</h4>`;
+      if (emp) {
+        const rows = [
+          [i18n.popup.jobs_direct, formatNumber(emp.direct)],
+          [i18n.popup.jobs_indirect, formatNumber(emp.indirect_est)],
+          [i18n.popup.jobs_contractors, formatNumber(emp.contractors_est)]
+        ].filter(([, v]) => v !== null);
+        rows.forEach(([label, value]) => {
+          html += `<div class="detail-field">
+            <div class="detail-field-label">${label}</div>
+            <div class="detail-field-value">${value}</div>
+          </div>`;
+        });
+        if (emp.note_it) {
+          html += `<p class="detail-note">${emp.note_it}</p>`;
+        }
+        if (Array.isArray(emp.conditions_tags) && emp.conditions_tags.length) {
+          html += `<div class="detail-tags">${emp.conditions_tags.map(t => `<span class="detail-tag">${t}</span>`).join('')}</div>`;
+        }
+      }
+      if (Array.isArray(risks) && risks.length) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.labor_risks}</div>
+          <div class="detail-tags">${risks.map(t => `<span class="detail-tag detail-tag-risk">${t}</span>`).join('')}</div>
+        </div>`;
+      }
+      if (community) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.community}</div>
+          <div class="detail-field-value">${community}</div>
+        </div>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
+    // Build detail sidebar HTML for a point feature
+    function buildPointDetail(properties, featureType) {
+      const accentColor = featureType === 'data_center' ? COLORS.dc :
+                          featureType === 'raw_material' ? COLORS.rm : COLORS.ep;
+      const shapeClass = featureType === 'data_center' ? '' :
+                         featureType === 'raw_material' ? 'shape-rm' : 'shape-ep';
+      const typeLabel = featureType === 'data_center' ? i18n.layers.data_centers :
+                        featureType === 'raw_material' ? i18n.layers.raw_materials :
+                        i18n.layers.energy_plants;
+
+      let html = '';
+
+      // Fields
+      html += `<div class="detail-field">
+        <div class="detail-field-label">${i18n.popup.operator}</div>
+        <div class="detail-field-value">${properties.operator || 'N/D'}</div>
+      </div>`;
+
+      html += `<div class="detail-field">
+        <div class="detail-field-label">${i18n.popup.type}</div>
+        <div class="detail-field-value">${getSubtypeLabel(properties.subtype)}</div>
+      </div>`;
+
+      if (properties.status && i18n.status[properties.status]) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.status}</div>
+          <div class="detail-field-value">${i18n.status[properties.status]}</div>
+        </div>`;
+      }
+
+      if (properties.capacity) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.capacity}</div>
+          <div class="detail-field-value">${properties.capacity}</div>
+        </div>`;
+      }
+
+      html += `<div class="detail-field">
+        <div class="detail-field-label">${i18n.popup.city}</div>
+        <div class="detail-field-value">${properties.city}, ${getCountryName(properties.country)}</div>
+      </div>`;
+
+      if (properties.confidence && i18n.confidence[properties.confidence]) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.confidence}</div>
+          <div class="detail-field-value"><span class="certainty-badge certainty-${properties.confidence}">${i18n.confidence[properties.confidence]}</span></div>
+        </div>`;
+      }
+
+      if (properties.updated_at) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.updated_at}</div>
+          <div class="detail-field-value">${properties.updated_at}</div>
+        </div>`;
+      }
+
+      // Description
+      if (properties.description_it) {
+        html += `<div class="detail-description">${properties.description_it}</div>`;
+      }
+
+      html += buildImpactHtml(properties.impact);
+      html += buildEmploymentHtml(properties);
+      html += buildSourcesHtml(properties.sources);
+
+      // Connections
+      const { incoming, outgoing } = findConnections(properties.id);
+
+      if (incoming.length > 0 || outgoing.length > 0) {
+        html += `<div class="detail-connections">
+          <h4>${i18n.popup.connections}</h4>`;
+
+        if (featureType === 'data_center') {
+          const poweredBy = incoming.filter(c => c.properties.relationship_type === 'powers');
+          const componentsFrom = incoming.filter(c => c.properties.relationship_type === 'manufactures_for');
+
+          if (poweredBy.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.powered_by}</div>`;
+            poweredBy.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-power"></span>
+                ${c.properties.source_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+
+          if (componentsFrom.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.components_from}</div>`;
+            componentsFrom.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-mfg"></span>
+                ${c.properties.source_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+        } else if (featureType === 'raw_material') {
+          if (outgoing.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.supplies_to}</div>`;
+            outgoing.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-supply"></span>
+                ${c.properties.target_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+          if (incoming.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.receives_from}</div>`;
+            incoming.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-supply"></span>
+                ${c.properties.source_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+        } else if (featureType === 'energy_plant') {
+          if (outgoing.length > 0) {
+            html += `<div style="margin-bottom: 8px;">
+              <div class="detail-field-label">${i18n.popup.powers_to}</div>`;
+            outgoing.forEach(c => {
+              html += `<div class="detail-connection-item">
+                <span class="detail-connection-icon is-power"></span>
+                ${c.properties.target_name}
+              </div>`;
+            });
+            html += '</div>';
+          }
+        }
+
+        html += '</div>';
+      }
+
+      return { html, accentColor, shapeClass, typeLabel };
+    }
+
+    // Open detail sidebar for a point feature
+    function openPointDetail(properties, featureType) {
+      const resolved = resolveSiteProperties(properties, featureType);
+      const { html, accentColor, shapeClass, typeLabel } = buildPointDetail(resolved, featureType);
+      detailTitle.textContent = resolved.name;
+      detailSidebar.style.setProperty('--accent', accentColor);
+      if (detailType) {
+        detailType.hidden = false;
+        detailType.innerHTML = `<i class="${shapeClass}"></i>${typeLabel}`;
+      }
+      detailBody.innerHTML = html;
+      detailSidebar.classList.add('open');
+      document.body.classList.add('detail-open');
+      highlightConnections(resolved.id);
+    }
+
+    // Show connection popup (native MapLibre popup for lines)
+    function showConnectionPopup(e, properties) {
+      const props = resolveConnectionProperties(properties);
+      const relType = props.relationship_type;
+      const typeColor = relType === 'powers' ? COLORS.ep :
+                        relType === 'supplies' ? COLORS.rm : COLORS.dc;
+      const typeBg = relType === 'powers' ? 'rgba(31, 107, 85, 0.12)' :
+                     relType === 'supplies' ? 'rgba(176, 74, 44, 0.12)' : 'rgba(26, 95, 130, 0.12)';
+      const certainty = props.certainty && i18n.certainty[props.certainty]
+        ? `<span class="certainty-badge certainty-${props.certainty}">${i18n.popup.certainty}: ${i18n.certainty[props.certainty]}</span>`
+        : '';
+      const evidence = props.evidence_note_it
+        ? `<p class="conn-evidence"><strong>${i18n.popup.evidence}:</strong> ${props.evidence_note_it}</p>`
+        : '';
+
+      const popupHtml = `
+        <div class="connection-popup">
+          <h3>${props.source_name} → ${props.target_name}</h3>
+          <span class="conn-type" style="background: ${typeBg}; color: ${typeColor};">${getRelationshipLabel(relType)}</span>
+          ${certainty}
+          <p class="conn-desc">${props.description_it || ''}</p>
+          ${evidence}
+        </div>
+      `;
+
+      new Popup({ closeOnClick: true, maxWidth: '320px' })
+        .setLngLat(e.lngLat)
+        .setHTML(popupHtml)
+        .addTo(map);
+    }
+
+    // Show tooltip
+    function showTooltip(e, text) {
+      tooltip.textContent = text;
+      tooltip.style.left = e.point.x + 'px';
+      tooltip.style.top = e.point.y + 'px';
+      tooltip.classList.add('visible');
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('visible');
+    }
+
+    // Load data and add layers
+    map.on('load', async () => {
+      // Fetch all GeoJSON data
+      const [dcRes, rmRes, epRes, connRes] = await Promise.all([
+        fetch('./data/data_centers.geojson'),
+        fetch('./data/raw_materials.geojson'),
+        fetch('./data/energy_plants.geojson'),
+        fetch('./data/connections.geojson')
+      ]);
+
+      dataCentersData = await dcRes.json();
+      rawMaterialsData = await rmRes.json();
+      energyPlantsData = await epRes.json();
+      connectionsData = await connRes.json();
+
+      // Marker icons by subtype
+      Object.values(FILTER_GROUPS).forEach((group) => {
+        group.subtypes.forEach((subtype) => {
+          const path = ICON_PATHS[subtype];
+          if (path) {
+            map.addImage(iconImageId(subtype), createMapIconImage(path, group.color));
+          }
+        });
+      });
+
+      // Add sources
+      map.addSource('data-centers', { type: 'geojson', data: dataCentersData });
+      map.addSource('raw-materials', { type: 'geojson', data: rawMaterialsData });
+      map.addSource('energy-plants', { type: 'geojson', data: energyPlantsData });
+      map.addSource('connections', { type: 'geojson', data: connectionsData });
+
+      // Add connection line layers (below points)
+      map.addLayer({
+        id: 'connections-powers',
+        type: 'line',
+        source: 'connections',
+        filter: ['==', ['get', 'relationship_type'], 'powers'],
+        paint: {
+          'line-color': COLORS.ep,
+          'line-width': 1.6,
+          'line-dasharray': [2, 2.5],
+          'line-opacity': 0.55
+        }
+      });
+
+      map.addLayer({
+        id: 'connections-supplies',
+        type: 'line',
+        source: 'connections',
+        filter: ['==', ['get', 'relationship_type'], 'supplies'],
+        paint: {
+          'line-color': COLORS.rm,
+          'line-width': 1.6,
+          'line-dasharray': [1.5, 2.5],
+          'line-opacity': 0.55
+        }
+      });
+
+      map.addLayer({
+        id: 'connections-manufactures',
+        type: 'line',
+        source: 'connections',
+        filter: ['==', ['get', 'relationship_type'], 'manufactures_for'],
+        paint: {
+          'line-color': COLORS.dc,
+          'line-width': 1.6,
+          'line-dasharray': [4, 3],
+          'line-opacity': 0.55
+        }
+      });
+
+      // Point layers as subtype icons
+      map.addLayer({
+        id: 'data-centers-layer',
+        type: 'symbol',
+        source: 'data-centers',
+        layout: {
+          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale')),
+          'icon-size': 0.48,
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true
+        },
+        paint: {
+          'icon-opacity': 0.95
+        }
+      });
+
+      map.addLayer({
+        id: 'raw-materials-layer',
+        type: 'symbol',
+        source: 'raw-materials',
+        layout: {
+          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine')),
+          'icon-size': 0.48,
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true
+        },
+        paint: {
+          'icon-opacity': 0.95
+        }
+      });
+
+      map.addLayer({
+        id: 'energy-plants-layer',
+        type: 'symbol',
+        source: 'energy-plants',
+        layout: {
+          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas')),
+          'icon-size': 0.48,
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true
+        },
+        paint: {
+          'icon-opacity': 0.95
+        }
+      });
+
+      // --- Interactivity ---
+
+      const pointLayers = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'];
+      const connectionLayers = ['connections-powers', 'connections-supplies', 'connections-manufactures'];
+      const allInteractiveLayers = [...pointLayers, ...connectionLayers];
+      const connLayerByRel = {
+        powers: 'connections-powers',
+        supplies: 'connections-supplies',
+        manufactures_for: 'connections-manufactures'
+      };
+
+      // Cursor pointer on hover
+      allInteractiveLayers.forEach(layerId => {
+        map.on('mouseenter', layerId, () => {
+          map.getCanvas().style.cursor = 'pointer';
+        });
+        map.on('mouseleave', layerId, () => {
+          map.getCanvas().style.cursor = '';
+          hideTooltip();
+        });
+      });
+
+      // Tooltip on hover for points
+      pointLayers.forEach(layerId => {
+        map.on('mousemove', layerId, (e) => {
+          if (e.features && e.features.length > 0) {
+            const name = e.features[0].properties.name;
+            showTooltip(e, name);
+          }
+        });
+        map.on('mouseleave', layerId, () => {
+          hideTooltip();
+        });
+      });
+
+      // Tooltip on hover for connections
+      connectionLayers.forEach(layerId => {
+        map.on('mousemove', layerId, (e) => {
+          if (e.features && e.features.length > 0) {
+            const props = e.features[0].properties;
+            showTooltip(e, `${props.source_name} → ${props.target_name}`);
+          }
+        });
+        map.on('mouseleave', layerId, () => {
+          hideTooltip();
+        });
+      });
+
+      // Click on data center points
+      map.on('click', 'data-centers-layer', (e) => {
+        if (e.features && e.features.length > 0) {
+          const properties = e.features[0].properties;
+          openPointDetail(properties, 'data_center');
+          e.originalEvent.stopPropagation();
+        }
+      });
+
+      // Click on raw material points
+      map.on('click', 'raw-materials-layer', (e) => {
+        if (e.features && e.features.length > 0) {
+          const properties = e.features[0].properties;
+          openPointDetail(properties, 'raw_material');
+          e.originalEvent.stopPropagation();
+        }
+      });
+
+      // Click on energy plant points
+      map.on('click', 'energy-plants-layer', (e) => {
+        if (e.features && e.features.length > 0) {
+          const properties = e.features[0].properties;
+          openPointDetail(properties, 'energy_plant');
+          e.originalEvent.stopPropagation();
+        }
+      });
+
+      // Click on connection lines
+      connectionLayers.forEach(layerId => {
+        map.on('click', layerId, (e) => {
+          if (e.features && e.features.length > 0) {
+            const properties = e.features[0].properties;
+            showConnectionPopup(e, properties);
+            e.originalEvent.stopPropagation();
+          }
+        });
+      });
+
+      // Click on map background to close sidebar
+      map.on('click', (e) => {
+        // Check if click was on any interactive layer
+        const features = map.queryRenderedFeatures(e.point, { layers: allInteractiveLayers });
+        if (features.length === 0) {
+          closeDetailSidebar();
+        }
+      });
+
+      // --- Filters ---
+      const filterState = {
+        data_centers: {
+          on: true,
+          subtypes: new Set(FILTER_GROUPS.data_centers.subtypes)
+        },
+        energy_plants: {
+          on: true,
+          subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes)
+        },
+        raw_materials: {
+          on: true,
+          subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes)
+        },
+        connections: {
+          on: true,
+          types: new Set(CONNECTION_TYPES)
+        }
+      };
+
+      const dataByGroup = {
+        data_centers: () => dataCentersData,
+        energy_plants: () => energyPlantsData,
+        raw_materials: () => rawMaterialsData,
+        connections: () => connectionsData
+      };
+
+      function countVisible(groupId) {
+        const data = dataByGroup[groupId]();
+        if (!data) return 0;
+        if (groupId === 'connections') {
+          if (!filterState.connections.on) return 0;
+          return data.features.filter(f =>
+            filterState.connections.types.has(f.properties.relationship_type)
+          ).length;
+        }
+        const state = filterState[groupId];
+        if (!state.on) return 0;
+        return data.features.filter(f => state.subtypes.has(f.properties.subtype)).length;
+      }
+
+      function updateFilterCounts() {
+        let total = 0;
+        ['data_centers', 'energy_plants', 'raw_materials', 'connections'].forEach((id) => {
+          const n = countVisible(id);
+          total += n;
+          const el = document.querySelector(`[data-count-for="${id}"]`);
+          if (el) el.textContent = String(n);
+        });
+        const summary = document.getElementById('filters-count');
+        if (summary) {
+          summary.textContent = `Visibili ${total} elementi`;
+        }
+      }
+
+      function updateLegendDim() {
+        document.querySelectorAll('[data-legend-subtype]').forEach((el) => {
+          const subtype = el.getAttribute('data-legend-subtype');
+          let active = false;
+          Object.keys(FILTER_GROUPS).forEach((gid) => {
+            const g = FILTER_GROUPS[gid];
+            if (g.subtypes.includes(subtype)) {
+              active = filterState[gid].on && filterState[gid].subtypes.has(subtype);
+            }
+          });
+          el.classList.toggle('is-dimmed', !active);
+        });
+      }
+
+      function applyFilters() {
+        Object.keys(FILTER_GROUPS).forEach((gid) => {
+          const group = FILTER_GROUPS[gid];
+          const state = filterState[gid];
+          const visible = state.on && state.subtypes.size > 0;
+          map.setLayoutProperty(group.layerId, 'visibility', visible ? 'visible' : 'none');
+          if (visible) {
+            map.setFilter(group.layerId, [
+              'in',
+              ['get', 'subtype'],
+              ['literal', Array.from(state.subtypes)]
+            ]);
+          }
+        });
+
+        CONNECTION_TYPES.forEach((rel) => {
+          const layerId = connLayerByRel[rel];
+          const show = filterState.connections.on && filterState.connections.types.has(rel);
+          map.setLayoutProperty(layerId, 'visibility', show ? 'visible' : 'none');
+        });
+
+        updateFilterCounts();
+        updateLegendDim();
+      }
+
+      function syncChipUI() {
+        document.querySelectorAll('.filter-chip[data-subtype]').forEach((btn) => {
+          const group = btn.getAttribute('data-group');
+          const subtype = btn.getAttribute('data-subtype');
+          const on = filterState[group].subtypes.has(subtype);
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.filter-chip[data-rel]').forEach((btn) => {
+          const rel = btn.getAttribute('data-rel');
+          const on = filterState.connections.types.has(rel);
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.group-enabled').forEach((input) => {
+          const group = input.getAttribute('data-group');
+          input.checked = filterState[group].on;
+        });
+      }
+
+      function resetFilters() {
+        Object.keys(FILTER_GROUPS).forEach((gid) => {
+          filterState[gid].on = true;
+          filterState[gid].subtypes = new Set(FILTER_GROUPS[gid].subtypes);
+        });
+        filterState.connections.on = true;
+        filterState.connections.types = new Set(CONNECTION_TYPES);
+        syncChipUI();
+        applyFilters();
+      }
+
+      document.querySelectorAll('.filter-group-toggle').forEach((label) => {
+        label.addEventListener('click', (e) => e.stopPropagation());
+      });
+
+      document.querySelectorAll('.group-enabled').forEach((input) => {
+        input.addEventListener('change', () => {
+          const group = input.getAttribute('data-group');
+          filterState[group].on = input.checked;
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll('.filter-chip[data-subtype]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const group = btn.getAttribute('data-group');
+          const subtype = btn.getAttribute('data-subtype');
+          const set = filterState[group].subtypes;
+          if (set.has(subtype)) set.delete(subtype);
+          else set.add(subtype);
+          if (set.size === 0) {
+            filterState[group].on = false;
+          } else if (!filterState[group].on) {
+            filterState[group].on = true;
+          }
+          syncChipUI();
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll('.filter-chip[data-rel]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const rel = btn.getAttribute('data-rel');
+          const set = filterState.connections.types;
+          if (set.has(rel)) set.delete(rel);
+          else set.add(rel);
+          if (set.size === 0) filterState.connections.on = false;
+          else if (!filterState.connections.on) filterState.connections.on = true;
+          syncChipUI();
+          applyFilters();
+        });
+      });
+
+      const resetBtn = document.getElementById('filters-reset');
+      if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+
+      applyFilters();
+    });
+  </script>
+</Layout>

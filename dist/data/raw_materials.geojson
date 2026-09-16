@@ -271,7 +271,43 @@
         "capacity": "27.300 tonnellate cobalto/anno (2018)",
         "description_it": "Il più grande produttore di cobalto al mondo, situato nella provincia di Lualaba, RDC, circa 40 km a est di Kolwezi. Copre circa il 20% dell'approvvigionamento globale di cobalto. Produce anche 199.000 tonnellate di rame all'anno. Oltre 3.500 dipendenti, il 96% congolesi.",
         "country": "CD",
-        "city": "Kolwezi"
+        "city": "Kolwezi",
+        "status": "operational",
+        "site_category": "extraction",
+        "opened_year": null,
+        "updated_at": "2026-09-16",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Produzione dichiarata ~27.300 t cobalto/anno (2018); alto impatto territoriale e idrico tipico dell'estrazione."
+        },
+        "employment": {
+          "direct": 3500,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Oltre 3.500 dipendenti dichiarati, ~96% congolesi (dato storico da report/comunicati). Distinguere da lavoro artigianale nelle miniere vicine non Glencore.",
+          "conditions_tags": [
+            "shift_work",
+            "conflict_zone"
+          ]
+        },
+        "community_impact_it": "Nodo critico della filiera batterie/elettronica; rischio di esternalità sociali e ambientali nella provincia di Lualaba.",
+        "labor_risks": [
+          "conflict_zone",
+          "artisanal_mining_nearby"
+        ],
+        "sources": [
+          {
+            "title": "Glencore — Mutanda",
+            "accessed_at": "2026-09-16",
+            "note": "Occupazione e output produttivo da fonti aziendali/giornalistiche secondarie"
+          }
+        ]
       }
     },
     {

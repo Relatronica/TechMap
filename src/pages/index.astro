@@ -1,608 +1,289 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import '../styles/global.css';
-import MapView from '../components/MapView.astro';
+import '../styles/site-header.css';
+import '../styles/home.css';
 import i18n from '../i18n/it.json';
+import { getDatasetStats } from '../lib/stats';
+import { ICON_PATHS } from '../lib/mapIcons';
+
+const stats = getDatasetStats();
+const h = i18n.home;
 ---
 
-<Layout title={`${i18n.app.title} — ${i18n.app.subtitle}`}>
-  <MapView />
+<Layout
+  title={`${i18n.app.title} — ${i18n.app.subtitle}`}
+  description={h.hero_sub}
+  bodyClass="is-home"
+>
+  <div class="home">
+    <SiteHeader variant="home" />
 
-  <!-- Client-side MapLibre Script -->
-  <script is:inline>
-    // MapLibre GL JS loaded from CDN as global `maplibregl`
-    var MaplibreMap = maplibregl.Map;
-    var NavigationControl = maplibregl.NavigationControl;
-    var Popup = maplibregl.Popup;
+    <section class="home-hero">
+      <div class="home-hero-bg" aria-hidden="true">
+        <svg class="home-hero-topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <path d="M-20 520C120 480 180 560 320 540s180-120 300-90 160 140 300 110 220-80 320-40" />
+          <path d="M-40 600C80 560 200 640 340 610s200-100 320-70 180 120 300 90 200-60 300-20" />
+          <path d="M40 420C160 390 240 470 360 450s170-110 290-80 150 130 280 100 200-70 290-30" />
+          <path d="M200 280C300 250 360 320 460 300s140-90 240-60 130 100 230 80" />
+        </svg>
+        <div class="home-hero-sheen"></div>
+      </div>
 
-    // i18n strings loaded inline for client-side use
-    const i18n = {
-      app: {
-        title: "L'Infrastruttura Invisibile",
-        subtitle: "La Mappa Fisica del Digitale e dell'IA"
-      },
-      layers: {
-        data_centers: "Data Center",
-        raw_materials: "Materie Prime e Produzione",
-        energy_plants: "Impianti Energetici",
-        connections: "Connessioni"
-      },
-      subtypes: {
-        colocation: "Colocation",
-        hyperscale: "Hyperscale",
-        enterprise: "Enterprise",
-        semiconductor_fab: "Fabbrica di semiconduttori",
-        component_manufacturing: "Produzione componenti",
-        lithium_mine: "Miniera di litio",
-        cobalt_mine: "Miniera di cobalto",
-        rare_earth_mine: "Miniera di terre rare",
-        gas: "Gas naturale (ciclo combinato)",
-        solar: "Solare fotovoltaico",
-        wind: "Eolico",
-        hydro: "Idroelettrico",
-        nuclear: "Nucleare"
-      },
-      relationships: {
-        powers: "Alimenta",
-        supplies: "Fornisce materiali",
-        manufactures_for: "Produce componenti per"
-      },
-      popup: {
-        operator: "Operatore",
-        type: "Tipo",
-        capacity: "Capacità",
-        city: "Città",
-        country: "Paese",
-        description: "Descrizione",
-        connections: "Connessioni",
-        powered_by: "Alimentato da",
-        components_from: "Componenti da",
-        powers_to: "Alimenta",
-        supplies_to: "Fornisce a",
-        receives_from: "Riceve da",
-        relationship: "Relazione",
-        close: "Chiudi"
-      },
-      countries: {
-        IT: "Italia", DE: "Germania", NL: "Paesi Bassi", AT: "Austria",
-        FI: "Finlandia", SE: "Svezia", IE: "Irlanda", FR: "Francia",
-        PT: "Portogallo", RS: "Serbia", TW: "Taiwan", AU: "Australia",
-        CL: "Cile", CD: "Rep. Dem. del Congo", GL: "Groenlandia", CN: "Cina"
-      }
-    };
-
-    // Store loaded GeoJSON data for cross-referencing connections
-    let connectionsData = null;
-    let dataCentersData = null;
-    let rawMaterialsData = null;
-    let energyPlantsData = null;
-
-    // Initialize map
-    const map = new MaplibreMap({
-      container: 'map',
-      style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
-      center: [11.0, 44.5],
-      zoom: 5,
-      minZoom: 2,
-      maxZoom: 18
-    });
-
-    // Add navigation controls bottom-right
-    map.addControl(new NavigationControl(), 'bottom-right');
-
-    // Tooltip element
-    const tooltip = document.getElementById('map-tooltip');
-
-    // Narrative panel toggle
-    const narrativePanel = document.getElementById('narrative-panel');
-    const narrativeClose = document.getElementById('narrative-close');
-    const narrativeReopen = document.getElementById('narrative-reopen');
-
-    narrativeClose.addEventListener('click', () => {
-      narrativePanel.classList.add('collapsed');
-      narrativeReopen.classList.add('visible');
-    });
-
-    narrativeReopen.addEventListener('click', () => {
-      narrativePanel.classList.remove('collapsed');
-      narrativeReopen.classList.remove('visible');
-    });
-
-    // Legend panel toggle
-    const legendPanel = document.getElementById('legend-panel');
-    const legendHeader = document.getElementById('legend-header');
-
-    legendHeader.addEventListener('click', () => {
-      legendPanel.classList.toggle('collapsed');
-    });
-
-    // Detail sidebar
-    const detailSidebar = document.getElementById('detail-sidebar');
-    const detailTitle = document.getElementById('detail-title');
-    const detailBody = document.getElementById('detail-body');
-    const detailClose = document.getElementById('detail-close');
-
-    detailClose.addEventListener('click', closeDetailSidebar);
-
-    function closeDetailSidebar() {
-      detailSidebar.classList.remove('open');
-      // Reset highlighted features
-      resetHighlights();
-    }
-
-    function resetHighlights() {
-      // Reset all connection line opacities and widths
-      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
-        if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'line-opacity', 0.6);
-          map.setPaintProperty(layerId, 'line-width', 1.5);
-        }
-      });
-      // Reset point sizes
-      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
-        if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'circle-radius', 7);
-        }
-      });
-    }
-
-    // Helper: get country name
-    function getCountryName(code) {
-      return i18n.countries[code] || code;
-    }
-
-    // Helper: get subtype label
-    function getSubtypeLabel(subtype) {
-      return i18n.subtypes[subtype] || subtype;
-    }
-
-    // Helper: get relationship label
-    function getRelationshipLabel(type) {
-      return i18n.relationships[type] || type;
-    }
-
-    // Helper: find connections for a feature
-    function findConnections(featureId) {
-      if (!connectionsData) return { incoming: [], outgoing: [] };
-      const incoming = connectionsData.features.filter(f => f.properties.target_id === featureId);
-      const outgoing = connectionsData.features.filter(f => f.properties.source_id === featureId);
-      return { incoming, outgoing };
-    }
-
-    // Helper: highlight connections for a feature
-    function highlightConnections(featureId) {
-      if (!connectionsData) return;
-
-      const relatedIds = new Set();
-      relatedIds.add(featureId);
-
-      connectionsData.features.forEach(conn => {
-        const props = conn.properties;
-        if (props.source_id === featureId || props.target_id === featureId) {
-          relatedIds.add(props.source_id);
-          relatedIds.add(props.target_id);
-        }
-      });
-
-      // Dim all connections, then highlight related ones
-      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
-        if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'line-opacity', [
-            'case',
-            ['any',
-              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
-              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
-            ],
-            0.9,
-            0.15
-          ]);
-          map.setPaintProperty(layerId, 'line-width', [
-            'case',
-            ['any',
-              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
-              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
-            ],
-            3,
-            1
-          ]);
-        }
-      });
-
-      // Highlight connected points
-      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
-        if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'circle-radius', [
-            'case',
-            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
-            10,
-            6
-          ]);
-        }
-      });
-    }
-
-    // Build detail sidebar HTML for a point feature
-    function buildPointDetail(properties, featureType) {
-      const accentColor = featureType === 'data_center' ? '#2563EB' :
-                          featureType === 'raw_material' ? '#EA580C' : '#16A34A';
-      const icon = featureType === 'data_center' ? '🔵' :
-                   featureType === 'raw_material' ? '🟠' : '🟢';
-
-      let html = '';
-
-      // Fields
-      html += `<div class="detail-field">
-        <div class="detail-field-label">${i18n.popup.operator}</div>
-        <div class="detail-field-value">${properties.operator || 'N/D'}</div>
-      </div>`;
-
-      html += `<div class="detail-field">
-        <div class="detail-field-label">${i18n.popup.type}</div>
-        <div class="detail-field-value">${getSubtypeLabel(properties.subtype)}</div>
-      </div>`;
-
-      if (properties.capacity) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.capacity}</div>
-          <div class="detail-field-value">${properties.capacity}</div>
-        </div>`;
-      }
-
-      html += `<div class="detail-field">
-        <div class="detail-field-label">${i18n.popup.city}</div>
-        <div class="detail-field-value">${properties.city}, ${getCountryName(properties.country)}</div>
-      </div>`;
-
-      // Description
-      if (properties.description_it) {
-        html += `<div class="detail-description" style="--accent-color: ${accentColor};">${properties.description_it}</div>`;
-      }
-
-      // Connections
-      const { incoming, outgoing } = findConnections(properties.id);
-
-      if (incoming.length > 0 || outgoing.length > 0) {
-        html += `<div class="detail-connections">
-          <h4>${i18n.popup.connections}</h4>`;
-
-        if (featureType === 'data_center') {
-          // Show "Powered by" and "Components from"
-          const poweredBy = incoming.filter(c => c.properties.relationship_type === 'powers');
-          const componentsFrom = incoming.filter(c => c.properties.relationship_type === 'manufactures_for');
-
-          if (poweredBy.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div style="font-size: 0.75rem; color: #6B7280; margin-bottom: 4px;">⚡ ${i18n.popup.powered_by}</div>`;
-            poweredBy.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon">⚡</span>
-                ${c.properties.source_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-
-          if (componentsFrom.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div style="font-size: 0.75rem; color: #6B7280; margin-bottom: 4px;">🔧 ${i18n.popup.components_from}</div>`;
-            componentsFrom.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon">🔧</span>
-                ${c.properties.source_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-        } else if (featureType === 'raw_material') {
-          // Show "Supplies to" and "Receives from"
-          if (outgoing.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div style="font-size: 0.75rem; color: #6B7280; margin-bottom: 4px;">📦 ${i18n.popup.supplies_to}</div>`;
-            outgoing.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon">📦</span>
-                ${c.properties.target_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-          if (incoming.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div style="font-size: 0.75rem; color: #6B7280; margin-bottom: 4px;">📥 ${i18n.popup.receives_from}</div>`;
-            incoming.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon">📥</span>
-                ${c.properties.source_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-        } else if (featureType === 'energy_plant') {
-          // Show "Powers"
-          if (outgoing.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div style="font-size: 0.75rem; color: #6B7280; margin-bottom: 4px;">⚡ ${i18n.popup.powers_to}</div>`;
-            outgoing.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon">⚡</span>
-                ${c.properties.target_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-        }
-
-        html += '</div>';
-      }
-
-      return { html, icon, accentColor };
-    }
-
-    // Open detail sidebar for a point feature
-    function openPointDetail(properties, featureType) {
-      const { html, icon, accentColor } = buildPointDetail(properties, featureType);
-      detailTitle.innerHTML = `${icon} ${properties.name}`;
-      detailTitle.style.borderBottom = `3px solid ${accentColor}`;
-      detailTitle.style.paddingBottom = '8px';
-      detailBody.innerHTML = html;
-      detailSidebar.classList.add('open');
-
-      // Highlight connections
-      highlightConnections(properties.id);
-    }
-
-    // Show connection popup (native MapLibre popup for lines)
-    function showConnectionPopup(e, properties) {
-      const relType = properties.relationship_type;
-      const typeColor = relType === 'powers' ? '#16A34A' :
-                        relType === 'supplies' ? '#EA580C' : '#2563EB';
-      const typeBg = relType === 'powers' ? '#DCFCE7' :
-                     relType === 'supplies' ? '#FFF7ED' : '#DBEAFE';
-
-      const popupHtml = `
-        <div class="connection-popup">
-          <h3>🔗 ${properties.source_name} → ${properties.target_name}</h3>
-          <span class="conn-type" style="background: ${typeBg}; color: ${typeColor};">${getRelationshipLabel(relType)}</span>
-          <p class="conn-desc">${properties.description_it || ''}</p>
+      <div class="home-hero-inner">
+        <div class="home-hero-copy">
+          <h1 class="home-brand">{i18n.app.title}</h1>
+          <p class="home-hero-line">{h.hero_line}</p>
+          <p class="home-hero-sub">{h.hero_sub}</p>
+          <div class="home-cta-row">
+            <a class="btn btn-dark" href="/mappa">{h.cta_map}</a>
+            <a class="btn btn-ghost-light" href="#problema">{h.cta_secondary}</a>
+          </div>
         </div>
-      `;
 
-      new Popup({ closeOnClick: true, maxWidth: '320px' })
-        .setLngLat(e.lngLat)
-        .setHTML(popupHtml)
-        .addTo(map);
-    }
+        <div class="home-hero-chain" aria-hidden="true">
+          <div class="chain-step chain-rm">
+            <span class="chain-icon">
+              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.lithium_mine}></path></svg>
+            </span>
+            <span class="chain-label">Estrazione</span>
+          </div>
+          <span class="chain-link"></span>
+          <div class="chain-step chain-rm">
+            <span class="chain-icon">
+              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.semiconductor_fab}></path></svg>
+            </span>
+            <span class="chain-label">Produzione</span>
+          </div>
+          <span class="chain-link"></span>
+          <div class="chain-step chain-ep">
+            <span class="chain-icon">
+              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.gas}></path></svg>
+            </span>
+            <span class="chain-label">Energia</span>
+          </div>
+          <span class="chain-link"></span>
+          <div class="chain-step chain-dc">
+            <span class="chain-icon">
+              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.hyperscale}></path></svg>
+            </span>
+            <span class="chain-label">Data center</span>
+          </div>
+        </div>
+      </div>
 
-    // Show tooltip
-    function showTooltip(e, text) {
-      tooltip.textContent = text;
-      tooltip.style.left = e.point.x + 'px';
-      tooltip.style.top = e.point.y + 'px';
-      tooltip.classList.add('visible');
-    }
+      <a class="home-scroll-cue" href="#problema" aria-label="Scorri al contenuto">
+        <span>Scorri</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+      </a>
+    </section>
 
-    function hideTooltip() {
-      tooltip.classList.remove('visible');
-    }
+    <section class="home-section" id="problema">
+      <p class="home-kicker">{h.problem_kicker}</p>
+      <h2>{h.problem_title}</h2>
+      <p class="home-lead">{h.problem_body}</p>
+    </section>
 
-    // Load data and add layers
-    map.on('load', async () => {
-      // Fetch all GeoJSON data
-      const [dcRes, rmRes, epRes, connRes] = await Promise.all([
-        fetch('./data/data_centers.geojson'),
-        fetch('./data/raw_materials.geojson'),
-        fetch('./data/energy_plants.geojson'),
-        fetch('./data/connections.geojson')
-      ]);
+    <section class="home-section home-stats" id="dati">
+      <p class="home-kicker">{h.stats_kicker}</p>
+      <h2>{h.stats_title}</h2>
+      <div class="home-stat-row">
+        <div class="home-stat">
+          <span class="home-stat-value">{stats.dataCenters}</span>
+          <span class="home-stat-label">{h.stat_dc}</span>
+        </div>
+        <div class="home-stat">
+          <span class="home-stat-value">{stats.energyPlants}</span>
+          <span class="home-stat-label">{h.stat_energy}</span>
+        </div>
+        <div class="home-stat">
+          <span class="home-stat-value">{stats.rawMaterials}</span>
+          <span class="home-stat-label">{h.stat_materials}</span>
+        </div>
+        <div class="home-stat">
+          <span class="home-stat-value">{stats.connections}</span>
+          <span class="home-stat-label">{h.stat_links}</span>
+        </div>
+        <div class="home-stat">
+          <span class="home-stat-value">{stats.countries}</span>
+          <span class="home-stat-label">{h.stat_countries}</span>
+        </div>
+      </div>
+      <p class="home-note">{h.stats_note}</p>
+    </section>
 
-      dataCentersData = await dcRes.json();
-      rawMaterialsData = await rmRes.json();
-      energyPlantsData = await epRes.json();
-      connectionsData = await connRes.json();
+    <section class="home-section" id="azioni">
+      <p class="home-kicker">{h.actions_kicker}</p>
+      <h2>{h.actions_title}</h2>
+      <div class="home-actions">
+        <article class="home-action">
+          <span class="home-action-num">01</span>
+          <h3>{h.action_1_title}</h3>
+          <p>{h.action_1_body}</p>
+        </article>
+        <article class="home-action">
+          <span class="home-action-num">02</span>
+          <h3>{h.action_2_title}</h3>
+          <p>{h.action_2_body}</p>
+        </article>
+        <article class="home-action">
+          <span class="home-action-num">03</span>
+          <h3>{h.action_3_title}</h3>
+          <p>{h.action_3_body}</p>
+        </article>
+      </div>
+    </section>
 
-      // Add sources
-      map.addSource('data-centers', { type: 'geojson', data: dataCentersData });
-      map.addSource('raw-materials', { type: 'geojson', data: rawMaterialsData });
-      map.addSource('energy-plants', { type: 'geojson', data: energyPlantsData });
-      map.addSource('connections', { type: 'geojson', data: connectionsData });
+    <section class="home-section" id="roadmap">
+      <p class="home-kicker">{h.roadmap_kicker}</p>
+      <h2>{h.roadmap_title}</h2>
+      <ol class="home-roadmap">
+        <li>
+          <span class="home-road-phase">{h.road_now}</span>
+          <p>{h.road_now_body}</p>
+        </li>
+        <li>
+          <span class="home-road-phase">{h.road_next}</span>
+          <p>{h.road_next_body}</p>
+        </li>
+        <li>
+          <span class="home-road-phase">{h.road_later}</span>
+          <p>{h.road_later_body}</p>
+        </li>
+      </ol>
+    </section>
 
-      // Add connection line layers (below points)
-      map.addLayer({
-        id: 'connections-powers',
-        type: 'line',
-        source: 'connections',
-        filter: ['==', ['get', 'relationship_type'], 'powers'],
-        paint: {
-          'line-color': '#16A34A',
-          'line-width': 1.5,
-          'line-dasharray': [6, 4],
-          'line-opacity': 0.6
-        }
-      });
+    <section class="home-section home-faq" id="faq">
+      <p class="home-kicker">{h.faq_kicker}</p>
+      <h2>{h.faq_title}</h2>
+      <div class="faq-list">
+        {h.faq.map((item) => (
+          <details class="faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
 
-      map.addLayer({
-        id: 'connections-supplies',
-        type: 'line',
-        source: 'connections',
-        filter: ['==', ['get', 'relationship_type'], 'supplies'],
-        paint: {
-          'line-color': '#EA580C',
-          'line-width': 1.5,
-          'line-dasharray': [6, 4],
-          'line-opacity': 0.6
-        }
-      });
+    <section class="home-section home-share" id="diffondi">
+      <p class="home-kicker">{h.share_kicker}</p>
+      <h2>{h.share_title}</h2>
+      <p class="home-lead">{h.share_body}</p>
 
-      map.addLayer({
-        id: 'connections-manufactures',
-        type: 'line',
-        source: 'connections',
-        filter: ['==', ['get', 'relationship_type'], 'manufactures_for'],
-        paint: {
-          'line-color': '#2563EB',
-          'line-width': 1.5,
-          'line-dasharray': [6, 4],
-          'line-opacity': 0.6
-        }
-      });
+      <div
+        class="share-panel"
+        id="share-panel"
+        data-share-text={h.share_text}
+        data-share-copied={h.share_copied}
+        data-mastodon-prompt={h.share_mastodon_prompt}
+      >
+        <div class="share-url-row">
+          <input
+            class="share-url-input"
+            id="share-url"
+            type="text"
+            readonly
+            value=""
+            aria-label="URL del progetto"
+          />
+          <button type="button" class="btn btn-dark" id="share-copy">{h.share_copy}</button>
+        </div>
 
-      // Add point layers (above lines)
-      map.addLayer({
-        id: 'data-centers-layer',
-        type: 'circle',
-        source: 'data-centers',
-        paint: {
-          'circle-radius': 7,
-          'circle-color': '#2563EB',
-          'circle-stroke-width': 2,
-          'circle-stroke-color': '#FFFFFF',
-          'circle-opacity': 0.9
-        }
-      });
+        <div class="share-networks" role="group" aria-label={h.share_kicker}>
+          <button type="button" class="share-net" id="share-native" hidden>{h.share_native}</button>
+          <a class="share-net" id="share-bluesky" href="#" target="_blank" rel="noopener noreferrer">{h.share_bluesky}</a>
+          <a class="share-net" id="share-linkedin" href="#" target="_blank" rel="noopener noreferrer">{h.share_linkedin}</a>
+          <a class="share-net" id="share-x" href="#" target="_blank" rel="noopener noreferrer">{h.share_x}</a>
+          <button type="button" class="share-net" id="share-mastodon">{h.share_mastodon}</button>
+        </div>
+      </div>
+    </section>
 
-      map.addLayer({
-        id: 'raw-materials-layer',
-        type: 'circle',
-        source: 'raw-materials',
-        paint: {
-          'circle-radius': 7,
-          'circle-color': '#EA580C',
-          'circle-stroke-width': 2,
-          'circle-stroke-color': '#FFFFFF',
-          'circle-opacity': 0.9
-        }
-      });
+    <section class="home-footer-cta">
+      <h2>{h.footer_cta}</h2>
+      <a class="btn btn-dark" href="/mappa">{h.cta_map}</a>
+    </section>
 
-      map.addLayer({
-        id: 'energy-plants-layer',
-        type: 'circle',
-        source: 'energy-plants',
-        paint: {
-          'circle-radius': 7,
-          'circle-color': '#16A34A',
-          'circle-stroke-width': 2,
-          'circle-stroke-color': '#FFFFFF',
-          'circle-opacity': 0.9
-        }
-      });
+    <footer class="home-footer">
+      <span>{i18n.app.title}</span>
+      <a href="/mappa">{h.nav_map}</a>
+    </footer>
+  </div>
 
-      // --- Interactivity ---
+  <script>
+    const panel = document.getElementById('share-panel');
+    if (panel) {
+      const text = panel.dataset.shareText || '';
+      const copiedLabel = panel.dataset.shareCopied || 'OK';
+      const mastodonPrompt = panel.dataset.mastodonPrompt || 'mastodon.social';
+      const pageUrl = window.location.origin + '/';
+      const encodedUrl = encodeURIComponent(pageUrl);
+      const encodedText = encodeURIComponent(text);
+      const encodedPair = encodeURIComponent(`${text} ${pageUrl}`);
 
-      const pointLayers = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'];
-      const connectionLayers = ['connections-powers', 'connections-supplies', 'connections-manufactures'];
-      const allInteractiveLayers = [...pointLayers, ...connectionLayers];
+      const urlInput = document.getElementById('share-url');
+      if (urlInput instanceof HTMLInputElement) urlInput.value = pageUrl;
 
-      // Cursor pointer on hover
-      allInteractiveLayers.forEach(layerId => {
-        map.on('mouseenter', layerId, () => {
-          map.getCanvas().style.cursor = 'pointer';
-        });
-        map.on('mouseleave', layerId, () => {
-          map.getCanvas().style.cursor = '';
-          hideTooltip();
-        });
-      });
-
-      // Tooltip on hover for points
-      pointLayers.forEach(layerId => {
-        map.on('mousemove', layerId, (e) => {
-          if (e.features && e.features.length > 0) {
-            const name = e.features[0].properties.name;
-            showTooltip(e, name);
-          }
-        });
-        map.on('mouseleave', layerId, () => {
-          hideTooltip();
-        });
-      });
-
-      // Tooltip on hover for connections
-      connectionLayers.forEach(layerId => {
-        map.on('mousemove', layerId, (e) => {
-          if (e.features && e.features.length > 0) {
-            const props = e.features[0].properties;
-            showTooltip(e, `${props.source_name} → ${props.target_name}`);
-          }
-        });
-        map.on('mouseleave', layerId, () => {
-          hideTooltip();
-        });
-      });
-
-      // Click on data center points
-      map.on('click', 'data-centers-layer', (e) => {
-        if (e.features && e.features.length > 0) {
-          const properties = e.features[0].properties;
-          openPointDetail(properties, 'data_center');
-          e.originalEvent.stopPropagation();
-        }
-      });
-
-      // Click on raw material points
-      map.on('click', 'raw-materials-layer', (e) => {
-        if (e.features && e.features.length > 0) {
-          const properties = e.features[0].properties;
-          openPointDetail(properties, 'raw_material');
-          e.originalEvent.stopPropagation();
-        }
-      });
-
-      // Click on energy plant points
-      map.on('click', 'energy-plants-layer', (e) => {
-        if (e.features && e.features.length > 0) {
-          const properties = e.features[0].properties;
-          openPointDetail(properties, 'energy_plant');
-          e.originalEvent.stopPropagation();
-        }
-      });
-
-      // Click on connection lines
-      connectionLayers.forEach(layerId => {
-        map.on('click', layerId, (e) => {
-          if (e.features && e.features.length > 0) {
-            const properties = e.features[0].properties;
-            showConnectionPopup(e, properties);
-            e.originalEvent.stopPropagation();
-          }
-        });
-      });
-
-      // Click on map background to close sidebar
-      map.on('click', (e) => {
-        // Check if click was on any interactive layer
-        const features = map.queryRenderedFeatures(e.point, { layers: allInteractiveLayers });
-        if (features.length === 0) {
-          closeDetailSidebar();
-        }
-      });
-
-      // --- Layer Toggle Logic ---
-      const toggleDC = document.getElementById('toggle-data-centers');
-      const toggleRM = document.getElementById('toggle-raw-materials');
-      const toggleEP = document.getElementById('toggle-energy-plants');
-      const toggleConn = document.getElementById('toggle-connections');
-
-      function updateLayerVisibility() {
-        const dcVisible = toggleDC.checked;
-        const rmVisible = toggleRM.checked;
-        const epVisible = toggleEP.checked;
-        const connVisible = toggleConn.checked;
-
-        // Point layers
-        map.setLayoutProperty('data-centers-layer', 'visibility', dcVisible ? 'visible' : 'none');
-        map.setLayoutProperty('raw-materials-layer', 'visibility', rmVisible ? 'visible' : 'none');
-        map.setLayoutProperty('energy-plants-layer', 'visibility', epVisible ? 'visible' : 'none');
-
-        // Connection layers: visible only if global toggle is on
-        map.setLayoutProperty('connections-powers', 'visibility', connVisible ? 'visible' : 'none');
-        map.setLayoutProperty('connections-supplies', 'visibility', connVisible ? 'visible' : 'none');
-        map.setLayoutProperty('connections-manufactures', 'visibility', connVisible ? 'visible' : 'none');
+      const bluesky = document.getElementById('share-bluesky');
+      const linkedin = document.getElementById('share-linkedin');
+      const shareX = document.getElementById('share-x');
+      if (bluesky instanceof HTMLAnchorElement) {
+        bluesky.href = `https://bsky.app/intent/compose?text=${encodedPair}`;
+      }
+      if (linkedin instanceof HTMLAnchorElement) {
+        linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+      }
+      if (shareX instanceof HTMLAnchorElement) {
+        shareX.href = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
       }
 
-      toggleDC.addEventListener('change', updateLayerVisibility);
-      toggleRM.addEventListener('change', updateLayerVisibility);
-      toggleEP.addEventListener('change', updateLayerVisibility);
-      toggleConn.addEventListener('change', updateLayerVisibility);
-    });
+      const copyBtn = document.getElementById('share-copy');
+      copyBtn?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(pageUrl);
+          if (copyBtn) {
+            const prev = copyBtn.textContent;
+            copyBtn.textContent = copiedLabel;
+            window.setTimeout(() => {
+              copyBtn.textContent = prev;
+            }, 1800);
+          }
+        } catch {
+          if (urlInput instanceof HTMLInputElement) {
+            urlInput.select();
+            document.execCommand('copy');
+          }
+        }
+      });
+
+      const nativeBtn = document.getElementById('share-native');
+      if (nativeBtn && navigator.share) {
+        nativeBtn.hidden = false;
+        nativeBtn.addEventListener('click', async () => {
+          try {
+            await navigator.share({ title: document.title, text, url: pageUrl });
+          } catch {
+            /* user cancelled */
+          }
+        });
+      }
+
+      document.getElementById('share-mastodon')?.addEventListener('click', () => {
+        const raw = window.prompt(mastodonPrompt, 'mastodon.social');
+        if (!raw) return;
+        const host = raw
+          .trim()
+          .replace(/^https?:\/\//, '')
+          .replace(/\/$/, '');
+        if (!host) return;
+        window.open(
+          `https://${host}/share?text=${encodedPair}`,
+          '_blank',
+          'noopener,noreferrer'
+        );
+      });
+    }
   </script>
 </Layout>

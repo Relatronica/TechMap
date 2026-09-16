@@ -23,7 +23,18 @@
         "relationship_type": "powers",
         "description_it": "La centrale a gas di Turbigo (1.280 MW) è una delle principali fonti di energia per il cluster di data center nell'area di Milano, inclusa la regione AWS Europe (Milano) a Rho/Pero.",
         "source_name": "Turbigo - Centrale a Ciclo Combinato",
-        "target_name": "AWS Europe (Milano) - Rho/Pero"
+        "target_name": "AWS Europe (Milano) - Rho/Pero",
+        "certainty": "inferred",
+        "evidence_note_it": "Stesso cluster energetico lombardo (Turbigo ↔ area Milano). Nessun PPA pubblico che leghi in modo esclusivo Turbigo ad AWS Rho/Pero: legame di prossimità di rete, non contratto dimostrato.",
+        "as_of": "2026-09-16",
+        "updated_at": "2026-09-16",
+        "sources": [
+          {
+            "title": "Nota metodologica TechMap",
+            "accessed_at": "2026-09-16",
+            "note": "Connessione classificata inferred per onestà epistemica"
+          }
+        ]
       }
     },
     {

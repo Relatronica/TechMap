@@ -40,7 +40,43 @@
         "capacity": "60 MW (campus totale)",
         "description_it": "Campus hyperscale di Aruba a Ponte San Pietro (Bergamo), il più grande data center campus in Italia con 200.000 mq. Alimentato al 100% da energia rinnovabile, con 15 MW di potenza disponibile e capacità totale del campus di 60 MW. Costruito su un ex sito industriale riqualificato.",
         "country": "IT",
-        "city": "Ponte San Pietro"
+        "city": "Ponte San Pietro",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2021,
+        "updated_at": "2026-09-16",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 60,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Campus hyperscale; mix elettrico dipendente dalla rete lombarda e da PPA/rinnovabili dichiarati dall'operatore (da verificare)."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione diretta tipicamente limitata rispetto alla potenza installata; picco occupazionale in fase di cantiere e facility management.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Consumo elettrico e pressione sulla rete locale; potenziale competizione con altri usi industriali/residenziali del territorio bergamasco.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Aruba — Global Cloud Data Center IT3",
+            "url": "https://www.aruba.it/",
+            "accessed_at": "2026-09-16",
+            "note": "Scheda campus / capacità dichiarata (~60 MW campus)"
+          }
+        ]
       }
     },
     {
