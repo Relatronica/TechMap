@@ -1,0 +1,47 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import i18n from '../i18n/it.json';
+
+const p = i18n.legal.report;
+const app = i18n.app;
+
+function issueUrl(title: string) {
+  const u = new URL(app.github_issues_url);
+  u.searchParams.set('title', title);
+  return u.toString();
+}
+---
+
+<ContentPage
+  title={p.title}
+  description={p.lead}
+  kicker={p.kicker}
+  heading={p.heading}
+  lead={p.lead}
+>
+  <article class="content-prose">
+    <p>{p.intro}</p>
+    <div class="report-grid">
+      {p.cards.map((card) => (
+        <a class="report-card" href={issueUrl(card.issue_title)} target="_blank" rel="noopener noreferrer">
+          <h3>{card.title}</h3>
+          <p>{card.body}</p>
+        </a>
+      ))}
+    </div>
+    <div class="content-actions">
+      <a
+        class="btn btn-accent"
+        href={app.github_issues_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {p.github_cta}
+      </a>
+      <a class="btn btn-ghost-light" href={`mailto:${app.privacy_email}?subject=${encodeURIComponent('Segnalazione dato — Infrastruttura Invisibile')}`}>
+        {p.email_cta}
+      </a>
+    </div>
+    <p class="content-note">{p.note}</p>
+  </article>
+</ContentPage>

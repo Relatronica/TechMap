@@ -1,0 +1,40 @@
+---
+/**
+ * Shell per pagine informative (privacy, termini, stampa, segnala)
+ */
+import Layout from '../layouts/Layout.astro';
+import SiteFooter from './SiteFooter.astro';
+import '../styles/global.css';
+import '../styles/home.css';
+import '../styles/content.css';
+import i18n from '../i18n/it.json';
+
+interface Props {
+  title: string;
+  description: string;
+  kicker?: string;
+  heading: string;
+  lead?: string;
+}
+
+const { title, description, kicker, heading, lead } = Astro.props;
+const pageTitle = `${title} — ${i18n.app.title}`;
+---
+
+<Layout title={pageTitle} description={description} bodyClass="is-content">
+  <main class="content-page">
+    <header class="content-hero">
+      <div class="content-hero-inner">
+        {kicker && <p class="home-kicker">{kicker}</p>}
+        <h1>{heading}</h1>
+        {lead && <p class="content-lead">{lead}</p>}
+      </div>
+    </header>
+    <div class="content-body">
+      <div class="content-body-inner">
+        <slot />
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>

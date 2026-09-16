@@ -1,0 +1,440 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.88,
+          43.46
+        ]
+      },
+      "properties": {
+        "id": "dc_001",
+        "name": "Aruba IT1 - Arezzo",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Aruba S.p.A.",
+        "capacity": "4 MW",
+        "description_it": "Data center di colocation Aruba IT1 situato ad Arezzo, con 1.500 mq di spazio e capacità di potenza fino a 40 kW per rack. Uno dei primi data center di Aruba in Italia, operativo dal 2000.",
+        "country": "IT",
+        "city": "Arezzo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.5878,
+          45.6955
+        ]
+      },
+      "properties": {
+        "id": "dc_002",
+        "name": "Aruba Global Cloud Data Center IT3 - Ponte San Pietro",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Aruba S.p.A.",
+        "capacity": "60 MW (campus totale)",
+        "description_it": "Campus hyperscale di Aruba a Ponte San Pietro (Bergamo), il più grande data center campus in Italia con 200.000 mq. Alimentato al 100% da energia rinnovabile, con 15 MW di potenza disponibile e capacità totale del campus di 60 MW. Costruito su un ex sito industriale riqualificato.",
+        "country": "IT",
+        "city": "Ponte San Pietro",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2021,
+        "updated_at": "2026-09-16",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 60,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Campus hyperscale; mix elettrico dipendente dalla rete lombarda e da PPA/rinnovabili dichiarati dall'operatore (da verificare)."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione diretta tipicamente limitata rispetto alla potenza installata; picco occupazionale in fase di cantiere e facility management.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Consumo elettrico e pressione sulla rete locale; potenziale competizione con altri usi industriali/residenziali del territorio bergamasco.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Aruba — Global Cloud Data Center IT3",
+            "url": "https://www.aruba.it/",
+            "accessed_at": "2026-09-16",
+            "note": "Scheda campus / capacità dichiarata (~60 MW campus)"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.19,
+          45.4642
+        ]
+      },
+      "properties": {
+        "id": "dc_003",
+        "name": "Google Cloud Region - Milano",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Google (ospitato in data center TIM)",
+        "capacity": "N/D",
+        "description_it": "Regione cloud di Google a Milano, operativa dal giugno 2022, ospitata nei data center di TIM. Utilizzata da grandi imprese italiane come Intesa Sanpaolo per la loro infrastruttura digitale.",
+        "country": "IT",
+        "city": "Milano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.38,
+          45.45
+        ]
+      },
+      "properties": {
+        "id": "dc_004",
+        "name": "Microsoft Azure Italy North - Settala",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft",
+        "capacity": "N/D",
+        "description_it": "Regione cloud Microsoft Azure Italy North nella zona metropolitana di Milano, composta da tre data center. Annunciata nel giugno 2023, con strutture operative a Settala e nuovi campus in costruzione a Bornasco e San Bovio (Peschiera Borromeo).",
+        "country": "IT",
+        "city": "Settala"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.09,
+          45.52
+        ]
+      },
+      "properties": {
+        "id": "dc_005",
+        "name": "AWS Europe (Milano) - Rho/Pero",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Web Services",
+        "capacity": "100.000 mq (area totale)",
+        "description_it": "Regione AWS Europe (Milano) con tre zone di disponibilità, operativa dal 2020. Situata nell'area di Rho/Pero vicino a Milano. AWS ha investito 1,2 miliardi di euro per espandere la sua infrastruttura cloud in Italia.",
+        "country": "IT",
+        "city": "Rho/Pero"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0387,
+          45.4755
+        ]
+      },
+      "properties": {
+        "id": "dc_006",
+        "name": "Equinix ML5 - Settimo Milanese",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "N/D",
+        "description_it": "Data center IBX® Equinix ML5 a Settimo Milanese, vicino a Via Caldera, il punto di interconnessione più connesso di Milano. Offre connessioni virtuali ai principali provider cloud. Parte del campus Equinix Milano che recupera calore dai server per riscaldare abitazioni milanesi (progetto 2026).",
+        "country": "IT",
+        "city": "Settimo Milanese"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1473,
+          45.4486
+        ]
+      },
+      "properties": {
+        "id": "dc_007",
+        "name": "Equinix ML2 - Milano Via Savona",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "N/D",
+        "description_it": "Data center Equinix ML2 in Via Savona 125, Milano. Struttura carrier-neutral che offre opzioni di interconnessione e certificazioni di sicurezza. Uno dei principali hub di scambio dati nel sud Europa.",
+        "country": "IT",
+        "city": "Milano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.12,
+          45.48
+        ]
+      },
+      "properties": {
+        "id": "dc_008",
+        "name": "Irideos Avalon Campus - Milano",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Irideos/Retelit",
+        "capacity": "28 MW (totale nazionale)",
+        "description_it": "Avalon Campus di Irideos in Via Caldera 21, Milano, il più grande hub di interconnessione neutrale in Italia con oltre 2.600 rack su 13.000 mq. Irideos gestisce 16 data center in Italia tra Milano, Roma, Verona e Trento, con 27.000 km di fibra ottica.",
+        "country": "IT",
+        "city": "Milano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.2,
+          45.33
+        ]
+      },
+      "properties": {
+        "id": "dc_009",
+        "name": "STACK Infrastructure MIL01 - Siziano",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "STACK Infrastructure",
+        "capacity": "40+ MW (espandibile a 50+ MW)",
+        "description_it": "Campus hyperscale STACK Infrastructure a Siziano (Pavia), con oltre 100.000 mq di spazio attivo su 12 ettari. Supporta servizi hyperscale e colocation con molteplici sale dati indipendenti. Milano è uno dei mercati data center in più rapida crescita in Europa.",
+        "country": "IT",
+        "city": "Siziano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1639,
+          45.3813
+        ]
+      },
+      "properties": {
+        "id": "dc_010",
+        "name": "TIM Noovle Data Center - Rozzano",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "TIM S.p.A.",
+        "capacity": "125 MW (totale rete nazionale TIM)",
+        "description_it": "Data center TIM/Noovle a Rozzano (Milano), parte della rete di 17 data center TIM Enterprise in Italia con capacità installata totale di 125 MW. TIM ha annunciato un piano di investimenti da 1 miliardo di euro per espandere la propria infrastruttura data center.",
+        "country": "IT",
+        "city": "Rozzano"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4975,
+          41.6797
+        ]
+      },
+      "properties": {
+        "id": "dc_011",
+        "name": "TIM Data Center - Pomezia (Roma)",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "TIM S.p.A. / Trust Technologies",
+        "capacity": "N/D",
+        "description_it": "Data center TIM Trust Technologies a Pomezia, vicino Roma, in Via Pontina km 29+100. Operativo 24 ore su 24, parte della rete nazionale TIM di data center. TIM sta investendo 130 milioni di euro in un nuovo data center vicino Roma, operativo entro fine 2026.",
+        "country": "IT",
+        "city": "Pomezia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2,
+          60.57
+        ]
+      },
+      "properties": {
+        "id": "dc_012",
+        "name": "Google Data Center - Hamina, Finlandia",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Google",
+        "capacity": "140 MW",
+        "description_it": "Il più grande data center in Finlandia, costruito nel 2009 con un investimento di 3,5 miliardi di euro. Opera con il 97% di energia carbon-free. Primo progetto di recupero del calore off-site di Google, che fornisce calore alla comunità locale di Hamina.",
+        "country": "FI",
+        "city": "Hamina"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.1547,
+          65.5848
+        ]
+      },
+      "properties": {
+        "id": "dc_013",
+        "name": "Meta Data Center - Luleå, Svezia",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Meta Platforms",
+        "capacity": "N/D (circa 100+ MW stimati)",
+        "description_it": "Primo data center di Meta (ex Facebook), aperto nel 2013 a Luleå, nel nord della Svezia, appena sotto il Circolo Polare Artico. Tre strutture per un totale di circa 93.000 mq. Sfrutta il clima naturalmente freddo per ridurre i costi di raffreddamento e l'energia idroelettrica locale.",
+        "country": "SE",
+        "city": "Luleå"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6821,
+          50.1109
+        ]
+      },
+      "properties": {
+        "id": "dc_014",
+        "name": "Equinix FR13 - Francoforte",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "7,75 MW (FR13); fino a 25 MW per struttura",
+        "description_it": "Data center Equinix a Francoforte, sede del più grande punto di scambio Internet al mondo (DE-CIX). Equinix gestisce molteplici strutture di colocation a Francoforte, tra cui FR2, FR4, FR10x (16,8 MW) e FR13 (7,75 MW, inaugurato nel 2024).",
+        "country": "DE",
+        "city": "Francoforte"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9544,
+          52.3567
+        ]
+      },
+      "properties": {
+        "id": "dc_015",
+        "name": "Equinix AM3 - Amsterdam Science Park",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "N/D",
+        "description_it": "Data center Equinix AM3 ad Amsterdam Science Park 610, importante gateway digitale verso l'Europa. Ospita l'Amsterdam Internet Exchange (AMS-IX) e offre opportunità di peering con i principali provider cloud. Equinix gestisce anche AM1, AM2, AM5 e AM7 ad Amsterdam.",
+        "country": "NL",
+        "city": "Amsterdam"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.425,
+          53.2867
+        ]
+      },
+      "properties": {
+        "id": "dc_016",
+        "name": "Microsoft Azure North Europe - Dublino",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft",
+        "capacity": "303.000 sqft (Grange Castle)",
+        "description_it": "Microsoft gestisce 17 data center in Irlanda, la maggior parte nell'area di Dublino presso il campus Grange Castle. Alimenta servizi cloud e AI per imprese, governi e organizzazioni in Irlanda, Regno Unito e regioni circostanti. Nuovi data center pianificati nella contea di Kildare.",
+        "country": "IE",
+        "city": "Dublino"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.37,
+          53.29
+        ]
+      },
+      "properties": {
+        "id": "dc_017",
+        "name": "Google Data Center - Dublino",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Google",
+        "capacity": "30.360 mq",
+        "description_it": "Data center Google nel Profile Park di Dublino, struttura a due piani di 30.360 mq. Parte dell'espansione irlandese di Google che include un terzo data center pianificato con investimento stimato di 250 milioni di euro.",
+        "country": "IE",
+        "city": "Dublino"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.75,
+          48.58
+        ]
+      },
+      "properties": {
+        "id": "dc_018",
+        "name": "OVHcloud SBG5 - Strasburgo",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "OVHcloud",
+        "capacity": "500 mq di colocation",
+        "description_it": "Data center OVHcloud SBG5 a Strasburgo, parte della rete globale di 46 data center su 4 continenti con 100 Tbps di capacità di rete. Strasburgo è designata come parte della prima regione SecNumCloud di OVHcloud.",
+        "country": "FR",
+        "city": "Strasburgo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.5099,
+          59.3716
+        ]
+      },
+      "properties": {
+        "id": "dc_019",
+        "name": "AWS Europe (Stoccolma) - Eskilstuna",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Web Services",
+        "capacity": "N/D",
+        "description_it": "Regione AWS Europe (Stoccolma) con tre zone di disponibilità distribuite tra Eskilstuna, Katrineholm e Västerås. Operativa dalla fine del 2018. AWS utilizza acciaio a basse emissioni di carbonio (SSAB) nella costruzione dei nuovi data center svedesi.",
+        "country": "SE",
+        "city": "Eskilstuna"
+      }
+    }
+  ]
+}

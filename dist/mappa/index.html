@@ -1,6 +1,18 @@
-<!DOCTYPE html><html lang="it"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="L'infrastruttura fisica dietro cloud e intelligenza artificiale: data center, energia, materie prime."><title>L&#39;Infrastruttura Invisibile — Mappa</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><link rel="stylesheet" href="/assets/index.CAUeJspE.css"></head> <body class="is-map">  <div id="map"></div> <div id="map-tooltip" class="map-tooltip"></div> <div class="map-chrome"> <header class="site-header site-header--map" id="site-header" data-variant="map"> <div class="site-header-inner"> <a class="site-header-brand" href="/" aria-label="Home"> <span class="brand-mark" aria-hidden="true"></span> <span class="site-header-brand-text"> <strong>L&#39;Infrastruttura Invisibile</strong> <span>La Mappa Fisica del Digitale e dell&#39;IA</span> </span> </a>  <div class="site-header-actions"> <a class="site-header-link" href="/">Home</a> <a class="site-header-cta is-active" href="/mappa">Mappa</a> </div> </div>  </header>  <div class="panel filters-panel" id="filters-panel"> <div class="filters-header"> <h3>Filtri</h3> <button type="button" id="filters-reset" class="filters-reset">Reimposta</button> </div> <p class="filters-count" id="filters-count"></p> <details class="filter-group" open data-group="data_centers"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-dc" aria-hidden="true"></span> <span class="filter-group-title">Data Center</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="data_centers">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--dc);"> <input type="checkbox" class="group-enabled" data-group="data_centers" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="data_centers"> <button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="hyperscale" aria-pressed="true" title="Hyperscale"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M4 20V9.5L12 4l8 5.5V20M9 20v-5h6v5M9.5 11h.01M12 11h.01M14.5 11h.01"></path> </svg> <span>Hyperscale</span> </button><button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="colocation" aria-pressed="true" title="Colocation"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 4.5h14v4.5H5zM5 10h14v4H5zM5 15.5h14V20H5zM7.5 6.75h.01M7.5 12h.01M7.5 17.75h.01"></path> </svg> <span>Colocation</span> </button><button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="enterprise" aria-pressed="true" title="Enterprise"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 20V8l7-4 7 4v12M9.5 20v-4.5h5V20M10 10.5h.01M14 10.5h.01M12 10.5h.01"></path> </svg> <span>Enterprise</span> </button> </div> </details><details class="filter-group" open data-group="energy_plants"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-ep" aria-hidden="true"></span> <span class="filter-group-title">Impianti Energetici</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="energy_plants">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--ep);"> <input type="checkbox" class="group-enabled" data-group="energy_plants" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="energy_plants"> <button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="gas" aria-pressed="true" title="Gas naturale (ciclo combinato)"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z"></path> </svg> <span>Gas</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="solar" aria-pressed="true" title="Solare fotovoltaico"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.4 6.4l1.4 1.4M16.2 16.2l1.4 1.4M6.4 17.6l1.4-1.4M16.2 7.8l1.4-1.4M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path> </svg> <span>Solare</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="wind" aria-pressed="true" title="Eolico"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z"></path> </svg> <span>Eolico</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="hydro" aria-pressed="true" title="Idroelettrico"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0"></path> </svg> <span>Idro</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="nuclear" aria-pressed="true" title="Nucleare"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 12m-1.8 0a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0M12 4.8v2.2M12 17v2.2M6.2 8.2l1.8 1.1M16 14.7l1.8 1.1M6.2 15.8l1.8-1.1M16 9.3l1.8-1.1"></path> </svg> <span>Nucleare</span> </button> </div> </details><details class="filter-group" open data-group="raw_materials"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-rm" aria-hidden="true"></span> <span class="filter-group-title">Materie Prime e Produzione</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="raw_materials">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--rm);"> <input type="checkbox" class="group-enabled" data-group="raw_materials" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="raw_materials"> <button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="semiconductor_fab" aria-pressed="true" title="Fabbrica di semiconduttori"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M8 8h8v8H8zM10.5 10.5h3v3h-3zM9.5 4.5v3M14.5 4.5v3M9.5 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 14.5h3M16.5 9.5h3M16.5 14.5h3"></path> </svg> <span>Semiconduttori</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="component_manufacturing" aria-pressed="true" title="Produzione componenti"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3.5l2.2 2.2L12 7.9 9.8 5.7 12 3.5zM12 16.1l2.2 2.2-2.2 2.2-2.2-2.2 2.2-2.2zM3.5 12l2.2-2.2L7.9 12l-2.2 2.2L3.5 12zM16.1 12l2.2-2.2 2.2 2.2-2.2 2.2-2.2-2.2zM12 8.2v7.6M8.2 12h7.6"></path> </svg> <span>Componenti</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="lithium_mine" aria-pressed="true" title="Miniera di litio"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8"></path> </svg> <span>Litio</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="cobalt_mine" aria-pressed="true" title="Miniera di cobalto"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5"></path> </svg> <span>Cobalto</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="rare_earth_mine" aria-pressed="true" title="Miniera di terre rare"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"></path> </svg> <span>Terre rare</span> </button> </div> </details> <details class="filter-group" open data-group="connections"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span> <span class="filter-group-title">Connessioni</span> </span> <span class="filter-group-right"> <span class="filter-group-count" data-count-for="connections">0</span> <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--conn);"> <input type="checkbox" class="group-enabled" data-group="connections" checked> <span class="toggle-slider"></span> </label> </span> </summary> <div class="filter-chips" data-chips-for="connections"> <button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="powers" aria-pressed="true" title="Alimenta"> <span class="conn-swatch conn-powers" aria-hidden="true"></span> <span> Alimentazione energetica </span> </button><button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="supplies" aria-pressed="true" title="Fornisce materiali"> <span class="conn-swatch conn-supplies" aria-hidden="true"></span> <span> Fornitura materiali </span> </button><button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="manufactures_for" aria-pressed="true" title="Produce componenti per"> <span class="conn-swatch conn-manufactures_for" aria-hidden="true"></span> <span> Produzione componenti </span> </button> </div> </details> </div> <div id="legend-panel" class="panel legend-panel"> <div id="legend-header" class="legend-header"> <h3>Legenda</h3> <span class="legend-toggle-icon" aria-hidden="true"> <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg> </span> </div> <div class="legend-content" id="legend-content"> <div class="legend-section"> <div class="legend-section-title">Data Center</div> <div class="legend-item" data-legend-subtype="hyperscale"> <span class="legend-icon-badge badge-dc"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M4 20V9.5L12 4l8 5.5V20M9 20v-5h6v5M9.5 11h.01M12 11h.01M14.5 11h.01"></path> </svg> </span> <span>Hyperscale</span> </div><div class="legend-item" data-legend-subtype="colocation"> <span class="legend-icon-badge badge-dc"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 4.5h14v4.5H5zM5 10h14v4H5zM5 15.5h14V20H5zM7.5 6.75h.01M7.5 12h.01M7.5 17.75h.01"></path> </svg> </span> <span>Colocation</span> </div><div class="legend-item" data-legend-subtype="enterprise"> <span class="legend-icon-badge badge-dc"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M5 20V8l7-4 7 4v12M9.5 20v-4.5h5V20M10 10.5h.01M14 10.5h.01M12 10.5h.01"></path> </svg> </span> <span>Enterprise</span> </div> </div><div class="legend-section"> <div class="legend-section-title">Impianti Energetici</div> <div class="legend-item" data-legend-subtype="gas"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z"></path> </svg> </span> <span>Gas</span> </div><div class="legend-item" data-legend-subtype="solar"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.4 6.4l1.4 1.4M16.2 16.2l1.4 1.4M6.4 17.6l1.4-1.4M16.2 7.8l1.4-1.4M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path> </svg> </span> <span>Solare</span> </div><div class="legend-item" data-legend-subtype="wind"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z"></path> </svg> </span> <span>Eolico</span> </div><div class="legend-item" data-legend-subtype="hydro"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0"></path> </svg> </span> <span>Idro</span> </div><div class="legend-item" data-legend-subtype="nuclear"> <span class="legend-icon-badge badge-ep"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 12m-1.8 0a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0M12 4.8v2.2M12 17v2.2M6.2 8.2l1.8 1.1M16 14.7l1.8 1.1M6.2 15.8l1.8-1.1M16 9.3l1.8-1.1"></path> </svg> </span> <span>Nucleare</span> </div> </div><div class="legend-section"> <div class="legend-section-title">Materie Prime e Produzione</div> <div class="legend-item" data-legend-subtype="semiconductor_fab"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M8 8h8v8H8zM10.5 10.5h3v3h-3zM9.5 4.5v3M14.5 4.5v3M9.5 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 14.5h3M16.5 9.5h3M16.5 14.5h3"></path> </svg> </span> <span>Semiconduttori</span> </div><div class="legend-item" data-legend-subtype="component_manufacturing"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3.5l2.2 2.2L12 7.9 9.8 5.7 12 3.5zM12 16.1l2.2 2.2-2.2 2.2-2.2-2.2 2.2-2.2zM3.5 12l2.2-2.2L7.9 12l-2.2 2.2L3.5 12zM16.1 12l2.2-2.2 2.2 2.2-2.2 2.2-2.2-2.2zM12 8.2v7.6M8.2 12h7.6"></path> </svg> </span> <span>Componenti</span> </div><div class="legend-item" data-legend-subtype="lithium_mine"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8"></path> </svg> </span> <span>Litio</span> </div><div class="legend-item" data-legend-subtype="cobalt_mine"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5"></path> </svg> </span> <span>Cobalto</span> </div><div class="legend-item" data-legend-subtype="rare_earth_mine"> <span class="legend-icon-badge badge-rm"> <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"></path> </svg> </span> <span>Terre rare</span> </div> </div> <div class="legend-section"> <div class="legend-section-title">Connessioni</div> <div class="legend-item"> <span class="legend-line" style="border-color: var(--ep);"></span> Alimentazione energetica </div> <div class="legend-item"> <span class="legend-line" style="border-color: var(--rm);"></span> Fornitura materiali </div> <div class="legend-item"> <span class="legend-line" style="border-color: var(--dc);"></span> Produzione componenti </div> </div> </div> </div> <aside id="detail-sidebar" class="panel detail-sidebar" aria-live="polite"> <div class="detail-sidebar-header"> <div> <h2 id="detail-title"></h2> <div id="detail-type" class="detail-type-chip" hidden></div> </div> <button id="detail-close" class="panel-close-btn" type="button" aria-label="Chiudi"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg> </button> </div> <div id="detail-body" class="detail-sidebar-body"></div> </aside> </div>  <script>(function(){const ICON_PATHS = {"hyperscale":"M4 20V9.5L12 4l8 5.5V20M9 20v-5h6v5M9.5 11h.01M12 11h.01M14.5 11h.01","colocation":"M5 4.5h14v4.5H5zM5 10h14v4H5zM5 15.5h14V20H5zM7.5 6.75h.01M7.5 12h.01M7.5 17.75h.01","enterprise":"M5 20V8l7-4 7 4v12M9.5 20v-4.5h5V20M10 10.5h.01M14 10.5h.01M12 10.5h.01","gas":"M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z","solar":"M12 4.5v2M12 17.5v2M4.5 12h2M17.5 12h2M6.4 6.4l1.4 1.4M16.2 16.2l1.4 1.4M6.4 17.6l1.4-1.4M16.2 7.8l1.4-1.4M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z","wind":"M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z","hydro":"M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0","nuclear":"M12 12m-1.8 0a1.8 1.8 0 103.6 0 1.8 1.8 0 10-3.6 0M12 4.8v2.2M12 17v2.2M6.2 8.2l1.8 1.1M16 14.7l1.8 1.1M6.2 15.8l1.8-1.1M16 9.3l1.8-1.1","semiconductor_fab":"M8 8h8v8H8zM10.5 10.5h3v3h-3zM9.5 4.5v3M14.5 4.5v3M9.5 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 14.5h3M16.5 9.5h3M16.5 14.5h3","component_manufacturing":"M12 3.5l2.2 2.2L12 7.9 9.8 5.7 12 3.5zM12 16.1l2.2 2.2-2.2 2.2-2.2-2.2 2.2-2.2zM3.5 12l2.2-2.2L7.9 12l-2.2 2.2L3.5 12zM16.1 12l2.2-2.2 2.2 2.2-2.2 2.2-2.2-2.2zM12 8.2v7.6M8.2 12h7.6","lithium_mine":"M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8","cobalt_mine":"M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5","rare_earth_mine":"M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"};
-const FILTER_GROUPS = {"data_centers":{"id":"data_centers","layerId":"data-centers-layer","colorVar":"dc","color":"#1a5f82","subtypes":["hyperscale","colocation","enterprise"]},"energy_plants":{"id":"energy_plants","layerId":"energy-plants-layer","colorVar":"ep","color":"#1f6b55","subtypes":["gas","solar","wind","hydro","nuclear"]},"raw_materials":{"id":"raw_materials","layerId":"raw-materials-layer","colorVar":"rm","color":"#b04a2c","subtypes":["semiconductor_fab","component_manufacturing","lithium_mine","cobalt_mine","rare_earth_mine"]}};
+<!DOCTYPE html><html lang="it" class="is-map"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="L'infrastruttura fisica dietro cloud e intelligenza artificiale: data center, energia, materie prime."><title>L&#39;Infrastruttura Invisibile — Mappa</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"><script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script><link rel="stylesheet" href="/assets/privacy.D65CFc-j.css"><script type="module" src="/assets/hoisted.DrBzsj4c.js"></script></head> <body class="is-map"> <header class="site-header" id="site-header" data-variant="map"> <div class="site-header-inner"> <a class="site-header-brand" href="/" aria-label="Home"> <svg class="site-header-logo" viewBox="0 0 28 28" aria-hidden="true"> <path class="logo-link" d="M7.5 19.5 L13 10.5 M15.5 9 L20.5 12.5" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"></path> <rect class="logo-ep" x="11" y="4" width="6" height="6" rx="0.5"></rect> <path class="logo-rm" d="M7.5 16.5 L11 20 L7.5 23.5 L4 20 Z"></path> <circle class="logo-dc" cx="22" cy="14" r="3.25"></circle> </svg> <span class="site-header-brand-text"> <strong>L&#39;Infrastruttura Invisibile</strong> </span> </a> <nav class="site-header-nav" aria-label="Sezioni"> <a href="/#problema">Problema</a><a href="/#dati">Dati</a><a href="/#azioni">Uso</a><a href="/#roadmap">Roadmap</a><a href="/#faq">FAQ</a><a href="/#diffondi">Diffondi</a> </nav> <div class="site-header-actions"> <button type="button" class="site-header-menu" id="site-header-menu" aria-expanded="false" aria-controls="site-header-drawer">
+Menu
+</button> <a class="site-header-support" href="https://buymeacoffee.com/relatronica" target="_blank" rel="noopener noreferrer" aria-label="Sostieni lo sviluppo del progetto su Buy Me a Coffee"> Sostieni </a> <a class="site-header-cta is-active" href="/mappa" aria-current="page"> Mappa </a> </div> </div> <div class="site-header-drawer" id="site-header-drawer" hidden> <nav aria-label="Sezioni mobile"> <a href="/" class="site-header-drawer-link">Home</a> <a href="/#problema" class="site-header-drawer-link">Problema</a><a href="/#dati" class="site-header-drawer-link">Dati</a><a href="/#azioni" class="site-header-drawer-link">Uso</a><a href="/#roadmap" class="site-header-drawer-link">Roadmap</a><a href="/#faq" class="site-header-drawer-link">FAQ</a><a href="/#diffondi" class="site-header-drawer-link">Diffondi</a> <a href="https://buymeacoffee.com/relatronica" class="site-header-drawer-link is-support" target="_blank" rel="noopener noreferrer"> Sostieni </a> <a href="/mappa" class="site-header-drawer-link is-cta is-active" aria-current="page"> Esplora la mappa </a> </nav> </div> </header>   <div id="map"></div> <div id="map-tooltip" class="map-tooltip"></div> <div class="map-chrome"> <div class="panel filters-panel" id="filters-panel"> <div class="filters-header"> <h3>Filtri</h3> <button type="button" id="filters-reset" class="filters-reset">Reimposta</button> </div> <p class="filters-count" id="filters-count"></p> <details class="filter-group" open data-group="data_centers"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-dc" aria-hidden="true"></span> <span class="filter-group-title">Data Center</span> </span> <span class="filter-group-count" data-count-for="data_centers">0</span> </summary> <div class="filter-chips" data-chips-for="data_centers"> <button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="hyperscale" aria-pressed="true" title="Hyperscale" style="--chip-color: #2F6F9A;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3 19h18M4 19V11h5v8M10 19V7h4v12M15 19v-6h5v6"></path> </svg> <span>Hyperscale</span> </button><button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="colocation" aria-pressed="true" title="Colocation" style="--chip-color: #5A9BB8;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M6 3.5h12v17H6zM6 8h12M6 12.5h12M6 17h12"></path> </svg> <span>Colocation</span> </button><button type="button" class="filter-chip is-on chip-dc" data-group="data_centers" data-subtype="enterprise" aria-pressed="true" title="Enterprise" style="--chip-color: #7A93A8;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M8 20V5h8v15M11 20v-3.5h2V20M10 8h.01M14 8h.01M10 11.5h.01M14 11.5h.01M10 15h.01M14 15h.01"></path> </svg> <span>Enterprise</span> </button> </div> </details><details class="filter-group" open data-group="energy_plants"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-ep" aria-hidden="true"></span> <span class="filter-group-title">Impianti Energetici</span> </span> <span class="filter-group-count" data-count-for="energy_plants">0</span> </summary> <div class="filter-chips" data-chips-for="energy_plants"> <button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="gas" aria-pressed="true" title="Gas naturale (ciclo combinato)" style="--chip-color: #6B5E55;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z"></path> </svg> <span>Gas</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="solar" aria-pressed="true" title="Solare fotovoltaico" style="--chip-color: #C9A45C;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 15.5l8.5-9 8.5 9H3.5zM5.5 15.5V19h13v-3.5M8 11.2l3.5-3.7 3.5 3.7M7 15.5l2.5-2.6M12 15.5l0-2.6M14.5 12.9l2.5 2.6"></path> </svg> <span>Solare</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="wind" aria-pressed="true" title="Eolico" style="--chip-color: #5B8FA8;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z"></path> </svg> <span>Eolico</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="hydro" aria-pressed="true" title="Idroelettrico" style="--chip-color: #3D7A9C;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0"></path> </svg> <span>Idro</span> </button><button type="button" class="filter-chip is-on chip-ep" data-group="energy_plants" data-subtype="nuclear" aria-pressed="true" title="Nucleare" style="--chip-color: #7A6B9A;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M6.5 21h11M8 21V12c0-1.2.8-5.8 4-8.5 3.2 2.7 4 7.3 4 8.5v9M5.5 13h13"></path> </svg> <span>Nucleare</span> </button> </div> </details><details class="filter-group" open data-group="raw_materials"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-rm" aria-hidden="true"></span> <span class="filter-group-title">Materie Prime e Produzione</span> </span> <span class="filter-group-count" data-count-for="raw_materials">0</span> </summary> <div class="filter-chips" data-chips-for="raw_materials"> <button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="semiconductor_fab" aria-pressed="true" title="Fabbrica di semiconduttori" style="--chip-color: #4A8A8A;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M7.5 7.5h9v9h-9zM10 10h4v4h-4zM9.5 4.5v3M12 4.5v3M14.5 4.5v3M9.5 16.5v3M12 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 12h3M4.5 14.5h3M16.5 9.5h3M16.5 12h3M16.5 14.5h3"></path> </svg> <span>Semiconduttori</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="component_manufacturing" aria-pressed="true" title="Produzione componenti" style="--chip-color: #B87A4A;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3 20h18M4 20V12l3.5-3.5L11 12l3.5-3.5L18 12v8M15.5 20v-5.5h4V20"></path> </svg> <span>Componenti</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="lithium_mine" aria-pressed="true" title="Miniera di litio" style="--chip-color: #8A9AA8;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8"></path> </svg> <span>Litio</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="cobalt_mine" aria-pressed="true" title="Miniera di cobalto" style="--chip-color: #3F6F9E;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5"></path> </svg> <span>Cobalto</span> </button><button type="button" class="filter-chip is-on chip-rm" data-group="raw_materials" data-subtype="rare_earth_mine" aria-pressed="true" title="Miniera di terre rare" style="--chip-color: #8B6B7A;"> <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true"> <path d="M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"></path> </svg> <span>Terre rare</span> </button> </div> </details> <details class="filter-group" open data-group="connections"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span> <span class="filter-group-title">Connessioni</span> </span> <span class="filter-group-count" data-count-for="connections">0</span> </summary> <div class="filter-chips" data-chips-for="connections"> <button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="powers" aria-pressed="true" title="Alimenta" style="--chip-color: var(--ep);"> <span class="conn-swatch conn-powers" aria-hidden="true"></span> <span> Alimentazione energetica </span> </button><button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="supplies" aria-pressed="true" title="Fornisce materiali" style="--chip-color: var(--rm);"> <span class="conn-swatch conn-supplies" aria-hidden="true"></span> <span> Fornitura materiali </span> </button><button type="button" class="filter-chip is-on chip-conn" data-group="connections" data-rel="manufactures_for" aria-pressed="true" title="Produce componenti per" style="--chip-color: var(--dc);"> <span class="conn-swatch conn-manufactures_for" aria-hidden="true"></span> <span> Produzione componenti </span> </button> </div> </details> <details class="filter-group" open data-group="overlays"> <summary class="filter-group-summary"> <span class="filter-group-left"> <span class="filter-group-swatch swatch-overlay" aria-hidden="true"></span> <span class="filter-group-title">Contesto</span> </span> </summary> <div class="filter-chips" data-chips-for="overlays"> <button type="button" class="filter-chip chip-overlay" data-overlay="power_grid" aria-pressed="false" title="Linee di trasmissione (OpenStreetMap / OpenInfraMap)" style="--chip-color: #7a5a2e;"> <span class="overlay-swatch overlay-swatch-power" aria-hidden="true"></span> <span>Rete elettrica</span> </button><button type="button" class="filter-chip chip-overlay" data-overlay="water_stress" aria-pressed="false" title="Stress idrico di base per sottobacino (WRI Aqueduct 4.0, HydroBASINS L6)" style="--chip-color: #c97a5a;"> <span class="overlay-swatch overlay-swatch-water" aria-hidden="true"></span> <span>Stress idrico</span> </button><button type="button" class="filter-chip chip-overlay" data-overlay="submarine_cables" aria-pressed="false" title="Rotte e landing station in Europa (estratto storico TeleGeography)" style="--chip-color: #3d6f8c;"> <span class="overlay-swatch overlay-swatch-cable" aria-hidden="true"></span> <span>Cavi sottomarini</span> </button> </div> </details> <div class="filters-footer"> <button type="button" id="data-attribution-open" class="filters-attribution-btn"> Dati e licenze </button> <time class="filters-attribution-date" datetime="2026-09-16"> Dataset aggiornato: 2026-09-16 </time> </div> </div> <aside id="detail-sidebar" class="panel detail-sidebar" aria-live="polite"> <div class="detail-sidebar-header"> <div> <h2 id="detail-title"></h2> <div id="detail-type" class="detail-type-chip" hidden></div> </div> <button id="detail-close" class="panel-close-btn" type="button" aria-label="Chiudi"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg> </button> </div> <div id="detail-body" class="detail-sidebar-body"></div> </aside> </div> <dialog id="data-attribution-modal" class="data-attribution-modal" aria-labelledby="data-attribution-title"> <div class="data-attribution-modal-inner"> <header class="data-attribution-modal-header"> <h2 id="data-attribution-title">Dati e licenze</h2> <button type="button" id="data-attribution-close" class="panel-close-btn" aria-label="Chiudi"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg> </button> </header> <div class="data-attribution-modal-body"> <p class="attribution-updated"> Dataset aggiornato:  <time datetime="2026-09-16">2026-09-16</time> </p> <ul class="attribution-counts"> <li> Impianti Energetici: 1068 
+(12 curati,  1056 importati)
+</li> <li> Data Center: 818 
+(19 curati,  799 importati)
+</li> </ul> <p class="attribution-note">I record curati editorialmente (descrizioni, impatto, lavoro) restano in mappa. Gli import automatici integrano WRI (tutti gli impianti IT + EU ≥ 100 MW) e OSM per data center in area EU. Duplicati per prossimità/nome vengono accorpati. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.</p> <ul class="attribution-sources"> <li> <a href="https://datasets.wri.org/datasets/global-power-plant-database" target="_blank" rel="noopener noreferrer">WRI Global Power Plant Database</a>  —  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> <span class="attribution-source-note">Impianti importati con confidence media; record curati editorialmente hanno priorità.</span> </li><li> <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap (Overpass API)</a>  —  <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL 1.0</a> <span class="attribution-source-note">Tag telecom=data_center; confidence bassa, da verificare con fonti aggiuntive.</span> </li><li> <a href="https://openinframap.org/about" target="_blank" rel="noopener noreferrer">Open Infrastructure Map (rete elettrica)</a>  —  <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">ODbL 1.0</a> <span class="attribution-source-note">Linee di trasmissione da OpenStreetMap via tile vettoriali OpenInfraMap.</span> </li><li> <a href="https://www.wri.org/aqueduct" target="_blank" rel="noopener noreferrer">WRI Aqueduct 4.0 — stress idrico (bacini)</a>  —  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> <span class="attribution-source-note">Baseline water stress su sottobacini HydroBASINS L6 (non confini amministrativi). Mostra variazioni locali entro le regioni italiane.</span> </li><li> <a href="https://github.com/stevesong/open_undersea_cable_map" target="_blank" rel="noopener noreferrer">Cavi sottomarini (estratto storico TeleGeography)</a>  —  <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 3.0</a> <span class="attribution-source-note">Dataset storico non commerciale; rotte e landing in Europa. Non aggiornato in tempo reale.</span> </li> </ul> <p class="attribution-basemap"> Mappa di base:  <a href="https://carto.com/attributions/" target="_blank" rel="noopener noreferrer">CARTO Positron</a>  — Tile di base © OpenStreetMap contributors, © CARTO. </p> </div> </div> </dialog>   <script>(function(){const ICON_PATHS = {"hyperscale":"M3 19h18M4 19V11h5v8M10 19V7h4v12M15 19v-6h5v6","colocation":"M6 3.5h12v17H6zM6 8h12M6 12.5h12M6 17h12","enterprise":"M8 20V5h8v15M11 20v-3.5h2V20M10 8h.01M14 8h.01M10 11.5h.01M14 11.5h.01M10 15h.01M14 15h.01","gas":"M12 21c3.5 0 5.5-2.2 5.5-5.2 0-3.6-3.5-6.3-5.5-10.8-2 4.5-5.5 7.2-5.5 10.8C6.5 18.8 8.5 21 12 21z","solar":"M3.5 15.5l8.5-9 8.5 9H3.5zM5.5 15.5V19h13v-3.5M8 11.2l3.5-3.7 3.5 3.7M7 15.5l2.5-2.6M12 15.5l0-2.6M14.5 12.9l2.5 2.6","wind":"M12 21.5V12M12 12c2.2-3.2 5.2-4.2 8-3-1.2 3.2-4.2 4.4-8 3zM12 12c-2.2-3.2-5.2-4.2-8-3 1.2 3.2 4.2 4.4 8 3zM12 12c.2-3.8 1.8-7.2 4.5-9-2.8 1.2-4.3 4.8-4.5 9z","hydro":"M3.5 8c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 12.5c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0M3.5 17c1.8-1.6 3.7-1.6 5.5 0s3.7 1.6 5.5 0 3.7-1.6 5.5 0","nuclear":"M6.5 21h11M8 21V12c0-1.2.8-5.8 4-8.5 3.2 2.7 4 7.3 4 8.5v9M5.5 13h13","semiconductor_fab":"M7.5 7.5h9v9h-9zM10 10h4v4h-4zM9.5 4.5v3M12 4.5v3M14.5 4.5v3M9.5 16.5v3M12 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 12h3M4.5 14.5h3M16.5 9.5h3M16.5 12h3M16.5 14.5h3","component_manufacturing":"M3 20h18M4 20V12l3.5-3.5L11 12l3.5-3.5L18 12v8M15.5 20v-5.5h4V20","lithium_mine":"M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8","cobalt_mine":"M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5","rare_earth_mine":"M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5"};
+const FILTER_GROUPS = {"data_centers":{"id":"data_centers","layerId":"data-centers-layer","colorVar":"dc","color":"#5A9BB8","subtypes":["hyperscale","colocation","enterprise"]},"energy_plants":{"id":"energy_plants","layerId":"energy-plants-layer","colorVar":"ep","color":"#5B8FA8","subtypes":["gas","solar","wind","hydro","nuclear"]},"raw_materials":{"id":"raw_materials","layerId":"raw-materials-layer","colorVar":"rm","color":"#B87A4A","subtypes":["semiconductor_fab","component_manufacturing","lithium_mine","cobalt_mine","rare_earth_mine"]}};
 const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
+const CONTEXT_OVERLAYS = [{"id":"power_grid","labelKey":"power_grid","hintKey":"power_grid_hint","layerIds":["overlay-power-lines"],"color":"#7a5a2e","swatch":"power","defaultOn":false},{"id":"water_stress","labelKey":"water_stress","hintKey":"water_stress_hint","layerIds":["overlay-water-fill","overlay-water-outline"],"color":"#c97a5a","swatch":"water","defaultOn":false},{"id":"submarine_cables","labelKey":"submarine_cables","hintKey":"submarine_cables_hint","layerIds":["overlay-cables-line","overlay-cable-landings"],"color":"#3d6f8c","swatch":"cable","defaultOn":false}];
+const SUBTYPE_COLORS = {"hyperscale":"#2F6F9A","colocation":"#5A9BB8","enterprise":"#7A93A8","gas":"#6B5E55","solar":"#C9A45C","wind":"#5B8FA8","hydro":"#3D7A9C","nuclear":"#7A6B9A","semiconductor_fab":"#4A8A8A","component_manufacturing":"#B87A4A","lithium_mine":"#8A9AA8","cobalt_mine":"#3F6F9E","rare_earth_mine":"#8B6B7A"};
+const ICON_OPACITY_EXPR = ["match",["get","confidence"],"high",1,"medium",0.95,"low",0.72,0.85];
+const ICON_SIZE = 0.54;
+const ICON_SIZE_HIGHLIGHT = 0.66;
+const ICON_SIZE_DIMMED = 0.4;
 
     // MapLibre GL JS loaded from CDN as global `maplibregl`
     var MaplibreMap = maplibregl.Map;
@@ -94,10 +106,12 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
         unknown: "Sconosciuto"
       },
       countries: {
-        IT: "Italia", DE: "Germania", NL: "Paesi Bassi", AT: "Austria",
-        FI: "Finlandia", SE: "Svezia", IE: "Irlanda", FR: "Francia",
-        PT: "Portogallo", RS: "Serbia", TW: "Taiwan", AU: "Australia",
-        CL: "Cile", CD: "Rep. Dem. del Congo", GL: "Groenlandia", CN: "Cina"
+        IT: "Italia", DE: "Germania", ES: "Spagna", NL: "Paesi Bassi", BE: "Belgio",
+        AT: "Austria", PL: "Polonia", FI: "Finlandia", SE: "Svezia", IE: "Irlanda",
+        FR: "Francia", PT: "Portogallo", GR: "Grecia", CZ: "Rep. Ceca", RO: "Romania",
+        HU: "Ungheria", DK: "Danimarca", LU: "Lussemburgo", NO: "Norvegia", CH: "Svizzera",
+        RS: "Serbia", TW: "Taiwan", AU: "Australia", CL: "Cile", CD: "Rep. Dem. del Congo",
+        GL: "Groenlandia", CN: "Cina", XX: "Non specificato"
       }
     };
 
@@ -108,10 +122,10 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
     let energyPlantsData = null;
 
     const COLORS = {
-      dc: '#1a5f82',
-      rm: '#b04a2c',
-      ep: '#1f6b55',
-      conn: '#5c6570'
+      dc: '#5A9BB8',
+      rm: '#B87A4A',
+      ep: '#5B8FA8',
+      conn: '#8a9199'
     };
 
     // Initialize map
@@ -126,18 +140,10 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
     });
 
     // Add navigation controls bottom-right
-    map.addControl(new NavigationControl({ showCompass: false }), 'bottom-right');
+    map.addControl(new NavigationControl({ showCompass: false }), 'bottom-left');
 
     // Tooltip element
     const tooltip = document.getElementById('map-tooltip');
-
-    // Legend panel toggle
-    const legendPanel = document.getElementById('legend-panel');
-    const legendHeader = document.getElementById('legend-header');
-
-    legendHeader.addEventListener('click', () => {
-      legendPanel.classList.toggle('collapsed');
-    });
 
     // Detail sidebar
     const detailSidebar = document.getElementById('detail-sidebar');
@@ -154,32 +160,30 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
       resetHighlights();
     }
 
-    function createMapIconImage(pathD, color, size = 72) {
+    function createMapIconImage(pathD, color, size = 80) {
       const canvas = document.createElement('canvas');
       canvas.width = size;
       canvas.height = size;
       const ctx = canvas.getContext('2d');
       const cx = size / 2;
       const cy = size / 2;
-      const r = size * 0.36;
+      const scale = (size * 0.64) / 24;
+      const path = new Path2D(pathD);
 
-      ctx.beginPath();
-      ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-      ctx.lineWidth = size * 0.045;
-      ctx.strokeStyle = 'rgba(255,255,255,0.95)';
-      ctx.stroke();
-
-      const scale = (size * 0.4) / 24;
       ctx.save();
       ctx.translate(cx - 12 * scale, cy - 12 * scale);
       ctx.scale(scale, scale);
-      const path = new Path2D(pathD);
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 1.85;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
+
+      ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
+      ctx.shadowBlur = 2.2;
+      ctx.shadowOffsetY = 1;
+
+      ctx.fillStyle = color;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2.6;
+      ctx.fill(path);
       ctx.stroke(path);
       ctx.restore();
 
@@ -206,14 +210,14 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
     function resetHighlights() {
       ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
         if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'line-opacity', 0.55);
+          map.setPaintProperty(layerId, 'line-opacity', 0.7);
           map.setPaintProperty(layerId, 'line-width', 1.6);
         }
       });
       ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
         if (map.getLayer(layerId)) {
-          map.setLayoutProperty(layerId, 'icon-size', 0.48);
-          map.setPaintProperty(layerId, 'icon-opacity', 0.95);
+          map.setLayoutProperty(layerId, 'icon-size', ICON_SIZE);
+          map.setPaintProperty(layerId, 'icon-opacity', ICON_OPACITY_EXPR);
         }
       });
     }
@@ -286,14 +290,14 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           map.setLayoutProperty(layerId, 'icon-size', [
             'case',
             ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
-            0.62,
-            0.38
+            ICON_SIZE_HIGHLIGHT,
+            ICON_SIZE_DIMMED
           ]);
           map.setPaintProperty(layerId, 'icon-opacity', [
             'case',
             ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
             1,
-            0.45
+            0.35
           ]);
         }
       });
@@ -417,8 +421,10 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
 
     // Build detail sidebar HTML for a point feature
     function buildPointDetail(properties, featureType) {
-      const accentColor = featureType === 'data_center' ? COLORS.dc :
-                          featureType === 'raw_material' ? COLORS.rm : COLORS.ep;
+      const accentColor =
+        (properties.subtype && SUBTYPE_COLORS[properties.subtype]) ||
+        (featureType === 'data_center' ? COLORS.dc :
+          featureType === 'raw_material' ? COLORS.rm : COLORS.ep);
       const shapeClass = featureType === 'data_center' ? '' :
                          featureType === 'raw_material' ? 'shape-rm' : 'shape-ep';
       const typeLabel = featureType === 'data_center' ? i18n.layers.data_centers :
@@ -578,9 +584,9 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
       const props = resolveConnectionProperties(properties);
       const relType = props.relationship_type;
       const typeColor = relType === 'powers' ? COLORS.ep :
-                        relType === 'supplies' ? COLORS.rm : COLORS.dc;
-      const typeBg = relType === 'powers' ? 'rgba(31, 107, 85, 0.12)' :
-                     relType === 'supplies' ? 'rgba(176, 74, 44, 0.12)' : 'rgba(26, 95, 130, 0.12)';
+                       relType === 'supplies' ? COLORS.rm : COLORS.dc;
+      const typeBg = relType === 'powers' ? 'rgba(90, 173, 122, 0.18)' :
+                     relType === 'supplies' ? 'rgba(209, 122, 82, 0.18)' : 'rgba(107, 168, 201, 0.18)';
       const certainty = props.certainty && i18n.certainty[props.certainty]
         ? `<span class="certainty-badge certainty-${props.certainty}">${i18n.popup.certainty}: ${i18n.certainty[props.certainty]}</span>`
         : '';
@@ -631,12 +637,13 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
       energyPlantsData = await epRes.json();
       connectionsData = await connRes.json();
 
-      // Marker icons by subtype
+      // Marker icons by subtype (colore semantico)
       Object.values(FILTER_GROUPS).forEach((group) => {
         group.subtypes.forEach((subtype) => {
           const path = ICON_PATHS[subtype];
           if (path) {
-            map.addImage(iconImageId(subtype), createMapIconImage(path, group.color));
+            const color = SUBTYPE_COLORS[subtype] || group.color;
+            map.addImage(iconImageId(subtype), createMapIconImage(path, color));
           }
         });
       });
@@ -646,6 +653,131 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
       map.addSource('raw-materials', { type: 'geojson', data: rawMaterialsData });
       map.addSource('energy-plants', { type: 'geojson', data: energyPlantsData });
       map.addSource('connections', { type: 'geojson', data: connectionsData });
+
+      // Context overlays (below site layers)
+      map.addSource('openinframap-power', {
+        type: 'vector',
+        tiles: ['https://openinframap.org/tiles/{z}/{x}/{y}.pbf'],
+        maxzoom: 17,
+        attribution: '© OpenStreetMap, OpenInfraMap'
+      });
+
+      const [cablesRes, landingsRes, waterRes] = await Promise.all([
+        fetch('./data/overlays/submarine_cables.geojson'),
+        fetch('./data/overlays/cable_landings.geojson'),
+        fetch('./data/overlays/water_stress_eu.geojson')
+      ]);
+      const cablesData = await cablesRes.json();
+      const landingsData = await landingsRes.json();
+      const waterData = await waterRes.json();
+
+      map.addSource('overlay-cables', { type: 'geojson', data: cablesData });
+      map.addSource('overlay-landings', { type: 'geojson', data: landingsData });
+      map.addSource('overlay-water', { type: 'geojson', data: waterData });
+
+      map.addLayer({
+        id: 'overlay-water-fill',
+        type: 'fill',
+        source: 'overlay-water',
+        layout: { visibility: 'none' },
+        paint: {
+          'fill-color': [
+            'interpolate',
+            ['linear'],
+            ['get', 'bws_cat'],
+            0, '#c8ddd4',
+            1, '#e8d9a8',
+            2, '#e0b07a',
+            3, '#c97a5a',
+            4, '#8f3d4a'
+          ],
+          'fill-opacity': 0.38
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-water-outline',
+        type: 'line',
+        source: 'overlay-water',
+        layout: { visibility: 'none' },
+        paint: {
+          'line-color': '#6a5a4a',
+          'line-width': 0.4,
+          'line-opacity': 0.2
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-power-lines',
+        type: 'line',
+        source: 'openinframap-power',
+        'source-layer': 'power_line',
+        layout: {
+          visibility: 'none',
+          'line-cap': 'round',
+          'line-join': 'round'
+        },
+        paint: {
+          'line-color': [
+            'interpolate',
+            ['linear'],
+            ['coalesce', ['to-number', ['get', 'voltage']], 0],
+            0, '#b8a48a',
+            110000, '#9a7a4a',
+            220000, '#7a5a2e',
+            400000, '#5a3a18'
+          ],
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            4, 0.4,
+            8, 1.1,
+            12, 2.2
+          ],
+          'line-opacity': 0.75
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-cables-line',
+        type: 'line',
+        source: 'overlay-cables',
+        layout: { visibility: 'none', 'line-cap': 'round', 'line-join': 'round' },
+        paint: {
+          'line-color': '#3d6f8c',
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            3, 0.8,
+            8, 1.6,
+            12, 2.4
+          ],
+          'line-opacity': 0.7
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-cable-landings',
+        type: 'circle',
+        source: 'overlay-landings',
+        layout: { visibility: 'none' },
+        paint: {
+          'circle-radius': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            3, 2.5,
+            8, 4,
+            12, 6
+          ],
+          'circle-color': '#3d6f8c',
+          'circle-stroke-width': 1,
+          'circle-stroke-color': '#ffffff',
+          'circle-opacity': 0.85
+        }
+      });
 
       // Add connection line layers (below points)
       map.addLayer({
@@ -657,7 +789,7 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           'line-color': COLORS.ep,
           'line-width': 1.6,
           'line-dasharray': [2, 2.5],
-          'line-opacity': 0.55
+          'line-opacity': 0.7
         }
       });
 
@@ -670,7 +802,7 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           'line-color': COLORS.rm,
           'line-width': 1.6,
           'line-dasharray': [1.5, 2.5],
-          'line-opacity': 0.55
+          'line-opacity': 0.7
         }
       });
 
@@ -683,24 +815,30 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           'line-color': COLORS.dc,
           'line-width': 1.6,
           'line-dasharray': [4, 3],
-          'line-opacity': 0.55
+          'line-opacity': 0.7
         }
       });
 
-      // Point layers as subtype icons
+      const pointLayerPaint = {
+        'icon-opacity': ICON_OPACITY_EXPR
+      };
+
+      const pointLayerLayout = {
+        'icon-size': ICON_SIZE,
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true
+      };
+
+      // Point layers — una silhouette per sottotipo (gas, solar, colocation…)
       map.addLayer({
         id: 'data-centers-layer',
         type: 'symbol',
         source: 'data-centers',
         layout: {
-          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale')),
-          'icon-size': 0.48,
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true
+          ...pointLayerLayout,
+          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale'))
         },
-        paint: {
-          'icon-opacity': 0.95
-        }
+        paint: pointLayerPaint
       });
 
       map.addLayer({
@@ -708,14 +846,10 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
         type: 'symbol',
         source: 'raw-materials',
         layout: {
-          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine')),
-          'icon-size': 0.48,
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true
+          ...pointLayerLayout,
+          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine'))
         },
-        paint: {
-          'icon-opacity': 0.95
-        }
+        paint: pointLayerPaint
       });
 
       map.addLayer({
@@ -723,14 +857,10 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
         type: 'symbol',
         source: 'energy-plants',
         layout: {
-          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas')),
-          'icon-size': 0.48,
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true
+          ...pointLayerLayout,
+          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas'))
         },
-        paint: {
-          'icon-opacity': 0.95
-        }
+        paint: pointLayerPaint
       });
 
       // --- Interactivity ---
@@ -828,24 +958,12 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
         }
       });
 
-      // --- Filters ---
+      // --- Filters (solo chip; niente switch di gruppo) ---
       const filterState = {
-        data_centers: {
-          on: true,
-          subtypes: new Set(FILTER_GROUPS.data_centers.subtypes)
-        },
-        energy_plants: {
-          on: true,
-          subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes)
-        },
-        raw_materials: {
-          on: true,
-          subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes)
-        },
-        connections: {
-          on: true,
-          types: new Set(CONNECTION_TYPES)
-        }
+        data_centers: { subtypes: new Set(FILTER_GROUPS.data_centers.subtypes) },
+        energy_plants: { subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes) },
+        raw_materials: { subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes) },
+        connections: { types: new Set(CONNECTION_TYPES) }
       };
 
       const dataByGroup = {
@@ -859,13 +977,11 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
         const data = dataByGroup[groupId]();
         if (!data) return 0;
         if (groupId === 'connections') {
-          if (!filterState.connections.on) return 0;
           return data.features.filter(f =>
             filterState.connections.types.has(f.properties.relationship_type)
           ).length;
         }
         const state = filterState[groupId];
-        if (!state.on) return 0;
         return data.features.filter(f => state.subtypes.has(f.properties.subtype)).length;
       }
 
@@ -883,25 +999,11 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
         }
       }
 
-      function updateLegendDim() {
-        document.querySelectorAll('[data-legend-subtype]').forEach((el) => {
-          const subtype = el.getAttribute('data-legend-subtype');
-          let active = false;
-          Object.keys(FILTER_GROUPS).forEach((gid) => {
-            const g = FILTER_GROUPS[gid];
-            if (g.subtypes.includes(subtype)) {
-              active = filterState[gid].on && filterState[gid].subtypes.has(subtype);
-            }
-          });
-          el.classList.toggle('is-dimmed', !active);
-        });
-      }
-
       function applyFilters() {
         Object.keys(FILTER_GROUPS).forEach((gid) => {
           const group = FILTER_GROUPS[gid];
           const state = filterState[gid];
-          const visible = state.on && state.subtypes.size > 0;
+          const visible = state.subtypes.size > 0;
           map.setLayoutProperty(group.layerId, 'visibility', visible ? 'visible' : 'none');
           if (visible) {
             map.setFilter(group.layerId, [
@@ -914,12 +1016,11 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
 
         CONNECTION_TYPES.forEach((rel) => {
           const layerId = connLayerByRel[rel];
-          const show = filterState.connections.on && filterState.connections.types.has(rel);
+          const show = filterState.connections.types.has(rel);
           map.setLayoutProperty(layerId, 'visibility', show ? 'visible' : 'none');
         });
 
         updateFilterCounts();
-        updateLegendDim();
       }
 
       function syncChipUI() {
@@ -936,34 +1037,16 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           btn.classList.toggle('is-on', on);
           btn.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
-        document.querySelectorAll('.group-enabled').forEach((input) => {
-          const group = input.getAttribute('data-group');
-          input.checked = filterState[group].on;
-        });
       }
 
       function resetFilters() {
         Object.keys(FILTER_GROUPS).forEach((gid) => {
-          filterState[gid].on = true;
           filterState[gid].subtypes = new Set(FILTER_GROUPS[gid].subtypes);
         });
-        filterState.connections.on = true;
         filterState.connections.types = new Set(CONNECTION_TYPES);
         syncChipUI();
         applyFilters();
       }
-
-      document.querySelectorAll('.filter-group-toggle').forEach((label) => {
-        label.addEventListener('click', (e) => e.stopPropagation());
-      });
-
-      document.querySelectorAll('.group-enabled').forEach((input) => {
-        input.addEventListener('change', () => {
-          const group = input.getAttribute('data-group');
-          filterState[group].on = input.checked;
-          applyFilters();
-        });
-      });
 
       document.querySelectorAll('.filter-chip[data-subtype]').forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -972,11 +1055,6 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           const set = filterState[group].subtypes;
           if (set.has(subtype)) set.delete(subtype);
           else set.add(subtype);
-          if (set.size === 0) {
-            filterState[group].on = false;
-          } else if (!filterState[group].on) {
-            filterState[group].on = true;
-          }
           syncChipUI();
           applyFilters();
         });
@@ -988,8 +1066,6 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
           const set = filterState.connections.types;
           if (set.has(rel)) set.delete(rel);
           else set.add(rel);
-          if (set.size === 0) filterState.connections.on = false;
-          else if (!filterState.connections.on) filterState.connections.on = true;
           syncChipUI();
           applyFilters();
         });
@@ -997,6 +1073,44 @@ const CONNECTION_TYPES = ["powers","supplies","manufactures_for"];
 
       const resetBtn = document.getElementById('filters-reset');
       if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+
+      function setOverlayVisibility(overlayId, on) {
+        const def = CONTEXT_OVERLAYS.find((o) => o.id === overlayId);
+        if (!def) return;
+        def.layerIds.forEach((layerId) => {
+          if (map.getLayer(layerId)) {
+            map.setLayoutProperty(layerId, 'visibility', on ? 'visible' : 'none');
+          }
+        });
+      }
+
+      document.querySelectorAll('.filter-chip[data-overlay]').forEach((btn) => {
+        const overlayId = btn.getAttribute('data-overlay');
+        setOverlayVisibility(overlayId, btn.classList.contains('is-on'));
+        btn.addEventListener('click', () => {
+          const on = !btn.classList.contains('is-on');
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+          setOverlayVisibility(overlayId, on);
+        });
+      });
+
+      // Tooltip on overlay features
+      ['overlay-cables-line', 'overlay-cable-landings', 'overlay-water-fill'].forEach((layerId) => {
+        map.on('mouseenter', layerId, () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', layerId, () => { map.getCanvas().style.cursor = ''; hideTooltip(); });
+        map.on('mousemove', layerId, (e) => {
+          const f = e.features && e.features[0];
+          if (!f) return;
+          const p = f.properties || {};
+            const text = p.name
+            ? (p.bws_label
+              ? `${p.region || p.name} — ${p.bws_label}`
+              : p.name)
+            : '';
+          if (text) showTooltip(e, text);
+        });
+      });
 
       applyFilters();
     });

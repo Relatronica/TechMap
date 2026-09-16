@@ -1,7 +1,134 @@
 {
   "app": {
     "title": "L'Infrastruttura Invisibile",
-    "subtitle": "La Mappa Fisica del Digitale e dell'IA"
+    "subtitle": "La Mappa Fisica del Digitale e dell'IA",
+    "relatronica_name": "Relatronica",
+    "relatronica_url": "https://relatronica.com/",
+    "support_url": "https://buymeacoffee.com/relatronica",
+    "github_url": "https://github.com/Relatronica/TechMap",
+    "github_issues_url": "https://github.com/Relatronica/TechMap/issues/new",
+    "press_email": "stampa@relatronica.com",
+    "privacy_email": "privacy@relatronica.com"
+  },
+  "legal": {
+    "nav_privacy": "Privacy",
+    "nav_terms": "Termini",
+    "nav_press": "Stampa",
+    "nav_report": "Segnala",
+    "updated_label": "Aggiornato",
+    "privacy": {
+      "title": "Privacy",
+      "kicker": "Trasparenza",
+      "heading": "Informativa privacy",
+      "lead": "Questo sito è uno strumento di civic tech. Raccogliamo il minimo indispensabile e non profiliamo le persone a fini commerciali.",
+      "updated": "2026-09-16",
+      "sections": [
+        {
+          "title": "Titolare",
+          "body": "Il progetto «L'Infrastruttura Invisibile» è curato da Relatronica, iniziativa indipendente e non profit di design speculativo, civic tech e knowledge mapping."
+        },
+        {
+          "title": "Dati trattati",
+          "body": "Di norma non chiediamo account né dati anagrafici. Possiamo trattare: indirizzo IP e log tecnici del hosting (per sicurezza e funzionamento); preferenze locali sul tuo dispositivo (ad esempio se hai già chiuso il messaggio di benvenuto); messaggi che ci invii volontariamente (segnalazioni, richieste stampa)."
+        },
+        {
+          "title": "Cookie e memorizzazione locale",
+          "body": "Non usiamo cookie di profilazione o advertising. Possiamo usare localStorage del browser per ricordare scelte di interfaccia (es. chiusura del modale di benvenuto). Puoi cancellarlo dalle impostazioni del browser."
+        },
+        {
+          "title": "Terze parti",
+          "body": "La mappa carica tile e librerie da servizi terzi (ad esempio basemap e CDN). Quei fornitori possono ricevere richieste di rete tecniche (IP, user agent) secondo le loro informative. I link a piattaforme esterne (donazioni, social, GitHub) sono sotto il controllo di quei servizi."
+        },
+        {
+          "title": "Finalità e basi giuridiche",
+          "body": "Trattiamo i dati per far funzionare il sito, prevenire abusi, rispondere alle richieste e migliorare il dataset pubblico. Base giuridica: interesse legittimo al funzionamento di uno strumento informativo non profit e, per i messaggi che ci invii, esecuzione di misure precontrattuali / contatto su tua richiesta."
+        },
+        {
+          "title": "Diritti",
+          "body": "Puoi chiedere accesso, rettifica, cancellazione, limitazione o opposizione dove applicabile, e presentare reclamo all'Autorità Garante. Per esercitare i diritti scrivi all'indirizzo privacy indicato in questa pagina."
+        }
+      ],
+      "contact_cta": "Scrivi per la privacy"
+    },
+    "terms": {
+      "title": "Termini di uso",
+      "kicker": "Condizioni",
+      "heading": "Termini di uso",
+      "lead": "Usando il sito accetti queste condizioni. Sono scritte per proteggere la comunità e chiarire i limiti dei dati.",
+      "updated": "2026-09-16",
+      "sections": [
+        {
+          "title": "Natura del progetto",
+          "body": "Lo strumento è informativo, indipendente e non profit. Non è un servizio commerciale, non costituisce consulenza legale, tecnica o di investimento, e non rappresenta posizioni di aziende mappate."
+        },
+        {
+          "title": "Dati incompleti o stimati",
+          "body": "Il dataset è in evoluzione: può essere incompleto, ritardato, inferito o errato. Preferiamo dichiarare fonti e livello di certezza piuttosto che fingere completezza. Verifica sempre le fonti primarie prima di decisioni pubbliche o giornalistiche."
+        },
+        {
+          "title": "Uso consentito",
+          "body": "Puoi esplorare, citare e condividere il progetto indicando nome, URL e data di consultazione. L'uso per ricerca, didattica, giornalismo e advocacy è incoraggiato."
+        },
+        {
+          "title": "Uso non consentito",
+          "body": "Non è consentito presentare i dati come ufficiali o esaustivi; rimuovere attributioni; usare il sito per molestie, profiling abusivo di persone, o attività illecite. I dataset di terze parti restano soggetti alle loro licenze (es. ODbL, CC BY)."
+        },
+        {
+          "title": "Responsabilità",
+          "body": "Nella misura consentita dalla legge, Relatronica e i curatori non rispondono di danni derivanti dall'uso o dall'impossibilità di uso del sito o dei dataset. Segnalaci errori: aiutano tutta la comunità."
+        },
+        {
+          "title": "Modifiche",
+          "body": "Possiamo aggiornare termini, interfaccia e dati senza preavviso. La data in cima alla pagina indica l'ultima revisione sostanziale di questo testo."
+        }
+      ]
+    },
+    "press": {
+      "title": "Stampa",
+      "kicker": "Ufficio stampa",
+      "heading": "Contatti stampa",
+      "lead": "Per interviste, approfondimenti, citazioni o materiali sul progetto scrivici. Rispondiamo in italiano o inglese.",
+      "body": "L'Infrastruttura Invisibile è una mappa civica sull'infrastruttura fisica di cloud e IA (data center, energia, materie prime, connessioni), curata da Relatronica.",
+      "bullets_title": "Cosa possiamo fornire",
+      "bullets": [
+        "Angolo e contesto del progetto (civic tech, non profit, focus Italia/Europa)",
+        "Chiarimenti su metodologia, fonti e limiti del dataset",
+        "Screenshot o walkthrough della mappa per articoli e podcast",
+        "Collegamento a Relatronica per altri progetti di knowledge mapping"
+      ],
+      "how_title": "Come contattarci",
+      "how_body": "Scrivi con oggetto chiaro (es. «Richiesta intervista — nome testata»), scadenza editoriale e link all'articolo se già online.",
+      "email_cta": "Email stampa",
+      "project_cta": "Apri la mappa",
+      "org_cta": "Sito Relatronica"
+    },
+    "report": {
+      "title": "Segnala",
+      "kicker": "Partecipa",
+      "heading": "Segnala un dato o un errore",
+      "lead": "La mappa migliora con la comunità. Segnala siti mancanti, coordinate sbagliate, fonti migliori o note su lavoro e impatto territoriale.",
+      "intro": "Apri una issue su GitHub (preferito: resta pubblica e tracciabile) oppure scrivi all'indirizzo privacy/contatti se non usi GitHub. Indica sempre: nome del sito, posizione approssimativa, cosa non torna e una fonte se ce l'hai.",
+      "cards": [
+        {
+          "title": "Errore o aggiornamento",
+          "body": "Punto fuori posto, chiuso, rinominato, o connessione non plausibile.",
+          "issue_title": "Aggiornamento / correzione dato"
+        },
+        {
+          "title": "Sito mancante",
+          "body": "Data center, impianto o nodo rilevante assente dalla mappa.",
+          "issue_title": "Nuovo sito da aggiungere"
+        },
+        {
+          "title": "Fonte o metodologia",
+          "body": "Proposta di fonte aperta, licenza, o miglioramento della documentazione.",
+          "issue_title": "Fonte / metodologia"
+        }
+      ],
+      "github_cta": "Apri una issue su GitHub",
+      "email_cta": "Scrivi via email",
+      "note": "Non pubblicare dati personali di terzi né materiali coperti da segreto. Per vulnerabilità di sicurezza del sito, contattaci in privato."
+    }
   },
   "home": {
     "hero_line": "Il cloud ha un corpo. Energia, chip, miniere, lavoro.",
@@ -10,7 +137,12 @@
     "cta_secondary": "Come funziona",
     "problem_kicker": "Il problema",
     "problem_title": "Dietro ogni prompt c'è una catena materiale",
-    "problem_body": "Cloud e IA sembrano immateriali. In realtà attivano data center, impianti energetici, fabbriche di semiconduttori e siti di estrazione — spesso lontani, opachi, poco discutibili in pubblico.",
+    "problem_1_title": "Sembra immateriale",
+    "problem_1_body": "Cloud e IA vengono raccontati come servizi senza corpo: un prompt, una query, un account. Il peso fisico resta fuori dal campo.",
+    "problem_2_title": "È una catena fisica",
+    "problem_2_body": "Dietro ogni richiesta ci sono data center, impianti energetici, fabbriche di semiconduttori e siti di estrazione — collegati in una filiera materiale.",
+    "problem_3_title": "Resta opaca",
+    "problem_3_body": "Queste infrastrutture sono spesso lontane, poco documentate e difficili da discutere in pubblico. La mappa serve a renderle leggibili.",
     "stats_kicker": "Nel dataset oggi",
     "stats_title": "Numeri dalla mappa, non slogan",
     "stat_dc": "Data center",
@@ -29,15 +161,49 @@
     "action_3_body": "Dove i dati sono arricchiti trovi affidabilità, evidenze e note su lavoro e impatto.",
     "roadmap_kicker": "Roadmap",
     "roadmap_title": "Cosa c'è e cosa arriva",
-    "road_now": "Ora",
-    "road_now_body": "Mappa interattiva Europa/Italia, filtri per subtype, icone, connessioni con certezza epistemica.",
-    "road_next": "Prossimo",
-    "road_next_body": "Più siti italiani, metriche energia/acqua, layer lavoro e aggiornamento delle fonti.",
-    "road_later": "Dopo",
-    "road_later_body": "Serie temporali, contributi verificati, confronti territoriali e export per giornalismo.",
+    "roadmap_steps": [
+      {
+        "status": "available",
+        "status_label": "Disponibile",
+        "title": "Esplorare la filiera",
+        "body": "Mappa interattiva su Europa e Italia, filtri per tipo di sito, icone e connessioni con livello di certezza dichiarato."
+      },
+      {
+        "status": "in_progress",
+        "status_label": "In sviluppo",
+        "title": "Approfondire i dati",
+        "body": "Più siti italiani, metriche su energia e acqua, layer sul lavoro e aggiornamento continuo delle fonti."
+      },
+      {
+        "status": "planned",
+        "status_label": "In programma",
+        "title": "Analizzare e condividere",
+        "body": "Serie temporali, contributi verificati dalla comunità, confronti territoriali e export per giornalismo e ricerca."
+      }
+    ],
     "footer_cta": "Pronto a vedere l'infrastruttura?",
     "nav_map": "Mappa",
+    "nav_support": "Sostieni",
+    "nav_support_aria": "Sostieni lo sviluppo del progetto su Buy Me a Coffee",
     "nav_home": "Home",
+    "footer_project_by": "Un progetto di",
+    "footer_project_note": "Civic tech e knowledge mapping indipendenti: rende visibile l'infrastruttura fisica di cloud e IA.",
+    "footer_col_explore": "Esplora",
+    "footer_col_participate": "Partecipa",
+    "footer_col_legal": "Info legali",
+    "footer_support": "Sostieni",
+    "footer_support_note": "I contributi coprono hosting, dati cartografici e manutenzione.",
+    "footer_tagline": "Non profit · Open data",
+    "welcome_title": "Benvenutə in questa mappa",
+    "welcome_lead": "È un progetto non profit di civic tech: rende visibile l'infrastruttura fisica di cloud e IA perché cittadine, giornalisti e comunità possano discuterne con più consapevolezza.",
+    "welcome_mission_title": "Perché esiste",
+    "welcome_mission_body": "Non vendiamo servizi e non rappresentiamo un'azienda. L'obiettivo è attivismo informato: condividere strumenti aperti, fonti e domande sul territorio, l'energia e il lavoro dietro il digitale.",
+    "welcome_disclaimer_title": "Sui dati",
+    "welcome_disclaimer_body": "Il dataset è incompleto, in evoluzione e a tratti stimato o inferito. Preferiamo trasparenza (fonti, affidabilità, note) a una falsa completezza. Usalo come punto di partenza, non come verità ufficiale.",
+    "welcome_cta_map": "Esplora la mappa",
+    "welcome_cta_close": "Ho capito, continua",
+    "welcome_cta_support": "Sostieni il progetto",
+    "welcome_reopen": "Missione e disclaimer",
     "nav_problem": "Problema",
     "nav_data": "Dati",
     "nav_actions": "Uso",
@@ -202,16 +368,44 @@
     "line_supplies": "Fornitura materiali",
     "line_manufactures": "Produzione componenti"
   },
+  "overlays": {
+    "title": "Contesto",
+    "power_grid": "Rete elettrica",
+    "power_grid_hint": "Linee di trasmissione (OpenStreetMap / OpenInfraMap)",
+    "water_stress": "Stress idrico",
+    "water_stress_hint": "Stress idrico di base per sottobacino (WRI Aqueduct 4.0, HydroBASINS L6)",
+    "submarine_cables": "Cavi sottomarini",
+    "submarine_cables_hint": "Rotte e landing station in Europa (estratto storico TeleGeography)"
+  },
+  "data_attribution": {
+    "title": "Dati e licenze",
+    "open": "Dati e licenze",
+    "updated": "Dataset aggiornato",
+    "methodology": "Metodologia",
+    "license": "Licenza",
+    "records": "record in mappa",
+    "curated": "curati",
+    "imported": "importati",
+    "basemap": "Mappa di base"
+  },
   "countries": {
     "IT": "Italia",
     "DE": "Germania",
+    "ES": "Spagna",
     "NL": "Paesi Bassi",
+    "BE": "Belgio",
     "AT": "Austria",
+    "PL": "Polonia",
     "FI": "Finlandia",
     "SE": "Svezia",
     "IE": "Irlanda",
     "FR": "Francia",
     "PT": "Portogallo",
+    "GR": "Grecia",
+    "CZ": "Rep. Ceca",
+    "RO": "Romania",
+    "HU": "Ungheria",
+    "DK": "Danimarca",
     "RS": "Serbia",
     "TW": "Taiwan",
     "AU": "Australia",

@@ -1,17 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
-import '../styles/site-header.css';
 import MapView from '../components/MapView.astro';
 import i18n from '../i18n/it.json';
-import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
+import {
+  ICON_PATHS,
+  FILTER_GROUPS,
+  CONNECTION_TYPES,
+  CONTEXT_OVERLAYS,
+  SUBTYPE_COLORS,
+  ICON_OPACITY_EXPR,
+  ICON_SIZE,
+  ICON_SIZE_HIGHLIGHT,
+  ICON_SIZE_DIMMED
+} from '../lib/mapIcons';
 ---
 
 <Layout title={`${i18n.app.title} — Mappa`} withMap={true} bodyClass="is-map">
   <MapView />
 
   <!-- Client-side MapLibre Script -->
-  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES }}>
+  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_DIMMED }}>
     // MapLibre GL JS loaded from CDN as global `maplibregl`
     var MaplibreMap = maplibregl.Map;
     var NavigationControl = maplibregl.NavigationControl;
@@ -104,10 +113,12 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
         unknown: "Sconosciuto"
       },
       countries: {
-        IT: "Italia", DE: "Germania", NL: "Paesi Bassi", AT: "Austria",
-        FI: "Finlandia", SE: "Svezia", IE: "Irlanda", FR: "Francia",
-        PT: "Portogallo", RS: "Serbia", TW: "Taiwan", AU: "Australia",
-        CL: "Cile", CD: "Rep. Dem. del Congo", GL: "Groenlandia", CN: "Cina"
+        IT: "Italia", DE: "Germania", ES: "Spagna", NL: "Paesi Bassi", BE: "Belgio",
+        AT: "Austria", PL: "Polonia", FI: "Finlandia", SE: "Svezia", IE: "Irlanda",
+        FR: "Francia", PT: "Portogallo", GR: "Grecia", CZ: "Rep. Ceca", RO: "Romania",
+        HU: "Ungheria", DK: "Danimarca", LU: "Lussemburgo", NO: "Norvegia", CH: "Svizzera",
+        RS: "Serbia", TW: "Taiwan", AU: "Australia", CL: "Cile", CD: "Rep. Dem. del Congo",
+        GL: "Groenlandia", CN: "Cina", XX: "Non specificato"
       }
     };
 
@@ -118,10 +129,10 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
     let energyPlantsData = null;
 
     const COLORS = {
-      dc: '#1a5f82',
-      rm: '#b04a2c',
-      ep: '#1f6b55',
-      conn: '#5c6570'
+      dc: '#5A9BB8',
+      rm: '#B87A4A',
+      ep: '#5B8FA8',
+      conn: '#8a9199'
     };
 
     // Initialize map
@@ -136,18 +147,10 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
     });
 
     // Add navigation controls bottom-right
-    map.addControl(new NavigationControl({ showCompass: false }), 'bottom-right');
+    map.addControl(new NavigationControl({ showCompass: false }), 'bottom-left');
 
     // Tooltip element
     const tooltip = document.getElementById('map-tooltip');
-
-    // Legend panel toggle
-    const legendPanel = document.getElementById('legend-panel');
-    const legendHeader = document.getElementById('legend-header');
-
-    legendHeader.addEventListener('click', () => {
-      legendPanel.classList.toggle('collapsed');
-    });
 
     // Detail sidebar
     const detailSidebar = document.getElementById('detail-sidebar');
@@ -164,32 +167,30 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
       resetHighlights();
     }
 
-    function createMapIconImage(pathD, color, size = 72) {
+    function createMapIconImage(pathD, color, size = 80) {
       const canvas = document.createElement('canvas');
       canvas.width = size;
       canvas.height = size;
       const ctx = canvas.getContext('2d');
       const cx = size / 2;
       const cy = size / 2;
-      const r = size * 0.36;
+      const scale = (size * 0.64) / 24;
+      const path = new Path2D(pathD);
 
-      ctx.beginPath();
-      ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.fillStyle = color;
-      ctx.fill();
-      ctx.lineWidth = size * 0.045;
-      ctx.strokeStyle = 'rgba(255,255,255,0.95)';
-      ctx.stroke();
-
-      const scale = (size * 0.4) / 24;
       ctx.save();
       ctx.translate(cx - 12 * scale, cy - 12 * scale);
       ctx.scale(scale, scale);
-      const path = new Path2D(pathD);
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 1.85;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
+
+      ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
+      ctx.shadowBlur = 2.2;
+      ctx.shadowOffsetY = 1;
+
+      ctx.fillStyle = color;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2.6;
+      ctx.fill(path);
       ctx.stroke(path);
       ctx.restore();
 
@@ -216,14 +217,14 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
     function resetHighlights() {
       ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
         if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'line-opacity', 0.55);
+          map.setPaintProperty(layerId, 'line-opacity', 0.7);
           map.setPaintProperty(layerId, 'line-width', 1.6);
         }
       });
       ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
         if (map.getLayer(layerId)) {
-          map.setLayoutProperty(layerId, 'icon-size', 0.48);
-          map.setPaintProperty(layerId, 'icon-opacity', 0.95);
+          map.setLayoutProperty(layerId, 'icon-size', ICON_SIZE);
+          map.setPaintProperty(layerId, 'icon-opacity', ICON_OPACITY_EXPR);
         }
       });
     }
@@ -296,14 +297,14 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           map.setLayoutProperty(layerId, 'icon-size', [
             'case',
             ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
-            0.62,
-            0.38
+            ICON_SIZE_HIGHLIGHT,
+            ICON_SIZE_DIMMED
           ]);
           map.setPaintProperty(layerId, 'icon-opacity', [
             'case',
             ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
             1,
-            0.45
+            0.35
           ]);
         }
       });
@@ -427,8 +428,10 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
 
     // Build detail sidebar HTML for a point feature
     function buildPointDetail(properties, featureType) {
-      const accentColor = featureType === 'data_center' ? COLORS.dc :
-                          featureType === 'raw_material' ? COLORS.rm : COLORS.ep;
+      const accentColor =
+        (properties.subtype && SUBTYPE_COLORS[properties.subtype]) ||
+        (featureType === 'data_center' ? COLORS.dc :
+          featureType === 'raw_material' ? COLORS.rm : COLORS.ep);
       const shapeClass = featureType === 'data_center' ? '' :
                          featureType === 'raw_material' ? 'shape-rm' : 'shape-ep';
       const typeLabel = featureType === 'data_center' ? i18n.layers.data_centers :
@@ -588,9 +591,9 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
       const props = resolveConnectionProperties(properties);
       const relType = props.relationship_type;
       const typeColor = relType === 'powers' ? COLORS.ep :
-                        relType === 'supplies' ? COLORS.rm : COLORS.dc;
-      const typeBg = relType === 'powers' ? 'rgba(31, 107, 85, 0.12)' :
-                     relType === 'supplies' ? 'rgba(176, 74, 44, 0.12)' : 'rgba(26, 95, 130, 0.12)';
+                       relType === 'supplies' ? COLORS.rm : COLORS.dc;
+      const typeBg = relType === 'powers' ? 'rgba(90, 173, 122, 0.18)' :
+                     relType === 'supplies' ? 'rgba(209, 122, 82, 0.18)' : 'rgba(107, 168, 201, 0.18)';
       const certainty = props.certainty && i18n.certainty[props.certainty]
         ? `<span class="certainty-badge certainty-${props.certainty}">${i18n.popup.certainty}: ${i18n.certainty[props.certainty]}</span>`
         : '';
@@ -641,12 +644,13 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
       energyPlantsData = await epRes.json();
       connectionsData = await connRes.json();
 
-      // Marker icons by subtype
+      // Marker icons by subtype (colore semantico)
       Object.values(FILTER_GROUPS).forEach((group) => {
         group.subtypes.forEach((subtype) => {
           const path = ICON_PATHS[subtype];
           if (path) {
-            map.addImage(iconImageId(subtype), createMapIconImage(path, group.color));
+            const color = SUBTYPE_COLORS[subtype] || group.color;
+            map.addImage(iconImageId(subtype), createMapIconImage(path, color));
           }
         });
       });
@@ -656,6 +660,131 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
       map.addSource('raw-materials', { type: 'geojson', data: rawMaterialsData });
       map.addSource('energy-plants', { type: 'geojson', data: energyPlantsData });
       map.addSource('connections', { type: 'geojson', data: connectionsData });
+
+      // Context overlays (below site layers)
+      map.addSource('openinframap-power', {
+        type: 'vector',
+        tiles: ['https://openinframap.org/tiles/{z}/{x}/{y}.pbf'],
+        maxzoom: 17,
+        attribution: '© OpenStreetMap, OpenInfraMap'
+      });
+
+      const [cablesRes, landingsRes, waterRes] = await Promise.all([
+        fetch('./data/overlays/submarine_cables.geojson'),
+        fetch('./data/overlays/cable_landings.geojson'),
+        fetch('./data/overlays/water_stress_eu.geojson')
+      ]);
+      const cablesData = await cablesRes.json();
+      const landingsData = await landingsRes.json();
+      const waterData = await waterRes.json();
+
+      map.addSource('overlay-cables', { type: 'geojson', data: cablesData });
+      map.addSource('overlay-landings', { type: 'geojson', data: landingsData });
+      map.addSource('overlay-water', { type: 'geojson', data: waterData });
+
+      map.addLayer({
+        id: 'overlay-water-fill',
+        type: 'fill',
+        source: 'overlay-water',
+        layout: { visibility: 'none' },
+        paint: {
+          'fill-color': [
+            'interpolate',
+            ['linear'],
+            ['get', 'bws_cat'],
+            0, '#c8ddd4',
+            1, '#e8d9a8',
+            2, '#e0b07a',
+            3, '#c97a5a',
+            4, '#8f3d4a'
+          ],
+          'fill-opacity': 0.38
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-water-outline',
+        type: 'line',
+        source: 'overlay-water',
+        layout: { visibility: 'none' },
+        paint: {
+          'line-color': '#6a5a4a',
+          'line-width': 0.4,
+          'line-opacity': 0.2
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-power-lines',
+        type: 'line',
+        source: 'openinframap-power',
+        'source-layer': 'power_line',
+        layout: {
+          visibility: 'none',
+          'line-cap': 'round',
+          'line-join': 'round'
+        },
+        paint: {
+          'line-color': [
+            'interpolate',
+            ['linear'],
+            ['coalesce', ['to-number', ['get', 'voltage']], 0],
+            0, '#b8a48a',
+            110000, '#9a7a4a',
+            220000, '#7a5a2e',
+            400000, '#5a3a18'
+          ],
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            4, 0.4,
+            8, 1.1,
+            12, 2.2
+          ],
+          'line-opacity': 0.75
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-cables-line',
+        type: 'line',
+        source: 'overlay-cables',
+        layout: { visibility: 'none', 'line-cap': 'round', 'line-join': 'round' },
+        paint: {
+          'line-color': '#3d6f8c',
+          'line-width': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            3, 0.8,
+            8, 1.6,
+            12, 2.4
+          ],
+          'line-opacity': 0.7
+        }
+      });
+
+      map.addLayer({
+        id: 'overlay-cable-landings',
+        type: 'circle',
+        source: 'overlay-landings',
+        layout: { visibility: 'none' },
+        paint: {
+          'circle-radius': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            3, 2.5,
+            8, 4,
+            12, 6
+          ],
+          'circle-color': '#3d6f8c',
+          'circle-stroke-width': 1,
+          'circle-stroke-color': '#ffffff',
+          'circle-opacity': 0.85
+        }
+      });
 
       // Add connection line layers (below points)
       map.addLayer({
@@ -667,7 +796,7 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           'line-color': COLORS.ep,
           'line-width': 1.6,
           'line-dasharray': [2, 2.5],
-          'line-opacity': 0.55
+          'line-opacity': 0.7
         }
       });
 
@@ -680,7 +809,7 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           'line-color': COLORS.rm,
           'line-width': 1.6,
           'line-dasharray': [1.5, 2.5],
-          'line-opacity': 0.55
+          'line-opacity': 0.7
         }
       });
 
@@ -693,24 +822,30 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           'line-color': COLORS.dc,
           'line-width': 1.6,
           'line-dasharray': [4, 3],
-          'line-opacity': 0.55
+          'line-opacity': 0.7
         }
       });
 
-      // Point layers as subtype icons
+      const pointLayerPaint = {
+        'icon-opacity': ICON_OPACITY_EXPR
+      };
+
+      const pointLayerLayout = {
+        'icon-size': ICON_SIZE,
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true
+      };
+
+      // Point layers — una silhouette per sottotipo (gas, solar, colocation…)
       map.addLayer({
         id: 'data-centers-layer',
         type: 'symbol',
         source: 'data-centers',
         layout: {
-          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale')),
-          'icon-size': 0.48,
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true
+          ...pointLayerLayout,
+          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale'))
         },
-        paint: {
-          'icon-opacity': 0.95
-        }
+        paint: pointLayerPaint
       });
 
       map.addLayer({
@@ -718,14 +853,10 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
         type: 'symbol',
         source: 'raw-materials',
         layout: {
-          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine')),
-          'icon-size': 0.48,
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true
+          ...pointLayerLayout,
+          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine'))
         },
-        paint: {
-          'icon-opacity': 0.95
-        }
+        paint: pointLayerPaint
       });
 
       map.addLayer({
@@ -733,14 +864,10 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
         type: 'symbol',
         source: 'energy-plants',
         layout: {
-          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas')),
-          'icon-size': 0.48,
-          'icon-allow-overlap': true,
-          'icon-ignore-placement': true
+          ...pointLayerLayout,
+          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas'))
         },
-        paint: {
-          'icon-opacity': 0.95
-        }
+        paint: pointLayerPaint
       });
 
       // --- Interactivity ---
@@ -838,24 +965,12 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
         }
       });
 
-      // --- Filters ---
+      // --- Filters (solo chip; niente switch di gruppo) ---
       const filterState = {
-        data_centers: {
-          on: true,
-          subtypes: new Set(FILTER_GROUPS.data_centers.subtypes)
-        },
-        energy_plants: {
-          on: true,
-          subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes)
-        },
-        raw_materials: {
-          on: true,
-          subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes)
-        },
-        connections: {
-          on: true,
-          types: new Set(CONNECTION_TYPES)
-        }
+        data_centers: { subtypes: new Set(FILTER_GROUPS.data_centers.subtypes) },
+        energy_plants: { subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes) },
+        raw_materials: { subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes) },
+        connections: { types: new Set(CONNECTION_TYPES) }
       };
 
       const dataByGroup = {
@@ -869,13 +984,11 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
         const data = dataByGroup[groupId]();
         if (!data) return 0;
         if (groupId === 'connections') {
-          if (!filterState.connections.on) return 0;
           return data.features.filter(f =>
             filterState.connections.types.has(f.properties.relationship_type)
           ).length;
         }
         const state = filterState[groupId];
-        if (!state.on) return 0;
         return data.features.filter(f => state.subtypes.has(f.properties.subtype)).length;
       }
 
@@ -893,25 +1006,11 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
         }
       }
 
-      function updateLegendDim() {
-        document.querySelectorAll('[data-legend-subtype]').forEach((el) => {
-          const subtype = el.getAttribute('data-legend-subtype');
-          let active = false;
-          Object.keys(FILTER_GROUPS).forEach((gid) => {
-            const g = FILTER_GROUPS[gid];
-            if (g.subtypes.includes(subtype)) {
-              active = filterState[gid].on && filterState[gid].subtypes.has(subtype);
-            }
-          });
-          el.classList.toggle('is-dimmed', !active);
-        });
-      }
-
       function applyFilters() {
         Object.keys(FILTER_GROUPS).forEach((gid) => {
           const group = FILTER_GROUPS[gid];
           const state = filterState[gid];
-          const visible = state.on && state.subtypes.size > 0;
+          const visible = state.subtypes.size > 0;
           map.setLayoutProperty(group.layerId, 'visibility', visible ? 'visible' : 'none');
           if (visible) {
             map.setFilter(group.layerId, [
@@ -924,12 +1023,11 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
 
         CONNECTION_TYPES.forEach((rel) => {
           const layerId = connLayerByRel[rel];
-          const show = filterState.connections.on && filterState.connections.types.has(rel);
+          const show = filterState.connections.types.has(rel);
           map.setLayoutProperty(layerId, 'visibility', show ? 'visible' : 'none');
         });
 
         updateFilterCounts();
-        updateLegendDim();
       }
 
       function syncChipUI() {
@@ -946,34 +1044,16 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           btn.classList.toggle('is-on', on);
           btn.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
-        document.querySelectorAll('.group-enabled').forEach((input) => {
-          const group = input.getAttribute('data-group');
-          input.checked = filterState[group].on;
-        });
       }
 
       function resetFilters() {
         Object.keys(FILTER_GROUPS).forEach((gid) => {
-          filterState[gid].on = true;
           filterState[gid].subtypes = new Set(FILTER_GROUPS[gid].subtypes);
         });
-        filterState.connections.on = true;
         filterState.connections.types = new Set(CONNECTION_TYPES);
         syncChipUI();
         applyFilters();
       }
-
-      document.querySelectorAll('.filter-group-toggle').forEach((label) => {
-        label.addEventListener('click', (e) => e.stopPropagation());
-      });
-
-      document.querySelectorAll('.group-enabled').forEach((input) => {
-        input.addEventListener('change', () => {
-          const group = input.getAttribute('data-group');
-          filterState[group].on = input.checked;
-          applyFilters();
-        });
-      });
 
       document.querySelectorAll('.filter-chip[data-subtype]').forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -982,11 +1062,6 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           const set = filterState[group].subtypes;
           if (set.has(subtype)) set.delete(subtype);
           else set.add(subtype);
-          if (set.size === 0) {
-            filterState[group].on = false;
-          } else if (!filterState[group].on) {
-            filterState[group].on = true;
-          }
           syncChipUI();
           applyFilters();
         });
@@ -998,8 +1073,6 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
           const set = filterState.connections.types;
           if (set.has(rel)) set.delete(rel);
           else set.add(rel);
-          if (set.size === 0) filterState.connections.on = false;
-          else if (!filterState.connections.on) filterState.connections.on = true;
           syncChipUI();
           applyFilters();
         });
@@ -1007,6 +1080,44 @@ import { ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES } from '../lib/mapIcons';
 
       const resetBtn = document.getElementById('filters-reset');
       if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+
+      function setOverlayVisibility(overlayId, on) {
+        const def = CONTEXT_OVERLAYS.find((o) => o.id === overlayId);
+        if (!def) return;
+        def.layerIds.forEach((layerId) => {
+          if (map.getLayer(layerId)) {
+            map.setLayoutProperty(layerId, 'visibility', on ? 'visible' : 'none');
+          }
+        });
+      }
+
+      document.querySelectorAll('.filter-chip[data-overlay]').forEach((btn) => {
+        const overlayId = btn.getAttribute('data-overlay');
+        setOverlayVisibility(overlayId, btn.classList.contains('is-on'));
+        btn.addEventListener('click', () => {
+          const on = !btn.classList.contains('is-on');
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+          setOverlayVisibility(overlayId, on);
+        });
+      });
+
+      // Tooltip on overlay features
+      ['overlay-cables-line', 'overlay-cable-landings', 'overlay-water-fill'].forEach((layerId) => {
+        map.on('mouseenter', layerId, () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', layerId, () => { map.getCanvas().style.cursor = ''; hideTooltip(); });
+        map.on('mousemove', layerId, (e) => {
+          const f = e.features && e.features[0];
+          if (!f) return;
+          const p = f.properties || {};
+            const text = p.name
+            ? (p.bws_label
+              ? `${p.region || p.name} — ${p.bws_label}`
+              : p.name)
+            : '';
+          if (text) showTooltip(e, text);
+        });
+      });
 
       applyFilters();
     });

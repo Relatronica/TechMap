@@ -1,0 +1,33 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import i18n from '../i18n/it.json';
+
+const p = i18n.legal.privacy;
+const app = i18n.app;
+---
+
+<ContentPage
+  title={p.title}
+  description={p.lead}
+  kicker={p.kicker}
+  heading={p.heading}
+  lead={p.lead}
+>
+  <article class="content-prose">
+    <p class="content-meta">
+      {i18n.legal.updated_label}: <time datetime={p.updated}>{p.updated}</time>
+    </p>
+    {p.sections.map((section) => (
+      <section>
+        <h2>{section.title}</h2>
+        <p>{section.body}</p>
+      </section>
+    ))}
+    <div class="content-actions">
+      <a class="btn btn-accent" href={`mailto:${app.privacy_email}`}>
+        {p.contact_cta}
+      </a>
+      <a class="btn btn-ghost-light" href="/termini">{i18n.legal.nav_terms}</a>
+    </div>
+  </article>
+</ContentPage>

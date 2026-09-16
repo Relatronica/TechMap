@@ -1,6 +1,6 @@
 ---
 /**
- * Header condiviso — home (sticky + ancore) e mappa (compatto)
+ * Header unico — stesso su home e mappa
  */
 import i18n from '../i18n/it.json';
 
@@ -10,6 +10,7 @@ interface Props {
 
 const { variant = 'home' } = Astro.props;
 const h = i18n.home;
+const app = i18n.app;
 const isMap = variant === 'map';
 
 const anchors = [
@@ -22,75 +23,117 @@ const anchors = [
 ];
 ---
 
-<header class:list={['site-header', isMap && 'site-header--map']} id="site-header" data-variant={variant}>
+<header class="site-header" id="site-header" data-variant={variant}>
   <div class="site-header-inner">
     <a class="site-header-brand" href="/" aria-label={h.nav_home}>
-      <span class="brand-mark" aria-hidden="true"></span>
+      <svg class="site-header-logo" viewBox="0 0 28 28" aria-hidden="true">
+        <path
+          class="logo-link"
+          d="M7.5 19.5 L13 10.5 M15.5 9 L20.5 12.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.25"
+          stroke-linecap="round"
+        />
+        <rect class="logo-ep" x="11" y="4" width="6" height="6" rx="0.5" />
+        <path class="logo-rm" d="M7.5 16.5 L11 20 L7.5 23.5 L4 20 Z" />
+        <circle class="logo-dc" cx="22" cy="14" r="3.25" />
+      </svg>
       <span class="site-header-brand-text">
         <strong>{i18n.app.title}</strong>
-        {isMap && <span>{i18n.app.subtitle}</span>}
       </span>
     </a>
 
-    {!isMap && (
-      <nav class="site-header-nav" aria-label="Sezioni">
-        {anchors.map((a) => (
-          <a href={a.href}>{a.label}</a>
-        ))}
-      </nav>
-    )}
+    <nav class="site-header-nav" aria-label="Sezioni">
+      {anchors.map((a) => (
+        <a href={a.href}>{a.label}</a>
+      ))}
+    </nav>
 
     <div class="site-header-actions">
-      {isMap ? (
-        <a class="site-header-link" href="/">{h.nav_home}</a>
-      ) : (
-        <button type="button" class="site-header-menu" id="site-header-menu" aria-expanded="false" aria-controls="site-header-drawer">
-          Menu
-        </button>
-      )}
-      <a class:list={['site-header-cta', isMap && 'is-active']} href="/mappa">{h.nav_map}</a>
+      <button
+        type="button"
+        class="site-header-menu"
+        id="site-header-menu"
+        aria-expanded="false"
+        aria-controls="site-header-drawer"
+      >
+        Menu
+      </button>
+      <a
+        class="site-header-support"
+        href={app.support_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={h.nav_support_aria}
+      >
+        {h.nav_support}
+      </a>
+      <a
+        class:list={['site-header-cta', isMap && 'is-active']}
+        href="/mappa"
+        aria-current={isMap ? 'page' : undefined}
+      >
+        {h.nav_map}
+      </a>
     </div>
   </div>
 
-  {!isMap && (
-    <div class="site-header-drawer" id="site-header-drawer" hidden>
-      <nav aria-label="Sezioni mobile">
-        {anchors.map((a) => (
-          <a href={a.href} class="site-header-drawer-link">{a.label}</a>
-        ))}
-        <a href="/mappa" class="site-header-drawer-link is-cta">{h.cta_map}</a>
-      </nav>
-    </div>
-  )}
+  <div class="site-header-drawer" id="site-header-drawer" hidden>
+    <nav aria-label="Sezioni mobile">
+      <a href="/" class="site-header-drawer-link">{h.nav_home}</a>
+      {anchors.map((a) => (
+        <a href={a.href} class="site-header-drawer-link">{a.label}</a>
+      ))}
+      <a
+        href={app.support_url}
+        class="site-header-drawer-link is-support"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {h.footer_support}
+      </a>
+      <a
+        href="/mappa"
+        class:list={['site-header-drawer-link', 'is-cta', isMap && 'is-active']}
+        aria-current={isMap ? 'page' : undefined}
+      >
+        {h.cta_map}
+      </a>
+    </nav>
+  </div>
 </header>
 
-{!isMap && (
-  <script>
-    const header = document.getElementById('site-header');
-    const menuBtn = document.getElementById('site-header-menu');
-    const drawer = document.getElementById('site-header-drawer');
+<script>
+  const header = document.getElementById('site-header');
+  const menuBtn = document.getElementById('site-header-menu');
+  const drawer = document.getElementById('site-header-drawer');
+  const isHome = document.body.classList.contains('is-home');
 
-    function onScroll() {
-      if (!header) return;
-      header.classList.toggle('is-scrolled', window.scrollY > 24);
-    }
+  function onScroll() {
+    if (!header || !isHome) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+  }
 
-    onScroll();
+  onScroll();
+  if (isHome) {
     window.addEventListener('scroll', onScroll, { passive: true });
+  } else {
+    header?.classList.add('is-scrolled');
+  }
 
-    menuBtn?.addEventListener('click', () => {
-      const open = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!open));
-      if (drawer) drawer.hidden = open;
-      header?.classList.toggle('is-menu-open', !open);
-    });
+  menuBtn?.addEventListener('click', () => {
+    const open = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!open));
+    if (drawer) drawer.hidden = open;
+    header?.classList.toggle('is-menu-open', !open);
+  });
 
-    drawer?.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        menuBtn?.setAttribute('aria-expanded', 'false');
-        if (drawer) drawer.hidden = true;
-        header?.classList.remove('is-menu-open');
-      });
+  drawer?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      if (drawer) drawer.hidden = true;
+      header?.classList.remove('is-menu-open');
     });
-  </script>
-)}
+  });
+</script>

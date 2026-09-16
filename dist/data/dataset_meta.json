@@ -1,0 +1,103 @@
+{
+  "updated_at": "2026-09-16",
+  "generated_by": "scripts/ingest/merge-curated.mjs",
+  "energy_eu_min_mw": 100,
+  "layers": {
+    "energy_plants": {
+      "total": 1068,
+      "curated": 12,
+      "imported": 1056,
+      "skippedDup": 78,
+      "skippedFilter": 26224
+    },
+    "data_centers": {
+      "total": 818,
+      "curated": 19,
+      "imported": 799,
+      "skippedDup": 386,
+      "skippedFilter": 6142
+    }
+  },
+  "sources": [
+    {
+      "id": "wri_gppd",
+      "title": "WRI Global Power Plant Database",
+      "url": "https://datasets.wri.org/datasets/global-power-plant-database",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "used_for": [
+        "energy_plants"
+      ],
+      "note_it": "Impianti importati con confidence media; record curati editorialmente hanno priorità."
+    },
+    {
+      "id": "osm_overpass",
+      "title": "OpenStreetMap (Overpass API)",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "used_for": [
+        "data_centers"
+      ],
+      "note_it": "Tag telecom=data_center; confidence bassa, da verificare con fonti aggiuntive."
+    },
+    {
+      "id": "dce",
+      "title": "DataCentersExposed",
+      "url": "https://datacentersexposed.com/",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "used_for": [],
+      "note_it": "Dataset US-only; non incluso nella mappa EU salvo record curati."
+    },
+    {
+      "id": "carto",
+      "title": "CARTO Positron",
+      "url": "https://carto.com/attributions/",
+      "license": "Proprietary basemap",
+      "used_for": [
+        "basemap"
+      ],
+      "note_it": "Tile di base © OpenStreetMap contributors, © CARTO."
+    },
+    {
+      "id": "openinframap",
+      "title": "Open Infrastructure Map (rete elettrica)",
+      "url": "https://openinframap.org/about",
+      "license": "ODbL 1.0",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "used_for": [
+        "overlays"
+      ],
+      "note_it": "Linee di trasmissione da OpenStreetMap via tile vettoriali OpenInfraMap."
+    },
+    {
+      "id": "wri_aqueduct",
+      "title": "WRI Aqueduct 4.0 — stress idrico (bacini)",
+      "url": "https://www.wri.org/aqueduct",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "used_for": [
+        "overlays"
+      ],
+      "note_it": "Baseline water stress su sottobacini HydroBASINS L6 (non confini amministrativi). Mostra variazioni locali entro le regioni italiane."
+    },
+    {
+      "id": "telegeography_cables",
+      "title": "Cavi sottomarini (estratto storico TeleGeography)",
+      "url": "https://github.com/stevesong/open_undersea_cable_map",
+      "license": "CC BY-NC-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "used_for": [
+        "overlays"
+      ],
+      "note_it": "Dataset storico non commerciale; rotte e landing in Europa. Non aggiornato in tempo reale."
+    }
+  ],
+  "overlays": {
+    "power_grid": "OpenInfraMap vector tiles",
+    "water_stress": "EU HydroBASINS L6 choropleth from Aqueduct 4.0 baseline water stress",
+    "submarine_cables": "Europe-filtered historical TeleGeography GeoJSON"
+  },
+  "methodology_it": "I record curati editorialmente (descrizioni, impatto, lavoro) restano in mappa. Gli import automatici integrano WRI (tutti gli impianti IT + EU ≥ 100 MW) e OSM per data center in area EU. Duplicati per prossimità/nome vengono accorpati. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default."
+}

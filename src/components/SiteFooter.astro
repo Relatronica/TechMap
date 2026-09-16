@@ -1,0 +1,79 @@
+---
+/**
+ * Footer condiviso — brand + colonne etichettate
+ */
+import i18n from '../i18n/it.json';
+
+interface Props {
+  showWelcomeReopen?: boolean;
+}
+
+const { showWelcomeReopen = false } = Astro.props;
+const h = i18n.home;
+const app = i18n.app;
+const legal = i18n.legal;
+---
+
+<footer class="site-footer">
+  <div class="site-footer-main">
+    <div class="site-footer-brand">
+      <a class="site-footer-title" href="/">{app.title}</a>
+      <p class="site-footer-desc">{h.footer_project_note}</p>
+      <p class="site-footer-by">
+        {h.footer_project_by}
+        <a href={app.relatronica_url} target="_blank" rel="noopener noreferrer">
+          {app.relatronica_name}
+        </a>
+      </p>
+      <a
+        class="site-footer-support"
+        href={app.support_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {h.footer_support}
+      </a>
+    </div>
+
+    <nav class="site-footer-nav" aria-label="Link di piè di pagina">
+      <div class="site-footer-col">
+        <p class="site-footer-label">{h.footer_col_explore}</p>
+        <ul>
+          <li><a href="/mappa">{h.nav_map}</a></li>
+          <li><a href="/">{h.nav_home}</a></li>
+          {showWelcomeReopen && (
+            <li>
+              <button type="button" class="site-footer-btn" id="welcome-reopen">
+                {h.welcome_reopen}
+              </button>
+            </li>
+          )}
+        </ul>
+      </div>
+
+      <div class="site-footer-col">
+        <p class="site-footer-label">{h.footer_col_participate}</p>
+        <ul>
+          <li><a href="/segnala">{legal.nav_report}</a></li>
+          <li><a href="/stampa">{legal.nav_press}</a></li>
+          <li>
+            <a href={app.github_url} target="_blank" rel="noopener noreferrer">GitHub</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="site-footer-col">
+        <p class="site-footer-label">{h.footer_col_legal}</p>
+        <ul>
+          <li><a href="/privacy">{legal.nav_privacy}</a></li>
+          <li><a href="/termini">{legal.nav_terms}</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="site-footer-bar">
+    <p class="site-footer-tagline">{h.footer_tagline}</p>
+    <p class="site-footer-note">{h.footer_support_note}</p>
+  </div>
+</footer>

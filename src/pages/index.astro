@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
-import '../styles/site-header.css';
 import '../styles/home.css';
 import i18n from '../i18n/it.json';
 import { getDatasetStats } from '../lib/stats';
-import { ICON_PATHS } from '../lib/mapIcons';
 
 const stats = getDatasetStats();
 const h = i18n.home;
@@ -16,201 +14,364 @@ const h = i18n.home;
   title={`${i18n.app.title} — ${i18n.app.subtitle}`}
   description={h.hero_sub}
   bodyClass="is-home"
+  withMap={true}
 >
   <div class="home">
-    <SiteHeader variant="home" />
-
     <section class="home-hero">
-      <div class="home-hero-bg" aria-hidden="true">
-        <svg class="home-hero-topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-          <path d="M-20 520C120 480 180 560 320 540s180-120 300-90 160 140 300 110 220-80 320-40" />
-          <path d="M-40 600C80 560 200 640 340 610s200-100 320-70 180 120 300 90 200-60 300-20" />
-          <path d="M40 420C160 390 240 470 360 450s170-110 290-80 150 130 280 100 200-70 290-30" />
-          <path d="M200 280C300 250 360 320 460 300s140-90 240-60 130 100 230 80" />
-        </svg>
-        <div class="home-hero-sheen"></div>
-      </div>
+      <div class="home-hero-map" id="hero-map" aria-hidden="true"></div>
+      <div class="home-hero-scrim" aria-hidden="true"></div>
 
       <div class="home-hero-inner">
-        <div class="home-hero-copy">
-          <h1 class="home-brand">{i18n.app.title}</h1>
-          <p class="home-hero-line">{h.hero_line}</p>
-          <p class="home-hero-sub">{h.hero_sub}</p>
-          <div class="home-cta-row">
-            <a class="btn btn-dark" href="/mappa">{h.cta_map}</a>
-            <a class="btn btn-ghost-light" href="#problema">{h.cta_secondary}</a>
-          </div>
-        </div>
-
-        <div class="home-hero-chain" aria-hidden="true">
-          <div class="chain-step chain-rm">
-            <span class="chain-icon">
-              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.lithium_mine}></path></svg>
-            </span>
-            <span class="chain-label">Estrazione</span>
-          </div>
-          <span class="chain-link"></span>
-          <div class="chain-step chain-rm">
-            <span class="chain-icon">
-              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.semiconductor_fab}></path></svg>
-            </span>
-            <span class="chain-label">Produzione</span>
-          </div>
-          <span class="chain-link"></span>
-          <div class="chain-step chain-ep">
-            <span class="chain-icon">
-              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.gas}></path></svg>
-            </span>
-            <span class="chain-label">Energia</span>
-          </div>
-          <span class="chain-link"></span>
-          <div class="chain-step chain-dc">
-            <span class="chain-icon">
-              <svg viewBox="0 0 24 24"><path d={ICON_PATHS.hyperscale}></path></svg>
-            </span>
-            <span class="chain-label">Data center</span>
-          </div>
+        <h1 class="home-brand">{i18n.app.title}</h1>
+        <p class="home-hero-line">{h.hero_line}</p>
+        <p class="home-hero-sub">{h.hero_sub}</p>
+        <div class="home-cta-row">
+          <a class="btn btn-accent" href="/mappa">{h.cta_map}</a>
+          <a class="btn btn-ghost-light" href="#problema">{h.cta_secondary}</a>
         </div>
       </div>
-
-      <a class="home-scroll-cue" href="#problema" aria-label="Scorri al contenuto">
-        <span>Scorri</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
-      </a>
     </section>
 
-    <section class="home-section" id="problema">
-      <p class="home-kicker">{h.problem_kicker}</p>
-      <h2>{h.problem_title}</h2>
-      <p class="home-lead">{h.problem_body}</p>
-    </section>
-
-    <section class="home-section home-stats" id="dati">
-      <p class="home-kicker">{h.stats_kicker}</p>
-      <h2>{h.stats_title}</h2>
-      <div class="home-stat-row">
-        <div class="home-stat">
-          <span class="home-stat-value">{stats.dataCenters}</span>
-          <span class="home-stat-label">{h.stat_dc}</span>
+    <section class="home-band home-problem" id="problema">
+      <div class="home-band-inner">
+        <div class="home-section-head home-section-head--narrow">
+          <p class="home-kicker">{h.problem_kicker}</p>
+          <h2>{h.problem_title}</h2>
         </div>
-        <div class="home-stat">
-          <span class="home-stat-value">{stats.energyPlants}</span>
-          <span class="home-stat-label">{h.stat_energy}</span>
+        <div class="home-problem-grid">
+          <article class="home-problem-point">
+            <span class="home-problem-num">01</span>
+            <h3>{h.problem_1_title}</h3>
+            <p>{h.problem_1_body}</p>
+          </article>
+          <article class="home-problem-point">
+            <span class="home-problem-num">02</span>
+            <h3>{h.problem_2_title}</h3>
+            <p>{h.problem_2_body}</p>
+          </article>
+          <article class="home-problem-point">
+            <span class="home-problem-num">03</span>
+            <h3>{h.problem_3_title}</h3>
+            <p>{h.problem_3_body}</p>
+          </article>
         </div>
-        <div class="home-stat">
-          <span class="home-stat-value">{stats.rawMaterials}</span>
-          <span class="home-stat-label">{h.stat_materials}</span>
-        </div>
-        <div class="home-stat">
-          <span class="home-stat-value">{stats.connections}</span>
-          <span class="home-stat-label">{h.stat_links}</span>
-        </div>
-        <div class="home-stat">
-          <span class="home-stat-value">{stats.countries}</span>
-          <span class="home-stat-label">{h.stat_countries}</span>
-        </div>
-      </div>
-      <p class="home-note">{h.stats_note}</p>
-    </section>
-
-    <section class="home-section" id="azioni">
-      <p class="home-kicker">{h.actions_kicker}</p>
-      <h2>{h.actions_title}</h2>
-      <div class="home-actions">
-        <article class="home-action">
-          <span class="home-action-num">01</span>
-          <h3>{h.action_1_title}</h3>
-          <p>{h.action_1_body}</p>
-        </article>
-        <article class="home-action">
-          <span class="home-action-num">02</span>
-          <h3>{h.action_2_title}</h3>
-          <p>{h.action_2_body}</p>
-        </article>
-        <article class="home-action">
-          <span class="home-action-num">03</span>
-          <h3>{h.action_3_title}</h3>
-          <p>{h.action_3_body}</p>
-        </article>
       </div>
     </section>
 
-    <section class="home-section" id="roadmap">
-      <p class="home-kicker">{h.roadmap_kicker}</p>
-      <h2>{h.roadmap_title}</h2>
-      <ol class="home-roadmap">
-        <li>
-          <span class="home-road-phase">{h.road_now}</span>
-          <p>{h.road_now_body}</p>
-        </li>
-        <li>
-          <span class="home-road-phase">{h.road_next}</span>
-          <p>{h.road_next_body}</p>
-        </li>
-        <li>
-          <span class="home-road-phase">{h.road_later}</span>
-          <p>{h.road_later_body}</p>
-        </li>
-      </ol>
-    </section>
-
-    <section class="home-section home-faq" id="faq">
-      <p class="home-kicker">{h.faq_kicker}</p>
-      <h2>{h.faq_title}</h2>
-      <div class="faq-list">
-        {h.faq.map((item) => (
-          <details class="faq-item">
-            <summary>{item.q}</summary>
-            <p>{item.a}</p>
-          </details>
-        ))}
+    <section class="home-band home-stats" id="dati">
+      <div class="home-band-inner">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.stats_kicker}</p>
+          <h2>{h.stats_title}</h2>
+        </div>
+        <div class="home-stat-row">
+          <div class="home-stat">
+            <span class="home-stat-value">{stats.dataCenters}</span>
+            <span class="home-stat-label">{h.stat_dc}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-value">{stats.energyPlants}</span>
+            <span class="home-stat-label">{h.stat_energy}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-value">{stats.rawMaterials}</span>
+            <span class="home-stat-label">{h.stat_materials}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-value">{stats.connections}</span>
+            <span class="home-stat-label">{h.stat_links}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-value">{stats.countries}</span>
+            <span class="home-stat-label">{h.stat_countries}</span>
+          </div>
+        </div>
+        <p class="home-note">{h.stats_note}</p>
       </div>
     </section>
 
-    <section class="home-section home-share" id="diffondi">
-      <p class="home-kicker">{h.share_kicker}</p>
-      <h2>{h.share_title}</h2>
-      <p class="home-lead">{h.share_body}</p>
+    <section class="home-band" id="azioni">
+      <div class="home-band-inner">
+        <div class="home-section-head home-section-head--narrow">
+          <p class="home-kicker">{h.actions_kicker}</p>
+          <h2>{h.actions_title}</h2>
+        </div>
+        <div class="home-actions">
+          <article class="home-action">
+            <span class="home-action-num">01</span>
+            <h3>{h.action_1_title}</h3>
+            <p>{h.action_1_body}</p>
+          </article>
+          <article class="home-action">
+            <span class="home-action-num">02</span>
+            <h3>{h.action_2_title}</h3>
+            <p>{h.action_2_body}</p>
+          </article>
+          <article class="home-action">
+            <span class="home-action-num">03</span>
+            <h3>{h.action_3_title}</h3>
+            <p>{h.action_3_body}</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <div
-        class="share-panel"
-        id="share-panel"
-        data-share-text={h.share_text}
-        data-share-copied={h.share_copied}
-        data-mastodon-prompt={h.share_mastodon_prompt}
-      >
-        <div class="share-url-row">
-          <input
-            class="share-url-input"
-            id="share-url"
-            type="text"
-            readonly
-            value=""
-            aria-label="URL del progetto"
-          />
-          <button type="button" class="btn btn-dark" id="share-copy">{h.share_copy}</button>
+    <section class="home-band home-band--soft" id="roadmap">
+      <div class="home-band-inner home-band-inner--readable">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.roadmap_kicker}</p>
+          <h2>{h.roadmap_title}</h2>
+        </div>
+        <ol class="home-roadmap">
+          {h.roadmap_steps.map((step) => (
+            <li class={`home-road-item is-${step.status}`}>
+              <div class="home-road-meta">
+                <span class={`road-badge road-badge--${step.status}`}>{step.status_label}</span>
+                <h3 class="home-road-title">{step.title}</h3>
+              </div>
+              <p>{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="home-band" id="faq">
+      <div class="home-band-inner home-band-inner--readable">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.faq_kicker}</p>
+          <h2>{h.faq_title}</h2>
+        </div>
+        <div class="faq-list">
+          {h.faq.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="home-band home-share" id="diffondi">
+      <div class="home-band-inner home-band-inner--readable">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.share_kicker}</p>
+          <h2>{h.share_title}</h2>
+          <p class="home-lead">{h.share_body}</p>
         </div>
 
-        <div class="share-networks" role="group" aria-label={h.share_kicker}>
-          <button type="button" class="share-net" id="share-native" hidden>{h.share_native}</button>
-          <a class="share-net" id="share-bluesky" href="#" target="_blank" rel="noopener noreferrer">{h.share_bluesky}</a>
-          <a class="share-net" id="share-linkedin" href="#" target="_blank" rel="noopener noreferrer">{h.share_linkedin}</a>
-          <a class="share-net" id="share-x" href="#" target="_blank" rel="noopener noreferrer">{h.share_x}</a>
-          <button type="button" class="share-net" id="share-mastodon">{h.share_mastodon}</button>
+        <div
+          class="share-panel"
+          id="share-panel"
+          data-share-text={h.share_text}
+          data-share-copied={h.share_copied}
+          data-mastodon-prompt={h.share_mastodon_prompt}
+        >
+          <div class="share-url-row">
+            <input
+              class="share-url-input"
+              id="share-url"
+              type="text"
+              readonly
+              value=""
+              aria-label="URL del progetto"
+            />
+            <button type="button" class="btn btn-accent" id="share-copy">{h.share_copy}</button>
+          </div>
+
+          <div class="share-networks" role="group" aria-label={h.share_kicker}>
+            <button type="button" class="share-net" id="share-native" hidden>{h.share_native}</button>
+            <a class="share-net" id="share-bluesky" href="#" target="_blank" rel="noopener noreferrer">{h.share_bluesky}</a>
+            <a class="share-net" id="share-linkedin" href="#" target="_blank" rel="noopener noreferrer">{h.share_linkedin}</a>
+            <a class="share-net" id="share-x" href="#" target="_blank" rel="noopener noreferrer">{h.share_x}</a>
+            <button type="button" class="share-net" id="share-mastodon">{h.share_mastodon}</button>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="home-footer-cta">
-      <h2>{h.footer_cta}</h2>
-      <a class="btn btn-dark" href="/mappa">{h.cta_map}</a>
+      <div class="home-footer-cta-inner">
+        <h2>{h.footer_cta}</h2>
+        <a class="btn btn-accent btn-lg" href="/mappa">{h.cta_map}</a>
+      </div>
     </section>
 
-    <footer class="home-footer">
-      <span>{i18n.app.title}</span>
-      <a href="/mappa">{h.nav_map}</a>
-    </footer>
+    <SiteFooter showWelcomeReopen={true} />
   </div>
+
+  <dialog
+    id="welcome-modal"
+    class="welcome-modal"
+    aria-labelledby="welcome-title"
+    data-storage-key="techmap-welcome-v1"
+  >
+    <div class="welcome-modal-inner">
+      <header class="welcome-modal-header">
+        <h2 id="welcome-title">{h.welcome_title}</h2>
+        <button
+          type="button"
+          class="panel-close-btn"
+          id="welcome-close-x"
+          aria-label={h.welcome_cta_close}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+      </header>
+      <div class="welcome-modal-body">
+        <p class="welcome-lead">{h.welcome_lead}</p>
+        <div class="welcome-blocks">
+          <section class="welcome-block">
+            <h3>{h.welcome_mission_title}</h3>
+            <p>{h.welcome_mission_body}</p>
+          </section>
+          <section class="welcome-block welcome-block--disclaimer">
+            <h3>{h.welcome_disclaimer_title}</h3>
+            <p>{h.welcome_disclaimer_body}</p>
+          </section>
+        </div>
+      </div>
+      <footer class="welcome-modal-actions">
+        <a class="btn btn-accent" href="/mappa" id="welcome-cta-map">{h.welcome_cta_map}</a>
+        <button type="button" class="btn btn-ghost-light" id="welcome-close">{h.welcome_cta_close}</button>
+        <a
+          class="welcome-support-link"
+          href={i18n.app.support_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {h.welcome_cta_support}
+        </a>
+      </footer>
+    </div>
+  </dialog>
+
+  <script>
+    const heroEl = document.getElementById('hero-map');
+    const MaplibreMap = window.maplibregl?.Map;
+    if (heroEl && MaplibreMap) {
+      const heroMap = new MaplibreMap({
+        container: heroEl,
+        style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+        center: [12.5, 42.2],
+        zoom: 5.1,
+        interactive: false,
+        attributionControl: false,
+        fadeDuration: 0
+      });
+
+      const COLORS = { dc: '#5A9BB8', rm: '#B87A4A', ep: '#5B8FA8', conn: '#8a9199' };
+
+      heroMap.on('load', async () => {
+        const [dc, ep, rm, conn] = await Promise.all([
+          fetch('/data/data_centers.geojson').then((r) => r.json()),
+          fetch('/data/energy_plants.geojson').then((r) => r.json()),
+          fetch('/data/raw_materials.geojson').then((r) => r.json()),
+          fetch('/data/connections.geojson').then((r) => r.json())
+        ]);
+
+        heroMap.addSource('hero-conn', { type: 'geojson', data: conn });
+        heroMap.addSource('hero-dc', { type: 'geojson', data: dc });
+        heroMap.addSource('hero-ep', { type: 'geojson', data: ep });
+        heroMap.addSource('hero-rm', { type: 'geojson', data: rm });
+
+        heroMap.addLayer({
+          id: 'hero-conn-line',
+          type: 'line',
+          source: 'hero-conn',
+          paint: {
+            'line-color': COLORS.conn,
+            'line-width': 1.1,
+            'line-opacity': 0.45,
+            'line-dasharray': [1.5, 1.5]
+          }
+        });
+
+        const circle = (id, source, color, radius) => {
+          heroMap.addLayer({
+            id,
+            type: 'circle',
+            source,
+            paint: {
+              'circle-radius': radius,
+              'circle-color': color,
+              'circle-opacity': 0.9,
+              'circle-stroke-width': 1,
+              'circle-stroke-color': 'rgba(15, 18, 22, 0.85)'
+            }
+          });
+        };
+
+        circle('hero-rm-pts', 'hero-rm', COLORS.rm, 4.5);
+        circle('hero-ep-pts', 'hero-ep', COLORS.ep, 4.5);
+        circle('hero-dc-pts', 'hero-dc', COLORS.dc, 5);
+
+        heroEl.classList.add('is-ready');
+      });
+
+      const onResize = () => heroMap.resize();
+      window.addEventListener('resize', onResize);
+    }
+  </script>
+
+  <script>
+    (() => {
+      const modal = document.getElementById('welcome-modal');
+      if (!(modal instanceof HTMLDialogElement)) return;
+
+      const storageKey = modal.dataset.storageKey || 'techmap-welcome-v1';
+      const closeBtn = document.getElementById('welcome-close');
+      const closeX = document.getElementById('welcome-close-x');
+      const reopenBtn = document.getElementById('welcome-reopen');
+      const mapCta = document.getElementById('welcome-cta-map');
+
+      const dismiss = () => {
+        try {
+          localStorage.setItem(storageKey, '1');
+        } catch {
+          /* private mode */
+        }
+        modal.close();
+      };
+
+      const openWelcome = () => {
+        if (!modal.open) modal.showModal();
+      };
+
+      closeBtn?.addEventListener('click', dismiss);
+      closeX?.addEventListener('click', dismiss);
+      mapCta?.addEventListener('click', () => {
+        try {
+          localStorage.setItem(storageKey, '1');
+        } catch {
+          /* private mode */
+        }
+      });
+      reopenBtn?.addEventListener('click', openWelcome);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) dismiss();
+      });
+      modal.addEventListener('cancel', (e) => {
+        e.preventDefault();
+        dismiss();
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      const force = params.get('welcome') === '1';
+      let seen = false;
+      try {
+        seen = localStorage.getItem(storageKey) === '1';
+      } catch {
+        seen = false;
+      }
+
+      if (force || !seen) {
+        requestAnimationFrame(() => openWelcome());
+      }
+    })();
+  </script>
 
   <script>
     const panel = document.getElementById('share-panel');

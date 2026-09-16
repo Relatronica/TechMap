@@ -3,8 +3,40 @@
  * MapView.astro — chrome UI sulla mappa (filtri + dettaglio)
  */
 import i18n from '../i18n/it.json';
-import { FILTER_GROUPS, CONNECTION_TYPES, ICON_PATHS } from '../lib/mapIcons';
-import SiteHeader from './SiteHeader.astro';
+import {
+  FILTER_GROUPS,
+  CONNECTION_TYPES,
+  ICON_PATHS,
+  colorForSubtype,
+  CONTEXT_OVERLAYS
+} from '../lib/mapIcons';
+
+type DatasetMeta = {
+  updated_at?: string;
+  methodology_it?: string;
+  layers?: Record<string, { total?: number; curated?: number; imported?: number }>;
+  sources?: Array<{
+    id: string;
+    title: string;
+    url: string;
+    license: string;
+    license_url?: string;
+    used_for?: string[];
+    note_it?: string;
+  }>;
+};
+
+let datasetMeta: DatasetMeta = {};
+try {
+  datasetMeta = (await import('../../public/data/dataset_meta.json')).default as DatasetMeta;
+} catch {
+  /* merge script not run yet */
+}
+
+const activeSources = (datasetMeta.sources || []).filter(
+  (s) => Array.isArray(s.used_for) && s.used_for.some((u) => u !== 'basemap')
+);
+const basemapSource = (datasetMeta.sources || []).find((s) => s.used_for?.includes('basemap'));
 
 type SubtypeKey = keyof typeof ICON_PATHS;
 
@@ -14,14 +46,15 @@ const short = (key: string) =>
   key;
 
 const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
+
+const overlayLabels = i18n.overlays as Record<string, string>;
+const overlayText = (key: string) => overlayLabels[key] || key;
 ---
 
 <div id="map"></div>
 <div id="map-tooltip" class="map-tooltip"></div>
 
 <div class="map-chrome">
-  <SiteHeader variant="map" />
-
   <div class="panel filters-panel" id="filters-panel">
     <div class="filters-header">
       <h3>{i18n.controls.filters}</h3>
@@ -36,13 +69,7 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
             <span class={`filter-group-swatch swatch-${group.colorVar}`} aria-hidden="true"></span>
             <span class="filter-group-title">{i18n.layers[group.id as keyof typeof i18n.layers]}</span>
           </span>
-          <span class="filter-group-right">
-            <span class="filter-group-count" data-count-for={group.id}>0</span>
-            <label class="toggle-switch filter-group-toggle" style={`--toggle-color: var(--${group.colorVar});`}>
-              <input type="checkbox" class="group-enabled" data-group={group.id} checked />
-              <span class="toggle-slider"></span>
-            </label>
-          </span>
+          <span class="filter-group-count" data-count-for={group.id}>0</span>
         </summary>
         <div class="filter-chips" data-chips-for={group.id}>
           {group.subtypes.map((subtype) => (
@@ -53,6 +80,7 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
               data-subtype={subtype}
               aria-pressed="true"
               title={(i18n.subtypes as Record<string, string>)[subtype]}
+              style={`--chip-color: ${colorForSubtype(subtype, group.color)};`}
             >
               <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d={pathFor(subtype)}></path>
@@ -70,13 +98,7 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
           <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span>
           <span class="filter-group-title">{i18n.layers.connections}</span>
         </span>
-        <span class="filter-group-right">
-          <span class="filter-group-count" data-count-for="connections">0</span>
-          <label class="toggle-switch filter-group-toggle" style="--toggle-color: var(--conn);">
-            <input type="checkbox" class="group-enabled" data-group="connections" checked />
-            <span class="toggle-slider"></span>
-          </label>
-        </span>
+        <span class="filter-group-count" data-count-for="connections">0</span>
       </summary>
       <div class="filter-chips" data-chips-for="connections">
         {CONNECTION_TYPES.map((rel) => (
@@ -87,6 +109,9 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
             data-rel={rel}
             aria-pressed="true"
             title={(i18n.relationships as Record<string, string>)[rel]}
+            style={`--chip-color: ${
+              rel === 'powers' ? 'var(--ep)' : rel === 'supplies' ? 'var(--rm)' : 'var(--dc)'
+            };`}
           >
             <span class={`conn-swatch conn-${rel}`} aria-hidden="true"></span>
             <span>
@@ -100,47 +125,41 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
         ))}
       </div>
     </details>
-  </div>
 
-  <div id="legend-panel" class="panel legend-panel">
-    <div id="legend-header" class="legend-header">
-      <h3>{i18n.legend.title}</h3>
-      <span class="legend-toggle-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
-      </span>
-    </div>
-    <div class="legend-content" id="legend-content">
-      {Object.values(FILTER_GROUPS).map((group) => (
-        <div class="legend-section">
-          <div class="legend-section-title">{i18n.layers[group.id as keyof typeof i18n.layers]}</div>
-          {group.subtypes.map((subtype) => (
-            <div class="legend-item" data-legend-subtype={subtype}>
-              <span class={`legend-icon-badge badge-${group.colorVar}`}>
-                <svg class="legend-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d={pathFor(subtype)}></path>
-                </svg>
-              </span>
-              <span>{short(subtype)}</span>
-            </div>
-          ))}
-        </div>
-      ))}
-      <div class="legend-section">
-        <div class="legend-section-title">{i18n.legend.lines}</div>
-        <div class="legend-item">
-          <span class="legend-line" style="border-color: var(--ep);"></span>
-          {i18n.legend.line_powers}
-        </div>
-        <div class="legend-item">
-          <span class="legend-line" style="border-color: var(--rm);"></span>
-          {i18n.legend.line_supplies}
-        </div>
-        <div class="legend-item">
-          <span class="legend-line" style="border-color: var(--dc);"></span>
-          {i18n.legend.line_manufactures}
-        </div>
+    <details class="filter-group" open data-group="overlays">
+      <summary class="filter-group-summary">
+        <span class="filter-group-left">
+          <span class="filter-group-swatch swatch-overlay" aria-hidden="true"></span>
+          <span class="filter-group-title">{i18n.overlays.title}</span>
+        </span>
+      </summary>
+      <div class="filter-chips" data-chips-for="overlays">
+        {CONTEXT_OVERLAYS.map((overlay) => (
+          <button
+            type="button"
+            class={`filter-chip chip-overlay${overlay.defaultOn ? ' is-on' : ''}`}
+            data-overlay={overlay.id}
+            aria-pressed={overlay.defaultOn ? 'true' : 'false'}
+            title={overlayText(overlay.hintKey)}
+            style={`--chip-color: ${overlay.color};`}
+          >
+            <span class={`overlay-swatch overlay-swatch-${overlay.swatch}`} aria-hidden="true"></span>
+            <span>{overlayText(overlay.labelKey)}</span>
+          </button>
+        ))}
       </div>
-    </div>
+    </details>
+
+    {datasetMeta.updated_at && (
+      <div class="filters-footer">
+        <button type="button" id="data-attribution-open" class="filters-attribution-btn">
+          {i18n.data_attribution.open}
+        </button>
+        <time class="filters-attribution-date" datetime={datasetMeta.updated_at}>
+          {i18n.data_attribution.updated}: {datasetMeta.updated_at}
+        </time>
+      </div>
+    )}
   </div>
 
   <aside id="detail-sidebar" class="panel detail-sidebar" aria-live="polite">
@@ -156,3 +175,86 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
     <div id="detail-body" class="detail-sidebar-body"></div>
   </aside>
 </div>
+
+<dialog id="data-attribution-modal" class="data-attribution-modal" aria-labelledby="data-attribution-title">
+    <div class="data-attribution-modal-inner">
+      <header class="data-attribution-modal-header">
+        <h2 id="data-attribution-title">{i18n.data_attribution.title}</h2>
+        <button
+          type="button"
+          id="data-attribution-close"
+          class="panel-close-btn"
+          aria-label={i18n.popup.close}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+      </header>
+      <div class="data-attribution-modal-body">
+        {datasetMeta.updated_at && (
+          <p class="attribution-updated">
+            {i18n.data_attribution.updated}:{' '}
+            <time datetime={datasetMeta.updated_at}>{datasetMeta.updated_at}</time>
+          </p>
+        )}
+        {datasetMeta.layers && (
+          <ul class="attribution-counts">
+            {datasetMeta.layers.energy_plants && (
+              <li>
+                {i18n.layers.energy_plants}: {datasetMeta.layers.energy_plants.total}{' '}
+                ({datasetMeta.layers.energy_plants.curated} {i18n.data_attribution.curated},{' '}
+                {datasetMeta.layers.energy_plants.imported} {i18n.data_attribution.imported})
+              </li>
+            )}
+            {datasetMeta.layers.data_centers && (
+              <li>
+                {i18n.layers.data_centers}: {datasetMeta.layers.data_centers.total}{' '}
+                ({datasetMeta.layers.data_centers.curated} {i18n.data_attribution.curated},{' '}
+                {datasetMeta.layers.data_centers.imported} {i18n.data_attribution.imported})
+              </li>
+            )}
+          </ul>
+        )}
+        {datasetMeta.methodology_it && (
+          <p class="attribution-note">{datasetMeta.methodology_it}</p>
+        )}
+        {activeSources.length > 0 && (
+          <ul class="attribution-sources">
+            {activeSources.map((src) => (
+              <li>
+                <a href={src.url} target="_blank" rel="noopener noreferrer">{src.title}</a>
+                {' — '}
+                {src.license_url ? (
+                  <a href={src.license_url} target="_blank" rel="noopener noreferrer">{src.license}</a>
+                ) : (
+                  src.license
+                )}
+                {src.note_it && <span class="attribution-source-note">{src.note_it}</span>}
+              </li>
+            ))}
+          </ul>
+        )}
+        {basemapSource && (
+          <p class="attribution-basemap">
+            {i18n.data_attribution.basemap}:{' '}
+            <a href={basemapSource.url} target="_blank" rel="noopener noreferrer">{basemapSource.title}</a>
+            {' — '}{basemapSource.note_it}
+          </p>
+        )}
+      </div>
+    </div>
+  </dialog>
+
+<script>
+  const openBtn = document.getElementById('data-attribution-open');
+  const closeBtn = document.getElementById('data-attribution-close');
+  const modal = document.getElementById('data-attribution-modal') as HTMLDialogElement | null;
+
+  if (openBtn && closeBtn && modal) {
+    openBtn.addEventListener('click', () => modal.showModal());
+    closeBtn.addEventListener('click', () => modal.close());
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close();
+    });
+    modal.addEventListener('cancel', () => modal.close());
+  }
+</script>

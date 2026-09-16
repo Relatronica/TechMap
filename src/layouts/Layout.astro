@@ -1,4 +1,7 @@
 ---
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/site-header.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -12,6 +15,12 @@ const {
   withMap = false,
   bodyClass = ''
 } = Astro.props;
+
+const headerVariant = bodyClass.includes('is-map') ? 'map' : 'home';
+const showHeader =
+  bodyClass.includes('is-home') ||
+  bodyClass.includes('is-map') ||
+  bodyClass.includes('is-content');
 ---
 <!DOCTYPE html>
 <html lang="it" class={bodyClass}>
@@ -22,7 +31,7 @@ const {
   <title>{title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet" />
   {withMap && (
     <>
       <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
@@ -31,6 +40,7 @@ const {
   )}
 </head>
 <body class={bodyClass}>
+  {showHeader && <SiteHeader variant={headerVariant} />}
   <slot />
 </body>
 </html>
