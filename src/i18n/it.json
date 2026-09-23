@@ -1,7 +1,8 @@
 {
   "app": {
-    "title": "L'Infrastruttura Invisibile",
-    "subtitle": "La Mappa Fisica del Digitale e dell'IA",
+    "title": "Substrato",
+    "subtitle": "L'Infrastruttura Invisibile",
+    "tagline": "La Mappa Fisica del Digitale e dell'IA",
     "relatronica_name": "Relatronica",
     "relatronica_url": "https://relatronica.com/",
     "support_url": "https://buymeacoffee.com/relatronica",
@@ -25,7 +26,7 @@
       "sections": [
         {
           "title": "Titolare",
-          "body": "Il progetto «L'Infrastruttura Invisibile» è curato da Relatronica, iniziativa indipendente e non profit di design speculativo, civic tech e knowledge mapping."
+          "body": "Il progetto Substrato è curato da Relatronica, iniziativa indipendente e non profit di design speculativo, civic tech e knowledge mapping."
         },
         {
           "title": "Dati trattati",
@@ -88,7 +89,7 @@
       "kicker": "Ufficio stampa",
       "heading": "Contatti stampa",
       "lead": "Per interviste, approfondimenti, citazioni o materiali sul progetto scrivici. Rispondiamo in italiano o inglese.",
-      "body": "L'Infrastruttura Invisibile è una mappa civica sull'infrastruttura fisica di cloud e IA (data center, energia, materie prime, connessioni), curata da Relatronica.",
+      "body": "Substrato è una mappa civica sull'infrastruttura fisica di cloud e IA (data center, energia, materie prime, connessioni), curata da Relatronica.",
       "bullets_title": "Cosa possiamo fornire",
       "bullets": [
         "Angolo e contesto del progetto (civic tech, non profit, focus Italia/Europa)",
@@ -245,7 +246,7 @@
     "share_linkedin": "LinkedIn",
     "share_x": "X",
     "share_mastodon_prompt": "Istanza Mastodon (es. mastodon.social)",
-    "share_text": "L'Infrastruttura Invisibile — la mappa fisica del digitale e dell'IA. Data center, energia, materie prime, lavoro."
+    "share_text": "Substrato — la mappa fisica del digitale e dell'IA. Data center, energia, materie prime, lavoro."
   },
   "narrative": {
     "intro": "Ogni volta che utilizziamo un servizio cloud, interroghiamo un'intelligenza artificiale o semplicemente inviamo un'email, attiviamo una catena fisica che si estende attraverso continenti. Dietro il \"cloud\" si nascondono data center che consumano enormi quantità di energia, alimentati da centrali a gas, parchi solari, impianti eolici e centrali nucleari. I server al loro interno contengono semiconduttori prodotti in fabbriche altamente specializzate, che a loro volta dipendono da materie prime — litio, cobalto, terre rare — estratte in miniere dall'Australia al Cile, dalla Repubblica Democratica del Congo alla Cina.",

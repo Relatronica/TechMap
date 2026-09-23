@@ -34,7 +34,7 @@ body.is-map .site-header {
   min-height: 56px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
 }
 
@@ -51,25 +51,18 @@ body.is-map .site-header {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  color: var(--faint);
+  color: var(--ink-soft);
 }
 
-.site-header-logo .logo-dc {
-  fill: var(--dc);
-}
-
-.site-header-logo .logo-ep {
-  fill: var(--ep);
-}
-
-.site-header-logo .logo-rm {
-  fill: var(--rm);
+.site-header-logo .logo-mark {
+  fill: var(--accent);
 }
 
 .site-header-brand-text {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  gap: 1px;
 }
 
 .site-header-brand-text strong {
@@ -77,18 +70,38 @@ body.is-map .site-header {
   font-weight: 700;
   font-size: 0.9375rem;
   letter-spacing: -0.01em;
-  line-height: 1.2;
+  line-height: 1.15;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+.site-header-brand-text span {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.site-header-end {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  min-width: 0;
+}
+
 .site-header-nav {
   display: none;
   align-items: center;
+  justify-content: flex-end;
   gap: 2px;
-  flex: 1;
-  justify-content: center;
+  flex: 0 1 auto;
 }
 
 .site-header-nav a {
@@ -119,6 +132,10 @@ body.is-map .site-header {
 .site-header-menu,
 .site-header-support,
 .site-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -129,6 +146,12 @@ body.is-map .site-header {
   cursor: pointer;
   background: transparent;
   color: inherit;
+}
+
+.site-header-btn-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
 .site-header-menu {
@@ -185,7 +208,9 @@ body.is-map .site-header {
 }
 
 .site-header-drawer-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   color: var(--ink);
   font-family: var(--font-body);
@@ -193,6 +218,11 @@ body.is-map .site-header {
   font-weight: 600;
   padding: 12px 14px;
   border-radius: var(--radius);
+}
+
+.site-header-drawer-link .site-header-btn-icon {
+  width: 17px;
+  height: 17px;
 }
 
 .site-header-drawer-link:hover {
@@ -262,6 +292,10 @@ body.is-map .detail-sidebar {
   .site-header-inner,
   .site-header-drawer {
     width: calc(100% - 32px);
+  }
+
+  .site-header-brand-text span {
+    max-width: 42vw;
   }
 
   body.is-map .filters-panel {

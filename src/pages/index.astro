@@ -23,6 +23,7 @@ const h = i18n.home;
 
       <div class="home-hero-inner">
         <h1 class="home-brand">{i18n.app.title}</h1>
+        <p class="home-brand-sub">{i18n.app.subtitle}</p>
         <p class="home-hero-line">{h.hero_line}</p>
         <p class="home-hero-sub">{h.hero_sub}</p>
         <div class="home-cta-row">
@@ -205,7 +206,7 @@ const h = i18n.home;
     id="welcome-modal"
     class="welcome-modal"
     aria-labelledby="welcome-title"
-    data-storage-key="techmap-welcome-v1"
+    data-storage-key="substrato-welcome-v1"
   >
     <div class="welcome-modal-inner">
       <header class="welcome-modal-header">
@@ -320,7 +321,7 @@ const h = i18n.home;
       const modal = document.getElementById('welcome-modal');
       if (!(modal instanceof HTMLDialogElement)) return;
 
-      const storageKey = modal.dataset.storageKey || 'techmap-welcome-v1';
+      const storageKey = modal.dataset.storageKey || 'substrato-welcome-v1';
       const closeBtn = document.getElementById('welcome-close');
       const closeX = document.getElementById('welcome-close-x');
       const reopenBtn = document.getElementById('welcome-reopen');

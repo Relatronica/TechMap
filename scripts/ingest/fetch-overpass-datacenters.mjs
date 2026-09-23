@@ -47,7 +47,7 @@ async function fetchTile(bbox, name) {
       method: 'POST',
       headers: {
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        'user-agent': 'TechMap data pipeline (contact: relatronica.com)'
+        'user-agent': 'Substrato data pipeline (https://substrato.eu; contact: relatronica.com)'
       },
       signal: controller.signal,
       body: `data=${encodeURIComponent(buildQuery(bbox))}`
@@ -119,7 +119,7 @@ async function main() {
 
   const payload = {
     version: 0.6,
-    generator: 'TechMap fetch-overpass-datacenters.mjs',
+    generator: 'Substrato fetch-overpass-datacenters.mjs',
     elements: allElements
   };
 

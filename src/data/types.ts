@@ -1,5 +1,5 @@
 /**
- * TechMap / L'Infrastruttura Invisibile — modello dati minimo v0.2
+ * Substrato — modello dati minimo v0.2
  *
  * Principi:
  * - Retrocompatibile con i GeoJSON esistenti (campi nuovi sono opzionali).

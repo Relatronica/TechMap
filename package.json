@@ -1,5 +1,5 @@
 {
-  "name": "astro-map",
+  "name": "substrato",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -19,8 +19,9 @@
   "keywords": [],
   "author": "",
   "license": "AGPL-3.0-only",
-  "description": "",
+  "description": "Substrato — la mappa fisica del digitale e dell'IA",
   "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
     "astro": "^4.16.18",
     "maplibre-gl": "^6.9.1"
   }

@@ -1,19 +1,22 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import '../styles/site-header.css';
+import i18n from '../i18n/it.json';
 
 interface Props {
   title: string;
   description?: string;
   withMap?: boolean;
   bodyClass?: string;
+  ogType?: 'website' | 'article';
 }
 
 const {
   title,
   description = "L'infrastruttura fisica dietro cloud e intelligenza artificiale: data center, energia, materie prime.",
   withMap = false,
-  bodyClass = ''
+  bodyClass = '',
+  ogType = 'website'
 } = Astro.props;
 
 const headerVariant = bodyClass.includes('is-map') ? 'map' : 'home';
@@ -21,6 +24,69 @@ const showHeader =
   bodyClass.includes('is-home') ||
   bodyClass.includes('is-map') ||
   bodyClass.includes('is-content');
+
+const site = Astro.site ?? new URL('https://substrato.eu');
+const canonicalURL = new URL(Astro.url.pathname, site);
+const ogImageURL = new URL('/og-image.jpg', site);
+const siteName = i18n.app.title;
+const orgName = i18n.app.relatronica_name;
+const orgURL = i18n.app.relatronica_url;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${site.origin}/#organization`,
+      name: orgName,
+      url: orgURL,
+      email: i18n.app.press_email
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site.origin}/#website`,
+      name: siteName,
+      alternateName: i18n.app.subtitle,
+      url: site.origin,
+      description,
+      inLanguage: 'it',
+      publisher: { '@id': `${site.origin}/#organization` }
+    },
+    {
+      '@type': 'Dataset',
+      '@id': `${site.origin}/mappa/#dataset`,
+      name: `${siteName} — dataset`,
+      description:
+        'Dataset curato di data center, impianti energetici, siti di estrazione/produzione e connessioni di filiera, con focus su Italia ed Europa.',
+      url: new URL('/mappa/', site).href,
+      license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+      creator: { '@id': `${site.origin}/#organization` },
+      isAccessibleForFree: true,
+      inLanguage: 'it',
+      spatialCoverage: {
+        '@type': 'Place',
+        name: 'Italia ed Europa'
+      },
+      distribution: [
+        {
+          '@type': 'DataDownload',
+          encodingFormat: 'application/geo+json',
+          contentUrl: new URL('/data/data_centers.geojson', site).href
+        },
+        {
+          '@type': 'DataDownload',
+          encodingFormat: 'application/geo+json',
+          contentUrl: new URL('/data/energy_plants.geojson', site).href
+        },
+        {
+          '@type': 'DataDownload',
+          encodingFormat: 'application/geo+json',
+          contentUrl: new URL('/data/raw_materials.geojson', site).href
+        }
+      ]
+    }
+  ]
+};
 ---
 <!DOCTYPE html>
 <html lang="it" class={bodyClass}>
@@ -28,7 +94,34 @@ const showHeader =
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
+  <meta name="theme-color" content="#0f1216" />
+  <meta name="geo.region" content="EU" />
+  <meta name="geo.placename" content="Italia, Europa" />
   <title>{title}</title>
+
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={ogImageURL} />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta property="og:image:alt" content={`${siteName} — ${i18n.app.subtitle}`} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageURL} />
+  <meta name="twitter:image:alt" content={`${siteName} — ${i18n.app.subtitle}`} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet" />

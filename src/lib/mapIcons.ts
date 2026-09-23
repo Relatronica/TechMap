@@ -1,5 +1,5 @@
 /**
- * Icone TechMap — path SVG stroke (viewBox 0 0 24 24), tratto unico.
+ * Icone Substrato — path SVG stroke (viewBox 0 0 24 24), tratto unico.
  * Usate in mappa (canvas → MapLibre) e in UI (SVG inline).
  */
 export const ICON_PATHS = {

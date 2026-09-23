@@ -16,7 +16,12 @@ import {
 } from '../lib/mapIcons';
 ---
 
-<Layout title={`${i18n.app.title} — Mappa`} withMap={true} bodyClass="is-map">
+<Layout
+  title={`${i18n.app.title} — Mappa`}
+  description={i18n.home.hero_sub}
+  withMap={true}
+  bodyClass="is-map"
+>
   <MapView />
 
   <!-- Client-side MapLibre Script -->
@@ -29,8 +34,8 @@ import {
     // i18n strings loaded inline for client-side use
     const i18n = {
       app: {
-        title: "L'Infrastruttura Invisibile",
-        subtitle: "La Mappa Fisica del Digitale e dell'IA"
+        title: "Substrato",
+        subtitle: "L'Infrastruttura Invisibile"
       },
       layers: {
         data_centers: "Data Center",

@@ -158,11 +158,21 @@ html.is-home {
   font-size: clamp(3rem, 8vw, 5.25rem);
   letter-spacing: -0.035em;
   line-height: 0.98;
-  margin: 0 0 22px;
+  margin: 0 0 10px;
   max-width: 10ch;
   color: var(--ink);
   text-wrap: balance;
   animation: hero-rise 0.9s var(--ease) 0.05s both;
+}
+
+.home-brand-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.6vw, 1.125rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0 0 22px;
+  animation: hero-rise 0.9s var(--ease) 0.08s both;
 }
 
 .home-hero-line {
