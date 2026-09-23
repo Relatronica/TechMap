@@ -48,14 +48,15 @@ body.is-map .site-header {
 }
 
 .site-header-brand .site-header-logo {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
   color: var(--ink-soft);
 }
 
 .site-header-logo .logo-mark {
   fill: var(--accent);
+  stroke: none;
 }
 
 .site-header-brand-text {
@@ -260,6 +261,23 @@ body.is-map .filters-panel {
   max-height: calc(100vh - 90px);
 }
 
+body.is-map .filters-toggle {
+  top: 72px;
+  left: 18px;
+}
+
+body.is-map .map-search {
+  bottom: 28px;
+  top: auto;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+body.is-map .map-hint {
+  top: 72px;
+}
+
 body.is-map .detail-sidebar {
   top: 72px;
   right: 18px;
@@ -298,10 +316,17 @@ body.is-map .detail-sidebar {
     max-width: 42vw;
   }
 
-  body.is-map .filters-panel {
+  body.is-map .filters-toggle {
     top: 68px;
     left: 12px;
-    max-height: calc(100vh - 88px);
+  }
+
+  body.is-map .map-search {
+    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    transform: none;
   }
 
   body.is-map .detail-sidebar {

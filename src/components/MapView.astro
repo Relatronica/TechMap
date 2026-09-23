@@ -49,106 +49,229 @@ const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
 
 const overlayLabels = i18n.overlays as Record<string, string>;
 const overlayText = (key: string) => overlayLabels[key] || key;
+const c = i18n.controls;
+
+const siteGroups = Object.values(FILTER_GROUPS);
 ---
 
 <div id="map"></div>
 <div id="map-tooltip" class="map-tooltip"></div>
 
 <div class="map-chrome">
+  <aside
+    id="map-hint"
+    class="map-hint"
+    data-storage-key="substrato-map-hint-v1"
+    hidden
+    role="status"
+  >
+    <p class="map-hint-text">{c.map_hint}</p>
+    <button type="button" id="map-hint-dismiss" class="map-hint-dismiss">
+      {c.map_hint_dismiss}
+    </button>
+  </aside>
+
+  <div
+    class="map-search"
+    id="map-search"
+    data-msg-searching={c.search_searching}
+    data-msg-empty={c.search_no_results}
+    data-msg-error={c.search_error}
+  >
+    <form class="map-search-form" id="map-search-form" role="search">
+      <label class="visually-hidden" for="map-search-input">{c.search_place}</label>
+      <svg class="map-search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="5.75" fill="none" stroke="currentColor" stroke-width="1.75" />
+        <path d="M15.2 15.2 L19 19" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+      </svg>
+      <input
+        id="map-search-input"
+        class="map-search-input"
+        type="search"
+        name="place"
+        placeholder={c.search_placeholder}
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        enterkeyhint="search"
+      />
+      <button
+        type="button"
+        id="map-search-clear"
+        class="map-search-clear"
+        hidden
+        aria-label={c.search_clear}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </form>
+    <ul
+      id="map-search-results"
+      class="map-search-results"
+      role="listbox"
+      aria-label={c.search_place}
+      hidden
+    ></ul>
+    <p id="map-search-status" class="map-search-status" hidden></p>
+  </div>
+
+  <button
+    type="button"
+    id="filters-toggle"
+    class="filters-toggle"
+    aria-expanded="false"
+    aria-controls="filters-panel"
+  >
+    <svg class="filters-toggle-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M4 6h16M7 12h10M10 18h4"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.75"
+        stroke-linecap="round"
+      />
+    </svg>
+    <span class="filters-toggle-label">{c.filters}</span>
+  </button>
+
   <div class="panel filters-panel" id="filters-panel">
     <div class="filters-header">
-      <h3>{i18n.controls.filters}</h3>
-      <button type="button" id="filters-reset" class="filters-reset">{i18n.controls.reset_filters}</button>
+      <div class="filters-header-title">
+        <h3>{c.filters}</h3>
+        <p class="filters-lead">{c.filters_lead}</p>
+      </div>
+      <div class="filters-header-actions">
+        <button type="button" id="filters-reset" class="filters-reset">{c.reset_filters}</button>
+        <button
+          type="button"
+          id="filters-close"
+          class="filters-close"
+          aria-label={c.filters_close}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+      </div>
     </div>
-    <p class="filters-count" id="filters-count"></p>
+    <p class="filters-count" id="filters-count" data-label={c.showing}></p>
 
-    {Object.values(FILTER_GROUPS).map((group) => (
-      <details class="filter-group" open data-group={group.id}>
+    <div class="filters-section">
+      <p class="filters-section-label">{c.section_sites}</p>
+      {siteGroups.map((group, index) => (
+        <details class="filter-group" data-group={group.id} {...(index === 0 ? { open: true } : {})}>
+          <summary class="filter-group-summary">
+            <span class="filter-group-left">
+              <span class={`filter-group-swatch swatch-${group.colorVar}`} aria-hidden="true"></span>
+              <span class="filter-group-title">{i18n.layers[group.id as keyof typeof i18n.layers]}</span>
+            </span>
+            <span class="filter-group-right">
+              <button
+                type="button"
+                class="filter-group-all"
+                data-group-all={group.id}
+                data-label-show={c.show_all}
+                data-label-hide={c.hide_all}
+              >
+                {c.hide_all}
+              </button>
+              <span class="filter-group-count" data-count-for={group.id}>0</span>
+            </span>
+          </summary>
+          <div class="filter-chips" data-chips-for={group.id}>
+            {group.subtypes.map((subtype) => (
+              <button
+                type="button"
+                class={`filter-chip is-on chip-${group.colorVar}`}
+                data-group={group.id}
+                data-subtype={subtype}
+                aria-pressed="true"
+                title={(i18n.subtypes as Record<string, string>)[subtype]}
+                style={`--chip-color: ${colorForSubtype(subtype, group.color)};`}
+              >
+                <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={pathFor(subtype)}></path>
+                </svg>
+                <span>{short(subtype)}</span>
+              </button>
+            ))}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="filters-section">
+      <p class="filters-section-label">{c.section_links}</p>
+      <details class="filter-group" data-group="connections">
         <summary class="filter-group-summary">
           <span class="filter-group-left">
-            <span class={`filter-group-swatch swatch-${group.colorVar}`} aria-hidden="true"></span>
-            <span class="filter-group-title">{i18n.layers[group.id as keyof typeof i18n.layers]}</span>
+            <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span>
+            <span class="filter-group-title">{i18n.layers.connections}</span>
           </span>
-          <span class="filter-group-count" data-count-for={group.id}>0</span>
-        </summary>
-        <div class="filter-chips" data-chips-for={group.id}>
-          {group.subtypes.map((subtype) => (
+          <span class="filter-group-right">
             <button
               type="button"
-              class={`filter-chip is-on chip-${group.colorVar}`}
-              data-group={group.id}
-              data-subtype={subtype}
-              aria-pressed="true"
-              title={(i18n.subtypes as Record<string, string>)[subtype]}
-              style={`--chip-color: ${colorForSubtype(subtype, group.color)};`}
+              class="filter-group-all"
+              data-group-all="connections"
+              data-label-show={c.show_all}
+              data-label-hide={c.hide_all}
             >
-              <svg class="filter-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d={pathFor(subtype)}></path>
-              </svg>
-              <span>{short(subtype)}</span>
+              {c.hide_all}
+            </button>
+            <span class="filter-group-count" data-count-for="connections">0</span>
+          </span>
+        </summary>
+        <div class="filter-chips" data-chips-for="connections">
+          {CONNECTION_TYPES.map((rel) => (
+            <button
+              type="button"
+              class="filter-chip is-on chip-conn"
+              data-group="connections"
+              data-rel={rel}
+              aria-pressed="true"
+              title={(i18n.relationships as Record<string, string>)[rel]}
+              style={`--chip-color: ${
+                rel === 'powers' ? 'var(--ep)' : rel === 'supplies' ? 'var(--rm)' : 'var(--dc)'
+              };`}
+            >
+              <span class={`conn-swatch conn-${rel}`} aria-hidden="true"></span>
+              <span>
+                {rel === 'powers'
+                  ? i18n.legend.line_powers
+                  : rel === 'supplies'
+                    ? i18n.legend.line_supplies
+                    : i18n.legend.line_manufactures}
+              </span>
             </button>
           ))}
         </div>
       </details>
-    ))}
+    </div>
 
-    <details class="filter-group" open data-group="connections">
-      <summary class="filter-group-summary">
-        <span class="filter-group-left">
-          <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span>
-          <span class="filter-group-title">{i18n.layers.connections}</span>
-        </span>
-        <span class="filter-group-count" data-count-for="connections">0</span>
-      </summary>
-      <div class="filter-chips" data-chips-for="connections">
-        {CONNECTION_TYPES.map((rel) => (
-          <button
-            type="button"
-            class="filter-chip is-on chip-conn"
-            data-group="connections"
-            data-rel={rel}
-            aria-pressed="true"
-            title={(i18n.relationships as Record<string, string>)[rel]}
-            style={`--chip-color: ${
-              rel === 'powers' ? 'var(--ep)' : rel === 'supplies' ? 'var(--rm)' : 'var(--dc)'
-            };`}
-          >
-            <span class={`conn-swatch conn-${rel}`} aria-hidden="true"></span>
-            <span>
-              {rel === 'powers'
-                ? i18n.legend.line_powers
-                : rel === 'supplies'
-                  ? i18n.legend.line_supplies
-                  : i18n.legend.line_manufactures}
-            </span>
-          </button>
-        ))}
-      </div>
-    </details>
-
-    <details class="filter-group" open data-group="overlays">
-      <summary class="filter-group-summary">
-        <span class="filter-group-left">
-          <span class="filter-group-swatch swatch-overlay" aria-hidden="true"></span>
-          <span class="filter-group-title">{i18n.overlays.title}</span>
-        </span>
-      </summary>
-      <div class="filter-chips" data-chips-for="overlays">
-        {CONTEXT_OVERLAYS.map((overlay) => (
-          <button
-            type="button"
-            class={`filter-chip chip-overlay${overlay.defaultOn ? ' is-on' : ''}`}
-            data-overlay={overlay.id}
-            aria-pressed={overlay.defaultOn ? 'true' : 'false'}
-            title={overlayText(overlay.hintKey)}
-            style={`--chip-color: ${overlay.color};`}
-          >
-            <span class={`overlay-swatch overlay-swatch-${overlay.swatch}`} aria-hidden="true"></span>
-            <span>{overlayText(overlay.labelKey)}</span>
-          </button>
-        ))}
-      </div>
-    </details>
+    <div class="filters-section">
+      <p class="filters-section-label">{c.section_context}</p>
+      <details class="filter-group" data-group="overlays">
+        <summary class="filter-group-summary">
+          <span class="filter-group-left">
+            <span class="filter-group-swatch swatch-overlay" aria-hidden="true"></span>
+            <span class="filter-group-title">{i18n.overlays.title}</span>
+          </span>
+        </summary>
+        <div class="filter-chips" data-chips-for="overlays">
+          {CONTEXT_OVERLAYS.map((overlay) => (
+            <button
+              type="button"
+              class={`filter-chip chip-overlay${overlay.defaultOn ? ' is-on' : ''}`}
+              data-overlay={overlay.id}
+              aria-pressed={overlay.defaultOn ? 'true' : 'false'}
+              title={overlayText(overlay.hintKey)}
+              style={`--chip-color: ${overlay.color};`}
+            >
+              <span class={`overlay-swatch overlay-swatch-${overlay.swatch}`} aria-hidden="true"></span>
+              <span>{overlayText(overlay.labelKey)}</span>
+            </button>
+          ))}
+        </div>
+      </details>
+    </div>
 
     {datasetMeta.updated_at && (
       <div class="filters-footer">
@@ -177,84 +300,136 @@ const overlayText = (key: string) => overlayLabels[key] || key;
 </div>
 
 <dialog id="data-attribution-modal" class="data-attribution-modal" aria-labelledby="data-attribution-title">
-    <div class="data-attribution-modal-inner">
-      <header class="data-attribution-modal-header">
-        <h2 id="data-attribution-title">{i18n.data_attribution.title}</h2>
-        <button
-          type="button"
-          id="data-attribution-close"
-          class="panel-close-btn"
-          aria-label={i18n.popup.close}
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-        </button>
-      </header>
-      <div class="data-attribution-modal-body">
-        {datasetMeta.updated_at && (
-          <p class="attribution-updated">
-            {i18n.data_attribution.updated}:{' '}
-            <time datetime={datasetMeta.updated_at}>{datasetMeta.updated_at}</time>
-          </p>
-        )}
-        {datasetMeta.layers && (
-          <ul class="attribution-counts">
-            {datasetMeta.layers.energy_plants && (
-              <li>
-                {i18n.layers.energy_plants}: {datasetMeta.layers.energy_plants.total}{' '}
-                ({datasetMeta.layers.energy_plants.curated} {i18n.data_attribution.curated},{' '}
-                {datasetMeta.layers.energy_plants.imported} {i18n.data_attribution.imported})
-              </li>
-            )}
-            {datasetMeta.layers.data_centers && (
-              <li>
-                {i18n.layers.data_centers}: {datasetMeta.layers.data_centers.total}{' '}
-                ({datasetMeta.layers.data_centers.curated} {i18n.data_attribution.curated},{' '}
-                {datasetMeta.layers.data_centers.imported} {i18n.data_attribution.imported})
-              </li>
-            )}
-          </ul>
-        )}
-        {datasetMeta.methodology_it && (
-          <p class="attribution-note">{datasetMeta.methodology_it}</p>
-        )}
-        {activeSources.length > 0 && (
-          <ul class="attribution-sources">
-            {activeSources.map((src) => (
-              <li>
-                <a href={src.url} target="_blank" rel="noopener noreferrer">{src.title}</a>
-                {' — '}
-                {src.license_url ? (
-                  <a href={src.license_url} target="_blank" rel="noopener noreferrer">{src.license}</a>
-                ) : (
-                  src.license
-                )}
-                {src.note_it && <span class="attribution-source-note">{src.note_it}</span>}
-              </li>
-            ))}
-          </ul>
-        )}
-        {basemapSource && (
-          <p class="attribution-basemap">
-            {i18n.data_attribution.basemap}:{' '}
-            <a href={basemapSource.url} target="_blank" rel="noopener noreferrer">{basemapSource.title}</a>
-            {' — '}{basemapSource.note_it}
-          </p>
-        )}
-      </div>
+  <div class="data-attribution-modal-inner">
+    <header class="data-attribution-modal-header">
+      <h2 id="data-attribution-title">{i18n.data_attribution.title}</h2>
+      <button
+        type="button"
+        id="data-attribution-close"
+        class="panel-close-btn"
+        aria-label={i18n.popup.close}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </header>
+    <div class="data-attribution-modal-body">
+      {datasetMeta.updated_at && (
+        <p class="attribution-updated">
+          {i18n.data_attribution.updated}:{' '}
+          <time datetime={datasetMeta.updated_at}>{datasetMeta.updated_at}</time>
+        </p>
+      )}
+      {datasetMeta.layers && (
+        <ul class="attribution-counts">
+          {datasetMeta.layers.energy_plants && (
+            <li>
+              {i18n.layers.energy_plants}: {datasetMeta.layers.energy_plants.total}{' '}
+              ({datasetMeta.layers.energy_plants.curated} {i18n.data_attribution.curated},{' '}
+              {datasetMeta.layers.energy_plants.imported} {i18n.data_attribution.imported})
+            </li>
+          )}
+          {datasetMeta.layers.data_centers && (
+            <li>
+              {i18n.layers.data_centers}: {datasetMeta.layers.data_centers.total}{' '}
+              ({datasetMeta.layers.data_centers.curated} {i18n.data_attribution.curated},{' '}
+              {datasetMeta.layers.data_centers.imported} {i18n.data_attribution.imported})
+            </li>
+          )}
+        </ul>
+      )}
+      {datasetMeta.methodology_it && (
+        <p class="attribution-note">{datasetMeta.methodology_it}</p>
+      )}
+      {activeSources.length > 0 && (
+        <ul class="attribution-sources">
+          {activeSources.map((src) => (
+            <li>
+              <a href={src.url} target="_blank" rel="noopener noreferrer">{src.title}</a>
+              {' — '}
+              {src.license_url ? (
+                <a href={src.license_url} target="_blank" rel="noopener noreferrer">{src.license}</a>
+              ) : (
+                src.license
+              )}
+              {src.note_it && <span class="attribution-source-note">{src.note_it}</span>}
+            </li>
+          ))}
+        </ul>
+      )}
+      {basemapSource && (
+        <p class="attribution-basemap">
+          {i18n.data_attribution.basemap}:{' '}
+          <a href={basemapSource.url} target="_blank" rel="noopener noreferrer">{basemapSource.title}</a>
+          {' — '}{basemapSource.note_it}
+        </p>
+      )}
     </div>
-  </dialog>
+  </div>
+</dialog>
 
 <script>
   const openBtn = document.getElementById('data-attribution-open');
   const closeBtn = document.getElementById('data-attribution-close');
   const modal = document.getElementById('data-attribution-modal') as HTMLDialogElement | null;
+  openBtn?.addEventListener('click', () => modal?.showModal());
+  closeBtn?.addEventListener('click', () => modal?.close());
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+  });
 
-  if (openBtn && closeBtn && modal) {
-    openBtn.addEventListener('click', () => modal.showModal());
-    closeBtn.addEventListener('click', () => modal.close());
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.close();
-    });
-    modal.addEventListener('cancel', () => modal.close());
+  const toggleBtn = document.getElementById('filters-toggle') as HTMLButtonElement | null;
+  const closeFiltersBtn = document.getElementById('filters-close');
+  const mqDesktop = window.matchMedia('(min-width: 768px)');
+
+  function setFiltersOpen(open: boolean) {
+    if (mqDesktop.matches) {
+      document.body.classList.remove('filters-open');
+      toggleBtn?.setAttribute('aria-expanded', 'true');
+      return;
+    }
+    document.body.classList.toggle('filters-open', open);
+    toggleBtn?.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
+
+  function syncFiltersLayout() {
+    if (mqDesktop.matches) {
+      document.body.classList.remove('filters-open');
+      toggleBtn?.setAttribute('aria-expanded', 'true');
+    } else {
+      toggleBtn?.setAttribute(
+        'aria-expanded',
+        document.body.classList.contains('filters-open') ? 'true' : 'false'
+      );
+    }
+  }
+
+  toggleBtn?.addEventListener('click', () => {
+    setFiltersOpen(!document.body.classList.contains('filters-open'));
+  });
+  closeFiltersBtn?.addEventListener('click', () => setFiltersOpen(false));
+  mqDesktop.addEventListener('change', syncFiltersLayout);
+  syncFiltersLayout();
+
+  document.querySelectorAll('.filter-group-all').forEach((btn) => {
+    btn.addEventListener('click', (e) => e.stopPropagation());
+  });
+
+  const hint = document.getElementById('map-hint');
+  const hintDismiss = document.getElementById('map-hint-dismiss');
+  const hintKey = hint?.dataset.storageKey || 'substrato-map-hint-v1';
+  try {
+    if (hint && localStorage.getItem(hintKey) !== '1') {
+      hint.hidden = false;
+    }
+  } catch {
+    if (hint) hint.hidden = false;
+  }
+  hintDismiss?.addEventListener('click', () => {
+    if (hint) hint.hidden = true;
+    try {
+      localStorage.setItem(hintKey, '1');
+    } catch {
+      /* ignore */
+    }
+  });
 </script>

@@ -38,7 +38,7 @@
         },
         {
           "title": "Terze parti",
-          "body": "La mappa carica tile e librerie da servizi terzi (ad esempio basemap e CDN). Quei fornitori possono ricevere richieste di rete tecniche (IP, user agent) secondo le loro informative. I link a piattaforme esterne (donazioni, social, GitHub) sono sotto il controllo di quei servizi."
+          "body": "La mappa carica tile e librerie da servizi terzi (ad esempio basemap e CDN). La ricerca luoghi invia la query a OpenStreetMap Nominatim. Quei fornitori possono ricevere richieste di rete tecniche (IP, user agent, testo cercato) secondo le loro informative. I link a piattaforme esterne (donazioni, social, GitHub) sono sotto il controllo di quei servizi."
         },
         {
           "title": "Finalità e basi giuridiche",
@@ -343,8 +343,23 @@
     "zoom_in": "Ingrandisci",
     "zoom_out": "Riduci",
     "reset_view": "Vista iniziale",
-    "show_all": "Mostra tutto",
-    "hide_all": "Nascondi tutto"
+    "show_all": "Mostra",
+    "hide_all": "Nascondi",
+    "section_sites": "Siti",
+    "section_links": "Legami",
+    "section_context": "Contesto",
+    "filters_lead": "Accendi o spegni cosa compare sulla mappa.",
+    "filters_open": "Apri filtri",
+    "filters_close": "Chiudi filtri",
+    "map_hint": "Tocca un punto per i dettagli. Cerca una città o regione, oppure usa i filtri per isolare i layer.",
+    "map_hint_dismiss": "Ho capito",
+    "search_place": "Cerca luogo",
+    "search_placeholder": "Città, regione, paese…",
+    "search_no_results": "Nessun risultato",
+    "search_error": "Ricerca non disponibile al momento",
+    "search_searching": "Cerco…",
+    "search_clear": "Cancella",
+    "search_attribution": "Luoghi: OpenStreetMap Nominatim"
   },
   "subtypes_short": {
     "colocation": "Colocation",
