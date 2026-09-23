@@ -71,6 +71,20 @@ const siteGroups = Object.values(FILTER_GROUPS);
     </button>
   </aside>
 
+  <button
+    type="button"
+    id="map-search-toggle"
+    class="map-search-toggle"
+    aria-expanded="false"
+    aria-controls="map-search"
+  >
+    <svg class="map-search-toggle-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="10.5" cy="10.5" r="5.75" fill="none" stroke="currentColor" stroke-width="1.75" />
+      <path d="M15.2 15.2 L19 19" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+    </svg>
+    <span class="map-search-toggle-label">{c.search_open}</span>
+  </button>
+
   <div
     class="map-search"
     id="map-search"
@@ -101,6 +115,14 @@ const siteGroups = Object.values(FILTER_GROUPS);
         class="map-search-clear"
         hidden
         aria-label={c.search_clear}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+      <button
+        type="button"
+        id="map-search-close"
+        class="map-search-close"
+        aria-label={c.search_close}
       >
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
       </button>
@@ -379,6 +401,9 @@ const siteGroups = Object.values(FILTER_GROUPS);
 
   const toggleBtn = document.getElementById('filters-toggle') as HTMLButtonElement | null;
   const closeFiltersBtn = document.getElementById('filters-close');
+  const searchToggle = document.getElementById('map-search-toggle');
+  const searchClose = document.getElementById('map-search-close');
+  const searchInput = document.getElementById('map-search-input') as HTMLInputElement | null;
   const mqDesktop = window.matchMedia('(min-width: 768px)');
 
   function setFiltersOpen(open: boolean) {
@@ -389,16 +414,41 @@ const siteGroups = Object.values(FILTER_GROUPS);
     }
     document.body.classList.toggle('filters-open', open);
     toggleBtn?.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      document.body.classList.remove('search-open');
+      searchToggle?.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  function setSearchOpen(open: boolean) {
+    if (mqDesktop.matches) {
+      document.body.classList.remove('search-open');
+      searchToggle?.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    document.body.classList.toggle('search-open', open);
+    searchToggle?.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      document.body.classList.remove('filters-open');
+      toggleBtn?.setAttribute('aria-expanded', 'false');
+      window.setTimeout(() => searchInput?.focus(), 50);
+    }
   }
 
   function syncFiltersLayout() {
     if (mqDesktop.matches) {
       document.body.classList.remove('filters-open');
+      document.body.classList.remove('search-open');
       toggleBtn?.setAttribute('aria-expanded', 'true');
+      searchToggle?.setAttribute('aria-expanded', 'false');
     } else {
       toggleBtn?.setAttribute(
         'aria-expanded',
         document.body.classList.contains('filters-open') ? 'true' : 'false'
+      );
+      searchToggle?.setAttribute(
+        'aria-expanded',
+        document.body.classList.contains('search-open') ? 'true' : 'false'
       );
     }
   }
@@ -407,6 +457,10 @@ const siteGroups = Object.values(FILTER_GROUPS);
     setFiltersOpen(!document.body.classList.contains('filters-open'));
   });
   closeFiltersBtn?.addEventListener('click', () => setFiltersOpen(false));
+  searchToggle?.addEventListener('click', () => {
+    setSearchOpen(!document.body.classList.contains('search-open'));
+  });
+  searchClose?.addEventListener('click', () => setSearchOpen(false));
   mqDesktop.addEventListener('change', syncFiltersLayout);
   syncFiltersLayout();
 

@@ -148,7 +148,7 @@ import {
       zoom: 5,
       minZoom: 2,
       maxZoom: 18,
-      attributionControl: { compact: true }
+      attributionControl: true
     });
 
     function collapseAttribution() {
@@ -246,9 +246,12 @@ import {
               ],
               { padding: { top: 56, bottom: 96, left: 56, right: 56 }, maxZoom: 12, duration: 1200 }
             );
-            closeSearchUi();
-            input.blur();
-            return;
+        closeSearchUi();
+        input.blur();
+        document.body.classList.remove('search-open');
+        const searchToggleBtn = document.getElementById('map-search-toggle');
+        if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
+        return;
           }
         }
         const lon = parseFloat(item.lon);
@@ -258,6 +261,9 @@ import {
         }
         closeSearchUi();
         input.blur();
+        document.body.classList.remove('search-open');
+        const searchToggleBtn = document.getElementById('map-search-toggle');
+        if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
       }
 
       function renderResults(items) {
@@ -821,8 +827,11 @@ import {
       detailSidebar.classList.add('open');
       document.body.classList.add('detail-open');
       document.body.classList.remove('filters-open');
+      document.body.classList.remove('search-open');
       const filtersToggle = document.getElementById('filters-toggle');
       if (filtersToggle) filtersToggle.setAttribute('aria-expanded', 'false');
+      const searchToggleBtn = document.getElementById('map-search-toggle');
+      if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
       highlightConnections(resolved.id);
     }
 

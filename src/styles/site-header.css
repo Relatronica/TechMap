@@ -322,10 +322,18 @@ body.is-map .detail-sidebar {
   }
 
   body.is-map .map-search {
-    bottom: 16px;
+    top: 68px;
+    bottom: auto;
     left: 12px;
     right: 12px;
     width: auto;
+  }
+
+  body.is-map .map-search-toggle {
+    top: 68px;
+    right: 12px;
+    bottom: auto;
+    left: auto;
     transform: none;
   }
 

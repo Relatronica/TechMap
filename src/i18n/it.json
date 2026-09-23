@@ -359,6 +359,8 @@
     "search_error": "Ricerca non disponibile al momento",
     "search_searching": "Cerco…",
     "search_clear": "Cancella",
+    "search_open": "Cerca",
+    "search_close": "Chiudi cerca",
     "search_attribution": "Luoghi: OpenStreetMap Nominatim"
   },
   "subtypes_short": {
