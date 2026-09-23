@@ -28,7 +28,24 @@ const anchors = isMap
 <header class="site-chrome" id="site-header" data-variant={variant}>
   <div class="site-chrome-bar">
     <a class="site-chrome-brand" href="/" aria-label={`${app.title} — ${app.subtitle}`}>
-      <span class="atlas-mark site-chrome-mark" aria-hidden="true"></span>
+      <svg class="site-chrome-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <!-- Piramide isometrica wireframe (allineata a /favicon.svg) -->
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M16 4.2 L4 22.2" />
+          <path d="M16 4.2 L28 22.2" />
+          <path d="M16 4.2 L16 16.8" />
+          <path d="M4 22.2 L16 16.8 L28 22.2" />
+          <path d="M16 4.2 L16 27.5" opacity="0.28" />
+          <path d="M4 22.2 L16 27.5 L28 22.2" opacity="0.28" />
+        </g>
+        <circle class="site-chrome-mark-apex" cx="16" cy="4.2" r="1.7" />
+      </svg>
       <span class="site-chrome-name">{app.title}</span>
     </a>
 

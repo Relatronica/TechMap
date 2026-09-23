@@ -84,8 +84,15 @@ body.is-map .site-chrome {
 }
 
 .site-chrome-mark {
-  width: 3px;
-  height: 1.2em;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex-shrink: 0;
+  color: var(--ink-soft);
+}
+
+.site-chrome-mark-apex {
+  fill: var(--accent);
+  stroke: none;
 }
 
 .site-chrome-name {

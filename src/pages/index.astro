@@ -29,13 +29,7 @@ const h = i18n.home;
       <div class="home-hero-scrim" aria-hidden="true"></div>
 
       <div class="home-hero-inner">
-        <div class="home-brand-lockup">
-          <span class="atlas-mark atlas-mark--lg" aria-hidden="true"></span>
-          <div class="home-brand-text">
-            <h1 class="home-brand">{i18n.app.title}</h1>
-            <p class="home-brand-sub">{i18n.app.subtitle}</p>
-          </div>
-        </div>
+        <h1 class="home-hero-title">{i18n.app.subtitle}</h1>
         <p class="home-hero-line">{h.hero_line}</p>
         <p class="home-hero-sub">{h.hero_sub}</p>
         <div class="home-cta-row">
@@ -43,6 +37,20 @@ const h = i18n.home;
           <a class="btn btn-ghost-light" href="#problema">{h.cta_secondary}</a>
         </div>
       </div>
+
+      <a class="home-hero-scroll" href="#problema" aria-label={h.hero_scroll_aria}>
+        <span class="home-hero-scroll-label">{h.hero_scroll}</span>
+        <svg class="home-hero-scroll-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6 10l6 6 6-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
     </section>
 
     <section class="home-band home-problem" id="problema">
@@ -79,24 +87,24 @@ const h = i18n.home;
         </div>
         <div class="home-stat-row">
           <div class="home-stat">
-            <span class="home-stat-value">{stats.dataCenters}</span>
             <span class="home-stat-label">{h.stat_dc}</span>
+            <span class="home-stat-value">{stats.dataCenters}</span>
           </div>
           <div class="home-stat">
-            <span class="home-stat-value">{stats.energyPlants}</span>
             <span class="home-stat-label">{h.stat_energy}</span>
+            <span class="home-stat-value">{stats.energyPlants}</span>
           </div>
           <div class="home-stat">
-            <span class="home-stat-value">{stats.rawMaterials}</span>
             <span class="home-stat-label">{h.stat_materials}</span>
+            <span class="home-stat-value">{stats.rawMaterials}</span>
           </div>
           <div class="home-stat">
-            <span class="home-stat-value">{stats.connections}</span>
             <span class="home-stat-label">{h.stat_links}</span>
+            <span class="home-stat-value">{stats.connections}</span>
           </div>
           <div class="home-stat">
-            <span class="home-stat-value">{stats.countries}</span>
             <span class="home-stat-label">{h.stat_countries}</span>
+            <span class="home-stat-value">{stats.countries}</span>
           </div>
         </div>
         <p class="home-note">{h.stats_note}</p>
@@ -378,6 +386,17 @@ const h = i18n.home;
 
       const onResize = () => heroMap.resize();
       window.addEventListener('resize', onResize);
+    }
+
+    const heroScroll = document.querySelector('.home-hero-scroll');
+    const heroSection = document.querySelector('.home-hero');
+    if (heroScroll instanceof HTMLElement && heroSection instanceof HTMLElement) {
+      const syncScrollCue = () => {
+        const past = window.scrollY > Math.min(120, heroSection.clientHeight * 0.12);
+        heroScroll.classList.toggle('is-hidden', past);
+      };
+      syncScrollCue();
+      window.addEventListener('scroll', syncScrollCue, { passive: true });
     }
   </script>
 
