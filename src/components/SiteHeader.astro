@@ -1,6 +1,9 @@
 ---
 /**
- * Header unico — stesso su home e mappa
+ * Chrome di navigazione — sticky/fixed con vetro, scroll-state, CTA chiare.
+ * Home: fixed trasparente sopra l'hero, si compatta allo scroll.
+ * Content: sticky vetro.
+ * Mappa: fixed sopra il tool.
  */
 import i18n from '../i18n/it.json';
 
@@ -13,159 +16,122 @@ const h = i18n.home;
 const app = i18n.app;
 const isMap = variant === 'map';
 
-const anchors = [
-  { href: '/#problema', label: h.nav_problem },
-  { href: '/#dati', label: h.nav_data },
-  { href: '/#azioni', label: h.nav_actions },
-  { href: '/#roadmap', label: h.nav_roadmap },
-  { href: '/#faq', label: h.nav_faq },
-  { href: '/#diffondi', label: h.nav_share }
-];
+const anchors = isMap
+  ? []
+  : [
+      { href: '/#problema', label: h.nav_problem },
+      { href: '/#dati', label: h.nav_data },
+      { href: '/#faq', label: h.nav_faq }
+    ];
 ---
 
-<header class="site-header" id="site-header" data-variant={variant}>
-  <div class="site-header-inner">
-    <a class="site-header-brand" href="/" aria-label={`${app.title} — ${app.subtitle}`}>
-      <svg class="site-header-logo" viewBox="0 0 32 32" aria-hidden="true">
-        <!-- Piramide isometrica wireframe (allineata a /favicon.svg) -->
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M16 4.2 L4 22.2" />
-          <path d="M16 4.2 L28 22.2" />
-          <path d="M16 4.2 L16 16.8" />
-          <path d="M4 22.2 L16 16.8 L28 22.2" />
-          <path d="M16 4.2 L16 27.5" opacity="0.28" />
-          <path d="M4 22.2 L16 27.5 L28 22.2" opacity="0.28" />
-        </g>
-        <circle class="logo-mark" cx="16" cy="4.2" r="1.7" />
-      </svg>
-      <span class="site-header-brand-text">
-        <strong>{app.title}</strong>
-        <span>{app.subtitle}</span>
-      </span>
+<header class="site-chrome" id="site-header" data-variant={variant}>
+  <div class="site-chrome-bar">
+    <a class="site-chrome-brand" href="/" aria-label={`${app.title} — ${app.subtitle}`}>
+      <span class="atlas-mark site-chrome-mark" aria-hidden="true"></span>
+      <span class="site-chrome-name">{app.title}</span>
     </a>
 
-    <div class="site-header-end">
-      <nav class="site-header-nav" aria-label="Sezioni">
+    {!isMap && (
+      <nav class="site-chrome-nav" aria-label="Sezioni">
         {anchors.map((a) => (
           <a href={a.href}>{a.label}</a>
         ))}
       </nav>
+    )}
 
-      <div class="site-header-actions">
-        <button
-          type="button"
-          class="site-header-menu"
-          id="site-header-menu"
-          aria-expanded="false"
-          aria-controls="site-header-drawer"
-        >
-          Menu
-        </button>
+    <div class="site-chrome-actions">
+      {isMap ? (
+        <a class="site-chrome-link" href="/">{h.nav_home}</a>
+      ) : (
         <a
-          class="site-header-support"
+          class="site-chrome-support"
           href={app.support_url}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={h.nav_support_aria}
         >
-          <svg class="site-header-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="site-chrome-support-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path
-              d="M12 20.2S4.5 15.4 4.5 10.2A3.9 3.9 0 0 1 12 7.6a3.9 3.9 0 0 1 7.5 2.6C19.5 15.4 12 20.2 12 20.2Z"
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
               fill="none"
               stroke="currentColor"
               stroke-width="1.75"
+              stroke-linecap="round"
               stroke-linejoin="round"
             />
           </svg>
-          {h.nav_support}
+          <span class="site-chrome-support-label">{h.nav_support}</span>
         </a>
-        <a
-          class:list={['site-header-cta', isMap && 'is-active']}
-          href="/mappa"
-          aria-current={isMap ? 'page' : undefined}
+      )}
+
+      <a
+        class:list={['site-chrome-cta', isMap && 'is-active']}
+        href="/mappa"
+        aria-current={isMap ? 'page' : undefined}
+      >
+        {isMap ? h.nav_map : h.cta_map}
+      </a>
+
+      {!isMap && (
+        <button
+          type="button"
+          class="site-chrome-menu"
+          id="site-header-menu"
+          aria-expanded="false"
+          aria-controls="site-header-drawer"
+          aria-label="Menu"
         >
-          <svg class="site-header-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M12 21s-6.5-5.6-6.5-10.2a6.5 6.5 0 1 1 13 0C18.5 15.4 12 21 12 21Z"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.75"
-              stroke-linejoin="round"
-            />
-            <circle cx="12" cy="10.8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75" />
-          </svg>
-          {h.nav_map}
-        </a>
-      </div>
+          <span class="site-chrome-menu-lines" aria-hidden="true"></span>
+        </button>
+      )}
     </div>
   </div>
 
-  <div class="site-header-drawer" id="site-header-drawer" hidden>
-    <nav aria-label="Sezioni mobile">
-      <a href="/" class="site-header-drawer-link">{h.nav_home}</a>
-      {anchors.map((a) => (
-        <a href={a.href} class="site-header-drawer-link">{a.label}</a>
-      ))}
-      <a
-        href={app.support_url}
-        class="site-header-drawer-link is-support"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <svg class="site-header-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M12 20.2S4.5 15.4 4.5 10.2A3.9 3.9 0 0 1 12 7.6a3.9 3.9 0 0 1 7.5 2.6C19.5 15.4 12 20.2 12 20.2Z"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.75"
-            stroke-linejoin="round"
-          />
-        </svg>
-        {h.footer_support}
-      </a>
-      <a
-        href="/mappa"
-        class:list={['site-header-drawer-link', 'is-cta', isMap && 'is-active']}
-        aria-current={isMap ? 'page' : undefined}
-      >
-        <svg class="site-header-btn-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M12 21s-6.5-5.6-6.5-10.2a6.5 6.5 0 1 1 13 0C18.5 15.4 12 21 12 21Z"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.75"
-            stroke-linejoin="round"
-          />
-          <circle cx="12" cy="10.8" r="2.2" fill="none" stroke="currentColor" stroke-width="1.75" />
-        </svg>
-        {h.cta_map}
-      </a>
-    </nav>
-  </div>
+  {!isMap && (
+    <div class="site-chrome-drawer" id="site-header-drawer" hidden>
+      <nav aria-label="Menu">
+        <a href="/">{h.nav_home}</a>
+        {anchors.map((a) => (
+          <a href={a.href}>{a.label}</a>
+        ))}
+        <a href="/#azioni">{h.nav_actions}</a>
+        <a href="/#roadmap">{h.nav_roadmap}</a>
+        <a href="/#diffondi">{h.nav_share}</a>
+        <a
+          class="is-support"
+          href={app.support_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="site-chrome-support-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          {h.footer_support}
+        </a>
+        <a class="is-cta" href="/mappa">{h.cta_map}</a>
+      </nav>
+    </div>
+  )}
 </header>
 
 <script>
   const header = document.getElementById('site-header');
   const menuBtn = document.getElementById('site-header-menu');
   const drawer = document.getElementById('site-header-drawer');
-  const isHome = document.body.classList.contains('is-home');
+  const variant = header?.dataset.variant || 'home';
 
-  function onScroll() {
-    if (!header || !isHome) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 24);
-  }
-
-  onScroll();
-  if (isHome) {
-    window.addEventListener('scroll', onScroll, { passive: true });
-  } else {
-    header?.classList.add('is-scrolled');
+  function syncScrollState() {
+    if (!header || variant === 'map') return;
+    const scrolled = window.scrollY > 12;
+    header.classList.toggle('is-scrolled', scrolled);
   }
 
   menuBtn?.addEventListener('click', () => {
@@ -182,4 +148,7 @@ const anchors = [
       header?.classList.remove('is-menu-open');
     });
   });
+
+  syncScrollState();
+  window.addEventListener('scroll', syncScrollState, { passive: true });
 </script>

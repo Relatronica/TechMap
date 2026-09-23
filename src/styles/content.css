@@ -16,7 +16,7 @@ html.is-content {
 }
 
 .content-page {
-  padding-top: 72px;
+  padding-top: 0;
   min-height: 60vh;
 }
 
@@ -28,7 +28,24 @@ html.is-content {
     var(--bg);
 }
 
-.content-hero-inner,
+.content-hero-inner {
+  position: relative;
+  padding-left: 18px;
+  width: min(720px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.content-hero-inner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  bottom: 0.35em;
+  width: 3px;
+  border-radius: 1px;
+  background: var(--atlas-mark);
+}
+
 .content-body-inner {
   width: min(720px, calc(100% - 48px));
   margin: 0 auto;
@@ -152,10 +169,10 @@ html.is-content {
 
 .report-card h3 {
   margin: 0 0 6px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -174,6 +191,6 @@ html.is-content {
   }
 
   .content-page {
-    padding-top: 64px;
+    padding-top: 0;
   }
 }

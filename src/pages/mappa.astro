@@ -12,6 +12,7 @@ import {
   ICON_OPACITY_EXPR,
   ICON_SIZE,
   ICON_SIZE_HIGHLIGHT,
+  ICON_SIZE_RELATED,
   ICON_SIZE_DIMMED
 } from '../lib/mapIcons';
 ---
@@ -32,7 +33,7 @@ import {
   </script>
 
   <!-- Client-side MapLibre Script -->
-  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_DIMMED }}>
+  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_RELATED, ICON_SIZE_DIMMED }}>
     // MapLibre GL JS loaded from CDN as global `maplibregl`
     var MaplibreMap = maplibregl.Map;
     var NavigationControl = maplibregl.NavigationControl;
@@ -166,17 +167,17 @@ import {
       zoom: 5,
       minZoom: 2,
       maxZoom: 18,
-      attributionControl: true
+      attributionControl: { compact: true }
     });
 
-    function collapseAttribution() {
+    function expandAttribution() {
       const attrib = map.getContainer().querySelector('.maplibregl-ctrl-attrib');
-      if (attrib) attrib.removeAttribute('open');
+      if (attrib) attrib.setAttribute('open', '');
     }
-    map.on('load', collapseAttribution);
-    map.once('idle', collapseAttribution);
+    map.on('load', expandAttribution);
+    map.once('idle', expandAttribution);
 
-    // Add navigation controls bottom-right
+    // Add navigation controls bottom-left
     map.addControl(new NavigationControl({ showCompass: false }), 'bottom-left');
 
     // —— Place search (Nominatim) ——
@@ -424,6 +425,7 @@ import {
 
     function closeDetailSidebar() {
       detailSidebar.classList.remove('open');
+      detailSidebar.classList.remove('is-pulse');
       document.body.classList.remove('detail-open');
       resetHighlights();
     }
@@ -513,13 +515,11 @@ import {
       return { incoming, outgoing };
     }
 
-    // Helper: highlight connections for a feature
+    // Helper: highlight connections for a feature (direct edges only)
     function highlightConnections(featureId) {
       if (!connectionsData) return;
 
-      const relatedIds = new Set();
-      relatedIds.add(featureId);
-
+      const relatedIds = new Set([featureId]);
       connectionsData.features.forEach(conn => {
         const props = conn.properties;
         if (props.source_id === featureId || props.target_id === featureId) {
@@ -527,47 +527,101 @@ import {
           relatedIds.add(props.target_id);
         }
       });
+      const relatedList = Array.from(relatedIds);
+      const isDirectEdge = [
+        'any',
+        ['==', ['get', 'source_id'], featureId],
+        ['==', ['get', 'target_id'], featureId]
+      ];
 
-      // Dim all connections, then highlight related ones
       ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
-        if (map.getLayer(layerId)) {
-          map.setPaintProperty(layerId, 'line-opacity', [
-            'case',
-            ['any',
-              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
-              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
-            ],
-            0.9,
-            0.15
-          ]);
-          map.setPaintProperty(layerId, 'line-width', [
-            'case',
-            ['any',
-              ['in', ['get', 'source_id'], ['literal', Array.from(relatedIds)]],
-              ['in', ['get', 'target_id'], ['literal', Array.from(relatedIds)]]
-            ],
-            3,
-            1
-          ]);
-        }
+        if (!map.getLayer(layerId)) return;
+        map.setPaintProperty(layerId, 'line-opacity', ['case', isDirectEdge, 0.95, 0.1]);
+        map.setPaintProperty(layerId, 'line-width', ['case', isDirectEdge, 3.4, 0.9]);
       });
 
-      // Highlight connected points
       ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
-        if (map.getLayer(layerId)) {
-          map.setLayoutProperty(layerId, 'icon-size', [
-            'case',
-            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
-            ICON_SIZE_HIGHLIGHT,
-            ICON_SIZE_DIMMED
-          ]);
-          map.setPaintProperty(layerId, 'icon-opacity', [
-            'case',
-            ['in', ['get', 'id'], ['literal', Array.from(relatedIds)]],
-            1,
-            0.35
-          ]);
+        if (!map.getLayer(layerId)) return;
+        map.setLayoutProperty(layerId, 'icon-size', [
+          'case',
+          ['==', ['get', 'id'], featureId],
+          ICON_SIZE_HIGHLIGHT,
+          ['in', ['get', 'id'], ['literal', relatedList]],
+          ICON_SIZE_RELATED,
+          ICON_SIZE_DIMMED
+        ]);
+        map.setPaintProperty(layerId, 'icon-opacity', [
+          'case',
+          ['==', ['get', 'id'], featureId],
+          1,
+          ['in', ['get', 'id'], ['literal', relatedList]],
+          0.95,
+          0.28
+        ]);
+      });
+    }
+
+    function findSiteById(siteId) {
+      const catalogs = [
+        ['data_center', dataCentersData],
+        ['raw_material', rawMaterialsData],
+        ['energy_plant', energyPlantsData]
+      ];
+      for (const [featureType, collection] of catalogs) {
+        if (!collection) continue;
+        const match = collection.features.find(f => f.properties.id === siteId);
+        if (match) {
+          return { featureType, feature: match, properties: match.properties };
         }
+      }
+      return null;
+    }
+
+    function collectRelatedCoordinates(featureId) {
+      const coords = [];
+      const site = findSiteById(featureId);
+      if (site?.feature?.geometry?.coordinates) {
+        coords.push(site.feature.geometry.coordinates);
+      }
+      if (!connectionsData) return coords;
+      connectionsData.features.forEach(conn => {
+        const props = conn.properties;
+        if (props.source_id !== featureId && props.target_id !== featureId) return;
+        const otherId = props.source_id === featureId ? props.target_id : props.source_id;
+        const other = findSiteById(otherId);
+        if (other?.feature?.geometry?.coordinates) {
+          coords.push(other.feature.geometry.coordinates);
+        }
+      });
+      return coords;
+    }
+
+    function frameSelection(featureId) {
+      const coords = collectRelatedCoordinates(featureId);
+      if (coords.length === 0) return;
+
+      const isNarrow = window.matchMedia('(max-width: 1023px)').matches;
+      const padding = isNarrow
+        ? { top: 56, bottom: Math.round(window.innerHeight * 0.4), left: 36, right: 36 }
+        : { top: 72, bottom: 72, left: 72, right: 420 };
+
+      if (coords.length === 1) {
+        map.easeTo({
+          center: coords[0],
+          duration: 650,
+          padding
+        });
+        return;
+      }
+
+      const bounds = coords.reduce(
+        (b, c) => b.extend(c),
+        new maplibregl.LngLatBounds(coords[0], coords[0])
+      );
+      map.fitBounds(bounds, {
+        padding,
+        maxZoom: 7.5,
+        duration: 750
       });
     }
 
@@ -759,140 +813,119 @@ import {
                         featureType === 'raw_material' ? i18n.layers.raw_materials :
                         i18n.layers.energy_plants;
 
+      const place = [properties.city, getCountryName(properties.country)].filter(Boolean).join(', ');
       let html = '';
 
-      // Fields
-      html += `<div class="detail-field">
-        <div class="detail-field-label">${i18n.popup.operator}</div>
-        <div class="detail-field-value">${properties.operator || 'N/D'}</div>
-      </div>`;
-
-      html += `<div class="detail-field">
-        <div class="detail-field-label">${i18n.popup.type}</div>
-        <div class="detail-field-value">${getSubtypeLabel(properties.subtype)}</div>
-      </div>`;
-
-      if (properties.status && i18n.status[properties.status]) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.status}</div>
-          <div class="detail-field-value">${i18n.status[properties.status]}</div>
-        </div>`;
+      if (place) {
+        html += `<p class="detail-place">${place}</p>`;
       }
 
-      if (properties.capacity) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.capacity}</div>
-          <div class="detail-field-value">${properties.capacity}</div>
-        </div>`;
-      }
-
-      html += `<div class="detail-field">
-        <div class="detail-field-label">${i18n.popup.city}</div>
-        <div class="detail-field-value">${properties.city}, ${getCountryName(properties.country)}</div>
-      </div>`;
-
-      if (properties.confidence && i18n.confidence[properties.confidence]) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.confidence}</div>
-          <div class="detail-field-value"><span class="certainty-badge certainty-${properties.confidence}">${i18n.confidence[properties.confidence]}</span></div>
-        </div>`;
-      }
-
-      if (properties.updated_at) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.updated_at}</div>
-          <div class="detail-field-value">${properties.updated_at}</div>
-        </div>`;
-      }
-
-      // Description
       if (properties.description_it) {
-        html += `<div class="detail-description">${properties.description_it}</div>`;
+        html += `<p class="detail-description">${properties.description_it}</p>`;
+      }
+
+      const facts = [];
+      if (properties.operator) facts.push({ label: i18n.popup.operator, value: properties.operator });
+      if (properties.subtype) facts.push({ label: i18n.popup.type, value: getSubtypeLabel(properties.subtype) });
+      if (properties.status && i18n.status[properties.status]) {
+        facts.push({ label: i18n.popup.status, value: i18n.status[properties.status] });
+      }
+      if (properties.capacity) facts.push({ label: i18n.popup.capacity, value: properties.capacity });
+
+      if (facts.length) {
+        html += `<div class="detail-facts">`;
+        facts.forEach(({ label, value }) => {
+          html += `<div class="detail-fact">
+            <span class="detail-fact-label">${label}</span>
+            <span class="detail-fact-value">${value}</span>
+          </div>`;
+        });
+        html += `</div>`;
+      }
+
+      // Connections — early, actionable
+      const { incoming, outgoing } = findConnections(properties.id);
+      const connBlocks = [];
+
+      function pushConnGroup(label, items, iconClass, pickOtherId) {
+        if (!items.length) return;
+        let block = `<div class="detail-conn-group">
+          <div class="detail-field-label">${label}</div>`;
+        items.forEach(c => {
+          const otherId = pickOtherId(c.properties);
+          const other = findSiteById(otherId);
+          const name = otherId === c.properties.source_id
+            ? c.properties.source_name
+            : c.properties.target_name;
+          if (other) {
+            block += `<button type="button" class="detail-connection-item is-action"
+              data-site-id="${otherId}"
+              title="${i18n.popup.open_connected}">
+              <span class="detail-connection-icon ${iconClass}"></span>
+              <span class="detail-connection-label">${name}</span>
+              <span class="detail-connection-go" aria-hidden="true">→</span>
+            </button>`;
+          } else {
+            block += `<div class="detail-connection-item">
+              <span class="detail-connection-icon ${iconClass}"></span>
+              <span class="detail-connection-label">${name}</span>
+            </div>`;
+          }
+        });
+        block += '</div>';
+        connBlocks.push(block);
+      }
+
+      if (featureType === 'data_center') {
+        pushConnGroup(
+          i18n.popup.powered_by,
+          incoming.filter(c => c.properties.relationship_type === 'powers'),
+          'is-power',
+          p => p.source_id
+        );
+        pushConnGroup(
+          i18n.popup.components_from,
+          incoming.filter(c => c.properties.relationship_type === 'manufactures_for'),
+          'is-mfg',
+          p => p.source_id
+        );
+      } else if (featureType === 'raw_material') {
+        pushConnGroup(i18n.popup.supplies_to, outgoing, 'is-supply', p => p.target_id);
+        pushConnGroup(i18n.popup.receives_from, incoming, 'is-supply', p => p.source_id);
+      } else if (featureType === 'energy_plant') {
+        pushConnGroup(i18n.popup.powers_to, outgoing, 'is-power', p => p.target_id);
+      }
+
+      if (connBlocks.length) {
+        html += `<div class="detail-connections">
+          <h4>${i18n.popup.connections}</h4>
+          <p class="detail-connections-hint">${i18n.popup.connections_hint}</p>
+          ${connBlocks.join('')}
+        </div>`;
       }
 
       html += buildImpactHtml(properties, featureType);
       html += buildEmploymentHtml(properties);
       html += buildSourcesHtml(properties.sources);
 
-      // Connections
-      const { incoming, outgoing } = findConnections(properties.id);
-
-      if (incoming.length > 0 || outgoing.length > 0) {
-        html += `<div class="detail-connections">
-          <h4>${i18n.popup.connections}</h4>`;
-
-        if (featureType === 'data_center') {
-          const poweredBy = incoming.filter(c => c.properties.relationship_type === 'powers');
-          const componentsFrom = incoming.filter(c => c.properties.relationship_type === 'manufactures_for');
-
-          if (poweredBy.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div class="detail-field-label">${i18n.popup.powered_by}</div>`;
-            poweredBy.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon is-power"></span>
-                ${c.properties.source_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-
-          if (componentsFrom.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div class="detail-field-label">${i18n.popup.components_from}</div>`;
-            componentsFrom.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon is-mfg"></span>
-                ${c.properties.source_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-        } else if (featureType === 'raw_material') {
-          if (outgoing.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div class="detail-field-label">${i18n.popup.supplies_to}</div>`;
-            outgoing.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon is-supply"></span>
-                ${c.properties.target_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-          if (incoming.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div class="detail-field-label">${i18n.popup.receives_from}</div>`;
-            incoming.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon is-supply"></span>
-                ${c.properties.source_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-        } else if (featureType === 'energy_plant') {
-          if (outgoing.length > 0) {
-            html += `<div style="margin-bottom: 8px;">
-              <div class="detail-field-label">${i18n.popup.powers_to}</div>`;
-            outgoing.forEach(c => {
-              html += `<div class="detail-connection-item">
-                <span class="detail-connection-icon is-power"></span>
-                ${c.properties.target_name}
-              </div>`;
-            });
-            html += '</div>';
-          }
-        }
-
-        html += '</div>';
+      const metaBits = [];
+      if (properties.confidence && i18n.confidence[properties.confidence]) {
+        metaBits.push(
+          `<span class="certainty-badge certainty-${properties.confidence}">${i18n.confidence[properties.confidence]}</span>`
+        );
+      }
+      if (properties.updated_at) {
+        metaBits.push(`<span>${i18n.popup.updated_at} ${properties.updated_at}</span>`);
+      }
+      if (metaBits.length) {
+        html += `<div class="detail-meta">${metaBits.join('')}</div>`;
       }
 
       return { html, accentColor, shapeClass, typeLabel };
     }
 
     // Open detail sidebar for a point feature
-    function openPointDetail(properties, featureType) {
+    function openPointDetail(properties, featureType, options = {}) {
       const resolved = resolveSiteProperties(properties, featureType);
       const { html, accentColor, shapeClass, typeLabel } = buildPointDetail(resolved, featureType);
       detailTitle.textContent = resolved.name;
@@ -903,6 +936,9 @@ import {
       }
       detailBody.innerHTML = html;
       detailSidebar.classList.add('open');
+      detailSidebar.classList.remove('is-pulse');
+      void detailSidebar.offsetWidth;
+      detailSidebar.classList.add('is-pulse');
       document.body.classList.add('detail-open');
       document.body.classList.remove('filters-open');
       document.body.classList.remove('search-open');
@@ -911,6 +947,17 @@ import {
       const searchToggleBtn = document.getElementById('map-search-toggle');
       if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
       highlightConnections(resolved.id);
+      if (options.frame !== false) frameSelection(resolved.id);
+      window.SubstratoMapChrome?.dismissMapHint?.();
+
+      detailBody.querySelectorAll('[data-site-id]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const siteId = btn.getAttribute('data-site-id');
+          const site = findSiteById(siteId);
+          if (!site) return;
+          openPointDetail(site.properties, site.featureType);
+        });
+      });
     }
 
     // Show connection popup (native MapLibre popup for lines)
@@ -935,13 +982,60 @@ import {
           ${certainty}
           <p class="conn-desc">${props.description_it || ''}</p>
           ${evidence}
+          <div class="conn-actions">
+            <button type="button" class="conn-action" data-site-id="${props.source_id}">${props.source_name}</button>
+            <button type="button" class="conn-action" data-site-id="${props.target_id}">${props.target_name}</button>
+          </div>
         </div>
       `;
 
-      new Popup({ closeOnClick: true, maxWidth: '320px' })
+      // Light up this edge and its two endpoints
+      const pair = [props.source_id, props.target_id];
+      const isThisEdge = props.id
+        ? ['==', ['get', 'id'], props.id]
+        : [
+            'all',
+            ['==', ['get', 'source_id'], props.source_id],
+            ['==', ['get', 'target_id'], props.target_id]
+          ];
+      ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+        if (!map.getLayer(layerId)) return;
+        map.setPaintProperty(layerId, 'line-opacity', ['case', isThisEdge, 0.95, 0.1]);
+        map.setPaintProperty(layerId, 'line-width', ['case', isThisEdge, 3.6, 0.9]);
+      });
+      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+        if (!map.getLayer(layerId)) return;
+        map.setLayoutProperty(layerId, 'icon-size', [
+          'case',
+          ['in', ['get', 'id'], ['literal', pair]],
+          ICON_SIZE_HIGHLIGHT,
+          ICON_SIZE_DIMMED
+        ]);
+        map.setPaintProperty(layerId, 'icon-opacity', [
+          'case',
+          ['in', ['get', 'id'], ['literal', pair]],
+          1,
+          0.28
+        ]);
+      });
+      window.SubstratoMapChrome?.dismissMapHint?.();
+
+      const popup = new Popup({ closeOnClick: true, maxWidth: '320px' })
         .setLngLat(e.lngLat)
         .setHTML(popupHtml)
         .addTo(map);
+
+      const root = popup.getElement();
+      root?.querySelectorAll('[data-site-id]').forEach(btn => {
+        btn.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          const siteId = btn.getAttribute('data-site-id');
+          const site = findSiteById(siteId);
+          if (!site) return;
+          popup.remove();
+          openPointDetail(site.properties, site.featureType);
+        });
+      });
     }
 
     // Show tooltip

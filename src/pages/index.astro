@@ -5,6 +5,13 @@ import '../styles/global.css';
 import '../styles/home.css';
 import i18n from '../i18n/it.json';
 import { getDatasetStats } from '../lib/stats';
+import {
+  ICON_PATHS,
+  FILTER_GROUPS,
+  SUBTYPE_COLORS,
+  ICON_SIZE,
+  ICON_OPACITY_EXPR
+} from '../lib/mapIcons';
 
 const stats = getDatasetStats();
 const h = i18n.home;
@@ -22,8 +29,13 @@ const h = i18n.home;
       <div class="home-hero-scrim" aria-hidden="true"></div>
 
       <div class="home-hero-inner">
-        <h1 class="home-brand">{i18n.app.title}</h1>
-        <p class="home-brand-sub">{i18n.app.subtitle}</p>
+        <div class="home-brand-lockup">
+          <span class="atlas-mark atlas-mark--lg" aria-hidden="true"></span>
+          <div class="home-brand-text">
+            <h1 class="home-brand">{i18n.app.title}</h1>
+            <p class="home-brand-sub">{i18n.app.subtitle}</p>
+          </div>
+        </div>
         <p class="home-hero-line">{h.hero_line}</p>
         <p class="home-hero-sub">{h.hero_sub}</p>
         <div class="home-cta-row">
@@ -248,7 +260,7 @@ const h = i18n.home;
     </div>
   </dialog>
 
-  <script>
+  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, SUBTYPE_COLORS, ICON_SIZE, ICON_OPACITY_EXPR }}>
     const heroEl = document.getElementById('hero-map');
     const MaplibreMap = window.maplibregl?.Map;
     if (heroEl && MaplibreMap) {
@@ -264,6 +276,49 @@ const h = i18n.home;
 
       const COLORS = { dc: '#5A9BB8', rm: '#B87A4A', ep: '#5B8FA8', conn: '#8a9199' };
 
+      function createMapIconImage(pathD, color, size = 80) {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        const scale = (size * 0.64) / 24;
+        const path = new Path2D(pathD);
+
+        ctx.save();
+        ctx.translate(size / 2 - 12 * scale, size / 2 - 12 * scale);
+        ctx.scale(scale, scale);
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
+        ctx.shadowBlur = 2.2;
+        ctx.shadowOffsetY = 1;
+        ctx.fillStyle = color;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2.6;
+        ctx.fill(path);
+        ctx.stroke(path);
+        ctx.restore();
+
+        return {
+          width: size,
+          height: size,
+          data: ctx.getImageData(0, 0, size, size).data
+        };
+      }
+
+      function iconImageId(subtype) {
+        return 'hero-icon-' + subtype;
+      }
+
+      function buildIconMatch(subtypes, fallback) {
+        const expr = ['match', ['get', 'subtype']];
+        subtypes.forEach((s) => {
+          expr.push(s, iconImageId(s));
+        });
+        expr.push(fallback);
+        return expr;
+      }
+
       heroMap.on('load', async () => {
         const [dc, ep, rm, conn] = await Promise.all([
           fetch('/data/data_centers.geojson').then((r) => r.json()),
@@ -271,6 +326,14 @@ const h = i18n.home;
           fetch('/data/raw_materials.geojson').then((r) => r.json()),
           fetch('/data/connections.geojson').then((r) => r.json())
         ]);
+
+        Object.keys(ICON_PATHS).forEach((subtype) => {
+          const path = ICON_PATHS[subtype];
+          const color = SUBTYPE_COLORS[subtype] || COLORS.conn;
+          if (path && !heroMap.hasImage(iconImageId(subtype))) {
+            heroMap.addImage(iconImageId(subtype), createMapIconImage(path, color));
+          }
+        });
 
         heroMap.addSource('hero-conn', { type: 'geojson', data: conn });
         heroMap.addSource('hero-dc', { type: 'geojson', data: dc });
@@ -289,24 +352,26 @@ const h = i18n.home;
           }
         });
 
-        const circle = (id, source, color, radius) => {
+        const symbol = (id, source, group, fallback) => {
           heroMap.addLayer({
             id,
-            type: 'circle',
+            type: 'symbol',
             source,
+            layout: {
+              'icon-image': buildIconMatch(group.subtypes, iconImageId(fallback)),
+              'icon-size': ICON_SIZE * 0.92,
+              'icon-allow-overlap': true,
+              'icon-ignore-placement': true
+            },
             paint: {
-              'circle-radius': radius,
-              'circle-color': color,
-              'circle-opacity': 0.9,
-              'circle-stroke-width': 1,
-              'circle-stroke-color': 'rgba(15, 18, 22, 0.85)'
+              'icon-opacity': ICON_OPACITY_EXPR
             }
           });
         };
 
-        circle('hero-rm-pts', 'hero-rm', COLORS.rm, 4.5);
-        circle('hero-ep-pts', 'hero-ep', COLORS.ep, 4.5);
-        circle('hero-dc-pts', 'hero-dc', COLORS.dc, 5);
+        symbol('hero-rm-pts', 'hero-rm', FILTER_GROUPS.raw_materials, 'lithium_mine');
+        symbol('hero-ep-pts', 'hero-ep', FILTER_GROUPS.energy_plants, 'gas');
+        symbol('hero-dc-pts', 'hero-dc', FILTER_GROUPS.data_centers, 'hyperscale');
 
         heroEl.classList.add('is-ready');
       });

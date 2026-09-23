@@ -108,8 +108,9 @@ export const ICON_OPACITY_EXPR = [
 ];
 
 export const ICON_SIZE = 0.54;
-export const ICON_SIZE_HIGHLIGHT = 0.66;
-export const ICON_SIZE_DIMMED = 0.4;
+export const ICON_SIZE_HIGHLIGHT = 0.72;
+export const ICON_SIZE_RELATED = 0.6;
+export const ICON_SIZE_DIMMED = 0.38;
 
 export const CONNECTION_TYPES = ['powers', 'supplies', 'manufactures_for'];
 

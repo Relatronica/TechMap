@@ -65,7 +65,10 @@ const siteGroups = Object.values(FILTER_GROUPS);
     hidden
     role="status"
   >
-    <p class="map-hint-text">{c.map_hint}</p>
+    <div class="map-hint-body">
+      <p class="map-hint-title">{c.map_hint_title}</p>
+      <p class="map-hint-text">{c.map_hint}</p>
+    </div>
     <button type="button" id="map-hint-dismiss" class="map-hint-dismiss">
       {c.map_hint_dismiss}
     </button>
@@ -480,6 +483,17 @@ const siteGroups = Object.values(FILTER_GROUPS);
   const hint = document.getElementById('map-hint');
   const hintDismiss = document.getElementById('map-hint-dismiss');
   const hintKey = hint?.dataset.storageKey || 'substrato-map-hint-v1';
+
+  function dismissMapHint() {
+    if (!hint || hint.hidden) return;
+    hint.hidden = true;
+    try {
+      localStorage.setItem(hintKey, '1');
+    } catch {
+      /* ignore */
+    }
+  }
+
   try {
     if (hint && localStorage.getItem(hintKey) !== '1') {
       hint.hidden = false;
@@ -487,12 +501,9 @@ const siteGroups = Object.values(FILTER_GROUPS);
   } catch {
     if (hint) hint.hidden = false;
   }
-  hintDismiss?.addEventListener('click', () => {
-    if (hint) hint.hidden = true;
-    try {
-      localStorage.setItem(hintKey, '1');
-    } catch {
-      /* ignore */
-    }
-  });
+  hintDismiss?.addEventListener('click', dismissMapHint);
+
+  // Used by map script when the user starts exploring
+  window.SubstratoMapChrome = window.SubstratoMapChrome || {};
+  window.SubstratoMapChrome.dismissMapHint = dismissMapHint;
 </script>
