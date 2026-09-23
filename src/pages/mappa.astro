@@ -633,10 +633,10 @@ import {
     map.on('load', async () => {
       // Fetch all GeoJSON data
       const [dcRes, rmRes, epRes, connRes] = await Promise.all([
-        fetch('./data/data_centers.geojson'),
-        fetch('./data/raw_materials.geojson'),
-        fetch('./data/energy_plants.geojson'),
-        fetch('./data/connections.geojson')
+        fetch('/data/data_centers.geojson'),
+        fetch('/data/raw_materials.geojson'),
+        fetch('/data/energy_plants.geojson'),
+        fetch('/data/connections.geojson')
       ]);
 
       dataCentersData = await dcRes.json();
@@ -670,9 +670,9 @@ import {
       });
 
       const [cablesRes, landingsRes, waterRes] = await Promise.all([
-        fetch('./data/overlays/submarine_cables.geojson'),
-        fetch('./data/overlays/cable_landings.geojson'),
-        fetch('./data/overlays/water_stress_eu.geojson')
+        fetch('/data/overlays/submarine_cables.geojson'),
+        fetch('/data/overlays/cable_landings.geojson'),
+        fetch('/data/overlays/water_stress_eu.geojson')
       ]);
       const cablesData = await cablesRes.json();
       const landingsData = await landingsRes.json();

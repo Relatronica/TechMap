@@ -5,5 +5,8 @@ export default defineConfig({
   output: 'static',
   build: {
     assets: 'assets'
+  },
+  devToolbar: {
+    enabled: false
   }
 });
