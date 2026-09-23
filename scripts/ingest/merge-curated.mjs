@@ -38,6 +38,35 @@ function pickCapacityMw(props) {
   return null;
 }
 
+function isCuratedFeature(feature) {
+  return !feature?.properties?.import_source;
+}
+
+function mergeSources(existing, cand) {
+  return [...(existing.properties?.sources || []), ...(cand.properties?.sources || [])].filter(
+    (s, i, arr) => arr.findIndex((x) => x.title === s.title && x.url === s.url) === i
+  );
+}
+
+/** Enrich curated with candidate sources/nulls; never overwrite editorial fields. */
+function enrichCurated(existing, cand) {
+  const ep = existing.properties || {};
+  const cp = cand.properties || {};
+  const cityEmpty = !ep.city || ep.city === 'n/d';
+  return {
+    ...existing,
+    properties: {
+      ...ep,
+      city: cityEmpty && cp.city ? cp.city : ep.city,
+      capacity: ep.capacity || cp.capacity || '',
+      status: ep.status || cp.status || undefined,
+      opened_year: ep.opened_year ?? cp.opened_year ?? null,
+      impact: ep.impact || cp.impact || undefined,
+      sources: mergeSources(existing, cand)
+    }
+  };
+}
+
 function mergeLists(curated, candidates, options) {
   const { filterCandidate, idPrefix, kmThreshold = 2.5 } = options;
   const kept = [...curated.features];
@@ -58,6 +87,14 @@ function mergeLists(curated, candidates, options) {
 
     if (dupIdx >= 0) {
       const existing = kept[dupIdx];
+
+      // Curated editorial records always win; only absorb sources / sparse fields.
+      if (isCuratedFeature(existing)) {
+        kept[dupIdx] = enrichCurated(existing, cand);
+        skippedDup += 1;
+        continue;
+      }
+
       if (confidenceRank(cand.properties.confidence) > confidenceRank(existing.properties.confidence)) {
         kept[dupIdx] = {
           ...cand,
@@ -65,13 +102,7 @@ function mergeLists(curated, candidates, options) {
             ...cand.properties,
             id: existing.properties.id,
             description_it: existing.properties.description_it || cand.properties.description_it,
-            sources: [
-              ...(existing.properties.sources || []),
-              ...(cand.properties.sources || [])
-            ].filter(
-              (s, i, arr) =>
-                arr.findIndex((x) => x.title === s.title && x.url === s.url) === i
-            )
+            sources: mergeSources(existing, cand)
           }
         };
       }
@@ -173,7 +204,7 @@ async function main() {
         license: 'ODbL 1.0',
         license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         used_for: ['data_centers'],
-        note_it: 'Tag telecom=data_center; confidence bassa, da verificare con fonti aggiuntive.'
+        note_it: 'Tag telecom=data_center; confidence bassa. Campus di operatori cloud classificati come hyperscale via euristica su nome/operatore.'
       },
       {
         id: 'dce',
@@ -228,9 +259,10 @@ async function main() {
       submarine_cables: 'Europe-filtered historical TeleGeography GeoJSON'
     },
     methodology_it:
-      'I record curati editorialmente (descrizioni, impatto, lavoro) restano in mappa. ' +
-      'Gli import automatici integrano WRI (tutti gli impianti IT + EU ≥ ' +
-      `${ENERGY_EU_MIN_MW} MW) e OSM per data center in area EU. Duplicati per prossimità/nome vengono accorpati. ` +
+      'I record curati editorialmente (descrizioni, impatto, subtype) hanno sempre priorità sui candidati automatici. ' +
+      'Gli import integrano WRI (tutti gli impianti IT + EU ≥ ' +
+      `${ENERGY_EU_MIN_MW} MW) e OSM per data center in area EU; i campus cloud OSM sono classificati come hyperscale. ` +
+      'Duplicati per prossimità vengono accorpati senza sovrascrivere i curati. ' +
       'Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.'
   };
 

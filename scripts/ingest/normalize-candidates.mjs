@@ -58,6 +58,37 @@ function num(value) {
   return Number.isFinite(n) ? n : null;
 }
 
+/** Self-built cloud / AI hyperscale operators (not retail colo brands). */
+const HYPERSCALE_OPERATOR_RE =
+  /\b(google|alphabet|microsoft|amazon|aws|meta\b|facebook|apple|oracle|alibaba|tencent|bytedance|huawei|coreweave|lambda\s*labs|stack\s*infrastructure|vantage\s*data(?:\s*centers?)?|cyrusone)\b/i;
+
+const HYPERSCALE_NAME_RE =
+  /\b(google|microsoft|amazon|aws|meta\b|facebook|apple|oracle)\b.*\b(data\s*cent(?:er|re)|campus|region|availability\s*zone|az\b)|(?:data\s*cent(?:er|re)|campus).*\b(google|microsoft|amazon|aws|meta\b|facebook|apple)\b/i;
+
+const DCE_SUBTYPE_MAP = {
+  hyperscale: 'hyperscale',
+  colocation: 'colocation',
+  colo: 'colocation',
+  enterprise: 'enterprise',
+  edge: 'colocation',
+  crypto: 'colocation',
+  unknown: 'colocation'
+};
+
+function inferHyperscaleSubtype(name, operator) {
+  const blob = `${name || ''} ${operator || ''}`;
+  if (HYPERSCALE_OPERATOR_RE.test(blob) || HYPERSCALE_NAME_RE.test(blob)) {
+    return 'hyperscale';
+  }
+  return 'colocation';
+}
+
+function mapDceSubtype(rawType, name, operator) {
+  const key = String(rawType || '').toLowerCase().trim();
+  if (key && DCE_SUBTYPE_MAP[key]) return DCE_SUBTYPE_MAP[key];
+  return inferHyperscaleSubtype(name, operator);
+}
+
 function normalizeWriEnergy(rows) {
   const allowed = new Set(['gas', 'solar', 'wind', 'hydro', 'nuclear']);
   const mapFuel = {
@@ -132,6 +163,9 @@ function normalizeOsmDatacenters(data) {
       const name = tags.name || tags['name:en'] || tags.ref;
       if (!name) return null;
 
+      const operator = tags.operator || tags.owner || 'Unknown';
+      const subtype = inferHyperscaleSubtype(name, operator);
+
       return {
         type: 'Feature',
         geometry: { type: 'Point', coordinates: [lon, lat] },
@@ -139,10 +173,12 @@ function normalizeOsmDatacenters(data) {
           id: `dc_osm_${String(idx++).padStart(5, '0')}`,
           name,
           type: 'data_center',
-          subtype: 'colocation',
-          operator: tags.operator || tags.owner || 'Unknown',
+          subtype,
+          operator,
           description_it:
-            'Record da OpenStreetMap (tag data_center). Da validare con almeno una seconda fonte.',
+            subtype === 'hyperscale'
+              ? 'Record da OpenStreetMap classificato come hyperscale (operatore cloud/campus). Da validare con una seconda fonte.'
+              : 'Record da OpenStreetMap (tag data_center). Da validare con almeno una seconda fonte.',
           country: toIso2(tags['addr:country'] || tags['ISO3166-1:alpha2'] || 'XX'),
           city: tags['addr:city'] || tags['addr:town'] || tags['addr:state'] || 'n/d',
           status: tags['disused:telecom'] ? 'decommissioned' : 'unknown',
@@ -184,16 +220,20 @@ function normalizeDceDatacenters(rows) {
       const name = pick(r, ['name', 'campus_name', 'facility_name']);
       if (!name) return null;
 
-      const mw = num(pick(r, ['mw', 'capacity_mw', 'it_mw']));
+      const mw = num(pick(r, ['power_mw', 'mw', 'capacity_mw', 'it_mw']));
       const statusRaw = String(pick(r, ['status', 'operating_status'])).toLowerCase();
       const status =
-        statusRaw.includes('operat') ? 'operational' :
+        statusRaw.includes('operat') || statusRaw === 'mapped' ? 'operational' :
           statusRaw.includes('construct') ? 'under_construction' :
-            statusRaw.includes('plan') ? 'planned' : 'unknown';
+            statusRaw.includes('plan') || statusRaw.includes('proposed') ? 'planned' : 'unknown';
 
       const confidenceRaw = String(pick(r, ['confidence', 'confidence_grade'])).toLowerCase();
-      const confidence = confidenceRaw.startsWith('a') || confidenceRaw.startsWith('b') ? 'high' :
-        confidenceRaw.startsWith('c') ? 'medium' : 'low';
+      const confidence =
+        confidenceRaw === 'high' || confidenceRaw.startsWith('a') || confidenceRaw.startsWith('b') ? 'high' :
+          confidenceRaw === 'medium' || confidenceRaw.startsWith('c') ? 'medium' : 'low';
+
+      const operator = pick(r, ['operator', 'ultimate_parent', 'owner']) || 'Unknown';
+      const subtype = mapDceSubtype(pick(r, ['type', 'facility_type']), name, operator);
 
       return {
         type: 'Feature',
@@ -202,11 +242,13 @@ function normalizeDceDatacenters(rows) {
           id: `dc_dce_${String(idx++).padStart(5, '0')}`,
           name,
           type: 'data_center',
-          subtype: 'colocation',
-          operator: pick(r, ['operator', 'ultimate_parent', 'owner']) || 'Unknown',
+          subtype,
+          operator,
           capacity: mw ? `${mw} MW` : '',
           description_it:
-            'Record importato da DataCentersExposed (campus-level).',
+            subtype === 'hyperscale'
+              ? 'Campus hyperscale importato da DataCentersExposed.'
+              : 'Record importato da DataCentersExposed (campus-level).',
           country: toIso2(pick(r, ['country_code', 'country']) || 'US'),
           city: pick(r, ['city', 'locality', 'metro']) || 'n/d',
           status,
@@ -215,7 +257,7 @@ function normalizeDceDatacenters(rows) {
           updated_at: new Date().toISOString().slice(0, 10),
           confidence,
           import_source: 'dce',
-          external_id: pick(r, ['facility_id', 'id', 'campus_id']) || null,
+          external_id: pick(r, ['slug', 'facility_id', 'id', 'campus_id']) || null,
           impact: {
             capacity_mw: mw,
             power_draw_mw_est: null,
@@ -229,7 +271,7 @@ function normalizeDceDatacenters(rows) {
               title: 'DataCentersExposed facilities.csv',
               url: 'https://datacentersexposed.com/data/facilities.csv',
               accessed_at: new Date().toISOString().slice(0, 10),
-              note: pick(r, ['source_url', 'source']) || undefined
+              note: pick(r, ['source_url', 'source', 'url']) || undefined
             }
           ]
         }

@@ -10,7 +10,9 @@
  * 1. id, name, type, subtype, operator, city, country, description_it
  * 2. sources[] + confidence + updated_at
  * 3. impact.capacity_mw (numero) — tenere capacity come etichetta display
- * 4. employment (anche solo note_it se i numeri mancano)
+ *    Con MW presenti, il pannello dettaglio mostra card (elettricità/CO₂/acqua)
+ *    con stime etichettate (src/lib/impactEstimates.ts).
+ * 4. employment (anche solo note_it se i numeri mancano) + community_impact_it
  * 5. connections.certainty + evidence_note_it (obbligatori per ogni nuovo legame)
  *
  * Regole:

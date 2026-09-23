@@ -24,6 +24,13 @@ import {
 >
   <MapView />
 
+  <script>
+    import { buildImpactModel } from '../lib/impactEstimates';
+    (window as Window & { SubstratoImpact?: { buildImpactModel: typeof buildImpactModel } }).SubstratoImpact = {
+      buildImpactModel
+    };
+  </script>
+
   <!-- Client-side MapLibre Script -->
   <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_DIMMED }}>
     // MapLibre GL JS loaded from CDN as global `maplibregl`
@@ -85,12 +92,23 @@ import {
         land: "Suolo (ha)",
         co2: "CO₂ stimata (t/anno)",
         energy_mix: "Mix / note energia",
+        impact_power: "Potenza",
+        impact_electricity: "Elettricità",
+        impact_co2: "CO₂",
+        impact_water: "Acqua",
+        impact_land: "Suolo",
+        impact_pue: "PUE",
+        impact_badge_declared: "Dichiarato",
+        impact_badge_estimated: "Stima",
+        impact_equiv_households: "≈ {n} abitazioni/anno",
+        impact_disclaimer: "Le stime usano fattori medi di rete e di settore (carico, intensità carbonica, acqua di raffreddamento). Non sono bilanci ufficiali del sito.",
+        impact_empty: "Dati di impatto non ancora compilati.",
         employment: "Lavoro",
         jobs_direct: "Occupati diretti",
         jobs_indirect: "Indiretti (stima)",
         jobs_contractors: "Appalti / temporanei (stima)",
         labor_risks: "Rischi lavoro / territorio",
-        community: "Impatto di comunità",
+        community: "Territorio e comunità",
         sources: "Fonti",
         confidence: "Affidabilità dato",
         certainty: "Certezza del legame",
@@ -581,6 +599,90 @@ import {
       return typeof value === 'number' ? value.toLocaleString('it-IT') : String(value);
     }
 
+    function formatCompactNumber(value) {
+      if (value === null || value === undefined || Number.isNaN(value)) return '—';
+      const abs = Math.abs(value);
+      if (abs >= 1_000_000) return `${(value / 1_000_000).toLocaleString('it-IT', { maximumFractionDigits: 1 })}M`;
+      if (abs >= 10_000) return `${Math.round(value).toLocaleString('it-IT')}`;
+      if (abs >= 100) return Math.round(value).toLocaleString('it-IT');
+      return value.toLocaleString('it-IT', { maximumFractionDigits: 2 });
+    }
+
+    const IMPACT_CARD_LABELS = {
+      power: () => i18n.popup.impact_power,
+      electricity: () => i18n.popup.impact_electricity,
+      co2: () => i18n.popup.impact_co2,
+      water: () => i18n.popup.impact_water,
+      land: () => i18n.popup.impact_land,
+      pue: () => i18n.popup.impact_pue
+    };
+
+    function buildImpactHtml(properties, featureType) {
+      const api = window.SubstratoImpact;
+      const impact = properties?.impact;
+      const model = api?.buildImpactModel
+        ? api.buildImpactModel({
+            impact: impact || null,
+            capacityLabel: properties?.capacity || null,
+            country: properties?.country || null,
+            siteKind: featureType,
+            subtype: properties?.subtype || null
+          })
+        : null;
+
+      const hasCards = model && model.cards && model.cards.length > 0;
+      const hasNote = !!(impact && impact.energy_mix_note_it);
+      if (!hasCards && !hasNote && !impact) return '';
+
+      let html = `<div class="detail-section detail-impact"><h4>${i18n.popup.impact}</h4>`;
+
+      if (!hasCards && !hasNote) {
+        html += `<p class="detail-empty">${i18n.popup.impact_empty}</p>`;
+        html += '</div>';
+        return html;
+      }
+
+      if (hasCards) {
+        html += `<div class="impact-cards">`;
+        model.cards.forEach((card) => {
+          const label = (IMPACT_CARD_LABELS[card.id] || (() => card.id))();
+          const badge =
+            card.origin === 'declared'
+              ? i18n.popup.impact_badge_declared
+              : i18n.popup.impact_badge_estimated;
+          const badgeClass = card.origin === 'declared' ? 'is-declared' : 'is-estimated';
+          let equiv = '';
+          if (card.equiv && card.equiv.kind === 'households') {
+            equiv = `<div class="impact-card-equiv">${i18n.popup.impact_equiv_households.replace(
+              '{n}',
+              formatCompactNumber(card.equiv.value)
+            )}</div>`;
+          }
+          html += `<div class="impact-card impact-card-${card.id}">
+            <div class="impact-card-top">
+              <span class="impact-card-label">${label}</span>
+              <span class="impact-card-badge ${badgeClass}">${badge}</span>
+            </div>
+            <div class="impact-card-value">${formatCompactNumber(card.value)}<span class="impact-card-unit">${card.unit}</span></div>
+            ${equiv}
+          </div>`;
+        });
+        html += `</div>`;
+        if (model.cards.some((c) => c.origin === 'estimated')) {
+          html += `<p class="impact-disclaimer">${i18n.popup.impact_disclaimer}</p>`;
+        }
+      }
+
+      if (hasNote) {
+        html += `<div class="detail-field">
+          <div class="detail-field-label">${i18n.popup.energy_mix}</div>
+          <div class="detail-field-value">${impact.energy_mix_note_it}</div>
+        </div>`;
+      }
+      html += '</div>';
+      return html;
+    }
+
     function buildSourcesHtml(sources) {
       if (!Array.isArray(sources) || sources.length === 0) return '';
       let html = `<div class="detail-section">
@@ -597,75 +699,51 @@ import {
       return html;
     }
 
-    function buildImpactHtml(impact) {
-      if (!impact || typeof impact !== 'object') return '';
-      const rows = [
-        [i18n.popup.capacity_mw, formatNumber(impact.capacity_mw)],
-        [i18n.popup.pue, formatNumber(impact.pue)],
-        [i18n.popup.water_use, formatNumber(impact.water_use_m3_year)],
-        [i18n.popup.land, formatNumber(impact.land_ha)],
-        [i18n.popup.co2, formatNumber(impact.co2_t_year_est)]
-      ].filter(([, v]) => v !== null);
-
-      let html = `<div class="detail-section"><h4>${i18n.popup.impact}</h4>`;
-      if (rows.length === 0 && !impact.energy_mix_note_it) {
-        html += `<p class="detail-empty">Dati di impatto non ancora compilati.</p>`;
-      }
-      rows.forEach(([label, value]) => {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${label}</div>
-          <div class="detail-field-value">${value}</div>
-        </div>`;
-      });
-      if (impact.energy_mix_note_it) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.energy_mix}</div>
-          <div class="detail-field-value">${impact.energy_mix_note_it}</div>
-        </div>`;
-      }
-      html += '</div>';
-      return html;
-    }
-
     function buildEmploymentHtml(properties) {
       const emp = properties.employment;
       const risks = properties.labor_risks;
       const community = properties.community_impact_it;
       if (!emp && !(risks && risks.length) && !community) return '';
 
-      let html = `<div class="detail-section"><h4>${i18n.popup.employment}</h4>`;
-      if (emp) {
-        const rows = [
-          [i18n.popup.jobs_direct, formatNumber(emp.direct)],
-          [i18n.popup.jobs_indirect, formatNumber(emp.indirect_est)],
-          [i18n.popup.jobs_contractors, formatNumber(emp.contractors_est)]
-        ].filter(([, v]) => v !== null);
-        rows.forEach(([label, value]) => {
+      let html = '';
+
+      if (emp || (Array.isArray(risks) && risks.length)) {
+        html += `<div class="detail-section"><h4>${i18n.popup.employment}</h4>`;
+        if (emp) {
+          const rows = [
+            [i18n.popup.jobs_direct, formatNumber(emp.direct)],
+            [i18n.popup.jobs_indirect, formatNumber(emp.indirect_est)],
+            [i18n.popup.jobs_contractors, formatNumber(emp.contractors_est)]
+          ].filter(([, v]) => v !== null);
+          rows.forEach(([label, value]) => {
+            html += `<div class="detail-field">
+              <div class="detail-field-label">${label}</div>
+              <div class="detail-field-value">${value}</div>
+            </div>`;
+          });
+          if (emp.note_it) {
+            html += `<p class="detail-note">${emp.note_it}</p>`;
+          }
+          if (Array.isArray(emp.conditions_tags) && emp.conditions_tags.length) {
+            html += `<div class="detail-tags">${emp.conditions_tags.map(t => `<span class="detail-tag">${t}</span>`).join('')}</div>`;
+          }
+        }
+        if (Array.isArray(risks) && risks.length) {
           html += `<div class="detail-field">
-            <div class="detail-field-label">${label}</div>
-            <div class="detail-field-value">${value}</div>
+            <div class="detail-field-label">${i18n.popup.labor_risks}</div>
+            <div class="detail-tags">${risks.map(t => `<span class="detail-tag detail-tag-risk">${t}</span>`).join('')}</div>
           </div>`;
-        });
-        if (emp.note_it) {
-          html += `<p class="detail-note">${emp.note_it}</p>`;
         }
-        if (Array.isArray(emp.conditions_tags) && emp.conditions_tags.length) {
-          html += `<div class="detail-tags">${emp.conditions_tags.map(t => `<span class="detail-tag">${t}</span>`).join('')}</div>`;
-        }
+        html += '</div>';
       }
-      if (Array.isArray(risks) && risks.length) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.labor_risks}</div>
-          <div class="detail-tags">${risks.map(t => `<span class="detail-tag detail-tag-risk">${t}</span>`).join('')}</div>
-        </div>`;
-      }
+
       if (community) {
-        html += `<div class="detail-field">
-          <div class="detail-field-label">${i18n.popup.community}</div>
-          <div class="detail-field-value">${community}</div>
+        html += `<div class="detail-section detail-community">
+          <h4>${i18n.popup.community}</h4>
+          <p class="detail-community-body">${community}</p>
         </div>`;
       }
-      html += '</div>';
+
       return html;
     }
 
@@ -732,7 +810,7 @@ import {
         html += `<div class="detail-description">${properties.description_it}</div>`;
       }
 
-      html += buildImpactHtml(properties.impact);
+      html += buildImpactHtml(properties, featureType);
       html += buildEmploymentHtml(properties);
       html += buildSourcesHtml(properties.sources);
 

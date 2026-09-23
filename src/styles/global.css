@@ -4,12 +4,12 @@
 :root {
   --bg: #0f1216;
   --bg-elevated: #161b22;
-  --ink: #e6e8eb;
-  --ink-soft: #b8bec6;
-  --muted: #8b939e;
-  --faint: #6a7280;
-  --line: rgba(230, 232, 235, 0.1);
-  --line-strong: rgba(230, 232, 235, 0.18);
+  --ink: #eef0f3;
+  --ink-soft: #cdd3db;
+  --muted: #a4adb8;
+  --faint: #8b949f;
+  --line: rgba(230, 232, 235, 0.14);
+  --line-strong: rgba(230, 232, 235, 0.24);
   --surface: rgba(18, 22, 28, 0.88);
   --surface-solid: #161b22;
   --surface-tint: rgba(28, 34, 42, 0.96);
@@ -578,7 +578,7 @@ body.is-map {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: var(--ink-soft);
   margin: 0;
 }
 
@@ -587,7 +587,7 @@ body.is-map {
   font-family: var(--font-body);
   font-size: 0.72rem;
   line-height: 1.4;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 .filters-header-actions {
@@ -645,7 +645,7 @@ body.is-map {
 .filters-count {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: var(--faint);
+  color: var(--muted);
   margin: 0 0 10px;
 }
 
@@ -701,7 +701,7 @@ body.is-map {
   margin-top: 4px;
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  color: var(--faint);
+  color: var(--muted);
 }
 
 .map-hint {
@@ -852,10 +852,35 @@ body.is-map {
   text-overflow: ellipsis;
 }
 
+.filter-group-chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: transform 0.18s var(--ease), color 0.15s;
+}
+
+.filter-group-chevron path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.filter-group:not([open]) .filter-group-chevron {
+  transform: rotate(-90deg);
+  color: var(--ink-soft);
+}
+
+.filter-group-summary:hover .filter-group-chevron {
+  color: var(--accent);
+}
+
 .filter-group-count {
   font-family: var(--font-mono);
   font-size: 0.65rem;
-  color: var(--faint);
+  color: var(--muted);
   min-width: 1.2em;
   text-align: right;
   flex-shrink: 0;
@@ -870,7 +895,7 @@ body.is-map {
   font-size: 0.6rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-soft);
   cursor: pointer;
 }
 
@@ -951,9 +976,9 @@ body.is-map {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   background: var(--surface-solid);
-  color: var(--ink-soft);
+  color: var(--ink);
   border-radius: var(--radius);
   padding: 5px 10px 5px 7px;
   font-size: 0.72rem;
@@ -964,18 +989,23 @@ body.is-map {
 }
 
 .filter-chip:hover {
-  border-color: var(--line-strong);
+  border-color: color-mix(in srgb, var(--ink) 28%, transparent);
   color: var(--ink);
 }
 
 .filter-chip.is-on {
-  background: color-mix(in srgb, var(--chip-color, var(--dc)) 16%, transparent);
-  border-color: color-mix(in srgb, var(--chip-color, var(--dc)) 45%, transparent);
-  color: var(--chip-color, var(--ink-soft));
+  background: color-mix(in srgb, var(--chip-color, var(--dc)) 20%, transparent);
+  border-color: color-mix(in srgb, var(--chip-color, var(--dc)) 55%, transparent);
+  color: color-mix(in srgb, var(--chip-color, var(--dc)) 72%, white);
 }
 
 .filter-chip:not(.is-on) {
-  opacity: 0.45;
+  color: var(--muted);
+  opacity: 0.72;
+}
+
+.filter-chip:not(.is-on) .filter-icon {
+  color: var(--muted);
 }
 
 .filter-icon {
@@ -1035,7 +1065,7 @@ body.is-map {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--faint);
+  color: var(--muted);
   margin: 8px 0 4px;
 }
 
@@ -1323,6 +1353,118 @@ body.is-map {
   margin-top: 18px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
+}
+
+.impact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 4px 0 10px;
+}
+
+.impact-card {
+  padding: 10px 11px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(165deg, rgba(28, 34, 42, 0.95) 0%, rgba(18, 22, 28, 0.92) 100%);
+  min-width: 0;
+}
+
+.impact-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.impact-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.impact-card-badge {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+
+.impact-card-badge.is-declared {
+  color: var(--ink-soft);
+  border-color: var(--line-strong);
+  background: rgba(230, 232, 235, 0.06);
+}
+
+.impact-card-badge.is-estimated {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.impact-card-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.impact-card-unit {
+  display: inline-block;
+  margin-left: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  vertical-align: 2px;
+}
+
+.impact-card-equiv {
+  margin-top: 5px;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.impact-disclaimer {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.impact-card-power {
+  border-color: color-mix(in srgb, var(--dc) 28%, var(--line));
+}
+
+.impact-card-electricity {
+  border-color: color-mix(in srgb, var(--ep) 28%, var(--line));
+}
+
+.impact-card-co2 {
+  border-color: color-mix(in srgb, #c97a5a 28%, var(--line));
+}
+
+.impact-card-water {
+  border-color: color-mix(in srgb, #5a9bb8 28%, var(--line));
+}
+
+.detail-community-body {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
 }
 
 .detail-note,

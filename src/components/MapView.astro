@@ -184,6 +184,9 @@ const siteGroups = Object.values(FILTER_GROUPS);
             <span class="filter-group-left">
               <span class={`filter-group-swatch swatch-${group.colorVar}`} aria-hidden="true"></span>
               <span class="filter-group-title">{i18n.layers[group.id as keyof typeof i18n.layers]}</span>
+              <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M4 6l4 4 4-4"></path>
+              </svg>
             </span>
             <span class="filter-group-right">
               <button
@@ -227,6 +230,9 @@ const siteGroups = Object.values(FILTER_GROUPS);
           <span class="filter-group-left">
             <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span>
             <span class="filter-group-title">{i18n.layers.connections}</span>
+            <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4"></path>
+            </svg>
           </span>
           <span class="filter-group-right">
             <button
@@ -275,6 +281,9 @@ const siteGroups = Object.values(FILTER_GROUPS);
           <span class="filter-group-left">
             <span class="filter-group-swatch swatch-overlay" aria-hidden="true"></span>
             <span class="filter-group-title">{i18n.overlays.title}</span>
+            <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4"></path>
+            </svg>
           </span>
         </summary>
         <div class="filter-chips" data-chips-for="overlays">

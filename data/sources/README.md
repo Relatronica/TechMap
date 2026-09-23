@@ -16,11 +16,13 @@ Questo folder contiene i dump sorgente grezzi usati per arricchire la mappa.
   - Endpoint default: `maps.mail.ru` (mirror Overpass; override con `OVERPASS_URL`)
   - Scope default: tile EU + UK (IT, DE, FR, NL/BE, IE, GB, Nordics, ES/PT)
   - Tile singola: `OVERPASS_TILES="it-nw=43.5,6.5,47.5,11.0" npm run data:fetch:osm`
+  - Classificazione: i campus di operatori cloud (Google, Microsoft, AWS, Meta, …) e wholesale hyperscale (STACK, Vantage, CyrusOne) sono etichettati `hyperscale`; il resto resta `colocation`.
 
 - **DataCentersExposed** (data center, campus-level)
   - URL: https://datacentersexposed.com/data/facilities.csv
   - Licenza: ODbL 1.0
   - File locale: `datacentersexposed_facilities.csv`
+  - Nota: export US-only; il campo `type` (hyperscale/colocation/…) viene rispettato in normalizzazione.
 
 ## Workflow
 

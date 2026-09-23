@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16",
+  "updated_at": "2026-09-23",
   "generated_by": "scripts/ingest/merge-curated.mjs",
   "energy_eu_min_mw": 100,
   "layers": {
@@ -11,10 +11,10 @@
       "skippedFilter": 26224
     },
     "data_centers": {
-      "total": 818,
+      "total": 817,
       "curated": 19,
-      "imported": 799,
-      "skippedDup": 386,
+      "imported": 798,
+      "skippedDup": 387,
       "skippedFilter": 6142
     }
   },
@@ -39,7 +39,7 @@
       "used_for": [
         "data_centers"
       ],
-      "note_it": "Tag telecom=data_center; confidence bassa, da verificare con fonti aggiuntive."
+      "note_it": "Tag telecom=data_center; confidence bassa. Campus di operatori cloud classificati come hyperscale via euristica su nome/operatore."
     },
     {
       "id": "dce",
@@ -99,5 +99,5 @@
     "water_stress": "EU HydroBASINS L6 choropleth from Aqueduct 4.0 baseline water stress",
     "submarine_cables": "Europe-filtered historical TeleGeography GeoJSON"
   },
-  "methodology_it": "I record curati editorialmente (descrizioni, impatto, lavoro) restano in mappa. Gli import automatici integrano WRI (tutti gli impianti IT + EU ≥ 100 MW) e OSM per data center in area EU. Duplicati per prossimità/nome vengono accorpati. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default."
+  "methodology_it": "I record curati editorialmente (descrizioni, impatto, subtype) hanno sempre priorità sui candidati automatici. Gli import integrano WRI (tutti gli impianti IT + EU ≥ 100 MW) e OSM per data center in area EU; i campus cloud OSM sono classificati come hyperscale. Duplicati per prossimità vengono accorpati senza sovrascrivere i curati. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default."
 }

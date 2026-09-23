@@ -1,4 +1,4 @@
-Generated: 2026-09-16
+Generated: 2026-09-23
 
 - WRI Global Power Plant Database: https://datasets.wri.org/datasets/global-power-plant-database (CC BY 4.0).
 - DataCentersExposed facilities.csv: https://datacentersexposed.com/data/facilities.csv (ODbL).
