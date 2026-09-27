@@ -10,8 +10,31 @@ export default defineConfig({
   build: {
     assets: 'assets'
   },
+  i18n: {
+    defaultLocale: 'it',
+    locales: ['it', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   integrations: [sitemap()],
   devToolbar: {
     enabled: false
+  },
+  vite: {
+    // MapLibre 6 is ESM-only; Vite's prebundle (.vite/deps/*.js) breaks Firefox MIME.
+    // Load the package ESM + worker URL directly instead.
+    worker: {
+      format: 'es'
+    },
+    optimizeDeps: {
+      exclude: ['maplibre-gl']
+    },
+    server: {
+      // Ensure .mjs workers/modules get a JS MIME type in Firefox
+      headers: {
+        'Accept-Ranges': 'bytes'
+      }
+    }
   }
 });

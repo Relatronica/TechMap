@@ -2,7 +2,7 @@
 /**
  * MapView.astro — chrome UI sulla mappa (filtri + dettaglio)
  */
-import i18n from '../i18n/it.json';
+import { getMessages, resolveLocale, localePath } from '../i18n';
 import {
   FILTER_GROUPS,
   CONNECTION_TYPES,
@@ -12,6 +12,9 @@ import {
   SITE_STATUSES,
   STATUS_COLORS
 } from '../lib/mapIcons';
+
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
 
 type DatasetMeta = {
   updated_at?: string;
@@ -59,7 +62,7 @@ const statusLabel = (key: string) =>
   statusShort[key] || (i18n.status as Record<string, string>)[key] || key;
 ---
 
-<div id="map"></div>
+<div id="map" data-locale={locale}></div>
 <div id="map-tooltip" class="map-tooltip"></div>
 
 <div class="map-chrome">
@@ -441,7 +444,7 @@ const statusLabel = (key: string) =>
         <p class="attribution-note">{datasetMeta.methodology_it}</p>
       )}
       <p class="attribution-method-link">
-        <a href="/metodologia">{i18n.data_attribution.methodology_link}</a>
+        <a href={localePath('/metodologia', locale)}>{i18n.data_attribution.methodology_link}</a>
       </p>
       {activeSources.length > 0 && (
         <ul class="attribution-sources">

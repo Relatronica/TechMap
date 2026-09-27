@@ -5,31 +5,35 @@
  * Content: sticky vetro.
  * Mappa: fixed sopra il tool.
  */
-import i18n from '../i18n/it.json';
+import {
+  getMessages,
+  resolveLocale,
+  localePath,
+  switchLocalePath,
+  type Locale
+} from '../i18n';
 
 interface Props {
   variant?: 'home' | 'map';
 }
 
 const { variant = 'home' } = Astro.props;
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
 const h = i18n.home;
 const app = i18n.app;
 const isMap = variant === 'map';
-
-const anchors = isMap
-  ? []
-  : [
-      { href: '/#problema', label: h.nav_problem },
-      { href: '/#dati', label: h.nav_data },
-      { href: '/#faq', label: h.nav_faq }
-    ];
+const homeHref = localePath('/', locale);
+const mapHref = localePath('/mappa', locale);
+const otherLocale: Locale = locale === 'it' ? 'en' : 'it';
+const switchHref = switchLocalePath(Astro.url.pathname, otherLocale);
+const hash = (id: string) => (homeHref === '/' ? `/#${id}` : `${homeHref}/#${id}`);
 ---
 
 <header class="site-chrome" id="site-header" data-variant={variant}>
   <div class="site-chrome-bar">
-    <a class="site-chrome-brand" href="/" aria-label={`${app.title} — ${app.subtitle}`}>
+    <a class="site-chrome-brand" href={homeHref} aria-label={`${app.title} — ${app.subtitle}`}>
       <svg class="site-chrome-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <!-- Piramide isometrica wireframe (allineata a /favicon.svg) -->
         <g
           fill="none"
           stroke="currentColor"
@@ -50,16 +54,26 @@ const anchors = isMap
     </a>
 
     {!isMap && (
-      <nav class="site-chrome-nav" aria-label="Sezioni">
-        {anchors.map((a) => (
-          <a href={a.href}>{a.label}</a>
-        ))}
+      <nav class="site-chrome-nav" aria-label={locale === 'en' ? 'Sections' : 'Sezioni'}>
+        <a href={hash('problema')}>{h.nav_problem}</a>
+        <a href={hash('dati')}>{h.nav_data}</a>
+        <a href={hash('faq')}>{h.nav_faq}</a>
       </nav>
     )}
 
     <div class="site-chrome-actions">
+      <a
+        class="site-chrome-lang"
+        href={switchHref}
+        hreflang={otherLocale}
+        lang={otherLocale}
+        aria-label={locale === 'en' ? 'Switch to Italian' : 'Passa all’inglese'}
+      >
+        {otherLocale === 'en' ? 'EN' : 'IT'}
+      </a>
+
       {isMap ? (
-        <a class="site-chrome-link" href="/">{h.nav_home}</a>
+        <a class="site-chrome-link" href={homeHref}>{h.nav_home}</a>
       ) : (
         <a
           class="site-chrome-support"
@@ -84,7 +98,7 @@ const anchors = isMap
 
       <a
         class:list={['site-chrome-cta', isMap && 'is-active']}
-        href="/mappa"
+        href={mapHref}
         aria-current={isMap ? 'page' : undefined}
       >
         {isMap ? h.nav_map : h.cta_map}
@@ -97,7 +111,7 @@ const anchors = isMap
           id="site-header-menu"
           aria-expanded="false"
           aria-controls="site-header-drawer"
-          aria-label="Menu"
+          aria-label={locale === 'en' ? 'Menu' : 'Menu'}
         >
           <span class="site-chrome-menu-lines" aria-hidden="true"></span>
         </button>
@@ -107,14 +121,14 @@ const anchors = isMap
 
   {!isMap && (
     <div class="site-chrome-drawer" id="site-header-drawer" hidden>
-      <nav aria-label="Menu">
-        <a href="/">{h.nav_home}</a>
-        {anchors.map((a) => (
-          <a href={a.href}>{a.label}</a>
-        ))}
-        <a href="/#azioni">{h.nav_actions}</a>
-        <a href="/#roadmap">{h.nav_roadmap}</a>
-        <a href="/#diffondi">{h.nav_share}</a>
+      <nav aria-label={locale === 'en' ? 'Menu' : 'Menu'}>
+        <a href={homeHref}>{h.nav_home}</a>
+        <a href={hash('problema')}>{h.nav_problem}</a>
+        <a href={hash('dati')}>{h.nav_data}</a>
+        <a href={hash('faq')}>{h.nav_faq}</a>
+        <a href={hash('azioni')}>{h.nav_actions}</a>
+        <a href={hash('roadmap')}>{h.nav_roadmap}</a>
+        <a href={hash('diffondi')}>{h.nav_share}</a>
         <a
           class="is-support"
           href={app.support_url}
@@ -133,7 +147,10 @@ const anchors = isMap
           </svg>
           {h.footer_support}
         </a>
-        <a class="is-cta" href="/mappa">{h.cta_map}</a>
+        <a class="is-cta" href={mapHref}>{h.cta_map}</a>
+        <a href={switchHref} hreflang={otherLocale} lang={otherLocale}>
+          {otherLocale === 'en' ? 'English' : 'Italiano'}
+        </a>
       </nav>
     </div>
   )}

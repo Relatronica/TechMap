@@ -1,0 +1,102 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { getMessages, resolveLocale, localePath } from '../i18n';
+
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
+const m = i18n.methodology;
+const legal = i18n.legal;
+---
+
+<ContentPage
+  title={m.title}
+  description={m.lead}
+  kicker={m.kicker}
+  heading={m.heading}
+  lead={m.lead}
+>
+  <article class="content-prose">
+    <p class="content-meta">
+      {m.revised_label}: <time datetime={m.revised}>{m.revised}</time>
+    </p>
+
+    <p>{m.intro}</p>
+
+    <h2>{m.layers_title}</h2>
+    {m.layers.map((layer) => (
+      <section class="method-block">
+        <h3>{layer.title}</h3>
+        <p>{layer.body}</p>
+      </section>
+    ))}
+
+    <h2>{m.confidence_title}</h2>
+    <p>{m.confidence_lead}</p>
+    <dl class="method-scale">
+      {m.confidence_levels.map((level) => (
+        <div class={`method-scale-item is-${level.id}`}>
+          <dt>{level.label}</dt>
+          <dd>{level.body}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <h2>{m.certainty_title}</h2>
+    <p>{m.certainty_lead}</p>
+    <dl class="method-scale">
+      {m.certainty_levels.map((level) => (
+        <div class={`method-scale-item is-${level.id}`}>
+          <dt>{level.label}</dt>
+          <dd>{level.body}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <h2>{m.ladder_title}</h2>
+    <p>{m.ladder_lead}</p>
+    <ul>
+      {m.ladder.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+
+    <h2>{m.who_title}</h2>
+    <p>{m.who_body}</p>
+
+    <h2>{m.when_title}</h2>
+    <p>{m.when_body}</p>
+
+    <h2>{m.sources_title}</h2>
+    {m.sources.map((src) => (
+      <section class="method-block">
+        <h3>{src.title}</h3>
+        <p>{src.body}</p>
+      </section>
+    ))}
+
+    <h2>{m.limits_title}</h2>
+    <ul>
+      {m.limits.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+
+    <h2>{m.cite_title}</h2>
+    <p>{m.cite_body}</p>
+
+    <div class="content-actions">
+      <a class="btn btn-accent" href={localePath('/mappa', locale)}>{m.cta_map}</a>
+      <a class="btn btn-ghost-light" href={localePath('/segnala', locale)}>{m.cta_report}</a>
+      <a class="btn btn-ghost-light" href={localePath('/stampa', locale)}>{m.cta_press}</a>
+    </div>
+
+    <p class="content-note">
+      {legal.updated_label}: {m.revised}.{' '}
+      {locale === 'en'
+        ? 'For corrections on a link or source use'
+        : 'Per correzioni su un legame o una fonte usa'}{' '}
+      <a href={localePath('/segnala', locale)}>{legal.nav_report}</a>
+      {locale === 'en' ? ' or open a GitHub issue.' : ' o apri una issue su GitHub.'}
+    </p>
+  </article>
+</ContentPage>

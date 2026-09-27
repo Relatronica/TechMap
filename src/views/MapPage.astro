@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import '../styles/map.css';
+import MapView from '../components/MapView.astro';
+import { getMessages, resolveLocale } from '../i18n';
+
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
+---
+
+<Layout
+  title={`${i18n.app.title} — ${i18n.home.nav_map}`}
+  description={i18n.home.hero_sub}
+  withMap={true}
+  bodyClass="is-map"
+>
+  <MapView />
+
+  <script>
+    import '../lib/map/initMap';
+  </script>
+</Layout>

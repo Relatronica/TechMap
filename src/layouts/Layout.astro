@@ -1,7 +1,16 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import '../styles/site-header.css';
-import i18n from '../i18n/it.json';
+import '../styles/fonts.css';
+import {
+  getMessages,
+  resolveLocale,
+  localePath,
+  switchLocalePath,
+  ogLocale,
+  defaultLocale,
+  type Locale
+} from '../i18n';
 
 interface Props {
   title: string;
@@ -11,9 +20,14 @@ interface Props {
   ogType?: 'website' | 'article';
 }
 
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
+
 const {
   title,
-  description = "L'infrastruttura fisica dietro cloud e intelligenza artificiale: data center, energia, materie prime.",
+  description = locale === 'en'
+    ? 'The physical infrastructure behind cloud and artificial intelligence: data centers, energy, raw materials.'
+    : "L'infrastruttura fisica dietro cloud e intelligenza artificiale: data center, energia, materie prime.",
   withMap = false,
   bodyClass = '',
   ogType = 'website'
@@ -32,6 +46,12 @@ const siteName = i18n.app.title;
 const orgName = i18n.app.relatronica_name;
 const orgURL = i18n.app.relatronica_url;
 
+const altLocales = (['it', 'en'] as Locale[]).filter((l) => l !== locale);
+const hreflangs = (['it', 'en'] as Locale[]).map((l) => ({
+  lang: l,
+  href: new URL(switchLocalePath(Astro.url.pathname, l), site).href
+}));
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -49,25 +69,27 @@ const jsonLd = {
       alternateName: i18n.app.subtitle,
       url: site.origin,
       description,
-      inLanguage: 'it',
+      inLanguage: locale,
       publisher: { '@id': `${site.origin}/#organization` }
     },
     {
       '@type': 'Dataset',
-      '@id': `${site.origin}/mappa/#dataset`,
+      '@id': `${site.origin}${localePath('/mappa', defaultLocale)}/#dataset`,
       name: `${siteName} — dataset`,
       description:
-        'Dataset curato di data center, impianti energetici, siti di estrazione/produzione e connessioni di filiera, con focus su Italia ed Europa. Criteri di certainty e limiti delle fonti: /metodologia.',
-      url: new URL('/mappa/', site).href,
+        locale === 'en'
+          ? 'Curated dataset of data centers, power plants, extraction/production sites and supply-chain links, focused on Italy and Europe. Certainty criteria and source limits: /metodologia.'
+          : 'Dataset curato di data center, impianti energetici, siti di estrazione/produzione e connessioni di filiera, con focus su Italia ed Europa. Criteri di certainty e limiti delle fonti: /metodologia.',
+      url: new URL(localePath('/mappa', locale), site).href,
       license: 'https://www.gnu.org/licenses/agpl-3.0.html',
       creator: { '@id': `${site.origin}/#organization` },
       isAccessibleForFree: true,
-      inLanguage: 'it',
+      inLanguage: locale,
       spatialCoverage: {
         '@type': 'Place',
-        name: 'Italia ed Europa'
+        name: locale === 'en' ? 'Italy and Europe' : 'Italia ed Europa'
       },
-      documentation: new URL('/metodologia/', site).href,
+      documentation: new URL(localePath('/metodologia', locale), site).href,
       distribution: [
         {
           '@type': 'DataDownload',
@@ -90,22 +112,29 @@ const jsonLd = {
 };
 ---
 <!DOCTYPE html>
-<html lang="it" class={bodyClass}>
+<html lang={locale} class={bodyClass} data-locale={locale}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <meta name="theme-color" content="#0f1216" />
   <meta name="geo.region" content="EU" />
-  <meta name="geo.placename" content="Italia, Europa" />
+  <meta name="geo.placename" content={locale === 'en' ? 'Italy, Europe' : 'Italia, Europa'} />
   <title>{title}</title>
 
   <link rel="canonical" href={canonicalURL} />
+  {hreflangs.map((h) => (
+    <link rel="alternate" hreflang={h.lang} href={h.href} />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={new URL(switchLocalePath(Astro.url.pathname, 'it'), site).href} />
   <link rel="icon" href="/favicon.svg?v=pyramid-4" type="image/svg+xml" />
 
   <meta property="og:type" content={ogType} />
   <meta property="og:site_name" content={siteName} />
-  <meta property="og:locale" content="it_IT" />
+  <meta property="og:locale" content={ogLocale(locale)} />
+  {altLocales.map((l) => (
+    <meta property="og:locale:alternate" content={ogLocale(l)} />
+  ))}
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
@@ -122,16 +151,6 @@ const jsonLd = {
   <meta name="twitter:image:alt" content={`${siteName} — ${i18n.app.subtitle}`} />
 
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet" />
-  {withMap && (
-    <>
-      <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
-      <script is:inline src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-    </>
-  )}
 </head>
 <body class={bodyClass}>
   {showHeader && <SiteHeader variant={headerVariant} />}

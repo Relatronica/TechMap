@@ -102,9 +102,14 @@ html.is-home {
   isolation: isolate;
 }
 
-.home-hero-map {
+/* maplibre-gl.css usa .maplibregl-map { position: relative } — stessa specificità,
+   ma arriva dopo e azzera l'altezza del hero (absolute → relative → h:0). */
+.home-hero-map,
+.home-hero-map.maplibregl-map {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   background: #0b0e12;
   opacity: 0;
@@ -1102,6 +1107,39 @@ html.is-home {
   gap: 12px;
   padding: 16px 48px 12px 18px;
   border-bottom: 1px solid var(--line);
+}
+
+/* Home non importa map.css: senza questi stili lo SVG resta senza stroke (X invisibile). */
+.welcome-modal .panel-close-btn {
+  appearance: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-tint);
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.welcome-modal .panel-close-btn:hover {
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  border-color: var(--ink-soft);
+}
+
+.welcome-modal .panel-close-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
 }
 
 .welcome-modal-header h2 {

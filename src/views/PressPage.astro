@@ -1,0 +1,47 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { getMessages, resolveLocale, localePath } from '../i18n';
+
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
+const p = i18n.legal.press;
+const app = i18n.app;
+const emailSubject =
+  locale === 'en' ? 'Press inquiry — Substrato' : 'Richiesta stampa — Substrato';
+const mailHref = `mailto:${app.press_email}?subject=${encodeURIComponent(emailSubject)}`;
+---
+
+<ContentPage
+  title={p.title}
+  description={p.lead}
+  kicker={p.kicker}
+  heading={p.heading}
+  lead={p.lead}
+>
+  <article class="content-prose">
+    <p>{p.body}</p>
+    <h2>{p.bullets_title}</h2>
+    <ul>
+      {p.bullets.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+    <h2>{p.how_title}</h2>
+    <p>{p.how_body}</p>
+    <div class="content-actions">
+      <a class="btn btn-accent" href={mailHref}>{p.email_cta}</a>
+      <a class="btn btn-ghost-light" href={localePath('/mappa', locale)}>{p.project_cta}</a>
+      <a
+        class="btn btn-ghost-light"
+        href={app.relatronica_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {p.org_cta}
+      </a>
+    </div>
+    <p class="content-note">
+      {app.press_email}
+    </p>
+  </article>
+</ContentPage>

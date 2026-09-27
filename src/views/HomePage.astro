@@ -1,0 +1,426 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+import '../styles/home.css';
+import { getMessages, resolveLocale, localePath } from '../i18n';
+import { getDatasetStats } from '../lib/stats';
+
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
+const stats = getDatasetStats();
+const h = i18n.home;
+const mapHref = localePath('/mappa', locale);
+---
+
+<Layout
+  title={`${i18n.app.title} — ${i18n.app.subtitle}`}
+  description={h.hero_sub}
+  bodyClass="is-home"
+>
+  <div class="home">
+    <section class="home-hero">
+      <div class="home-hero-map" id="hero-map" aria-hidden="true"></div>
+      <div class="home-hero-scrim" aria-hidden="true"></div>
+
+      <div class="home-hero-inner">
+        <h1 class="home-hero-title">{i18n.app.subtitle}</h1>
+        <p class="home-hero-line">{h.hero_line}</p>
+        <p class="home-hero-sub">{h.hero_sub}</p>
+        <div class="home-cta-row">
+          <a class="btn btn-accent" href={mapHref}>{h.cta_map}</a>
+          <a class="btn btn-ghost-light" href="#problema">{h.cta_secondary}</a>
+        </div>
+      </div>
+
+      <a class="home-hero-scroll" href="#problema" aria-label={h.hero_scroll_aria}>
+        <span class="home-hero-scroll-label">{h.hero_scroll}</span>
+        <svg class="home-hero-scroll-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6 10l6 6 6-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </section>
+
+    <section class="home-band home-problem" id="problema">
+      <div class="home-band-inner">
+        <div class="home-section-head home-section-head--narrow">
+          <p class="home-kicker">{h.problem_kicker}</p>
+          <h2>{h.problem_title}</h2>
+        </div>
+        <div class="home-problem-grid">
+          <article class="home-problem-point">
+            <span class="home-problem-num">01</span>
+            <h3>{h.problem_1_title}</h3>
+            <p>{h.problem_1_body}</p>
+          </article>
+          <article class="home-problem-point">
+            <span class="home-problem-num">02</span>
+            <h3>{h.problem_2_title}</h3>
+            <p>{h.problem_2_body}</p>
+          </article>
+          <article class="home-problem-point">
+            <span class="home-problem-num">03</span>
+            <h3>{h.problem_3_title}</h3>
+            <p>{h.problem_3_body}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-band home-stats" id="dati">
+      <div class="home-band-inner">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.stats_kicker}</p>
+          <h2>{h.stats_title}</h2>
+        </div>
+        <div class="home-stat-row">
+          <div class="home-stat">
+            <span class="home-stat-label">{h.stat_dc}</span>
+            <span class="home-stat-value">{stats.dataCenters}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-label">{h.stat_energy}</span>
+            <span class="home-stat-value">{stats.energyPlants}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-label">{h.stat_materials}</span>
+            <span class="home-stat-value">{stats.rawMaterials}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-label">{h.stat_links}</span>
+            <span class="home-stat-value">{stats.connections}</span>
+          </div>
+          <div class="home-stat">
+            <span class="home-stat-label">{h.stat_countries}</span>
+            <span class="home-stat-value">{stats.countries}</span>
+          </div>
+        </div>
+        <p class="home-note">{h.stats_note}</p>
+      </div>
+    </section>
+
+    <section class="home-band" id="azioni">
+      <div class="home-band-inner">
+        <div class="home-section-head home-section-head--narrow">
+          <p class="home-kicker">{h.actions_kicker}</p>
+          <h2>{h.actions_title}</h2>
+        </div>
+        <div class="home-actions">
+          <article class="home-action">
+            <span class="home-action-num">01</span>
+            <h3>{h.action_1_title}</h3>
+            <p>{h.action_1_body}</p>
+          </article>
+          <article class="home-action">
+            <span class="home-action-num">02</span>
+            <h3>{h.action_2_title}</h3>
+            <p>{h.action_2_body}</p>
+          </article>
+          <article class="home-action">
+            <span class="home-action-num">03</span>
+            <h3>{h.action_3_title}</h3>
+            <p>{h.action_3_body}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-band home-band--soft" id="roadmap">
+      <div class="home-band-inner home-band-inner--readable">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.roadmap_kicker}</p>
+          <h2>{h.roadmap_title}</h2>
+        </div>
+        <ol class="home-roadmap">
+          {h.roadmap_steps.map((step) => (
+            <li class={`home-road-item is-${step.status}`}>
+              <div class="home-road-meta">
+                <span class={`road-badge road-badge--${step.status}`}>{step.status_label}</span>
+                <h3 class="home-road-title">{step.title}</h3>
+              </div>
+              <p>{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="home-band" id="faq">
+      <div class="home-band-inner home-band-inner--readable">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.faq_kicker}</p>
+          <h2>{h.faq_title}</h2>
+        </div>
+        <div class="faq-list">
+          {h.faq.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>
+                {item.a}
+                {'link' in item && item.link && (
+                  <>
+                    {' '}
+                    <a href={localePath(item.link, locale)}>
+                      {'link_label' in item ? item.link_label : item.link}
+                    </a>
+                    .
+                  </>
+                )}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="home-band home-share" id="diffondi">
+      <div class="home-band-inner home-band-inner--readable">
+        <div class="home-section-head">
+          <p class="home-kicker">{h.share_kicker}</p>
+          <h2>{h.share_title}</h2>
+          <p class="home-lead">{h.share_body}</p>
+        </div>
+
+        <div
+          class="share-panel"
+          id="share-panel"
+          data-share-text={h.share_text}
+          data-share-copied={h.share_copied}
+          data-mastodon-prompt={h.share_mastodon_prompt}
+        >
+          <div class="share-url-row">
+            <input
+              class="share-url-input"
+              id="share-url"
+              type="text"
+              readonly
+              value=""
+              aria-label="URL del progetto"
+            />
+            <button type="button" class="btn btn-accent" id="share-copy">{h.share_copy}</button>
+          </div>
+
+          <div class="share-networks" role="group" aria-label={h.share_kicker}>
+            <button type="button" class="share-net" id="share-native" hidden>{h.share_native}</button>
+            <a class="share-net" id="share-bluesky" href="#" target="_blank" rel="noopener noreferrer">{h.share_bluesky}</a>
+            <a class="share-net" id="share-linkedin" href="#" target="_blank" rel="noopener noreferrer">{h.share_linkedin}</a>
+            <a class="share-net" id="share-x" href="#" target="_blank" rel="noopener noreferrer">{h.share_x}</a>
+            <button type="button" class="share-net" id="share-mastodon">{h.share_mastodon}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-footer-cta">
+      <div class="home-footer-cta-inner">
+        <h2>{h.footer_cta}</h2>
+        <a class="btn btn-accent btn-lg" href={mapHref}>{h.cta_map}</a>
+      </div>
+    </section>
+
+    <SiteFooter showWelcomeReopen={true} />
+  </div>
+
+  <dialog
+    id="welcome-modal"
+    class="welcome-modal"
+    aria-labelledby="welcome-title"
+    data-storage-key="substrato-welcome-v1"
+  >
+    <div class="welcome-modal-inner">
+      <header class="welcome-modal-header">
+        <h2 id="welcome-title">{h.welcome_title}</h2>
+        <button
+          type="button"
+          class="panel-close-btn"
+          id="welcome-close-x"
+          aria-label={h.welcome_cta_close}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+      </header>
+      <div class="welcome-modal-body">
+        <p class="welcome-lead">{h.welcome_lead}</p>
+        <div class="welcome-blocks">
+          <section class="welcome-block">
+            <h3>{h.welcome_mission_title}</h3>
+            <p>{h.welcome_mission_body}</p>
+          </section>
+          <section class="welcome-block welcome-block--disclaimer">
+            <h3>{h.welcome_disclaimer_title}</h3>
+            <p>{h.welcome_disclaimer_body}</p>
+          </section>
+        </div>
+      </div>
+      <footer class="welcome-modal-actions">
+        <a class="btn btn-accent" href={mapHref} id="welcome-cta-map">{h.welcome_cta_map}</a>
+        <button type="button" class="btn btn-ghost-light" id="welcome-close">{h.welcome_cta_close}</button>
+        <a
+          class="welcome-support-link"
+          href={i18n.app.support_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {h.welcome_cta_support}
+        </a>
+      </footer>
+    </div>
+  </dialog>
+
+  <script>
+    import '../lib/heroMap';
+  </script>
+
+  <script>
+    const heroScroll = document.querySelector('.home-hero-scroll');
+    const heroSection = document.querySelector('.home-hero');
+    if (heroScroll instanceof HTMLElement && heroSection instanceof HTMLElement) {
+      const syncScrollCue = () => {
+        const past = window.scrollY > Math.min(120, heroSection.clientHeight * 0.12);
+        heroScroll.classList.toggle('is-hidden', past);
+      };
+      syncScrollCue();
+      window.addEventListener('scroll', syncScrollCue, { passive: true });
+    }
+  </script>
+
+  <script>
+    (() => {
+      const modal = document.getElementById('welcome-modal');
+      if (!(modal instanceof HTMLDialogElement)) return;
+
+      const storageKey = modal.dataset.storageKey || 'substrato-welcome-v1';
+      const closeBtn = document.getElementById('welcome-close');
+      const closeX = document.getElementById('welcome-close-x');
+      const reopenBtn = document.getElementById('welcome-reopen');
+      const mapCta = document.getElementById('welcome-cta-map');
+
+      const dismiss = () => {
+        try {
+          localStorage.setItem(storageKey, '1');
+        } catch {
+          /* private mode */
+        }
+        modal.close();
+      };
+
+      const openWelcome = () => {
+        if (!modal.open) modal.showModal();
+      };
+
+      closeBtn?.addEventListener('click', dismiss);
+      closeX?.addEventListener('click', dismiss);
+      mapCta?.addEventListener('click', () => {
+        try {
+          localStorage.setItem(storageKey, '1');
+        } catch {
+          /* private mode */
+        }
+      });
+      reopenBtn?.addEventListener('click', openWelcome);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) dismiss();
+      });
+      modal.addEventListener('cancel', (e) => {
+        e.preventDefault();
+        dismiss();
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      const force = params.get('welcome') === '1';
+      let seen = false;
+      try {
+        seen = localStorage.getItem(storageKey) === '1';
+      } catch {
+        seen = false;
+      }
+
+      if (force || !seen) {
+        requestAnimationFrame(() => openWelcome());
+      }
+    })();
+  </script>
+
+  <script>
+    const panel = document.getElementById('share-panel');
+    if (panel) {
+      const text = panel.dataset.shareText || '';
+      const copiedLabel = panel.dataset.shareCopied || 'OK';
+      const mastodonPrompt = panel.dataset.mastodonPrompt || 'mastodon.social';
+      const pageUrl = window.location.origin + '/';
+      const encodedUrl = encodeURIComponent(pageUrl);
+      const encodedText = encodeURIComponent(text);
+      const encodedPair = encodeURIComponent(`${text} ${pageUrl}`);
+
+      const urlInput = document.getElementById('share-url');
+      if (urlInput instanceof HTMLInputElement) urlInput.value = pageUrl;
+
+      const bluesky = document.getElementById('share-bluesky');
+      const linkedin = document.getElementById('share-linkedin');
+      const shareX = document.getElementById('share-x');
+      if (bluesky instanceof HTMLAnchorElement) {
+        bluesky.href = `https://bsky.app/intent/compose?text=${encodedPair}`;
+      }
+      if (linkedin instanceof HTMLAnchorElement) {
+        linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+      }
+      if (shareX instanceof HTMLAnchorElement) {
+        shareX.href = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+      }
+
+      const copyBtn = document.getElementById('share-copy');
+      copyBtn?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(pageUrl);
+          if (copyBtn) {
+            const prev = copyBtn.textContent;
+            copyBtn.textContent = copiedLabel;
+            window.setTimeout(() => {
+              copyBtn.textContent = prev;
+            }, 1800);
+          }
+        } catch {
+          if (urlInput instanceof HTMLInputElement) {
+            urlInput.select();
+            document.execCommand('copy');
+          }
+        }
+      });
+
+      const nativeBtn = document.getElementById('share-native');
+      if (nativeBtn && navigator.share) {
+        nativeBtn.hidden = false;
+        nativeBtn.addEventListener('click', async () => {
+          try {
+            await navigator.share({ title: document.title, text, url: pageUrl });
+          } catch {
+            /* user cancelled */
+          }
+        });
+      }
+
+      document.getElementById('share-mastodon')?.addEventListener('click', () => {
+        const raw = window.prompt(mastodonPrompt, 'mastodon.social');
+        if (!raw) return;
+        const host = raw
+          .trim()
+          .replace(/^https?:\/\//, '')
+          .replace(/\/$/, '');
+        if (!host) return;
+        window.open(
+          `https://${host}/share?text=${encodedPair}`,
+          '_blank',
+          'noopener,noreferrer'
+        );
+      });
+    }
+  </script>
+</Layout>

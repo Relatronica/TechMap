@@ -322,8 +322,21 @@ export function iconImageId(subtype, style: IconStatusStyle = 'solid') {
   return style === 'solid' ? `icon-${subtype}` : `icon-${subtype}--${style}`;
 }
 
-export function statusBadgeImageId(status: string, subtype?: string) {
-  return subtype ? `status-badge-${subtype}--${status}` : `status-badge-${status}`;
+/** Badge stato: un'immagine per status (non per subtype). */
+export function statusBadgeImageId(status: string) {
+  return `status-badge-${status}`;
+}
+
+/** Match expression: status → badge image id. */
+export function buildStatusBadgeIconMatch(
+  statuses: readonly string[] = ['operational', 'under_construction', 'planned', 'decommissioned']
+): any[] {
+  const expr: any[] = ['match', STATUS_GET_EXPR];
+  statuses.forEach((status) => {
+    expr.push(status, statusBadgeImageId(status));
+  });
+  expr.push('');
+  return expr;
 }
 
 /**
@@ -337,7 +350,7 @@ export function createStatusBadgeImage(
   _tintColor?: string,
   _pixelRatio = STATUS_BADGE_PIXEL_RATIO
 ) {
-  const font = '500 22px "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif';
+  const font = '500 22px "IBM Plex Sans Variable", "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif';
   const measure = document.createElement('canvas').getContext('2d');
   let textW = label.length * 12;
   if (measure) {

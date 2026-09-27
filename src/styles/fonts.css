@@ -1,0 +1,6 @@
+/* Self-hosted fonts — avoids Google Fonts MIME blocks (Firefox / tracking protection). */
+@import '@fontsource-variable/ibm-plex-sans/wght.css';
+@import '@fontsource-variable/source-serif-4/opsz.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';

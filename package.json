@@ -12,7 +12,8 @@
     "data:fetch:dc": "node scripts/ingest/fetch-dce-datacenters.mjs",
     "data:fetch:aqueduct": "node scripts/ingest/fetch-aqueduct-basins.mjs",
     "data:normalize": "node scripts/ingest/normalize-candidates.mjs",
-    "data:merge": "node scripts/ingest/merge-curated.mjs",
+    "data:merge": "node scripts/ingest/merge-curated.mjs && npm run data:hero",
+    "data:hero": "node scripts/ingest/build-hero.mjs",
     "data:supply-chain": "node scripts/ingest/build-supply-chain.mjs",
     "data:overlays": "node scripts/ingest/build-overlays.mjs",
     "data:refresh": "npm run data:fetch:wri && npm run data:fetch:osm && npm run data:fetch:dc && npm run data:fetch:aqueduct && npm run data:normalize && npm run data:merge && npm run data:supply-chain && npm run data:overlays"
@@ -23,7 +24,10 @@
   "description": "Substrato — la mappa fisica del digitale e dell'IA",
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
     "astro": "^4.16.18",
-    "maplibre-gl": "^6.9.1"
+    "maplibre-gl": "^6.11.2"
   }
 }

@@ -1,0 +1,618 @@
+{
+  "app": {
+    "title": "Substrato",
+    "subtitle": "The Invisible Infrastructure",
+    "tagline": "The Physical Map of Digital and AI",
+    "relatronica_name": "Relatronica",
+    "relatronica_url": "https://relatronica.com/",
+    "support_url": "https://buymeacoffee.com/relatronica",
+    "github_url": "https://github.com/Relatronica/TechMap",
+    "github_issues_url": "https://github.com/Relatronica/TechMap/issues/new",
+    "press_email": "relatronica@gmail.com",
+    "privacy_email": "relatronica@gmail.com"
+  },
+  "legal": {
+    "nav_privacy": "Privacy",
+    "nav_terms": "Terms",
+    "nav_press": "Press",
+    "nav_report": "Report",
+    "nav_methodology": "Methodology",
+    "updated_label": "Updated",
+    "privacy": {
+      "title": "Privacy",
+      "kicker": "Transparency",
+      "heading": "Privacy notice",
+      "lead": "This site is a civic-tech tool. We collect the bare minimum and do not profile people for commercial purposes.",
+      "updated": "2026-09-16",
+      "sections": [
+        {
+          "title": "Controller",
+          "body": "The Substrato project is curated by Relatronica, an independent non-profit initiative for speculative design, civic tech, and knowledge mapping."
+        },
+        {
+          "title": "Data processed",
+          "body": "As a rule we do not ask for accounts or personal details. We may process: IP address and technical hosting logs (for security and operation); local preferences on your device (for example if you have already closed the welcome message); messages you send us voluntarily (reports, press inquiries)."
+        },
+        {
+          "title": "Cookies and local storage",
+          "body": "We do not use profiling or advertising cookies. We may use the browser's localStorage to remember interface choices (e.g. closing the welcome modal). You can clear it from your browser settings."
+        },
+        {
+          "title": "Third parties",
+          "body": "The map loads tiles and libraries from third-party services (for example basemap and CDN). Place search sends the query to OpenStreetMap Nominatim. Those providers may receive technical network requests (IP, user agent, search text) under their own notices. Links to external platforms (donations, social, GitHub) are under those services' control."
+        },
+        {
+          "title": "Purposes and legal bases",
+          "body": "We process data to run the site, prevent abuse, respond to requests, and improve the public dataset. Legal basis: legitimate interest in operating a non-profit information tool and, for messages you send us, pre-contractual measures / contact at your request."
+        },
+        {
+          "title": "Rights",
+          "body": "You may request access, rectification, erasure, restriction, or objection where applicable, and lodge a complaint with the supervisory authority. To exercise your rights, write to the privacy address listed on this page."
+        }
+      ],
+      "contact_cta": "Write about privacy"
+    },
+    "terms": {
+      "title": "Terms of use",
+      "kicker": "Conditions",
+      "heading": "Terms of use",
+      "lead": "By using the site you accept these conditions. They are written to protect the community and clarify the limits of the data.",
+      "updated": "2026-09-16",
+      "sections": [
+        {
+          "title": "Nature of the project",
+          "body": "The tool is informational, independent, and non-profit. It is not a commercial service, does not constitute legal, technical, or investment advice, and does not represent the positions of mapped companies."
+        },
+        {
+          "title": "Incomplete or estimated data",
+          "body": "The dataset is evolving: it may be incomplete, delayed, inferred, or wrong. We prefer to declare sources and certainty levels rather than pretend completeness. Always verify primary sources before public or journalistic decisions."
+        },
+        {
+          "title": "Permitted use",
+          "body": "You may explore, cite, and share the project, naming the project, URL, and date of access. Use for research, teaching, journalism, and advocacy is encouraged."
+        },
+        {
+          "title": "Prohibited use",
+          "body": "You may not present the data as official or exhaustive; remove attributions; use the site for harassment, abusive profiling of people, or unlawful activity. Third-party datasets remain subject to their licenses (e.g. ODbL, CC BY)."
+        },
+        {
+          "title": "Liability",
+          "body": "To the extent permitted by law, Relatronica and the curators are not liable for damages arising from use of, or inability to use, the site or datasets. Report errors to us: they help the whole community."
+        },
+        {
+          "title": "Changes",
+          "body": "We may update terms, interface, and data without notice. The date at the top of the page marks the last substantive revision of this text."
+        }
+      ]
+    },
+    "press": {
+      "title": "Press",
+      "kicker": "Press office",
+      "heading": "Press contacts",
+      "lead": "For interviews, deeper coverage, quotes, or materials about the project, write to us. We reply in Italian or English.",
+      "body": "Substrato is a civic map of the physical infrastructure of cloud and AI (data centers, energy, raw materials, connections), curated by Relatronica.",
+      "bullets_title": "What we can provide",
+      "bullets": [
+        "Angle and context for the project (civic tech, non-profit, Italy/Europe focus)",
+        "Clarifications on methodology, sources, and dataset limits",
+        "Screenshots or a map walkthrough for articles and podcasts",
+        "A link to Relatronica for other knowledge-mapping projects"
+      ],
+      "how_title": "How to reach us",
+      "how_body": "Write with a clear subject (e.g. «Interview request — outlet name»), editorial deadline, and a link to the piece if it is already online.",
+      "email_cta": "Press email",
+      "project_cta": "Open the map",
+      "org_cta": "Relatronica site"
+    },
+    "report": {
+      "title": "Report",
+      "kicker": "Take part",
+      "heading": "Report data or an error",
+      "lead": "The map improves with the community. Report missing sites, wrong coordinates, better sources, or notes on labor and territorial impact.",
+      "intro": "Open a GitHub issue (preferred: it stays public and traceable) or write to the privacy/contacts address if you do not use GitHub. Always include: site name, approximate location, what looks wrong, and a source if you have one.",
+      "cards": [
+        {
+          "title": "Error or update",
+          "body": "A point out of place, closed, renamed, or an implausible connection.",
+          "issue_title": "Data update / correction"
+        },
+        {
+          "title": "Missing site",
+          "body": "A relevant data center, plant, or node absent from the map.",
+          "issue_title": "New site to add"
+        },
+        {
+          "title": "Source or methodology",
+          "body": "A proposal for an open source, license, or documentation improvement.",
+          "issue_title": "Source / methodology"
+        }
+      ],
+      "github_cta": "Open a GitHub issue",
+      "email_cta": "Write by email",
+      "note": "Do not publish third parties' personal data or materials covered by secrecy. For security vulnerabilities on the site, contact us privately."
+    }
+  },
+  "home": {
+    "hero_line": "The cloud has a body. Energy, chips, mines, labor.",
+    "hero_sub": "A map to make visible the physical infrastructure behind digital services and artificial intelligence — with a focus on Italy and Europe.",
+    "cta_map": "Explore the map",
+    "cta_secondary": "How it works",
+    "hero_scroll": "Scroll",
+    "hero_scroll_aria": "Scroll to the next section",
+    "problem_kicker": "The problem",
+    "problem_title": "Behind every prompt there is a material chain",
+    "problem_1_title": "It seems immaterial",
+    "problem_1_body": "Cloud and AI are told as bodiless services: a prompt, a query, an account. The physical weight stays out of frame.",
+    "problem_2_title": "It is a physical chain",
+    "problem_2_body": "Behind every request sit data centers, power plants, semiconductor fabs, and extraction sites — linked in a material supply chain.",
+    "problem_3_title": "It stays opaque",
+    "problem_3_body": "These infrastructures are often remote, poorly documented, and hard to discuss in public. The map is there to make them readable.",
+    "stats_kicker": "In the dataset today",
+    "stats_title": "Numbers from the map, not slogans",
+    "stat_dc": "Data centers",
+    "stat_energy": "Energy plants",
+    "stat_materials": "Extraction and production sites",
+    "stat_links": "Documented connections",
+    "stat_countries": "Countries covered",
+    "stats_note": "A curated, evolving sample: better a few sites with sources than thousands of opaque pins.",
+    "actions_kicker": "What you can do",
+    "actions_title": "Three ways to use the tool",
+    "action_1_title": "Filter by type",
+    "action_1_body": "Isolate hyperscale, gas, mines, or fabs: see what stays in view and what disappears.",
+    "action_2_title": "Follow a supply chain",
+    "action_2_body": "Click a site and read the links: who powers, who supplies, with what level of certainty.",
+    "action_3_title": "Read the sources",
+    "action_3_body": "Where data are enriched you find reliability, evidence, and notes on labor and impact.",
+    "roadmap_kicker": "Roadmap",
+    "roadmap_title": "What is here and what is coming",
+    "roadmap_steps": [
+      {
+        "status": "available",
+        "status_label": "Available",
+        "title": "Explore the supply chain",
+        "body": "Interactive map of Europe and Italy, filters by site type, icons and connections with a declared certainty level."
+      },
+      {
+        "status": "in_progress",
+        "status_label": "In progress",
+        "title": "Italy in depth",
+        "body": "First the Italian corridors where debate is alive: Milan cluster, Trino, Bologna (HPC/AI), Sulcis — with sources, status, and certainty. Then labor (headcount/risks) and energy/water metrics on already curated sites."
+      },
+      {
+        "status": "planned",
+        "status_label": "Planned",
+        "title": "Analyze and share",
+        "body": "Time series, community-verified contributions, territorial comparisons, and export for journalism and research. EU expansion after Italy density."
+      }
+    ],
+    "footer_cta": "Ready to see the infrastructure?",
+    "nav_map": "Map",
+    "nav_support": "Support",
+    "nav_support_aria": "Support project development on Buy Me a Coffee",
+    "nav_home": "Home",
+    "footer_project_by": "A project by",
+    "footer_project_note": "Independent civic tech and knowledge mapping: making the physical infrastructure of cloud and AI visible.",
+    "footer_col_explore": "Explore",
+    "footer_col_participate": "Take part",
+    "footer_col_legal": "Legal",
+    "footer_support": "Support",
+    "footer_support_note": "Contributions cover hosting, map data, and maintenance.",
+    "footer_tagline": "Non-profit · Open data",
+    "welcome_title": "Welcome to this map",
+    "welcome_lead": "It is a non-profit civic-tech project: it makes the physical infrastructure of cloud and AI visible so citizens, journalists, and communities can discuss it with more awareness.",
+    "welcome_mission_title": "Why it exists",
+    "welcome_mission_body": "We do not sell services and do not represent a company. The goal is informed activism: sharing open tools, sources, and questions about territory, energy, and labor behind the digital.",
+    "welcome_disclaimer_title": "About the data",
+    "welcome_disclaimer_body": "The dataset is incomplete, evolving, and in places estimated or inferred. We prefer transparency (sources, reliability, notes) to false completeness. Use it as a starting point, not as official truth.",
+    "welcome_cta_map": "Explore the map",
+    "welcome_cta_close": "Got it, continue",
+    "welcome_cta_support": "Support the project",
+    "welcome_reopen": "Mission and disclaimer",
+    "nav_problem": "Problem",
+    "nav_data": "Data",
+    "nav_actions": "Use",
+    "nav_roadmap": "Roadmap",
+    "nav_faq": "FAQ",
+    "nav_share": "Share",
+    "faq_kicker": "FAQ",
+    "faq_title": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "What is this map?",
+        "a": "A tool to make visible the physical infrastructure behind cloud and AI: data centers, energy, raw materials, and the links between them, with a focus on Italy and Europe."
+      },
+      {
+        "q": "Are the data complete?",
+        "a": "No: it is a curated, evolving sample. We prefer a few sites with declared sources and certainty levels over thousands of opaque pins."
+      },
+      {
+        "q": "Are connections always certain?",
+        "a": "No. Each link may be confirmed, likely, inferred, or disputed. On the map you find the certainty and, where available, the evidence note.",
+        "link": "/metodologia",
+        "link_label": "Public certainty criteria"
+      },
+      {
+        "q": "How do you distinguish OSM, WRI, and curated records?",
+        "a": "The basemap mixes heterogeneous automatic inventories (OSM for many data centers, WRI for plants). Supply-chain corridors and enriched cards are editorial work.",
+        "link": "/metodologia",
+        "link_label": "Methodology and source limits"
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Citizens, journalists, and decision-makers who want to understand systemic impact — energy, territory, labor — beyond the immaterial story of the digital."
+      },
+      {
+        "q": "Can I reuse or cite the project?",
+        "a": "Yes: share it, cite the source, and use the map as a starting point. Datasets will keep growing; always note the date you consulted them."
+      }
+    ],
+    "share_kicker": "Share",
+    "share_title": "Take the topic beyond this page",
+    "share_body": "Copy the link or share it where your community discusses — including Mastodon.",
+    "share_copy": "Copy link",
+    "share_copied": "Link copied",
+    "share_native": "Share…",
+    "share_mastodon": "Mastodon",
+    "share_bluesky": "Bluesky",
+    "share_linkedin": "LinkedIn",
+    "share_x": "X",
+    "share_mastodon_prompt": "Mastodon instance (e.g. mastodon.social)",
+    "share_text": "Substrato — the physical map of digital and AI. Data centers, energy, raw materials, labor."
+  },
+  "narrative": {
+    "intro": "Every time we use a cloud service, query an artificial intelligence, or simply send an email, we activate a physical chain that stretches across continents. Behind the \"cloud\" sit data centers that consume vast amounts of energy, powered by gas plants, solar farms, wind facilities, and nuclear plants. The servers inside them hold semiconductors made in highly specialized factories, which in turn depend on raw materials — lithium, cobalt, rare earths — mined from Australia to Chile, from the Democratic Republic of the Congo to China.",
+    "intro_2": "This interactive map makes that hidden infrastructure visible, with a particular focus on Italy and Europe. It shows where the data centers that host our data are, which energy plants power them, and where the materials and components that make them possible come from. It is a tool meant for journalists, citizens, and decision-makers who want to understand the material dimension of the digital transformation.",
+    "data_caption": "The map shows {dc_count} data centers, {rm_count} extraction and production sites, {ep_count} energy plants, and {conn_count} connections among these infrastructures in Europe and worldwide."
+  },
+  "layers": {
+    "data_centers": "Data Centers",
+    "raw_materials": "Raw Materials and Production",
+    "energy_plants": "Energy Plants",
+    "connections": "Connections"
+  },
+  "subtypes": {
+    "colocation": "Colocation",
+    "hyperscale": "Hyperscale",
+    "enterprise": "Enterprise",
+    "semiconductor_fab": "Semiconductor fab",
+    "component_manufacturing": "Component manufacturing",
+    "chip_design": "Chip design (fabless)",
+    "server_assembly": "Server assembly (ODM)",
+    "battery_materials": "Battery materials",
+    "lithium_mine": "Lithium mine",
+    "cobalt_mine": "Cobalt mine",
+    "rare_earth_mine": "Rare earth mine",
+    "gas": "Natural gas (combined cycle)",
+    "solar": "Solar photovoltaic",
+    "wind": "Wind",
+    "hydro": "Hydroelectric",
+    "nuclear": "Nuclear"
+  },
+  "relationships": {
+    "powers": "Powers",
+    "supplies": "Supplies materials",
+    "manufactures_for": "Manufactures components for"
+  },
+  "popup": {
+    "operator": "Operator",
+    "type": "Type",
+    "capacity": "Capacity",
+    "city": "City",
+    "country": "Country",
+    "description": "Description",
+    "connections": "Connections",
+    "connections_hint": "Follow a link to move to the connected site.",
+    "open_connected": "Open on the map",
+    "linked_sites": "Linked sites",
+    "powered_by": "Powered by",
+    "components_from": "Components from",
+    "supplies_from": "Supplies from",
+    "powers_to": "Powers",
+    "supplies_to": "Supplies to",
+    "receives_from": "Receives from",
+    "manufactures_to": "Manufactures for",
+    "relationship": "Relationship",
+    "close": "Close",
+    "impact": "Impact",
+    "capacity_mw": "Capacity (MW)",
+    "pue": "PUE",
+    "water_use": "Water (m³/year)",
+    "land": "Land (ha)",
+    "co2": "Estimated CO₂ (t/year)",
+    "energy_mix": "Mix / energy notes",
+    "impact_power": "Power",
+    "impact_electricity": "Electricity",
+    "impact_co2": "CO₂",
+    "impact_water": "Water",
+    "impact_land": "Land",
+    "impact_pue": "PUE",
+    "impact_badge_declared": "Declared",
+    "impact_badge_estimated": "Estimate",
+    "impact_equiv_households": "≈ {n} households/year",
+    "impact_disclaimer": "Estimates use average grid and sector factors (load, carbon intensity, cooling water). They are not official site balances.",
+    "impact_empty": "Impact data not yet filled in.",
+    "employment": "Labor",
+    "jobs_direct": "Direct jobs",
+    "jobs_indirect": "Indirect (estimate)",
+    "jobs_contractors": "Contractors / temporary (estimate)",
+    "labor_risks": "Labor / territory risks",
+    "labor_contrast": "Compare this headcount with mines, fabs, and ODMs along the same supply chain: the cloud shifts labor, it does not erase it.",
+    "labor_conditions": "Conditions",
+    "community": "Territory and community",
+    "sources": "Sources",
+    "confidence": "Data reliability",
+    "certainty": "Link certainty",
+    "evidence": "Evidence",
+    "updated_at": "Updated",
+    "status": "Status"
+  },
+  "confidence": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "estimated": "Estimate"
+  },
+  "certainty": {
+    "confirmed": "Confirmed",
+    "likely": "Likely",
+    "inferred": "Inferred",
+    "disputed": "Disputed"
+  },
+  "labor_tags": {
+    "unionized": "Unionized",
+    "shift_work": "Shift work",
+    "artisanal_mining": "Artisanal mining",
+    "artisanal_mining_nearby": "Artisanal nearby",
+    "conflict_zone": "Conflict zone",
+    "migrant_labor": "Migrant labor",
+    "high_skill": "High skill",
+    "construction_phase": "Construction phase",
+    "precarious_contracts": "Precarious contracts",
+    "chemical_exposure": "Chemical exposure"
+  },
+  "status": {
+    "planned": "Planned",
+    "under_construction": "Under construction",
+    "operational": "Operational",
+    "decommissioned": "Decommissioned",
+    "unknown": "Unknown"
+  },
+  "controls": {
+    "toggle_layers": "Layers",
+    "filters": "Filters",
+    "reset_filters": "Reset",
+    "showing": "Visible",
+    "connections_types": "Connection types",
+    "legend": "Legend",
+    "zoom_in": "Zoom in",
+    "zoom_out": "Zoom out",
+    "reset_view": "Initial view",
+    "show_all": "Show",
+    "hide_all": "Hide",
+    "section_sites": "Sites",
+    "section_status": "Status",
+    "section_status_lead": "Separates operational sites, construction, and pipeline projects.",
+    "section_links": "Links",
+    "section_context": "Context",
+    "filters_lead": "Turn on or off what appears on the map.",
+    "status_short": {
+      "operational": "Operational",
+      "under_construction": "Construction",
+      "planned": "Planned",
+      "decommissioned": "Decommissioned",
+      "unknown": "Unknown"
+    },
+    "filters_open": "Open filters",
+    "filters_close": "Close filters",
+    "map_hint_title": "Start from a point",
+    "map_hint": "Click a data center, plant, or mine: links light up and the card opens. Then follow a connection to continue the journey.",
+    "map_hint_dismiss": "Got it",
+    "search_place": "Search place",
+    "search_placeholder": "City, region, country…",
+    "search_no_results": "No results",
+    "search_error": "Search unavailable right now",
+    "search_searching": "Searching…",
+    "search_clear": "Clear",
+    "search_open": "Search",
+    "search_close": "Close search",
+    "search_attribution": "Places: OpenStreetMap Nominatim"
+  },
+  "subtypes_short": {
+    "colocation": "Colocation",
+    "hyperscale": "Hyperscale",
+    "enterprise": "Enterprise",
+    "semiconductor_fab": "Semiconductors",
+    "component_manufacturing": "Components",
+    "chip_design": "Chip design",
+    "server_assembly": "Server ODM",
+    "battery_materials": "Batteries",
+    "lithium_mine": "Lithium",
+    "cobalt_mine": "Cobalt",
+    "rare_earth_mine": "Rare earths",
+    "gas": "Gas",
+    "solar": "Solar",
+    "wind": "Wind",
+    "hydro": "Hydro",
+    "nuclear": "Nuclear"
+  },
+  "legend": {
+    "title": "Legend",
+    "points": "Points",
+    "lines": "Connections",
+    "line_powers": "Energy supply",
+    "line_supplies": "Material supply",
+    "line_manufactures": "Component manufacturing",
+    "status_halo_construction": "Solid warm = under construction",
+    "status_halo_planned": "Fine hatch = planned",
+    "status_style_operational": "Solid = operational",
+    "status_labels_hint": "Up close: label under the pin with status"
+  },
+  "overlays": {
+    "title": "Context",
+    "power_grid": "Power grid",
+    "power_grid_hint": "Transmission lines (OpenStreetMap / OpenInfraMap)",
+    "water_stress": "Water stress",
+    "water_stress_hint": "Baseline water stress by sub-basin (WRI Aqueduct 4.0, HydroBASINS L6)",
+    "submarine_cables": "Submarine cables",
+    "submarine_cables_hint": "Routes and landing stations in Europe (historical TeleGeography extract)"
+  },
+  "data_attribution": {
+    "title": "Data and licenses",
+    "open": "Data and licenses",
+    "updated": "Dataset updated",
+    "methodology": "Methodology",
+    "methodology_link": "Read certainty criteria and sources",
+    "license": "License",
+    "records": "records on map",
+    "curated": "curated",
+    "imported": "imported",
+    "basemap": "Basemap"
+  },
+  "methodology": {
+    "title": "Methodology",
+    "kicker": "Transparency",
+    "heading": "How we read the data",
+    "lead": "Substrato mixes open inventories and curated corridors. This page explains what each reliability label means, who verifies the links, and which limits stay explicit.",
+    "revised": "2026-09-27",
+    "revised_label": "Revised",
+    "intro": "We use two distinct levels: confidence on the point (how reliable the site's existence and properties are) and certainty on the link (how well documented the relationship between two sites is). They are not the same thing. An OSM data center can have low confidence and no edges; a named PPA can have confirmed certainty even if a nearby point stays raw.",
+    "layers_title": "Two layers on the map",
+    "layers": [
+      {
+        "title": "Basemap (inventory)",
+        "body": "Points bulk-imported for geographic context: energy plants from the WRI Global Power Plant Database (Italy + EU ≥ 100 MW) and data centers from OpenStreetMap (telecom=data_center tag in the EU area). OSM for data centers is incomplete and uneven: many campuses are missing, some are misplaced, quality varies by country. WRI is more structured, but remains a global database with delays and import thresholds. Imported records do not claim to be a supply chain."
+      },
+      {
+        "title": "Curated corridors (project thesis)",
+        "body": "A few sites enriched by hand (descriptions, impact, labor, sources) and connections with mandatory certainty + evidence_note. This is where the line «the cloud has a body» lives: documented energy, AI silicon, battery metals, labor contrast. We prefer fewer true arrows to many suggestive ones."
+      }
+    ],
+    "confidence_title": "Confidence on the site",
+    "confidence_lead": "Measures how reliable the point record is (identity, location, declared capacity).",
+    "confidence_levels": [
+      {
+        "id": "high",
+        "label": "High",
+        "body": "Official document or primary operator statement (corporate fact sheet, annual report, PPA named on the site)."
+      },
+      {
+        "id": "medium",
+        "label": "Medium",
+        "body": "Journalistic source or coherent secondary report; typical of imported WRI plants and many curated records still being enriched."
+      },
+      {
+        "id": "low",
+        "label": "Low",
+        "body": "Indirect clue. Default for data centers imported from OpenStreetMap until there is secondary verification."
+      },
+      {
+        "id": "estimated",
+        "label": "Estimate",
+        "body": "Value modeled or estimated by the dataset author (e.g. average impact factors), always labeled as such on the card."
+      }
+    ],
+    "certainty_title": "Certainty on the link",
+    "certainty_lead": "Measures how well documented the relationship between two sites is (powers, supplies, manufactures_for). Every new edge requires certainty and an evidence note in Italian.",
+    "certainty_levels": [
+      {
+        "id": "confirmed",
+        "label": "Confirmed",
+        "body": "Direct proof of the link: named PPA or supply contract, joint statement, corporate report that explicitly cites origin and destination."
+      },
+      {
+        "id": "likely",
+        "label": "Likely",
+        "body": "Strong geographic or market evidence without site-to-site proof (same basin and same supplier of a known agreement; recognized ODM of a hyperscaler without the campus packing list)."
+      },
+      {
+        "id": "inferred",
+        "label": "Inferred",
+        "body": "Transparent working hypothesis: grid proximity, same product class, energy cluster. Never presented as fact. Example: Turbigo → Milan campuses without a public PPA."
+      },
+      {
+        "id": "disputed",
+        "label": "Disputed",
+        "body": "Conflicting sources or relevant public contestation of the link or project. Stays on the map with the label; it is not «resolved» quietly."
+      }
+    ],
+    "ladder_title": "How a grade is raised",
+    "ladder_lead": "The grade rises only with new evidence, not for narrative convenience.",
+    "ladder": [
+      "From inferred to likely: coherent evidence is required (same operator/basin contract, documented market supply chain) and a note explaining why it is not yet confirmed.",
+      "From likely to confirmed: a named primary document is required (PPA, joint statement, report naming both parties). Without that the link stays likely or drops.",
+      "powers without a named PPA or offtake: never confirmed.",
+      "supplies / manufactures_for only if the material or product belongs to that supply chain (no lithium→chip or cobalt→logic foundry).",
+      "A site without an edge is valid: projects, context, inventories. We do not invent links to fill the map."
+    ],
+    "who_title": "Who verifies",
+    "who_body": "Editorial curation is by Relatronica (Substrato project): corridor selection, certainty/confidence compilation, evidence notes, and source updates. OpenStreetMap and WRI remain under their communities and licenses; we do not «certify» the entire automatic inventory. Community corrections go through Report (preferred: traceable GitHub issue) and are incorporated after human review — there is no anonymous direct write access to the published dataset.",
+    "when_title": "When it is updated",
+    "when_body": "Each curated record may have updated_at; the dataset_meta.json file reports the date of the last merge. We do not offer real-time updates. Typical cadence: when relevant PPAs or reports appear, when a report is verified, or in corridor enrichment batches. When citing, always note the date you consulted the map.",
+    "sources_title": "Main sources and limits",
+    "sources": [
+      {
+        "title": "WRI Global Power Plant Database",
+        "body": "Energy plants, CC BY 4.0 license. Import: all plants in Italy + EU ≥ 100 MW. More rigorous than OSM on structure and capacity, but not an offtake toward data centers."
+      },
+      {
+        "title": "OpenStreetMap (Overpass)",
+        "body": "Data centers via telecom=data_center tag, ODbL license. Low confidence by default. Incomplete and uneven: useful as a basemap, insufficient alone for journalism on a single site without verification."
+      },
+      {
+        "title": "Curated records and connections",
+        "body": "GeoJSON in data/curated/ and edges in connections_edges.json: descriptions, labor, impact, certainty. Always take priority over automatic candidates in case of conflict."
+      },
+      {
+        "title": "Context overlays",
+        "body": "Power grid (OpenInfraMap), water stress (Aqueduct × HydroBASINS), submarine cables (historical extract). Off by default; they are not supply-chain links."
+      }
+    ],
+    "limits_title": "What we do not claim",
+    "limits": [
+      "Completeness of the European inventory of data centers or mines.",
+      "Physical electron-by-electron or wafer-by-rack traceability without a document.",
+      "Invented employment numbers: we prefer null + a note to a cosmetic 0.",
+      "Institutional certification or third-party audit of the dataset."
+    ],
+    "cite_title": "How to cite",
+    "cite_body": "Substrato (Relatronica), map consulted on YYYY-MM-DD, substrato.eu — also note the link certainty if you use a specific connection, and the primary source linked on the card when present.",
+    "cta_map": "Open the map",
+    "cta_report": "Report an error",
+    "cta_press": "Press contacts"
+  },
+  "countries": {
+    "IT": "Italy",
+    "DE": "Germany",
+    "ES": "Spain",
+    "NL": "Netherlands",
+    "BE": "Belgium",
+    "AT": "Austria",
+    "PL": "Poland",
+    "FI": "Finland",
+    "SE": "Sweden",
+    "IE": "Ireland",
+    "FR": "France",
+    "PT": "Portugal",
+    "GR": "Greece",
+    "CZ": "Czech Republic",
+    "RO": "Romania",
+    "HU": "Hungary",
+    "DK": "Denmark",
+    "LU": "Luxembourg",
+    "NO": "Norway",
+    "CH": "Switzerland",
+    "RS": "Serbia",
+    "TW": "Taiwan",
+    "AU": "Australia",
+    "CL": "Chile",
+    "CD": "Democratic Republic of the Congo",
+    "GL": "Greenland",
+    "CN": "China",
+    "US": "United States",
+    "XX": "Unspecified"
+  },
+  "map": {
+    "load_error": "Could not load map data. Reload the page or try again later.",
+    "overlay_error": "Some context overlays are unavailable."
+  }
+}
