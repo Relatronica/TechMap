@@ -13,8 +13,9 @@
     "data:fetch:aqueduct": "node scripts/ingest/fetch-aqueduct-basins.mjs",
     "data:normalize": "node scripts/ingest/normalize-candidates.mjs",
     "data:merge": "node scripts/ingest/merge-curated.mjs",
+    "data:supply-chain": "node scripts/ingest/build-supply-chain.mjs",
     "data:overlays": "node scripts/ingest/build-overlays.mjs",
-    "data:refresh": "npm run data:fetch:wri && npm run data:fetch:osm && npm run data:fetch:dc && npm run data:fetch:aqueduct && npm run data:normalize && npm run data:merge && npm run data:overlays"
+    "data:refresh": "npm run data:fetch:wri && npm run data:fetch:osm && npm run data:fetch:dc && npm run data:fetch:aqueduct && npm run data:normalize && npm run data:merge && npm run data:supply-chain && npm run data:overlays"
   },
   "keywords": [],
   "author": "",

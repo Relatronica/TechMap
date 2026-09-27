@@ -57,7 +57,7 @@ const jsonLd = {
       '@id': `${site.origin}/mappa/#dataset`,
       name: `${siteName} — dataset`,
       description:
-        'Dataset curato di data center, impianti energetici, siti di estrazione/produzione e connessioni di filiera, con focus su Italia ed Europa.',
+        'Dataset curato di data center, impianti energetici, siti di estrazione/produzione e connessioni di filiera, con focus su Italia ed Europa. Criteri di certainty e limiti delle fonti: /metodologia.',
       url: new URL('/mappa/', site).href,
       license: 'https://www.gnu.org/licenses/agpl-3.0.html',
       creator: { '@id': `${site.origin}/#organization` },
@@ -67,6 +67,7 @@ const jsonLd = {
         '@type': 'Place',
         name: 'Italia ed Europa'
       },
+      documentation: new URL('/metodologia/', site).href,
       distribution: [
         {
           '@type': 'DataDownload',

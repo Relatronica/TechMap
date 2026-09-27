@@ -8,14 +8,15 @@
     "support_url": "https://buymeacoffee.com/relatronica",
     "github_url": "https://github.com/Relatronica/TechMap",
     "github_issues_url": "https://github.com/Relatronica/TechMap/issues/new",
-    "press_email": "stampa@relatronica.com",
-    "privacy_email": "privacy@relatronica.com"
+    "press_email": "relatronica@gmail.com",
+    "privacy_email": "relatronica@gmail.com"
   },
   "legal": {
     "nav_privacy": "Privacy",
     "nav_terms": "Termini",
     "nav_press": "Stampa",
     "nav_report": "Segnala",
+    "nav_methodology": "Metodologia",
     "updated_label": "Aggiornato",
     "privacy": {
       "title": "Privacy",
@@ -174,8 +175,8 @@
       {
         "status": "in_progress",
         "status_label": "In sviluppo",
-        "title": "Approfondire i dati",
-        "body": "Più siti italiani, metriche su energia e acqua, layer sul lavoro e aggiornamento continuo delle fonti."
+        "title": "Il lavoro lungo la filiera",
+        "body": "Su corridoi documentati: organici, condizioni e rischi (miniera → fab → ODM → campus), non un layer di punti vuoti. Poi altri siti italiani e metriche energia/acqua."
       },
       {
         "status": "planned",
@@ -226,7 +227,15 @@
       },
       {
         "q": "Le connessioni sono sempre certe?",
-        "a": "No. Ogni legame può essere confermato, probabile, inferito o conteso. Sulla mappa trovi la certezza e, dove disponibile, la nota di evidenza."
+        "a": "No. Ogni legame può essere confermato, probabile, inferito o conteso. Sulla mappa trovi la certezza e, dove disponibile, la nota di evidenza.",
+        "link": "/metodologia",
+        "link_label": "Criteri pubblici di certezza"
+      },
+      {
+        "q": "Come distinguete OSM, WRI e i record curati?",
+        "a": "La basemap mescola inventari automatici eterogenei (OSM per molti data center, WRI per gli impianti). I corridoi di filiera e le schede arricchite sono lavoro editoriale.",
+        "link": "/metodologia",
+        "link_label": "Metodologia e limiti delle fonti"
       },
       {
         "q": "A chi è rivolta?",
@@ -267,6 +276,9 @@
     "enterprise": "Enterprise",
     "semiconductor_fab": "Fabbrica di semiconduttori",
     "component_manufacturing": "Produzione componenti",
+    "chip_design": "Design chip (fabless)",
+    "server_assembly": "Assemblaggio server (ODM)",
+    "battery_materials": "Materiali per batterie",
     "lithium_mine": "Miniera di litio",
     "cobalt_mine": "Miniera di cobalto",
     "rare_earth_mine": "Miniera di terre rare",
@@ -293,9 +305,11 @@
     "open_connected": "Apri sulla mappa",
     "powered_by": "Alimentato da",
     "components_from": "Componenti da",
+    "supplies_from": "Forniture da",
     "powers_to": "Alimenta",
     "supplies_to": "Fornisce a",
     "receives_from": "Riceve da",
+    "manufactures_to": "Produce per",
     "relationship": "Relazione",
     "close": "Chiudi",
     "impact": "Impatto",
@@ -321,6 +335,8 @@
     "jobs_indirect": "Indiretti (stima)",
     "jobs_contractors": "Appalti / temporanei (stima)",
     "labor_risks": "Rischi lavoro / territorio",
+    "labor_contrast": "Confronta questo organico con miniere, fab e ODM lungo la stessa filiera: il cloud sposta il lavoro, non lo cancella.",
+    "labor_conditions": "Condizioni",
     "community": "Territorio e comunità",
     "sources": "Fonti",
     "confidence": "Affidabilità dato",
@@ -340,6 +356,18 @@
     "likely": "Probabile",
     "inferred": "Inferito",
     "disputed": "Conteso"
+  },
+  "labor_tags": {
+    "unionized": "Sindacalizzato",
+    "shift_work": "Lavoro a turni",
+    "artisanal_mining": "Estrazione artigianale",
+    "artisanal_mining_nearby": "Artigianale nelle vicinanze",
+    "conflict_zone": "Zona di conflitto",
+    "migrant_labor": "Lavoro migrante",
+    "high_skill": "Alta specializzazione",
+    "construction_phase": "Fase di cantiere",
+    "precarious_contracts": "Contratti precari",
+    "chemical_exposure": "Esposizione chimica"
   },
   "status": {
     "planned": "Pianificato",
@@ -385,6 +413,9 @@
     "enterprise": "Enterprise",
     "semiconductor_fab": "Semiconduttori",
     "component_manufacturing": "Componenti",
+    "chip_design": "Design chip",
+    "server_assembly": "Server ODM",
+    "battery_materials": "Batterie",
     "lithium_mine": "Litio",
     "cobalt_mine": "Cobalto",
     "rare_earth_mine": "Terre rare",
@@ -416,11 +447,124 @@
     "open": "Dati e licenze",
     "updated": "Dataset aggiornato",
     "methodology": "Metodologia",
+    "methodology_link": "Leggi i criteri di certezza e le fonti",
     "license": "Licenza",
     "records": "record in mappa",
     "curated": "curati",
     "imported": "importati",
     "basemap": "Mappa di base"
+  },
+  "methodology": {
+    "title": "Metodologia",
+    "kicker": "Trasparenza",
+    "heading": "Come leggiamo i dati",
+    "lead": "Substrato mescola inventari aperti e corridoi curati. Questa pagina spiega cosa significa ogni etichetta di affidabilità, chi verifica i legami e quali limiti restano espliciti.",
+    "revised": "2026-09-27",
+    "revised_label": "Revisione",
+    "intro": "Usiamo due livelli distinti: confidence sul punto (quanto è affidabile l’esistenza e le proprietà del sito) e certainty sul legame (quanto è documentato il rapporto tra due siti). Non sono la stessa cosa. Un data center OSM può avere confidence bassa e nessun arco; un PPA nominato può avere certainty confirmed anche se il punto vicino resta grezzo.",
+    "layers_title": "Due strati sulla mappa",
+    "layers": [
+      {
+        "title": "Basemap (inventario)",
+        "body": "Punti importati in massa per dare contesto geografico: impianti energetici dal WRI Global Power Plant Database (Italia + UE ≥ 100 MW) e data center da OpenStreetMap (tag telecom=data_center in area EU). OSM per i data center è incompleto e disomogeneo: molti campus mancano, alcuni sono mal posizionati, la qualità varia per paese. WRI è più strutturato, ma resta un database globale con ritardi e soglie di import. I record importati non pretendono di essere una filiera."
+      },
+      {
+        "title": "Corridoi curati (tesi del progetto)",
+        "body": "Pochi siti arricchiti a mano (descrizioni, impatto, lavoro, fonti) e connessioni con certainty + evidence_note obbligatori. Qui vive la frase «il cloud ha un corpo»: energia documentata, silicio AI, metalli per batterie, contrasto sul lavoro. Preferiamo meno frecce vere a molte frecce suggestive."
+      }
+    ],
+    "confidence_title": "Confidence sul sito",
+    "confidence_lead": "Misura quanto è affidabile il record del punto (identità, posizione, capacità dichiarata).",
+    "confidence_levels": [
+      {
+        "id": "high",
+        "label": "Alta",
+        "body": "Documento ufficiale o dichiarazione primaria dell’operatore (scheda corporate, report annuale, PPA nominato sul sito)."
+      },
+      {
+        "id": "medium",
+        "label": "Media",
+        "body": "Fonte giornalistica o report secondario coerente; tipica degli impianti WRI importati e di molti record curati in corso di arricchimento."
+      },
+      {
+        "id": "low",
+        "label": "Bassa",
+        "body": "Indizio indiretto. Default per i data center importati da OpenStreetMap finché non c’è verifica secondaria."
+      },
+      {
+        "id": "estimated",
+        "label": "Stima",
+        "body": "Valore modellato o stimato dall’autore del dataset (es. fattori medi di impatto), sempre etichettato come tale in scheda."
+      }
+    ],
+    "certainty_title": "Certainty sul legame",
+    "certainty_lead": "Misura quanto è documentato il rapporto tra due siti (powers, supplies, manufactures_for). Ogni nuovo arco richiede certainty e una nota di evidenza in italiano.",
+    "certainty_levels": [
+      {
+        "id": "confirmed",
+        "label": "Confermato",
+        "body": "Prova diretta del legame: PPA o contratto di fornitura nominato, comunicato congiunto, report aziendale che cita esplicitamente origine e destinazione."
+      },
+      {
+        "id": "likely",
+        "label": "Probabile",
+        "body": "Forte evidenza geografica o di mercato senza prova sito-sito (stesso bacino e stesso fornitore di un accordo noto; ODM riconosciuto di un hyperscaler senza packing list del campus)."
+      },
+      {
+        "id": "inferred",
+        "label": "Inferito",
+        "body": "Ipotesi di lavoro trasparente: prossimità di rete, stessa classe di prodotto, cluster energetico. Mai presentata come fatto. Esempio: Turbigo → campus milanesi senza PPA pubblico."
+      },
+      {
+        "id": "disputed",
+        "label": "Conteso",
+        "body": "Fonti in conflitto o contestazione pubblica rilevante sul legame o sul progetto. Resta in mappa con l’etichetta, non viene «risolto» in silenzio."
+      }
+    ],
+    "ladder_title": "Come si sale di grado",
+    "ladder_lead": "Il grado si alza solo con evidenza nuova, non per comodità narrativa.",
+    "ladder": [
+      "Da inferred a likely: serve evidenza coerente (stesso operatore/contratto di bacino, filiera di mercato documentata) e una nota che spiega perché non è ancora confirmed.",
+      "Da likely a confirmed: serve documento primario nominato (PPA, comunicato congiunto, report con entrambe le parti). Senza quello il legame resta likely o scende.",
+      "powers senza PPA o offtake nominato: mai confirmed.",
+      "supplies / manufactures_for solo se il materiale o il prodotto appartiene a quella filiera (niente litio→chip o cobalto→fonderia logica).",
+      "Un sito senza arco è valido: progetti, contesto, inventari. Non inventiamo collegamenti per riempire la mappa."
+    ],
+    "who_title": "Chi verifica",
+    "who_body": "La cura editoriale è di Relatronica (progetto Substrato): selezione dei corridoi, compilazione di certainty/confidence, note di evidenza e aggiornamento delle fonti. OpenStreetMap e WRI restano sotto le loro comunità e licenze; non «certifichiamo» l’intero inventario automatico. Le correzioni della comunità passano da Segnala (issue GitHub preferita, tracciabile) e vengono incorporate dopo revisione umana — non c’è scrittura diretta anonima sul dataset pubblicato.",
+    "when_title": "Quando si aggiorna",
+    "when_body": "Ogni record curato può avere updated_at; il file dataset_meta.json riporta la data dell’ultimo merge. Non offriamo aggiornamento in tempo reale. Cadenza tipica: quando escono PPA o report rilevanti, quando una segnalazione è verificata, o in batch di arricchimento dei corridoi. In citazione indica sempre la data di consultazione della mappa.",
+    "sources_title": "Fonti principali e limiti",
+    "sources": [
+      {
+        "title": "WRI Global Power Plant Database",
+        "body": "Impianti energetici, licenza CC BY 4.0. Import: tutti gli impianti in Italia + UE ≥ 100 MW. Più rigoroso di OSM su struttura e capacità, ma non è un offtake verso i data center."
+      },
+      {
+        "title": "OpenStreetMap (Overpass)",
+        "body": "Data center via tag telecom=data_center, licenza ODbL. Confidence bassa di default. Incompleto e disomogeneo: utile come basemap, insufficiente da solo per lavoro giornalistico sul singolo sito senza verifica."
+      },
+      {
+        "title": "Record e connessioni curati",
+        "body": "GeoJSON in data/curated/ e archi in connections_edges.json: descrizioni, lavoro, impatto, certainty. Priorità sempre sui candidati automatici in caso di conflitto."
+      },
+      {
+        "title": "Overlay di contesto",
+        "body": "Rete elettrica (OpenInfraMap), stress idrico (Aqueduct × HydroBASINS), cavi sottomarini (estratto storico). Disattivati di default; non sono legami di filiera."
+      }
+    ],
+    "limits_title": "Cosa non pretendiamo",
+    "limits": [
+      "Completezza dell’inventario europeo di data center o miniere.",
+      "Tracciabilità fisica elettrone-per-elettrone o wafer-per-rack senza documento.",
+      "Numeri di occupazione inventati: preferiamo null + nota a uno 0 cosmetico.",
+      "Certificazione istituzionale o audit di terza parte sul dataset."
+    ],
+    "cite_title": "Come citare",
+    "cite_body": "Substrato (Relatronica), mappa consultata in data AAAA-MM-GG, substrato.eu — indicare anche la certainty del legame se usi una connessione specifica, e la fonte primaria linkata in scheda quando presente.",
+    "cta_map": "Apri la mappa",
+    "cta_report": "Segnala un errore",
+    "cta_press": "Contatti stampa"
   },
   "countries": {
     "IT": "Italia",
@@ -446,6 +590,7 @@
     "CL": "Cile",
     "CD": "Rep. Dem. del Congo",
     "GL": "Groenlandia",
-    "CN": "Cina"
+    "CN": "Cina",
+    "US": "Stati Uniti"
   }
 }

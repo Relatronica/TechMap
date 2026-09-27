@@ -1,0 +1,354 @@
+{
+  "version": "0.3.1",
+  "methodology_it": "Unità di lavoro = corridoio documentato, non densità di archi. powers senza PPA/offtake nominato → inferred|likely, mai confirmed. Nella filiera silicio AI il tratto tipico è ASML→fonderia→design fabless→ODM assembly→campus (non saltare l'assemblaggio). supplies/manufactures_for solo se il materiale appartiene alla filiera.",
+  "edges": [
+    {
+      "id": "conn_001",
+      "source_id": "ep_007",
+      "target_id": "dc_013",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "Accordo di fornitura Vattenfall–Facebook (Meta) per elettricità idroelettrica al 100% dal bacino del Lule Älv verso il campus di Luleå.",
+      "evidence_note_it": "Comunicato Vattenfall (2013): contratto pluriennale di fornitura rinnovabile dal Lule Älv. Harsprånget è una delle principali centrali del bacino.",
+      "as_of": "2013-06-12",
+      "sources": [
+        {
+          "title": "Vattenfall — fornitura idroelettrica a Facebook Luleå",
+          "url": "https://news.cision.com/se/vattenfall/r/vattenfall-levererar-fornybar-el-fran-lule-alv-till-facebook,c9427579",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_002",
+      "source_id": "ep_008",
+      "target_id": "dc_013",
+      "relationship_type": "powers",
+      "certainty": "likely",
+      "description_it": "Porjus fa parte dello stesso sistema idroelettrico Vattenfall sul Lule Älv citato nell'accordo di fornitura al campus Meta di Luleå.",
+      "evidence_note_it": "Stesso operatore e stesso bacino dell'accordo Vattenfall–Facebook; non è nominata la singola centrale nel comunicato, quindi certainty likely e non confirmed.",
+      "as_of": "2013-06-12",
+      "sources": [
+        {
+          "title": "Vattenfall — fornitura idroelettrica a Facebook Luleå",
+          "url": "https://news.cision.com/se/vattenfall/r/vattenfall-levererar-fornybar-el-fran-lule-alv-till-facebook,c9427579",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_003",
+      "source_id": "ep_013",
+      "target_id": "dc_012",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "PPA Google–CPC Finland: l'elettricità di Lakiakangas 2 alimenta la stessa rete da cui Google preleva per Hamina.",
+      "evidence_note_it": "Primo PPA eolico finlandese di Google (2018), esplicitamente collegato al data center di Hamina.",
+      "as_of": "2018-09-18",
+      "sources": [
+        {
+          "title": "CPC Finland — Lakiakangas 1+2 (PPA Google)",
+          "url": "https://cpc-finland.com/projekt/lakiakangas-1-2/",
+          "accessed_at": "2026-09-27"
+        },
+        {
+          "title": "Google signs agreements for 190MW of wind projects in Finland",
+          "url": "https://energydigital.com/sustainability/google-signs-agreements-190mw-wind-projects-finland",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_004",
+      "source_id": "ep_014",
+      "target_id": "dc_012",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "PPA Google–Ilmatar: Google acquista 125 MW da Piiparinmäki (211 MW) per il fabbisogno del campus di Hamina.",
+      "evidence_note_it": "Accordo pubblico Ilmatar–Google (2019); Ilmatar conferma che gran parte della produzione serve Hamina.",
+      "as_of": "2019-09-20",
+      "sources": [
+        {
+          "title": "Ilmatar — Piiparinmäki e accordo Google",
+          "url": "https://ilmatar.com/news/ilmatar-energy-announces-new-wind-farm-adding-new-clean-energy-to-the-grid/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_005",
+      "source_id": "ep_001",
+      "target_id": "dc_005",
+      "relationship_type": "powers",
+      "certainty": "inferred",
+      "description_it": "Turbigo (gas CCGT) è un nodo rilevante della rete lombarda che serve il cluster data center di Milano, inclusa la regione AWS Rho/Pero.",
+      "evidence_note_it": "Prossimità di rete / stesso cluster energetico. Nessun PPA pubblico esclusivo Turbigo→AWS: non elevare a confirmed.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Nota metodologica Substrato — legami energetici inferred",
+          "accessed_at": "2026-09-27",
+          "note": "Inferenza geografica di rete, non contratto dimostrato"
+        }
+      ]
+    },
+    {
+      "id": "conn_006",
+      "source_id": "ep_001",
+      "target_id": "dc_004",
+      "relationship_type": "powers",
+      "certainty": "inferred",
+      "description_it": "La centrale di Turbigo contribuisce alla rete lombarda che serve il campus Microsoft Azure Italy North a Settala.",
+      "evidence_note_it": "Stesso criterio di prossimità di rete del legame Turbigo→AWS: inferred, non PPA.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Nota metodologica Substrato — legami energetici inferred",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_007",
+      "source_id": "ep_001",
+      "target_id": "dc_006",
+      "relationship_type": "powers",
+      "certainty": "inferred",
+      "description_it": "Turbigo alimenta la rete che serve Equinix ML5 a Settimo Milanese, nello stesso cluster milanese.",
+      "evidence_note_it": "Inferenza di rete locale; nessun offtake nominato.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Nota metodologica Substrato — legami energetici inferred",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_008",
+      "source_id": "ep_002",
+      "target_id": "dc_002",
+      "relationship_type": "powers",
+      "certainty": "likely",
+      "description_it": "Il parco solare Enel di Trino (87 MW) è un contributo rinnovabile regionale coerente con la dichiarazione di Aruba IT3 di operare al 100% con energia rinnovabile.",
+      "evidence_note_it": "Aruba dichiara campus 100% rinnovabile; Trino è il maggiore FV del Nord Italia. Non risulta un PPA esclusivo Trino→IT3, quindi likely e non confirmed.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Aruba — Global Cloud Data Center IT3",
+          "url": "https://www.aruba.it/",
+          "accessed_at": "2026-09-27",
+          "note": "Dichiarazione operatore su mix rinnovabile del campus"
+        }
+      ]
+    },
+    {
+      "id": "conn_009",
+      "source_id": "rm_005",
+      "target_id": "rm_007",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "ASML fornisce a TSMC le macchine litografiche EUV indispensabili per i nodi avanzati usati nei chip AI.",
+      "evidence_note_it": "Dipendenza di mercato documentata: ASML è il fornitore monopolista di scanner EUV; TSMC è il principale cliente per volume di nodi avanzati.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "ASML — sede Veldhoven / ruolo EUV",
+          "url": "https://www.asml.com/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_010",
+      "source_id": "rm_005",
+      "target_id": "rm_003",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "ASML fornisce le attrezzature litografiche necessarie al fab ESMC/TSMC di Dresda (EU Chips Act).",
+      "evidence_note_it": "Il fab ESMC è un nodo TSMC in Europa: le tool ASML sono prerequisito della roadmap produttiva dichiarata.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "ESMC / TSMC Dresda — EU Chips Act",
+          "accessed_at": "2026-09-27",
+          "note": "Joint venture TSMC in Saxony; tool litografiche ASML standard di settore"
+        }
+      ]
+    },
+    {
+      "id": "conn_011",
+      "source_id": "rm_007",
+      "target_id": "rm_018",
+      "relationship_type": "manufactures_for",
+      "certainty": "confirmed",
+      "description_it": "TSMC è la fonderia primaria di NVIDIA: produce i GPU/accelerator AI progettati da NVIDIA.",
+      "evidence_note_it": "Partnership foundry storica e pubblica (comunicati TSMC–NVIDIA); Jensen Huang ha ribadito la dipendenza («No TSMC, no Nvidia»).",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "TSMC and NVIDIA Reaffirm Partnership",
+          "url": "https://pr.tsmc.com/english/news/1236",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_012",
+      "source_id": "rm_018",
+      "target_id": "rm_020",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "NVIDIA fornisce GPU/accelerator e reference design AI che Quanta (QCT) integra in server e rack per gli hyperscaler.",
+      "evidence_note_it": "Quanta è tra i principali ODM NVIDIA per server AI (NVL36 e sistemi correlati); la filiera GPU→rack passa tipicamente da ODM taiwanesi, non dal design HQ al campus.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "TrendForce — Quanta e partner ODM NVIDIA AI",
+          "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_013",
+      "source_id": "rm_020",
+      "target_id": "dc_013",
+      "relationship_type": "manufactures_for",
+      "certainty": "likely",
+      "description_it": "Quanta è un fornitore ODM primario di Meta per server (circa metà degli ordini secondo stime di settore); i rack AI finiscono anche nei campus europei come Luleå.",
+      "evidence_note_it": "Nessun packing list pubblico Luleå. Certainty likely: Quanta è ODM chiave Meta; non confirmed sul singolo edificio svedese.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "TrendForce — Quanta quota ordini Meta",
+          "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_014",
+      "source_id": "rm_002",
+      "target_id": "dc_002",
+      "relationship_type": "manufactures_for",
+      "certainty": "inferred",
+      "description_it": "ST Catania produce SiC e dispositivi di potenza usati nei sistemi di alimentazione dei data center; Aruba IT3 è un campus italiano plausibile come utilizzatore di questa classe di componenti.",
+      "evidence_note_it": "Filiera elettronica di potenza (non silicio logico AI). Nessuna distinta base pubblica ST→Aruba: inferred.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Nota metodologica Substrato — elettronica di potenza EU",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_015",
+      "source_id": "rm_006",
+      "target_id": "dc_002",
+      "relationship_type": "manufactures_for",
+      "certainty": "inferred",
+      "description_it": "Infineon Villach è specializzata in semiconduttori di potenza per gestione energetica; stessa filiera di alimentazione dei campus, non dei GPU AI.",
+      "evidence_note_it": "Legame di classe prodotto (power semiconductors), non contratto sito-sito.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Nota metodologica Substrato — elettronica di potenza EU",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_016",
+      "source_id": "rm_013",
+      "target_id": "rm_019",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "Accordo Glencore–Umicore: idrossido di cobalto da Mutanda (RDC) verso la catena battery materials di Umicore, inclusa la raffineria di Kokkola.",
+      "evidence_note_it": "Comunicato congiunto 2019: Mutanda e KCC nominati come fonti; destinazione raffinerie Umicore inclusa Kokkola (FI).",
+      "as_of": "2019-05-29",
+      "sources": [
+        {
+          "title": "Umicore × Glencore — cobalt supply partnership",
+          "url": "https://www.umicore.com/en/media/newsroom/umicore-and-glencore-develop-partnership-for-sustainable-cobalt-supply-in-battery-materials/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_017",
+      "source_id": "rm_014",
+      "target_id": "rm_019",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "Stesso accordo Glencore–Umicore: cobalto da Kamoto Copper Company (KCC) verso Umicore Kokkola / battery materials.",
+      "evidence_note_it": "KCC è nominata esplicitamente nel comunicato insieme a Mutanda. Non è un legame miniera↔miniera.",
+      "as_of": "2019-05-29",
+      "sources": [
+        {
+          "title": "Umicore × Glencore — cobalt supply partnership",
+          "url": "https://www.umicore.com/en/media/newsroom/umicore-and-glencore-develop-partnership-for-sustainable-cobalt-supply-in-battery-materials/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_018",
+      "source_id": "rm_020",
+      "target_id": "dc_012",
+      "relationship_type": "manufactures_for",
+      "certainty": "likely",
+      "description_it": "Quanta figura tra i principali assembler di server AI per Google; Hamina è un nodo hyperscale europeo dove questa classe di rack è tipica.",
+      "evidence_note_it": "Legame di mercato ODM↔CSP, non BOM del sito Hamina: likely.",
+      "as_of": "2026-09-27",
+      "sources": [
+        {
+          "title": "Nota metodologica Substrato — ODM→hyperscale",
+          "accessed_at": "2026-09-27",
+          "note": "Quanta citata come ODM rilevante per Google/Meta/AWS nelle analisi di settore"
+        }
+      ]
+    },
+    {
+      "id": "conn_019",
+      "source_id": "ep_015",
+      "target_id": "dc_016",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "CPPA Microsoft–SSE/FuturEnergy su Lenalea Wind Farm: l'elettricità del parco contribuisce all'alimentazione rinnovabile dei data center Microsoft in Irlanda (Azure North Europe, Dublino).",
+      "evidence_note_it": "Accordo pubblico sul sito Lenalea e comunicati Microsoft Ireland: CPPA esplicitamente legato alle operazioni data center irlandesi.",
+      "as_of": "2024-05-10",
+      "sources": [
+        {
+          "title": "Lenalea Wind Farm — CPPA Microsoft",
+          "url": "https://lenaleawindfarm.com/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    },
+    {
+      "id": "conn_020",
+      "source_id": "ep_016",
+      "target_id": "dc_019",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "PPA Amazon su Fågelås (portafoglio Saena): elettricità eolica contrattata per le operazioni svedesi, inclusa la regione AWS Europe (Stoccolma) con AZ a Eskilstuna.",
+      "evidence_note_it": "Comunicato Amazon Sverige: Fågelås nominato tra i PPA eolici; AWS Stockholm opera tramite AZ in Svezia (Eskilstuna/Katrineholm/Västerås). Il PPA è di rete (non cavo dedicato al singolo edificio).",
+      "as_of": "2026-08-28",
+      "sources": [
+        {
+          "title": "Amazon Sverige — PPA eolici in Svezia",
+          "url": "https://www.mynewsdesk.com/se/amazonsverige/pressreleases/amazon-investerar-i-fyra-nya-vindkraftsprojekt-i-sverige-totala-portfoeljen-av-koldioxidfri-energi-kan-foersoerja-motsvarande-350-000-hushaall-3462370",
+          "accessed_at": "2026-09-27"
+        },
+        {
+          "title": "Eolus — Fågelås",
+          "url": "https://www.eolus.com/en/projects/fagelas/",
+          "accessed_at": "2026-09-27"
+        }
+      ]
+    }
+  ],
+  "removed_from_v1_note_it": "Rimossi archi non filiera e i salti NVIDIA→campus senza ODM. v0.3.1: Lenalea→MS Dublin, Fågelås→AWS Stockholm, Quanta tra NVIDIA e hyperscale."
+}

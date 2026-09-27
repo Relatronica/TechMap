@@ -374,6 +374,9 @@ const siteGroups = Object.values(FILTER_GROUPS);
       {datasetMeta.methodology_it && (
         <p class="attribution-note">{datasetMeta.methodology_it}</p>
       )}
+      <p class="attribution-method-link">
+        <a href="/metodologia">{i18n.data_attribution.methodology_link}</a>
+      </p>
       {activeSources.length > 0 && (
         <ul class="attribution-sources">
           {activeSources.map((src) => (

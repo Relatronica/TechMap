@@ -167,7 +167,16 @@ const h = i18n.home;
           {h.faq.map((item) => (
             <details class="faq-item">
               <summary>{item.q}</summary>
-              <p>{item.a}</p>
+              <p>
+                {item.a}
+                {'link' in item && item.link && (
+                  <>
+                    {' '}
+                    <a href={item.link}>{'link_label' in item ? item.link_label : item.link}</a>
+                    .
+                  </>
+                )}
+              </p>
             </details>
           ))}
         </div>

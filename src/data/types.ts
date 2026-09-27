@@ -1,11 +1,13 @@
 /**
- * Substrato — modello dati minimo v0.2
+ * Substrato — modello dati minimo v0.3
  *
  * Principi:
  * - Retrocompatibile con i GeoJSON esistenti (campi nuovi sono opzionali).
  * - Metriche numeriche separate dalle stringhe display (capacity vs capacity_mw).
  * - Ogni claim rilevante ha fonti e livello di certezza.
- * - Il lavoro è proprietà dei siti, non un layer a sé (per ora).
+ * - Il lavoro è proprietà dei siti (employment / labor_risks / community),
+ *   arricchito per primi sui corridoi documentati — non un layer geometrico a sé.
+ * - Le connessioni sono corridoi documentati, non densità di archi.
  */
 
 export type SiteType = 'data_center' | 'energy_plant' | 'raw_material';
@@ -15,6 +17,9 @@ export type EnergySubtype = 'gas' | 'solar' | 'wind' | 'hydro' | 'nuclear';
 export type RawMaterialSubtype =
   | 'semiconductor_fab'
   | 'component_manufacturing'
+  | 'chip_design'
+  | 'server_assembly'
+  | 'battery_materials'
   | 'lithium_mine'
   | 'cobalt_mine'
   | 'rare_earth_mine';

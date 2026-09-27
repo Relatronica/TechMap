@@ -35,7 +35,7 @@ La mappa legge i GeoJSON da `public/data/`.
 
 | Cartella | Ruolo |
 | --- | --- |
-| `data/curated/` | Fonte di verità editoriale (record verificati a mano) |
+| `data/curated/` | Fonte di verità editoriale (record verificati a mano + archi di filiera) |
 | `data/candidates/` | Candidati normalizzati dalle fonti automatiche |
 | `data/sources/` | Dump grezzi (WRI, OSM, DataCentersExposed, Aqueduct, …) |
 | `public/data/` | Output servito dal sito (+ overlay di contesto) |
@@ -49,15 +49,18 @@ npm run data:fetch:osm        # data center (OpenStreetMap / Overpass)
 npm run data:fetch:dc         # DataCentersExposed (US)
 npm run data:fetch:aqueduct   # stress idrico (Aqueduct)
 npm run data:normalize        # → data/candidates/
-npm run data:merge            # curated + candidates → public/data/
+npm run data:merge            # curated + candidates → public/data/ (+ supply-chain)
+npm run data:supply-chain     # raw_materials + connections da curated
 npm run data:overlays         # overlay locali (acqua, cavi, …)
 
 # Tutto insieme
 npm run data:refresh
 ```
 
-Per aggiungere o correggere un sito: modifica i GeoJSON in `data/curated/`, poi `npm run data:merge`.  
-Guida al modello dati: `src/data/README.ts` e `data/curated/README.md`.
+Per aggiungere o correggere un **sito** DC/energia: modifica i GeoJSON in `data/curated/`, poi `npm run data:merge`.  
+Per un **corridoio di filiera**: aggiungi siti in `raw_materials.geojson` / `energy_plants.geojson` e un arco in `connections_edges.json` (con `certainty` + `evidence_note_it`), poi `npm run data:supply-chain`.  
+Guida al modello dati: `src/data/README.ts` e `data/curated/README.md`.  
+Metodologia pubblica (certainty, fonti, limiti): [substrato.eu/metodologia](https://substrato.eu/metodologia) — sorgente in `src/pages/metodologia.astro`.
 
 ### Fonti principali
 

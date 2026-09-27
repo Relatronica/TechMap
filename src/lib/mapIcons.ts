@@ -28,6 +28,15 @@ export const ICON_PATHS = {
     'M7.5 7.5h9v9h-9zM10 10h4v4h-4zM9.5 4.5v3M12 4.5v3M14.5 4.5v3M9.5 16.5v3M12 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 12h3M4.5 14.5h3M16.5 9.5h3M16.5 12h3M16.5 14.5h3',
   component_manufacturing:
     'M3 20h18M4 20V12l3.5-3.5L11 12l3.5-3.5L18 12v8M15.5 20v-5.5h4V20',
+  // Design fabless — chip + freccia schema
+  chip_design:
+    'M7.5 8.5h9v7h-9zM10.5 10.5h3v3h-3zM9.5 5.5v3M12 5.5v3M14.5 5.5v3M9.5 15.5v3M12 15.5v3M14.5 15.5v3M4.5 10.5h3M4.5 12h3M4.5 13.5h3M16.5 10.5h3M16.5 12h3M16.5 13.5h3',
+  // ODM / rack assembly — chassis
+  server_assembly:
+    'M5 5.5h14v13H5zM8 8.5h8v2H8zM8 12h8v2H8zM8 15.5h5v2H8zM15 8.5h1.5v2H15zM15 12h1.5v2H15z',
+  // Battery materials / refining
+  battery_materials:
+    'M9 4.5h6v2H9zM7.5 6.5h9v13h-9zM10 10h4M10 13.5h4M10 17h4',
   lithium_mine:
     'M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8',
   cobalt_mine:
@@ -55,6 +64,9 @@ export const SUBTYPE_COLORS: Record<SubtypeKey, string> = {
   // Materie prime — terra / metallo
   semiconductor_fab: '#4A8A8A',
   component_manufacturing: '#B87A4A',
+  chip_design: '#3D7A7A',
+  server_assembly: '#5A7080',
+  battery_materials: '#8A6B4A',
   lithium_mine: '#8A9AA8',
   cobalt_mine: '#3F6F9E',
   rare_earth_mine: '#8B6B7A'
@@ -87,6 +99,9 @@ export const FILTER_GROUPS = {
     subtypes: [
       'semiconductor_fab',
       'component_manufacturing',
+      'chip_design',
+      'server_assembly',
+      'battery_materials',
       'lithium_mine',
       'cobalt_mine',
       'rare_earth_mine'

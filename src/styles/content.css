@@ -121,6 +121,32 @@ html.is-content {
   color: var(--accent-hover);
 }
 
+/* I CTA non ereditano il colore link del prose (altrimenti testo oro su fondo oro). */
+.content-prose a.btn,
+.content-actions a.btn {
+  text-decoration: none;
+}
+
+.content-prose a.btn-accent,
+.content-actions a.btn-accent {
+  color: #14110c;
+}
+
+.content-prose a.btn-accent:hover,
+.content-actions a.btn-accent:hover {
+  color: #14110c;
+}
+
+.content-prose a.btn-ghost-light,
+.content-actions a.btn-ghost-light {
+  color: var(--ink-soft);
+}
+
+.content-prose a.btn-ghost-light:hover,
+.content-actions a.btn-ghost-light:hover {
+  color: var(--ink);
+}
+
 .content-note {
   margin: 1.5rem 0 0;
   padding: 12px 14px;
@@ -193,4 +219,79 @@ html.is-content {
   .content-page {
     padding-top: 0;
   }
+}
+
+.content-prose h3 {
+  margin: 1.1rem 0 0.4rem;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.method-block {
+  margin: 0 0 1rem;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(230, 232, 235, 0.03);
+}
+
+.method-block h3 {
+  margin-top: 0;
+}
+
+.method-block p:last-child {
+  margin-bottom: 0;
+}
+
+.method-scale {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 1.25rem;
+}
+
+.method-scale-item {
+  margin: 0;
+  padding: 12px 14px 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-left-width: 3px;
+  background: rgba(230, 232, 235, 0.03);
+}
+
+.method-scale-item dt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.method-scale-item dd {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.method-scale-item.is-high,
+.method-scale-item.is-confirmed {
+  border-left-color: var(--ep, #5b8fa8);
+}
+
+.method-scale-item.is-medium,
+.method-scale-item.is-likely {
+  border-left-color: var(--dc, #5a9bb8);
+}
+
+.method-scale-item.is-low,
+.method-scale-item.is-inferred {
+  border-left-color: var(--muted, #8a9199);
+}
+
+.method-scale-item.is-estimated,
+.method-scale-item.is-disputed {
+  border-left-color: var(--rm, #b87a4a);
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://substrato.eu/schemas/site-feature.json",
-  "title": "Substrato Site Feature (v0.2)",
-  "description": "Feature GeoJSON Point per data center, impianti energetici e siti di estrazione/produzione. Campi nuovi opzionali; null = sconosciuto.",
+  "title": "Substrato Site Feature (v0.3)",
+  "description": "Feature GeoJSON Point per data center, impianti energetici e siti di estrazione/produzione/design. Campi nuovi opzionali; null = sconosciuto.",
   "type": "object",
   "required": ["type", "geometry", "properties"],
   "properties": {

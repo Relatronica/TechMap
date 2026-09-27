@@ -1206,7 +1206,8 @@ body.is-map {
 
 .attribution-updated,
 .attribution-note,
-.attribution-basemap {
+.attribution-basemap,
+.attribution-method-link {
   margin: 6px 0 0;
   font-size: 0.72rem;
   line-height: 1.45;
@@ -1223,13 +1224,15 @@ body.is-map {
 }
 
 .attribution-sources a,
-.attribution-basemap a {
+.attribution-basemap a,
+.attribution-method-link a {
   color: var(--accent);
   text-decoration: none;
 }
 
 .attribution-sources a:hover,
-.attribution-basemap a:hover {
+.attribution-basemap a:hover,
+.attribution-method-link a:hover {
   text-decoration: underline;
 }
 
@@ -1625,6 +1628,20 @@ body.is-map {
   background: rgba(209, 122, 82, 0.16);
   color: #e8a884;
   border-color: rgba(209, 122, 82, 0.35);
+}
+
+.detail-labor-contrast {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-left: 2px solid var(--rm, #B87A4A);
+  background: rgba(184, 122, 74, 0.08);
+}
+
+.detail-employment .detail-note {
+  margin-top: 8px;
 }
 
 .detail-sources {

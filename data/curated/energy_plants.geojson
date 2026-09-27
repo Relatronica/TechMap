@@ -23,7 +23,7 @@
         "status": "operational",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-16",
+        "updated_at": "2026-09-27",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 1300,
@@ -38,7 +38,7 @@
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
-          "note_it": "Impianti termoelettrici: organico operativo contenuto rispetto alla potenza; manutenzione e appalti rilevanti.",
+          "note_it": "Centrale CCGT ~1,3 GW: organico operativo contenuto (turnisti, manutenzione) rispetto alla potenza. Appalti di manutenzione rilevanti; non confrontare i MW con i posti di lavoro come se fossero proporzionali.",
           "conditions_tags": [
             "shift_work",
             "high_skill"
@@ -51,7 +51,8 @@
             "accessed_at": "2026-09-16",
             "note": "Capacità ~1.280–1.334 MW inclusa unità 2022"
           }
-        ]
+        ],
+        "community_impact_it": "Nodo energetico del cluster data center milanese: impatto principalmente emissivo e di rete, non occupazionale di massa."
       }
     },
     {
@@ -177,7 +178,20 @@
         "capacity": "811 MW",
         "description_it": "Una delle più grandi centrali idroelettriche della Svezia, sul fiume Lule (Lule Älv) nella contea di Norrbotten, circa 8 km a valle di Porjus. Parte del portafoglio idroelettrico di Vattenfall di circa 100 centrali in Svezia (8.500 MW totali). Fonte di energia rinnovabile chiave per i data center del nord della Svezia, incluso il data center Meta di Luleå.",
         "country": "SE",
-        "city": "Jokkmokk"
+        "city": "Jokkmokk",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Grande idroelettrico Vattenfall: organico di centrale tipicamente ridotto e altamente specializzato. Alimenta Meta Luleå via accordo di fornitura: il contrasto lavoro è tra pochi operatori di diga/centrale e i ~300 del campus Meta a valle.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "Bacino del Lule Älv: infrastruttura energetica storica del Norrbotten, oggi anche «carburante» dei data center artici.",
+        "updated_at": "2026-09-27"
       }
     },
     {
@@ -283,6 +297,231 @@
         "description_it": "Edison è il secondo operatore eolico in Italia con 1.100 MW di capacità installata, principalmente nel Sud Italia tra Puglia e Sicilia. Ha annunciato 600 milioni di euro in nuovi progetti rinnovabili, inclusi circa 300 MW di nuova capacità eolica concentrata in Puglia e Sicilia.",
         "country": "IT",
         "city": "Puglia (distribuito)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.6991,
+          62.1927
+        ]
+      },
+      "properties": {
+        "id": "ep_013",
+        "name": "Lakiakangas 1+2 - Parco Eolico",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "CPC Finland / Ardian",
+        "capacity": "57,3 MW",
+        "description_it": "Parco eolico a Isojoki/Kristiinankaupunki (Finlandia occidentale), 14 turbine Vestas per 57,3 MW. Lakiakangas 2 è stato finanziato con il primo PPA eolico finlandese di Google, esplicitamente collegato al data center di Hamina.",
+        "country": "FI",
+        "city": "Isojoki",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2019,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 57.3,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore; PPA Google verso la rete di Hamina."
+        },
+        "sources": [
+          {
+            "title": "CPC Finland — Lakiakangas 1+2",
+            "url": "https://cpc-finland.com/projekt/lakiakangas-1-2/",
+            "accessed_at": "2026-09-27"
+          }
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Parco eolico: pochi posti permanenti di O&M dopo il cantiere. Il PPA Google→Hamina sposta valore energetico, non crea un polo occupazionale comparabile a una fab o a una miniera.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Impatto locale tipico dell’eolico onshore (paesaggio, cantiere breve, O&M ridotto)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.7515,
+          64.1452
+        ]
+      },
+      "properties": {
+        "id": "ep_014",
+        "name": "Piiparinmäki - Parco Eolico",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Ilmatar Energy",
+        "capacity": "211 MW",
+        "description_it": "Uno dei maggiori parchi eolici finlandesi (41 turbine, 211 MW) sul confine Kajaani–Pyhäntä. Google ha firmato un PPA per 125 MW della produzione a servizio del campus di Hamina.",
+        "country": "FI",
+        "city": "Pyhäntä / Kajaani",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2021,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 211,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore; 125 MW sotto PPA Google per Hamina."
+        },
+        "sources": [
+          {
+            "title": "Ilmatar — accordo Google / Piiparinmäki",
+            "url": "https://ilmatar.com/news/ilmatar-energy-announces-new-wind-farm-adding-new-clean-energy-to-the-grid/",
+            "accessed_at": "2026-09-27"
+          }
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "211 MW, 41 turbine: occupazione permanente di gestione molto inferiore al carico di lavoro del cantiere. Serve Hamina via PPA, non come fabbrica di posti locali.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Ricavi fiscali locali rilevanti per i comuni ospitanti; posti permanenti limitati rispetto alla potenza."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.8529,
+          54.8845
+        ]
+      },
+      "properties": {
+        "id": "ep_015",
+        "name": "Lenalea Wind Farm",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "SSE Renewables / FuturEnergy Ireland",
+        "capacity": "30,1 MW",
+        "description_it": "Parco eolico onshore da 7 turbine Vestas (30,1 MW) a sud-ovest di Letterkenny, Donegal. Operativo dalla fine del 2023. Sotto CPPA Microsoft: l'elettricità contribuisce all'obiettivo di alimentare i data center irlandesi al 100% con rinnovabili entro il 2025.",
+        "country": "IE",
+        "city": "Letterkenny",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2023,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 30.1,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore; CPPA Microsoft verso i data center in Irlanda."
+        },
+        "sources": [
+          {
+            "title": "Lenalea Wind Farm — CPPA Microsoft",
+            "url": "https://lenaleawindfarm.com/",
+            "accessed_at": "2026-09-27"
+          }
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "7 turbine / 30 MW: dopo il commissioning restano principalmente ruoli O&M. Il CPPA Microsoft è un contratto energetico, non un piano occupazionale per Donegal.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Progetto rurale in Donegal: beneficio energetico/fiscale più che occupazionale di massa."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.13459,
+          58.227572
+        ]
+      },
+      "properties": {
+        "id": "ep_016",
+        "name": "Fågelås - Parco Eolico",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Eolus / Mirova",
+        "capacity": "31,5 MW",
+        "description_it": "Parco eolico onshore a Hjo (Västra Götaland), 7 turbine per 31,5 MW, parte del portafoglio Saena. Operativo; Amazon ha firmato un PPA sul progetto nell'ambito di circa 1 GW di capacità eolica contrattata in Svezia a supporto della regione AWS Europe (Stoccolma).",
+        "country": "SE",
+        "city": "Hjo",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2025,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 31.5,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore SE3; PPA Amazon per operazioni svedesi / regione Stoccolma."
+        },
+        "sources": [
+          {
+            "title": "Eolus — Fågelås",
+            "url": "https://www.eolus.com/en/projects/fagelas/",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Amazon Sverige — PPA eolici in Svezia",
+            "url": "https://www.mynewsdesk.com/se/amazonsverige/pressreleases/amazon-investerar-i-fyra-nya-vindkraftsprojekt-i-sverige-totala-portfoeljen-av-koldioxidfri-energi-kan-foersoerja-motsvarande-350-000-hushaall-3462370",
+            "accessed_at": "2026-09-27"
+          }
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Parco Saena operativo: pochi posti O&M permanenti. Il PPA Amazon collega il lavoro del cantiere eolico alla regione AWS Stoccolma, dove l’occupazione DC resta opaca e contenuta.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Eolico in SE3: pressione paesaggistica locale vs contributi a rete e contratti PPA hyperscale."
       }
     }
   ]

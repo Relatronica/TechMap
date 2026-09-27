@@ -263,7 +263,8 @@ async function main() {
       'Gli import integrano WRI (tutti gli impianti IT + EU ≥ ' +
       `${ENERGY_EU_MIN_MW} MW) e OSM per data center in area EU; i campus cloud OSM sono classificati come hyperscale. ` +
       'Duplicati per prossimità vengono accorpati senza sovrascrivere i curati. ' +
-      'Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.'
+      'Filiera (raw_materials + connections): solo corridoi documentati in data/curated/, con certainty obbligatoria; ' +
+      'powers senza PPA resta inferred/likely. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.'
   };
 
   await writeFile(
@@ -283,6 +284,17 @@ async function main() {
   console.log(`  energy_plants: ${energy.stats.total} (${energy.stats.imported} imported, ${energy.stats.skippedDup} deduped)`);
   console.log(`  data_centers: ${datacenters.stats.total} (${datacenters.stats.imported} imported, ${datacenters.stats.skippedDup} deduped)`);
   console.log(`  dataset_meta.json updated (${TODAY})`);
+
+  // raw_materials + connections vivono in curated e si pubblicano a parte
+  const { spawnSync } = await import('node:child_process');
+  const supply = spawnSync(
+    process.execPath,
+    [new URL('build-supply-chain.mjs', import.meta.url).pathname],
+    { stdio: 'inherit' }
+  );
+  if (supply.status !== 0) {
+    process.exit(supply.status || 1);
+  }
 }
 
 main().catch((err) => {

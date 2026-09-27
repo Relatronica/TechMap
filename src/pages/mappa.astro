@@ -57,6 +57,9 @@ import {
         enterprise: "Enterprise",
         semiconductor_fab: "Fabbrica di semiconduttori",
         component_manufacturing: "Produzione componenti",
+        chip_design: "Design chip (fabless)",
+        server_assembly: "Assemblaggio server (ODM)",
+        battery_materials: "Materiali per batterie",
         lithium_mine: "Miniera di litio",
         cobalt_mine: "Miniera di cobalto",
         rare_earth_mine: "Miniera di terre rare",
@@ -79,11 +82,15 @@ import {
         country: "Paese",
         description: "Descrizione",
         connections: "Connessioni",
+        connections_hint: "Segui un legame per spostarti al sito collegato.",
+        open_connected: "Apri sulla mappa",
         powered_by: "Alimentato da",
         components_from: "Componenti da",
+        supplies_from: "Forniture da",
         powers_to: "Alimenta",
         supplies_to: "Fornisce a",
         receives_from: "Riceve da",
+        manufactures_to: "Produce per",
         relationship: "Relazione",
         close: "Chiudi",
         impact: "Impatto",
@@ -109,6 +116,8 @@ import {
         jobs_indirect: "Indiretti (stima)",
         jobs_contractors: "Appalti / temporanei (stima)",
         labor_risks: "Rischi lavoro / territorio",
+        labor_contrast: "Confronta questo organico con miniere, fab e ODM lungo la stessa filiera: il cloud sposta il lavoro, non lo cancella.",
+        labor_conditions: "Condizioni",
         community: "Territorio e comunità",
         sources: "Fonti",
         confidence: "Affidabilità dato",
@@ -129,6 +138,18 @@ import {
         inferred: "Inferito",
         disputed: "Conteso"
       },
+      labor_tags: {
+        unionized: "Sindacalizzato",
+        shift_work: "Lavoro a turni",
+        artisanal_mining: "Estrazione artigianale",
+        artisanal_mining_nearby: "Artigianale nelle vicinanze",
+        conflict_zone: "Zona di conflitto",
+        migrant_labor: "Lavoro migrante",
+        high_skill: "Alta specializzazione",
+        construction_phase: "Fase di cantiere",
+        precarious_contracts: "Contratti precari",
+        chemical_exposure: "Esposizione chimica"
+      },
       status: {
         planned: "Pianificato",
         under_construction: "In costruzione",
@@ -142,8 +163,9 @@ import {
         FR: "Francia", PT: "Portogallo", GR: "Grecia", CZ: "Rep. Ceca", RO: "Romania",
         HU: "Ungheria", DK: "Danimarca", LU: "Lussemburgo", NO: "Norvegia", CH: "Svizzera",
         RS: "Serbia", TW: "Taiwan", AU: "Australia", CL: "Cile", CD: "Rep. Dem. del Congo",
-        GL: "Groenlandia", CN: "Cina", XX: "Non specificato"
+        GL: "Groenlandia", CN: "Cina", US: "Stati Uniti", XX: "Non specificato"
       }
+
     };
 
     // Store loaded GeoJSON data for cross-referencing connections
@@ -753,6 +775,10 @@ import {
       return html;
     }
 
+    function laborTagLabel(code) {
+      return (i18n.labor_tags && i18n.labor_tags[code]) || code;
+    }
+
     function buildEmploymentHtml(properties) {
       const emp = properties.employment;
       const risks = properties.labor_risks;
@@ -762,7 +788,10 @@ import {
       let html = '';
 
       if (emp || (Array.isArray(risks) && risks.length)) {
-        html += `<div class="detail-section"><h4>${i18n.popup.employment}</h4>`;
+        html += `<div class="detail-section detail-employment"><h4>${i18n.popup.employment}</h4>`;
+        if (i18n.popup.labor_contrast) {
+          html += `<p class="detail-labor-contrast">${i18n.popup.labor_contrast}</p>`;
+        }
         if (emp) {
           const rows = [
             [i18n.popup.jobs_direct, formatNumber(emp.direct)],
@@ -779,13 +808,20 @@ import {
             html += `<p class="detail-note">${emp.note_it}</p>`;
           }
           if (Array.isArray(emp.conditions_tags) && emp.conditions_tags.length) {
-            html += `<div class="detail-tags">${emp.conditions_tags.map(t => `<span class="detail-tag">${t}</span>`).join('')}</div>`;
+            html += `<div class="detail-field">
+              <div class="detail-field-label">${i18n.popup.labor_conditions || 'Condizioni'}</div>
+              <div class="detail-tags">${emp.conditions_tags.map(t =>
+                `<span class="detail-tag">${laborTagLabel(t)}</span>`
+              ).join('')}</div>
+            </div>`;
           }
         }
         if (Array.isArray(risks) && risks.length) {
           html += `<div class="detail-field">
             <div class="detail-field-label">${i18n.popup.labor_risks}</div>
-            <div class="detail-tags">${risks.map(t => `<span class="detail-tag detail-tag-risk">${t}</span>`).join('')}</div>
+            <div class="detail-tags">${risks.map(t =>
+              `<span class="detail-tag detail-tag-risk">${laborTagLabel(t)}</span>`
+            ).join('')}</div>
           </div>`;
         }
         html += '</div>';
@@ -889,9 +925,31 @@ import {
           'is-mfg',
           p => p.source_id
         );
+        pushConnGroup(
+          i18n.popup.supplies_from || i18n.popup.receives_from,
+          incoming.filter(c => c.properties.relationship_type === 'supplies'),
+          'is-supply',
+          p => p.source_id
+        );
       } else if (featureType === 'raw_material') {
-        pushConnGroup(i18n.popup.supplies_to, outgoing, 'is-supply', p => p.target_id);
-        pushConnGroup(i18n.popup.receives_from, incoming, 'is-supply', p => p.source_id);
+        pushConnGroup(
+          i18n.popup.supplies_to,
+          outgoing.filter(c => c.properties.relationship_type === 'supplies'),
+          'is-supply',
+          p => p.target_id
+        );
+        pushConnGroup(
+          i18n.popup.manufactures_to || i18n.popup.supplies_to,
+          outgoing.filter(c => c.properties.relationship_type === 'manufactures_for'),
+          'is-mfg',
+          p => p.target_id
+        );
+        pushConnGroup(
+          i18n.popup.receives_from,
+          incoming,
+          'is-supply',
+          p => p.source_id
+        );
       } else if (featureType === 'energy_plant') {
         pushConnGroup(i18n.popup.powers_to, outgoing, 'is-power', p => p.target_id);
       }

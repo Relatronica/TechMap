@@ -55,7 +55,7 @@
         "status": "operational",
         "site_category": "infrastructure",
         "opened_year": 2021,
-        "updated_at": "2026-09-16",
+        "updated_at": "2026-09-27",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 60,
@@ -70,13 +70,13 @@
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
-          "note_it": "Occupazione diretta tipicamente limitata rispetto alla potenza installata; picco occupazionale in fase di cantiere e facility management.",
+          "note_it": "Nessun headcount pubblico stabile per IT3. Pattern hyperscale: pochi tecnici di facility rispetto ai 60 MW di campus; picco occupazionale in cantiere e appalti di manutenzione.",
           "conditions_tags": [
             "high_skill",
             "construction_phase"
           ]
         },
-        "community_impact_it": "Consumo elettrico e pressione sulla rete locale; potenziale competizione con altri usi industriali/residenziali del territorio bergamasco.",
+        "community_impact_it": "Consumo elettrico e pressione sulla rete bergamasca; riqualificazione di ex sito industriale. Occupazione diretta tipicamente limitata rispetto alla potenza installata.",
         "labor_risks": [
           "construction_phase"
         ],
@@ -328,8 +328,30 @@
           "co2_t_year_est": null,
           "energy_mix_note_it": "Operatore dichiara mix prevalentemente carbon-free; recupero calore verso la comunità di Hamina."
         },
-        "community_impact_it": "Impatto locale mitigato dal recupero di calore per il teleriscaldamento; comunque grande domanda elettrica regionale.",
-        "updated_at": "2026-09-23"
+        "community_impact_it": "Grande domanda elettrica regionale; recupero calore verso teleriscaldamento Hamina (partenariato Haminan Energia). Occupazione locale reale ma bassa rispetto alla potenza: il «lavoro» del cloud qui è facility e cantiere, non migliaia di impiegati IT in sala.",
+        "updated_at": "2026-09-27",
+        "employment": {
+          "direct": 400,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Campus Hamina: ~400 persone in ruoli full-time e contractor (tecnici, facility, security, catering) secondo Business Finland (maggio 2024); con le espansioni Google punta a ~500. Occupazione diretta contenuta rispetto a MW e investimento: tipico degli hyperscale.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Business Finland — espansione Hamina e occupazione campus",
+            "url": "https://www.businessfinland.fi/en/whats-new/news/2024/google-announced-an-expansion-of-its-hamina-data-center/",
+            "accessed_at": "2026-09-27",
+            "note": "~400 FTE+contractor; +100 FTE previsti con espansione"
+          }
+        ]
       }
     },
     {
@@ -361,8 +383,27 @@
           "co2_t_year_est": null,
           "energy_mix_note_it": "Stima di potenza di campus (~100 MW); clima freddo e idroelettrico nordico riducono fabbisogno di raffreddamento e intensità carbonica."
         },
-        "community_impact_it": "Grande infrastruttura in area artica: bassa intensità carbonica della rete, ma uso rilevante di suolo ed energia rinnovabile locale.",
-        "updated_at": "2026-09-23"
+        "community_impact_it": "Infrastruttura artica ad alto consumo elettrico idroelettrico; Meta dichiara investimenti locali in formazione e comunità. Occupazione diretta ~300 a fronte di un campus multi-edificio: contrasto netto con i siti estrattivi a monte della filiera.",
+        "updated_at": "2026-09-27",
+        "employment": {
+          "direct": 300,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Meta dichiara oltre 300 posti a tempo pieno legati al campus di Luleå (scheda sostenibilità Meta). Facility operations e critical facility engineers: organico operativo ridotto rispetto alla capacità di calcolo.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "Meta — Luleå Data Center (scheda sostenibilità)",
+            "url": "https://datacenters.atmeta.com/wp-content/uploads/2025/02/Meta_s-Lulea-Data-Center_SV.pdf",
+            "accessed_at": "2026-09-27",
+            "note": "300+ fully employed (heltidsanställda)"
+          }
+        ]
       }
     },
     {
@@ -438,7 +479,22 @@
         "description_it": "Microsoft gestisce 17 data center in Irlanda, la maggior parte nell'area di Dublino presso il campus Grange Castle. Alimenta servizi cloud e AI per imprese, governi e organizzazioni in Irlanda, Regno Unito e regioni circostanti. Nuovi data center pianificati nella contea di Kildare.",
         "country": "IE",
         "city": "Dublino",
-        "confidence": "high"
+        "confidence": "medium",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Microsoft non pubblica un headcount sito-per-sito per Azure North Europe (Dublino). Ruoli tipici: facility, network, security; forte fase di cantiere nelle espansioni irlandesi. Confronta con i PPA (es. Lenalea): l’energia è nominata, il lavoro sul campus resta opaco.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Cluster data center intorno a Dublino sotto pressione di rete (EirGrid); dibattito pubblico su consumo elettrico vs occupazione locale limitata.",
+        "updated_at": "2026-09-27"
       }
     },
     {
@@ -504,7 +560,22 @@
         "description_it": "Regione AWS Europe (Stoccolma) con tre zone di disponibilità distribuite tra Eskilstuna, Katrineholm e Västerås. Operativa dalla fine del 2018. AWS utilizza acciaio a basse emissioni di carbonio (SSAB) nella costruzione dei nuovi data center svedesi.",
         "country": "SE",
         "city": "Eskilstuna",
-        "confidence": "high"
+        "confidence": "medium",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "AWS non pubblica organici per i singoli AZ di Europe (Stockholm). Come per altri hyperscale nordici: pochi operatori a regime, molti più lavoratori in fase di costruzione e nella filiera energetica a monte (PPA eolici).",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Espansione AWS in Svezia (Eskilstuna/Katrineholm/Västerås) legata a grandi PPA eolici: il lavoro visibile sul territorio è spesso più nei cantieri rinnovabili che nelle sale server.",
+        "updated_at": "2026-09-27"
       }
     }
   ]
