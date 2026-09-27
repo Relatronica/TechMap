@@ -109,7 +109,19 @@
         "description_it": "Regione cloud di Google a Milano, operativa dal giugno 2022, ospitata nei data center di TIM. Utilizzata da grandi imprese italiane come Intesa Sanpaolo per la loro infrastruttura digitale.",
         "country": "IT",
         "city": "Milano",
-        "confidence": "high"
+        "confidence": "high",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2022,
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Google Cloud — region europe-west8 (Milano)",
+            "url": "https://cloud.google.com/blog/products/identity-security/google-cloud-region-in-milan-italy-now-open",
+            "accessed_at": "2026-09-27",
+            "note": "Regione cloud ospitata; pin città-level, non campus fisico Google"
+          }
+        ]
       }
     },
     {
@@ -128,10 +140,20 @@
         "subtype": "hyperscale",
         "operator": "Microsoft",
         "capacity": "N/D",
-        "description_it": "Regione cloud Microsoft Azure Italy North nella zona metropolitana di Milano, composta da tre data center. Annunciata nel giugno 2023, con strutture operative a Settala e nuovi campus in costruzione a Bornasco e San Bovio (Peschiera Borromeo).",
+        "description_it": "Regione cloud Microsoft Azure Italy North nella zona metropolitana di Milano. Campus operativo a Settala; altri siti in costruzione: San Bovio / Peschiera Borromeo (dc_032), Bornasco (dc_033) e Noviglio–Santa Corinna (dc_024).",
         "country": "IT",
         "city": "Settala",
-        "confidence": "high"
+        "confidence": "high",
+        "updated_at": "2026-09-27",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "sources": [
+          {
+            "title": "Microsoft Azure — Italy North",
+            "url": "https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/",
+            "accessed_at": "2026-09-27"
+          }
+        ]
       }
     },
     {
@@ -150,10 +172,13 @@
         "subtype": "hyperscale",
         "operator": "Amazon Web Services",
         "capacity": "100.000 mq (area totale)",
-        "description_it": "Regione AWS Europe (Milano) con tre zone di disponibilità, operativa dal 2020. Situata nell'area di Rho/Pero vicino a Milano. AWS ha investito 1,2 miliardi di euro per espandere la sua infrastruttura cloud in Italia.",
+        "description_it": "Regione AWS Europe (Milano) con tre zone di disponibilità, operativa dal 2020 nell’area Rho/Pero. Programma di interesse strategico nazionale (~1,2 mld) con espansione documentata anche a Zibido San Giacomo (vedi dc_025) e relative opere di rete Terna.",
         "country": "IT",
         "city": "Rho/Pero",
-        "confidence": "high"
+        "confidence": "high",
+        "updated_at": "2026-09-27",
+        "status": "operational",
+        "site_category": "infrastructure"
       }
     },
     {
@@ -175,7 +200,17 @@
         "description_it": "Data center IBX® Equinix ML5 a Settimo Milanese, vicino a Via Caldera, il punto di interconnessione più connesso di Milano. Offre connessioni virtuali ai principali provider cloud. Parte del campus Equinix Milano che recupera calore dai server per riscaldare abitazioni milanesi (progetto 2026).",
         "country": "IT",
         "city": "Settimo Milanese",
-        "confidence": "medium"
+        "confidence": "medium",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Equinix — IBX ML5 Settimo Milanese",
+            "url": "https://www.equinix.com/data-centers/europe-colocation/italy-colocation/milan-data-centers/ml5",
+            "accessed_at": "2026-09-27"
+          }
+        ]
       }
     },
     {
@@ -197,7 +232,17 @@
         "description_it": "Data center Equinix ML2 in Via Savona 125, Milano. Struttura carrier-neutral che offre opzioni di interconnessione e certificazioni di sicurezza. Uno dei principali hub di scambio dati nel sud Europa.",
         "country": "IT",
         "city": "Milano",
-        "confidence": "medium"
+        "confidence": "medium",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Equinix — IBX ML2 Milano",
+            "url": "https://www.equinix.com/data-centers/europe-colocation/italy-colocation/milan-data-centers/ml2",
+            "accessed_at": "2026-09-27"
+          }
+        ]
       }
     },
     {
@@ -219,7 +264,18 @@
         "description_it": "Avalon Campus di Irideos in Via Caldera 21, Milano, il più grande hub di interconnessione neutrale in Italia con oltre 2.600 rack su 13.000 mq. Irideos gestisce 16 data center in Italia tra Milano, Roma, Verona e Trento, con 27.000 km di fibra ottica.",
         "country": "IT",
         "city": "Milano",
-        "confidence": "medium"
+        "confidence": "medium",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Retelit / Irideos — Avalon Campus",
+            "url": "https://www.retelit.it/",
+            "accessed_at": "2026-09-27",
+            "note": "Hub Caldera; verificare pagina campus aggiornata"
+          }
+        ]
       }
     },
     {
@@ -252,7 +308,16 @@
           "energy_mix_note_it": "Campus hyperscale wholesale; domanda elettrica rilevante sulla rete pavese/milanese."
         },
         "community_impact_it": "Espansione data center nell’area metropolitana milanese: pressione su rete elettrica, suolo e risorse idriche locali; occupazione diretta tipicamente limitata rispetto alla potenza.",
-        "updated_at": "2026-09-23"
+        "updated_at": "2026-09-27",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "sources": [
+          {
+            "title": "STACK Infrastructure — Milano / Siziano",
+            "url": "https://www.stackinfra.com/",
+            "accessed_at": "2026-09-27"
+          }
+        ]
       }
     },
     {
@@ -274,7 +339,18 @@
         "description_it": "Data center TIM/Noovle a Rozzano (Milano), parte della rete di 17 data center TIM Enterprise in Italia con capacità installata totale di 125 MW. TIM ha annunciato un piano di investimenti da 1 miliardo di euro per espandere la propria infrastruttura data center.",
         "country": "IT",
         "city": "Rozzano",
-        "confidence": "medium"
+        "confidence": "medium",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "TIM Enterprise — data center",
+            "url": "https://www.timenterprise.it/",
+            "accessed_at": "2026-09-27",
+            "note": "Capacity 125 MW = rete nazionale, non solo Rozzano"
+          }
+        ]
       }
     },
     {
@@ -576,6 +652,1087 @@
         ],
         "community_impact_it": "Espansione AWS in Svezia (Eskilstuna/Katrineholm/Västerås) legata a grandi PPA eolici: il lavoro visibile sul territorio è spesso più nei cantieri rinnovabili che nelle sale server.",
         "updated_at": "2026-09-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.35943,
+          44.52044
+        ]
+      },
+      "properties": {
+        "id": "dc_020",
+        "name": "CINECA Tecnopolo DAMA — Supercomputer Leonardo",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "CINECA / EuroHPC JU",
+        "capacity": "~240 PFLOPS (Leonardo); campus HPC/AI in espansione",
+        "description_it": "Hub nazionale di calcolo ad alte prestazioni nel Tecnopolo DAMA di Bologna: ospita Leonardo (sistema pre-exascale EuroHPC), cluster AI/quantum (tra cui LISA e sistemi ICSC) e condivide il sito con ECMWF e INFN. Nodo centrale della Data Valley e dell’AI Factory italiana — infrastruttura pubblica dell’IA, non solo cloud commerciale.",
+        "country": "IT",
+        "city": "Bologna",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2022,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Carico elettrico rilevante per HPC/AI pubblico; mix dipendente dalla rete emiliana e da contratti CINECA (da verificare sito per sito)."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico CINECA/ICSC e partner scientifici sul campus; profilo diverso dagli hyperscale commerciali (ricerca, operazioni HPC, facility).",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Riconversione dell’ex Manifattura Tabacchi in Data Valley: polo strategico per ricerca, meteo e AI pubblica, con domanda energetica e pressione infrastrutturale sul territorio bolognese.",
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "CINECA — infrastruttura / Leonardo al Tecnopolo",
+            "url": "https://www.cineca.it/it/infrastruttura/configurazione-dellinfrastruttura",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Leonardo Supercomputer — sito ufficiale",
+            "url": "https://leonardo-supercomputer.cineca.eu/it/home-it/",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.03706,
+          45.47154
+        ]
+      },
+      "properties": {
+        "id": "dc_021",
+        "name": "Data4 Campus MIL01 — Cornaredo",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Data4 Italia",
+        "capacity": "Campus multi-edificio; riserva elettrica dichiarata fino a centinaia di MW",
+        "description_it": "Uno dei maggiori campus di colocation in Italia, a Cornaredo (cluster ovest di Milano). Più edifici operativi (MIL01) e fasi di espansione verso Vittuone/MIL02. Hub di interconnessione con POP MIX/TOP-IX e accesso a decine di carrier e cloud pubblici — assente dal curato nonostante sia tra i siti più densi del mercato milanese.",
+        "country": "IT",
+        "city": "Cornaredo",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 170,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 28,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Campus wholesale/colocation ad alta densità sul cluster ovest milanese; domanda elettrica rilevante sulla rete lombarda."
+        },
+        "community_impact_it": "Pressione cumulativa di suolo, rete e traffico nel corridoio Cornaredo–Settimo Milanese, già saturo di campus data center.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "DATA4 — campus Milano / Cornaredo",
+            "url": "https://www.data4group.com/en/data-center-in-milan-italy/",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.31835,
+          45.35517
+        ]
+      },
+      "properties": {
+        "id": "dc_022",
+        "name": "Vantage MXP1 — Melegnano",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Vantage Data Centers",
+        "capacity": "~64 MW IT (campus); programma strategico nazionale multi-sito ~8 mld",
+        "description_it": "Campus Vantage a Melegnano (sud Milano), primo nodo del programma italiano dichiarato di preminente interesse strategico nazionale (~8 mld con MXP4): Melegnano (MXP1), Settimo Milanese (MXP2, dc_023), Cornaredo (dc_039) e Tavazzano (MXP4, dc_034). Destinato a carichi cloud/AI hyperscale nel mercato milanese.",
+        "country": "IT",
+        "city": "Melegnano",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 64,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Campus hyperscale; fabbisogno elettrico elevato; dettaglio PPA da verificare."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Fase di cantiere dominante; a regime organico facility tipicamente contenuto rispetto ai MW.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Nuovo polo a sud di Milano: consumo di suolo agricolo/industriale, connessione di rete e dibattiti locali su energia e ambiente.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi data center di interesse strategico (Vantage)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27",
+            "note": "Vantage tra i 7 programmi strategici; siti Melegnano, Settimo M., Cornaredo, Tavazzano"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.03842,
+          45.47339
+        ]
+      },
+      "properties": {
+        "id": "dc_023",
+        "name": "Vantage MXP2 — Castelletto / Settimo Milanese",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Vantage Data Centers",
+        "capacity": "~32 MW IT (campus Castelletto); programma multi-sito ~8 mld",
+        "description_it": "Secondo campus Vantage nel cluster ovest milanese (Castelletto / Settimo Milanese), adiacente al corridoio Data4–Equinix. Parte dello stesso programma di interesse strategico nazionale che concentra potenze elevate sul nodo Milano.",
+        "country": "IT",
+        "city": "Settimo Milanese",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 32,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Stesso cluster energetico ovest-Milano di Data4 ed Equinix."
+        },
+        "community_impact_it": "Densificazione ulteriore del corridoio Settimo–Cornaredo: effetto cumulativo su rete, suolo e qualità ambientale locale.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi data center di interesse strategico (Vantage)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.09359,
+          45.33921
+        ]
+      },
+      "properties": {
+        "id": "dc_024",
+        "name": "Microsoft Azure — Noviglio (Santa Corinna)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft / Noviglio Datacenters MXP I (Compass / Hines)",
+        "capacity": "~100 MW connessione elettrica autorizzata",
+        "description_it": "Campus Microsoft a Santa Corinna (Noviglio), sud-ovest di Milano: circa 230.000 mq di area, ~95.000 mq coperti, connessione elettrica autorizzata da 100 MW. Avvio operativo a fasi (prima fase settembre 2026). Completa la regione Azure Italy North oltre Settala e gli altri campus in costruzione.",
+        "country": "IT",
+        "city": "Noviglio",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": 2026,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 100,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 23,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "100 MW autorizzati; impatto su rete e risorse idriche locali oggetto di dibattito e atti amministrativi."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Picco occupazionale in cantiere; a regime organico facility tipico hyperscale.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Conflitto locale su rumore, consumi energetici/idrici e compensazioni; caso emblematico del trade-off IA/cloud vs territorio.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "Atti/cronaca — data center Microsoft Noviglio Santa Corinna",
+            "url": "https://www.napoli365.it/data-center-noviglio-milano-cloud-microsoft-inaugura-limpianto-il-22/",
+            "accessed_at": "2026-09-27",
+            "note": "Dati dimensionali e 100 MW da atti amministrativi riportati in cronaca"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.11167,
+          45.37337
+        ]
+      },
+      "properties": {
+        "id": "dc_025",
+        "name": "AWS Europe (Milano) — Zibido San Giacomo",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Data Services Italy",
+        "capacity": "N/D (espansione regione Europe Milan; VIA in corso)",
+        "description_it": "Espansione della regione AWS Europe (Milan) a Zibido San Giacomo (Edificio A), oltre ai siti Rho/Pero. Procedura VIA nazionale MASE; collegata a nuove opere di rete Terna (SE Lacchiarella Ovest). Parte del programma AWS da ~1,2 mld dichiarato di interesse strategico nazionale.",
+        "country": "IT",
+        "city": "Zibido San Giacomo",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Espansione hyperscale con nuove sottostazioni/raccordi RTN; dettagli MW IT da atti VIA."
+        },
+        "community_impact_it": "Nuovo polo a sud di Milano con opere di rete associate; consultazioni pubbliche e osservazioni comunali in corso.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MASE VIA — AWS Europe (Milan) Edificio A, Zibido San Giacomo",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11970",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "MIMIT — programmi strategici data center (Amazon)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.02217,
+          45.44807
+        ]
+      },
+      "properties": {
+        "id": "dc_026",
+        "name": "Equinix Italia — Cusago / Settimo Milanese (espansione)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "Sette nuovi DC previsti; investimento ~4 mld (2026–2033)",
+        "description_it": "Programma «Equinix per l’Italia» di preminente interesse strategico nazionale: sette nuovi centri a Settimo Milanese e Cusago, per colocation e hyperscale AI. Completa il footprint già presente (ML2, ML5). Fabbisogno energetico dichiarato coperto da rinnovabili tramite accordo già sottoscritto.",
+        "country": "IT",
+        "city": "Cusago",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "CdM: intero fabbisogno coperto da rinnovabili tramite accordo già sottoscritto (PPA/offtake da nominare quando pubblico)."
+        },
+        "employment": {
+          "direct": 500,
+          "indirect_est": null,
+          "contractors_est": 1500,
+          "note_it": "Stima MIMIT: ~1.500 addetti in realizzazione; oltre 500 occupati diretti e indiretti a regime.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Ulteriore densificazione del cluster ovest milanese; Occupazione di cantiere rilevante rispetto ai MW a regime.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — Equinix per l’Italia / Cavour (CdM)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.20975,
+          45.37726
+        ]
+      },
+      "properties": {
+        "id": "dc_027",
+        "name": "EdgeConneX Campus Italia — Opera",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "EdgeConneX",
+        "capacity": "Quota programma Campus Italia (>300 MW su tre siti); MW IT Opera N/D",
+        "description_it": "Campus EdgeConneX a Opera, uno dei tre nodi del programma Campus Italia (~3 mld, interesse strategico nazionale) insieme a Pieve Emanuele/Fizzonasco (dc_037) e Bertonico (dc_038). Completamento dichiarato entro il 2031.",
+        "country": "IT",
+        "city": "Opera",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 100,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus (>300 MW totali dichiarati); non potenza IT certificata del solo Opera."
+        },
+        "community_impact_it": "Nuova cintura hyperscale a sud di Milano/Lodigiano: suolo, rete e pressione cumulativa con AWS/Microsoft/Vantage.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi strategici data center",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "DDay — sette programmi strategici data center (EdgeConneX)",
+            "url": "https://www.dday.it/redazione/58290/data-center-in-italia-il-governo-rivela-altri-due-progetti-da-68-miliardi-ecco-tutti-i-sette-siti-in-programma",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.295,
+          45.188
+        ]
+      },
+      "properties": {
+        "id": "dc_028",
+        "name": "Cavour Hyperscale Campus — Trino (ex Galileo Ferraris)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Techbau (BentallGreenOak)",
+        "capacity": "300–400 MW (progetto); investimento ~4 mld",
+        "description_it": "Riconversione dell’ex centrale termoelettrica Galileo Ferraris di Trino (VC) in campus hyperscale di rilevanza nazionale/europea. Interesse strategico CdM; conferenza di servizi prevista entro fine 2026, autorizzazione 2027, primo lotto ~2028. Stesso territorio del grande FV Enel e vicino all’ex nucleare Enrico Fermi: caso-studio italiano di AI + energia + brownfield.",
+        "country": "IT",
+        "city": "Trino",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 350,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Sito con stazione 380 kV esistente; press e Regione citano il vicino FV Enel di Trino come supporto energetico regionale (non PPA esclusivo dimostrato)."
+        },
+        "employment": {
+          "direct": 325,
+          "indirect_est": 1000,
+          "contractors_est": 1200,
+          "note_it": "Stima MIMIT: ~1.200 medi in cantiere (picchi >2.000); a regime ~300–350 qualificati + indotto ~1.000.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Riqualificazione brownfield e nuovo carico elettrico enorme in un territorio già segnato dalla storia nucleare/termoelettrica.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — Cavour Hyperscale Campus / Equinix (CdM)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.43285,
+          39.22317
+        ]
+      },
+      "properties": {
+        "id": "dc_029",
+        "name": "Digital Vault Sulcis — Nuraxi Figus (Gonnesa)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Energy Vault Sulcis",
+        "capacity": "fino a ~30 MW (Edge AI) + accumulo/rinnovabili integrate",
+        "description_it": "Unico programma data center di interesse strategico nazionale nel Mezzogiorno: Edge AI data center sull’ex miniera di carbone Monte Sinni a Nuraxi Figus (Gonnesa, Sulcis). ~1,49 mld; integra elaborazione dati e infrastrutture di produzione/accumulo rinnovabile. Rompe il bias Nord-Lombardia della pipeline italiana.",
+        "country": "IT",
+        "city": "Gonnesa",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 30,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Progetto dichiara integrazione con rinnovabili e accumulo sul sito minerario dismesso."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": 400,
+          "contractors_est": null,
+          "note_it": "Stima MIMIT: ~400 posti/anno tra diretti e indotto a regime.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Riconversione di un territorio minerario in crisi (Sulcis): narrazione di transizione giusta da verificare su tempi, occupazione reale e impatto ambientale.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — Digital Vault Sulcis / K2 (CdM)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.47706,
+          41.76489
+        ]
+      },
+      "properties": {
+        "id": "dc_030",
+        "name": "Digital Realty ROM1 — Trigoria (Roma)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Digital Realty",
+        "capacity": "~3 MW IT in prima fase; campus fino a ~22 ha a pieno sviluppo",
+        "description_it": "Primo data center Digital Realty in Italia, in costruzione a Trigoria (Roma). Debutto previsto inizio 2027 (~3 MW); campus da 22 ettari con fasi successive. Completato dall’ingresso a Milano (Abbiategrasso, fino a ~84 MW). Rafforza l’asse Roma oltre Pomezia/TIM.",
+        "country": "IT",
+        "city": "Roma",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 3,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 22,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Operatore dichiara focus su energia green; dettaglio PPA da verificare."
+        },
+        "community_impact_it": "Nuovo campus a sud di Roma; espansione futura rilevante rispetto alla prima fase da 3 MW.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Digital Realty — espansione Milano e presenza Roma ROM1",
+            "url": "https://www.globenewswire.com/news-release/2026/03/24/3261249/0/en/Digital-Realty-Further-Expands-Mediterranean-Presence-with-Strategic-Land-Acquisitions-in-Milan.html",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.13732,
+          45.32157
+        ]
+      },
+      "properties": {
+        "id": "dc_031",
+        "name": "K2 Strategic Infrastructure — Zibido / Lacchiarella",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "K2 Strategic Infrastructure Italy",
+        "capacity": "~400 MW; investimento ~5,3 mld",
+        "description_it": "Campus hyperscale nei comuni di Zibido San Giacomo e Lacchiarella, dichiarato di interesse strategico nazionale (~5,3 mld, ~400 MW). Quattro anni di cantiere stimati con media ~2.000 occupati/anno. Stesso corridoio sud-milanese di AWS Zibido e delle opere Terna Lacchiarella Ovest.",
+        "country": "IT",
+        "city": "Lacchiarella",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 400,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Hyperscale di taglia nazionale; connessione di rete critica sul nodo Lacchiarella/Zibido."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": 2000,
+          "note_it": "Stima riportata: media ~2.000 occupati/anno in quattro anni di cantiere.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Concentrazione estrema di MW nel sud Milano insieme ad AWS e altri programmi: rischio saturazione rete e conflitto d’uso del suolo.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — K2 / Digital Vault Sulcis (CdM)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.30725,
+          45.4633
+        ]
+      },
+      "properties": {
+        "id": "dc_032",
+        "name": "Microsoft Azure — San Bovio (Peschiera Borromeo)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft",
+        "capacity": "N/D (ex Postalmarket; bonifica/cantiere in corso)",
+        "description_it": "Campus Microsoft sull’area dell’ex Postalmarket a San Bovio (Peschiera Borromeo), Via Trieste. Demolizione e bonifica avviate a febbraio 2025; screening ambientale MASE con esito favorevole su acqua, rumore e traffico secondo comunicazioni Microsoft alla comunità. Parte dell’espansione Azure Italy North insieme a Settala (dc_004), Noviglio (dc_024) e Bornasco (dc_033).",
+        "country": "IT",
+        "city": "Peschiera Borromeo",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Microsoft dichiara energia da fonti rinnovabili tramite Terna; nessun prelievo da falda potabile locale secondo screening MASE riportato."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Fase demolizione/bonifica e cantiere; organico a regime tipico facility hyperscale.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Riconversione brownfield ex commerciale; dibattito locale su sostenibilità, traffico e opportunità di lavoro; contributi a infrastrutture scolastiche dichiarati da Microsoft.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Microsoft Local — aggiornamento cantiere San Bovio",
+            "url": "https://local.microsoft.com/it/blog/san-bovio-datacenter-construction-update/",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.20714,
+          45.25325
+        ]
+      },
+      "properties": {
+        "id": "dc_033",
+        "name": "Microsoft Azure — Bornasco",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft",
+        "capacity": "N/D (campus a due edifici; backup generators ~50 MW riportati)",
+        "description_it": "Campus Microsoft self-build a Bornasco (PV), a sud di Milano, all’incrocio Via dei Pioppi / Via Rimembranze. Cantiere avviato a gennaio 2026 (due edifici dati). Completa il footprint Azure Italy North oltre Settala, Noviglio e San Bovio.",
+        "country": "IT",
+        "city": "Bornasco",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Potenza IT non pubblicata; fonti di settore citano ~50 MW di generatori di emergenza on-site."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Cantiere attivo dal 2026; organico a regime da verificare.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Nuovo polo hyperscale nel Pavese a sud di Milano: pressione su rete e suolo in area già interessata da altri campus (Siziano, Ferrera Erbognone).",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Structure Research — Microsoft begins another Milan self-build (Bornasco)",
+            "url": "https://www.structureresearch.net/2026/02/11/microsoft-begins-another-milan-self-build/",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.43677,
+          45.33325
+        ]
+      },
+      "properties": {
+        "id": "dc_034",
+        "name": "Vantage MXP4 — Tavazzano / Montanaso",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Vantage Data Centers",
+        "capacity": "N/D; estensione strategicità ~3,79 mld (programma IT totale ~8 mld)",
+        "description_it": "Quarto campus italiano Vantage (MXP4) previsto nei comuni di Tavazzano con Villavesco e Montanaso (LO), presso/accanto alla centrale termoelettrica TTEP. Il CdM ha esteso la dichiarazione di preminente interesse strategico nazionale (~3,79 mld aggiuntivi). Cronaca locale: progetto edilizio ancora da presentare agli enti locali al momento dell’incontro tecnico; pin approssimato sul sito centrale.",
+        "country": "IT",
+        "city": "Tavazzano con Villavesco",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Co-locazione con centrale a gas esistente: sinergia energetica potenziale, ma MW IT non ancora pubblici."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Prevalentemente fase di pianificazione/autorizzazione; organico cantiere da definire.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Estensione del cluster Vantage verso il Lodigiano; dibattiti locali su energia, suolo e ruolo della centrale esistente.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi strategici data center",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Il Cittadino — data center Vantage nella centrale di Tavazzano",
+            "url": "https://www.ilcittadino.it/stories/premium/centro_lodigiano/il-data-center-della-multinazionale-vantage-sara-nella-centrale-di-tavazzano-o_205632_96/",
+            "accessed_at": "2026-09-27",
+            "note": "Localizzazione presso TTEP; progetto non ancora depositato in sede comunale secondo la cronaca"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.37402,
+          45.49875
+        ]
+      },
+      "properties": {
+        "id": "dc_035",
+        "name": "MIL05 — Vignate (Infrastructure Italia Land 5)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Infrastructure Italia Land 5 S.r.l.",
+        "capacity": "~94.000 mq (MIL05A+B); 50 GE emergenza ~298 MWt",
+        "description_it": "Nuovo data center MIL05 a Vignate (MI), lungo la SP 103 Nuova Cassanese / Via Galileo Galilei. VIA nazionale conclusa con giudizio positivo di compatibilità ambientale (DM 411 del 30/06/2026). Alimentazione prevista con due cavidotti 220 kV e sottostazione dedicata; area netta intervento ~73.000 mq + riserva di espansione (~21.000 mq). Caso chiaro di progetto autorizzato in attesa di realizzazione (termine 5 anni dal decreto).",
+        "country": "IT",
+        "city": "Vignate",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 9.4,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Connessione RTN 220 kV; FV su copertura previsto negli atti. Potenza IT non espressa in MW nel pin (GE emergenza ~298 MWt)."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Autorizzato; cantiere non ancora avviato alla data del decreto VIA.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Trasformazione di area agricola già prevista a destinazione produttiva/commerciale dal PGT; confine con Parco Agricolo Sud Milano; mitigazioni paesaggistiche (duna verde) negli atti.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MASE VIA — MIL05 Vignate (VIP 11494)",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11494",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "MASE — decreto compatibilità ambientale DM 411/2026 (MIL05)",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/MetadatoDocumento/1406010",
+            "accessed_at": "2026-09-27",
+            "note": "Giudizio positivo 30/06/2026; realizzazione entro 5 anni"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.86145,
+          45.09933
+        ]
+      },
+      "properties": {
+        "id": "dc_036",
+        "name": "Eni–Khazna AI Data Center Campus — Ferrera Erbognone",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Eni / Khazna Data Centers (JV)",
+        "capacity": "fino a 500 MW IT (campus modulare); target partnership IT–UAE fino a 1 GW in Italia",
+        "description_it": "Campus AI hyperscale fino a 500 MW IT a Ferrera Erbognone (PV), sullo stesso polo industriale del Green Data Center Eni (HPC). Heads of Terms Eni–Khazna (luglio 2025); JV autorizzata dalla Commissione europea. Alimentazione prevista con «Blue Power» Eni (gas ad alta efficienza + CCS). Pin sul sito del data center Eni esistente; footprint esatto del nuovo campus da raffinare.",
+        "country": "IT",
+        "city": "Ferrera Erbognone",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 500,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Blue Power Eni (gas + cattura CO₂) dichiarato; non mix rinnovabile 100%. Sinergia energia–compute nel sito."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Sviluppo e cantieri modulari previsti; primi moduli operativi dichiarati verso fine decennio in fonti secondarie.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Uno dei più grandi campus AI annunciati in Italia: impatto energetico e territoriale di scala nazionale sul Pavese.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "Eni — HoT con Khazna per AI Data Center Campus (500 MW)",
+            "url": "https://www.eni.com/en-IT/media/press-release/2025/07/pr-khazna-data-centers-eni-partner-develop-i-data-center-campus.html",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Il Sole 24 Ore — via libera Ue alla JV Eni–Khazna",
+            "url": "https://www.ilsole24ore.com/art/data-center-via-libera-ue-joint-venture-eni-khazna-accelerazione-polo-lombardo-AJl2Zcj",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.19047,
+          45.37232
+        ]
+      },
+      "properties": {
+        "id": "dc_037",
+        "name": "EdgeConneX Campus Italia — Pieve Emanuele / Fizzonasco",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "EdgeConneX",
+        "capacity": "Quota programma Campus Italia (>300 MW su tre siti); MW IT sito N/D",
+        "description_it": "Secondo nodo del programma EdgeConneX Campus Italia (~3 mld, interesse strategico nazionale), nei comuni di Pieve Emanuele / Fizzonasco a sud di Milano. Stesso programma di Opera (dc_027) e Bertonico (dc_038). Coordinate a livello frazione; lotto esatto da raffinare.",
+        "country": "IT",
+        "city": "Pieve Emanuele",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 100,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus; non potenza IT certificata del sito."
+        },
+        "community_impact_it": "Densificazione ulteriore della cintura sud-milanese già satura di progetti hyperscale.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi strategici data center",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.67466,
+          45.24519
+        ]
+      },
+      "properties": {
+        "id": "dc_038",
+        "name": "EdgeConneX Campus Italia — Bertonico",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "EdgeConneX",
+        "capacity": "Quota programma Campus Italia (>300 MW su tre siti); MW IT sito N/D",
+        "description_it": "Terzo nodo del programma EdgeConneX Campus Italia nel Lodigiano (Bertonico). Stesso programma di Opera (dc_027) e Pieve Emanuele (dc_037). Pin a livello comunale.",
+        "country": "IT",
+        "city": "Bertonico",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 100,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus; non potenza IT certificata del sito."
+        },
+        "community_impact_it": "Estensione della proliferazione data center oltre la cintura milanese, verso il Lodigiano.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi strategici data center",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.02575,
+          45.50169
+        ]
+      },
+      "properties": {
+        "id": "dc_039",
+        "name": "Vantage — Cornaredo (programma strategico)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Vantage Data Centers",
+        "capacity": "N/D (nodo del programma multi-campus ~8 mld)",
+        "description_it": "Nodo Cornaredo del programma Vantage di interesse strategico nazionale (insieme a Melegnano/MXP1, Settimo/MXP2 e Tavazzano/MXP4). Distinto dal campus Data4 MIL01 già operativo nello stesso comune (dc_021). Lotto e potenza IT da raffinare; pin approssimato sul comune.",
+        "country": "IT",
+        "city": "Cornaredo",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-27",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Stesso corridoio ovest-Milano di Data4 ed Equinix; dettaglio MW IT non pubblico."
+        },
+        "community_impact_it": "Ulteriore densificazione del corridoio Cornaredo–Settimo già saturo di campus colo/hyperscale.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "MIMIT — programmi strategici data center",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-27",
+            "note": "Vantage: Melegnano, Settimo Milanese, Cornaredo, Tavazzano"
+          }
+        ]
       }
     }
   ]

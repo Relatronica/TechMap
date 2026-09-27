@@ -122,10 +122,375 @@ export const ICON_OPACITY_EXPR = [
   0.85
 ];
 
-export const ICON_SIZE = 0.54;
-export const ICON_SIZE_HIGHLIGHT = 0.72;
-export const ICON_SIZE_RELATED = 0.6;
-export const ICON_SIZE_DIMMED = 0.38;
+/** Ciclo di vita del sito — filtro proliferazione (pipeline vs operativi). */
+export const SITE_STATUSES = [
+  'operational',
+  'under_construction',
+  'planned',
+  'decommissioned',
+  'unknown'
+] as const;
+
+export type SiteStatusKey = (typeof SITE_STATUSES)[number];
+
+/** Colori UI filtri / legenda status (non sostituiscono i colori per sottotipo). */
+export const STATUS_COLORS: Record<SiteStatusKey, string> = {
+  operational: '#2F6F9A',
+  under_construction: '#D4892A',
+  planned: '#4A7FA0',
+  decommissioned: '#6A6560',
+  unknown: '#9AA0A6'
+};
+
+/** Opacità relativa per status — leggera: lo stile icona porta il significato. */
+export const STATUS_OPACITY_EXPR = [
+  'match',
+  ['coalesce', ['get', 'status'], 'unknown'],
+  'planned',
+  0.92,
+  'under_construction',
+  1,
+  'decommissioned',
+  0.7,
+  'unknown',
+  0.9,
+  1
+];
+
+/** Opacità icona = confidence × status. */
+export const SITE_ICON_OPACITY_EXPR = ['*', ICON_OPACITY_EXPR, STATUS_OPACITY_EXPR];
+
+/** Expression: status del feature (null → unknown). */
+export const STATUS_GET_EXPR = ['coalesce', ['get', 'status'], 'unknown'];
+
+export const ICON_CANVAS_SIZE = 128;
+/** Immagine 2× per retina: a icon-size 1 ≈ 64 CSS px. */
+export const ICON_PIXEL_RATIO = 2;
+
+/** Varianti canvas per ciclo di vita (mappa). */
+export const ICON_STATUS_STYLES = ['solid', 'construction', 'planned', 'retired'] as const;
+export type IconStatusStyle = (typeof ICON_STATUS_STYLES)[number];
+
+export function iconStyleForStatus(status: string | null | undefined): IconStatusStyle {
+  switch (status) {
+    case 'under_construction':
+      return 'construction';
+    case 'planned':
+      return 'planned';
+    case 'decommissioned':
+      return 'retired';
+    default:
+      return 'solid';
+  }
+}
+
+function hexToRgb(hex: string): [number, number, number] {
+  const h = hex.replace('#', '');
+  const full = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
+  const n = parseInt(full, 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+function rgbToHex(r: number, g: number, b: number): string {
+  const clamp = (v: number) => Math.max(0, Math.min(255, Math.round(v)));
+  return (
+    '#' +
+    [clamp(r), clamp(g), clamp(b)]
+      .map((v) => v.toString(16).padStart(2, '0'))
+      .join('')
+  );
+}
+
+export function mixHex(a: string, b: string, t: number): string {
+  const [ar, ag, ab] = hexToRgb(a);
+  const [br, bg, bb] = hexToRgb(b);
+  return rgbToHex(ar + (br - ar) * t, ag + (bg - ag) * t, ab + (bb - ab) * t);
+}
+
+/**
+ * Canvas RGBA image for map.addImage — silhouette atlante.
+ * style: solid (operativo) | construction | planned (fantasma) | retired
+ */
+export function createMapIconImage(pathD, color, size = ICON_CANVAS_SIZE, style: IconStatusStyle = 'solid') {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) {
+    return { width: size, height: size, data: new Uint8ClampedArray(size * size * 4) };
+  }
+
+  const cx = size / 2;
+  const cy = size / 2;
+  const scale = (size * 0.64) / 24;
+  const path = new Path2D(pathD);
+
+  ctx.save();
+  ctx.translate(cx - 12 * scale, cy - 12 * scale);
+  ctx.scale(scale, scale);
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  if (style === 'solid') {
+    ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
+    ctx.shadowBlur = 2.2;
+    ctx.shadowOffsetY = 1;
+    ctx.fillStyle = color;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2.6;
+    ctx.fill(path);
+    ctx.stroke(path);
+  } else if (style === 'construction') {
+    // Ambra evidente: si legge subito contro i pieni blu operativi
+    const warm = mixHex(color, STATUS_COLORS.under_construction, 0.78);
+    ctx.shadowColor = 'rgba(140, 80, 20, 0.35)';
+    ctx.shadowBlur = 2.8;
+    ctx.shadowOffsetY = 1;
+    ctx.fillStyle = mixHex(warm, '#F2C078', 0.18);
+    ctx.globalAlpha = 0.78;
+    ctx.fill(path);
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = STATUS_COLORS.under_construction;
+    ctx.lineWidth = 2.55;
+    ctx.stroke(path);
+  } else if (style === 'planned') {
+    // Forma intatta (tratto pieno soft) + tratteggio fine sopra
+    const ink = mixHex(color, STATUS_COLORS.planned, 0.35);
+    ctx.shadowColor = 'rgba(15, 18, 22, 0.16)';
+    ctx.shadowBlur = 1.1;
+    ctx.shadowOffsetY = 0.35;
+    ctx.strokeStyle = ink;
+    ctx.lineWidth = 1.55;
+    ctx.globalAlpha = 0.34;
+    ctx.stroke(path);
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = 1.7;
+    // Tratteggio fine; a canvas 128× resta leggibile senza spezzare la sagoma
+    ctx.setLineDash([0.85, 1.2]);
+    ctx.stroke(path);
+    ctx.setLineDash([]);
+  } else {
+    // retired
+    const muted = mixHex(color, '#7a7e82', 0.72);
+    ctx.shadowColor = 'rgba(15, 18, 22, 0.12)';
+    ctx.shadowBlur = 1;
+    ctx.strokeStyle = muted;
+    ctx.lineWidth = 1.85;
+    ctx.globalAlpha = 0.85;
+    ctx.stroke(path);
+    ctx.globalAlpha = 1;
+  }
+
+  ctx.restore();
+
+  return {
+    width: size,
+    height: size,
+    data: ctx.getImageData(0, 0, size, size).data
+  };
+}
+
+export function iconImageId(subtype, style: IconStatusStyle = 'solid') {
+  return style === 'solid' ? `icon-${subtype}` : `icon-${subtype}--${style}`;
+}
+
+export function statusBadgeImageId(status: string) {
+  return `status-badge-${status}`;
+}
+
+/** Avanzamento ciclo di vita (0–1) per la barra nella card stato. */
+export function statusProgress(status: string): number {
+  switch (status) {
+    case 'planned':
+      return 0.28;
+    case 'under_construction':
+      return 0.62;
+    case 'operational':
+      return 1;
+    case 'decommissioned':
+      return 0;
+    default:
+      return 0;
+  }
+}
+
+/**
+ * Mini-card stato: pallino stato + etichetta + barra avanzamento.
+ */
+export function createStatusBadgeImage(
+  status: string,
+  label: string,
+  accent: string,
+  _pixelRatio = ICON_PIXEL_RATIO
+) {
+  const w = 240;
+  const h = 88;
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) {
+    return { width: w, height: h, data: new Uint8ClampedArray(w * h * 4) };
+  }
+
+  const pad = 12;
+  const radius = 12;
+  const boxX = pad;
+  const boxY = pad - 2;
+  const boxW = w - pad * 2;
+  const boxH = h - pad * 2;
+  const dotR = 5;
+  const dotX = boxX + 18;
+  const textX = boxX + 32;
+
+  const shadowLayers = [
+    { dy: 3, blur: 2, alpha: 0.06 },
+    { dy: 6, blur: 8, alpha: 0.1 },
+    { dy: 10, blur: 16, alpha: 0.08 }
+  ];
+  shadowLayers.forEach(({ dy, blur, alpha }) => {
+    ctx.save();
+    ctx.shadowColor = `rgba(15, 18, 22, ${alpha})`;
+    ctx.shadowBlur = blur;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = dy;
+    ctx.fillStyle = 'rgba(252, 250, 246, 1)';
+    roundRect(ctx, boxX, boxY, boxW, boxH, radius);
+    ctx.fill();
+    ctx.restore();
+  });
+
+  ctx.fillStyle = 'rgba(252, 250, 246, 0.98)';
+  ctx.strokeStyle = 'rgba(60, 64, 70, 0.12)';
+  ctx.lineWidth = 1.25;
+  roundRect(ctx, boxX, boxY, boxW, boxH, radius);
+  ctx.fill();
+  ctx.stroke();
+
+  // Pallino stato (come chip sidebar)
+  ctx.beginPath();
+  ctx.arc(dotX, boxY + 26, dotR, 0, Math.PI * 2);
+  ctx.fillStyle = accent;
+  ctx.fill();
+
+  ctx.fillStyle = mixHex(accent, '#2a3038', 0.22);
+  ctx.font = `600 17px "Montserrat", "Helvetica Neue", sans-serif`;
+  ctx.textBaseline = 'middle';
+  ctx.textAlign = 'left';
+  ctx.fillText(label, textX, boxY + 26);
+
+  const trackX = textX;
+  const trackY = boxY + boxH - 22;
+  const trackW = boxX + boxW - 16 - textX;
+  const trackH = 6;
+  const progress = statusProgress(status);
+
+  ctx.fillStyle = 'rgba(60, 64, 70, 0.12)';
+  roundRect(ctx, trackX, trackY, trackW, trackH, 3);
+  ctx.fill();
+
+  if (progress > 0.01) {
+    ctx.fillStyle = accent;
+    roundRect(ctx, trackX, trackY, Math.max(trackH, trackW * progress), trackH, 3);
+    ctx.fill();
+  } else if (status === 'decommissioned') {
+    ctx.strokeStyle = mixHex(accent, '#8a8680', 0.2);
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    ctx.moveTo(trackX + 2, trackY + trackH / 2);
+    ctx.lineTo(trackX + trackW - 2, trackY + trackH / 2);
+    ctx.stroke();
+  }
+
+  return {
+    width: w,
+    height: h,
+    data: ctx.getImageData(0, 0, w, h).data
+  };
+}
+
+function roundRect(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  r: number | { tl: number; tr: number; br: number; bl: number }
+) {
+  const radii =
+    typeof r === 'number' ? { tl: r, tr: r, br: r, bl: r } : r;
+  ctx.beginPath();
+  ctx.moveTo(x + radii.tl, y);
+  ctx.lineTo(x + w - radii.tr, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + radii.tr);
+  ctx.lineTo(x + w, y + h - radii.br);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - radii.br, y + h);
+  ctx.lineTo(x + radii.bl, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - radii.bl);
+  ctx.lineTo(x, y + radii.tl);
+  ctx.quadraticCurveTo(x, y, x + radii.tl, y);
+  ctx.closePath();
+}
+
+/** MapLibre match expression: subtype → icon image id (uno stile). */
+export function buildIconImageExpression(subtypes, fallback, style: IconStatusStyle = 'solid') {
+  const expr = ['match', ['get', 'subtype']];
+  subtypes.forEach((s) => {
+    expr.push(s, iconImageId(s, style));
+  });
+  expr.push(typeof fallback === 'string' && fallback.startsWith('icon-')
+    ? fallback
+    : iconImageId(fallback, style));
+  return expr;
+}
+
+/**
+ * Match status → variante silhouette, poi subtype.
+ * Usato soprattutto sui data center (proliferazione).
+ */
+export function buildStatusAwareIconExpression(subtypes, fallbackSubtype) {
+  return [
+    'match',
+    STATUS_GET_EXPR,
+    'under_construction',
+    buildIconImageExpression(subtypes, fallbackSubtype, 'construction'),
+    'planned',
+    buildIconImageExpression(subtypes, fallbackSubtype, 'planned'),
+    'decommissioned',
+    buildIconImageExpression(subtypes, fallbackSubtype, 'retired'),
+    buildIconImageExpression(subtypes, fallbackSubtype, 'solid')
+  ];
+}
+
+/**
+ * Scala schermo vs zoom: le icone crescono avvicinandosi
+ * (prima restavano fisse e “sparivano” nel territorio).
+ */
+export const ICON_SIZE_BY_ZOOM = [
+  'interpolate',
+  ['linear'],
+  ['zoom'],
+  3,
+  0.64,
+  6,
+  0.8,
+  9,
+  0.98,
+  12,
+  1.2,
+  15,
+  1.4
+];
+
+export const ICON_SIZE_HIGHLIGHT_BY_ZOOM = ['*', ICON_SIZE_BY_ZOOM, 1.28];
+export const ICON_SIZE_RELATED_BY_ZOOM = ['*', ICON_SIZE_BY_ZOOM, 1.1];
+export const ICON_SIZE_DIMMED_BY_ZOOM = ['*', ICON_SIZE_BY_ZOOM, 0.72];
+
+/** Valori numerici di fallback (hero / mid-zoom ≈ z6–7). */
+export const ICON_SIZE = 0.8;
+export const ICON_SIZE_HIGHLIGHT = 1.02;
+export const ICON_SIZE_RELATED = 0.88;
+export const ICON_SIZE_DIMMED = 0.58;
 
 export const CONNECTION_TYPES = ['powers', 'supplies', 'manufactures_for'];
 
@@ -159,60 +524,3 @@ export const CONTEXT_OVERLAYS = [
     defaultOn: false
   }
 ] as const;
-
-/**
- * Canvas RGBA image for map.addImage — silhouette colorata senza bordo.
- * Tratto spesso + ombra soft (stile atlante, no outline bianco).
- */
-export function createMapIconImage(pathD, color, size = 80) {
-  const canvas = document.createElement('canvas');
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) {
-    return { width: size, height: size, data: new Uint8ClampedArray(size * size * 4) };
-  }
-
-  const cx = size / 2;
-  const cy = size / 2;
-  const scale = (size * 0.64) / 24;
-  const path = new Path2D(pathD);
-
-  ctx.save();
-  ctx.translate(cx - 12 * scale, cy - 12 * scale);
-  ctx.scale(scale, scale);
-  ctx.lineCap = 'round';
-  ctx.lineJoin = 'round';
-
-  ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
-  ctx.shadowBlur = 2.2;
-  ctx.shadowOffsetY = 1;
-
-  ctx.fillStyle = color;
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 2.6;
-  ctx.fill(path);
-  ctx.stroke(path);
-
-  ctx.restore();
-
-  return {
-    width: size,
-    height: size,
-    data: ctx.getImageData(0, 0, size, size).data
-  };
-}
-
-export function iconImageId(subtype) {
-  return `icon-${subtype}`;
-}
-
-/** MapLibre match expression: subtype → icon image id */
-export function buildIconImageExpression(subtypes, fallback) {
-  const expr = ['match', ['get', 'subtype']];
-  subtypes.forEach((s) => {
-    expr.push(s, iconImageId(s));
-  });
-  expr.push(fallback);
-  return expr;
-}

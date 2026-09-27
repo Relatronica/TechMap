@@ -10,11 +10,29 @@ import {
   CONTEXT_OVERLAYS,
   SUBTYPE_COLORS,
   ICON_OPACITY_EXPR,
+  SITE_ICON_OPACITY_EXPR,
+  SITE_STATUSES,
+  STATUS_COLORS,
+  STATUS_GET_EXPR,
+  ICON_STATUS_STYLES,
+  ICON_CANVAS_SIZE,
+  ICON_PIXEL_RATIO,
+  ICON_SIZE_BY_ZOOM,
+  ICON_SIZE_HIGHLIGHT_BY_ZOOM,
+  ICON_SIZE_RELATED_BY_ZOOM,
+  ICON_SIZE_DIMMED_BY_ZOOM,
   ICON_SIZE,
   ICON_SIZE_HIGHLIGHT,
   ICON_SIZE_RELATED,
   ICON_SIZE_DIMMED
 } from '../lib/mapIcons';
+
+const STATUS_SHORT_LABELS = {
+  operational: i18n.controls.status_short.operational,
+  under_construction: i18n.controls.status_short.under_construction,
+  planned: i18n.controls.status_short.planned,
+  decommissioned: i18n.controls.status_short.decommissioned
+};
 ---
 
 <Layout
@@ -33,7 +51,7 @@ import {
   </script>
 
   <!-- Client-side MapLibre Script -->
-  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_RELATED, ICON_SIZE_DIMMED }}>
+  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, SITE_ICON_OPACITY_EXPR, SITE_STATUSES, STATUS_COLORS, STATUS_GET_EXPR, ICON_STATUS_STYLES, ICON_CANVAS_SIZE, ICON_PIXEL_RATIO, ICON_SIZE_BY_ZOOM, ICON_SIZE_HIGHLIGHT_BY_ZOOM, ICON_SIZE_RELATED_BY_ZOOM, ICON_SIZE_DIMMED_BY_ZOOM, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_RELATED, ICON_SIZE_DIMMED, STATUS_SHORT_LABELS }}>
     // MapLibre GL JS loaded from CDN as global `maplibregl`
     var MaplibreMap = maplibregl.Map;
     var NavigationControl = maplibregl.NavigationControl;
@@ -452,7 +470,25 @@ import {
       resetHighlights();
     }
 
-    function createMapIconImage(pathD, color, size = 80) {
+    function mixHex(a, b, t) {
+      const parse = (hex) => {
+        const h = String(hex).replace('#', '');
+        const full = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
+        const n = parseInt(full, 16);
+        return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+      };
+      const [ar, ag, ab] = parse(a);
+      const [br, bg, bb] = parse(b);
+      const clamp = (v) => Math.max(0, Math.min(255, Math.round(v)));
+      return (
+        '#' +
+        [clamp(ar + (br - ar) * t), clamp(ag + (bg - ag) * t), clamp(ab + (bb - ab) * t)]
+          .map((v) => v.toString(16).padStart(2, '0'))
+          .join('')
+      );
+    }
+
+    function createMapIconImage(pathD, color, size = ICON_CANVAS_SIZE, style = 'solid') {
       const canvas = document.createElement('canvas');
       canvas.width = size;
       canvas.height = size;
@@ -468,15 +504,52 @@ import {
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
 
-      ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
-      ctx.shadowBlur = 2.2;
-      ctx.shadowOffsetY = 1;
+      if (style === 'solid') {
+        ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
+        ctx.shadowBlur = 2.2;
+        ctx.shadowOffsetY = 1;
+        ctx.fillStyle = color;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2.6;
+        ctx.fill(path);
+        ctx.stroke(path);
+      } else if (style === 'construction') {
+        const warm = mixHex(color, STATUS_COLORS.under_construction, 0.78);
+        ctx.shadowColor = 'rgba(140, 80, 20, 0.35)';
+        ctx.shadowBlur = 2.8;
+        ctx.shadowOffsetY = 1;
+        ctx.fillStyle = mixHex(warm, '#F2C078', 0.18);
+        ctx.globalAlpha = 0.78;
+        ctx.fill(path);
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = STATUS_COLORS.under_construction;
+        ctx.lineWidth = 2.55;
+        ctx.stroke(path);
+      } else if (style === 'planned') {
+        const ink = mixHex(color, STATUS_COLORS.planned, 0.35);
+        ctx.shadowColor = 'rgba(15, 18, 22, 0.16)';
+        ctx.shadowBlur = 1.1;
+        ctx.shadowOffsetY = 0.35;
+        ctx.strokeStyle = ink;
+        ctx.lineWidth = 1.55;
+        ctx.globalAlpha = 0.34;
+        ctx.stroke(path);
+        ctx.globalAlpha = 1;
+        ctx.lineWidth = 1.7;
+        ctx.setLineDash([0.85, 1.2]);
+        ctx.stroke(path);
+        ctx.setLineDash([]);
+      } else {
+        const muted = mixHex(color, '#7a7e82', 0.72);
+        ctx.shadowColor = 'rgba(15, 18, 22, 0.12)';
+        ctx.shadowBlur = 1;
+        ctx.strokeStyle = muted;
+        ctx.lineWidth = 1.85;
+        ctx.globalAlpha = 0.85;
+        ctx.stroke(path);
+        ctx.globalAlpha = 1;
+      }
 
-      ctx.fillStyle = color;
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 2.6;
-      ctx.fill(path);
-      ctx.stroke(path);
       ctx.restore();
 
       return {
@@ -486,18 +559,203 @@ import {
       };
     }
 
-    function iconImageId(subtype) {
-      return 'icon-' + subtype;
+    function iconImageId(subtype, style = 'solid') {
+      return style === 'solid' ? 'icon-' + subtype : 'icon-' + subtype + '--' + style;
     }
 
-    function buildIconMatch(subtypes, fallback) {
+    function buildIconMatch(subtypes, fallbackSubtype, style = 'solid') {
       const expr = ['match', ['get', 'subtype']];
       subtypes.forEach((s) => {
-        expr.push(s, iconImageId(s));
+        expr.push(s, iconImageId(s, style));
       });
-      expr.push(fallback);
+      expr.push(iconImageId(fallbackSubtype, style));
       return expr;
     }
+
+    function buildStatusAwareIconMatch(subtypes, fallbackSubtype) {
+      return [
+        'match',
+        STATUS_GET_EXPR,
+        'under_construction',
+        buildIconMatch(subtypes, fallbackSubtype, 'construction'),
+        'planned',
+        buildIconMatch(subtypes, fallbackSubtype, 'planned'),
+        'decommissioned',
+        buildIconMatch(subtypes, fallbackSubtype, 'retired'),
+        buildIconMatch(subtypes, fallbackSubtype, 'solid')
+      ];
+    }
+
+    function statusBadgeImageId(status) {
+      return 'status-badge-' + status;
+    }
+
+    function statusProgress(status) {
+      if (status === 'planned') return 0.28;
+      if (status === 'under_construction') return 0.62;
+      if (status === 'operational') return 1;
+      return 0;
+    }
+
+    function roundRectPath(ctx, x, y, w, h, r) {
+      const radii = typeof r === 'number' ? { tl: r, tr: r, br: r, bl: r } : r;
+      ctx.beginPath();
+      ctx.moveTo(x + radii.tl, y);
+      ctx.lineTo(x + w - radii.tr, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + radii.tr);
+      ctx.lineTo(x + w, y + h - radii.br);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - radii.br, y + h);
+      ctx.lineTo(x + radii.bl, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - radii.bl);
+      ctx.lineTo(x, y + radii.tl);
+      ctx.quadraticCurveTo(x, y, x + radii.tl, y);
+      ctx.closePath();
+    }
+
+    function createStatusBadgeImage(status, label, accent) {
+      const w = 240;
+      const h = 88;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      const pad = 12;
+      const radius = 12;
+      const boxX = pad;
+      const boxY = pad - 2;
+      const boxW = w - pad * 2;
+      const boxH = h - pad * 2;
+      const dotR = 5;
+      const dotX = boxX + 18;
+      const textX = boxX + 32;
+
+      const shadowLayers = [
+        { dy: 3, blur: 2, alpha: 0.06 },
+        { dy: 6, blur: 8, alpha: 0.1 },
+        { dy: 10, blur: 16, alpha: 0.08 }
+      ];
+      shadowLayers.forEach(({ dy, blur, alpha }) => {
+        ctx.save();
+        ctx.shadowColor = `rgba(15, 18, 22, ${alpha})`;
+        ctx.shadowBlur = blur;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = dy;
+        ctx.fillStyle = 'rgba(252, 250, 246, 1)';
+        roundRectPath(ctx, boxX, boxY, boxW, boxH, radius);
+        ctx.fill();
+        ctx.restore();
+      });
+
+      ctx.fillStyle = 'rgba(252, 250, 246, 0.98)';
+      ctx.strokeStyle = 'rgba(60, 64, 70, 0.12)';
+      ctx.lineWidth = 1.25;
+      roundRectPath(ctx, boxX, boxY, boxW, boxH, radius);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(dotX, boxY + 26, dotR, 0, Math.PI * 2);
+      ctx.fillStyle = accent;
+      ctx.fill();
+
+      ctx.fillStyle = mixHex(accent, '#2a3038', 0.22);
+      ctx.font = '600 17px "Montserrat", "Helvetica Neue", sans-serif';
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'left';
+      ctx.fillText(label, textX, boxY + 26);
+
+      const trackX = textX;
+      const trackY = boxY + boxH - 22;
+      const trackW = boxX + boxW - 16 - textX;
+      const trackH = 6;
+      const progress = statusProgress(status);
+
+      ctx.fillStyle = 'rgba(60, 64, 70, 0.12)';
+      roundRectPath(ctx, trackX, trackY, trackW, trackH, 3);
+      ctx.fill();
+
+      if (progress > 0.01) {
+        ctx.fillStyle = accent;
+        roundRectPath(ctx, trackX, trackY, Math.max(trackH, trackW * progress), trackH, 3);
+        ctx.fill();
+      } else if (status === 'decommissioned') {
+        ctx.strokeStyle = mixHex(accent, '#8a8680', 0.2);
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.moveTo(trackX + 2, trackY + trackH / 2);
+        ctx.lineTo(trackX + trackW - 2, trackY + trackH / 2);
+        ctx.stroke();
+      }
+
+      return {
+        width: w,
+        height: h,
+        data: ctx.getImageData(0, 0, w, h).data
+      };
+    }
+
+    function buildStatusBadgeIconMatch() {
+      return [
+        'match',
+        STATUS_GET_EXPR,
+        'operational',
+        statusBadgeImageId('operational'),
+        'under_construction',
+        statusBadgeImageId('under_construction'),
+        'planned',
+        statusBadgeImageId('planned'),
+        'decommissioned',
+        statusBadgeImageId('decommissioned'),
+        ''
+      ];
+    }
+
+    /** Card stato: compaiono solo da vicino. */
+    const STATUS_BADGE_OPACITY_EXPR = [
+      'interpolate',
+      ['linear'],
+      ['zoom'],
+      10.2,
+      0,
+      11.2,
+      0.95,
+      13,
+      1
+    ];
+
+    // Più grandi: canvas 196×72 @ pixelRatio 2 → ~98×36 logici
+    const STATUS_BADGE_SIZE_EXPR = [
+      'interpolate',
+      ['linear'],
+      ['zoom'],
+      10,
+      0.78,
+      12,
+      0.92,
+      15,
+      1.08
+    ];
+
+    // Translate in px: poco sotto il pin, senza sovrapporsi
+    const STATUS_BADGE_TRANSLATE_EXPR = [
+      'interpolate',
+      ['linear'],
+      ['zoom'],
+      10,
+      ['literal', [0, 20]],
+      12,
+      ['literal', [0, 28]],
+      15,
+      ['literal', [0, 38]]
+    ];
+
+    const STATUS_BADGE_LAYERS = [
+      'data-centers-status-badges',
+      'raw-materials-status-badges',
+      'energy-plants-status-badges'
+    ];
+
+    const POINT_LAYERS = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'];
 
     function resetHighlights() {
       ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
@@ -506,10 +764,15 @@ import {
           map.setPaintProperty(layerId, 'line-width', 1.6);
         }
       });
-      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+      POINT_LAYERS.forEach(layerId => {
         if (map.getLayer(layerId)) {
-          map.setLayoutProperty(layerId, 'icon-size', ICON_SIZE);
-          map.setPaintProperty(layerId, 'icon-opacity', ICON_OPACITY_EXPR);
+          map.setLayoutProperty(layerId, 'icon-size', ICON_SIZE_BY_ZOOM);
+          map.setPaintProperty(layerId, 'icon-opacity', SITE_ICON_OPACITY_EXPR);
+        }
+      });
+      STATUS_BADGE_LAYERS.forEach(layerId => {
+        if (map.getLayer(layerId)) {
+          map.setPaintProperty(layerId, 'icon-opacity', STATUS_BADGE_OPACITY_EXPR);
         }
       });
     }
@@ -562,15 +825,15 @@ import {
         map.setPaintProperty(layerId, 'line-width', ['case', isDirectEdge, 3.4, 0.9]);
       });
 
-      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+      POINT_LAYERS.forEach(layerId => {
         if (!map.getLayer(layerId)) return;
         map.setLayoutProperty(layerId, 'icon-size', [
           'case',
           ['==', ['get', 'id'], featureId],
-          ICON_SIZE_HIGHLIGHT,
+          ICON_SIZE_HIGHLIGHT_BY_ZOOM,
           ['in', ['get', 'id'], ['literal', relatedList]],
-          ICON_SIZE_RELATED,
-          ICON_SIZE_DIMMED
+          ICON_SIZE_RELATED_BY_ZOOM,
+          ICON_SIZE_DIMMED_BY_ZOOM
         ]);
         map.setPaintProperty(layerId, 'icon-opacity', [
           'case',
@@ -579,6 +842,17 @@ import {
           ['in', ['get', 'id'], ['literal', relatedList]],
           0.95,
           0.28
+        ]);
+      });
+      STATUS_BADGE_LAYERS.forEach(layerId => {
+        if (!map.getLayer(layerId)) return;
+        map.setPaintProperty(layerId, 'icon-opacity', [
+          'case',
+          ['==', ['get', 'id'], featureId],
+          1,
+          ['in', ['get', 'id'], ['literal', relatedList]],
+          0.9,
+          0.12
         ]);
       });
     }
@@ -1061,19 +1335,28 @@ import {
         map.setPaintProperty(layerId, 'line-opacity', ['case', isThisEdge, 0.95, 0.1]);
         map.setPaintProperty(layerId, 'line-width', ['case', isThisEdge, 3.6, 0.9]);
       });
-      ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach(layerId => {
+      POINT_LAYERS.forEach(layerId => {
         if (!map.getLayer(layerId)) return;
         map.setLayoutProperty(layerId, 'icon-size', [
           'case',
           ['in', ['get', 'id'], ['literal', pair]],
-          ICON_SIZE_HIGHLIGHT,
-          ICON_SIZE_DIMMED
+          ICON_SIZE_HIGHLIGHT_BY_ZOOM,
+          ICON_SIZE_DIMMED_BY_ZOOM
         ]);
         map.setPaintProperty(layerId, 'icon-opacity', [
           'case',
           ['in', ['get', 'id'], ['literal', pair]],
           1,
           0.28
+        ]);
+      });
+      STATUS_BADGE_LAYERS.forEach(layerId => {
+        if (!map.getLayer(layerId)) return;
+        map.setPaintProperty(layerId, 'icon-opacity', [
+          'case',
+          ['in', ['get', 'id'], ['literal', pair]],
+          1,
+          0.12
         ]);
       });
       window.SubstratoMapChrome?.dismissMapHint?.();
@@ -1123,15 +1406,35 @@ import {
       energyPlantsData = await epRes.json();
       connectionsData = await connRes.json();
 
-      // Marker icons by subtype (colore semantico)
+      // Marker icons by subtype × status (pieno / cantiere / fantasma / disattivato)
       Object.values(FILTER_GROUPS).forEach((group) => {
         group.subtypes.forEach((subtype) => {
           const path = ICON_PATHS[subtype];
-          if (path) {
-            const color = SUBTYPE_COLORS[subtype] || group.color;
-            map.addImage(iconImageId(subtype), createMapIconImage(path, color));
-          }
+          if (!path) return;
+          const color = SUBTYPE_COLORS[subtype] || group.color;
+          ICON_STATUS_STYLES.forEach((style) => {
+            const id = iconImageId(subtype, style);
+            if (!map.hasImage(id)) {
+              map.addImage(
+                id,
+                createMapIconImage(path, color, ICON_CANVAS_SIZE, style),
+                { pixelRatio: ICON_PIXEL_RATIO }
+              );
+            }
+          });
         });
+      });
+
+      // Mini-card stato: pallino + etichetta + barra
+      ['operational', 'under_construction', 'planned', 'decommissioned'].forEach((status) => {
+        const id = statusBadgeImageId(status);
+        if (!map.hasImage(id)) {
+          map.addImage(
+            id,
+            createStatusBadgeImage(status, STATUS_SHORT_LABELS[status], STATUS_COLORS[status]),
+            { pixelRatio: ICON_PIXEL_RATIO }
+          );
+        }
       });
 
       // Add sources
@@ -1306,23 +1609,76 @@ import {
       });
 
       const pointLayerPaint = {
-        'icon-opacity': ICON_OPACITY_EXPR
+        'icon-opacity': SITE_ICON_OPACITY_EXPR
       };
 
       const pointLayerLayout = {
-        'icon-size': ICON_SIZE,
+        'icon-size': ICON_SIZE_BY_ZOOM,
         'icon-allow-overlap': true,
         'icon-ignore-placement': true
       };
 
-      // Point layers — una silhouette per sottotipo (gas, solar, colocation…)
+      const statusBadgeLayout = {
+        'icon-image': buildStatusBadgeIconMatch(),
+        'icon-size': STATUS_BADGE_SIZE_EXPR,
+        'icon-anchor': 'top',
+        'icon-offset': ['literal', [0, 0]],
+        'icon-allow-overlap': true,
+        'icon-ignore-placement': true,
+        'icon-padding': 4
+      };
+
+      const statusBadgePaint = {
+        'icon-opacity': STATUS_BADGE_OPACITY_EXPR,
+        'icon-translate': STATUS_BADGE_TRANSLATE_EXPR,
+        'icon-translate-anchor': 'viewport'
+      };
+
+      const statusBadgeFilterBase = [
+        'in',
+        STATUS_GET_EXPR,
+        ['literal', ['operational', 'under_construction', 'planned', 'decommissioned']]
+      ];
+
+      // Card sotto i pin (prima delle icone, così il pin resta sopra)
+      map.addLayer({
+        id: 'data-centers-status-badges',
+        type: 'symbol',
+        source: 'data-centers',
+        filter: statusBadgeFilterBase,
+        layout: statusBadgeLayout,
+        paint: statusBadgePaint
+      });
+
+      map.addLayer({
+        id: 'raw-materials-status-badges',
+        type: 'symbol',
+        source: 'raw-materials',
+        filter: statusBadgeFilterBase,
+        layout: statusBadgeLayout,
+        paint: statusBadgePaint
+      });
+
+      map.addLayer({
+        id: 'energy-plants-status-badges',
+        type: 'symbol',
+        source: 'energy-plants',
+        filter: statusBadgeFilterBase,
+        layout: statusBadgeLayout,
+        paint: statusBadgePaint
+      });
+
+      // Point layers — silhouette per sottotipo + variante di stato
       map.addLayer({
         id: 'data-centers-layer',
         type: 'symbol',
         source: 'data-centers',
         layout: {
           ...pointLayerLayout,
-          'icon-image': buildIconMatch(FILTER_GROUPS.data_centers.subtypes, iconImageId('hyperscale'))
+          'icon-image': buildStatusAwareIconMatch(
+            FILTER_GROUPS.data_centers.subtypes,
+            'hyperscale'
+          )
         },
         paint: pointLayerPaint
       });
@@ -1333,7 +1689,10 @@ import {
         source: 'raw-materials',
         layout: {
           ...pointLayerLayout,
-          'icon-image': buildIconMatch(FILTER_GROUPS.raw_materials.subtypes, iconImageId('lithium_mine'))
+          'icon-image': buildStatusAwareIconMatch(
+            FILTER_GROUPS.raw_materials.subtypes,
+            'lithium_mine'
+          )
         },
         paint: pointLayerPaint
       });
@@ -1344,7 +1703,10 @@ import {
         source: 'energy-plants',
         layout: {
           ...pointLayerLayout,
-          'icon-image': buildIconMatch(FILTER_GROUPS.energy_plants.subtypes, iconImageId('gas'))
+          'icon-image': buildStatusAwareIconMatch(
+            FILTER_GROUPS.energy_plants.subtypes,
+            'gas'
+          )
         },
         paint: pointLayerPaint
       });
@@ -1449,7 +1811,8 @@ import {
         data_centers: { subtypes: new Set(FILTER_GROUPS.data_centers.subtypes) },
         energy_plants: { subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes) },
         raw_materials: { subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes) },
-        connections: { types: new Set(CONNECTION_TYPES) }
+        connections: { types: new Set(CONNECTION_TYPES) },
+        status: new Set(SITE_STATUSES)
       };
 
       const dataByGroup = {
@@ -1458,6 +1821,24 @@ import {
         raw_materials: () => rawMaterialsData,
         connections: () => connectionsData
       };
+
+      function featureStatus(props) {
+        return props?.status || 'unknown';
+      }
+
+      function matchesStatus(props) {
+        return filterState.status.has(featureStatus(props));
+      }
+
+      function siteLayerFilter(gid) {
+        const subtypes = Array.from(filterState[gid].subtypes);
+        const statuses = Array.from(filterState.status);
+        return [
+          'all',
+          ['in', ['get', 'subtype'], ['literal', subtypes]],
+          ['in', STATUS_GET_EXPR, ['literal', statuses]]
+        ];
+      }
 
       function countVisible(groupId) {
         const data = dataByGroup[groupId]();
@@ -1468,7 +1849,22 @@ import {
           ).length;
         }
         const state = filterState[groupId];
-        return data.features.filter(f => state.subtypes.has(f.properties.subtype)).length;
+        return data.features.filter(
+          f => state.subtypes.has(f.properties.subtype) && matchesStatus(f.properties)
+        ).length;
+      }
+
+      function countStatusVisible() {
+        let n = 0;
+        ['data_centers', 'energy_plants', 'raw_materials'].forEach((gid) => {
+          const data = dataByGroup[gid]();
+          if (!data) return;
+          const subtypes = filterState[gid].subtypes;
+          n += data.features.filter(
+            (f) => subtypes.has(f.properties.subtype) && matchesStatus(f.properties)
+          ).length;
+        });
+        return n;
       }
 
       function syncGroupAllLabels() {
@@ -1479,6 +1875,8 @@ import {
           let anyOn = false;
           if (gid === 'connections') {
             anyOn = filterState.connections.types.size > 0;
+          } else if (gid === 'status') {
+            anyOn = filterState.status.size > 0;
           } else if (FILTER_GROUPS[gid]) {
             anyOn = filterState[gid].subtypes.size > 0;
           }
@@ -1494,6 +1892,8 @@ import {
           const el = document.querySelector(`[data-count-for="${id}"]`);
           if (el) el.textContent = String(n);
         });
+        const statusCountEl = document.querySelector('[data-count-for="status"]');
+        if (statusCountEl) statusCountEl.textContent = String(countStatusVisible());
         const summary = document.getElementById('filters-count');
         if (summary) {
           const label = summary.getAttribute('data-label') || 'Visibili';
@@ -1503,17 +1903,39 @@ import {
       }
 
       function applyFilters() {
+        const statusOn = filterState.status.size > 0;
+        const badgeLayerByGroup = {
+          data_centers: 'data-centers-status-badges',
+          energy_plants: 'energy-plants-status-badges',
+          raw_materials: 'raw-materials-status-badges'
+        };
         Object.keys(FILTER_GROUPS).forEach((gid) => {
           const group = FILTER_GROUPS[gid];
           const state = filterState[gid];
-          const visible = state.subtypes.size > 0;
+          const visible = state.subtypes.size > 0 && statusOn;
           map.setLayoutProperty(group.layerId, 'visibility', visible ? 'visible' : 'none');
           if (visible) {
-            map.setFilter(group.layerId, [
-              'in',
-              ['get', 'subtype'],
-              ['literal', Array.from(state.subtypes)]
-            ]);
+            map.setFilter(group.layerId, siteLayerFilter(gid));
+          }
+          const badgeId = badgeLayerByGroup[gid];
+          if (badgeId && map.getLayer(badgeId)) {
+            map.setLayoutProperty(badgeId, 'visibility', visible ? 'visible' : 'none');
+            if (visible) {
+              map.setFilter(badgeId, [
+                'all',
+                siteLayerFilter(gid),
+                [
+                  'in',
+                  STATUS_GET_EXPR,
+                  [
+                    'literal',
+                    ['operational', 'under_construction', 'planned', 'decommissioned'].filter((s) =>
+                      filterState.status.has(s)
+                    )
+                  ]
+                ]
+              ]);
+            }
           }
         });
 
@@ -1540,6 +1962,12 @@ import {
           btn.classList.toggle('is-on', on);
           btn.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
+        document.querySelectorAll('.filter-chip[data-status]').forEach((btn) => {
+          const status = btn.getAttribute('data-status');
+          const on = filterState.status.has(status);
+          btn.classList.toggle('is-on', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
         syncGroupAllLabels();
       }
 
@@ -1548,6 +1976,7 @@ import {
           filterState[gid].subtypes = new Set(FILTER_GROUPS[gid].subtypes);
         });
         filterState.connections.types = new Set(CONNECTION_TYPES);
+        filterState.status = new Set(SITE_STATUSES);
         syncChipUI();
         applyFilters();
       }
@@ -1558,6 +1987,12 @@ import {
             filterState.connections.types.clear();
           } else {
             filterState.connections.types = new Set(CONNECTION_TYPES);
+          }
+        } else if (gid === 'status') {
+          if (filterState.status.size > 0) {
+            filterState.status.clear();
+          } else {
+            filterState.status = new Set(SITE_STATUSES);
           }
         } else if (FILTER_GROUPS[gid]) {
           if (filterState[gid].subtypes.size > 0) {
@@ -1590,6 +2025,16 @@ import {
           const set = filterState.connections.types;
           if (set.has(rel)) set.delete(rel);
           else set.add(rel);
+          syncChipUI();
+          applyFilters();
+        });
+      });
+
+      document.querySelectorAll('.filter-chip[data-status]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const status = btn.getAttribute('data-status');
+          if (filterState.status.has(status)) filterState.status.delete(status);
+          else filterState.status.add(status);
           syncChipUI();
           applyFilters();
         });

@@ -8,7 +8,9 @@ import {
   CONNECTION_TYPES,
   ICON_PATHS,
   colorForSubtype,
-  CONTEXT_OVERLAYS
+  CONTEXT_OVERLAYS,
+  SITE_STATUSES,
+  STATUS_COLORS
 } from '../lib/mapIcons';
 
 type DatasetMeta = {
@@ -52,6 +54,9 @@ const overlayText = (key: string) => overlayLabels[key] || key;
 const c = i18n.controls;
 
 const siteGroups = Object.values(FILTER_GROUPS);
+const statusShort = (c as { status_short?: Record<string, string> }).status_short || {};
+const statusLabel = (key: string) =>
+  statusShort[key] || (i18n.status as Record<string, string>)[key] || key;
 ---
 
 <div id="map"></div>
@@ -224,6 +229,67 @@ const siteGroups = Object.values(FILTER_GROUPS);
           </div>
         </details>
       ))}
+    </div>
+
+    <div class="filters-section">
+      <p class="filters-section-label">{c.section_status}</p>
+      <p class="filters-section-hint">{c.section_status_lead}</p>
+      <details class="filter-group" data-group="status" open>
+        <summary class="filter-group-summary">
+          <span class="filter-group-left">
+            <span class="filter-group-swatch swatch-status" aria-hidden="true"></span>
+            <span class="filter-group-title">{c.section_status}</span>
+            <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 6l4 4 4-4"></path>
+            </svg>
+          </span>
+          <span class="filter-group-right">
+            <button
+              type="button"
+              class="filter-group-all"
+              data-group-all="status"
+              data-label-show={c.show_all}
+              data-label-hide={c.hide_all}
+            >
+              {c.hide_all}
+            </button>
+            <span class="filter-group-count" data-count-for="status">0</span>
+          </span>
+        </summary>
+        <div class="filter-chips" data-chips-for="status">
+          {SITE_STATUSES.map((status) => (
+            <button
+              type="button"
+              class="filter-chip is-on chip-status"
+              data-group="status"
+              data-status={status}
+              aria-pressed="true"
+              title={(i18n.status as Record<string, string>)[status]}
+              style={`--chip-color: ${STATUS_COLORS[status]};`}
+            >
+              <span class={`status-swatch status-${status}`} aria-hidden="true"></span>
+              <span>{statusLabel(status)}</span>
+            </button>
+          ))}
+        </div>
+        <p class="filters-status-legend">
+          <span class="status-legend-item">
+            <span class="status-swatch status-operational" aria-hidden="true"></span>
+            {i18n.legend.status_style_operational}
+          </span>
+          <span class="status-legend-item">
+            <span class="status-swatch status-under_construction" aria-hidden="true"></span>
+            {i18n.legend.status_halo_construction}
+          </span>
+          <span class="status-legend-item">
+            <span class="status-swatch status-planned" aria-hidden="true"></span>
+            {i18n.legend.status_halo_planned}
+          </span>
+          <span class="status-legend-item status-legend-hint">
+            {i18n.legend.status_labels_hint}
+          </span>
+        </p>
+      </details>
     </div>
 
     <div class="filters-section">

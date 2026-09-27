@@ -964,6 +964,11 @@ body.is-map {
 .swatch-dc { background: var(--dc); }
 .swatch-rm { background: var(--rm); border-radius: 2px; transform: rotate(45deg) scale(0.85); }
 .swatch-ep { background: var(--ep); border-radius: 2px; }
+.swatch-status {
+  background: transparent;
+  border: 2px solid #D4892A;
+  box-sizing: border-box;
+}
 .swatch-conn {
   width: 14px;
   height: 0;
@@ -1084,6 +1089,75 @@ body.is-map {
   height: 0;
   border-top: 2px dashed var(--chip-color, var(--conn));
   flex-shrink: 0;
+}
+
+.status-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: color-mix(in srgb, var(--chip-color, #8A9199) 35%, transparent);
+  border: 2px solid var(--chip-color, #8A9199);
+}
+
+.status-swatch.status-operational {
+  --chip-color: #2F6F9A;
+  background: var(--chip-color);
+  border-color: var(--chip-color);
+}
+
+.status-swatch.status-under_construction {
+  --chip-color: #D4892A;
+  background: color-mix(in srgb, var(--chip-color) 42%, transparent);
+}
+
+.status-swatch.status-planned {
+  --chip-color: #4A7FA0;
+  background: transparent;
+  border-style: dashed;
+  border-width: 1.5px;
+}
+
+.status-swatch.status-decommissioned {
+  --chip-color: #6A6560;
+  background: color-mix(in srgb, var(--chip-color) 40%, transparent);
+  opacity: 0.75;
+}
+
+.status-swatch.status-unknown {
+  --chip-color: #9AA0A6;
+  background: color-mix(in srgb, var(--chip-color) 25%, transparent);
+  border-style: dotted;
+}
+
+.filters-section-hint {
+  margin: -2px 0 8px;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.filters-status-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 2px 0 6px;
+  padding: 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.status-legend-item {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.status-legend-hint {
+  margin-top: 2px;
+  font-style: italic;
 }
 
 .conn-powers { --chip-color: var(--ep); }

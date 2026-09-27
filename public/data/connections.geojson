@@ -727,6 +727,224 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.29,
+            45.19
+          ],
+          [
+            8.295,
+            45.188
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_021",
+        "source_id": "ep_002",
+        "target_id": "dc_028",
+        "source_name": "Enel Trino Solar Park",
+        "target_name": "Cavour Hyperscale Campus — Trino (ex Galileo Ferraris)",
+        "relationship_type": "powers",
+        "description_it": "Il FV Enel di Trino è il maggiore apportatore rinnovabile locale citato a supporto energetico del territorio dove sorge il Cavour Hyperscale Campus (ex Galileo Ferraris).",
+        "certainty": "likely",
+        "evidence_note_it": "Comunicazione istituzionale/Regionale e cronaca sul progetto Cavour citano il vicino parco Enel come asset energetico del sito. Non risulta un PPA esclusivo nominato Enel Trino→Cavour: quindi likely, non confirmed.",
+        "as_of": "2026-09-27",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "MIMIT — Cavour Hyperscale Campus",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Cronaca — Cavour e FV Enel a Trino",
+            "url": "https://torinonews24.it/news/il-piemonte-sara-centro-europeo-dellintelligenza-artificiale-al-via-un-maxi-piano-da-4-miliardi-per-lex-centrale-nucleare-ecco-il-progetto/",
+            "accessed_at": "2026-09-27",
+            "note": "Cita il FV Enel come supporto ai consumi del campus"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.03706,
+            45.47154
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_022",
+        "source_id": "ep_001",
+        "target_id": "dc_021",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "Data4 Campus MIL01 — Cornaredo",
+        "relationship_type": "powers",
+        "description_it": "Turbigo (CCGT) è un nodo della rete lombarda che serve il cluster ovest milanese, incluso il campus Data4 di Cornaredo.",
+        "certainty": "inferred",
+        "evidence_note_it": "Prossimità di rete / stesso cluster. Nessun PPA pubblico Turbigo→Data4.",
+        "as_of": "2026-09-27",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Nota metodologica Substrato — legami energetici inferred",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.31835,
+            45.35517
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_023",
+        "source_id": "ep_001",
+        "target_id": "dc_022",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "Vantage MXP1 — Melegnano",
+        "relationship_type": "powers",
+        "description_it": "La rete lombarda alimentata anche da Turbigo serve l’area sud/ovest di Milano dove sorge Vantage MXP1 a Melegnano.",
+        "certainty": "inferred",
+        "evidence_note_it": "Inferenza di cluster energetico regionale, non offtake nominato.",
+        "as_of": "2026-09-27",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Nota metodologica Substrato — legami energetici inferred",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.09359,
+            45.33921
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_024",
+        "source_id": "ep_001",
+        "target_id": "dc_024",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "Microsoft Azure — Noviglio (Santa Corinna)",
+        "relationship_type": "powers",
+        "description_it": "Il campus Microsoft di Noviglio preleva dalla rete lombarda a cui contribuisce Turbigo, nello stesso corridoio sud-ovest milanese.",
+        "certainty": "inferred",
+        "evidence_note_it": "Nessun PPA Turbigo→Microsoft Noviglio; inferred di rete.",
+        "as_of": "2026-09-27",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Nota metodologica Substrato — legami energetici inferred",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.11167,
+            45.37337
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_025",
+        "source_id": "ep_001",
+        "target_id": "dc_025",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "AWS Europe (Milano) — Zibido San Giacomo",
+        "relationship_type": "powers",
+        "description_it": "L’espansione AWS a Zibido San Giacomo rientra nel cluster milanese servito dalla rete a cui contribuisce Turbigo, con nuove opere Terna a Lacchiarella.",
+        "certainty": "inferred",
+        "evidence_note_it": "Inferenza di rete; la VIA cita SE Lacchiarella Ovest, non un offtake da Turbigo.",
+        "as_of": "2026-09-27",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "MASE VIA — AWS Zibido",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11970",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.7424,
+            45.5202
+          ],
+          [
+            9.13732,
+            45.32157
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_026",
+        "source_id": "ep_001",
+        "target_id": "dc_031",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "K2 Strategic Infrastructure — Zibido / Lacchiarella",
+        "relationship_type": "powers",
+        "description_it": "Il campus K2 Zibido/Lacchiarella (~400 MW) graverà sulla stessa rete sud-milanese a cui contribuisce Turbigo.",
+        "certainty": "inferred",
+        "evidence_note_it": "Prossimità e scala di rete; nessun contratto nominato.",
+        "as_of": "2026-09-27",
+        "updated_at": "2026-09-27",
+        "sources": [
+          {
+            "title": "Nota metodologica Substrato — legami energetici inferred",
+            "accessed_at": "2026-09-27"
+          }
+        ]
+      }
     }
   ]
 }

@@ -71,9 +71,27 @@
         "subtype": "solar",
         "operator": "Enel Green Power",
         "capacity": "87 MW",
-        "description_it": "Il più grande parco fotovoltaico del nord Italia, a Trino (Vercelli), Piemonte. 160.000 pannelli solari con sistema di accumulo a batterie al litio. Produce circa 130 GWh all'anno. Operativo da giugno 2024, costruito sul sito di una ex centrale termoelettrica, simbolo della transizione energetica.",
+        "description_it": "Il più grande parco fotovoltaico del nord Italia, a Trino (Vercelli): ~87 MW, ~160.000 pannelli e sistema di accumulo. Operativo da giugno 2024 sull’area di un’ex centrale termoelettrica. Nello stesso territorio è previsto il Cavour Hyperscale Campus (dc_028) sulla ex Galileo Ferraris: nodo chiave energia↔AI in Piemonte.",
         "country": "IT",
-        "city": "Trino"
+        "city": "Trino",
+        "updated_at": "2026-09-27",
+        "status": "operational",
+        "impact": {
+          "capacity_mw": 87,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Fotovoltaico utility-scale con accumulo; produzione stimata ~130 GWh/anno."
+        },
+        "sources": [
+          {
+            "title": "Enel Green Power — Trino Solar Park",
+            "accessed_at": "2026-09-27",
+            "note": "Maggior FV Nord Italia; co-localizzazione con area industriale Trino"
+          }
+        ]
       }
     },
     {

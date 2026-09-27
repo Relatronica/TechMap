@@ -11,10 +11,10 @@
       "skippedFilter": 26224
     },
     "data_centers": {
-      "total": 817,
-      "curated": 19,
-      "imported": 798,
-      "skippedDup": 387,
+      "total": 835,
+      "curated": 39,
+      "imported": 796,
+      "skippedDup": 389,
       "skippedFilter": 6142
     }
   },

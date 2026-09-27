@@ -175,14 +175,14 @@
       {
         "status": "in_progress",
         "status_label": "In sviluppo",
-        "title": "Il lavoro lungo la filiera",
-        "body": "Su corridoi documentati: organici, condizioni e rischi (miniera → fab → ODM → campus), non un layer di punti vuoti. Poi altri siti italiani e metriche energia/acqua."
+        "title": "Profondità Italia",
+        "body": "Prima i corridoi italiani dove il dibattito è vivo: cluster Milano, Trino, Bologna (HPC/AI), Sulcis — con fonti, status e certezza. Poi lavoro (organici/rischi) e metriche energia/acqua sui siti già curati."
       },
       {
         "status": "planned",
         "status_label": "In programma",
         "title": "Analizzare e condividere",
-        "body": "Serie temporali, contributi verificati dalla comunità, confronti territoriali e export per giornalismo e ricerca."
+        "body": "Serie temporali, contributi verificati dalla comunità, confronti territoriali e export per giornalismo e ricerca. Allargamento UE dopo la densità Italia."
       }
     ],
     "footer_cta": "Pronto a vedere l'infrastruttura?",
@@ -389,9 +389,18 @@
     "show_all": "Mostra",
     "hide_all": "Nascondi",
     "section_sites": "Siti",
+    "section_status": "Stato",
+    "section_status_lead": "Distingue operativi, cantieri e progetti in pipeline.",
     "section_links": "Legami",
     "section_context": "Contesto",
     "filters_lead": "Accendi o spegni cosa compare sulla mappa.",
+    "status_short": {
+      "operational": "Operativo",
+      "under_construction": "Cantiere",
+      "planned": "Pianificato",
+      "decommissioned": "Disattivato",
+      "unknown": "Sconosciuto"
+    },
     "filters_open": "Apri filtri",
     "filters_close": "Chiudi filtri",
     "map_hint_title": "Inizia da un punto",
@@ -431,7 +440,11 @@
     "lines": "Connessioni",
     "line_powers": "Alimentazione energetica",
     "line_supplies": "Fornitura materiali",
-    "line_manufactures": "Produzione componenti"
+    "line_manufactures": "Produzione componenti",
+    "status_halo_construction": "Pieno caldo = in costruzione",
+    "status_halo_planned": "Tratteggio fine = pianificato",
+    "status_style_operational": "Pieno = operativo",
+    "status_labels_hint": "Da vicino: card sotto il pin con stato e avanzamento"
   },
   "overlays": {
     "title": "Contesto",
