@@ -17,6 +17,7 @@ import {
   ICON_STATUS_STYLES,
   ICON_CANVAS_SIZE,
   ICON_PIXEL_RATIO,
+  STATUS_BADGE_PIXEL_RATIO,
   ICON_SIZE_BY_ZOOM,
   ICON_SIZE_HIGHLIGHT_BY_ZOOM,
   ICON_SIZE_RELATED_BY_ZOOM,
@@ -31,7 +32,8 @@ const STATUS_SHORT_LABELS = {
   operational: i18n.controls.status_short.operational,
   under_construction: i18n.controls.status_short.under_construction,
   planned: i18n.controls.status_short.planned,
-  decommissioned: i18n.controls.status_short.decommissioned
+  decommissioned: i18n.controls.status_short.decommissioned,
+  unknown: i18n.controls.status_short.unknown
 };
 ---
 
@@ -51,11 +53,10 @@ const STATUS_SHORT_LABELS = {
   </script>
 
   <!-- Client-side MapLibre Script -->
-  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, SITE_ICON_OPACITY_EXPR, SITE_STATUSES, STATUS_COLORS, STATUS_GET_EXPR, ICON_STATUS_STYLES, ICON_CANVAS_SIZE, ICON_PIXEL_RATIO, ICON_SIZE_BY_ZOOM, ICON_SIZE_HIGHLIGHT_BY_ZOOM, ICON_SIZE_RELATED_BY_ZOOM, ICON_SIZE_DIMMED_BY_ZOOM, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_RELATED, ICON_SIZE_DIMMED, STATUS_SHORT_LABELS }}>
+  <script is:inline define:vars={{ ICON_PATHS, FILTER_GROUPS, CONNECTION_TYPES, CONTEXT_OVERLAYS, SUBTYPE_COLORS, ICON_OPACITY_EXPR, SITE_ICON_OPACITY_EXPR, SITE_STATUSES, STATUS_COLORS, STATUS_GET_EXPR, ICON_STATUS_STYLES, ICON_CANVAS_SIZE, ICON_PIXEL_RATIO, STATUS_BADGE_PIXEL_RATIO, ICON_SIZE_BY_ZOOM, ICON_SIZE_HIGHLIGHT_BY_ZOOM, ICON_SIZE_RELATED_BY_ZOOM, ICON_SIZE_DIMMED_BY_ZOOM, ICON_SIZE, ICON_SIZE_HIGHLIGHT, ICON_SIZE_RELATED, ICON_SIZE_DIMMED, STATUS_SHORT_LABELS }}>
     // MapLibre GL JS loaded from CDN as global `maplibregl`
     var MaplibreMap = maplibregl.Map;
     var NavigationControl = maplibregl.NavigationControl;
-    var Popup = maplibregl.Popup;
 
     // i18n strings loaded inline for client-side use
     const i18n = {
@@ -102,6 +103,7 @@ const STATUS_SHORT_LABELS = {
         connections: "Connessioni",
         connections_hint: "Segui un legame per spostarti al sito collegato.",
         open_connected: "Apri sulla mappa",
+        linked_sites: "Siti del legame",
         powered_by: "Alimentato da",
         components_from: "Componenti da",
         supplies_from: "Forniture da",
@@ -488,64 +490,82 @@ const STATUS_SHORT_LABELS = {
       );
     }
 
+    function clearIconShadow(ctx) {
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 0;
+    }
+
+    function paintIconDropShadow(ctx, path, lineWidth, opts = {}) {
+      const drop = opts.drop ?? 0.42;
+      const dropY = opts.dropY ?? 1.15;
+
+      ctx.shadowColor = `rgba(15, 18, 22, ${drop})`;
+      ctx.shadowBlur = 3.8;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = dropY;
+      ctx.strokeStyle = 'rgba(15, 18, 22, 0.22)';
+      ctx.lineWidth = lineWidth + 0.35;
+      ctx.stroke(path);
+
+      clearIconShadow(ctx);
+    }
+
     function createMapIconImage(pathD, color, size = ICON_CANVAS_SIZE, style = 'solid') {
       const canvas = document.createElement('canvas');
       canvas.width = size;
       canvas.height = size;
       const ctx = canvas.getContext('2d');
-      const cx = size / 2;
-      const cy = size / 2;
-      const scale = (size * 0.64) / 24;
+      const scale = (size * 0.68) / 24;
       const path = new Path2D(pathD);
 
       ctx.save();
-      ctx.translate(cx - 12 * scale, cy - 12 * scale);
+      ctx.translate(size / 2 - 12 * scale, size / 2 - 12 * scale);
       ctx.scale(scale, scale);
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
+      ctx.miterLimit = 2;
 
       if (style === 'solid') {
-        ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
-        ctx.shadowBlur = 2.2;
-        ctx.shadowOffsetY = 1;
+        const lw = 2.75;
+        paintIconDropShadow(ctx, path, lw, { drop: 0.48, dropY: 1.2 });
         ctx.fillStyle = color;
         ctx.strokeStyle = color;
-        ctx.lineWidth = 2.6;
+        ctx.lineWidth = lw;
         ctx.fill(path);
         ctx.stroke(path);
       } else if (style === 'construction') {
         const warm = mixHex(color, STATUS_COLORS.under_construction, 0.78);
-        ctx.shadowColor = 'rgba(140, 80, 20, 0.35)';
-        ctx.shadowBlur = 2.8;
-        ctx.shadowOffsetY = 1;
+        const lw = 2.65;
+        paintIconDropShadow(ctx, path, lw, { drop: 0.4, dropY: 1.1 });
         ctx.fillStyle = mixHex(warm, '#F2C078', 0.18);
-        ctx.globalAlpha = 0.78;
+        ctx.globalAlpha = 0.82;
         ctx.fill(path);
         ctx.globalAlpha = 1;
         ctx.strokeStyle = STATUS_COLORS.under_construction;
-        ctx.lineWidth = 2.55;
+        ctx.lineWidth = lw;
         ctx.stroke(path);
       } else if (style === 'planned') {
         const ink = mixHex(color, STATUS_COLORS.planned, 0.35);
-        ctx.shadowColor = 'rgba(15, 18, 22, 0.16)';
-        ctx.shadowBlur = 1.1;
-        ctx.shadowOffsetY = 0.35;
+        const lw = 1.85;
+        paintIconDropShadow(ctx, path, lw, { drop: 0.22, dropY: 0.7 });
         ctx.strokeStyle = ink;
-        ctx.lineWidth = 1.55;
-        ctx.globalAlpha = 0.34;
+        ctx.lineWidth = 1.65;
+        ctx.globalAlpha = 0.38;
         ctx.stroke(path);
         ctx.globalAlpha = 1;
-        ctx.lineWidth = 1.7;
-        ctx.setLineDash([0.85, 1.2]);
+        ctx.lineWidth = 1.85;
+        ctx.setLineDash([0.9, 1.15]);
         ctx.stroke(path);
         ctx.setLineDash([]);
       } else {
         const muted = mixHex(color, '#7a7e82', 0.72);
-        ctx.shadowColor = 'rgba(15, 18, 22, 0.12)';
-        ctx.shadowBlur = 1;
+        const lw = 1.95;
+        paintIconDropShadow(ctx, path, lw, { drop: 0.2, dropY: 0.65 });
         ctx.strokeStyle = muted;
-        ctx.lineWidth = 1.85;
-        ctx.globalAlpha = 0.85;
+        ctx.lineWidth = lw;
+        ctx.globalAlpha = 0.88;
         ctx.stroke(path);
         ctx.globalAlpha = 1;
       }
@@ -586,15 +606,8 @@ const STATUS_SHORT_LABELS = {
       ];
     }
 
-    function statusBadgeImageId(status) {
-      return 'status-badge-' + status;
-    }
-
-    function statusProgress(status) {
-      if (status === 'planned') return 0.28;
-      if (status === 'under_construction') return 0.62;
-      if (status === 'operational') return 1;
-      return 0;
+    function statusBadgeImageId(status, subtype) {
+      return subtype ? 'status-badge-' + subtype + '--' + status : 'status-badge-' + status;
     }
 
     function roundRectPath(ctx, x, y, w, h, r) {
@@ -612,80 +625,112 @@ const STATUS_SHORT_LABELS = {
       ctx.closePath();
     }
 
+    function drawStatusSwatch(ctx, status, accent, x, y, r) {
+      ctx.save();
+      if (status === 'operational') {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = accent;
+        ctx.fill();
+      } else if (status === 'under_construction') {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = accent;
+        ctx.globalAlpha = 0.42;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = accent;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+      } else if (status === 'planned') {
+        ctx.beginPath();
+        ctx.arc(x, y, r - 0.5, 0, Math.PI * 2);
+        ctx.strokeStyle = accent;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([2.2, 2.2]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      } else if (status === 'decommissioned') {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = accent;
+        ctx.globalAlpha = 0.4;
+        ctx.fill();
+        ctx.globalAlpha = 0.75;
+        ctx.strokeStyle = accent;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      } else {
+        ctx.beginPath();
+        ctx.arc(x, y, r - 0.5, 0, Math.PI * 2);
+        ctx.strokeStyle = accent;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([1.2, 2.4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+      ctx.restore();
+    }
+
+    /** Chip stato: allineato ai filter-chip (superficie scura, pallino semantico). */
     function createStatusBadgeImage(status, label, accent) {
-      const w = 240;
-      const h = 88;
+      const font = '500 22px "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif';
+      const measure = document.createElement('canvas').getContext('2d');
+      if (measure) measure.font = font;
+      const textW = measure ? measure.measureText(label).width : label.length * 12;
+
+      const outerPad = 10;
+      const insetX = 14;
+      const boxH = 52;
+      const radius = 6;
+      const dotR = 7;
+      const gap = 10;
+      const boxW = Math.ceil(insetX + dotR * 2 + gap + textW + insetX);
+      const w = boxW + outerPad * 2;
+      const h = boxH + outerPad * 2;
+
       const canvas = document.createElement('canvas');
       canvas.width = w;
       canvas.height = h;
       const ctx = canvas.getContext('2d');
-      const pad = 12;
-      const radius = 12;
-      const boxX = pad;
-      const boxY = pad - 2;
-      const boxW = w - pad * 2;
-      const boxH = h - pad * 2;
-      const dotR = 5;
-      const dotX = boxX + 18;
-      const textX = boxX + 32;
 
-      const shadowLayers = [
-        { dy: 3, blur: 2, alpha: 0.06 },
-        { dy: 6, blur: 8, alpha: 0.1 },
-        { dy: 10, blur: 16, alpha: 0.08 }
-      ];
-      shadowLayers.forEach(({ dy, blur, alpha }) => {
-        ctx.save();
-        ctx.shadowColor = `rgba(15, 18, 22, ${alpha})`;
-        ctx.shadowBlur = blur;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = dy;
-        ctx.fillStyle = 'rgba(252, 250, 246, 1)';
-        roundRectPath(ctx, boxX, boxY, boxW, boxH, radius);
-        ctx.fill();
-        ctx.restore();
-      });
+      const surface = '#161b22';
+      const ink = '#eef0f3';
+      const fill = mixHex(accent, surface, 0.82);
+      const stroke = mixHex(accent, '#9aa3ad', 0.55);
 
-      ctx.fillStyle = 'rgba(252, 250, 246, 0.98)';
-      ctx.strokeStyle = 'rgba(60, 64, 70, 0.12)';
-      ctx.lineWidth = 1.25;
+      const boxX = outerPad;
+      const boxY = outerPad;
+      const midY = boxY + boxH / 2;
+      const dotX = boxX + insetX + dotR;
+      const textX = boxX + insetX + dotR * 2 + gap;
+
+      ctx.save();
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.28)';
+      ctx.shadowBlur = 14;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 3;
+      ctx.fillStyle = fill;
       roundRectPath(ctx, boxX, boxY, boxW, boxH, radius);
       ctx.fill();
-      ctx.stroke();
+      ctx.restore();
 
-      ctx.beginPath();
-      ctx.arc(dotX, boxY + 26, dotR, 0, Math.PI * 2);
-      ctx.fillStyle = accent;
+      ctx.fillStyle = fill;
+      roundRectPath(ctx, boxX, boxY, boxW, boxH, radius);
       ctx.fill();
+      ctx.strokeStyle = stroke;
+      ctx.globalAlpha = 0.55;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
 
-      ctx.fillStyle = mixHex(accent, '#2a3038', 0.22);
-      ctx.font = '600 17px "Montserrat", "Helvetica Neue", sans-serif';
+      drawStatusSwatch(ctx, status, accent, dotX, midY, dotR);
+
+      ctx.fillStyle = ink;
+      ctx.font = font;
       ctx.textBaseline = 'middle';
       ctx.textAlign = 'left';
-      ctx.fillText(label, textX, boxY + 26);
-
-      const trackX = textX;
-      const trackY = boxY + boxH - 22;
-      const trackW = boxX + boxW - 16 - textX;
-      const trackH = 6;
-      const progress = statusProgress(status);
-
-      ctx.fillStyle = 'rgba(60, 64, 70, 0.12)';
-      roundRectPath(ctx, trackX, trackY, trackW, trackH, 3);
-      ctx.fill();
-
-      if (progress > 0.01) {
-        ctx.fillStyle = accent;
-        roundRectPath(ctx, trackX, trackY, Math.max(trackH, trackW * progress), trackH, 3);
-        ctx.fill();
-      } else if (status === 'decommissioned') {
-        ctx.strokeStyle = mixHex(accent, '#8a8680', 0.2);
-        ctx.lineWidth = 1.4;
-        ctx.beginPath();
-        ctx.moveTo(trackX + 2, trackY + trackH / 2);
-        ctx.lineTo(trackX + trackW - 2, trackY + trackH / 2);
-        ctx.stroke();
-      }
+      ctx.fillText(label, textX, midY + 0.5);
 
       return {
         width: w,
@@ -695,19 +740,25 @@ const STATUS_SHORT_LABELS = {
     }
 
     function buildStatusBadgeIconMatch() {
-      return [
-        'match',
-        STATUS_GET_EXPR,
-        'operational',
-        statusBadgeImageId('operational'),
-        'under_construction',
-        statusBadgeImageId('under_construction'),
-        'planned',
-        statusBadgeImageId('planned'),
-        'decommissioned',
-        statusBadgeImageId('decommissioned'),
-        ''
-      ];
+      const allSubtypes = Object.values(FILTER_GROUPS).flatMap((g) => g.subtypes);
+      const expr = ['match', ['get', 'subtype']];
+      allSubtypes.forEach((subtype) => {
+        expr.push(subtype, [
+          'match',
+          STATUS_GET_EXPR,
+          'operational',
+          statusBadgeImageId('operational', subtype),
+          'under_construction',
+          statusBadgeImageId('under_construction', subtype),
+          'planned',
+          statusBadgeImageId('planned', subtype),
+          'decommissioned',
+          statusBadgeImageId('decommissioned', subtype),
+          ''
+        ]);
+      });
+      expr.push('');
+      return expr;
     }
 
     /** Card stato: compaiono solo da vicino. */
@@ -723,30 +774,30 @@ const STATUS_SHORT_LABELS = {
       1
     ];
 
-    // Più grandi: canvas 196×72 @ pixelRatio 2 → ~98×36 logici
+    // Canvas chip @ pixelRatio 2 → ~altezza 26 CSS
     const STATUS_BADGE_SIZE_EXPR = [
       'interpolate',
       ['linear'],
       ['zoom'],
       10,
-      0.78,
+      0.88,
       12,
-      0.92,
+      1,
       15,
       1.08
     ];
 
-    // Translate in px: poco sotto il pin, senza sovrapporsi
+    // Translate in px: poco sotto il pin
     const STATUS_BADGE_TRANSLATE_EXPR = [
       'interpolate',
       ['linear'],
       ['zoom'],
       10,
-      ['literal', [0, 20]],
+      ['literal', [0, 18]],
       12,
-      ['literal', [0, 28]],
+      ['literal', [0, 24]],
       15,
-      ['literal', [0, 38]]
+      ['literal', [0, 32]]
     ];
 
     const STATUS_BADGE_LAYERS = [
@@ -1281,6 +1332,7 @@ const STATUS_SHORT_LABELS = {
       highlightConnections(resolved.id);
       if (options.frame !== false) frameSelection(resolved.id);
       window.SubstratoMapChrome?.dismissMapHint?.();
+      hideTooltip();
 
       detailBody.querySelectorAll('[data-site-id]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -1292,36 +1344,19 @@ const STATUS_SHORT_LABELS = {
       });
     }
 
-    // Show connection popup (native MapLibre popup for lines)
-    function showConnectionPopup(e, properties) {
-      const props = resolveConnectionProperties(properties);
-      const relType = props.relationship_type;
-      const typeColor = relType === 'powers' ? COLORS.ep :
-                       relType === 'supplies' ? COLORS.rm : COLORS.dc;
-      const typeBg = relType === 'powers' ? 'rgba(90, 173, 122, 0.18)' :
-                     relType === 'supplies' ? 'rgba(209, 122, 82, 0.18)' : 'rgba(107, 168, 201, 0.18)';
-      const certainty = props.certainty && i18n.certainty[props.certainty]
-        ? `<span class="certainty-badge certainty-${props.certainty}">${i18n.popup.certainty}: ${i18n.certainty[props.certainty]}</span>`
-        : '';
-      const evidence = props.evidence_note_it
-        ? `<p class="conn-evidence"><strong>${i18n.popup.evidence}:</strong> ${props.evidence_note_it}</p>`
-        : '';
+    function connAccent(relType) {
+      if (relType === 'powers') return COLORS.ep;
+      if (relType === 'supplies') return COLORS.rm;
+      return COLORS.dc;
+    }
 
-      const popupHtml = `
-        <div class="connection-popup">
-          <h3>${props.source_name} → ${props.target_name}</h3>
-          <span class="conn-type" style="background: ${typeBg}; color: ${typeColor};">${getRelationshipLabel(relType)}</span>
-          ${certainty}
-          <p class="conn-desc">${props.description_it || ''}</p>
-          ${evidence}
-          <div class="conn-actions">
-            <button type="button" class="conn-action" data-site-id="${props.source_id}">${props.source_name}</button>
-            <button type="button" class="conn-action" data-site-id="${props.target_id}">${props.target_name}</button>
-          </div>
-        </div>
-      `;
+    function connIconClass(relType) {
+      if (relType === 'powers') return 'is-power';
+      if (relType === 'supplies') return 'is-supply';
+      return 'is-mfg';
+    }
 
-      // Light up this edge and its two endpoints
+    function highlightConnectionEdge(props) {
       const pair = [props.source_id, props.target_id];
       const isThisEdge = props.id
         ? ['==', ['get', 'id'], props.id]
@@ -1359,31 +1394,271 @@ const STATUS_SHORT_LABELS = {
           0.12
         ]);
       });
+    }
+
+    function frameConnection(props) {
+      const coords = [];
+      [props.source_id, props.target_id].forEach((id) => {
+        const site = findSiteById(id);
+        if (site?.feature?.geometry?.coordinates) {
+          coords.push(site.feature.geometry.coordinates);
+        }
+      });
+      if (coords.length === 0) return;
+
+      const isNarrow = window.matchMedia('(max-width: 1023px)').matches;
+      const padding = isNarrow
+        ? { top: 56, bottom: Math.round(window.innerHeight * 0.4), left: 36, right: 36 }
+        : { top: 72, bottom: 72, left: 72, right: 420 };
+
+      if (coords.length === 1) {
+        map.easeTo({ center: coords[0], duration: 650, padding });
+        return;
+      }
+
+      const bounds = coords.reduce(
+        (b, c) => b.extend(c),
+        new maplibregl.LngLatBounds(coords[0], coords[0])
+      );
+      map.fitBounds(bounds, {
+        padding,
+        maxZoom: 7.5,
+        duration: 750
+      });
+    }
+
+    function buildConnectionDetail(props) {
+      const relType = props.relationship_type;
+      const accentColor = connAccent(relType);
+      const iconClass = connIconClass(relType);
+      const typeLabel = i18n.layers.connections;
+
+      let html = '';
+
+      if (props.certainty && i18n.certainty[props.certainty]) {
+        html += `<div class="detail-facts">
+          <div class="detail-fact">
+            <span class="detail-fact-label">${i18n.popup.certainty}</span>
+            <span class="detail-fact-value">
+              <span class="certainty-badge certainty-${props.certainty}">${i18n.certainty[props.certainty]}</span>
+            </span>
+          </div>
+        </div>`;
+      }
+
+      if (props.description_it) {
+        html += `<p class="detail-description">${escapeHtml(props.description_it)}</p>`;
+      }
+
+      if (props.evidence_note_it) {
+        html += `<div class="detail-section">
+          <h4>${i18n.popup.evidence}</h4>
+          <p class="detail-description detail-evidence">${escapeHtml(props.evidence_note_it)}</p>
+        </div>`;
+      }
+
+      html += `<div class="detail-section detail-conn-endpoints">
+        <h4>${i18n.popup.linked_sites}</h4>
+        <p class="detail-connections-hint">${i18n.popup.connections_hint}</p>
+        <button type="button" class="detail-connection-item is-action"
+          data-site-id="${escapeHtml(props.source_id)}"
+          title="${i18n.popup.open_connected}">
+          <span class="detail-connection-icon ${iconClass}"></span>
+          <span class="detail-connection-label">${escapeHtml(props.source_name || props.source_id)}</span>
+          <span class="detail-connection-go" aria-hidden="true">→</span>
+        </button>
+        <button type="button" class="detail-connection-item is-action"
+          data-site-id="${escapeHtml(props.target_id)}"
+          title="${i18n.popup.open_connected}">
+          <span class="detail-connection-icon ${iconClass}"></span>
+          <span class="detail-connection-label">${escapeHtml(props.target_name || props.target_id)}</span>
+          <span class="detail-connection-go" aria-hidden="true">→</span>
+        </button>
+      </div>`;
+
+      html += buildSourcesHtml(props.sources);
+
+      if (props.updated_at) {
+        html += `<div class="detail-meta">
+          <span>${i18n.popup.updated_at} ${escapeHtml(props.updated_at)}</span>
+        </div>`;
+      }
+
+      return {
+        html,
+        accentColor,
+        typeLabel,
+        title: getRelationshipLabel(relType)
+      };
+    }
+
+    function openConnectionDetail(properties, options = {}) {
+      const props = resolveConnectionProperties(properties);
+      const { html, accentColor, typeLabel, title } = buildConnectionDetail(props);
+
+      detailTitle.textContent = title;
+      detailSidebar.style.setProperty('--accent', accentColor);
+      if (detailType) {
+        detailType.hidden = false;
+        detailType.innerHTML =
+          `<span class="detail-type-conn-swatch" aria-hidden="true"></span>${typeLabel}`;
+      }
+      detailBody.innerHTML = html;
+      detailSidebar.classList.add('open');
+      detailSidebar.classList.remove('is-pulse');
+      void detailSidebar.offsetWidth;
+      detailSidebar.classList.add('is-pulse');
+      document.body.classList.add('detail-open');
+      document.body.classList.remove('filters-open');
+      document.body.classList.remove('search-open');
+      const filtersToggle = document.getElementById('filters-toggle');
+      if (filtersToggle) filtersToggle.setAttribute('aria-expanded', 'false');
+      const searchToggleBtn = document.getElementById('map-search-toggle');
+      if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
+
+      highlightConnectionEdge(props);
+      if (options.frame !== false) frameConnection(props);
       window.SubstratoMapChrome?.dismissMapHint?.();
+      hideTooltip();
 
-      const popup = new Popup({ closeOnClick: true, maxWidth: '320px' })
-        .setLngLat(e.lngLat)
-        .setHTML(popupHtml)
-        .addTo(map);
-
-      const root = popup.getElement();
-      root?.querySelectorAll('[data-site-id]').forEach(btn => {
-        btn.addEventListener('click', (ev) => {
-          ev.preventDefault();
+      detailBody.querySelectorAll('[data-site-id]').forEach(btn => {
+        btn.addEventListener('click', () => {
           const siteId = btn.getAttribute('data-site-id');
           const site = findSiteById(siteId);
           if (!site) return;
-          popup.remove();
           openPointDetail(site.properties, site.featureType);
         });
       });
     }
 
-    // Show tooltip
+    // Hover preview (sites) + plain tooltip (lines / overlays)
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function positionTooltip(e) {
+      const pad = 12;
+      const x = e.point.x;
+      const y = e.point.y;
+      tooltip.style.left = x + 'px';
+      tooltip.style.top = y + 'px';
+      // Sopra il cursore di default; sotto se troppo vicino al bordo alto
+      if (y < 96) {
+        tooltip.style.transform = 'translate(-50%, 16px)';
+      } else {
+        tooltip.style.transform = 'translate(-50%, calc(-100% - 14px))';
+      }
+      // Evita overflow orizzontale grezzo
+      requestAnimationFrame(() => {
+        const rect = tooltip.getBoundingClientRect();
+        const mapEl = document.getElementById('map');
+        if (!mapEl) return;
+        const mapRect = mapEl.getBoundingClientRect();
+        let shift = 0;
+        if (rect.left < mapRect.left + pad) shift = mapRect.left + pad - rect.left;
+        else if (rect.right > mapRect.right - pad) shift = mapRect.right - pad - rect.right;
+        if (shift) {
+          tooltip.style.left = x + shift + 'px';
+        }
+      });
+    }
+
     function showTooltip(e, text) {
+      tooltip.classList.remove('is-site', 'is-conn');
+      tooltip.classList.add('is-plain');
       tooltip.textContent = text;
-      tooltip.style.left = e.point.x + 'px';
-      tooltip.style.top = e.point.y + 'px';
+      positionTooltip(e);
+      tooltip.classList.add('visible');
+    }
+
+    function showSitePreview(e, properties, featureType) {
+      const statusKey = properties.status && STATUS_COLORS[properties.status]
+        ? properties.status
+        : 'unknown';
+      const statusColor = STATUS_COLORS[statusKey] || STATUS_COLORS.unknown;
+      const statusText =
+        STATUS_SHORT_LABELS[statusKey] ||
+        i18n.status[statusKey] ||
+        statusKey;
+      const accent =
+        (properties.subtype && SUBTYPE_COLORS[properties.subtype]) ||
+        (featureType === 'data_center' ? COLORS.dc :
+          featureType === 'raw_material' ? COLORS.rm : COLORS.ep);
+      const typeText = properties.subtype
+        ? getSubtypeLabel(properties.subtype)
+        : (featureType === 'data_center' ? i18n.layers.data_centers :
+            featureType === 'raw_material' ? i18n.layers.raw_materials :
+            i18n.layers.energy_plants);
+      const place = [properties.city, getCountryName(properties.country)]
+        .filter(Boolean)
+        .join(', ');
+      const metaParts = [];
+      if (properties.operator) metaParts.push(properties.operator);
+      if (place) metaParts.push(place);
+      const meta = metaParts.join(' · ');
+
+      tooltip.classList.remove('is-plain', 'is-conn');
+      tooltip.classList.add('is-site');
+      tooltip.style.setProperty('--tooltip-accent', accent);
+      tooltip.innerHTML =
+        `<p class="map-tooltip-title">${escapeHtml(properties.name || '')}</p>` +
+        `<div class="map-tooltip-row">` +
+          `<span class="map-tooltip-type">` +
+            `<span class="map-tooltip-type-dot" aria-hidden="true"></span>` +
+            `${escapeHtml(typeText)}` +
+          `</span>` +
+          `<span class="map-tooltip-status" style="--chip-color: ${statusColor};">` +
+            `<span class="status-swatch status-${statusKey}" aria-hidden="true"></span>` +
+            `${escapeHtml(statusText)}` +
+          `</span>` +
+        `</div>` +
+        (meta ? `<p class="map-tooltip-meta">${escapeHtml(meta)}</p>` : '') +
+        (properties.capacity
+          ? `<p class="map-tooltip-cap">${escapeHtml(properties.capacity)}</p>`
+          : '');
+
+      positionTooltip(e);
+      tooltip.classList.add('visible');
+    }
+
+    function showConnectionPreview(e, mapProps) {
+      const props = resolveConnectionProperties(mapProps);
+      const relType = props.relationship_type || '';
+      const typeColor =
+        relType === 'powers' ? COLORS.ep :
+        relType === 'supplies' ? COLORS.rm :
+        COLORS.dc;
+      const typeLabel = getRelationshipLabel(relType);
+      const certaintyKey = props.certainty;
+      const certaintyLabel =
+        certaintyKey && i18n.certainty[certaintyKey]
+          ? i18n.certainty[certaintyKey]
+          : '';
+
+      tooltip.classList.remove('is-plain');
+      tooltip.classList.add('is-site', 'is-conn');
+      tooltip.style.setProperty('--tooltip-accent', typeColor);
+      tooltip.innerHTML =
+        `<div class="map-tooltip-route">` +
+          `<span class="map-tooltip-route-from">${escapeHtml(props.source_name || '')}</span>` +
+          `<span class="map-tooltip-route-arrow" aria-hidden="true">→</span>` +
+          `<span class="map-tooltip-route-to">${escapeHtml(props.target_name || '')}</span>` +
+        `</div>` +
+        `<div class="map-tooltip-row">` +
+          `<span class="map-tooltip-type" style="--tooltip-accent: ${typeColor};">` +
+            `<span class="map-tooltip-conn-swatch" aria-hidden="true"></span>` +
+            `${escapeHtml(typeLabel)}` +
+          `</span>` +
+          (certaintyLabel
+            ? `<span class="certainty-badge certainty-${escapeHtml(certaintyKey)}">${escapeHtml(certaintyLabel)}</span>`
+            : '') +
+        `</div>`;
+
+      positionTooltip(e);
       tooltip.classList.add('visible');
     }
 
@@ -1406,6 +1681,15 @@ const STATUS_SHORT_LABELS = {
       energyPlantsData = await epRes.json();
       connectionsData = await connRes.json();
 
+      // Assicura IBM Plex Sans prima di rasterizzare le card (canvas non ha CSS fallback)
+      try {
+        if (document.fonts?.load) {
+          await document.fonts.load('600 22px "IBM Plex Sans"');
+        }
+      } catch (_) {
+        /* fallback Helvetica se il font non è ancora disponibile */
+      }
+
       // Marker icons by subtype × status (pieno / cantiere / fantasma / disattivato)
       Object.values(FILTER_GROUPS).forEach((group) => {
         group.subtypes.forEach((subtype) => {
@@ -1425,16 +1709,24 @@ const STATUS_SHORT_LABELS = {
         });
       });
 
-      // Mini-card stato: pallino + etichetta + barra
+      // Chip stato: stile allineato ai filter-chip (status × label)
       ['operational', 'under_construction', 'planned', 'decommissioned'].forEach((status) => {
-        const id = statusBadgeImageId(status);
-        if (!map.hasImage(id)) {
-          map.addImage(
-            id,
-            createStatusBadgeImage(status, STATUS_SHORT_LABELS[status], STATUS_COLORS[status]),
-            { pixelRatio: ICON_PIXEL_RATIO }
-          );
-        }
+        Object.values(FILTER_GROUPS).forEach((group) => {
+          group.subtypes.forEach((subtype) => {
+            const id = statusBadgeImageId(status, subtype);
+            if (!map.hasImage(id)) {
+              map.addImage(
+                id,
+                createStatusBadgeImage(
+                  status,
+                  STATUS_SHORT_LABELS[status],
+                  STATUS_COLORS[status]
+                ),
+                { pixelRatio: STATUS_BADGE_PIXEL_RATIO }
+              );
+            }
+          });
+        });
       });
 
       // Add sources
@@ -1733,12 +2025,16 @@ const STATUS_SHORT_LABELS = {
         });
       });
 
-      // Tooltip on hover for points
-      pointLayers.forEach(layerId => {
+      // Hover preview for site pins
+      const siteHoverLayers = [
+        { layerId: 'data-centers-layer', featureType: 'data_center' },
+        { layerId: 'raw-materials-layer', featureType: 'raw_material' },
+        { layerId: 'energy-plants-layer', featureType: 'energy_plant' }
+      ];
+      siteHoverLayers.forEach(({ layerId, featureType }) => {
         map.on('mousemove', layerId, (e) => {
           if (e.features && e.features.length > 0) {
-            const name = e.features[0].properties.name;
-            showTooltip(e, name);
+            showSitePreview(e, e.features[0].properties, featureType);
           }
         });
         map.on('mouseleave', layerId, () => {
@@ -1746,12 +2042,11 @@ const STATUS_SHORT_LABELS = {
         });
       });
 
-      // Tooltip on hover for connections
+      // Hover preview for connections
       connectionLayers.forEach(layerId => {
         map.on('mousemove', layerId, (e) => {
           if (e.features && e.features.length > 0) {
-            const props = e.features[0].properties;
-            showTooltip(e, `${props.source_name} → ${props.target_name}`);
+            showConnectionPreview(e, e.features[0].properties);
           }
         });
         map.on('mouseleave', layerId, () => {
@@ -1790,8 +2085,7 @@ const STATUS_SHORT_LABELS = {
       connectionLayers.forEach(layerId => {
         map.on('click', layerId, (e) => {
           if (e.features && e.features.length > 0) {
-            const properties = e.features[0].properties;
-            showConnectionPopup(e, properties);
+            openConnectionDetail(e.features[0].properties);
             e.originalEvent.stopPropagation();
           }
         });

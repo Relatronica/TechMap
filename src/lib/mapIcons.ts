@@ -163,9 +163,12 @@ export const SITE_ICON_OPACITY_EXPR = ['*', ICON_OPACITY_EXPR, STATUS_OPACITY_EX
 /** Expression: status del feature (null → unknown). */
 export const STATUS_GET_EXPR = ['coalesce', ['get', 'status'], 'unknown'];
 
-export const ICON_CANVAS_SIZE = 128;
-/** Immagine 2× per retina: a icon-size 1 ≈ 64 CSS px. */
-export const ICON_PIXEL_RATIO = 2;
+/** Canvas alto per anti-alias nitido; pixelRatio 3 → a icon-size 1 ≈ 64 CSS px. */
+export const ICON_CANVAS_SIZE = 192;
+/** 3× per display retina / HiDPI senza ingrandire il marker a schermo. */
+export const ICON_PIXEL_RATIO = 3;
+/** Chip stato a 2× (altezza tipica ~52 canvas → ~26 CSS). */
+export const STATUS_BADGE_PIXEL_RATIO = 2;
 
 /** Varianti canvas per ciclo di vita (mappa). */
 export const ICON_STATUS_STYLES = ['solid', 'construction', 'planned', 'retired'] as const;
@@ -207,6 +210,34 @@ export function mixHex(a: string, b: string, t: number): string {
   return rgbToHex(ar + (br - ar) * t, ag + (bg - ag) * t, ab + (bb - ab) * t);
 }
 
+function clearShadow(ctx: CanvasRenderingContext2D) {
+  ctx.shadowColor = 'transparent';
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+}
+
+/** Ombra di contatto sotto la sagoma; la passata finale resta senza shadow (bordi netti). */
+function paintIconDropShadow(
+  ctx: CanvasRenderingContext2D,
+  path: Path2D,
+  lineWidth: number,
+  opts: { drop?: number; dropY?: number } = {}
+) {
+  const drop = opts.drop ?? 0.42;
+  const dropY = opts.dropY ?? 1.15;
+
+  ctx.shadowColor = `rgba(15, 18, 22, ${drop})`;
+  ctx.shadowBlur = 3.8;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = dropY;
+  ctx.strokeStyle = 'rgba(15, 18, 22, 0.22)';
+  ctx.lineWidth = lineWidth + 0.35;
+  ctx.stroke(path);
+
+  clearShadow(ctx);
+}
+
 /**
  * Canvas RGBA image for map.addImage — silhouette atlante.
  * style: solid (operativo) | construction | planned (fantasma) | retired
@@ -220,63 +251,60 @@ export function createMapIconImage(pathD, color, size = ICON_CANVAS_SIZE, style:
     return { width: size, height: size, data: new Uint8ClampedArray(size * size * 4) };
   }
 
-  const cx = size / 2;
-  const cy = size / 2;
-  const scale = (size * 0.64) / 24;
+  // Bordo libero per alone/ombra; glyph un filo più grande per definizione a distanza
+  const scale = (size * 0.68) / 24;
   const path = new Path2D(pathD);
 
   ctx.save();
-  ctx.translate(cx - 12 * scale, cy - 12 * scale);
+  ctx.translate(size / 2 - 12 * scale, size / 2 - 12 * scale);
   ctx.scale(scale, scale);
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
+  ctx.miterLimit = 2;
 
   if (style === 'solid') {
-    ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
-    ctx.shadowBlur = 2.2;
-    ctx.shadowOffsetY = 1;
+    const lw = 2.75;
+    paintIconDropShadow(ctx, path, lw, { drop: 0.48, dropY: 1.2 });
     ctx.fillStyle = color;
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2.6;
+    ctx.lineWidth = lw;
     ctx.fill(path);
     ctx.stroke(path);
   } else if (style === 'construction') {
     // Ambra evidente: si legge subito contro i pieni blu operativi
     const warm = mixHex(color, STATUS_COLORS.under_construction, 0.78);
-    ctx.shadowColor = 'rgba(140, 80, 20, 0.35)';
-    ctx.shadowBlur = 2.8;
-    ctx.shadowOffsetY = 1;
+    const lw = 2.65;
+    paintIconDropShadow(ctx, path, lw, { drop: 0.4, dropY: 1.1 });
     ctx.fillStyle = mixHex(warm, '#F2C078', 0.18);
-    ctx.globalAlpha = 0.78;
+    ctx.globalAlpha = 0.82;
     ctx.fill(path);
     ctx.globalAlpha = 1;
     ctx.strokeStyle = STATUS_COLORS.under_construction;
-    ctx.lineWidth = 2.55;
+    ctx.lineWidth = lw;
     ctx.stroke(path);
   } else if (style === 'planned') {
     // Forma intatta (tratto pieno soft) + tratteggio fine sopra
     const ink = mixHex(color, STATUS_COLORS.planned, 0.35);
-    ctx.shadowColor = 'rgba(15, 18, 22, 0.16)';
-    ctx.shadowBlur = 1.1;
-    ctx.shadowOffsetY = 0.35;
+    const lw = 1.85;
+    paintIconDropShadow(ctx, path, lw, { drop: 0.22, dropY: 0.7 });
     ctx.strokeStyle = ink;
-    ctx.lineWidth = 1.55;
-    ctx.globalAlpha = 0.34;
+    ctx.lineWidth = 1.65;
+    ctx.globalAlpha = 0.38;
     ctx.stroke(path);
     ctx.globalAlpha = 1;
-    ctx.lineWidth = 1.7;
-    // Tratteggio fine; a canvas 128× resta leggibile senza spezzare la sagoma
-    ctx.setLineDash([0.85, 1.2]);
+    ctx.lineWidth = 1.85;
+    // Tratteggio fine; a canvas 192× resta leggibile senza spezzare la sagoma
+    ctx.setLineDash([0.9, 1.15]);
     ctx.stroke(path);
     ctx.setLineDash([]);
   } else {
     // retired
     const muted = mixHex(color, '#7a7e82', 0.72);
-    ctx.shadowColor = 'rgba(15, 18, 22, 0.12)';
-    ctx.shadowBlur = 1;
+    const lw = 1.95;
+    paintIconDropShadow(ctx, path, lw, { drop: 0.2, dropY: 0.65 });
     ctx.strokeStyle = muted;
-    ctx.lineWidth = 1.85;
-    ctx.globalAlpha = 0.85;
+    ctx.lineWidth = lw;
+    ctx.globalAlpha = 0.88;
     ctx.stroke(path);
     ctx.globalAlpha = 1;
   }
@@ -294,37 +322,39 @@ export function iconImageId(subtype, style: IconStatusStyle = 'solid') {
   return style === 'solid' ? `icon-${subtype}` : `icon-${subtype}--${style}`;
 }
 
-export function statusBadgeImageId(status: string) {
-  return `status-badge-${status}`;
-}
-
-/** Avanzamento ciclo di vita (0–1) per la barra nella card stato. */
-export function statusProgress(status: string): number {
-  switch (status) {
-    case 'planned':
-      return 0.28;
-    case 'under_construction':
-      return 0.62;
-    case 'operational':
-      return 1;
-    case 'decommissioned':
-      return 0;
-    default:
-      return 0;
-  }
+export function statusBadgeImageId(status: string, subtype?: string) {
+  return subtype ? `status-badge-${subtype}--${status}` : `status-badge-${status}`;
 }
 
 /**
- * Mini-card stato: pallino stato + etichetta + barra avanzamento.
+ * Chip stato sulla mappa — stesso linguaggio dei filter-chip:
+ * superficie scura, radius stretto, pallino semantico, niente barra.
  */
 export function createStatusBadgeImage(
   status: string,
   label: string,
   accent: string,
-  _pixelRatio = ICON_PIXEL_RATIO
+  _tintColor?: string,
+  _pixelRatio = STATUS_BADGE_PIXEL_RATIO
 ) {
-  const w = 240;
-  const h = 88;
+  const font = '500 22px "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif';
+  const measure = document.createElement('canvas').getContext('2d');
+  let textW = label.length * 12;
+  if (measure) {
+    measure.font = font;
+    textW = measure.measureText(label).width;
+  }
+
+  const outerPad = 10;
+  const insetX = 14;
+  const boxH = 52;
+  const radius = 6;
+  const dotR = 7;
+  const gap = 10;
+  const boxW = Math.ceil(insetX + dotR * 2 + gap + textW + insetX);
+  const w = boxW + outerPad * 2;
+  const h = boxH + outerPad * 2;
+
   const canvas = document.createElement('canvas');
   canvas.width = w;
   canvas.height = h;
@@ -333,80 +363,105 @@ export function createStatusBadgeImage(
     return { width: w, height: h, data: new Uint8ClampedArray(w * h * 4) };
   }
 
-  const pad = 12;
-  const radius = 12;
-  const boxX = pad;
-  const boxY = pad - 2;
-  const boxW = w - pad * 2;
-  const boxH = h - pad * 2;
-  const dotR = 5;
-  const dotX = boxX + 18;
-  const textX = boxX + 32;
+  const surface = '#161b22';
+  const ink = '#eef0f3';
+  // ~20% accento come .filter-chip.is-on
+  const fill = mixHex(accent, surface, 0.82);
+  const stroke = mixHex(accent, '#9aa3ad', 0.55);
 
-  const shadowLayers = [
-    { dy: 3, blur: 2, alpha: 0.06 },
-    { dy: 6, blur: 8, alpha: 0.1 },
-    { dy: 10, blur: 16, alpha: 0.08 }
-  ];
-  shadowLayers.forEach(({ dy, blur, alpha }) => {
-    ctx.save();
-    ctx.shadowColor = `rgba(15, 18, 22, ${alpha})`;
-    ctx.shadowBlur = blur;
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = dy;
-    ctx.fillStyle = 'rgba(252, 250, 246, 1)';
-    roundRect(ctx, boxX, boxY, boxW, boxH, radius);
-    ctx.fill();
-    ctx.restore();
-  });
+  const boxX = outerPad;
+  const boxY = outerPad;
+  const midY = boxY + boxH / 2;
+  const dotX = boxX + insetX + dotR;
+  const textX = boxX + insetX + dotR * 2 + gap;
 
-  ctx.fillStyle = 'rgba(252, 250, 246, 0.98)';
-  ctx.strokeStyle = 'rgba(60, 64, 70, 0.12)';
-  ctx.lineWidth = 1.25;
+  ctx.save();
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.28)';
+  ctx.shadowBlur = 14;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 3;
+  ctx.fillStyle = fill;
   roundRect(ctx, boxX, boxY, boxW, boxH, radius);
   ctx.fill();
-  ctx.stroke();
+  ctx.restore();
 
-  // Pallino stato (come chip sidebar)
-  ctx.beginPath();
-  ctx.arc(dotX, boxY + 26, dotR, 0, Math.PI * 2);
-  ctx.fillStyle = accent;
+  ctx.fillStyle = fill;
+  roundRect(ctx, boxX, boxY, boxW, boxH, radius);
   ctx.fill();
+  ctx.strokeStyle = stroke;
+  ctx.globalAlpha = 0.55;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.globalAlpha = 1;
 
-  ctx.fillStyle = mixHex(accent, '#2a3038', 0.22);
-  ctx.font = `600 17px "Montserrat", "Helvetica Neue", sans-serif`;
+  drawStatusSwatch(ctx, status, accent, dotX, midY, dotR);
+
+  ctx.fillStyle = ink;
+  ctx.font = font;
   ctx.textBaseline = 'middle';
   ctx.textAlign = 'left';
-  ctx.fillText(label, textX, boxY + 26);
-
-  const trackX = textX;
-  const trackY = boxY + boxH - 22;
-  const trackW = boxX + boxW - 16 - textX;
-  const trackH = 6;
-  const progress = statusProgress(status);
-
-  ctx.fillStyle = 'rgba(60, 64, 70, 0.12)';
-  roundRect(ctx, trackX, trackY, trackW, trackH, 3);
-  ctx.fill();
-
-  if (progress > 0.01) {
-    ctx.fillStyle = accent;
-    roundRect(ctx, trackX, trackY, Math.max(trackH, trackW * progress), trackH, 3);
-    ctx.fill();
-  } else if (status === 'decommissioned') {
-    ctx.strokeStyle = mixHex(accent, '#8a8680', 0.2);
-    ctx.lineWidth = 1.4;
-    ctx.beginPath();
-    ctx.moveTo(trackX + 2, trackY + trackH / 2);
-    ctx.lineTo(trackX + trackW - 2, trackY + trackH / 2);
-    ctx.stroke();
-  }
+  ctx.fillText(label, textX, midY + 0.5);
 
   return {
     width: w,
     height: h,
     data: ctx.getImageData(0, 0, w, h).data
   };
+}
+
+/** Pallino stato allineato a .status-swatch (filtri). */
+function drawStatusSwatch(
+  ctx: CanvasRenderingContext2D,
+  status: string,
+  accent: string,
+  x: number,
+  y: number,
+  r: number
+) {
+  ctx.save();
+  if (status === 'operational') {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = accent;
+    ctx.fill();
+  } else if (status === 'under_construction') {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = accent;
+    ctx.globalAlpha = 0.42;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+  } else if (status === 'planned') {
+    ctx.beginPath();
+    ctx.arc(x, y, r - 0.5, 0, Math.PI * 2);
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([2.2, 2.2]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  } else if (status === 'decommissioned') {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = accent;
+    ctx.globalAlpha = 0.4;
+    ctx.fill();
+    ctx.globalAlpha = 0.75;
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  } else {
+    ctx.beginPath();
+    ctx.arc(x, y, r - 0.5, 0, Math.PI * 2);
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([1.2, 2.4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  ctx.restore();
 }
 
 function roundRect(

@@ -293,25 +293,35 @@ const h = i18n.home;
 
       const COLORS = { dc: '#5A9BB8', rm: '#B87A4A', ep: '#5B8FA8', conn: '#8a9199' };
 
-      function createMapIconImage(pathD, color, size = 80) {
+      function createMapIconImage(pathD, color, size = 160) {
         const canvas = document.createElement('canvas');
         canvas.width = size;
         canvas.height = size;
         const ctx = canvas.getContext('2d');
-        const scale = (size * 0.64) / 24;
+        const scale = (size * 0.68) / 24;
         const path = new Path2D(pathD);
+        const lw = 2.75;
 
         ctx.save();
         ctx.translate(size / 2 - 12 * scale, size / 2 - 12 * scale);
         ctx.scale(scale, scale);
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-        ctx.shadowColor = 'rgba(15, 18, 22, 0.45)';
-        ctx.shadowBlur = 2.2;
-        ctx.shadowOffsetY = 1;
+        ctx.miterLimit = 2;
+
+        ctx.shadowColor = 'rgba(15, 18, 22, 0.48)';
+        ctx.shadowBlur = 3.8;
+        ctx.shadowOffsetY = 1.2;
+        ctx.strokeStyle = 'rgba(15, 18, 22, 0.22)';
+        ctx.lineWidth = lw + 0.35;
+        ctx.stroke(path);
+
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetY = 0;
         ctx.fillStyle = color;
         ctx.strokeStyle = color;
-        ctx.lineWidth = 2.6;
+        ctx.lineWidth = lw;
         ctx.fill(path);
         ctx.stroke(path);
         ctx.restore();
@@ -348,7 +358,9 @@ const h = i18n.home;
           const path = ICON_PATHS[subtype];
           const color = SUBTYPE_COLORS[subtype] || COLORS.conn;
           if (path && !heroMap.hasImage(iconImageId(subtype))) {
-            heroMap.addImage(iconImageId(subtype), createMapIconImage(path, color));
+            heroMap.addImage(iconImageId(subtype), createMapIconImage(path, color), {
+              pixelRatio: 2
+            });
           }
         });
 

@@ -303,6 +303,7 @@
     "connections": "Connessioni",
     "connections_hint": "Segui un legame per spostarti al sito collegato.",
     "open_connected": "Apri sulla mappa",
+    "linked_sites": "Siti del legame",
     "powered_by": "Alimentato da",
     "components_from": "Componenti da",
     "supplies_from": "Forniture da",
@@ -444,7 +445,7 @@
     "status_halo_construction": "Pieno caldo = in costruzione",
     "status_halo_planned": "Tratteggio fine = pianificato",
     "status_style_operational": "Pieno = operativo",
-    "status_labels_hint": "Da vicino: card sotto il pin con stato e avanzamento"
+    "status_labels_hint": "Da vicino: etichetta sotto il pin con lo stato"
   },
   "overlays": {
     "title": "Contesto",
