@@ -433,7 +433,7 @@
     "section_links": "Links",
     "section_context": "Context",
     "section_corridors": "Supply chain",
-    "corridors_hint": "Three curated chains — silicon, battery metals, cognitive labor. One at a time: only that stretch’s documented sites and links (no orphan pins).",
+    "corridors_hint": "Three curated chains — silicon, battery metals, cognitive labor. One at a time: only that stretch’s documented sites and links on that topic.",
     "corridors": {
       "silicon_ai": "AI silicon",
       "cobalt_battery": "Battery metals",

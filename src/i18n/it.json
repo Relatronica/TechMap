@@ -433,7 +433,7 @@
     "section_links": "Legami",
     "section_context": "Contesto",
     "section_corridors": "Filiera",
-    "corridors_hint": "Tre catene già curate — silicio, metalli/batterie, lavoro cognitivo. Una per volta: solo i siti e i legami documentati di quel tratto (niente pin orfani).",
+    "corridors_hint": "Tre catene già curate — silicio, metalli/batterie, lavoro cognitivo. Una per volta: solo i siti e i legami documentati su quel tema.",
     "corridors": {
       "silicon_ai": "Silicio AI",
       "cobalt_battery": "Metalli batterie",
