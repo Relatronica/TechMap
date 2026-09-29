@@ -138,6 +138,7 @@ export const FILTER_GROUPS = {
 export const CORRIDOR_PRESETS = [
   {
     id: 'silicon_ai',
+    icon: 'semiconductor_fab' as SubtypeKey,
     siteIds: ['rm_005', 'rm_007', 'rm_018', 'rm_020', 'dc_012', 'dc_013'],
     subtypes: {
       raw_materials: [
@@ -154,6 +155,7 @@ export const CORRIDOR_PRESETS = [
   },
   {
     id: 'cobalt_battery',
+    icon: 'cobalt_mine' as SubtypeKey,
     siteIds: ['rm_013', 'rm_014', 'rm_019', 'rm_011', 'rm_024'],
     subtypes: {
       raw_materials: ['cobalt_mine', 'battery_materials', 'lithium_mine'] as SubtypeKey[],
@@ -165,6 +167,7 @@ export const CORRIDOR_PRESETS = [
   },
   {
     id: 'ai_labor',
+    icon: 'ai_data_work' as SubtypeKey,
     siteIds: ['rm_021', 'rm_022', 'rm_023', 'dc_013'],
     subtypes: {
       raw_materials: ['ai_data_work', 'model_lab'] as SubtypeKey[],

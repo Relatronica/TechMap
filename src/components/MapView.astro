@@ -227,8 +227,12 @@ const statusLabel = (key: string) =>
             class="corridor-preset"
             data-corridor={preset.id}
             aria-pressed="false"
+            style={`--corridor-icon: ${colorForSubtype(preset.icon)};`}
           >
-            {corridorLabels[preset.id] || preset.id}
+            <svg class="corridor-preset-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d={ICON_PATHS[preset.icon]}></path>
+            </svg>
+            <span>{corridorLabels[preset.id] || preset.id}</span>
           </button>
         ))}
       </div>

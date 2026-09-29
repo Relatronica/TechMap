@@ -468,10 +468,25 @@ body.is-map {
   color: var(--ink-soft);
   font-family: var(--font-body);
   font-size: 0.78rem;
-  padding: 7px 11px;
+  padding: 7px 11px 7px 9px;
   border-radius: var(--radius);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.corridor-preset-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  stroke: var(--corridor-icon, var(--muted));
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
 }
 
 .corridor-preset:hover {
@@ -479,10 +494,18 @@ body.is-map {
   color: var(--ink);
 }
 
+.corridor-preset:hover .corridor-preset-icon {
+  opacity: 1;
+}
+
 .corridor-preset.is-on {
-  border-color: var(--labor, #8B4A5C);
-  background: color-mix(in srgb, var(--labor, #8B4A5C) 18%, transparent);
+  border-color: var(--corridor-icon, var(--labor, #8B4A5C));
+  background: color-mix(in srgb, var(--corridor-icon, var(--labor, #8B4A5C)) 16%, transparent);
   color: var(--ink);
+}
+
+.corridor-preset.is-on .corridor-preset-icon {
+  opacity: 1;
 }
 
 .filters-advanced {
