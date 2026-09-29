@@ -296,17 +296,18 @@ async function main() {
       'powers without a PPA stay inferred/likely. Context overlays (grid, water stress, cables) are off by default.'
   };
 
+  // Minified GeoJSON for faster download; meta stays pretty for humans.
   await writeFile(
     new URL('energy_plants.geojson', PUBLIC_DIR),
-    JSON.stringify(energy.collection, null, 2)
+    JSON.stringify(energy.collection)
   );
   await writeFile(
     new URL('data_centers.geojson', PUBLIC_DIR),
-    JSON.stringify(datacenters.collection, null, 2)
+    JSON.stringify(datacenters.collection)
   );
   await writeFile(
     new URL('dataset_meta.json', PUBLIC_DIR),
-    JSON.stringify(meta, null, 2)
+    JSON.stringify(meta, null, 2) + '\n'
   );
 
   console.log('Merge complete:');

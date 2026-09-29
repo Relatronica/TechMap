@@ -11,13 +11,6 @@ export function wireInteractions(ctx: MapContext) {
   const pointLayers = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer', 'grid-nodes-layer'];
   const connectionLayers = [...CONNECTION_LAYER_IDS];
   const allInteractiveLayers = [...pointLayers, ...connectionLayers];
-  const connLayerByRel = {
-    powers: 'connections-powers',
-    supplies: 'connections-supplies',
-    manufactures_for: 'connections-manufactures',
-    connects: 'connections-connects',
-    trains: 'connections-trains'
-  };
 
   // Cursor pointer on hover
   allInteractiveLayers.forEach(layerId => {

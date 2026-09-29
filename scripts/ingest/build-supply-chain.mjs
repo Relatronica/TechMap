@@ -13,7 +13,7 @@
  *  - public/data/grid_nodes.geojson
  *  - public/data/connections.geojson
  */
-import { readFile, writeFile, copyFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 
 const ROOT = new URL('../../', import.meta.url);
 const CURATED = new URL('data/curated/', ROOT);
@@ -94,21 +94,22 @@ async function main() {
 
   const connections = { type: 'FeatureCollection', features };
 
+  // Curated copy stays pretty for editorial review; public/ is minified.
   await writeFile(
     new URL('connections.geojson', CURATED),
     JSON.stringify(connections, null, 2) + '\n'
   );
-  await copyFile(
-    new URL('raw_materials.geojson', CURATED),
-    new URL('raw_materials.geojson', PUBLIC)
+  await writeFile(
+    new URL('raw_materials.geojson', PUBLIC),
+    JSON.stringify(rawMaterials)
   );
-  await copyFile(
-    new URL('grid_nodes.geojson', CURATED),
-    new URL('grid_nodes.geojson', PUBLIC)
+  await writeFile(
+    new URL('grid_nodes.geojson', PUBLIC),
+    JSON.stringify(gridNodes)
   );
-  await copyFile(
-    new URL('connections.geojson', CURATED),
-    new URL('connections.geojson', PUBLIC)
+  await writeFile(
+    new URL('connections.geojson', PUBLIC),
+    JSON.stringify(connections)
   );
 
   const byType = features.reduce((acc, f) => {
