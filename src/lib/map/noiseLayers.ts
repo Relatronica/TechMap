@@ -10,13 +10,11 @@ import type { MapContext } from './types';
 const EMPTY: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] };
 
 const BAND_LAYER = 'noise-bands';
-const OUTLINE_LAYER = 'noise-outlines';
 
-export const NOISE_LAYER_IDS = [BAND_LAYER, OUTLINE_LAYER];
+export const NOISE_LAYER_IDS = [BAND_LAYER];
 
 export function attachNoiseLayers(ctx: MapContext) {
   ctx.map.addSource('noise-bands', { type: 'geojson', data: EMPTY });
-  ctx.map.addSource('noise-outlines', { type: 'geojson', data: EMPTY });
 
   const beforeId = ctx.map.getLayer('proximity-rings')
     ? 'proximity-rings'
@@ -26,6 +24,7 @@ export function attachNoiseLayers(ctx: MapContext) {
         ? 'data-centers-layer'
         : undefined;
 
+  // Soft tint bands only — no outlines (edges read from colour steps).
   ctx.map.addLayer(
     {
       id: BAND_LAYER,
@@ -36,62 +35,28 @@ export function attachNoiseLayers(ctx: MapContext) {
           'match',
           ['get', 'lp_dba'],
           45,
-          '#c4a574',
+          '#d2b48a',
           50,
-          '#b8885c',
+          '#c49262',
           55,
-          '#a56a48',
+          '#b06a48',
           65,
-          '#8f4a38',
-          '#a56a48'
+          '#8c3e32',
+          '#b06a48'
         ],
         'fill-opacity': [
           'match',
           ['get', 'lp_dba'],
           45,
-          0.1,
+          0.14,
           50,
-          0.16,
+          0.2,
           55,
-          0.22,
+          0.28,
           65,
-          0.3,
-          0.14
+          0.38,
+          0.18
         ]
-      }
-    },
-    beforeId
-  );
-
-  ctx.map.addLayer(
-    {
-      id: OUTLINE_LAYER,
-      type: 'line',
-      source: 'noise-outlines',
-      paint: {
-        'line-color': [
-          'match',
-          ['get', 'lp_dba'],
-          45,
-          '#a88860',
-          50,
-          '#9a7048',
-          55,
-          '#8a5a3a',
-          65,
-          '#7a3e2c',
-          '#8a5a3a'
-        ],
-        'line-width': [
-          'interpolate',
-          ['linear'],
-          ['zoom'],
-          9,
-          0.7,
-          13,
-          1.4
-        ],
-        'line-opacity': 0.65
       }
     },
     beforeId
@@ -104,7 +69,6 @@ export function attachNoiseLayers(ctx: MapContext) {
 
   function clearNoise() {
     setSourceData('noise-bands', EMPTY);
-    setSourceData('noise-outlines', EMPTY);
   }
 
   function showNoiseAt(
@@ -124,7 +88,6 @@ export function attachNoiseLayers(ctx: MapContext) {
     }
     const geo = noiseInsightToMapGeoJSON(insight);
     setSourceData('noise-bands', geo.bands);
-    setSourceData('noise-outlines', geo.outlines);
     return insight;
   }
 

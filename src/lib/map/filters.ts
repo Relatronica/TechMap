@@ -48,6 +48,39 @@ export function wireFilters(ctx: MapContext) {
     return filterState.status.has(featureStatus(props));
   }
 
+  /** Site ids currently visible given subtype + status (+ corridor) filters. */
+  function visibleSiteIdSet() {
+    const ids = new Set();
+    if (filterState.status.size === 0) return ids;
+    ['data_centers', 'energy_plants', 'grid_nodes', 'raw_materials'].forEach((gid) => {
+      const data = dataByGroup[gid]();
+      if (!data) return;
+      const subtypes = filterState[gid].subtypes;
+      if (subtypes.size === 0) return;
+      data.features.forEach((f) => {
+        const p = f.properties;
+        if (!subtypes.has(p.subtype) || !matchesStatus(p)) return;
+        if (corridorSiteIds && corridorSiteIds.size > 0 && !corridorSiteIds.has(p.id)) return;
+        ids.add(p.id);
+      });
+    });
+    return ids;
+  }
+
+  /** Both endpoints must be on-map; avoids orphan lines when energy/grid/… are hidden. */
+  function connectionLayerFilter(rel) {
+    const ids = Array.from(visibleSiteIdSet());
+    if (ids.length === 0) {
+      return ['==', ['get', 'id'], '__none__'];
+    }
+    return [
+      'all',
+      ['==', ['get', 'relationship_type'], rel],
+      ['in', ['get', 'source_id'], ['literal', ids]],
+      ['in', ['get', 'target_id'], ['literal', ids]]
+    ];
+  }
+
   function siteLayerFilter(gid) {
     const subtypes = Array.from(filterState[gid].subtypes);
     const statuses = Array.from(filterState.status);
@@ -66,12 +99,12 @@ export function wireFilters(ctx: MapContext) {
     const data = dataByGroup[groupId]();
     if (!data) return 0;
     if (groupId === 'connections') {
+      const visibleSites = visibleSiteIdSet();
       return data.features.filter((f) => {
         if (!filterState.connections.types.has(f.properties.relationship_type)) return false;
-        if (!corridorSiteIds) return true;
         return (
-          corridorSiteIds.has(f.properties.source_id) &&
-          corridorSiteIds.has(f.properties.target_id)
+          visibleSites.has(f.properties.source_id) &&
+          visibleSites.has(f.properties.target_id)
         );
       }).length;
     }
@@ -177,18 +210,7 @@ export function wireFilters(ctx: MapContext) {
       const show = filterState.connections.types.has(rel);
       ctx.map.setLayoutProperty(layerId, 'visibility', show ? 'visible' : 'none');
       if (!show) return;
-      // Corridor: hide dangling lines whose pins are filtered out
-      if (corridorSiteIds && corridorSiteIds.size > 0) {
-        const ids = Array.from(corridorSiteIds);
-        ctx.map.setFilter(layerId, [
-          'all',
-          ['==', ['get', 'relationship_type'], rel],
-          ['in', ['get', 'source_id'], ['literal', ids]],
-          ['in', ['get', 'target_id'], ['literal', ids]]
-        ]);
-      } else {
-        ctx.map.setFilter(layerId, ['==', ['get', 'relationship_type'], rel]);
-      }
+      ctx.map.setFilter(layerId, connectionLayerFilter(rel));
     });
 
     updateFilterCounts();
