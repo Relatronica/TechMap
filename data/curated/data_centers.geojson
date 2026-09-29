@@ -49,7 +49,7 @@
         "subtype": "hyperscale",
         "operator": "Aruba S.p.A.",
         "capacity": "60 MW (campus totale)",
-        "description_it": "Campus hyperscale di Aruba a Ponte San Pietro (Bergamo), il più grande data center campus in Italia con 200.000 mq. L’operatore dichiara alimentazione al 100% da energia rinnovabile, con 15 MW di potenza disponibile e capacità totale del campus di 60 MW. Costruito su un ex sito industriale riqualificato. Non risulta un PPA o un allaccio nominato verso una centrale specifica: il prelievo è dalla rete.",
+        "description_it": "Campus hyperscale Aruba IT3 a Ponte San Pietro (Bergamo), tra i più grandi in Italia (~200.000 mq). Completamento (Data Center D) con allaccio diretto alla cabina primaria E-Distribuzione «Ponte» contigua; a monte, SE Terna Mozzo 132 kV (autorizzata) rinforza la stessa cabina. L’operatore dichiara copertura rinnovabile.",
         "country": "IT",
         "city": "Ponte San Pietro",
         "status": "operational",
@@ -64,7 +64,8 @@
           "water_use_m3_year": null,
           "land_ha": 20,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Dichiarazione Aruba: campus 100% rinnovabile. Nessun PPA né cabina/stazione nominati in un fascicolo pubblico. Il FV Enel di Trino è sul territorio piemontese vicino, ma non è un offtake verso IT3."
+          "energy_mix_note_it": "Allaccio confirmed: cabina primaria Ponte (E-Distribuzione). Mozzo è rinforzo RTN a monte, non il punto di prelievo del campus.",
+          "energy_mix_note_en": "Connection confirmed: Ponte primary cabin (E-Distribuzione). Mozzo is upstream RTN reinforcement, not the campus offtake point."
         },
         "employment": {
           "direct": null,
@@ -86,8 +87,19 @@
             "url": "https://www.aruba.it/",
             "accessed_at": "2026-09-16",
             "note": "Scheda campus / capacità dichiarata (~60 MW campus)"
+          },
+          {
+            "title": "MASE — Aruba allaccio cabina AT E-Distribuzione",
+            "url": "https://va.mite.gov.it/File/Documento/1017323",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Comune Mozzo — SE Terna / cabina Ponte",
+            "url": "https://www.comune.mozzo.bg.it/novita/news/un-impianto-di-terna-da-oltre-130-chilovolt-mozzo-la-posizione-dellamministrazione",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Aruba IT3 hyperscale campus at Ponte San Pietro (Bergamo), among Italy’s largest (~200,000 sqm). Completion (Data Center D) with a direct connection to the contiguous E-Distribuzione «Ponte» primary cabin; upstream, the authorised Terna Mozzo 132 kV SE reinforces that cabin. The operator declares renewable coverage."
       }
     },
     {
@@ -145,7 +157,7 @@
         "country": "IT",
         "city": "Settala",
         "confidence": "high",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "status": "operational",
         "site_category": "infrastructure",
         "sources": [
@@ -159,6 +171,17 @@
             "url": "https://va.mite.gov.it/File/Documento/770887",
             "accessed_at": "2026-09-28",
             "note": "Linee MT E-Distribuzione da Caleppio; backup Zelo Buon Persico; contratto Enel Energia con garanzia d’origine"
+          },
+          {
+            "title": "Enfinity — primo impianto PPA Microsoft Italia a COD (33,8 MW)",
+            "url": "https://enfinity.global/news/press-releases/enfinity-microsoft-ppa-italy/",
+            "accessed_at": "2026-09-29",
+            "note": "Portfolio fino a 366 MW AC; ubicazione primo sito non divulgata"
+          },
+          {
+            "title": "DCD — Enfinity 33,8 MW under Microsoft PPA",
+            "url": "https://www.datacenterdynamics.com/en/news/enfinity-global-brings-338mw-italian-solar-project-online-under-microsoft-ppa/",
+            "accessed_at": "2026-09-29"
           }
         ],
         "impact": {
@@ -168,7 +191,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Punto di allaccio: cabina primaria E-Distribuzione di Caleppio (132 kV) e, in backup, sottostazione di Zelo Buon Persico. Contratto Enel Energia con garanzia d’origine rinnovabile. Nessuna centrale nominata.",
+          "energy_mix_note_it": "Punto di allaccio: cabina primaria E-Distribuzione di Caleppio (132 kV) e, in backup, sottostazione di Zelo Buon Persico. Contratto Enel Energia con garanzia d’origine rinnovabile. Nessuna centrale nominata. Separatamente, Enfinity Global ha un PPA portfolio fino a ~366 MW AC con Microsoft in Italia (primo impianto 33,8 MW a COD gen 2026; siti in Lazio/Emilia-Romagna/Basilicata non nominati pubblicamente): contratto virtuale a supporto del footprint italiano, senza pin impianto → nessun arco powers finché manca la localizzazione.",
           "energy_mix_note_en": "Connection point: E-Distribuzione primary substation at Caleppio (132 kV) and, as backup, the Zelo Buon Persico substation. Enel Energia contract with renewable guarantees of origin. No power plant is named."
         }
       }
@@ -193,9 +216,22 @@
         "country": "IT",
         "city": "Rho/Pero",
         "confidence": "high",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "status": "operational",
-        "site_category": "infrastructure"
+        "site_category": "infrastructure",
+        "description_en": "AWS Europe (Milan) region with three Availability Zones, operational since 2020 in the Rho/Pero area. Nationally strategic programme (~€1.2bn) with documented expansion also at Zibido San Giacomo (dc_025). No public STMG naming a specific connection substation for Rho/Pero was curated; an inferred connects edge marks the shared Turbigo transmission cluster (not a site offtake).",
+        "sources": [
+          {
+            "title": "AWS — Europe (Milan) Region",
+            "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MIMIT — programmi strategici data center (Amazon)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
+            "accessed_at": "2026-09-29"
+          }
+        ]
       }
     },
     {
@@ -311,7 +347,7 @@
         "subtype": "hyperscale",
         "operator": "STACK Infrastructure",
         "capacity": "40+ MW (espandibile a 50+ MW)",
-        "description_it": "Campus hyperscale STACK Infrastructure a Siziano (Pavia), con oltre 100.000 mq di spazio attivo su 12 ettari. Supporta servizi hyperscale e colocation con molteplici sale dati indipendenti. Milano è uno dei mercati data center in più rapida crescita in Europa.",
+        "description_it": "Campus hyperscale STACK Infrastructure a Siziano (PV), ex Supernap / Infrastructure Italia Land 2, con oltre 100.000 mq su ~12 ettari. Allaccio documentato alla SE Terna Lacchiarella (elettrodotto 132 kV e STMG in doppia antenna sulle baie future adiacenti). Scoping/VIA MASE per l’espansione campus in corso.",
         "country": "IT",
         "city": "Siziano",
         "confidence": "high",
@@ -322,10 +358,11 @@
           "water_use_m3_year": null,
           "land_ha": 12,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Campus hyperscale wholesale; domanda elettrica rilevante sulla rete pavese/milanese."
+          "energy_mix_note_it": "Domanda dichiarata ~288 MW per l’espansione (sottostazione AT tecnica). Allaccio: Lacchiarella esistente, non Lacchiarella Ovest.",
+          "energy_mix_note_en": "Declared demand ~288 MW for the expansion (technical HV substation note). Connection: existing Lacchiarella, not Lacchiarella Ovest."
         },
         "community_impact_it": "Espansione data center nell’area metropolitana milanese: pressione su rete elettrica, suolo e risorse idriche locali; occupazione diretta tipicamente limitata rispetto alla potenza.",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "status": "operational",
         "site_category": "infrastructure",
         "sources": [
@@ -333,8 +370,24 @@
             "title": "STACK Infrastructure — Milano / Siziano",
             "url": "https://www.stackinfra.com/",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "MASE Info — Stack Campus Siziano",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11703",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "STACK — descrizione tecnica sottostazione AT / STMG Lacchiarella",
+            "url": "https://va.mite.gov.it/File/Documento/1225685",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MASE — elettrodotto Lacchiarella–Supernap (VIP 6230)",
+            "url": "https://va.mite.gov.it/File/Documento/535610",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "STACK Infrastructure hyperscale campus at Siziano (PV), former Supernap / Infrastructure Italia Land 2, with over 100,000 sqm on ~12 ha. Documented connection to Terna’s Lacchiarella SE (132 kV line and STMG in double-antenna on adjacent future bays). MASE scoping/EIA for campus expansion ongoing."
       }
     },
     {
@@ -385,11 +438,46 @@
         "type": "data_center",
         "subtype": "enterprise",
         "operator": "TIM S.p.A. / Trust Technologies",
-        "capacity": "N/D",
-        "description_it": "Data center TIM Trust Technologies a Pomezia, vicino Roma, in Via Pontina km 29+100. Operativo 24 ore su 24, parte della rete nazionale TIM di data center. TIM sta investendo 130 milioni di euro in un nuovo data center vicino Roma, operativo entro fine 2026.",
+        "capacity": "Campus ~51.000 mq; fino a ~25 MW citati in cronaca; 3 edifici (PISP, DC1, Enterprise)",
+        "description_it": "Campus TIM / Noovle a Pomezia (Via Pontina km 29+100): tre data center (PISP, DC1, Enterprise) su ~51.000 mq. Nodo cloud pubblico TIM. Autorizzazioni regionali/metropolitane 2025–2026 su nuovi impianti di emergenza (gruppi elettrogeni / DRUPS). Allaccio di rete nominato non dettagliato in fonti aperte consultate.",
         "country": "IT",
         "city": "Pomezia",
-        "confidence": "medium"
+        "confidence": "medium",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "updated_at": "2026-09-29",
+        "description_en": "TIM / Noovle campus at Pomezia (Via Pontina km 29+100): three data centers (PISP, DC1, Enterprise) on ~51,000 m². TIM public-cloud node. Regional/metropolitan 2025–2026 authorisations for new emergency plant (gensets / DRUPS). Named grid connection not detailed in open sources consulted.",
+        "impact": {
+          "capacity_mw": 25,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 5.1,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Dibattito locale concentrato sui gruppi di emergenza; punto di allaccio RTN non nominato nelle fonti usate."
+        },
+        "community_impact_it": "Pressione acustica e autorizzativa sui generatori di emergenza a Pomezia; campus già operativo.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione non dettagliata nelle fonti aperte consultate.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Il Caffè — autorizzazione definitiva impianti emergenza campus TIM Pomezia",
+            "url": "https://ilcaffe.tv/articolo/253408/pomezia-finalmente-lautorizzazione-definitiva-ai-lavori-per-i-nuovi-impianti-del-campus-data-center-da-51-000-metri-quadri",
+            "accessed_at": "2026-09-29",
+            "note": "Campus 51.000 mq; tre DC; ~25 MW citati"
+          }
+        ]
       }
     },
     {
@@ -751,7 +839,7 @@
         "status": "operational",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 170,
@@ -760,7 +848,7 @@
           "water_use_m3_year": null,
           "land_ha": 28,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Campus wholesale/colocation ad alta densità sul cluster ovest milanese; domanda elettrica rilevante sulla rete lombarda."
+          "energy_mix_note_it": "Campus wholesale/colocation ad alta densità sul cluster ovest milanese; domanda elettrica rilevante sulla rete lombarda. PPA Edison Energia (mar 2025): FV 148 MWp in provincia di Viterbo, >500 GWh/10 anni (~10% consumi Data4 Italia); arco powers verso ep_019."
         },
         "community_impact_it": "Pressione cumulativa di suolo, rete e traffico nel corridoio Cornaredo–Settimo Milanese, già saturo di campus data center.",
         "labor_risks": [
@@ -771,6 +859,17 @@
             "title": "DATA4 — campus Milano / Cornaredo",
             "url": "https://www.data4group.com/en/data-center-in-milan-italy/",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "MASE — SIA Data Center DATA4 Cornaredo / Settimo Milanese",
+            "url": "https://va.mite.gov.it/File/Documento/1261929",
+            "accessed_at": "2026-09-29",
+            "note": "Masterplan / carta vincoli; consultare fascicolo VIA per aggiornamenti sull’allaccio"
+          },
+          {
+            "title": "Data4 × Edison Energia — PPA FV Viterbo (PDF)",
+            "url": "https://www.data4group.com/wp-content/uploads/2025/04/PPA-Data4-x-Edison-Italy_Ita_eng.pdf",
+            "accessed_at": "2026-09-29"
           }
         ]
       }
@@ -860,13 +959,13 @@
         "subtype": "hyperscale",
         "operator": "Vantage Data Centers",
         "capacity": "~32 MW IT (campus Castelletto); programma multi-sito ~8 mld",
-        "description_it": "Secondo campus Vantage nel cluster ovest milanese (Castelletto / Settimo Milanese), adiacente al corridoio Data4–Equinix. Parte dello stesso programma di interesse strategico nazionale che concentra potenze elevate sul nodo Milano.",
+        "description_it": "Secondo campus Vantage nel cluster ovest milanese (Castelletto / Settimo Milanese), adiacente al corridoio Data4–Equinix. Parte dello stesso programma di interesse strategico nazionale. Il parere regionale sull’istruttoria Microsoft MIL03 elenca MXP2 tra i data center collegati alla stazione Terna di Baggio, insieme a MIL03 e Equinix ML7/ML8.",
         "country": "IT",
         "city": "Settimo Milanese",
         "status": "under_construction",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 32,
@@ -875,7 +974,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Stesso cluster energetico ovest-Milano di Data4 ed Equinix."
+          "energy_mix_note_it": "Allaccio nominato in documentazione regionale: SE Terna Baggio (insieme a MIL03 e Equinix ML7/ML8). È il punto di connessione, non la centrale che produce l’elettricità."
         },
         "community_impact_it": "Densificazione ulteriore del corridoio Settimo–Cornaredo: effetto cumulativo su rete, suolo e qualità ambientale locale.",
         "labor_risks": [
@@ -886,8 +985,20 @@
             "title": "MIMIT — programmi data center di interesse strategico (Vantage)",
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Regione Lombardia — parere MIL03: DC collegati a SE Baggio (MXP2, ML7/ML8)",
+            "url": "https://va.mite.gov.it/File/Documento/1251809",
+            "accessed_at": "2026-09-29",
+            "note": "Elenca MXP2 (VDC) tra i collegati a Baggio"
+          },
+          {
+            "title": "MIMIT — programmi data center di interesse strategico (Vantage)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Second Vantage campus in the west-Milan cluster (Castelletto / Settimo Milanese), next to the Data4–Equinix corridor. Part of the same nationally strategic programme. The regional opinion on Microsoft MIL03 lists MXP2 among data centers connected to Terna’s Baggio station, together with MIL03 and Equinix ML7/ML8."
       }
     },
     {
@@ -970,13 +1081,13 @@
         "subtype": "hyperscale",
         "operator": "Amazon Data Services Italy",
         "capacity": "N/D (espansione regione Europe Milan; VIA in corso)",
-        "description_it": "Espansione della regione AWS Europe (Milan) a Zibido San Giacomo (Edificio A), oltre ai siti Rho/Pero. Procedura VIA nazionale MASE ancora in istruttoria: l’avviso al pubblico riguarda i gruppi elettrogeni di emergenza, non un cavo verso una stazione nominata. La futura SE Terna Lacchiarella Ovest è un progetto di rete a sé, pensato come nodo per più data center del corridoio, e non è l’allaccio di questo campus. Parte del programma AWS da ~1,2 mld dichiarato di interesse strategico nazionale.",
+        "description_it": "Espansione della regione AWS Europe (Milan) a Zibido San Giacomo (Edificio A), oltre ai siti Rho/Pero. VIA nazionale MASE in istruttoria. Il parere del Parco Agricolo Sud Milano sul fascicolo cita una nuova sottostazione utente e un cavidotto AT (~2,7 km) verso la nuova SE 220 kV al confine Lacchiarella–Zibido (nodo in autorizzazione come Lacchiarella Ovest / EL-647). Parte del programma AWS da ~1,2 mld di interesse strategico nazionale.",
         "country": "IT",
         "city": "Zibido San Giacomo",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-28",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": null,
@@ -985,7 +1096,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Avviso VIA: 19 gruppi di emergenza, circa 139 MWt termici, non la potenza IT. Nessuna stazione nominata come allaccio di questo edificio. Lacchiarella Ovest resta un progetto Terna distinto."
+          "energy_mix_note_it": "Avviso VIA: gruppi di emergenza (~139 MWt termici), non la potenza IT. Allaccio di rete: nuova SE 220 kV al confine (Lacchiarella Ovest), certainty likely finché manca STMG pubblica con codice.",
+          "energy_mix_note_en": "EIA notice: emergency generators (~139 MWt thermal), not IT capacity. Grid connection: new 220 kV SE at the border (Lacchiarella Ovest), certainty likely until a public STMG with a code is available."
         },
         "community_impact_it": "Nuovo polo a sud di Milano con opere di rete associate; consultazioni pubbliche e osservazioni comunali in corso.",
         "labor_risks": [
@@ -1002,8 +1114,19 @@
             "title": "MIMIT — programmi strategici data center (Amazon)",
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Parco Agricolo Sud Milano — parere VIA AWS (SE 220 kV)",
+            "url": "https://va.mite.gov.it/File/Documento/1374304",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Comune Zibido — EL-647 Lacchiarella Ovest",
+            "url": "https://www.comune.zibidosangiacomo.mi.it/it/news/el-647-nuova-se-lacchiarella-ovest-380-220-kv-e-raccordi-aerei-alla-rtn",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Expansion of the AWS Europe (Milan) region at Zibido San Giacomo (Building A), beyond the Rho/Pero sites. National MASE EIA under review. The Parco Agricolo Sud Milano opinion on the file cites a new user substation and an HV cable (~2.7 km) to the new 220 kV SE on the Lacchiarella–Zibido border (the node under authorisation as Lacchiarella Ovest / EL-647). Part of AWS’s ~€1.2bn nationally strategic programme."
       }
     },
     {
@@ -1022,13 +1145,13 @@
         "subtype": "colocation",
         "operator": "Equinix",
         "capacity": "Sette nuovi DC previsti; investimento ~4 mld (2026–2033)",
-        "description_it": "Programma «Equinix per l’Italia» di preminente interesse strategico nazionale: sette nuovi centri a Settimo Milanese e Cusago, per colocation e hyperscale AI. Completa il footprint già presente (ML2, ML5). Fabbisogno energetico dichiarato coperto da rinnovabili tramite accordo già sottoscritto.",
+        "description_it": "Programma Equinix a Settimo Milanese / Cornaredo (ambito ex Italtel «Il Castelletto»): ampliamento ML5 (edificio ML5.4) e nuovo ML6, con cantiere previsto dal 4° trimestre 2027 secondo lo SIA. Distinto dal campus hyperscale ML7–ML8 (dc_042) già allacciato a Baggio. Consultare la documentazione VIA per lo stato dell’allaccio.",
         "country": "IT",
         "city": "Cusago",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": null,
@@ -1058,8 +1181,15 @@
             "title": "MIMIT — Equinix per l’Italia / Cavour (CdM)",
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "MASE — SIA Equinix ML5.4 / ML6 Settimo Milanese (Castelletto)",
+            "url": "https://va.mite.gov.it/File/Documento/1320505",
+            "accessed_at": "2026-09-29",
+            "note": "Due nuovi edifici: ML5 Edificio 2 (ML5.4) e ML6"
           }
-        ]
+        ],
+        "description_en": "Equinix programme at Settimo Milanese / Cornaredo (former Italtel «Il Castelletto» area): ML5 expansion (building ML5.4) and new ML6, with construction from Q4 2027 per the EIA. Distinct from the ML7–ML8 hyperscale campus (dc_042) already tied to Baggio. Check the EIA file for connection status."
       }
     },
     {
@@ -1078,13 +1208,13 @@
         "subtype": "hyperscale",
         "operator": "EdgeConneX",
         "capacity": "Quota programma Campus Italia (>300 MW su tre siti); MW IT Opera N/D",
-        "description_it": "Campus EdgeConneX a Opera, uno dei tre nodi del programma Campus Italia (~3 mld, interesse strategico nazionale) insieme a Pieve Emanuele/Fizzonasco (dc_037) e Bertonico (dc_038). Completamento dichiarato entro il 2031.",
+        "description_it": "Campus EdgeConneX a Opera (~60 MW dichiarati in presentazione pubblica), uno dei tre nodi Campus Italia (~3 mld, interesse strategico nazionale) con Pieve Emanuele/Fizzonasco e Bertonico. Presentazione comunale: alimentazione da sottostazione Terna dedicata, senza prelievo dalla rete cittadina. Nome SE / STMG non pubblicati → nessun arco connects finché manca il fascicolo.",
         "country": "IT",
         "city": "Opera",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 100,
@@ -1110,8 +1240,14 @@
             "title": "DDay — sette programmi strategici data center (EdgeConneX)",
             "url": "https://www.dday.it/redazione/58290/data-center-in-italia-il-governo-rivela-altri-due-progetti-da-68-miliardi-ecco-tutti-i-sette-siti-in-programma",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Il Giorno — presentazione EdgeConneX Opera (SE Terna dedicata)",
+            "url": "https://www.ilgiorno.it/milano/cronaca/data-center-opera-k7n5qatn",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "EdgeConneX campus at Opera (~60 MW stated in a public presentation), one of three Campus Italia nodes (~€3bn, nationally strategic) with Pieve Emanuele/Fizzonasco and Bertonico. Municipal presentation: supply from a dedicated Terna substation, not from the town grid. SE name / STMG not published → no connects edge until a filing is available."
       }
     },
     {
@@ -1130,7 +1266,7 @@
         "subtype": "hyperscale",
         "operator": "Techbau (BentallGreenOak)",
         "capacity": "300–400 MW (progetto); investimento ~4 mld",
-        "description_it": "Riconversione dell’ex centrale termoelettrica Galileo Ferraris di Trino (VC) in campus hyperscale di rilevanza nazionale/europea. Interesse strategico CdM; conferenza di servizi prevista entro fine 2026, autorizzazione 2027, primo lotto ~2028. Stesso territorio del grande FV Enel e vicino all’ex nucleare Enrico Fermi: caso-studio italiano di AI + energia + brownfield. Il parco Enel resta contesto territoriale, non un offtake nominato verso il campus.",
+        "description_it": "Riconversione dell’ex centrale termoelettrica Galileo Ferraris di Trino (VC) / Leri Cavour in campus hyperscale (Techbau / BentallGreenOak), 300–400 MW, investimento ~4 mld. Interesse strategico CdM: conferenza di servizi entro fine 2026, autorizzazione unica ~2027, primo lotto ~2028. Sul medesimo nodo: FV Enel ~87 MW (powers likely) e stazione 380 kV (connects likely verso il campus). Previsti anche accumuli elettrochimici 100–120 MW / 200–240 MWh.",
         "country": "IT",
         "city": "Trino",
         "status": "planned",
@@ -1145,7 +1281,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Sito con stazione 380 kV esistente. Il FV Enel di Trino è sul medesimo territorio (contributo di bacino, non PPA e non cavo). Il campus preleverà dalla rete."
+          "energy_mix_note_it": "SE 380 kV sul sito (gn_006) e FV Enel (ep_002): contesto documentato dal comunicato MIMIT. Niente STMG pubblica consultata → connects likely, non confirmed. Niente PPA nominato Enel→Cavour → powers likely."
         },
         "employment": {
           "direct": 325,
@@ -1166,8 +1302,19 @@
             "title": "MIMIT — Cavour Hyperscale Campus / Equinix (CdM)",
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Radio Gold — Cavour Trino, 4 mld e cronoprogramma autorizzativo",
+            "url": "https://radiogold.it/news-alto-piemonte/cronaca-alto-piemonte/442160-data-center-trino-investimento-governo/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Al Nutisiari — testo comunicato governo su SE 380 kV e FV 87,5 MW",
+            "url": "https://alnutisiari.it/index.php/2026/07/24/via-libera-del-governo-a-cavour-hyperscale-campus-il-data-center-che-nascera-a-leri-cavour-che-avra-una-media-di-1200-lavoratori-in-fase-di-costruzione/",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Conversion of the former Galileo Ferraris thermal plant at Trino (VC) / Leri Cavour into a hyperscale campus (Techbau / BentallGreenOak), 300–400 MW, ~€4bn. National strategic status: services conference by end-2026, single authorisation ~2027, first lot ~2028. On the same node: Enel ~87 MW PV (powers likely) and a 380 kV station (connects likely to the campus). Electrochemical storage 100–120 MW / 200–240 MWh also planned."
       }
     },
     {
@@ -1186,13 +1333,13 @@
         "subtype": "hyperscale",
         "operator": "Energy Vault Sulcis",
         "capacity": "fino a ~30 MW (Edge AI) + accumulo/rinnovabili integrate",
-        "description_it": "Unico programma data center di interesse strategico nazionale nel Mezzogiorno: Edge AI data center sull’ex miniera di carbone Monte Sinni a Nuraxi Figus (Gonnesa, Sulcis). ~1,49 mld; integra elaborazione dati e infrastrutture di produzione/accumulo rinnovabile. Rompe il bias Nord-Lombardia della pipeline italiana.",
+        "description_it": "Digital Vault Sulcis (Energy Vault): Edge AI data center sull’ex miniera Monte Sinni a Nuraxi Figus (Gonnesa), investimento ~1,49 mld, fino a ~30 MW (espansioni citate fino a 50–60 MW). Integra generazione e accumulo rinnovabile sul brownfield Carbosulcis. Interesse strategico CdM (ago 2026); lavori indicativi ~2028, operatività commerciale ~2030. Energy Vault dichiara progressi su connessione di rete, ma lo schema RTN/STMG non è ancora pubblico: nessun arco connects.",
         "country": "IT",
         "city": "Gonnesa",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 30,
@@ -1201,7 +1348,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Progetto dichiara integrazione con rinnovabili e accumulo sul sito minerario dismesso."
+          "energy_mix_note_it": "Modello dichiarato: DC + rinnovabili + storage sullo stesso sito. Connessione di rete «in avanzamento» (dichiarazioni azienda) ma senza fascicolo STMG/VIA consultabile che nomini cabina/stazione → niente connects."
         },
         "employment": {
           "direct": null,
@@ -1222,8 +1369,19 @@
             "title": "MIMIT — Digital Vault Sulcis / K2 (CdM)",
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "EnergiaMercato — Nuraxi Figus, timeline e connessioni ancora da definire",
+            "url": "https://www.energiamercato.it/notizie/enertech/nuraxi-figus-data-center-miniera-del-sulcis",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Unione Sarda — CdM Digital Vault Sulcis; dichiarazione Energy Vault su grid connection",
+            "url": "https://www.unionesarda.it/news-sardegna/sulcis-iglesiente/ok-del-governo-1-5-miliardi-per-il-data-center-ai-nellex-miniera-di-nuraxi-figus-qkqlkea8",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Digital Vault Sulcis (Energy Vault): Edge AI data center at the former Monte Sinni mine in Nuraxi Figus (Gonnesa), ~€1.49bn, up to ~30 MW (expansions cited to 50–60 MW). Integrates renewable generation and storage on the Carbosulcis brownfield. National strategic status (Aug 2026); indicative works ~2028, commercial operation ~2030. Energy Vault reports grid-connection progress, but the RTN/STMG scheme is not yet public: no connects edge."
       }
     },
     {
@@ -1231,8 +1389,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.47706,
-          41.76489
+          12.48705,
+          41.7744
         ]
       },
       "properties": {
@@ -1242,13 +1400,13 @@
         "subtype": "colocation",
         "operator": "Digital Realty",
         "capacity": "~3 MW IT in prima fase; campus fino a ~22 ha a pieno sviluppo",
-        "description_it": "Primo data center Digital Realty in Italia, in costruzione a Trigoria (Roma). Debutto previsto inizio 2027 (~3 MW); campus da 22 ettari con fasi successive. Completato dall’ingresso a Milano (Abbiategrasso, fino a ~84 MW). Rafforza l’asse Roma oltre Pomezia/TIM.",
+        "description_it": "Primo data center Digital Realty in Italia (ROM1), Via delle Testuggini 98–100, Trigoria (Roma). Cantiere avviato; completamento prima fase previsto 2027 (~3 MW IT in moduli). Campus fino a ~22 ha a pieno sviluppo. Indirizzo e scheda operatore pubblicati; allaccio RTN nominato non trovato in fonti aperte consultate.",
         "country": "IT",
         "city": "Roma",
         "status": "under_construction",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 3,
@@ -1268,8 +1426,19 @@
             "title": "Digital Realty — espansione Milano e presenza Roma ROM1",
             "url": "https://www.globenewswire.com/news-release/2026/03/24/3261249/0/en/Digital-Realty-Further-Expands-Mediterranean-Presence-with-Strategic-Land-Acquisitions-in-Milan.html",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Digital Realty — scheda ROM1 Via delle Testuggini",
+            "url": "https://www.digitalrealty.com/it/data-centers/emea/rome/rom1",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "DCD — Digital Realty breaks ground on Rome ROM1",
+            "url": "https://www.datacenterdynamics.com/en/news/digital-realty-breaks-ground-on-rome-data-center-italy/",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Digital Realty’s first Italian data center (ROM1), Via delle Testuggini 98–100, Trigoria (Rome). Ground broken; first phase targeted for 2027 (~3 MW IT in modules). Campus up to ~22 ha at full build-out. Operator address published; named RTN connection not found in open sources consulted."
       }
     },
     {
@@ -1288,13 +1457,13 @@
         "subtype": "hyperscale",
         "operator": "K2 Strategic Infrastructure Italy",
         "capacity": "~400 MW; investimento ~5,3 mld",
-        "description_it": "Campus hyperscale nei comuni di Zibido San Giacomo e Lacchiarella, dichiarato di interesse strategico nazionale (~5,3 mld, ~400 MW). Quattro anni di cantiere stimati con media ~2.000 occupati/anno. Stesso corridoio sud-milanese di AWS Zibido. La futura SE Terna Lacchiarella Ovest è un progetto di rete a sé, non l’allaccio nominato di questo campus.",
+        "description_it": "Campus hyperscale K2 nei comuni di Zibido San Giacomo e Lacchiarella, interesse strategico nazionale (~5,3 mld, ~400 MW). Cronaca istituzionale collega l’alimentazione alla futura SE Terna Lacchiarella Ovest (EL-647). Distinto dal campus Apto (allaccio confirmed sulla SE Lacchiarella esistente).",
         "country": "IT",
         "city": "Lacchiarella",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-28",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 400,
@@ -1303,7 +1472,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Nessun fascicolo nomina la cabina o la stazione di questo campus. Lacchiarella Ovest è un progetto Terna distinto, baricentrico rispetto a più data center del corridoio."
+          "energy_mix_note_it": "Connects likely a Lacchiarella Ovest. Nessuna STMG K2 pubblica consultata.",
+          "energy_mix_note_en": "Connects likely to Lacchiarella Ovest. No consulted public K2 STMG."
         },
         "employment": {
           "direct": null,
@@ -1324,8 +1494,19 @@
             "title": "MIMIT — K2 / Digital Vault Sulcis (CdM)",
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Il Giorno — Lacchiarella Ovest / campus Lacchiarella–Zibido",
+            "url": "https://www.ilgiorno.it/milano/cronaca/avanza-la-nuova-centrale-elettrica-768c3694",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Comune Zibido — EL-647",
+            "url": "https://www.comune.zibidosangiacomo.mi.it/it/news/el-647-nuova-se-lacchiarella-ovest-380-220-kv-e-raccordi-aerei-alla-rtn",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "K2 hyperscale campus in Zibido San Giacomo and Lacchiarella, nationally strategic (~€5.3bn, ~400 MW). Institutional reporting links supply to the future Terna Lacchiarella Ovest SE (EL-647). Distinct from the Apto campus (confirmed connection on the existing Lacchiarella SE)."
       }
     },
     {
@@ -1400,13 +1581,13 @@
         "subtype": "hyperscale",
         "operator": "Microsoft",
         "capacity": "N/D (campus a due edifici; backup generators ~50 MW riportati)",
-        "description_it": "Campus Microsoft self-build a Bornasco (PV), a sud di Milano, all’incrocio Via dei Pioppi / Via Rimembranze. Cantiere avviato a gennaio 2026 (due edifici dati). Completa il footprint Azure Italy North oltre Settala, Noviglio e San Bovio.",
+        "description_it": "Campus Microsoft self-build a Bornasco (PV) — MIL05/MIL06 — a sud di Milano (Via dei Pioppi / Via Rimembranze). Cantiere urbanizzazioni dal 2025; costruzione edifici dati dal 2026. Opere di connessione: doppio elettrodotto 132 kV verso nuova SE Terna Bornasco e cabina Enel Est Pavia (tracciati in valutazione nel SIA).",
         "country": "IT",
         "city": "Bornasco",
         "status": "under_construction",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": null,
@@ -1415,7 +1596,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Potenza IT non pubblicata; fonti di settore citano ~50 MW di generatori di emergenza on-site."
+          "energy_mix_note_it": "Allaccio likely verso SE Terna Bornasco (e backup Enel Est Pavia). Nessun PPA impianto nominato.",
+          "energy_mix_note_en": "Connection likely to Terna Bornasco SE (and Enel Est Pavia backup). No named plant PPA."
         },
         "employment": {
           "direct": null,
@@ -1436,8 +1618,19 @@
             "title": "Structure Research — Microsoft begins another Milan self-build (Bornasco)",
             "url": "https://www.structureresearch.net/2026/02/11/microsoft-begins-another-milan-self-build/",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "MASE — opere di connessione Bornasco (SIA)",
+            "url": "https://va.mite.gov.it/File/Documento/968327",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Microsoft Local — aggiornamento cantiere Bornasco",
+            "url": "https://local.microsoft.com/blog/bornasco-datacenter-construction-update/",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Microsoft self-build campus at Bornasco (PV) — MIL05/MIL06 — south of Milan (Via dei Pioppi / Via Rimembranze). Site works from 2025; data-building construction from 2026. Connection works: dual 132 kV lines toward the new Terna Bornasco SE and Enel Est Pavia primary cabin (alignments under evaluation in the EIA)."
       }
     },
     {
@@ -1456,13 +1649,13 @@
         "subtype": "hyperscale",
         "operator": "Vantage Data Centers",
         "capacity": "N/D; estensione strategicità ~3,79 mld (programma IT totale ~8 mld)",
-        "description_it": "Quarto campus italiano Vantage (MXP4) previsto nei comuni di Tavazzano con Villavesco e Montanaso (LO), presso/accanto alla centrale termoelettrica TTEP. Il CdM ha esteso la dichiarazione di preminente interesse strategico nazionale (~3,79 mld aggiuntivi). Cronaca locale: progetto edilizio ancora da presentare agli enti locali al momento dell’incontro tecnico; pin approssimato sul sito centrale.",
+        "description_it": "Quarto campus italiano Vantage (MXP4) previsto nei comuni di Tavazzano con Villavesco e Montanaso (LO), dentro/accanto al perimetro della centrale termoelettrica TTEP. Il CdM ha esteso la strategicità nazionale (~3,79 mld aggiuntivi). Cronaca locale (incontro tecnico MIMIT/commissario): ubicazione in centrale confermata; progetto edilizio ancora da presentare. Non è un PPA nominato: il legame energetico in mappa è powers likely per co-locazione sullo stesso nodo.",
         "country": "IT",
         "city": "Tavazzano con Villavesco",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": null,
@@ -1471,7 +1664,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Co-locazione con centrale a gas esistente: sinergia energetica potenziale, ma MW IT non ancora pubblici."
+          "energy_mix_note_it": "Co-locazione con centrale a gas TTEP (ep_018): sinergia territoriale documentata dalla cronaca/incontri tecnici; nessun offtake/PPA nominato → non elevare a confirmed."
         },
         "employment": {
           "direct": null,
@@ -1499,8 +1692,19 @@
             "url": "https://www.ilcittadino.it/stories/premium/centro_lodigiano/il-data-center-della-multinazionale-vantage-sara-nella-centrale-di-tavazzano-o_205632_96/",
             "accessed_at": "2026-09-27",
             "note": "Localizzazione presso TTEP; progetto non ancora depositato in sede comunale secondo la cronaca"
+          },
+          {
+            "title": "Il Cittadino — maxi data center accanto a centrale Tavazzano",
+            "url": "https://www.ilcittadino.it/stories/premium/centro_lodigiano/arriva-un-nuovo-maxi-data-center-o_203721_96/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MIMIT — programmi strategici data center (Vantage)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "Fourth Italian Vantage campus (MXP4) planned in Tavazzano con Villavesco and Montanaso (LO), inside/beside the TTEP thermal plant perimeter. The government extended national strategic status (~€3.79bn additional). Local reporting (MIMIT/commissioner technical meeting): plant location confirmed; building plans still to be filed. Not a named PPA: the map link is powers likely for same-node co-location."
       }
     },
     {
@@ -1583,13 +1787,13 @@
         "subtype": "hyperscale",
         "operator": "Eni / Khazna Data Centers (JV)",
         "capacity": "fino a 500 MW IT (campus modulare); target partnership IT–UAE fino a 1 GW in Italia",
-        "description_it": "Campus AI hyperscale fino a 500 MW IT a Ferrera Erbognone (PV), sullo stesso polo industriale del Green Data Center Eni (HPC). Heads of Terms Eni–Khazna (luglio 2025); JV autorizzata dalla Commissione europea. Alimentazione prevista con «Blue Power» Eni (gas ad alta efficienza + CCS). Pin sul sito del data center Eni esistente; footprint esatto del nuovo campus da raffinare.",
+        "description_it": "Campus AI hyperscale fino a 500 MW IT a Ferrera Erbognone (PV), sullo stesso polo del Green Data Center Eni (HPC). Heads of Terms Eni–Khazna (luglio 2025); JV autorizzata dalla Commissione europea. Alimentazione dichiarata: «Blue Power» Eni (nuova CCGT con CCS verso Ravenna). Non è ancora un PPA eseguito.",
         "country": "IT",
         "city": "Ferrera Erbognone",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 500,
@@ -1598,7 +1802,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Blue Power Eni (gas + cattura CO₂) dichiarato; non mix rinnovabile 100%. Sinergia energia–compute nel sito."
+          "energy_mix_note_it": "Powers likely da Blue Power (HoT). Distinto dalla centrale Enipower già operativa nel comune.",
+          "energy_mix_note_en": "Powers likely from Blue Power (HoT). Distinct from the existing Enipower plant in the municipality."
         },
         "employment": {
           "direct": null,
@@ -1625,8 +1830,14 @@
             "title": "Il Sole 24 Ore — via libera Ue alla JV Eni–Khazna",
             "url": "https://www.ilsole24ore.com/art/data-center-via-libera-ue-joint-venture-eni-khazna-accelerazione-polo-lombardo-AJl2Zcj",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Eni — HoT Khazna / Blue Power",
+            "url": "https://www.eni.com/it-IT/media/comunicati-stampa/2025/07/cs-khazna-data-centers-eni-comunita-insieme-sviluppo-ai-data-center-campus.html",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "AI hyperscale campus up to 500 MW IT at Ferrera Erbognone (PV), on the same hub as Eni’s Green Data Center (HPC). Eni–Khazna Head of Terms (July 2025); JV cleared by the European Commission. Declared supply: Eni «Blue Power» (new CCGT with CCS to Ravenna). Not yet an executed PPA."
       }
     },
     {
@@ -1898,6 +2109,153 @@
             "url": "https://va.mite.gov.it/File/Documento/1406478",
             "accessed_at": "2026-09-29",
             "note": "Allaccio cavo sotterraneo alla SE esistente 380/132 kV Lacchiarella"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.03768,
+          45.47684
+        ]
+      },
+      "properties": {
+        "id": "dc_042",
+        "name": "Equinix Hyperscale — ML7 / ML8 (Castelletto)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Equinix Hyperscale 2 (ML7)",
+        "capacity": "Generazione emergenza dichiarata ~125–134 MWt (ML7+ML8); potenza IT non pubblica",
+        "description_it": "Campus hyperscale Equinix a Settimo Milanese, località Il Castelletto: due unità indipendenti ML7 e ML8. Alimentate da una stazione AT/MT prossima al sito, collegata alla SE Terna Baggio con elettrodotto in doppio cavo interrato (screening/documentazione ambientale Equinix; parere regionale MIL03 conferma il collegamento a Baggio). ML7 in costruzione dal 2021; ML8 in sviluppo successivo. Distinto da ML5 (IBX) e dal progetto ML5.4/ML6 (dc_026). Pin da OpenStreetMap (Equinix ML7x).",
+        "description_en": "Equinix hyperscale campus at Settimo Milanese, Il Castelletto: two independent units ML7 and ML8. Fed from a nearby HV/MV station linked to Terna’s Baggio SE by a dual buried cable (Equinix environmental filings; regional MIL03 opinion confirms the Baggio connection). ML7 under construction since 2021; ML8 later. Distinct from ML5 (IBX) and the ML5.4/ML6 project (dc_026). Pin from OpenStreetMap (Equinix ML7x).",
+        "country": "IT",
+        "city": "Settimo Milanese",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio documentato: doppio cavo interrato verso SE Terna Baggio. Non è un PPA e non indica quale centrale produce l’energia."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Cantiere ML7 avviato; ML8 in fasi successive. Organico operativo non dichiarato in fonti aperte.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Pressione cumulativa a Castelletto insieme a Data4, Vantage MXP2 e Microsoft MIL03; prossimità al Parco Agricolo Sud Milano.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MASE — Info Data Center ML7–ML8 Settimo Milanese (Equinix)",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11965",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Equinix — Studio preliminare ambientale ML7–ML8 (allaccio Baggio)",
+            "url": "https://va.mite.gov.it/File/Documento/712030",
+            "accessed_at": "2026-09-29",
+            "note": "Doppio cavo interrato dalla stazione AT/MT del sito alla SE Baggio"
+          },
+          {
+            "title": "Equinix — integrazione ML7–ML8 (descrizione allaccio Baggio)",
+            "url": "https://va.mite.gov.it/File/Documento/931063",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Regione Lombardia — parere MIL03: ML7/ML8 collegati a Baggio",
+            "url": "https://va.mite.gov.it/File/Documento/1251809",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — Equinix ML7x (way 1482049979)",
+            "url": "https://www.openstreetmap.org/way/1482049979",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.63138,
+          41.93183
+        ]
+      },
+      "properties": {
+        "id": "dc_043",
+        "name": "Aruba Hyper Cloud Data Center IT4 — Tecnopolo Tiburtino (Roma)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Aruba",
+        "capacity": "N/D; ampliamento con gruppi elettrogeni in istruttoria ambientale",
+        "description_it": "Campus Aruba Hyper Cloud IT4 in Via Giacomo Peroni 380, Tecnopolo Tiburtino (Roma). Cloud, colocation e connettività per imprese e PA. Procedura MASE di verifica di assoggettabilità a VIA per installazione di gruppi elettrogeni di emergenza (ID VIP 13164). Distinto da Aruba IT1 Arezzo e IT3 Ponte San Pietro.",
+        "description_en": "Aruba Hyper Cloud IT4 campus at Via Giacomo Peroni 380, Tecnopolo Tiburtino (Rome). Cloud, colocation and connectivity for business and public administration. MASE EIA-screening procedure for emergency generator sets (VIP 13164). Distinct from Aruba IT1 Arezzo and IT3 Ponte San Pietro.",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2020,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio di rete non nominato in fonti aperte consultate; fascicolo VIA riguarda i gruppi di emergenza, non il punto di connessione RTN."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione campus non dettagliata nel fascicolo generatori; tipica di un nodo cloud/colocation metropolitano.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Polo digitale sull’asse Tiburtino; pressione locale soprattutto su rumore/emissioni dei gruppi di emergenza in istruttoria.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "MASE — Info VIA generatori Aruba Tecnopolo Tiburtino (ID 13164)",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11308",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MASE — documento economico/indirizzo Via Peroni 380",
+            "url": "https://va.mite.gov.it/File/Documento/1278525",
+            "accessed_at": "2026-09-29",
+            "note": "Hyper Cloud IT4, Via Giacomo Peroni 380"
+          },
+          {
+            "title": "MASE — scheda edificio / coordinate GIS Tiburtino",
+            "url": "https://va.mite.gov.it/File/Documento/1278524",
+            "accessed_at": "2026-09-29",
+            "note": "Lat 41.93133 Lon 12.631676"
           }
         ]
       }

@@ -602,6 +602,180 @@
         ],
         "community_impact_it": "Impatto locale tipico di un FV di piccola-media taglia su suolo agricolo. Il legame con Equinix è contrattuale (PPA), non un allaccio fisico al campus."
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.4364,
+          45.3325
+        ]
+      },
+      "properties": {
+        "id": "ep_018",
+        "name": "Tavazzano / Montanaso — Centrale TTEP",
+        "type": "energy_plant",
+        "subtype": "gas",
+        "operator": "EP Produzione (TTEP)",
+        "capacity": "~1.520 MW (WRI / schede storiche)",
+        "description_it": "Centrale termoelettrica a gas di Tavazzano e Montanaso (LO), storica unità del sistema elettrico lombardo (oggi EP Produzione / TTEP). Nel perimetro o sui terreni adiacenti è previsto il campus Vantage MXP4 (dc_034), dichiarato di interesse strategico nazionale. Non risulta un PPA o offtake nominato Vantage↔TTEP: il legame in mappa è powers likely per co-locazione sullo stesso nodo.",
+        "description_en": "Gas-fired power plant at Tavazzano and Montanaso (LO), a long-standing unit of the Lombardy system (now EP Produzione / TTEP). Vantage’s MXP4 campus (dc_034) is planned inside/beside the plant perimeter and carries national strategic status. No named Vantage↔TTEP PPA or offtake is on record: the map link is powers likely for same-node co-location.",
+        "country": "IT",
+        "city": "Tavazzano con Villavesco",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 1520,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Gas termoelettrico; densità di potenza elevata. Il data center MXP4 è co-locato, non un offtake documentato."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Centrale CCGT di grande taglia: organico operativo contenuto rispetto ai MW; manutenzione in appalto.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "WRI Global Power Plant Database — Tavazzano",
+            "url": "https://datasets.wri.org/datasets/global-power-plant-database",
+            "accessed_at": "2026-09-29",
+            "note": "Record import ~1.520 MW; coordinate usate come pin"
+          },
+          {
+            "title": "Il Cittadino — Vantage nella centrale di Tavazzano",
+            "url": "https://www.ilcittadino.it/stories/premium/centro_lodigiano/il-data-center-della-multinazionale-vantage-sara-nella-centrale-di-tavazzano-o_205632_96/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Il Cittadino — maxi data center accanto a TTEP",
+            "url": "https://www.ilcittadino.it/stories/premium/centro_lodigiano/arriva-un-nuovo-maxi-data-center-o_203721_96/",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Nodo energetico lodigiano già carico; l’arrivo di MXP4 riapre il dibattito su emissioni, suolo e ruolo della centrale."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.9488,
+          42.4168
+        ]
+      },
+      "properties": {
+        "id": "ep_019",
+        "name": "Edison — Parco fotovoltaico PPA Data4 (provincia di Viterbo)",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Edison Energia",
+        "capacity": "148 MWp",
+        "description_it": "Parco fotovoltaico di nuova costruzione da 148 MWp in provincia di Viterbo, oggetto del PPA decennale Edison Energia–Data4 (marzo 2025). Fornirà oltre 500 GWh in dieci anni, circa il 10% dei consumi Data4 in Italia. Il comunicato non pubblica nome commerciale né comune esatto: pin approssimato sulla provincia di Viterbo. È un PPA virtuale/contrattuale, non un cavo verso Cornaredo.",
+        "description_en": "Newly built 148 MWp solar park in Viterbo province under the Edison Energia–Data4 10-year PPA (March 2025). It will supply over 500 GWh across ten years, about 10% of Data4’s Italian consumption. Releases do not name the plant or exact municipality: approximate pin on Viterbo province. It is a contractual/virtual PPA, not a cable to Cornaredo.",
+        "country": "IT",
+        "city": "Viterbo (provincia)",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 148,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Fotovoltaico; PPA Data4 (baseload dichiarato >500 GWh/10 anni)."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Impianto FV utility-scale: organico operativo contenuto; dettaglio non in comunicato.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "Data4 × Edison Energia — PPA FV Viterbo (PDF)",
+            "url": "https://www.data4group.com/wp-content/uploads/2025/04/PPA-Data4-x-Edison-Italy_Ita_eng.pdf",
+            "accessed_at": "2026-09-29",
+            "note": "148 MWp; >500 GWh/10 anni; ~10% consumi Data4 Italia"
+          },
+          {
+            "title": "La Provincia di Viterbo — accordo Data4/Edison",
+            "url": "https://laprovinciaviterbo.it/2025/03/04/accorso-data4-ed-edison-energia-per-nuovo-mega-impianto-di-rinnovabili-nel-viterbese/",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Nuovo FV utility-scale nel Viterbese a servizio contrattuale di un operatore data center; impatto suolo/paesaggio locale tipico del fotovoltaico a terra."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.865,
+          45.102
+        ]
+      },
+      "properties": {
+        "id": "ep_020",
+        "name": "Eni Blue Power — nuova CCGT con CCS (Ferrera Erbognone)",
+        "type": "energy_plant",
+        "subtype": "gas",
+        "operator": "Eni",
+        "capacity": "N/D (progetto; alimentazione dichiarata del campus AI 500 MW IT)",
+        "description_it": "Nuova centrale a gas a ciclo combinato ad alta efficienza prevista da Eni a Ferrera Erbognone, progettata per catturare la CO₂ e conferirla all’hub CCS di Ravenna («Blue Power»). Nell’Head of Terms Eni–Khazna (luglio 2025) è la fonte dichiarata di alimentazione dell’AI Data Center Campus sullo stesso polo. Distinta dalla centrale Enipower già in esercizio nel comune. Pin approssimato sul polo industriale di Ferrera Erbognone.",
+        "description_en": "New high-efficiency combined-cycle gas plant planned by Eni at Ferrera Erbognone, designed to capture CO₂ and send it to the Ravenna CCS hub («Blue Power»). In the Eni–Khazna Head of Terms (July 2025) it is the declared supply source for the AI Data Center Campus on the same hub. Distinct from the existing Enipower plant in the municipality. Approximate pin on the Ferrera Erbognone industrial hub.",
+        "country": "IT",
+        "city": "Ferrera Erbognone",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Gas con cattura CO₂ dichiarata (Blue Power). Impianto non ancora in esercizio; legame col campus = HoT, non PPA eseguito."
+        },
+        "sources": [
+          {
+            "title": "Eni — HoT Khazna / Blue Power",
+            "url": "https://www.eni.com/it-IT/media/comunicati-stampa/2025/07/cs-khazna-data-centers-eni-comunita-insieme-sviluppo-ai-data-center-campus.html",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Khazna — Blue Power / CCGT with CCS",
+            "url": "https://khaznadatacenters.com/press-release/khazna-data-centers-and-eni-partner-to-develop-500-mw-ai-data-center-campus-near-milan/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
     }
   ]
 }

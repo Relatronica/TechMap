@@ -59,8 +59,8 @@
         "subtype": "substation",
         "operator": "Terna",
         "capacity": "380 kV",
-        "description_it": "Stazione di trasmissione esistente a Lacchiarella, 380 kV. Il campus Microsoft di Noviglio (Building MXP-I) vi arriva con un cavo interrato a 132 kV. Anche Apto Lacchiarella ha una STMG (202400955) per allaccio con cavo sotterraneo a questa stazione. Non è la futura SE Lacchiarella Ovest, progetto Terna distinto, e non è una centrale.",
-        "description_en": "Existing transmission station at Lacchiarella, 380 kV. Microsoft’s Noviglio campus (Building MXP-I) reaches it by a buried 132 kV cable. Apto Lacchiarella also holds an STMG (202400955) for an underground cable to this station. This is not the future Lacchiarella Ovest station, a separate Terna project, and it is not a power plant.",
+        "description_it": "Stazione di trasmissione esistente a Lacchiarella, 380 kV. Il campus Microsoft di Noviglio (Building MXP-I) vi arriva con un cavo interrato a 132 kV. Apto Lacchiarella ha STMG 202400955 verso questa stazione. STACK Siziano (ex Supernap) è collegato con elettrodotto 132 kV e STMG in doppia antenna sulle baie future adiacenti. Non è la futura SE Lacchiarella Ovest (gn_007), progetto Terna distinto, e non è una centrale.",
+        "description_en": "Existing transmission station at Lacchiarella, 380 kV. Microsoft’s Noviglio campus (Building MXP-I) reaches it by a buried 132 kV cable. Apto Lacchiarella holds STMG 202400955 to this station. STACK Siziano (former Supernap) is linked by a 132 kV line and an STMG in double-antenna on adjacent future bays. This is not the future Lacchiarella Ovest SE (gn_007), a separate Terna project, and it is not a power plant.",
         "country": "IT",
         "city": "Lacchiarella",
         "status": "operational",
@@ -86,6 +86,11 @@
             "url": "https://va.mite.gov.it/File/Documento/1406478",
             "accessed_at": "2026-09-29",
             "note": "Allaccio nominato alla SE esistente, non a Lacchiarella Ovest"
+          },
+          {
+            "title": "STACK Campus — STMG / elettrodotto verso SE Lacchiarella",
+            "url": "https://va.mite.gov.it/File/Documento/1225685",
+            "accessed_at": "2026-09-29"
           }
         ],
         "community_impact_it": "Nodo di trasmissione già in esercizio. Il prelievo del campus si legge sul cavo e sul sito, non come produzione della stazione."
@@ -107,14 +112,14 @@
         "subtype": "substation",
         "operator": "Edipower",
         "capacity": "380 kV",
-        "description_it": "Stazione di trasmissione a 380 kV subito a est della centrale Iren di Turbigo. È il punto in cui la centrale immette in rete. L’operatore in OpenStreetMap è Edipower, il precedente proprietario dell’impianto. Gli archi inferred verso i campus milanesi segnalano lo stesso cluster di rete: non sono l’allaccio di quei campus né un offtake.",
-        "description_en": "380 kV transmission station just east of the Iren plant at Turbigo. This is where the plant injects into the grid. OpenStreetMap names the operator as Edipower, the plant’s previous owner. Inferred edges toward Milan campuses mark the same grid cluster: they are not those campuses’ connection points and not an offtake.",
+        "description_it": "Stazione di trasmissione a 380 kV subito a est della centrale Iren di Turbigo. È il punto in cui la centrale immette in rete. L’operatore in OpenStreetMap è Edipower, il precedente proprietario dell’impianto. Gli archi inferred verso i campus milanesi segnalano lo stesso cluster di rete: non sono l’allaccio di quei campus né un offtake. Dove esiste un allaccio documentato (Caleppio, Lacchiarella, Baggio, Melegnano, Lacchiarella Ovest), quello resta l’arco di riferimento.",
+        "description_en": "380 kV transmission station just east of the Iren plant at Turbigo. This is where the plant injects into the grid. OpenStreetMap names the operator as Edipower, the plant’s previous owner. Inferred edges toward Milan campuses mark the same grid cluster: they are not those campuses’ connection points and not an offtake. Where a documented connection exists (Caleppio, Lacchiarella, Baggio, Melegnano, Lacchiarella Ovest), that edge remains the reference.",
         "country": "IT",
         "city": "Turbigo",
         "status": "operational",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-28",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "sources": [
           {
@@ -143,8 +148,8 @@
         "subtype": "substation",
         "operator": "Terna",
         "capacity": "380/132 kV",
-        "description_it": "Stazione di trasmissione Terna di Baggio, al margine ovest della frazione Seguro (Settimo Milanese) lungo via Edison. È il punto di allaccio nominato del campus Microsoft MIL03 (due cavi 132 kV interrati). Non è una centrale. Pin approssimato dalla descrizione VIA: il nome Baggio non compare come way dedicata in OpenStreetMap al momento della cura.",
-        "description_en": "Terna’s Baggio transmission station, on the western edge of Seguro (Settimo Milanese) along Via Edison. It is the named connection point for Microsoft’s MIL03 campus (two buried 132 kV cables). It is not a power plant. Approximate pin from the EIA description: the Baggio name is not present as a dedicated OpenStreetMap way at the time of curation.",
+        "description_it": "Stazione di trasmissione Terna di Baggio, al margine ovest della frazione Seguro (Settimo Milanese) lungo via Edison. Documentazione ambientale e parere regionale nominano allacci verso Microsoft MIL03, Equinix ML7/ML8 e Vantage MXP2 (doppi cavi 132 kV / elettrodotti interrati). Non è una centrale. Pin approssimato dalla descrizione VIA (nome Baggio non mappato come way dedicata in OSM al momento della cura).",
+        "description_en": "Terna’s Baggio transmission station, on the western edge of Seguro (Settimo Milanese) along Via Edison. Environmental filings and a regional opinion name connections toward Microsoft MIL03, Equinix ML7/ML8 and Vantage MXP2 (dual 132 kV / buried lines). It is not a power plant. Approximate pin from the EIA description (Baggio name not mapped as a dedicated OSM way at curation time).",
         "country": "IT",
         "city": "Settimo Milanese",
         "status": "operational",
@@ -164,6 +169,17 @@
             "url": "https://www.openstreetmap.org/way/24871154",
             "accessed_at": "2026-09-29",
             "note": "Ancoraggio stradale del pin; la stazione non è mappata con nome Baggio"
+          },
+          {
+            "title": "Regione Lombardia — parere MIL03: elenco DC collegati a Baggio",
+            "url": "https://va.mite.gov.it/File/Documento/1251809",
+            "accessed_at": "2026-09-29",
+            "note": "MIL03, ML7/ML8 (Equinix), MXP2 (Vantage)"
+          },
+          {
+            "title": "Equinix — SPA ML7–ML8: elettrodotto verso SE Baggio",
+            "url": "https://va.mite.gov.it/File/Documento/712030",
+            "accessed_at": "2026-09-29"
           }
         ],
         "community_impact_it": "Nodo di trasmissione già in esercizio. Il prelievo del campus si legge sul cavo MIL03, non come produzione della stazione."
@@ -203,6 +219,172 @@
           }
         ],
         "community_impact_it": "Nuovo nodo di trasmissione a ridosso del campus. L’impatto territoriale si legge sul sito Vantage e sulla linea entra-esce, non come produzione della stazione."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2985,
+          45.1905
+        ]
+      },
+      "properties": {
+        "id": "gn_006",
+        "name": "Stazione 380 kV Trino / Leri Cavour",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "Terna",
+        "capacity": "380 kV",
+        "description_it": "Stazione elettrica a 380 kV sul nodo di Trino / Leri Cavour, citata dal comunicato MIMIT sul Cavour Hyperscale Campus come asse di «connessione diretta» del sito insieme al FV Enel già operativo. Non è una centrale. Pin approssimato sull’ex polo Galileo Ferraris (non mappata con nome dedicato in OSM al momento della cura).",
+        "description_en": "380 kV electrical station on the Trino / Leri Cavour node, cited in the MIMIT release on the Cavour Hyperscale Campus as enabling «direct connection» to primary energy corridors, alongside the existing Enel PV park. It is not a power plant. Approximate pin on the former Galileo Ferraris hub (no dedicated OSM name at curation time).",
+        "country": "IT",
+        "city": "Trino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "MIMIT — Cavour Hyperscale Campus (CdM): stazione 380 kV sul sito",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-29",
+            "note": "Connessione diretta agli assi energetici primari grazie alla SE 380 kV"
+          },
+          {
+            "title": "Radio Gold — Cavour Trino, cronoprogramma e SE 380 kV",
+            "url": "https://radiogold.it/news-alto-piemonte/cronaca-alto-piemonte/442160-data-center-trino-investimento-governo/",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Nodo di trasmissione già presente sul brownfield di Trino. Il prelievo del futuro campus si leggerà sull’allaccio, non come produzione della stazione."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1185,
+          45.3515
+        ]
+      },
+      "properties": {
+        "id": "gn_007",
+        "name": "Stazione Terna Lacchiarella Ovest (EL-647)",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "Terna",
+        "capacity": "380/220 kV",
+        "description_it": "Nuova stazione Terna 380/220 kV «Lacchiarella Ovest» (procedimento EL-647), in autorizzazione ai sensi del d.l. 239/2003, con ricadute anche sulla frazione di Badile (Zibido San Giacomo). Distinta dalla SE Lacchiarella esistente (gn_002). Destinata a servire il corridoio data center sud-milanese (tra cui AWS Zibido e il campus strategico K2). Pin approssimato sul confine Lacchiarella–Zibido oltre il Naviglio Pavese. Non è una centrale.",
+        "description_en": "New Terna 380/220 kV «Lacchiarella Ovest» station (EL-647 procedure), under authorisation pursuant to Decree-Law 239/2003, also affecting the Badile area (Zibido San Giacomo). Distinct from the existing Lacchiarella SE (gn_002). Intended to serve the south-Milan data-center corridor (including AWS Zibido and the strategic K2 campus). Approximate pin on the Lacchiarella–Zibido border beyond the Naviglio Pavese. It is not a power plant.",
+        "country": "IT",
+        "city": "Lacchiarella / Zibido San Giacomo",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Comune Zibido — EL-647 SE Lacchiarella Ovest 380/220 kV",
+            "url": "https://www.comune.zibidosangiacomo.mi.it/it/news/el-647-nuova-se-lacchiarella-ovest-380-220-kv-e-raccordi-aerei-alla-rtn",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Il Giorno — scontro Comune–Terna su Lacchiarella Ovest",
+            "url": "https://www.ilgiorno.it/milano/cronaca/avanza-la-nuova-centrale-elettrica-768c3694",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Parco Agricolo Sud Milano — parere VIA AWS (SE 220 kV al confine)",
+            "url": "https://va.mite.gov.it/File/Documento/1374304",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Opera di interesse nazionale contestata dal Comune di Zibido (richiesta di localizzazione alternativa respinta da Terna). Impatto territoriale sul nodo Badile/Lacchiarella, non produzione elettrica."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.215,
+          45.242
+        ]
+      },
+      "properties": {
+        "id": "gn_008",
+        "name": "Stazione Terna Bornasco (nuova)",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "Terna",
+        "capacity": "132 kV",
+        "description_it": "Nuova stazione elettrica Terna a Bornasco prevista dal fascicolo Microsoft MIL05/MIL06 come uno dei due punti di fornitura AT del campus (insieme alla cabina Enel Est Pavia). Pin approssimato a sud del sito Microsoft lungo l’asse via dei Pioppi / Corbesate; tracciati ancora in valutazione. Non è una centrale.",
+        "description_en": "New Terna electrical station at Bornasco foreseen in the Microsoft MIL05/MIL06 filing as one of the campus’s two HV supply points (together with Enel Est Pavia primary cabin). Approximate pin south of the Microsoft site along the Via dei Pioppi / Corbesate axis; alignments still under evaluation. It is not a power plant.",
+        "country": "IT",
+        "city": "Bornasco",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "MASE — opere di connessione Bornasco (SIA)",
+            "url": "https://va.mite.gov.it/File/Documento/968327",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Nuovo nodo di trasmissione a servizio del campus Microsoft; tracciati cavo in area agricola ancora in studio."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.5885,
+          45.692
+        ]
+      },
+      "properties": {
+        "id": "gn_009",
+        "name": "Cabina primaria E-Distribuzione «Ponte» — Ponte San Pietro",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "E-Distribuzione",
+        "capacity": "AT / primaria",
+        "description_it": "Cabina primaria E-Distribuzione «Ponte» a Ponte San Pietro, su terreno del distributore a sud del polo Aruba IT3, in adiacenza al fiume Brembo. È il punto di allaccio AT del Data Center D / completamento campus. A monte, la nuova SE Terna Mozzo 132 kV (autorizzata) rinforza questa cabina con elettrodotto interrato ~1,5 km. Non è di proprietà Aruba e non è una centrale.",
+        "description_en": "E-Distribuzione «Ponte» primary cabin at Ponte San Pietro, on distributor land south of the Aruba IT3 campus, beside the Brembo river. It is the HV connection point for Data Center D / campus completion. Upstream, the new authorised Terna Mozzo 132 kV SE reinforces this cabin with a ~1.5 km buried line. It is not owned by Aruba and is not a power plant.",
+        "country": "IT",
+        "city": "Ponte San Pietro",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "MASE — Aruba, allaccio cabina AT E-Distribuzione",
+            "url": "https://va.mite.gov.it/File/Documento/1017323",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Aruba — cabina Ponte di E-Distribuzione (osservazioni Mozzo)",
+            "url": "https://va.mite.gov.it/File/Documento/1254497",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Comune Mozzo — SE Terna verso cabina Ponte",
+            "url": "https://www.comune.mozzo.bg.it/novita/news/un-impianto-di-terna-da-oltre-130-chilovolt-mozzo-la-posizione-dellamministrazione",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Nodo di distribuzione locale; il rinforzo Mozzo ha generato opposizione comunale. L’impatto del prelievo si legge sul campus Aruba, non sulla cabina."
       }
     }
   ]
