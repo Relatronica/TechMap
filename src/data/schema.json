@@ -111,7 +111,7 @@
         "source_name": { "type": "string" },
         "target_name": { "type": "string" },
         "relationship_type": {
-          "enum": ["powers", "supplies", "manufactures_for", "connects"]
+          "enum": ["powers", "supplies", "manufactures_for", "connects", "trains"]
         },
         "description_it": { "type": "string" },
         "description_en": { "type": "string" },

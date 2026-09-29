@@ -97,6 +97,7 @@ export function attachTooltips(ctx: MapContext) {
       relType === 'powers' ? ctx.COLORS.ep :
       relType === 'supplies' ? ctx.COLORS.rm :
       relType === 'connects' ? ctx.COLORS.gn :
+      relType === 'trains' ? ctx.COLORS.labor :
       ctx.COLORS.dc;
     const typeLabel = ctx.getRelationshipLabel(relType);
     const certaintyKey = props.certainty;

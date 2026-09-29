@@ -15,7 +15,8 @@ export function wireInteractions(ctx: MapContext) {
     powers: 'connections-powers',
     supplies: 'connections-supplies',
     manufactures_for: 'connections-manufactures',
-    connects: 'connections-connects'
+    connects: 'connections-connects',
+    trains: 'connections-trains'
   };
 
   // Cursor pointer on hover

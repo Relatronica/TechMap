@@ -1,6 +1,6 @@
 {
   "version": "0.3.8",
-  "methodology_it": "Unità di lavoro = corridoio documentato, non densità di archi. Quattro tipi: powers (contratto PPA/CPPA/offtake; senza documento nominato → likely|inferred, mai confirmed), connects (fisica di rete: cabina/stazione↔campus, o centrale→stazione di immissione attigua; confirmed solo con fascicolo o adiacenza documentata; inferred ammesso dal nodo di immissione verso campus dello stesso cluster, con scheda esplicita che non è l'allaccio né un offtake), supplies e manufactures_for (filiera materiali/componenti). Certainty distingue peso visivo: inferred più leggero in mappa. Nella filiera silicio AI il tratto tipico è ASML→fonderia→design fabless→ODM assembly→campus. supplies/manufactures_for solo se il materiale appartiene alla filiera.",
+  "methodology_it": "Unità di lavoro = corridoio documentato, non densità di archi. Cinque tipi: powers (PPA/CPPA/offtake; senza documento → likely|inferred, mai confirmed), connects (fisica di rete; confirmed con fascicolo/adiacenza; inferred da nodo di immissione verso cluster), supplies e manufactures_for (filiera materiali/componenti), trains (lavoro cognitivo labeling/moderazione/RLHF verso lab o footprint; confirmed solo con inchiesta/contratto che nomina cliente e hub). Certainty distingue peso visivo. Silicio AI: ASML→fonderia→design→ODM→campus. Metalli: miniera→raffineria. Lavoro AI: Nairobi→OpenAI/Meta. supplies/manufactures_for/trains solo se appartengono alla filiera.",
   "edges": [
     {
       "id": "conn_001",
@@ -897,7 +897,98 @@
           "accessed_at": "2026-09-29"
         }
       ]
+    },
+    {
+      "id": "conn_054",
+      "source_id": "rm_011",
+      "target_id": "rm_024",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "Greenbushes fornisce spodumene chimico alla raffineria TLEA di Kwinana nella catena verticalmente integrata Tianqi–IGO (stesso JV che detiene il 51% di Talison).",
+      "description_en": "Greenbushes supplies chemical-grade spodumene to TLEA’s Kwinana refinery in the vertically integrated Tianqi–IGO chain (same JV that holds 51% of Talison).",
+      "evidence_note_it": "IGO: Kwinana «forms part of a vertically integrated lithium value chain with Greenbushes supplying» il concentrato. Confirmed sul flusso miniera→raffineria dello stesso gruppo.",
+      "evidence_note_en": "IGO: Kwinana «forms part of a vertically integrated lithium value chain with Greenbushes supplying» the concentrate. Confirmed on same-group mine→refinery flow.",
+      "as_of": "2024-01-01",
+      "sources": [
+        {
+          "title": "IGO — Greenbushes / Kwinana vertical integration",
+          "url": "https://www.igo.com.au/site/operations/lithium-holdco-joint-venture",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_055",
+      "source_id": "rm_021",
+      "target_id": "rm_023",
+      "relationship_type": "trains",
+      "certainty": "confirmed",
+      "description_it": "Worker Sama a Nairobi hanno etichettato e filtrato testi/immagini per progetti OpenAI (safety / ChatGPT), con pay band documentato ~1–2 $/ora. È lavoro cognitivo che addestra e igienizza il modello, non un cavo né un chip.",
+      "description_en": "Sama workers in Nairobi labeled and filtered text/images for OpenAI projects (safety / ChatGPT), with a documented ~$1–2/hour pay band. Cognitive labor that trains and sanitizes the model — not a cable and not a chip.",
+      "evidence_note_it": "Inchiesta TIME (documenti interni Sama/OpenAI, payslip): contratto OpenAI→Sama e wage worker. Confirmed sul legame committenza; non sul singolo dataset.",
+      "evidence_note_en": "TIME investigation (internal Sama/OpenAI documents, payslips): OpenAI→Sama contract and worker wages. Confirmed on the contracting link; not on a single dataset.",
+      "as_of": "2023-01-18",
+      "sources": [
+        {
+          "title": "TIME — OpenAI Used Kenyan Workers on Less Than $2 Per Hour",
+          "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "CBS — Sama / OpenAI Kenya",
+          "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_056",
+      "source_id": "rm_021",
+      "target_id": "dc_013",
+      "relationship_type": "trains",
+      "certainty": "likely",
+      "description_it": "Sama ha moderato contenuti per Meta/Facebook dall’hub di Nairobi. Luleå è un campus hyperscale Meta europeo dove quei sistemi di piattaforma sono serviti: il legame è lavoro cognitivo→footprint, non un allaccio elettrico.",
+      "description_en": "Sama moderated content for Meta/Facebook from the Nairobi hub. Luleå is a European Meta hyperscale campus where those platform systems are served: the link is cognitive labor→footprint, not a grid connection.",
+      "evidence_note_it": "TIME/CBS documentano Sama→Meta/Facebook. Il salto al singolo campus Luleå non è in un contratto sito-sito → likely sul footprint Meta, non confirmed sul pin.",
+      "evidence_note_en": "TIME/CBS document Sama→Meta/Facebook. The jump to the single Luleå campus is not in a site-to-site contract → likely on the Meta footprint, not confirmed on the pin.",
+      "as_of": "2023-01-01",
+      "sources": [
+        {
+          "title": "TIME — Facebook’s African sweatshop / Sama",
+          "url": "https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "CBS — Sama Meta Kenya",
+          "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_057",
+      "source_id": "rm_022",
+      "target_id": "rm_023",
+      "relationship_type": "trains",
+      "certainty": "likely",
+      "description_it": "Remotasks (Scale AI) ha reclutato worker in Kenya per labeling a pezzo; Scale figura tra i fornitori di dati per laboratori AI di primo piano, incluso OpenAI secondo lettere e cronaca dei worker. Chiusura africana 2024.",
+      "description_en": "Remotasks (Scale AI) recruited Kenyan workers for piece-rate labeling; Scale figures among data suppliers to leading AI labs, including OpenAI per worker letters and reporting. African exit 2024.",
+      "evidence_note_it": "Foxglove/CBS: worker Remotasks in Kenya; Scale citata come fornitore per OpenAI e altri. Senza contratto OpenAI–Remotasks pubblico sito-sito → likely.",
+      "evidence_note_en": "Foxglove/CBS: Remotasks workers in Kenya; Scale cited as supplier for OpenAI and others. Without a public OpenAI–Remotasks site-to-site contract → likely.",
+      "as_of": "2024-03-01",
+      "sources": [
+        {
+          "title": "Foxglove — Kenyan AI workers letter (Scale/Remotasks)",
+          "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "CBS — Remotasks Kenya",
+          "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
     }
   ],
-  "removed_from_v1_note_it": "Rimossi archi non filiera e i salti NVIDIA→campus senza ODM. 2026-09-28: rimossi gli otto powers inferred Turbigo→campus milanesi. 2026-09-29: rimossi conn_008/021 e conn_014/015; Trino→Cavour come powers likely; otto connects inferred Turbigo stazione→cluster Milano. 2026-09-29 (razionalizzazione): eliminati i tipi injects e contributes — immissione centrale→stazione e allacci diventano connects; contributi di bacino senza PPA diventano powers likely|inferred. 2026-09-29: aggiunti connects confirmed Baggio→MIL03, Lacchiarella→Apto, Melegnano→Vantage MXP1; powers Neoen Arena Po→Equinix ML5 (confirmed) e ML2 (likely). 2026-09-29: Baggio→MXP2 e Baggio→Equinix ML7/ML8 (connects confirmed); Tavazzano TTEP→MXP4 (powers likely); fonti VIA/pareri in scheda. 2026-09-29: fuori LO — gn_006 Trino 380 kV→Cavour connects likely; Edison FV Viterbo→Data4 powers confirmed; schede Sulcis/ROM1/Pomezia aggiornate; pin Aruba IT4 Tiburtino; Enfinity→MS solo nota in scheda (sito non divulgato). 2026-09-29 (miglioramenti): mantenuti otto connects inferred Turbigo→cluster Milano (insieme agli allacci documentati); aggiunti gn_007 Lacchiarella Ovest, gn_008 Bornasco Terna, gn_009 cabina Ponte; STACK→Lacchiarella confirmed; AWS Zibido e K2→Lacchiarella Ovest likely; MS Bornasco→SE Bornasco likely; Aruba IT3→cabina Ponte confirmed; Blue Power Ferrera→Eni–Khazna powers likely."
+  "removed_from_v1_note_it": "Rimossi archi non filiera e i salti NVIDIA→campus senza ODM. 2026-09-28: rimossi gli otto powers inferred Turbigo→campus milanesi. 2026-09-29: rimossi conn_008/021 e conn_014/015; Trino→Cavour come powers likely; otto connects inferred Turbigo stazione→cluster Milano. 2026-09-29 (razionalizzazione): eliminati i tipi injects e contributes — immissione centrale→stazione e allacci diventano connects; contributi di bacino senza PPA diventano powers likely|inferred. 2026-09-29: aggiunti connects confirmed Baggio→MIL03, Lacchiarella→Apto, Melegnano→Vantage MXP1; powers Neoen Arena Po→Equinix ML5 (confirmed) e ML2 (likely). 2026-09-29: Baggio→MXP2 e Baggio→Equinix ML7/ML8 (connects confirmed); Tavazzano TTEP→MXP4 (powers likely); fonti VIA/pareri in scheda. 2026-09-29: fuori LO — gn_006 Trino 380 kV→Cavour connects likely; Edison FV Viterbo→Data4 powers confirmed; schede Sulcis/ROM1/Pomezia aggiornate; pin Aruba IT4 Tiburtino; Enfinity→MS solo nota in scheda (sito non divulgato). 2026-09-29 (miglioramenti): mantenuti otto connects inferred Turbigo→cluster Milano (insieme agli allacci documentati); aggiunti gn_007 Lacchiarella Ovest, gn_008 Bornasco Terna, gn_009 cabina Ponte; STACK→Lacchiarella confirmed; AWS Zibido e K2→Lacchiarella Ovest likely; MS Bornasco→SE Bornasco likely; Aruba IT3→cabina Ponte confirmed; Blue Power Ferrera→Eni–Khazna powers likely. 2026-09-29 (filiera+lavoro): Greenbushes→Kwinana supplies confirmed; Sama→OpenAI trains confirmed; Sama→Meta Luleå trains likely; Remotasks→OpenAI trains likely; siti ai_data_work/model_lab; labor fill su corridoi silicio/cobalto/litio."
 }

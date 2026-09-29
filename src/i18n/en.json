@@ -175,14 +175,14 @@
       {
         "status": "in_progress",
         "status_label": "In progress",
-        "title": "Italy in depth",
-        "body": "First the Italian corridors where debate is alive: Milan cluster, Trino, Bologna (HPC/AI), Sulcis — with sources, status, and certainty. Then labor (headcount/risks) and energy/water metrics on already curated sites."
+        "title": "Supply chain and labor",
+        "body": "Material corridors (AI silicon, battery metals) and cognitive labor (labeling/moderation) with headcount, risks, and certainty. Italy remains the energy/territory foothold; the Anatomy thesis lives on Kolwezi–Hsinchu–Nairobi–campus."
       },
       {
         "status": "planned",
         "status_label": "Planned",
         "title": "Analyze and share",
-        "body": "Time series, community-verified contributions, territorial comparisons, and export for journalism and research. EU expansion after Italy density."
+        "body": "Time series, community-verified contributions, territorial comparisons, and export for journalism and research. Multi-stop «Anatomy» tour."
       }
     ],
     "footer_cta": "Ready to see the infrastructure?",
@@ -284,6 +284,8 @@
     "lithium_mine": "Lithium mine",
     "cobalt_mine": "Cobalt mine",
     "rare_earth_mine": "Rare earth mine",
+    "ai_data_work": "AI data work (labeling / moderation)",
+    "model_lab": "AI model lab",
     "gas": "Natural gas (combined cycle)",
     "solar": "Solar photovoltaic",
     "wind": "Wind",
@@ -295,7 +297,8 @@
     "powers": "Energy contract",
     "supplies": "Supplies materials",
     "manufactures_for": "Manufactures components for",
-    "connects": "Grid connection"
+    "connects": "Grid connection",
+    "trains": "Trains / labels for"
   },
   "popup": {
     "operator": "Operator",
@@ -317,6 +320,8 @@
     "supplies_to": "Supplies to",
     "receives_from": "Receives from",
     "manufactures_to": "Manufactures for",
+    "trains_to": "Trains / labels for",
+    "trained_by": "Trained / labeled by",
     "relationship": "Relationship",
     "close": "Close",
     "impact": "Impact",
@@ -374,7 +379,12 @@
     "high_skill": "High skill",
     "construction_phase": "Construction phase",
     "precarious_contracts": "Precarious contracts",
-    "chemical_exposure": "Chemical exposure"
+    "chemical_exposure": "Chemical exposure",
+    "outsourced_gig": "Gig / outsourcing",
+    "psychological_harm": "Psychological harm",
+    "union_busting": "Union busting",
+    "water_stress": "Water stress",
+    "land_use_conflict": "Land-use conflict"
   },
   "status": {
     "planned": "Planned",
@@ -400,7 +410,15 @@
     "section_status_lead": "Separates operational sites, construction, and pipeline projects.",
     "section_links": "Links",
     "section_context": "Context",
-    "filters_lead": "Turn on or off what appears on the map.",
+    "section_corridors": "Supply chain",
+    "corridors_hint": "Three curated chains — silicon, metals, cognitive labor. One at a time: only that stretch’s sites and links.",
+    "corridors": {
+      "silicon_ai": "AI silicon",
+      "cobalt_battery": "Battery metals",
+      "ai_labor": "AI data labor"
+    },
+    "section_advanced": "Status, links, and context",
+    "filters_lead": "Corridors carry the thesis. Types refine the view. Everything else sits under Advanced.",
     "status_short": {
       "operational": "Operational",
       "under_construction": "Construction",
@@ -435,6 +453,8 @@
     "lithium_mine": "Lithium",
     "cobalt_mine": "Cobalt",
     "rare_earth_mine": "Rare earths",
+    "ai_data_work": "AI data work",
+    "model_lab": "Model lab",
     "gas": "Gas",
     "solar": "Solar",
     "wind": "Wind",
@@ -450,6 +470,7 @@
     "line_supplies": "Material supply",
     "line_manufactures": "Component manufacturing",
     "line_connects": "Grid connection",
+    "line_trains": "Data work / training",
     "status_halo_construction": "Solid warm = under construction",
     "status_halo_planned": "Fine hatch = planned",
     "status_style_operational": "Solid = operational",
@@ -520,7 +541,7 @@
       }
     ],
     "certainty_title": "Certainty on the link",
-    "certainty_lead": "Measures how well documented the relationship between two sites is (powers, connects, supplies, manufactures_for). Every new edge requires certainty and an evidence note in Italian. Inferred edges are drawn lighter on the map.",
+    "certainty_lead": "Measures how well documented the relationship between two sites is (powers, connects, supplies, manufactures_for, trains). Every new edge requires certainty and an evidence note in Italian. Inferred edges are drawn lighter on the map.",
     "certainty_levels": [
       {
         "id": "confirmed",
@@ -551,6 +572,7 @@
       "powers without a named PPA or offtake: never confirmed. A local energy asset on the same site/municipality without a named contract stays powers likely.",
       "Grid connection (connects): confirmed when an EIA/screening/STMG names campus and substation, or when the plant is adjacent to its injection station. It does not say which plant produced electricity for a campus. connects inferred is allowed from a transmission injection node to campuses on the same grid cluster: the card must state it is not the campus connection and not an offtake (e.g. Turbigo 380 kV → Milan cluster). Inferred edges are drawn lighter on the map.",
       "supplies / manufactures_for only if the material or product belongs to that supply chain (no lithium→chip or cobalt→logic foundry).",
+      "trains = cognitive labor (labeling, moderation, RLHF) toward a lab or footprint where the model is trained/served; confirmed only with an investigation or contract naming client and hub.",
       "A site without an edge is valid: projects, context, inventories. We do not invent links to fill the map."
     ],
     "who_title": "Who verifies",

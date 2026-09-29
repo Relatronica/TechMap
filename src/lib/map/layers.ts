@@ -293,6 +293,19 @@ export async function setupLayers(ctx: MapContext) {
     }
   });
 
+  ctx.map.addLayer({
+    id: 'connections-trains',
+    type: 'line',
+    source: 'connections',
+    filter: ['==', ['get', 'relationship_type'], 'trains'],
+    paint: {
+      'line-color': ctx.COLORS.labor,
+      'line-width': CONNECTION_WIDTH_BY_CERTAINTY,
+      'line-dasharray': [1, 2.2, 4, 2.2],
+      'line-opacity': CONNECTION_OPACITY_BY_CERTAINTY
+    }
+  });
+
   const pointLayerPaint = {
     'icon-opacity': SITE_ICON_OPACITY_EXPR
   };

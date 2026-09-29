@@ -46,7 +46,13 @@ export const ICON_PATHS = {
   cobalt_mine:
     'M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5',
   rare_earth_mine:
-    'M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5'
+    'M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5',
+  // Lavoro cognitivo AI — persona + schermo (labeling / moderazione)
+  ai_data_work:
+    'M9 6.5c0-1.4 1.1-2.5 2.5-2.5S14 5.1 14 6.5 12.9 9 11.5 9 9 7.9 9 6.5zM6.5 19v-1.5c0-2 2-3.2 5-3.2s5 1.2 5 3.2V19M15 4h5.5v5.5H15zM16 5.5h3.5M16 7.5h2.5',
+  // Lab modelli / HQ AI fabless
+  model_lab:
+    'M5 19V9l7-5 7 5v10M9 19v-5h6v5M10 11h.01M14 11h.01'
 } as const;
 
 export type SubtypeKey = keyof typeof ICON_PATHS;
@@ -74,7 +80,9 @@ export const SUBTYPE_COLORS: Record<SubtypeKey, string> = {
   battery_materials: '#8A6B4A',
   lithium_mine: '#8A9AA8',
   cobalt_mine: '#3F6F9E',
-  rare_earth_mine: '#8B6B7A'
+  rare_earth_mine: '#8B6B7A',
+  ai_data_work: '#8B4A5C',
+  model_lab: '#4A5A8A'
 };
 
 export function colorForSubtype(subtype: string, fallback = '#8a9199'): string {
@@ -116,10 +124,57 @@ export const FILTER_GROUPS = {
       'battery_materials',
       'lithium_mine',
       'cobalt_mine',
-      'rare_earth_mine'
+      'rare_earth_mine',
+      'ai_data_work',
+      'model_lab'
     ] as SubtypeKey[]
   }
 };
+
+/**
+ * Preset di filiera: isolano tipi + archi e inquadrano i siti del corridoio.
+ * Unità = corridoio documentato (non densità).
+ */
+export const CORRIDOR_PRESETS = [
+  {
+    id: 'silicon_ai',
+    siteIds: ['rm_005', 'rm_007', 'rm_018', 'rm_020', 'dc_012', 'dc_013'],
+    subtypes: {
+      raw_materials: [
+        'component_manufacturing',
+        'semiconductor_fab',
+        'chip_design',
+        'server_assembly'
+      ] as SubtypeKey[],
+      data_centers: ['hyperscale'] as SubtypeKey[],
+      energy_plants: [] as SubtypeKey[],
+      grid_nodes: [] as SubtypeKey[]
+    },
+    connections: ['supplies', 'manufactures_for'] as string[]
+  },
+  {
+    id: 'cobalt_battery',
+    siteIds: ['rm_013', 'rm_014', 'rm_019', 'rm_011', 'rm_024'],
+    subtypes: {
+      raw_materials: ['cobalt_mine', 'battery_materials', 'lithium_mine'] as SubtypeKey[],
+      data_centers: [] as SubtypeKey[],
+      energy_plants: [] as SubtypeKey[],
+      grid_nodes: [] as SubtypeKey[]
+    },
+    connections: ['supplies'] as string[]
+  },
+  {
+    id: 'ai_labor',
+    siteIds: ['rm_021', 'rm_022', 'rm_023', 'dc_013'],
+    subtypes: {
+      raw_materials: ['ai_data_work', 'model_lab'] as SubtypeKey[],
+      data_centers: ['hyperscale'] as SubtypeKey[],
+      energy_plants: [] as SubtypeKey[],
+      grid_nodes: [] as SubtypeKey[]
+    },
+    connections: ['trains'] as string[]
+  }
+] as const;
 
 /** MapLibre paint: opacity by confidence (importati low restano leggibili ma distinti). */
 export const ICON_OPACITY_EXPR = [
@@ -572,7 +627,13 @@ export const ICON_SIZE_HIGHLIGHT = 1.02;
 export const ICON_SIZE_RELATED = 0.88;
 export const ICON_SIZE_DIMMED = 0.58;
 
-export const CONNECTION_TYPES = ['powers', 'supplies', 'manufactures_for', 'connects'];
+export const CONNECTION_TYPES = [
+  'powers',
+  'supplies',
+  'manufactures_for',
+  'connects',
+  'trains'
+];
 
 /** Overlay di contesto (off by default). */
 export const CONTEXT_OVERLAYS = [

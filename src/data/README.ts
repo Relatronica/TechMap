@@ -32,15 +32,19 @@
  *   cluster di rete (scheda: non è l'allaccio né un offtake).
  * - supplies / manufactures_for solo se il materiale appartiene a quella filiera
  *   (niente litio→chip, cobalto→TSMC, miniera↔miniera come "fornitura")
+ * - trains = lavoro cognitivo (labeling / moderazione / RLHF) verso lab o footprint
+ *   dove il modello è addestrato o servito; confirmed solo con inchiesta/contratto
+ *   che nomina cliente + sito/hub
  * - siti senza arco restano validi (progetti, contesto) — non inventare legami
  * - lavoro artigianale vs industriale: dichiararlo in employment.note_it e labor_risks
  * - site_category: extraction | manufacturing | infrastructure
+ *   (ai_data_work → extraction: estrazione di lavoro cognitivo)
  *
- * Corridoi di riferimento (v0.3.1):
+ * Corridoi di riferimento (v0.3.9):
  * - Energia: Lule Älv → Meta; FI wind → Hamina; Lenalea → MS Dublin; Fågelås → AWS SE
  * - Silicio AI: ASML → TSMC → NVIDIA → Quanta (ODM) → hyperscale
- * - Metalli batterie: Mutanda/Kamoto → Umicore Kokkola
- * - Potenza EU (inferred): ST Catania / Infineon → Aruba IT3
+ * - Metalli batterie: Mutanda/Kamoto → Umicore Kokkola; Greenbushes → Kwinana
+ * - Lavoro cognitivo AI: Sama/Remotasks Nairobi → OpenAI / Meta
  */
 
 export const DATA_MODEL_VERSION = '0.3';

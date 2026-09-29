@@ -291,6 +291,12 @@ export function attachDetailSidebar(ctx: MapContext) {
         'is-supply',
         p => p.source_id
       );
+      pushConnGroup(
+        ctx.i18n.popup.trained_by || 'Trained by',
+        incoming.filter(c => c.properties.relationship_type === 'trains'),
+        'is-train',
+        p => p.source_id
+      );
     } else if (featureType === 'raw_material') {
       pushConnGroup(
         ctx.i18n.popup.supplies_to,
@@ -305,8 +311,20 @@ export function attachDetailSidebar(ctx: MapContext) {
         p => p.target_id
       );
       pushConnGroup(
+        ctx.i18n.popup.trains_to || 'Trains',
+        outgoing.filter(c => c.properties.relationship_type === 'trains'),
+        'is-train',
+        p => p.target_id
+      );
+      pushConnGroup(
+        ctx.i18n.popup.trained_by || 'Trained by',
+        incoming.filter(c => c.properties.relationship_type === 'trains'),
+        'is-train',
+        p => p.source_id
+      );
+      pushConnGroup(
         ctx.i18n.popup.receives_from,
-        incoming,
+        incoming.filter(c => c.properties.relationship_type !== 'trains'),
         'is-supply',
         p => p.source_id
       );
@@ -407,6 +425,7 @@ export function attachDetailSidebar(ctx: MapContext) {
     if (relType === 'powers') return ctx.COLORS.ep;
     if (relType === 'supplies') return ctx.COLORS.rm;
     if (relType === 'connects') return ctx.COLORS.gn;
+    if (relType === 'trains') return ctx.COLORS.labor;
     return ctx.COLORS.dc;
   }
 
@@ -414,6 +433,7 @@ export function attachDetailSidebar(ctx: MapContext) {
     if (relType === 'powers') return 'is-power';
     if (relType === 'supplies') return 'is-supply';
     if (relType === 'connects') return 'is-connect';
+    if (relType === 'trains') return 'is-train';
     return 'is-mfg';
   }
 

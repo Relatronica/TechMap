@@ -22,8 +22,20 @@
         "city": "Agrate Brianza",
         "site_category": "manufacturing",
         "status": "operational",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "STMicroelectronics Agrate Brianza fab (Italy) — power/analog silicon. European manufacturing context; no curated edge into the AI GPU chain (wrong node class for NVIDIA leading-edge).",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Polo ST in Brianza: lavoro industriale high-tech; headcount sito non fissato qui. Non è sulla filiera EUV→GPU AI.",
+          "note_en": "ST Agrate hub: high-tech industrial labor; site headcount not fixed here. Not on the EUV→AI GPU chain.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        }
       }
     },
     {
@@ -47,7 +59,7 @@
         "city": "Catania",
         "site_category": "manufacturing",
         "status": "operational",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "employment": {
           "direct": 5000,
@@ -57,10 +69,13 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "ST declares about 5,000 employees on the Catania site (fab, R&D, design). European power/SiC electronics pole: specialized industrial work, different from both cloud campuses and mines."
         },
         "labor_risks": [],
-        "community_impact_it": "Uno dei maggiori datori di lavoro high-tech in Sicilia; il campus SiC rafforza una filiera europea di componenti per alimentazione (anche data center), non di GPU AI."
+        "community_impact_it": "Uno dei maggiori datori di lavoro high-tech in Sicilia; il campus SiC rafforza una filiera europea di componenti per alimentazione (anche data center), non di GPU AI.",
+        "description_en": "STMicroelectronics Catania Silicon Carbide Campus — European power-electronics pole (~5,000 employees declared on site). Distinct from AI logic foundries; useful labor contrast vs hyperscale campuses.",
+        "community_impact_en": "One of Sicily’s largest high-tech employers; the SiC campus reinforces a regional electronics cluster."
       }
     },
     {
@@ -84,8 +99,21 @@
         "city": "Dresda",
         "site_category": "manufacturing",
         "status": "under_construction",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "ESMC/TSMC Dresden fab (EU Chips Act). Receives ASML tools (likely supplies edge). Future European capacity for advanced nodes — not yet a Quanta/NVIDIA campus offtake.",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Fab in costruzione/avvio in Sassonia: organico di cantiere e successivo esercizio high-skill; cifra unica sito non consolidata qui.",
+          "note_en": "Fab under construction/ramp in Saxony: construction then high-skill operating labor; single site figure not consolidated here.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase",
+            "shift_work"
+          ]
+        }
       }
     },
     {
@@ -109,8 +137,20 @@
         "city": "Dresda",
         "site_category": "manufacturing",
         "status": "operational",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "GlobalFoundries Fab 1 Dresden — mature/specialty nodes. European semiconductor employment context; not on the curated NVIDIA leading-edge corridor.",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Fab GF Dresda: lavoro industriale semiconduttori; fuori dal corridoio NVIDIA leading-edge curato.",
+          "note_en": "GF Dresden fab: semiconductor industrial labor; outside the curated NVIDIA leading-edge corridor.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        }
       }
     },
     {
@@ -134,7 +174,7 @@
         "city": "Veldhoven",
         "site_category": "manufacturing",
         "status": "operational",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "employment": {
           "direct": null,
@@ -144,7 +184,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "ASML: ~22,800 average FTEs in the Netherlands and ~44,200 globally (2025). Veldhoven is HQ and main R&D/production campus (historically over half of ASML staff). Exclusive De Run headcount not published as a single figure: use NL totals as the Brainport order of magnitude."
         },
         "labor_risks": [],
         "community_impact_it": "Pressione abitativa e infrastrutturale nella regione Brainport Eindhoven; lavoro ad altissima specializzazione, salari elevati, dipendenza geografica europea dalla litografia EUV.",
@@ -154,8 +195,15 @@
             "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/R29.htm",
             "accessed_at": "2026-09-27",
             "note": "NL avg payroll FTE 2025 ~22.801; worldwide ~44.209"
+          },
+          {
+            "title": "ASML — annual report / employment",
+            "url": "https://www.asml.com/en/investors",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "ASML headquarters and main R&D/production campus in Veldhoven (Brainport Eindhoven). Builds the EUV lithography tools without which leading-edge AI GPU nodes at TSMC cannot be printed. High-skill industrial work at planetary bottleneck scale — not a mine, not a data center.",
+        "community_impact_en": "Housing and infrastructure pressure in the Brainport Eindhoven region; highly paid specialized work beside local cost-of-living stress."
       }
     },
     {
@@ -179,7 +227,7 @@
         "city": "Villach",
         "site_category": "manufacturing",
         "status": "operational",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "employment": {
           "direct": null,
@@ -189,10 +237,13 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Infineon 300mm fab at Villach (opened 2021): high-skill automated work typical of European power microelectronics. Site headcount not fixed here without a recent primary source."
         },
         "labor_risks": [],
-        "community_impact_it": "Investimento rilevante in Carinzia; occupazione qualificata locale nella filiera power semiconductors che arriva ai sistemi di alimentazione dei campus."
+        "community_impact_it": "Investimento rilevante in Carinzia; occupazione qualificata locale nella filiera power semiconductors che arriva ai sistemi di alimentazione dei campus.",
+        "description_en": "Infineon Villach 300mm fab (opened 2021) — European power semiconductors. High-skill automated fab labor; not AI GPU leading-edge.",
+        "community_impact_en": "Significant Carinthia investment; local skilled employment in the power semiconductor chain."
       }
     },
     {
@@ -216,7 +267,7 @@
         "city": "Hsinchu",
         "site_category": "manufacturing",
         "status": "operational",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "employment": {
           "direct": null,
@@ -226,9 +277,12 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "TSMC: 83,825 employees at end-2024 (worldwide), majority in Taiwan across fabs and HQ. Hsinchu hosts HQ and Fab 12A: do not assign the full headcount to the Science Park alone. Mixed fab technicians (24/7 shifts) and R&D professionals."
         },
-        "labor_risks": [],
+        "labor_risks": [
+          "water_stress"
+        ],
         "community_impact_it": "Hsinchu Science Park è un ecosistema nazionale: il lavoro della fonderia AI è concentrato, specializzato e geopoliticamente sensibile. A valle, ODM e campus cloud assorbono quel silicio con organici molto diversi.",
         "sources": [
           {
@@ -236,8 +290,15 @@
             "url": "https://investor.tsmc.com/static/annualReports/2024/english/ebook/files/basic-html/page116.html",
             "accessed_at": "2026-09-27",
             "note": "83.825 employees worldwide end-2024"
+          },
+          {
+            "title": "TSMC — annual report 2024 employment",
+            "url": "https://investor.tsmc.com/",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "TSMC headquarters and Fab 12A in Hsinchu Science Park, Taiwan — primary foundry for NVIDIA AI accelerators. 24/7 fab shifts plus R&D professionals. Do not attribute worldwide headcount to this single park.",
+        "community_impact_en": "Hsinchu Science Park is a national ecosystem: AI foundry labor is concentrated, highly skilled, and water/power intensive for the island grid."
       }
     },
     {
@@ -261,8 +322,31 @@
         "city": "Boticas",
         "site_category": "extraction",
         "status": "planned",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "Lithium mining project at Boticas, northern Portugal (Mina do Barroso). Definitive feasibility study completed July 2026; concessions C-100 and C-190. Contested locally on environmental grounds. No curated offtake edge yet — context pin only.",
+        "community_impact_it": "Forte opposizione locale e questioni ambientali: conflitto d’uso del suolo e paesaggio rispetto a un corridoio litio EU ancora senza arco documentato verso raffineria.",
+        "community_impact_en": "Strong local opposition and environmental issues: land-use and landscape conflict for an EU lithium corridor still without a documented edge to a refinery.",
+        "labor_risks": [
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Progetto: organico operativo non ancora fissato. In fase di sviluppo il lavoro è cantiere/consulenza, non estrazione a regime.",
+          "note_en": "Project stage: operating headcount not fixed. Development-phase work is construction/consulting, not steady-state mining.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Savannah Resources — Mina do Barroso",
+            "url": "https://www.savannahresources.com/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
       }
     },
     {
@@ -286,8 +370,23 @@
         "city": "Kaustinen",
         "site_category": "extraction",
         "status": "under_construction",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "labor_risks": [
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Progetto litio finlandese (Keliber): organico a regime non curato; contesto EU battery chain.",
+          "note_en": "Finnish lithium project (Keliber): steady-state headcount not curated; EU battery-chain context.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Progetto litio finlandese (Keliber): organico a regime non curato; contesto EU battery chain.",
+        "community_impact_en": "Finnish lithium project (Keliber): steady-state headcount not curated; EU battery-chain context."
       }
     },
     {
@@ -311,8 +410,23 @@
         "city": "Loznica",
         "site_category": "extraction",
         "status": "planned",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "labor_risks": [
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Jadar (Rio Tinto) in Serbia: progetto contestato e sospeso/ripreso a più riprese; forte opposizione locale.",
+          "note_en": "Jadar (Rio Tinto) in Serbia: contested project repeatedly paused/restarted; strong local opposition.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Jadar (Rio Tinto) in Serbia: progetto contestato e sospeso/ripreso a più riprese; forte opposizione locale.",
+        "community_impact_en": "Jadar (Rio Tinto) in Serbia: contested project repeatedly paused/restarted; strong local opposition."
       }
     },
     {
@@ -336,8 +450,32 @@
         "city": "Greenbushes",
         "site_category": "extraction",
         "status": "operational",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "Greenbushes hard-rock lithium mine (Western Australia), operated by Talison — jointly held by Tianqi Lithium Energy Australia (Tianqi–IGO) and Albemarle. Highest-grade hard-rock lithium reserve globally; offtake splits feed Kwinana (TLEA) and Albemarle’s Kemerton chain.",
+        "community_impact_it": "Distretto minerario di lunga durata in WA; intensità di suolo e acqua tipica dello spodumene hard-rock. Lavoro industriale salariato, non artigianale.",
+        "community_impact_en": "Long-running WA mining district; land and water intensity typical of hard-rock spodumene. Industrial wage labor, not artisanal.",
+        "labor_risks": [
+          "water_stress"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Operazione industriale Talison/Greenbushes: headcount sito non consolidato qui; lavoro minerario salariato a turni in Australia Occidentale.",
+          "note_en": "Industrial Talison/Greenbushes operation: site headcount not consolidated here; salaried shift mining labor in Western Australia.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "sources": [
+          {
+            "title": "IGO — Greenbushes / TLEA lithium JV",
+            "url": "https://www.igo.com.au/site/operations/lithium-holdco-joint-venture",
+            "accessed_at": "2026-09-29"
+          }
+        ]
       }
     },
     {
@@ -361,8 +499,25 @@
         "city": "San Pedro de Atacama",
         "site_category": "extraction",
         "status": "operational",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "Salar de Atacama brine lithium extraction (Chile): SQM and Albemarle. Largest visible lithium brine operation from orbit. Indigenous and water-stress conflicts documented; no curated edge to a named cathode plant in this dataset yet.",
+        "community_impact_it": "Conflitti con comunità indigene e stress idrico sul salar: l’estrazione da salamoia compete con usi locali dell’acqua. Contesto, senza arco verso un catodo nominato.",
+        "community_impact_en": "Conflicts with Indigenous communities and water stress on the salar: brine extraction competes with local water uses. Context pin, no edge to a named cathode plant.",
+        "labor_risks": [
+          "water_stress",
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Operazioni SQM/Albemarle: lavoro industriale sul salar; organico sito non fissato qui senza fonte primaria recente.",
+          "note_en": "SQM/Albemarle operations: industrial labor on the salar; site headcount not fixed here without a recent primary source.",
+          "conditions_tags": [
+            "shift_work"
+          ]
+        }
       }
     },
     {
@@ -387,7 +542,7 @@
         "status": "operational",
         "site_category": "extraction",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": null,
@@ -406,7 +561,8 @@
           "conditions_tags": [
             "shift_work",
             "conflict_zone"
-          ]
+          ],
+          "note_en": "Over 3,500 declared employees, ~96% Congolese (historical company/secondary figures). Industrial Glencore wage labor: distinguish sharply from nearby artisanal mines, where risks and conditions differ."
         },
         "community_impact_it": "Nodo critico cobalto in Lualaba: esternalità sociali/ambientali, dipendenza economica locale, contiguità con estrazione artigianale. A valle della filiera (batterie/UPS) il lavoro cambia di registro — qui è dove il cloud ha ancora mani e rischio.",
         "labor_risks": [
@@ -423,8 +579,16 @@
             "title": "Glencore — Mutanda (occupazione / output)",
             "accessed_at": "2026-09-27",
             "note": "~3.500 dipendenti; ~96% congolesi (dato storico)"
+          },
+          {
+            "title": "Amnesty International — cobalt mining DRC",
+            "url": "https://www.amnesty.org/en/latest/news/2016/01/child-labour-behind-smart-phone-and-electric-car-batteries/",
+            "accessed_at": "2026-09-29",
+            "note": "Context on artisanal cobalt risks in the same province geography"
           }
-        ]
+        ],
+        "description_en": "Glencore Mutanda cobalt mine, Lualaba (DRC). Industrial wage labor (~3,500 declared, ~96% Congolese in historical company figures) beside nearby artisanal mining with different risks. Critical cobalt node for battery materials including Umicore’s European refining chain.",
+        "community_impact_en": "Critical cobalt node in Lualaba: social/environmental externalities, economic dependence, and the industrial/artisanal labor split."
       }
     },
     {
@@ -448,7 +612,7 @@
         "city": "Kolwezi",
         "site_category": "extraction",
         "status": "operational",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "employment": {
           "direct": null,
@@ -458,14 +622,17 @@
           "conditions_tags": [
             "shift_work",
             "conflict_zone"
-          ]
+          ],
+          "note_en": "KCC/Glencore at Kolwezi: large copper-cobalt operation with local industrial workforce. Site headcount not consolidated here reliably; same geopolitical context as Mutanda (Lualaba province)."
         },
         "labor_risks": [
           "conflict_zone",
           "artisanal_mining_nearby",
           "chemical_exposure"
         ],
-        "community_impact_it": "Stessa geografia estrattiva di Mutanda: lavoro salariato industriale accanto a filiere artigianali e tensioni su suolo, acqua e salute. Sospensione storica della produzione cobalto per contaminazione (2018) segnala rischi ambientali sul lavoro."
+        "community_impact_it": "Stessa geografia estrattiva di Mutanda: lavoro salariato industriale accanto a filiere artigianali e tensioni su suolo, acqua e salute. Sospensione storica della produzione cobalto per contaminazione (2018) segnala rischi ambientali sul lavoro.",
+        "description_en": "Kamoto Copper Company (KCC/Glencore) copper-cobalt operation at Kolwezi, Lualaba. Same extractive geography as Mutanda; industrial local workforce. Feeds Glencore–Umicore cobalt hydroxide offtake toward Kokkola.",
+        "community_impact_en": "Same extractive geography as Mutanda: industrial wage labor beside artisanal frontiers and chemical exposure risk."
       }
     },
     {
@@ -489,8 +656,23 @@
         "city": "Gränna",
         "site_category": "extraction",
         "status": "planned",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "labor_risks": [
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Norra Kärr (Svezia): deposito terre rare in fase di progetto; conflitto ambientale/locale tipico dei REE europei.",
+          "note_en": "Norra Kärr (Sweden): rare-earth deposit at project stage; typical EU REE environmental/local conflict.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Norra Kärr (Svezia): deposito terre rare in fase di progetto; conflitto ambientale/locale tipico dei REE europei.",
+        "community_impact_en": "Norra Kärr (Sweden): rare-earth deposit at project stage; typical EU REE environmental/local conflict."
       }
     },
     {
@@ -514,8 +696,21 @@
         "city": "Narsaq",
         "site_category": "extraction",
         "status": "planned",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "labor_risks": [
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Kvanefjeld/Kuannersuit (Groenlandia): progetto REE/uranio politicamente bloccato; nessun arco.",
+          "note_en": "Kvanefjeld/Kuannersuit (Greenland): politically blocked REE/uranium project; no edge.",
+          "conditions_tags": []
+        },
+        "community_impact_it": "Kvanefjeld/Kuannersuit (Groenlandia): progetto REE/uranio politicamente bloccato; nessun arco.",
+        "community_impact_en": "Kvanefjeld/Kuannersuit (Greenland): politically blocked REE/uranium project; no edge."
       }
     },
     {
@@ -539,8 +734,25 @@
         "city": "Baotou",
         "site_category": "extraction",
         "status": "operational",
-        "updated_at": "2026-09-27",
-        "confidence": "medium"
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "description_en": "Bayan Obo rare-earth mining district, Inner Mongolia (China) — dominant global REE source feeding magnets and electronics downstream. Extreme environmental legacy around Baotou. Context pin: no site-to-site magnet offtake curated yet.",
+        "community_impact_it": "Eredità ambientale grave intorno a Baotou (tailings, contaminazione). Dominio cinese sulle terre rare: lavoro industriale in un distretto ad alto impatto sanitario/ambientale.",
+        "community_impact_en": "Severe environmental legacy around Baotou (tailings, contamination). Chinese REE dominance: industrial labor in a high health/environment-impact district.",
+        "labor_risks": [
+          "chemical_exposure",
+          "land_use_conflict"
+        ],
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Distretto minerario di scala nazionale: headcount non attribuibile in modo affidabile a un singolo pin senza fonte primaria.",
+          "note_en": "National-scale mining district: headcount not reliably attributable to a single pin without a primary source.",
+          "conditions_tags": [
+            "shift_work"
+          ]
+        }
       }
     },
     {
@@ -565,7 +777,7 @@
         "status": "operational",
         "site_category": "manufacturing",
         "opened_year": 1993,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "sources": [
           {
@@ -586,10 +798,13 @@
           "note_it": "NVIDIA è fabless: a Santa Clara il lavoro è design, software e corporate — non fabbricazione wafer né assemblaggio rack. I posti «pesanti» della filiera GPU stanno in fonderia (TSMC) e ODM (Quanta/Foxconn). Non confondere HQ con fabbrica.",
           "conditions_tags": [
             "high_skill"
-          ]
+          ],
+          "note_en": "NVIDIA is fabless: Santa Clara labor is design, software and corporate — not wafer fab or rack assembly. The «heavy» jobs in the GPU chain sit in foundry (TSMC) and ODM (Quanta/Foxconn). Do not confuse HQ with a factory."
         },
         "labor_risks": [],
-        "community_impact_it": "Polo design nella Silicon Valley: alto reddito, bassa intensità di suolo industriale rispetto a una fab 300mm o a una miniera. Il «corpo» del chip sta altrove."
+        "community_impact_it": "Polo design nella Silicon Valley: alto reddito, bassa intensità di suolo industriale rispetto a una fab 300mm o a una miniera. Il «corpo» del chip sta altrove.",
+        "description_en": "NVIDIA Santa Clara HQ / fabless chip design. Work here is design, software and corporate — not wafer fabrication or rack assembly. Heavy jobs in the GPU chain sit at the foundry (TSMC) and ODMs (Quanta/Foxconn).",
+        "community_impact_en": "Silicon Valley design hub: high income, low industrial land intensity compared with fabs and mines upstream."
       }
     },
     {
@@ -614,7 +829,7 @@
         "status": "operational",
         "site_category": "manufacturing",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "community_impact_it": "Polo chimico finlandese sulla filiera critica del cobalto; pressione su tracciabilità ESG della catena RDC→Europa. Occupazione locale stabile e qualificata, di due ordini di grandezza inferiore a Mutanda ma con profilo di rischio diverso (impianto, non fossa).",
         "sources": [
@@ -638,11 +853,14 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Umicore declares ~400 people at Kokkola (cobalt refinery / battery precursors), operating since 1968. Specialized chemical work in Europe: middle link between DRC mine and battery cathodes."
         },
         "labor_risks": [
           "chemical_exposure"
-        ]
+        ],
+        "description_en": "Umicore cobalt refinery / battery precursors at Kokkola, Finland (~400 people). Intermediate European chemical link between DRC mines (Mutanda/Kamoto via Glencore offtake) and battery cathodes.",
+        "community_impact_en": "Finnish chemical hub on the critical cobalt chain; pressure for due diligence and traceability toward African extraction."
       }
     },
     {
@@ -667,7 +885,7 @@
         "status": "operational",
         "site_category": "manufacturing",
         "opened_year": 1988,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "sources": [
           {
@@ -689,13 +907,240 @@
           "conditions_tags": [
             "shift_work",
             "high_skill",
-            "migrant_labor"
-          ]
+            "migrant_labor",
+            "precarious_contracts"
+          ],
+          "note_en": "Quanta/QCT: ODM with tens of thousands of group employees (market estimates ~15–17k in Taiwan; majority of workforce in China). Taoyuan is HQ + manufacturing city: AI server/rack assembly on shifts, labor intensity much higher than a European data center at equal downstream digital «value»."
         },
         "labor_risks": [
           "precarious_contracts"
         ],
-        "community_impact_it": "Assemblaggio electronics in Taiwan/Cina: il lavoro che materializza i rack NVIDIA prima che arrivino a Hamina o Luleå. Condizioni e densità occupazionale qui spiegano perché il cloud «ha un corpo» anche fuori dall’Europa."
+        "community_impact_it": "Assemblaggio electronics in Taiwan/Cina: il lavoro che materializza i rack NVIDIA prima che arrivino a Hamina o Luleå. Condizioni e densità occupazionale qui spiegano perché il cloud «ha un corpo» anche fuori dall’Europa.",
+        "description_en": "Quanta Computer / QCT Taoyuan — ODM HQ and manufacturing city assembling AI servers and racks that integrate NVIDIA accelerators for hyperscalers. Shift-work intensity far above a European data center for comparable digital «value» downstream.",
+        "community_impact_en": "Electronics assembly in Taiwan/China: the labor that materializes NVIDIA racks before they reach hyperscale campuses."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.769,
+          -32.243
+        ]
+      },
+      "properties": {
+        "id": "rm_024",
+        "name": "Kwinana — Raffineria idrossido di litio (TLEA)",
+        "type": "raw_material",
+        "subtype": "battery_materials",
+        "operator": "Tianqi Lithium Energy Australia (Tianqi–IGO)",
+        "capacity": "Idrossido di litio battery-grade (raffineria AU)",
+        "description_it": "Raffineria di idrossido di litio a Kwinana (WA), di proprietà TLEA (JV Tianqi–IGO). È l’anello a valle di Greenbushes: lo spodumene chimico dalla miniera alimenta questo impianto in catena verticalmente integrata (~200 km a nord della miniera). Clienti dichiarati: cell maker in Corea del Sud ed Europa.",
+        "description_en": "Lithium hydroxide refinery at Kwinana (WA), owned by TLEA (Tianqi–IGO JV). Downstream of Greenbushes: chemical-grade spodumene from the mine feeds this vertically integrated plant (~200 km north of the mine). Declared customers include cell makers in South Korea and Europe.",
+        "country": "AU",
+        "city": "Kwinana",
+        "status": "operational",
+        "site_category": "manufacturing",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Impianto chimico automatizzato: organico contenuto rispetto ai MW equivalenti a valle; lavoro industriale specializzato WA.",
+          "note_en": "Automated chemical plant: lean headcount relative to downstream equivalent MW; specialized industrial WA labor.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "labor_risks": [
+          "chemical_exposure"
+        ],
+        "community_impact_it": "Polo chimico nel corridoio industriale di Kwinana; pressione ESG e tracciabilità sulla filiera litio AU.",
+        "community_impact_en": "Chemical hub in the Kwinana industrial corridor; ESG and traceability pressure on the Australian lithium chain.",
+        "sources": [
+          {
+            "title": "IGO — Kwinana Lithium Hydroxide Refinery / TLEA",
+            "url": "https://www.igo.com.au/site/operations/lithium-holdco-joint-venture",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8219,
+          -1.2921
+        ]
+      },
+      "properties": {
+        "id": "rm_021",
+        "name": "Sama — hub labeling / moderazione (Nairobi)",
+        "type": "raw_material",
+        "subtype": "ai_data_work",
+        "operator": "Sama (Samasource)",
+        "capacity": "N/D (migliaia di worker nell’hub KE; progetti NLP/moderazione poi usciti)",
+        "description_it": "Hub keniano di Sama (Bay Area) per data labeling e moderazione contenuti conto clienti Silicon Valley (tra cui OpenAI e Meta, documentati da inchieste TIME e CBS). Lavoratori pagati ~1–2 $/ora su materiali anche traumatici; uscite successive dai progetti di contenuto sensibile. Pin sul nodo Nairobi: il lavoro è cognitivo, non una fabbrica.",
+        "description_en": "Kenyan Sama (Bay Area) hub for data labeling and content moderation for Silicon Valley clients (including OpenAI and Meta, documented by TIME and CBS investigations). Workers paid ~$1–2/hour on often traumatic material; later exits from sensitive-content projects. Nairobi pin: cognitive labor, not a factory.",
+        "country": "KE",
+        "city": "Nairobi",
+        "status": "operational",
+        "site_category": "extraction",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": 3000,
+          "note_it": "Sama ha impiegato oltre 3.000 worker in Kenya (stima CBS). Pay band documentato ~1,32–2 $/ora take-home su progetti OpenAI; contratti di outsourcing, non organico Big Tech.",
+          "note_en": "Sama employed over 3,000 workers in Kenya (CBS estimate). Documented take-home pay band ~$1.32–2/hour on OpenAI projects; outsourcing contracts, not Big Tech payroll.",
+          "conditions_tags": [
+            "outsourced_gig",
+            "precarious_contracts",
+            "psychological_harm"
+          ]
+        },
+        "labor_risks": [
+          "psychological_harm",
+          "precarious_contracts",
+          "outsourced_gig",
+          "union_busting"
+        ],
+        "community_impact_it": "Nairobi come hub di «human in the loop»: lavoro cognitivo a basso salario che addestra e igienizza i modelli usati in Occidente. Cause e lettere aperte (Foxglove) documentano danni psichici e anti-sindacale.",
+        "community_impact_en": "Nairobi as a «human in the loop» hub: low-wage cognitive labor that trains and sanitizes models used in the West. Lawsuits and open letters (Foxglove) document psychological harm and union busting.",
+        "sources": [
+          {
+            "title": "TIME — OpenAI / Sama Kenya workers <$2/hour",
+            "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CBS 60 Minutes — AI work Kenya exploitation",
+            "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Foxglove — open letter Kenyan AI workers",
+            "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8172,
+          -1.2864
+        ]
+      },
+      "properties": {
+        "id": "rm_022",
+        "name": "Remotasks / Scale AI — click-work (Nairobi)",
+        "type": "raw_material",
+        "subtype": "ai_data_work",
+        "operator": "Scale AI (Remotasks)",
+        "capacity": "Piattaforma gig; uscita dal mercato KE/NG/PK nel 2024",
+        "description_it": "Piattaforma Remotasks (Scale AI) per click-work di labeling a distanza. Worker keniani segnalano salari non pagati e chiusura improvvisa del mercato africano (marzo 2024). Clienti di Scale includono laboratori AI di primo piano. Pin Nairobi come hub di reclutamento/lavoro remoto, non uno stabilimento fisico.",
+        "description_en": "Remotasks (Scale AI) platform for remote labeling click-work. Kenyan workers report unpaid wages and an abrupt African market exit (March 2024). Scale clients include leading AI labs. Nairobi pin as recruitment/remote-work hub, not a physical plant.",
+        "country": "KE",
+        "city": "Nairobi",
+        "status": "decommissioned",
+        "site_category": "extraction",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Gig work a pezzo: organico non «dipendenti» Scale. Chiusura africana 2024 con accuse di salari arretrati (Foxglove / CBS).",
+          "note_en": "Piece-rate gig work: not Scale «employees». 2024 African shutdown with unpaid-wage allegations (Foxglove / CBS).",
+          "conditions_tags": [
+            "outsourced_gig",
+            "precarious_contracts"
+          ]
+        },
+        "labor_risks": [
+          "outsourced_gig",
+          "precarious_contracts",
+          "union_busting"
+        ],
+        "community_impact_it": "Estrazione di lavoro cognitivo via piattaforma: quando il mercato chiude, il rischio resta sui worker locali senza tutele da datore Big Tech.",
+        "community_impact_en": "Cognitive-labor extraction via platform: when the market closes, risk stays with local workers without Big Tech employer protections.",
+        "sources": [
+          {
+            "title": "CBS — Remotasks / Scale AI Kenya",
+            "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Foxglove — letter on Scale AI Remotasks exit",
+            "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4194,
+          37.7749
+        ]
+      },
+      "properties": {
+        "id": "rm_023",
+        "name": "OpenAI — San Francisco (HQ / model lab)",
+        "type": "raw_material",
+        "subtype": "model_lab",
+        "operator": "OpenAI",
+        "capacity": "Lab modelli generativi (non un data center di training nominato qui)",
+        "description_it": "Sede / lab OpenAI a San Francisco. Nodo di committenza del lavoro di labeling e safety (RLHF, moderazione) esternalizzato — documentato verso Sama in Kenya. Non è la fabbrica dei GPU né il campus dove girano i cluster: è dove si concentra il controllo sul modello e sulla catena di fornitori di «intelligenza umana».",
+        "description_en": "OpenAI San Francisco HQ / lab. Contracting node for outsourced labeling and safety work (RLHF, moderation) — documented toward Sama in Kenya. Not the GPU factory and not the campus where clusters run: it is where control over the model and the «human intelligence» supplier chain concentrates.",
+        "country": "US",
+        "city": "San Francisco",
+        "status": "operational",
+        "site_category": "manufacturing",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico HQ high-skill e ben retribuito: il contrasto con i worker Sama/Remotasks è il punto editoriale del corridoio trains.",
+          "note_en": "High-skill, well-paid HQ staff: contrast with Sama/Remotasks workers is the editorial point of the trains corridor.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "Polo corporate Bay Area: basso impatto di suolo industriale locale, altissimo leverage sulla filiera globale di lavoro cognitivo.",
+        "community_impact_en": "Bay Area corporate hub: low local industrial land impact, very high leverage on the global cognitive-labor chain.",
+        "sources": [
+          {
+            "title": "TIME — OpenAI contracted Sama in Kenya",
+            "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenAI — company",
+            "url": "https://openai.com/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
       }
     }
   ]

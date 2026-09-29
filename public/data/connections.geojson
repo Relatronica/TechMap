@@ -1675,6 +1675,173 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.0633,
+            -33.8564
+          ],
+          [
+            115.769,
+            -32.243
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_054",
+        "source_id": "rm_011",
+        "target_id": "rm_024",
+        "source_name": "Greenbushes - Miniera di Litio",
+        "target_name": "Kwinana — Raffineria idrossido di litio (TLEA)",
+        "relationship_type": "supplies",
+        "description_it": "Greenbushes fornisce spodumene chimico alla raffineria TLEA di Kwinana nella catena verticalmente integrata Tianqi–IGO (stesso JV che detiene il 51% di Talison).",
+        "description_en": "Greenbushes supplies chemical-grade spodumene to TLEA’s Kwinana refinery in the vertically integrated Tianqi–IGO chain (same JV that holds 51% of Talison).",
+        "certainty": "confirmed",
+        "evidence_note_it": "IGO: Kwinana «forms part of a vertically integrated lithium value chain with Greenbushes supplying» il concentrato. Confirmed sul flusso miniera→raffineria dello stesso gruppo.",
+        "evidence_note_en": "IGO: Kwinana «forms part of a vertically integrated lithium value chain with Greenbushes supplying» the concentrate. Confirmed on same-group mine→refinery flow.",
+        "as_of": "2024-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "IGO — Greenbushes / Kwinana vertical integration",
+            "url": "https://www.igo.com.au/site/operations/lithium-holdco-joint-venture",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            36.8219,
+            -1.2921
+          ],
+          [
+            -122.4194,
+            37.7749
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_055",
+        "source_id": "rm_021",
+        "target_id": "rm_023",
+        "source_name": "Sama — hub labeling / moderazione (Nairobi)",
+        "target_name": "OpenAI — San Francisco (HQ / model lab)",
+        "relationship_type": "trains",
+        "description_it": "Worker Sama a Nairobi hanno etichettato e filtrato testi/immagini per progetti OpenAI (safety / ChatGPT), con pay band documentato ~1–2 $/ora. È lavoro cognitivo che addestra e igienizza il modello, non un cavo né un chip.",
+        "description_en": "Sama workers in Nairobi labeled and filtered text/images for OpenAI projects (safety / ChatGPT), with a documented ~$1–2/hour pay band. Cognitive labor that trains and sanitizes the model — not a cable and not a chip.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Inchiesta TIME (documenti interni Sama/OpenAI, payslip): contratto OpenAI→Sama e wage worker. Confirmed sul legame committenza; non sul singolo dataset.",
+        "evidence_note_en": "TIME investigation (internal Sama/OpenAI documents, payslips): OpenAI→Sama contract and worker wages. Confirmed on the contracting link; not on a single dataset.",
+        "as_of": "2023-01-18",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "TIME — OpenAI Used Kenyan Workers on Less Than $2 Per Hour",
+            "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CBS — Sama / OpenAI Kenya",
+            "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            36.8219,
+            -1.2921
+          ],
+          [
+            22.1547,
+            65.5848
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_056",
+        "source_id": "rm_021",
+        "target_id": "dc_013",
+        "source_name": "Sama — hub labeling / moderazione (Nairobi)",
+        "target_name": "Meta Data Center - Luleå, Svezia",
+        "relationship_type": "trains",
+        "description_it": "Sama ha moderato contenuti per Meta/Facebook dall’hub di Nairobi. Luleå è un campus hyperscale Meta europeo dove quei sistemi di piattaforma sono serviti: il legame è lavoro cognitivo→footprint, non un allaccio elettrico.",
+        "description_en": "Sama moderated content for Meta/Facebook from the Nairobi hub. Luleå is a European Meta hyperscale campus where those platform systems are served: the link is cognitive labor→footprint, not a grid connection.",
+        "certainty": "likely",
+        "evidence_note_it": "TIME/CBS documentano Sama→Meta/Facebook. Il salto al singolo campus Luleå non è in un contratto sito-sito → likely sul footprint Meta, non confirmed sul pin.",
+        "evidence_note_en": "TIME/CBS document Sama→Meta/Facebook. The jump to the single Luleå campus is not in a site-to-site contract → likely on the Meta footprint, not confirmed on the pin.",
+        "as_of": "2023-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "TIME — Facebook’s African sweatshop / Sama",
+            "url": "https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CBS — Sama Meta Kenya",
+            "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            36.8172,
+            -1.2864
+          ],
+          [
+            -122.4194,
+            37.7749
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_057",
+        "source_id": "rm_022",
+        "target_id": "rm_023",
+        "source_name": "Remotasks / Scale AI — click-work (Nairobi)",
+        "target_name": "OpenAI — San Francisco (HQ / model lab)",
+        "relationship_type": "trains",
+        "description_it": "Remotasks (Scale AI) ha reclutato worker in Kenya per labeling a pezzo; Scale figura tra i fornitori di dati per laboratori AI di primo piano, incluso OpenAI secondo lettere e cronaca dei worker. Chiusura africana 2024.",
+        "description_en": "Remotasks (Scale AI) recruited Kenyan workers for piece-rate labeling; Scale figures among data suppliers to leading AI labs, including OpenAI per worker letters and reporting. African exit 2024.",
+        "certainty": "likely",
+        "evidence_note_it": "Foxglove/CBS: worker Remotasks in Kenya; Scale citata come fornitore per OpenAI e altri. Senza contratto OpenAI–Remotasks pubblico sito-sito → likely.",
+        "evidence_note_en": "Foxglove/CBS: Remotasks workers in Kenya; Scale cited as supplier for OpenAI and others. Without a public OpenAI–Remotasks site-to-site contract → likely.",
+        "as_of": "2024-03-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Foxglove — Kenyan AI workers letter (Scale/Remotasks)",
+            "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CBS — Remotasks Kenya",
+            "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
     }
   ]
 }

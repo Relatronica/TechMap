@@ -6,7 +6,8 @@
  * - Metriche numeriche separate dalle stringhe display (capacity vs capacity_mw).
  * - Ogni claim rilevante ha fonti e livello di certezza.
  * - Il lavoro è proprietà dei siti (employment / labor_risks / community),
- *   arricchito per primi sui corridoi documentati — non un layer geometrico a sé.
+ *   arricchito sui corridoi documentati. I siti ai_data_work / model_lab
+ *   rendono visibile anche il lavoro cognitivo (labeling, moderazione).
  * - Le connessioni sono corridoi documentati, non densità di archi.
  */
 
@@ -23,7 +24,9 @@ export type RawMaterialSubtype =
   | 'battery_materials'
   | 'lithium_mine'
   | 'cobalt_mine'
-  | 'rare_earth_mine';
+  | 'rare_earth_mine'
+  | 'ai_data_work'
+  | 'model_lab';
 
 /** Estrazione vs manifattura (raw_materials mescola entrambi). */
 export type SiteCategory = 'extraction' | 'manufacturing' | 'infrastructure';
@@ -51,7 +54,12 @@ export type Confidence = 'high' | 'medium' | 'low' | 'estimated';
  */
 export type Certainty = 'confirmed' | 'likely' | 'inferred' | 'disputed';
 
-export type RelationshipType = 'powers' | 'supplies' | 'manufactures_for' | 'connects';
+export type RelationshipType =
+  | 'powers'
+  | 'supplies'
+  | 'manufactures_for'
+  | 'connects'
+  | 'trains';
 
 export interface SourceRef {
   title: string;
@@ -73,7 +81,8 @@ export interface Employment {
   /**
    * Codici curati, es.:
    * unionized | shift_work | artisanal_mining | conflict_zone |
-   * migrant_labor | high_skill | construction_phase
+   * migrant_labor | high_skill | construction_phase |
+   * precarious_contracts | outsourced_gig | psychological_harm | union_busting
    */
   conditions_tags?: string[];
 }

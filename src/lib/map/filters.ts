@@ -3,9 +3,11 @@ import {
   CONNECTION_TYPES,
   CONTEXT_OVERLAYS,
   SITE_STATUSES,
-  STATUS_GET_EXPR
+  STATUS_GET_EXPR,
+  CORRIDOR_PRESETS
 } from '../mapIcons';
 import type { MapContext } from './types';
+import { LngLatBounds } from 'maplibre-gl';
 
 /** Filter chips, status filters, and context overlay toggles. */
 export function wireFilters(ctx: MapContext) {
@@ -19,6 +21,9 @@ export function wireFilters(ctx: MapContext) {
     status: new Set(SITE_STATUSES)
   };
 
+  /** When a corridor preset is on, only draw edges whose both ends are in this set. */
+  let corridorSiteIds: Set<string> | null = null;
+
   const dataByGroup = {
     data_centers: () => ctx.dataCentersData,
     energy_plants: () => ctx.energyPlantsData,
@@ -31,7 +36,8 @@ export function wireFilters(ctx: MapContext) {
     powers: 'connections-powers',
     supplies: 'connections-supplies',
     manufactures_for: 'connections-manufactures',
-    connects: 'connections-connects'
+    connects: 'connections-connects',
+    trains: 'connections-trains'
   };
 
   function featureStatus(props) {
@@ -56,9 +62,14 @@ export function wireFilters(ctx: MapContext) {
     const data = dataByGroup[groupId]();
     if (!data) return 0;
     if (groupId === 'connections') {
-      return data.features.filter(f =>
-        filterState.connections.types.has(f.properties.relationship_type)
-      ).length;
+      return data.features.filter((f) => {
+        if (!filterState.connections.types.has(f.properties.relationship_type)) return false;
+        if (!corridorSiteIds) return true;
+        return (
+          corridorSiteIds.has(f.properties.source_id) &&
+          corridorSiteIds.has(f.properties.target_id)
+        );
+      }).length;
     }
     const state = filterState[groupId];
     return data.features.filter(
@@ -154,8 +165,22 @@ export function wireFilters(ctx: MapContext) {
 
     CONNECTION_TYPES.forEach((rel) => {
       const layerId = connLayerByRel[rel];
+      if (!ctx.map.getLayer(layerId)) return;
       const show = filterState.connections.types.has(rel);
       ctx.map.setLayoutProperty(layerId, 'visibility', show ? 'visible' : 'none');
+      if (!show) return;
+      // Corridor: hide dangling lines whose pins are filtered out
+      if (corridorSiteIds && corridorSiteIds.size > 0) {
+        const ids = Array.from(corridorSiteIds);
+        ctx.map.setFilter(layerId, [
+          'all',
+          ['==', ['get', 'relationship_type'], rel],
+          ['in', ['get', 'source_id'], ['literal', ids]],
+          ['in', ['get', 'target_id'], ['literal', ids]]
+        ]);
+      } else {
+        ctx.map.setFilter(layerId, ['==', ['get', 'relationship_type'], rel]);
+      }
     });
 
     updateFilterCounts();
@@ -190,8 +215,13 @@ export function wireFilters(ctx: MapContext) {
     });
     filterState.connections.types = new Set(CONNECTION_TYPES);
     filterState.status = new Set(SITE_STATUSES);
+    corridorSiteIds = null;
     syncChipUI();
     applyFilters();
+    document.querySelectorAll('.corridor-preset').forEach((b) => {
+      b.classList.remove('is-on');
+      b.setAttribute('aria-pressed', 'false');
+    });
   }
 
   function toggleGroupAll(gid) {
@@ -216,6 +246,11 @@ export function wireFilters(ctx: MapContext) {
     } else {
       return;
     }
+    corridorSiteIds = null;
+    document.querySelectorAll('.corridor-preset').forEach((b) => {
+      b.classList.remove('is-on');
+      b.setAttribute('aria-pressed', 'false');
+    });
     syncChipUI();
     applyFilters();
   }
@@ -227,6 +262,7 @@ export function wireFilters(ctx: MapContext) {
       const set = filterState[group].subtypes;
       if (set.has(subtype)) set.delete(subtype);
       else set.add(subtype);
+      clearCorridorIfNeeded();
       syncChipUI();
       applyFilters();
     });
@@ -238,6 +274,7 @@ export function wireFilters(ctx: MapContext) {
       const set = filterState.connections.types;
       if (set.has(rel)) set.delete(rel);
       else set.add(rel);
+      clearCorridorIfNeeded();
       syncChipUI();
       applyFilters();
     });
@@ -248,6 +285,7 @@ export function wireFilters(ctx: MapContext) {
       const status = btn.getAttribute('data-status');
       if (filterState.status.has(status)) filterState.status.delete(status);
       else filterState.status.add(status);
+      clearCorridorIfNeeded();
       syncChipUI();
       applyFilters();
     });
@@ -305,4 +343,74 @@ export function wireFilters(ctx: MapContext) {
   applyFilters();
 
   ctx.applyFilters = applyFilters;
+
+  function allSiteFeatures() {
+    return [
+      ...(ctx.dataCentersData?.features || []).map((f) => ({ f, group: 'data_centers' })),
+      ...(ctx.energyPlantsData?.features || []).map((f) => ({ f, group: 'energy_plants' })),
+      ...(ctx.gridNodesData?.features || []).map((f) => ({ f, group: 'grid_nodes' })),
+      ...(ctx.rawMaterialsData?.features || []).map((f) => ({ f, group: 'raw_materials' }))
+    ];
+  }
+
+  function applyCorridorPreset(presetId: string) {
+    const preset = CORRIDOR_PRESETS.find((p) => p.id === presetId);
+    if (!preset) return;
+
+    (['data_centers', 'energy_plants', 'grid_nodes', 'raw_materials'] as const).forEach((gid) => {
+      filterState[gid].subtypes = new Set(preset.subtypes[gid] || []);
+    });
+    filterState.connections.types = new Set(preset.connections);
+    filterState.status = new Set(SITE_STATUSES);
+    corridorSiteIds = new Set(preset.siteIds);
+    syncChipUI();
+    applyFilters();
+
+    const wanted = corridorSiteIds;
+    const coords: [number, number][] = [];
+    allSiteFeatures().forEach(({ f }) => {
+      if (wanted.has(f.properties?.id) && f.geometry?.coordinates) {
+        coords.push(f.geometry.coordinates as [number, number]);
+      }
+    });
+    if (coords.length && ctx.map) {
+      const bounds = coords.reduce(
+        (b, c) => b.extend(c),
+        new LngLatBounds(coords[0], coords[0])
+      );
+      ctx.map.fitBounds(bounds, { padding: 72, maxZoom: 5.5, duration: 900 });
+    }
+
+    document.querySelectorAll('.corridor-preset').forEach((btn) => {
+      const on = btn.getAttribute('data-corridor') === presetId;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  function clearCorridorIfNeeded() {
+    if (!corridorSiteIds) return;
+    corridorSiteIds = null;
+    document.querySelectorAll('.corridor-preset').forEach((b) => {
+      b.classList.remove('is-on');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    applyFilters();
+  }
+
+  document.querySelectorAll('.corridor-preset').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-corridor');
+      if (!id) return;
+      if (btn.classList.contains('is-on')) {
+        resetFilters();
+        document.querySelectorAll('.corridor-preset').forEach((b) => {
+          b.classList.remove('is-on');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        return;
+      }
+      applyCorridorPreset(id);
+    });
+  });
 }

@@ -175,14 +175,14 @@
       {
         "status": "in_progress",
         "status_label": "In sviluppo",
-        "title": "Profondità Italia",
-        "body": "Prima i corridoi italiani dove il dibattito è vivo: cluster Milano, Trino, Bologna (HPC/AI), Sulcis — con fonti, status e certezza. Poi lavoro (organici/rischi) e metriche energia/acqua sui siti già curati."
+        "title": "Filiera e lavoro",
+        "body": "Corridoi materiali (silicio AI, metalli batterie) e lavoro cognitivo (labeling/moderazione) con organici, rischi e certainty. Italia resta il foothold energia/territorio; Anatomy vive su Kolwezi–Hsinchu–Nairobi–campus."
       },
       {
         "status": "planned",
         "status_label": "In programma",
         "title": "Analizzare e condividere",
-        "body": "Serie temporali, contributi verificati dalla comunità, confronti territoriali e export per giornalismo e ricerca. Allargamento UE dopo la densità Italia."
+        "body": "Serie temporali, contributi verificati dalla comunità, confronti territoriali e export per giornalismo e ricerca. Tour «Anatomia» a più stop."
       }
     ],
     "footer_cta": "Pronto a vedere l'infrastruttura?",
@@ -284,6 +284,8 @@
     "lithium_mine": "Miniera di litio",
     "cobalt_mine": "Miniera di cobalto",
     "rare_earth_mine": "Miniera di terre rare",
+    "ai_data_work": "Lavoro dati AI (labeling / moderazione)",
+    "model_lab": "Lab modelli AI",
     "gas": "Gas naturale (ciclo combinato)",
     "solar": "Solare fotovoltaico",
     "wind": "Eolico",
@@ -295,7 +297,8 @@
     "powers": "Contratto energetico",
     "supplies": "Fornisce materiali",
     "manufactures_for": "Produce componenti per",
-    "connects": "Allacciato a"
+    "connects": "Allacciato a",
+    "trains": "Addestra / etichetta per"
   },
   "popup": {
     "operator": "Operatore",
@@ -317,6 +320,8 @@
     "supplies_to": "Fornisce a",
     "receives_from": "Riceve da",
     "manufactures_to": "Produce per",
+    "trains_to": "Addestra / etichetta per",
+    "trained_by": "Addestrato / etichettato da",
     "relationship": "Relazione",
     "close": "Chiudi",
     "impact": "Impatto",
@@ -374,7 +379,12 @@
     "high_skill": "Alta specializzazione",
     "construction_phase": "Fase di cantiere",
     "precarious_contracts": "Contratti precari",
-    "chemical_exposure": "Esposizione chimica"
+    "chemical_exposure": "Esposizione chimica",
+    "outsourced_gig": "Gig / outsourcing",
+    "psychological_harm": "Danno psicologico",
+    "union_busting": "Antisindacale",
+    "water_stress": "Stress idrico",
+    "land_use_conflict": "Conflitto d'uso del suolo"
   },
   "status": {
     "planned": "Pianificato",
@@ -400,7 +410,15 @@
     "section_status_lead": "Distingue operativi, cantieri e progetti in pipeline.",
     "section_links": "Legami",
     "section_context": "Contesto",
-    "filters_lead": "Accendi o spegni cosa compare sulla mappa.",
+    "section_corridors": "Filiera",
+    "corridors_hint": "Tre catene già curate — silicio, metalli, lavoro cognitivo. Una per volta: solo i siti e i legami di quel tratto.",
+    "corridors": {
+      "silicon_ai": "Silicio AI",
+      "cobalt_battery": "Metalli batterie",
+      "ai_labor": "Lavoro dati AI"
+    },
+    "section_advanced": "Stato, legami e contesto",
+    "filters_lead": "I corridoi sono la tesi. I tipi affinano la vista. Il resto sta in Avanzati.",
     "status_short": {
       "operational": "Operativo",
       "under_construction": "Cantiere",
@@ -435,6 +453,8 @@
     "lithium_mine": "Litio",
     "cobalt_mine": "Cobalto",
     "rare_earth_mine": "Terre rare",
+    "ai_data_work": "Lavoro dati AI",
+    "model_lab": "Lab modelli",
     "gas": "Gas",
     "solar": "Solare",
     "wind": "Eolico",
@@ -450,6 +470,7 @@
     "line_supplies": "Fornitura materiali",
     "line_manufactures": "Produzione componenti",
     "line_connects": "Allaccio di rete",
+    "line_trains": "Lavoro dati / training",
     "status_halo_construction": "Pieno caldo = in costruzione",
     "status_halo_planned": "Tratteggio fine = pianificato",
     "status_style_operational": "Pieno = operativo",
@@ -520,7 +541,7 @@
       }
     ],
     "certainty_title": "Certainty sul legame",
-    "certainty_lead": "Misura quanto è documentato il rapporto tra due siti (powers, connects, supplies, manufactures_for). Ogni nuovo arco richiede certainty e una nota di evidenza in italiano. In mappa gli archi inferred sono più leggeri.",
+    "certainty_lead": "Misura quanto è documentato il rapporto tra due siti (powers, connects, supplies, manufactures_for, trains). Ogni nuovo arco richiede certainty e una nota di evidenza in italiano. In mappa gli archi inferred sono più leggeri.",
     "certainty_levels": [
       {
         "id": "confirmed",
@@ -551,6 +572,7 @@
       "powers senza PPA o offtake nominato: mai confirmed. Un asset energetico locale sullo stesso sito/comune senza contratto nominato resta powers likely.",
       "Allaccio (connects): confirmed se un fascicolo VIA/screening/STMG nomina campus e cabina/stazione, oppure se la centrale è attigua alla stazione di immissione. Non indica quale centrale ha prodotto l’elettricità verso un campus. connects inferred ammesso dal nodo di immissione verso campus dello stesso cluster di rete: in scheda deve restare esplicito che non è l’allaccio del campus né un offtake (es. Turbigo 380 kV → cluster Milano). In mappa gli archi inferred sono più leggeri.",
       "supplies / manufactures_for solo se il materiale o il prodotto appartiene a quella filiera (niente litio→chip o cobalto→fonderia logica).",
+      "trains = lavoro cognitivo (labeling, moderazione, RLHF) verso lab o footprint dove il modello è addestrato/servito; confirmed solo con inchiesta o contratto che nomina cliente e hub.",
       "Un sito senza arco è valido: progetti, contesto, inventari. Non inventiamo collegamenti per riempire la mappa."
     ],
     "who_title": "Chi verifica",

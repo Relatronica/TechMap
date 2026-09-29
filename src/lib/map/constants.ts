@@ -4,7 +4,8 @@ export const COLORS = {
   dc: '#5A9BB8',
   rm: '#B87A4A',
   ep: '#5B8FA8',
-  gn: '#4C6A78'
+  gn: '#4C6A78',
+  labor: '#8B4A5C'
 } as const;
 
 /** Card stato: compaiono solo da vicino. */
@@ -62,7 +63,8 @@ export const CONNECTION_LAYER_IDS = [
   'connections-powers',
   'connections-supplies',
   'connections-manufactures',
-  'connections-connects'
+  'connections-connects',
+  'connections-trains'
 ] as const;
 
 /** Opacity by link certainty — inferred lighter, but still readable on the basemap. */

@@ -444,6 +444,109 @@ body.is-map {
   color: var(--accent);
 }
 
+.filters-section-corridors {
+  padding-bottom: 4px;
+}
+
+.filters-corridor-hint {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.corridor-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.corridor-preset {
+  appearance: none;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  padding: 7px 11px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.corridor-preset:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.corridor-preset.is-on {
+  border-color: var(--labor, #8B4A5C);
+  background: color-mix(in srgb, var(--labor, #8B4A5C) 18%, transparent);
+  color: var(--ink);
+}
+
+.filters-advanced {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.filters-advanced-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 0;
+  user-select: none;
+}
+
+.filters-advanced-summary::-webkit-details-marker {
+  display: none;
+}
+
+.filters-advanced-summary:hover {
+  color: var(--ink-soft);
+}
+
+.filters-advanced-summary .filter-group-chevron {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.filters-advanced:not([open]) .filters-advanced-summary .filter-group-chevron {
+  transform: rotate(-90deg);
+}
+
+.filters-advanced-body {
+  padding-top: 4px;
+}
+
+.filters-advanced-body .filters-section:first-child {
+  border-top: none;
+  padding-top: 4px;
+  margin-top: 0;
+}
+
+.filters-inline-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.filters-inline-actions .filter-group-all.is-inline {
+  position: static;
+}
+
 .filters-footer {
   margin-top: 8px;
   padding-top: 10px;
@@ -878,25 +981,10 @@ body.is-map {
   color: var(--muted);
 }
 
-.filters-status-legend {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin: 2px 0 6px;
-  padding: 0;
-  font-size: 0.68rem;
-  line-height: 1.35;
-  color: var(--muted);
-}
-
-.status-legend-hint {
-  margin-top: 2px;
-  font-style: italic;
-}
-
 .conn-powers { --chip-color: var(--ep); }
 .conn-supplies { --chip-color: var(--rm); }
 .conn-manufactures_for { --chip-color: var(--dc); }
+.conn-trains { --chip-color: var(--labor, #8B4A5C); }
 .conn-connects { --chip-color: var(--gn); }
 
 .attribution-updated,
@@ -1461,6 +1549,7 @@ body.is-map {
 .detail-connection-icon.is-supply { background: var(--rm); }
 .detail-connection-icon.is-mfg { background: var(--dc); }
 .detail-connection-icon.is-connect { background: var(--gn); }
+.detail-connection-icon.is-train { background: var(--labor, #8B4A5C); }
 
 .maplibregl-ctrl-group {
   border: 1px solid var(--line) !important;

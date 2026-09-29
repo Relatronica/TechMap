@@ -11,7 +11,7 @@ export type MapContext = {
   map: MaplibreMap;
   locale: Locale;
   i18n: MapI18n;
-  COLORS: { dc: string; rm: string; ep: string; gn: string };
+  COLORS: { dc: string; rm: string; ep: string; gn: string; labor: string };
   connectionsData: GeoJSONCollection | null;
   dataCentersData: GeoJSONCollection | null;
   rawMaterialsData: GeoJSONCollection | null;

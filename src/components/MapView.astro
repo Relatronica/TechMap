@@ -11,7 +11,8 @@ import {
   colorForSubtype,
   CONTEXT_OVERLAYS,
   SITE_STATUSES,
-  STATUS_COLORS
+  STATUS_COLORS,
+  CORRIDOR_PRESETS
 } from '../lib/mapIcons';
 
 const locale = resolveLocale(Astro.currentLocale);
@@ -64,14 +65,22 @@ const connChipColor = {
   powers: 'var(--ep)',
   supplies: 'var(--rm)',
   manufactures_for: 'var(--dc)',
-  connects: 'var(--gn)'
+  connects: 'var(--gn)',
+  trains: 'var(--labor)'
 } as Record<string, string>;
 const connChipLabel = {
   powers: i18n.legend.line_powers,
   supplies: i18n.legend.line_supplies,
   manufactures_for: i18n.legend.line_manufactures,
-  connects: i18n.legend.line_connects
+  connects: i18n.legend.line_connects,
+  trains: i18n.legend.line_trains
 } as Record<string, string>;
+
+const corridorLabels = (i18n.controls as { corridors?: Record<string, string> }).corridors || {};
+const corridorHint = (i18n.controls as { corridors_hint?: string }).corridors_hint || '';
+const corridorSection = (i18n.controls as { section_corridors?: string }).section_corridors || 'Percorsi';
+const advancedSection =
+  (i18n.controls as { section_advanced?: string }).section_advanced || 'Avanzati';
 
 const overlayLabels = i18n.overlays as Record<string, string>;
 const overlayText = (key: string) => overlayLabels[key] || key;
@@ -208,10 +217,27 @@ const statusLabel = (key: string) =>
     </div>
     <p class="filters-count" id="filters-count" data-label={c.showing}></p>
 
+    <div class="filters-section filters-section-corridors">
+      <p class="filters-section-label">{corridorSection}</p>
+      {corridorHint && <p class="filters-corridor-hint">{corridorHint}</p>}
+      <div class="corridor-presets" role="group" aria-label={corridorSection}>
+        {CORRIDOR_PRESETS.map((preset) => (
+          <button
+            type="button"
+            class="corridor-preset"
+            data-corridor={preset.id}
+            aria-pressed="false"
+          >
+            {corridorLabels[preset.id] || preset.id}
+          </button>
+        ))}
+      </div>
+    </div>
+
     <div class="filters-section">
       <p class="filters-section-label">{c.section_sites}</p>
-      {siteGroups.map((group, index) => (
-        <details class="filter-group" data-group={group.id} {...(index === 0 ? { open: true } : {})}>
+      {siteGroups.map((group) => (
+        <details class="filter-group" data-group={group.id}>
           <summary class="filter-group-summary">
             <span class="filter-group-left">
               <span class={`filter-group-swatch swatch-${group.colorVar}`} aria-hidden="true"></span>
@@ -255,22 +281,37 @@ const statusLabel = (key: string) =>
       ))}
     </div>
 
-    <div class="filters-section">
-      <p class="filters-section-label">{c.section_status}</p>
-      <p class="filters-section-hint">{c.section_status_lead}</p>
-      <details class="filter-group" data-group="status" open>
-        <summary class="filter-group-summary">
-          <span class="filter-group-left">
-            <span class="filter-group-swatch swatch-status" aria-hidden="true"></span>
-            <span class="filter-group-title">{c.section_status}</span>
-            <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4"></path>
-            </svg>
-          </span>
-          <span class="filter-group-right">
+    <details class="filters-advanced">
+      <summary class="filters-advanced-summary">
+        <span>{advancedSection}</span>
+        <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M4 6l4 4 4-4"></path>
+        </svg>
+      </summary>
+
+      <div class="filters-advanced-body">
+        <div class="filters-section">
+          <p class="filters-section-label">{c.section_status}</p>
+          <div class="filter-chips" data-chips-for="status">
+            {SITE_STATUSES.map((status) => (
+              <button
+                type="button"
+                class="filter-chip is-on chip-status"
+                data-group="status"
+                data-status={status}
+                aria-pressed="true"
+                title={(i18n.status as Record<string, string>)[status]}
+                style={`--chip-color: ${STATUS_COLORS[status]};`}
+              >
+                <span class={`status-swatch status-${status}`} aria-hidden="true"></span>
+                <span>{statusLabel(status)}</span>
+              </button>
+            ))}
+          </div>
+          <div class="filters-inline-actions">
             <button
               type="button"
-              class="filter-group-all"
+              class="filter-group-all is-inline"
               data-group-all="status"
               data-label-show={c.show_all}
               data-label-hide={c.hide_all}
@@ -278,59 +319,31 @@ const statusLabel = (key: string) =>
               {c.hide_all}
             </button>
             <span class="filter-group-count" data-count-for="status">0</span>
-          </span>
-        </summary>
-        <div class="filter-chips" data-chips-for="status">
-          {SITE_STATUSES.map((status) => (
-            <button
-              type="button"
-              class="filter-chip is-on chip-status"
-              data-group="status"
-              data-status={status}
-              aria-pressed="true"
-              title={(i18n.status as Record<string, string>)[status]}
-              style={`--chip-color: ${STATUS_COLORS[status]};`}
-            >
-              <span class={`status-swatch status-${status}`} aria-hidden="true"></span>
-              <span>{statusLabel(status)}</span>
-            </button>
-          ))}
+          </div>
         </div>
-        <p class="filters-status-legend">
-          <span class="status-legend-item">
-            <span class="status-swatch status-operational" aria-hidden="true"></span>
-            {i18n.legend.status_style_operational}
-          </span>
-          <span class="status-legend-item">
-            <span class="status-swatch status-under_construction" aria-hidden="true"></span>
-            {i18n.legend.status_halo_construction}
-          </span>
-          <span class="status-legend-item">
-            <span class="status-swatch status-planned" aria-hidden="true"></span>
-            {i18n.legend.status_halo_planned}
-          </span>
-          <span class="status-legend-item status-legend-hint">
-            {i18n.legend.status_labels_hint}
-          </span>
-        </p>
-      </details>
-    </div>
 
-    <div class="filters-section">
-      <p class="filters-section-label">{c.section_links}</p>
-      <details class="filter-group" data-group="connections">
-        <summary class="filter-group-summary">
-          <span class="filter-group-left">
-            <span class="filter-group-swatch swatch-conn" aria-hidden="true"></span>
-            <span class="filter-group-title">{i18n.layers.connections}</span>
-            <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4"></path>
-            </svg>
-          </span>
-          <span class="filter-group-right">
+        <div class="filters-section">
+          <p class="filters-section-label">{c.section_links}</p>
+          <div class="filter-chips" data-chips-for="connections">
+            {CONNECTION_TYPES.map((rel) => (
+              <button
+                type="button"
+                class="filter-chip is-on chip-conn"
+                data-group="connections"
+                data-rel={rel}
+                aria-pressed="true"
+                title={(i18n.relationships as Record<string, string>)[rel]}
+                style={`--chip-color: ${connChipColor[rel] || 'var(--conn)'};`}
+              >
+                <span class={`conn-swatch conn-${rel}`} aria-hidden="true"></span>
+                <span>{connChipLabel[rel] || rel}</span>
+              </button>
+            ))}
+          </div>
+          <div class="filters-inline-actions">
             <button
               type="button"
-              class="filter-group-all"
+              class="filter-group-all is-inline"
               data-group-all="connections"
               data-label-show={c.show_all}
               data-label-hide={c.hide_all}
@@ -338,56 +351,29 @@ const statusLabel = (key: string) =>
               {c.hide_all}
             </button>
             <span class="filter-group-count" data-count-for="connections">0</span>
-          </span>
-        </summary>
-        <div class="filter-chips" data-chips-for="connections">
-          {CONNECTION_TYPES.map((rel) => (
-            <button
-              type="button"
-              class="filter-chip is-on chip-conn"
-              data-group="connections"
-              data-rel={rel}
-              aria-pressed="true"
-              title={(i18n.relationships as Record<string, string>)[rel]}
-              style={`--chip-color: ${connChipColor[rel] || 'var(--conn)'};`}
-            >
-              <span class={`conn-swatch conn-${rel}`} aria-hidden="true"></span>
-              <span>{connChipLabel[rel] || rel}</span>
-            </button>
-          ))}
+          </div>
         </div>
-      </details>
-    </div>
 
-    <div class="filters-section">
-      <p class="filters-section-label">{c.section_context}</p>
-      <details class="filter-group" data-group="overlays">
-        <summary class="filter-group-summary">
-          <span class="filter-group-left">
-            <span class="filter-group-swatch swatch-overlay" aria-hidden="true"></span>
-            <span class="filter-group-title">{i18n.overlays.title}</span>
-            <svg class="filter-group-chevron" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 6l4 4 4-4"></path>
-            </svg>
-          </span>
-        </summary>
-        <div class="filter-chips" data-chips-for="overlays">
-          {CONTEXT_OVERLAYS.map((overlay) => (
-            <button
-              type="button"
-              class={`filter-chip chip-overlay${overlay.defaultOn ? ' is-on' : ''}`}
-              data-overlay={overlay.id}
-              aria-pressed={overlay.defaultOn ? 'true' : 'false'}
-              title={overlayText(overlay.hintKey)}
-              style={`--chip-color: ${overlay.color};`}
-            >
-              <span class={`overlay-swatch overlay-swatch-${overlay.swatch}`} aria-hidden="true"></span>
-              <span>{overlayText(overlay.labelKey)}</span>
-            </button>
-          ))}
+        <div class="filters-section">
+          <p class="filters-section-label">{c.section_context}</p>
+          <div class="filter-chips" data-chips-for="overlays">
+            {CONTEXT_OVERLAYS.map((overlay) => (
+              <button
+                type="button"
+                class={`filter-chip chip-overlay${overlay.defaultOn ? ' is-on' : ''}`}
+                data-overlay={overlay.id}
+                aria-pressed={overlay.defaultOn ? 'true' : 'false'}
+                title={overlayText(overlay.hintKey)}
+                style={`--chip-color: ${overlay.color};`}
+              >
+                <span class={`overlay-swatch overlay-swatch-${overlay.swatch}`} aria-hidden="true"></span>
+                <span>{overlayText(overlay.labelKey)}</span>
+              </button>
+            ))}
+          </div>
         </div>
-      </details>
-    </div>
+      </div>
+    </details>
 
     {datasetMeta.updated_at && (
       <div class="filters-footer">
