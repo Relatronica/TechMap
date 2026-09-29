@@ -313,9 +313,14 @@
         "subtype": "wind",
         "operator": "Edison",
         "capacity": "1.100 MW (installati totali)",
-        "description_it": "Edison è il secondo operatore eolico in Italia con 1.100 MW di capacità installata, principalmente nel Sud Italia tra Puglia e Sicilia. Ha annunciato 600 milioni di euro in nuovi progetti rinnovabili, inclusi circa 300 MW di nuova capacità eolica concentrata in Puglia e Sicilia.",
+        "description_it": "Edison è il secondo operatore eolico in Italia (~1.100 MW installati, soprattutto Sud). Questo pin è un marker di portfolio (non un singolo parco). Parchi nominati in mappa: Troia (ep_021), Mazara del Vallo (ep_022), Castiglione Messer Marino (ep_024), Schiavi d’Abruzzo (ep_025); Fortore/Montefalcone già come ep_005. Copertura intenzionale oltre il sottocampionamento WRI sull’eolico IT.",
         "country": "IT",
-        "city": "Puglia (distribuito)"
+        "city": "Puglia (distribuito)",
+        "description_en": "Edison is Italy’s second wind operator (~1,100 MW installed, mainly in the South). This pin is a portfolio marker (not a single farm). Named farms on the map: Troia (ep_021), Mazara del Vallo (ep_022), Castiglione Messer Marino (ep_024), Schiavi d’Abruzzo (ep_025); Fortore/Montefalcone already as ep_005. Intentional coverage beyond WRI’s thin Italian wind sample.",
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "status": "operational",
+        "site_category": "infrastructure"
       }
     },
     {
@@ -772,6 +777,234 @@
           {
             "title": "Khazna — Blue Power / CCGT with CCS",
             "url": "https://khaznadatacenters.com/press-release/khazna-data-centers-and-eni-partner-to-develop-500-mw-ai-data-center-campus-near-milan/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.31235,
+          41.36313
+        ]
+      },
+      "properties": {
+        "id": "ep_021",
+        "name": "Parco eolico Troia (FG) — Edison / Sud",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Edison / E2i",
+        "capacity": "MW sito N/D in scheda aperta; nodo del portfolio Edison (Troia, FG)",
+        "description_it": "Parco eolico nell’area di Troia (Foggia), citato da Edison tra gli impianti collegati in rete nel pacchetto Sud (Abruzzo–Basilicata–Campania–Puglia–Sicilia). Pin a livello comunale: supera il sottocampionamento WRI sull’eolico italiano con un nodo nominato del secondo operatore nazionale. Distinto dal progetto Troia Wind 64,8 MW in VIA (altro proponente).",
+        "description_en": "Wind farm in the Troia (Foggia) area, named by Edison among grid-connected Southern plants (Abruzzo–Basilicata–Campania–Apulia–Sicily). Municipal-level pin: fills WRI’s thin Italian wind sample with a named node of the country’s second operator. Distinct from the Troia Wind 64.8 MW EIA project (other proponent).",
+        "country": "IT",
+        "city": "Troia",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore puglieses; MW del singolo sito non pubblicati nella scheda Edison consultata."
+        },
+        "community_impact_it": "Pressione tipica di parco eolico su crinale/agro pugliese; dibattito locale su paesaggio e allacci.",
+        "sources": [
+          {
+            "title": "Edison — Wind power (portfolio Sud, Troia FG)",
+            "url": "https://www.edison.it/en/wind-power",
+            "accessed_at": "2026-09-29",
+            "note": "Cita Troia (Foggia) tra gli impianti collegati"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.58869,
+          37.65373
+        ]
+      },
+      "properties": {
+        "id": "ep_022",
+        "name": "Parco eolico Mazara del Vallo — Edison",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Edison / E2i",
+        "capacity": "MW sito N/D; nodo portfolio Edison Sicilia",
+        "description_it": "Parco eolico Edison a Mazara del Vallo (Trapani), citato tra gli impianti Sud collegati in rete. Pin comunale siciliano per dare geografia all’eolico oltre i pochi record WRI; collega il racconto rinnovabili al corridoio mediterraneo (cavi/landing).",
+        "description_en": "Edison wind farm at Mazara del Vallo (Trapani), named among Southern grid-connected plants. Municipal Sicilian pin to give geography to wind beyond sparse WRI records; ties renewables to the Mediterranean cable/landing corridor.",
+        "country": "IT",
+        "city": "Mazara del Vallo",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore siciliano; MW sito non in scheda aperta consultata."
+        },
+        "community_impact_it": "Impatto paesaggistico tipico dell’eolico costiero/entroterra trapanese.",
+        "sources": [
+          {
+            "title": "Edison — Wind power (Mazara del Vallo)",
+            "url": "https://www.edison.it/en/wind-power",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.09541,
+          37.89719
+        ]
+      },
+      "properties": {
+        "id": "ep_023",
+        "name": "Parco eolico Camporeale — ERG (repowering)",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "ERG",
+        "capacity": "~50,4 MW post-repowering (fonti di settore)",
+        "description_it": "Parco eolico ERG a Camporeale (Palermo), tra i nodi del primo operatore eolico italiano (~1.468 MW IT). Repowering tecnologico riportato a ~50,4 MW. Pin comunale: segnale geografico dell’eolico ERG in Sicilia oltre WRI.",
+        "description_en": "ERG wind farm at Camporeale (Palermo), among nodes of Italy’s leading wind operator (~1,468 MW IT). Technology repowering reported at ~50.4 MW. Municipal pin: geographic signal for ERG wind in Sicily beyond WRI.",
+        "country": "IT",
+        "city": "Camporeale",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 50.4,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore; ERG leader nazionale. Capacità post-repowering da fonti di settore."
+        },
+        "community_impact_it": "Repowering: meno turbine, potenze unitarie maggiori; dibattiti tipici su crinali siciliani.",
+        "sources": [
+          {
+            "title": "ERG — Integrated Annual Report 2025 (wind IT leadership)",
+            "url": "https://www.erg.eu/documents/10181/2174852/Bilancio+integrato-2025_ENG_20260605.pdf/05f5aca2-d329-950d-cea4-0c477b2eeaca",
+            "accessed_at": "2026-09-29",
+            "note": "~1.468 MW wind installed in Italy"
+          },
+          {
+            "title": "Camporeale (comune) — ubicazione parco ERG",
+            "url": "https://www.openstreetmap.org/relation/39168",
+            "accessed_at": "2026-09-29",
+            "note": "Pin comunale; lotto turbine da raffinare"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.45306,
+          41.86825
+        ]
+      },
+      "properties": {
+        "id": "ep_024",
+        "name": "Parco eolico Castiglione Messer Marino — Edison",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Edison / E2i",
+        "capacity": "MW sito N/D; nodo portfolio Edison Abruzzo",
+        "description_it": "Parco eolico Edison a Castiglione Messer Marino (Chieti), citato tra gli impianti Sud collegati in rete (pacchetto Abruzzo). Pin comunale per densificare l’eolico centro-sud oltre WRI.",
+        "description_en": "Edison wind farm at Castiglione Messer Marino (Chieti), named among Southern grid-connected plants (Abruzzo package). Municipal pin to densify central-southern wind beyond WRI.",
+        "country": "IT",
+        "city": "Castiglione Messer Marino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore abruzzese; MW sito non in scheda aperta consultata."
+        },
+        "community_impact_it": "Impatto tipico di parco su area interna abruzzese.",
+        "sources": [
+          {
+            "title": "Edison — Wind power (Castiglione Messer Marino)",
+            "url": "https://www.edison.it/en/wind-power",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.49411,
+          41.77289
+        ]
+      },
+      "properties": {
+        "id": "ep_025",
+        "name": "Parco eolico Schiavi d’Abruzzo — Edison",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Edison / E2i",
+        "capacity": "MW sito N/D; nodo portfolio Edison Abruzzo",
+        "description_it": "Parco eolico Edison a Schiavi d’Abruzzo (Chieti), citato insieme a Castiglione Messer Marino nel pacchetto impianti Sud collegati in rete. Pin comunale; distinto da Fortore/Montefalcone (ep_005) in Campania.",
+        "description_en": "Edison wind farm at Schiavi d’Abruzzo (Chieti), named with Castiglione Messer Marino in the Southern grid-connected package. Municipal pin; distinct from Fortore/Montefalcone (ep_005) in Campania.",
+        "country": "IT",
+        "city": "Schiavi d’Abruzzo",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore abruzzese; MW sito non in scheda aperta consultata."
+        },
+        "community_impact_it": "Impatto tipico di parco su area interna abruzzese.",
+        "sources": [
+          {
+            "title": "Edison — Wind power (Schiavi d’Abruzzo)",
+            "url": "https://www.edison.it/en/wind-power",
             "accessed_at": "2026-09-29"
           }
         ]

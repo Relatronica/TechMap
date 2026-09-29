@@ -4,17 +4,17 @@
   "energy_eu_min_mw": 100,
   "layers": {
     "energy_plants": {
-      "total": 1075,
-      "curated": 20,
+      "total": 1080,
+      "curated": 25,
       "imported": 1055,
       "skippedDup": 79,
       "skippedFilter": 26224
     },
     "data_centers": {
-      "total": 839,
-      "curated": 43,
-      "imported": 796,
-      "skippedDup": 389,
+      "total": 859,
+      "curated": 67,
+      "imported": 792,
+      "skippedDup": 393,
       "skippedFilter": 6142
     }
   },

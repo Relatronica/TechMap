@@ -21,6 +21,8 @@ export type RawMaterialSubtype =
   | 'component_manufacturing'
   | 'chip_design'
   | 'server_assembly'
+  | 'hbm_memory'
+  | 'advanced_packaging'
   | 'battery_materials'
   | 'lithium_mine'
   | 'cobalt_mine'

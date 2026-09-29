@@ -132,7 +132,7 @@
         "subtype": "semiconductor_fab",
         "operator": "GlobalFoundries",
         "capacity": "Fab 300mm",
-        "description_it": "Impianto di produzione semiconduttori GlobalFoundries Fab 1 a Dresda-Klotzsche, Wilschdorfer Landstraße 101. Uno dei siti di produzione di semiconduttori più produttivi e moderni d'Europa. Tecnologie affidabili ad alto volume per applicazioni a lungo ciclo di vita.",
+        "description_it": "Impianto di produzione semiconduttori GlobalFoundries Fab 1 a Dresda-Klotzsche, Wilschdorfer Landstraße 101. Uno dei siti di produzione di semiconduttori più produttivi e moderni d'Europa. Tecnologie affidabili ad alto volume per applicazioni a lungo ciclo di vita. Non è sulla spina EUV→HBM→CoWoS→GPU AI (nodo foundry legacy/embedded europeo).",
         "country": "DE",
         "city": "Dresda",
         "site_category": "manufacturing",
@@ -222,7 +222,7 @@
         "subtype": "semiconductor_fab",
         "operator": "Infineon Technologies Austria AG",
         "capacity": "Fab 300mm (investimento 1,6 miliardi EUR)",
-        "description_it": "Fabbrica di chip Infineon a Siemensstraße 2, Villach, Austria. Impianto completamente automatizzato per wafer sottili da 300mm, inaugurato nel settembre 2021. Uno dei più grandi impianti di microelettronica in Europa, specializzato in elettronica di potenza.",
+        "description_it": "Fabbrica di chip Infineon a Siemensstraße 2, Villach, Austria. Impianto completamente automatizzato per wafer sottili da 300mm, inaugurato nel settembre 2021. Uno dei più grandi impianti di microelettronica in Europa, specializzato in elettronica di potenza. Power/automotive: fuori dalla spina GPU AI curata (HBM/CoWoS/NVIDIA–AMD).",
         "country": "AT",
         "city": "Villach",
         "site_category": "manufacturing",
@@ -1138,6 +1138,364 @@
           {
             "title": "OpenAI — company",
             "url": "https://openai.com/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.44291,
+          37.28088
+        ]
+      },
+      "properties": {
+        "id": "rm_025",
+        "name": "SK Hynix — Icheon (HBM)",
+        "type": "raw_material",
+        "subtype": "hbm_memory",
+        "operator": "SK Hynix",
+        "capacity": "HBM3e/HBM4; output 2026 dichiarato sold-out / quasi interamente allocato",
+        "description_it": "Polo memoria SK Hynix a Icheon (Corea): principale fornitore HBM per GPU AI NVIDIA (quota HBM dominante su Hopper/Blackwell/Rubin secondo analisi di settore). L’HBM si integra nel package CoWoS insieme al die logico — collo di bottiglia parallelo alla foundry. Distinto da TSMC (logica) e dagli ODM (rack). Peer HBM in mappa: Samsung Hwaseong (rm_030) come dual-source 2026.",
+        "description_en": "SK Hynix memory hub at Icheon (Korea): primary HBM supplier for NVIDIA AI GPUs (dominant HBM share on Hopper/Blackwell/Rubin per industry analysis). HBM integrates into the CoWoS package with the logic die — a bottleneck alongside foundry. Distinct from TSMC (logic) and ODMs (racks). HBM peer on map: Samsung Hwaseong (rm_030) as 2026 dual-source.",
+        "country": "KR",
+        "city": "Icheon",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Fab memoria ad alta intensità energetica/idrica tipica dei nodi HBM; non quantificato qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico fab HBM non fissato in scheda; lavoro industriale high-tech a shift.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Competizione geopolitica Corea–US–CN sulla memoria AI; pressione locale tipica di mega-fab.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "NVIDIA supply-chain notes — SK Hynix HBM share",
+            "url": "https://mohammed-sumon.com/research/semiconductor-cohort/docs/NVDA/supply-chain.html",
+            "accessed_at": "2026-09-29",
+            "note": "SK Hynix primary HBM; 2026 sold out cited"
+          },
+          {
+            "title": "ValueAdd — AI chip supply / HBM allocation 2026",
+            "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.87343,
+          24.68374
+        ]
+      },
+      "properties": {
+        "id": "rm_026",
+        "name": "TSMC Advanced Packaging — CoWoS (Zhunan / AP)",
+        "type": "raw_material",
+        "subtype": "advanced_packaging",
+        "operator": "TSMC",
+        "capacity": "CoWoS-L/S; bottleneck AI 2025–26 (~60% allocazione NVIDIA stimata)",
+        "description_it": "Packaging avanzato TSMC (famiglia CoWoS) nell’area Zhunan/Longtan (Miaoli): qui die logici e stack HBM diventano il package GPU. Collo di bottiglia dichiarato del shipment AI; NVIDIA stima ~60% dell’allocazione CoWoS. Distinto dal fab front-end di Hsinchu (rm_007): stessa azienda, anello diverso.",
+        "description_en": "TSMC advanced packaging (CoWoS family) in the Zhunan/Longtan (Miaoli) area: where logic dies and HBM stacks become the GPU package. Declared AI shipment bottleneck; NVIDIA estimated ~60% of CoWoS allocation. Distinct from Hsinchu front-end fab (rm_007): same company, different chain ring.",
+        "country": "TW",
+        "city": "Zhunan",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Packaging AP ad alta densità di tool; consumo non modellato qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico linee CoWoS non pubblico sito-sito; tipico lavoro fab/OSAT high-skill.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Espansione capacità CoWoS in Taiwan come vincolo sistemico dell’AI globale.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Inside DeepTech — TSMC CoWoS guide 2026",
+            "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+            "accessed_at": "2026-09-29",
+            "note": "Zhunan/Longtan/AP6; NVIDIA CoWoS-L Blackwell"
+          },
+          {
+            "title": "NVIDIA supply chain — CoWoS capacity notes",
+            "url": "https://mohammed-sumon.com/research/semiconductor-cohort/docs/NVDA/supply-chain.html",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.30532,
+          22.72081
+        ]
+      },
+      "properties": {
+        "id": "rm_027",
+        "name": "ASE — Kaohsiung (OSAT / CoWoS overflow)",
+        "type": "raw_material",
+        "subtype": "advanced_packaging",
+        "operator": "ASE (ASE Technology Holding)",
+        "capacity": "OSAT 2.5D/3D; WoS e overflow CoW in rampa per AI",
+        "description_it": "Campus ASE a Kaohsiung (Nanzi): OSAT storico. Con il bottleneck CoWoS, TSMC e clienti AI (NVIDIA/AMD) spingono overflow di passi CoW/WoS verso ASE e peer. Non sostituisce TSMC AP come percorso primario NVIDIA, ma è il secondo anello di packaging del corridoio.",
+        "description_en": "ASE campus in Kaohsiung (Nanzi): legacy OSAT. With the CoWoS bottleneck, TSMC and AI customers (NVIDIA/AMD) push CoW/WoS overflow to ASE and peers. Does not replace TSMC AP as NVIDIA’s primary path, but is the second packaging ring on the corridor.",
+        "country": "TW",
+        "city": "Kaohsiung",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "OSAT; intensità energetica minore di un mega-fab front-end, rilevante a scala di volume AI."
+        },
+        "community_impact_it": "Polo packaging sud Taiwan; pressione cumulativa con altre OSAT sulla stessa isola.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "M1K — TSMC CoWoS outsourcing to ASE",
+            "url": "https://m1k.tech/2026/08/tsmc-cowos-outsourcing-osat-nvidia/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — ASE K3 Kaohsiung",
+            "url": "https://www.openstreetmap.org/search?query=ASE%20Kaohsiung",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.97038,
+          37.38296
+        ]
+      },
+      "properties": {
+        "id": "rm_028",
+        "name": "AMD — Santa Clara (HQ / Instinct design)",
+        "type": "raw_material",
+        "subtype": "chip_design",
+        "operator": "AMD",
+        "capacity": "Fabless; Instinct MI300/MI400 su TSMC + HBM + CoWoS (allocazione CoWoS ~11% vs ~60% NVIDIA)",
+        "description_it": "HQ AMD a Santa Clara (Augustine Drive): design degli accelerator Instinct. Stessa dipendenza TSMC/HBM/CoWoS di NVIDIA, con quota packaging più stretta. Secondo polo fabless del corridoio silicio AI in mappa (oltre rm_018).",
+        "description_en": "AMD HQ in Santa Clara (Augustine Drive): Instinct accelerator design. Same TSMC/HBM/CoWoS dependency as NVIDIA, with a tighter packaging allocation. Second fabless pole on the mapped AI silicon corridor (besides rm_018).",
+        "country": "US",
+        "city": "Santa Clara",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "HQ design: consumo da campus uffici/lab, non fab."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione HQ design/engineering; non confrontabile con headcount fab o DC.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Nodo Silicon Valley del duopolio GPU AI con NVIDIA.",
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "OpenStreetMap — AMD Santa Clara Augustine Drive",
+            "url": "https://www.openstreetmap.org/search?query=AMD%20Santa%20Clara",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "ValueAdd — AMD CoWoS allocation ~11%",
+            "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.41893,
+          24.95841
+        ]
+      },
+      "properties": {
+        "id": "rm_029",
+        "name": "Foxconn — Tucheng / Nuovo Taipei (ODM server)",
+        "type": "raw_material",
+        "subtype": "server_assembly",
+        "operator": "Foxconn (Hon Hai)",
+        "capacity": "ODM server/AI rack; volumi hyperscale non pubblici sito-sito",
+        "description_it": "Complesso Foxconn a Tucheng (Nuovo Taipei): ODM di scala che assembla server e sistemi per hyperscaler. Secondo assemblatore in mappa oltre Quanta (rm_020), per non ridurre l’ODM AI a un solo fornitore. Certainty sugli archi verso singoli campus resta likely/assente senza packing list.",
+        "description_en": "Foxconn complex at Tucheng (New Taipei): large-scale ODM assembling servers/systems for hyperscalers. Second assembler on the map besides Quanta (rm_020), so AI ODM is not a single-vendor story. Edge certainty to individual campuses stays likely/absent without packing lists.",
+        "country": "TW",
+        "city": "Tucheng",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Assembly ODM; intensità minore di fab, rilevante a volume rack AI."
+        },
+        "community_impact_it": "Mega-employer manifatturiero taiwanese; catena del valore verso campus cloud globali.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OpenStreetMap — Foxconn Tucheng (頂埔)",
+            "url": "https://www.openstreetmap.org/search?query=Foxconn%20Tucheng",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Nota metodologica — ODM multipli (Quanta+Foxconn)",
+            "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+            "accessed_at": "2026-09-29",
+            "note": "ODM come anello post-package; Foxconn tra i grandi assembler AI"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.06596,
+          37.21853
+        ]
+      },
+      "properties": {
+        "id": "rm_030",
+        "name": "Samsung Electronics — Hwaseong (HBM)",
+        "type": "raw_material",
+        "subtype": "hbm_memory",
+        "operator": "Samsung Electronics",
+        "capacity": "HBM3e/HBM4 in rampa; qualifica NVIDIA HBM4 riportata mar 2026 (analisi di settore)",
+        "description_it": "Campus Samsung a Hwaseong (Gyeonggi): secondo fornitore HBM del corridoio AI dopo SK Hynix (rm_025). Chiude il dual-source memoria 2026 senza aggiungere Micron (terzo volume, minor segnale editoriale). Fornisce stack HBM verso il package CoWoS; non sostituisce SK Hynix come leader di quota.",
+        "description_en": "Samsung campus at Hwaseong (Gyeonggi): second HBM supplier on the AI corridor after SK Hynix (rm_025). Closes 2026 memory dual-source without adding Micron (third volume, weaker editorial signal). Supplies HBM stacks into the CoWoS package; does not replace SK Hynix as share leader.",
+        "country": "KR",
+        "city": "Hwaseong",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Mega-fab memoria; intensità energetica/idrica tipica, non quantificata qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico campus non fissato in scheda; lavoro industriale high-tech a shift.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Secondo polo HBM coreano: competizione SK Hynix–Samsung sulla memoria AI.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "NVIDIA supply chain — Samsung HBM qualification notes",
+            "url": "https://mohammed-sumon.com/research/semiconductor-cohort/docs/NVDA/supply-chain.html",
+            "accessed_at": "2026-09-29",
+            "note": "Samsung HBM4 NVIDIA-qualified (Mar 2026 per TrendForce cited)"
+          },
+          {
+            "title": "ValueAdd — HBM Samsung/Micron ramp 2026",
+            "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — Samsung Electronics Hwaseong campus",
+            "url": "https://www.openstreetmap.org/search?query=Samsung%20Electronics%20Hwaseong",
             "accessed_at": "2026-09-29"
           }
         ]

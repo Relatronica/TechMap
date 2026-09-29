@@ -38,6 +38,12 @@ export const ICON_PATHS = {
   // ODM / rack assembly — chassis
   server_assembly:
     'M5 5.5h14v13H5zM8 8.5h8v2H8zM8 12h8v2H8zM8 15.5h5v2H8zM15 8.5h1.5v2H15zM15 12h1.5v2H15z',
+  // HBM — stacked memory dice
+  hbm_memory:
+    'M8 19V8h8v11M8 11h8M8 14h8M8 17h8M10 5.5h4v2.5h-4z',
+  // Advanced packaging / CoWoS — die + interposer
+  advanced_packaging:
+    'M5 17h14v3H5zM7 12h4v4H7zM13 12h4v4h-4zM9 7h6v4H9z',
   // Battery materials / refining
   battery_materials:
     'M9 4.5h6v2H9zM7.5 6.5h9v13h-9zM10 10h4M10 13.5h4M10 17h4',
@@ -77,6 +83,8 @@ export const SUBTYPE_COLORS: Record<SubtypeKey, string> = {
   component_manufacturing: '#B87A4A',
   chip_design: '#3D7A7A',
   server_assembly: '#5A7080',
+  hbm_memory: '#2F6F8A',
+  advanced_packaging: '#5A7A6A',
   battery_materials: '#8A6B4A',
   lithium_mine: '#8A9AA8',
   cobalt_mine: '#3F6F9E',
@@ -121,6 +129,8 @@ export const FILTER_GROUPS = {
       'component_manufacturing',
       'chip_design',
       'server_assembly',
+      'hbm_memory',
+      'advanced_packaging',
       'battery_materials',
       'lithium_mine',
       'cobalt_mine',
@@ -139,11 +149,26 @@ export const CORRIDOR_PRESETS = [
   {
     id: 'silicon_ai',
     icon: 'semiconductor_fab' as SubtypeKey,
-    siteIds: ['rm_005', 'rm_007', 'rm_018', 'rm_020', 'dc_012', 'dc_013'],
+    siteIds: [
+      'rm_005',
+      'rm_007',
+      'rm_025',
+      'rm_030',
+      'rm_026',
+      'rm_027',
+      'rm_018',
+      'rm_028',
+      'rm_020',
+      'rm_029',
+      'dc_012',
+      'dc_013'
+    ],
     subtypes: {
       raw_materials: [
         'component_manufacturing',
         'semiconductor_fab',
+        'hbm_memory',
+        'advanced_packaging',
         'chip_design',
         'server_assembly'
       ] as SubtypeKey[],

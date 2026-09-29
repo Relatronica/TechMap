@@ -4,9 +4,9 @@ I GeoJSON in questa cartella sono la **fonte di verità** per i siti con descriz
 
 | File | Ruolo |
 | --- | --- |
-| `data_centers.geojson` | Campus e DC curati (merge con candidati OSM). Priorità Italia: cluster Milano, Trino Cavour, Bologna HPC, Sulcis, Roma |
+| `data_centers.geojson` | Campus e DC curati (merge con candidati OSM). Priorità Italia: cluster Milano, secondo polo Roma/Lazio, Torino/Nord-Est, Trino Cavour, Bologna HPC, Sulcis |
 | `energy_plants.geojson` | Impianti curati + nodi PPA (merge con WRI) |
-| `raw_materials.geojson` | Estrazione, fab, design, battery materials, **lavoro dati AI** (`ai_data_work`), lab modelli (`model_lab`) |
+| `raw_materials.geojson` | Estrazione, fab, **HBM**, **packaging CoWoS/OSAT**, design, ODM, battery materials, **lavoro dati AI** (`ai_data_work`), lab modelli (`model_lab`) |
 | `connections_edges.json` | Archi di filiera **senza** geometria (fonte): powers, connects, supplies, manufactures_for, **trains** |
 | `grid_nodes.geojson` | Cabine e stazioni nominate in un fascicolo (non centrali) |
 | `connections.geojson` | LineString generate da `npm run data:supply-chain` |
@@ -31,5 +31,6 @@ Cinque tipi: `powers` (contratto), `connects` (fisica di rete, inclusa immission
 `trains` confirmed solo con inchiesta o contratto che nomina cliente e hub di lavoro.
 In mappa gli archi `inferred` sono più leggeri di `confirmed` / `likely`.
 Non collegare materie a filiere sbagliate (es. litio → fab semiconduttori).
+Spina Silicio AI: ASML → foundry → **HBM + CoWoS/OSAT** → design NVIDIA/AMD → ODM → campus. STM/Infineon/GF EU restano contesto industriale **senza** archi GPU.
 
 Modifica i file qui, poi esegui la pipeline sopra.

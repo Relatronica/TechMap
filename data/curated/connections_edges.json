@@ -1,6 +1,6 @@
 {
   "version": "0.3.8",
-  "methodology_it": "Unità di lavoro = corridoio documentato, non densità di archi. Cinque tipi: powers (PPA/CPPA/offtake; senza documento → likely|inferred, mai confirmed), connects (fisica di rete; confirmed con fascicolo/adiacenza; inferred da nodo di immissione verso cluster), supplies e manufactures_for (filiera materiali/componenti), trains (lavoro cognitivo labeling/moderazione/RLHF verso lab o footprint; confirmed solo con inchiesta/contratto che nomina cliente e hub). Certainty distingue peso visivo. Silicio AI: ASML→fonderia→design→ODM→campus. Metalli: miniera→raffineria. Lavoro AI: Nairobi→OpenAI/Meta. supplies/manufactures_for/trains solo se appartengono alla filiera.",
+  "methodology_it": "Unità di lavoro = corridoio documentato, non densità di archi. Cinque tipi: powers, connects, supplies, manufactures_for, trains. Silicio AI (2026-09-29): ASML→foundry→(HBM+CoWoS/OSAT)→design NVIDIA/AMD→ODM→campus. HBM e packaging sono anelli distinti dalla logica front-end. Metalli batteria e labeling restano filiere separate. Certainty distingue peso visivo; inferred non rimossi.",
   "edges": [
     {
       "id": "conn_001",
@@ -985,6 +985,248 @@
         {
           "title": "CBS — Remotasks Kenya",
           "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_058",
+      "source_id": "ep_017",
+      "target_id": "dc_047",
+      "relationship_type": "powers",
+      "certainty": "likely",
+      "description_it": "Lo stesso PPA portfolio Neoen–Equinix copre i data center Equinix in Italia (Milano e Genova). GN1 a Genova rientra nel footprint citato; il comunicato non nomina il singolo IBX, quindi certainty likely.",
+      "description_en": "The same Neoen–Equinix portfolio PPA covers Equinix data centers in Italy (Milan and Genoa). GN1 in Genoa is part of that footprint; the release does not name the individual IBX, so certainty likely.",
+      "evidence_note_it": "Stesso contratto di Arena Po→ML5; comunicato cita esplicitamente Genova. Senza naming sito-sito del singolo IBX → likely, non confirmed.",
+      "evidence_note_en": "Same contract as Arena Po→ML5; release explicitly cites Genoa. Without site-to-site naming of the individual IBX → likely, not confirmed.",
+      "as_of": "2024-11-21",
+      "sources": [
+        {
+          "title": "Neoen × Equinix — primo PPA in Italia",
+          "url": "https://neoen.com/en/news/2024/neoen-and-equinix-sign-their-first-ppa-in-italy-supporting-decarbonization-of-the-local-grid/",
+          "accessed_at": "2026-09-29",
+          "note": "Citati i data center Equinix di Milano e Genova"
+        }
+      ]
+    },
+    {
+      "id": "conn_059",
+      "source_id": "dc_066",
+      "target_id": "dc_008",
+      "relationship_type": "connects",
+      "certainty": "confirmed",
+      "description_it": "MIX ha sede operativa a Via Caldera 21 (Building Orange/3), nello stesso campus Caldera dell’Avalon Campus Irideos/Retelit (dc_008): interconnessione fisica di campus tra IXP e colo neutro, non un cavo RTN.",
+      "description_en": "MIX’s operational seat is at Via Caldera 21 (Building Orange/3), on the same Caldera campus as Irideos/Retelit Avalon (dc_008): physical campus interconnection between IXP and neutral colo, not an RTN cable.",
+      "evidence_note_it": "Indirizzo MIX Report 2025 e scheda Avalon entrambi Via Caldera 21. Confirmed sulla co-ubicazione di campus.",
+      "evidence_note_en": "MIX Report 2025 address and Avalon listing both Via Caldera 21. Confirmed on campus co-location.",
+      "as_of": "2025-01-01",
+      "sources": [
+        {
+          "title": "MIX — Annual Report 2025 (Caldera 21)",
+          "url": "https://www.mix-it.net/wp-content/uploads/MIX-Report-2025-en.pdf",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "Irideos/Retelit Avalon — Via Caldera (scheda curata dc_008)",
+          "url": "https://www.retelit.it/en",
+          "accessed_at": "2026-09-29",
+          "note": "Campus Caldera co-located with MIX"
+        }
+      ]
+    },
+    {
+      "id": "conn_060",
+      "source_id": "rm_025",
+      "target_id": "rm_026",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "Gli stack HBM di SK Hynix (e peer) siedono sul package CoWoS accanto al die GPU: senza HBM non si chiude il package accelerator. È fornitura di memoria verso l’anello packaging, non verso il rack ODM.",
+      "description_en": "SK Hynix (and peer) HBM stacks sit on the CoWoS package beside the GPU die: without HBM the accelerator package does not close. Memory supply into the packaging ring, not into the ODM rack.",
+      "evidence_note_it": "Architetture Hopper/Blackwell pubbliche e guide CoWoS: HBM on-package. SK Hynix è il fornitore HBM primario NVIDIA. Confirmed sul ruolo di anello; non su un lotto Icheon→Zhunan tracciato.",
+      "evidence_note_en": "Public Hopper/Blackwell architectures and CoWoS guides: HBM on-package. SK Hynix is NVIDIA’s primary HBM supplier. Confirmed on ring role; not on a traced Icheon→Zhunan lot.",
+      "as_of": "2025-01-01",
+      "sources": [
+        {
+          "title": "Inside DeepTech — CoWoS + HBM on package",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "NVIDIA supply chain — SK Hynix HBM",
+          "url": "https://mohammed-sumon.com/research/semiconductor-cohort/docs/NVDA/supply-chain.html",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_061",
+      "source_id": "rm_007",
+      "target_id": "rm_026",
+      "relationship_type": "supplies",
+      "certainty": "confirmed",
+      "description_it": "I wafer logici advanced-node TSMC (Hsinchu e fab correlate) alimentano le linee CoWoS di advanced packaging TSMC: front-end → packaging nella stessa catena aziendale.",
+      "description_en": "TSMC advanced-node logic wafers (Hsinchu and related fabs) feed TSMC’s CoWoS advanced-packaging lines: front-end → packaging in the same corporate chain.",
+      "evidence_note_it": "Flusso CoWoS documentato da TSMC/analisi di settore: die da nodi N4/N3 verso AP. Confirmed sul ruolo; pin Zhunan è rappresentativo del cluster AP.",
+      "evidence_note_en": "CoWoS flow documented by TSMC/industry analysis: N4/N3 dies into AP. Confirmed on role; Zhunan pin represents the AP cluster.",
+      "as_of": "2025-01-01",
+      "sources": [
+        {
+          "title": "Inside DeepTech — TSMC CoWoS guide",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_062",
+      "source_id": "rm_026",
+      "target_id": "rm_018",
+      "relationship_type": "manufactures_for",
+      "certainty": "confirmed",
+      "description_it": "TSMC CoWoS assembla i package GPU NVIDIA (Hopper/Blackwell): packaging manufactures_for design NVIDIA. NVIDIA detiene la quota dominante di capacità CoWoS allocata.",
+      "description_en": "TSMC CoWoS assembles NVIDIA GPU packages (Hopper/Blackwell): packaging manufactures_for NVIDIA design. NVIDIA holds the dominant allocated CoWoS capacity share.",
+      "evidence_note_it": "Blackwell su CoWoS-L (analisi TechInsights/guide); allocazione NVIDIA ~60% CoWoS citata in analisi di settore. Confirmed sul rapporto packaging→NVIDIA.",
+      "evidence_note_en": "Blackwell on CoWoS-L (TechInsights/guides); ~60% NVIDIA CoWoS allocation in industry analysis. Confirmed on packaging→NVIDIA relationship.",
+      "as_of": "2025-03-01",
+      "sources": [
+        {
+          "title": "Inside DeepTech — Blackwell CoWoS-L",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "ValueAdd — NVIDIA ~60% CoWoS allocation",
+          "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_063",
+      "source_id": "rm_027",
+      "target_id": "rm_018",
+      "relationship_type": "manufactures_for",
+      "certainty": "likely",
+      "description_en": "ASE (and peer OSATs) take CoW/WoS step overflow tied to NVIDIA demand when TSMC AP lines are saturated. Not the primary path, so certainty likely.",
+      "evidence_note_it": "Cronaca 2025–26 su outsourcing CoWoS/CoW verso ASE; senza contratto sito-sito ASE→NVIDIA pubblico → likely.",
+      "evidence_note_en": "2025–26 reporting on CoWoS/CoW outsourcing to ASE; no public ASE→NVIDIA site-to-site contract → likely.",
+      "as_of": "2026-08-01",
+      "sources": [
+        {
+          "title": "M1K — TSMC CoWoS outsourcing / ASE",
+          "url": "https://m1k.tech/2026/08/tsmc-cowos-outsourcing-osat-nvidia/",
+          "accessed_at": "2026-09-29"
+        }
+      ],
+      "description_it": "ASE (e OSAT peer) ricevono overflow di passi CoW/WoS legati alla domanda NVIDIA quando le linee TSMC AP sono sature. Non è il percorso primario, quindi certainty likely."
+    },
+    {
+      "id": "conn_064",
+      "source_id": "rm_007",
+      "target_id": "rm_028",
+      "relationship_type": "manufactures_for",
+      "certainty": "confirmed",
+      "description_it": "TSMC è la foundry di riferimento anche per gli accelerator AMD Instinct (nodi avanzati + packaging CoWoS/SoIC). Stesso anello foundry del ramo NVIDIA, cliente diverso.",
+      "description_en": "TSMC is also the reference foundry for AMD Instinct accelerators (leading-edge nodes + CoWoS/SoIC packaging). Same foundry ring as the NVIDIA branch, different customer.",
+      "evidence_note_it": "Roadmap Instinct/MI300+ su TSMC documentata pubblicamente; confirmed sul rapporto foundry→AMD design.",
+      "evidence_note_en": "Instinct/MI300+ on TSMC publicly documented; confirmed on foundry→AMD design relationship.",
+      "as_of": "2024-01-01",
+      "sources": [
+        {
+          "title": "Inside DeepTech — AMD Instinct needs CoWoS",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "ValueAdd — AMD vs NVIDIA CoWoS allocation",
+          "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_065",
+      "source_id": "rm_025",
+      "target_id": "rm_028",
+      "relationship_type": "supplies",
+      "certainty": "likely",
+      "description_it": "Anche AMD Instinct integra HBM on-package; SK Hynix è il leader di volume HBM e fornisce l’ecosistema accelerator oltre NVIDIA. Senza contratto AMD–Icheon sito-sito → likely.",
+      "description_en": "AMD Instinct also integrates on-package HBM; SK Hynix is the HBM volume leader supplying the accelerator ecosystem beyond NVIDIA. Without an AMD–Icheon site-to-site contract → likely.",
+      "evidence_note_it": "HBM on Instinct documentato; SK Hynix leader HBM. Likely sul fornitore dominante, non exclusive sole-source AMD.",
+      "evidence_note_en": "HBM on Instinct documented; SK Hynix HBM leader. Likely on dominant supplier, not AMD exclusive sole-source.",
+      "as_of": "2025-01-01",
+      "sources": [
+        {
+          "title": "Inside DeepTech — Instinct HBM/CoWoS",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_066",
+      "source_id": "rm_026",
+      "target_id": "rm_028",
+      "relationship_type": "manufactures_for",
+      "certainty": "confirmed",
+      "description_it": "Le linee CoWoS TSMC packaggiano anche gli accelerator AMD Instinct (quota allocazione inferiore a NVIDIA, ~11% secondo stime). Stesso anello packaging, secondo cliente fabless.",
+      "description_en": "TSMC CoWoS lines also package AMD Instinct accelerators (lower allocation than NVIDIA, ~11% per estimates). Same packaging ring, second fabless customer.",
+      "evidence_note_it": "Guide CoWoS e ranking supply 2026: AMD compete per CoWoS. Confirmed sul bisogno packaging; quota è stima di settore.",
+      "evidence_note_en": "CoWoS guides and 2026 supply rankings: AMD competes for CoWoS. Confirmed on packaging need; share is industry estimate.",
+      "as_of": "2025-01-01",
+      "sources": [
+        {
+          "title": "ValueAdd — AMD ~11% CoWoS",
+          "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "Inside DeepTech — AMD Instinct CoWoS",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_067",
+      "source_id": "rm_018",
+      "target_id": "rm_029",
+      "relationship_type": "supplies",
+      "certainty": "likely",
+      "description_it": "NVIDIA fornisce GPU/reference design anche a ODM oltre Quanta; Foxconn è tra i grandi assembler di sistemi AI. Completa il ramo ODM senza sostituire Quanta→campus già in mappa.",
+      "description_en": "NVIDIA also supplies GPUs/reference designs to ODMs beyond Quanta; Foxconn is among large AI system assemblers. Completes the ODM branch without replacing existing Quanta→campus edges.",
+      "evidence_note_it": "Ruolo ODM Foxconn su server AI è di settore; senza BOM Foxconn→singolo campus → likely sul ramo NVIDIA→ODM, non sul footprint EU.",
+      "evidence_note_en": "Foxconn’s AI-server ODM role is industry-standard; without a Foxconn→single-campus BOM → likely on NVIDIA→ODM branch, not on EU footprint.",
+      "as_of": "2025-01-01",
+      "sources": [
+        {
+          "title": "Nota ODM — Quanta/Foxconn nell’ecosistema NVIDIA AI",
+          "url": "https://m1k.tech/2026/08/tsmc-cowos-outsourcing-osat-nvidia/",
+          "accessed_at": "2026-09-29",
+          "note": "Contesto OSAT/ODM capacity crunch; Foxconn come assembler di scala"
+        }
+      ]
+    },
+    {
+      "id": "conn_068",
+      "source_id": "rm_030",
+      "target_id": "rm_026",
+      "relationship_type": "supplies",
+      "certainty": "likely",
+      "description_it": "Samsung fornisce stack HBM verso lo stesso anello CoWoS che integra memoria e die GPU. È il peer dual-source rispetto a SK Hynix→CoWoS (conn_060): stesso tipo di arco, certainty likely perché la quota e i lotti sito-sito non sono pubblici come per SK Hynix.",
+      "description_en": "Samsung supplies HBM stacks into the same CoWoS ring that integrates memory and GPU dies. Dual-source peer to SK Hynix→CoWoS (conn_060): same edge type, certainty likely because share and site-to-site lots are less public than for SK Hynix.",
+      "evidence_note_it": "Qualifica NVIDIA HBM4 Samsung (analisi/TrendForce 2026) + architettura on-package HBM. Senza packing list Hwaseong→Zhunan → likely, non confirmed.",
+      "evidence_note_en": "NVIDIA HBM4 Samsung qualification (analysis/TrendForce 2026) + on-package HBM architecture. Without Hwaseong→Zhunan packing list → likely, not confirmed.",
+      "as_of": "2026-03-01",
+      "sources": [
+        {
+          "title": "NVIDIA supply chain — Samsung HBM4 qualification",
+          "url": "https://mohammed-sumon.com/research/semiconductor-cohort/docs/NVDA/supply-chain.html",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "Inside DeepTech — HBM on CoWoS package",
+          "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
           "accessed_at": "2026-09-29"
         }
       ]

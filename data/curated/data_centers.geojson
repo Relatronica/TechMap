@@ -833,7 +833,7 @@
         "subtype": "colocation",
         "operator": "Data4 Italia",
         "capacity": "Campus multi-edificio; riserva elettrica dichiarata fino a centinaia di MW",
-        "description_it": "Uno dei maggiori campus di colocation in Italia, a Cornaredo (cluster ovest di Milano). Più edifici operativi (MIL01) e fasi di espansione verso Vittuone/MIL02. Hub di interconnessione con POP MIX/TOP-IX e accesso a decine di carrier e cloud pubblici — assente dal curato nonostante sia tra i siti più densi del mercato milanese.",
+        "description_it": "Uno dei maggiori campus di colocation in Italia, a Cornaredo (cluster ovest di Milano). Più edifici operativi (MIL01) e espansione verso Vittuone/MIL02 (dc_050). Hub di interconnessione con POP MIX/TOP-IX e accesso a decine di carrier e cloud pubblici.",
         "country": "IT",
         "city": "Cornaredo",
         "status": "operational",
@@ -890,7 +890,7 @@
         "subtype": "hyperscale",
         "operator": "Vantage Data Centers",
         "capacity": "~64 MW IT (campus); programma strategico nazionale multi-sito ~8 mld",
-        "description_it": "Campus Vantage a Melegnano (sud Milano), primo nodo del programma italiano dichiarato di preminente interesse strategico nazionale (~8 mld con MXP4): Melegnano (MXP1), Settimo Milanese (MXP2, dc_023), Cornaredo (dc_039) e Tavazzano (MXP4, dc_034). Destinato a carichi cloud/AI hyperscale nel mercato milanese. L’allaccio in alta tensione previsto è la nuova stazione Terna 220 kV Melegnano, contigua al campus: il cavo attraversa solo il confine tra le due stazioni. La stazione è in mappa come gn_005 (pin approssimato: non è in OpenStreetMap).",
+        "description_it": "Campus Vantage a Melegnano (sud Milano), primo nodo del programma italiano dichiarato di preminente interesse strategico nazionale (~8 mld con MXP4): Melegnano (MXP1), Settimo Milanese (MXP2, dc_023), Cornaredo (dc_039) e Tavazzano (MXP4, dc_034). Destinato a carichi cloud/AI hyperscale nel mercato milanese. L’allaccio in alta tensione previsto è la nuova stazione Terna 220 kV Melegnano, contigua al campus: il cavo attraversa solo il confine tra le due stazioni. La stazione è in mappa come gn_005 (pin approssimato: non è in OpenStreetMap). Attenzione naming: i codici MXP1/MXP2 sono usati anche da Hscale (dc_044/dc_045) su siti diversi — non confondere con Vantage.",
         "country": "IT",
         "city": "Melegnano",
         "status": "under_construction",
@@ -1638,8 +1638,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.43677,
-          45.33325
+          9.4364,
+          45.3325
         ]
       },
       "properties": {
@@ -1649,7 +1649,7 @@
         "subtype": "hyperscale",
         "operator": "Vantage Data Centers",
         "capacity": "N/D; estensione strategicità ~3,79 mld (programma IT totale ~8 mld)",
-        "description_it": "Quarto campus italiano Vantage (MXP4) previsto nei comuni di Tavazzano con Villavesco e Montanaso (LO), dentro/accanto al perimetro della centrale termoelettrica TTEP. Il CdM ha esteso la strategicità nazionale (~3,79 mld aggiuntivi). Cronaca locale (incontro tecnico MIMIT/commissario): ubicazione in centrale confermata; progetto edilizio ancora da presentare. Non è un PPA nominato: il legame energetico in mappa è powers likely per co-locazione sullo stesso nodo.",
+        "description_it": "Quarto campus italiano Vantage (MXP4) previsto nei comuni di Tavazzano con Villavesco e Montanaso (LO), dentro/accanto al perimetro della centrale termoelettrica TTEP. Il CdM ha esteso la strategicità nazionale (~3,79 mld aggiuntivi). Cronaca locale (incontro tecnico MIMIT/commissario): ubicazione in centrale confermata; progetto edilizio ancora da presentare. Non è un PPA nominato: il legame energetico in mappa è powers likely per co-locazione sullo stesso nodo. Pin allineato al perimetro TTEP (ep_018); lotto edilizio ancora non depositato.",
         "country": "IT",
         "city": "Tavazzano con Villavesco",
         "status": "planned",
@@ -1856,13 +1856,13 @@
         "subtype": "hyperscale",
         "operator": "EdgeConneX",
         "capacity": "Quota programma Campus Italia (>300 MW su tre siti); MW IT sito N/D",
-        "description_it": "Secondo nodo del programma EdgeConneX Campus Italia (~3 mld, interesse strategico nazionale), nei comuni di Pieve Emanuele / Fizzonasco a sud di Milano. Stesso programma di Opera (dc_027) e Bertonico (dc_038). Coordinate a livello frazione; lotto esatto da raffinare.",
+        "description_it": "Secondo nodo del programma EdgeConneX Campus Italia (~3 mld, interesse strategico nazionale), nei comuni di Pieve Emanuele / Fizzonasco a sud di Milano. Stesso programma di Opera (dc_027) e Bertonico (dc_038). Pin sul nucleo di Fizzonasco (Nominatim); lotto edilizio esatto da raffinare con atti.",
         "country": "IT",
         "city": "Pieve Emanuele",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 100,
@@ -1903,13 +1903,13 @@
         "subtype": "hyperscale",
         "operator": "EdgeConneX",
         "capacity": "Quota programma Campus Italia (>300 MW su tre siti); MW IT sito N/D",
-        "description_it": "Terzo nodo del programma EdgeConneX Campus Italia nel Lodigiano (Bertonico). Stesso programma di Opera (dc_027) e Pieve Emanuele (dc_037). Pin a livello comunale.",
+        "description_it": "Terzo nodo del programma EdgeConneX Campus Italia nel Lodigiano (Bertonico). Stesso programma di Opera (dc_027) e Pieve Emanuele (dc_037). Pin sul centroide comunale (Nominatim); lotto edilizio esatto da raffinare con atti.",
         "country": "IT",
         "city": "Bertonico",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 100,
@@ -1950,13 +1950,13 @@
         "subtype": "hyperscale",
         "operator": "Vantage Data Centers",
         "capacity": "N/D (nodo del programma multi-campus ~8 mld)",
-        "description_it": "Nodo Cornaredo del programma Vantage di interesse strategico nazionale (insieme a Melegnano/MXP1, Settimo/MXP2 e Tavazzano/MXP4). Distinto dal campus Data4 MIL01 già operativo nello stesso comune (dc_021). Lotto e potenza IT da raffinare; pin approssimato sul comune.",
+        "description_it": "Nodo Cornaredo del programma Vantage di interesse strategico nazionale (insieme a Melegnano/MXP1, Settimo/MXP2 e Tavazzano/MXP4). Distinto dal campus Data4 MIL01 già operativo nello stesso comune (dc_021). Lotto e potenza IT da raffinare; pin sul centroide comunale di Cornaredo (Nominatim); lotto distinto da Data4 MIL01 (dc_021).",
         "country": "IT",
         "city": "Cornaredo",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": null,
@@ -2256,6 +2256,1373 @@
             "url": "https://va.mite.gov.it/File/Documento/1278524",
             "accessed_at": "2026-09-29",
             "note": "Lat 41.93133 Lon 12.631676"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.97202,
+          45.50538
+        ]
+      },
+      "properties": {
+        "id": "dc_044",
+        "name": "Hscale MXP1 — Arluno (Via Padre Kolbe)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Hscale (Bain Capital / Aquila)",
+        "capacity": "48 MW campus; STMG ~70 MVA dichiarata",
+        "description_it": "Primo campus hyperscale Hscale in Italia, ovest Milano a Arluno (Via Padre Massimiliano Kolbe / Rogorotto). Target ready-for-service Q4 2027; un edificio a moduli ~16 MW. Distinto dal Vantage MXP1 di Melegnano (dc_022): stesso codice commerciale, sito e operatore diversi. Parte del commitment ~250 MW / >€2 mld con MXP2 (dc_045).",
+        "description_en": "First Italian Hscale hyperscale campus, west of Milan at Arluno (Via Padre Massimiliano Kolbe / Rogorotto). Target RFS Q4 2027; single building in ~16 MW modules. Distinct from Vantage’s MXP1 at Melegnano (dc_022): same commercial code, different site and operator. Part of the ~250 MW / >€2bn commitment with MXP2 (dc_045).",
+        "country": "IT",
+        "city": "Arluno",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 48,
+          "power_draw_mw_est": null,
+          "pue": 1.2,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "STMG ~70 MVA dichiarata dall’operatore; SE di allaccio non nominata in fonti aperte consultate → nessun arco connects in questa wave."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Pre-construction/procurement in corso (maggio 2026); organico operativo non dichiarato.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Nuovo polo hyperscale a ovest di Milano (Arluno), fuori dal corridoio Castelletto–Zibido già saturo.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Hscale — Italy Milan campuses",
+            "url": "https://www.hscaledc.com/data-centres/italy-milan/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Hscale — closes second Milan campus (€2bn / 250 MW)",
+            "url": "https://www.hscaledc.com/update/hscale-closes-second-hyperscale-data-centre-campus-in-milan-committing-over-e2-billion-to-the-region/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Colo Map — hscale MXP1 Arluno address",
+            "url": "https://colomap.com/facilities/hscale-mxp1/",
+            "accessed_at": "2026-09-29",
+            "note": "Via Padre Massimiliano Kolbe, Arluno"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.05468,
+          45.47947
+        ]
+      },
+      "properties": {
+        "id": "dc_045",
+        "name": "Hscale MXP2 — Settimo / Nord-Ovest Milano",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Hscale (Bain Capital / Aquila)",
+        "capacity": "120 MW campus (3 edifici); STMG ~180 MVA dichiarata",
+        "description_it": "Secondo campus Hscale nell’area nord-ovest di Milano (comunicati: Settimo / Northwest Milan), tre edifici da ~36 MW, target RFS Q3 2028. Distinto dal Vantage MXP2 a Castelletto (dc_023) e da Microsoft MIL03 / Equinix ML7–8 nello stesso corridoio: stesso codice MXP2, operatore e lotto diversi. Pin a livello comunale Settimo Milanese finché non emerge indirizzo/VIA di lotto.",
+        "description_en": "Second Hscale campus in northwest Milan (releases: Settimo / Northwest Milan), three ~36 MW buildings, target RFS Q3 2028. Distinct from Vantage MXP2 at Castelletto (dc_023) and from Microsoft MIL03 / Equinix ML7–8 in the same corridor: same MXP2 code, different operator and lot. Municipal-level pin on Settimo Milanese until a lot address/EIA is public.",
+        "country": "IT",
+        "city": "Settimo Milanese",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 120,
+          "power_draw_mw_est": null,
+          "pue": 1.2,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "STMG ~180 MVA dichiarata; SE nominata non pubblica in fonti aperte → nessun arco connects in questa wave."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Closing campus annunciato maggio 2026; pre-construction in corso.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Ulteriore densificazione del nord-ovest milanese già carico di campus hyperscale (Vantage, Equinix, Microsoft).",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Hscale — Italy Milan campuses (MXP2 120 MW)",
+            "url": "https://www.hscaledc.com/data-centres/italy-milan/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Hscale — closes second Milan campus",
+            "url": "https://www.hscaledc.com/update/hscale-closes-second-hyperscale-data-centre-campus-in-milan-committing-over-e2-billion-to-the-region/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MLQ — Hscale €2B / 250 MW Milan",
+            "url": "https://mlq.ai/news/bain-backed-hscale-closes-second-milan-campus-commits-2b-to-250mw-buildout/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.26819,
+          45.48437
+        ]
+      },
+      "properties": {
+        "id": "dc_046",
+        "name": "CyrusOne MIL1 — Segrate (Via Reggio Emilia)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "CyrusOne",
+        "capacity": "27 MW prima fase; fino a 63 MW IT totali sul sito",
+        "description_it": "Primo data center CyrusOne in Italia a Segrate (Via Reggio Emilia 39), est Milano. Breaking ground dichiarato; prima fase ~27 MW IT (tre sale da 9 MW) con target operativo Q3 2027 e potenziale di campus fino a 63 MW. Allaccio dichiarato su incomers 220 kV A/B (~100 MVA); SE Terna di dettaglio non nominata in scheda pubblica → nessun arco connects in questa wave.",
+        "description_en": "First CyrusOne data center in Italy at Segrate (Via Reggio Emilia 39), east Milan. Ground broken; first phase ~27 MW IT (three 9 MW halls) targeting Q3 2027 operations, campus potential up to 63 MW. Public datasheet cites dual 220 kV A/B incomers (~100 MVA); named Terna SE not in open sources → no connects edge in this wave.",
+        "country": "IT",
+        "city": "Segrate",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 63,
+          "power_draw_mw_est": 27,
+          "pue": 1.3,
+          "water_use_m3_year": null,
+          "land_ha": 7.5,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV; senza SE nominata non si traccia un arco connects."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": 30,
+          "note_it": "Comunicato: fino a ~30 addetti in cantiere al picco; organico a regime non dettagliato. Investimenti locali dichiarati su Via delle Regioni.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Riqualificazione di area industriale abbandonata a Segrate; opere stradali e percorsi ciclo-pedonali annunciati con il Comune.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "CyrusOne — Milan MIL1",
+            "url": "https://www.cyrusone.com/data-centers/emea/milan-italy",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CyrusOne — MIL1 datasheet (Via Reggio Emilia 39)",
+            "url": "https://www.cyrusone.com/hubfs/CyrusOne/C1_MIL1_DataSheet_SD.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CyrusOne — breaks ground on first Italy DC",
+            "url": "https://www.cyrusone.com/resources/press-releases/cyrusone-breaks-ground-on-first-data-center-in-italy",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.95043,
+          44.4272
+        ]
+      },
+      "properties": {
+        "id": "dc_047",
+        "name": "Equinix GN1 — Genova (Lungobisagno Istria)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "IBX carrier-neutral; MW IT non pubblicati in scheda aperta",
+        "description_it": "IBX Equinix GN1 a Genova, Via Lungobisagno Istria 14/A: primo data center carrier-neutral di scala mondiale in città, hub mediterraneo collegato agli IBX milanesi (incluso ML5 / Via Caldera). Coperto dal PPA portfolio Neoen–Equinix (Arena Po) insieme agli IBX di Milano — arco powers likely (conn_058).",
+        "description_en": "Equinix GN1 IBX in Genoa, Via Lungobisagno Istria 14/A: the city’s first world-class carrier-neutral data center, a Mediterranean hub linked to Milan IBXs (including ML5 / Via Caldera). Covered by the Neoen–Equinix portfolio PPA (Arena Po) with Milan IBXs — powers likely edge (conn_058).",
+        "country": "IT",
+        "city": "Genova",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "PPA virtuale Neoen–Equinix sul footprint Italia (Milano e Genova); non è un cavo dedicato al sito."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione IBX tipica di facility colo metropolitana; headcount non pubblico.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Nodo di interconnessione sul corridoio mediterraneo genovese; pressione locale contenuta rispetto ai campus hyperscale milanesi.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Equinix — GN1 Genoa",
+            "url": "https://www.equinix.com/data-centers/europe-colocation/italy-colocation/genoa-data-centers/gn1",
+            "accessed_at": "2026-09-29",
+            "note": "Via Lungobisagno Istria 14/A"
+          },
+          {
+            "title": "Neoen × Equinix — PPA Italia (Milano e Genova)",
+            "url": "https://neoen.com/en/news/2024/neoen-and-equinix-sign-their-first-ppa-in-italy-supporting-decarbonization-of-the-local-grid/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.14759,
+          45.35626
+        ]
+      },
+      "properties": {
+        "id": "dc_048",
+        "name": "Equinix ML3 — Basiglio",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "~3 MW (directory commerciali); IBX operativo",
+        "description_it": "IBX Equinix ML3 a Basiglio (sud Milano), indirizzo pubblico Via Ennio Doris / Via Francesco Sforza 13. Colocation e interconnection nel metro milanese, distinto da ML2 (Via Savona), ML5 (Settimo) e dal campus hyperscale ML7/ML8 (dc_042).",
+        "description_en": "Equinix ML3 IBX in Basiglio (south Milan), public address Via Ennio Doris / Via Francesco Sforza 13. Colocation and interconnection in the Milan metro, distinct from ML2 (Via Savona), ML5 (Settimo) and the ML7/ML8 hyperscale campus (dc_042).",
+        "country": "IT",
+        "city": "Basiglio",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 3,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Rientra nel footprint Equinix Italia del PPA Neoen (portfolio); senza naming sito-sito → non si aggiunge un arco dedicato oltre ML5/ML2/GN1."
+        },
+        "community_impact_it": "Presenza colo consolidata a Basiglio; impatto locale tipico di IBX di media taglia.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Equinix — ML3 Milan",
+            "url": "https://www.equinix.com/it/it/data-centers/europe-colocation/italy-colocation/milan-data-centers/ml3",
+            "accessed_at": "2026-09-29",
+            "note": "V. Ennio Doris 13, Basiglio"
+          },
+          {
+            "title": "DataCenters.com — Equinix ML3 Basiglio",
+            "url": "https://www.datacenters.com/equinix-ml3-basiglio",
+            "accessed_at": "2026-09-29",
+            "note": "Via Francesco Sforza 13; ~3 MW"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.24405,
+          45.51133
+        ]
+      },
+      "properties": {
+        "id": "dc_049",
+        "name": "Equinix ML4 — Milano (Via Privata Cascia)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "IBX; MW IT non dettagliati in scheda aperta consultata",
+        "description_it": "IBX Equinix ML4 a Milano, Via Privata Cascia 5 (quartiere Adriano / nord-est). Ex Telecity; oggi parte del footprint Equinix Milano insieme a ML2, ML3 e ML5. Distinto dal campus hyperscale di Settimo (ML7/ML8).",
+        "description_en": "Equinix ML4 IBX in Milan, Via Privata Cascia 5 (Adriano / north-east). Former Telecity; now part of the Equinix Milan footprint with ML2, ML3 and ML5. Distinct from the Settimo hyperscale campus (ML7/ML8).",
+        "country": "IT",
+        "city": "Milano",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Footprint Equinix Italia (PPA Neoen); senza naming sito-sito non si aggiunge arco dedicato."
+        },
+        "community_impact_it": "IBX urbano consolidato; impatto tipico di facility colo in tessuto residenziale/produttivo.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Equinix Italy — ML4 Via Privata Cascia 5",
+            "url": "https://datacenterplatform.com/data-centers/equinix/equinix-inc-italy/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Baxtel — Equinix Milan ML4",
+            "url": "https://baxtel.com/data-center/gtt-milan",
+            "accessed_at": "2026-09-29",
+            "note": "Elenca Equinix ML4 nel metro milanese"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.95929,
+          45.48085
+        ]
+      },
+      "properties": {
+        "id": "dc_050",
+        "name": "Data4 Campus MIL02 — Vittuone",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Data4 Italia",
+        "capacity": "Campus multi-edificio; masterplan fino a ~100 MW IT (directory)",
+        "description_it": "Espansione Data4 a Vittuone (Via Giovanni Pascoli), ovest Milano, distinta dal campus MIL01 di Cornaredo (dc_021). Sviluppo multi-fase hyperscale su area ampia; pin a livello strada (Pascoli) finché non emergono coordinate di lotto da VIA.",
+        "description_en": "Data4 expansion at Vittuone (Via Giovanni Pascoli), west Milan, distinct from the Cornaredo MIL01 campus (dc_021). Multi-phase hyperscale development on a large site; street-level pin (Pascoli) until lot coordinates appear in an EIA.",
+        "country": "IT",
+        "city": "Vittuone",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 100,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 22,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Stesso operatore del PPA Edison–Data4 (ep_019→dc_021); senza naming esplicito MIL02 nel comunicato PPA non si duplica l’arco powers."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Fase di sviluppo/cantiere; organico non dichiarato in fonti aperte consultate.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Estensione del cluster Data4 dal Cornaredo verso Vittuone; pressione cumulativa ovest-Milano su suolo e rete.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "DATA4 — Milan / Cornaredo (riferimento campus Italia)",
+            "url": "https://www.data4group.com/en/data-center-in-milan-italy/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "DC Pulse — DATA4 Milan Campus MIL02 Vittuone",
+            "url": "https://dcpulse.com/project/data4-milan-campus-mil02-vittuone-italy",
+            "accessed_at": "2026-09-29",
+            "note": "Via Giovanni Pascoli, Vittuone; ~100 MW masterplan"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.57694,
+          41.70634
+        ]
+      },
+      "properties": {
+        "id": "dc_051",
+        "name": "Rai Way Hyperscale — Pomezia / Santa Palomba",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Rai Way",
+        "capacity": "35,2 MW IT (4 edifici); permesso di costruire ottenuto",
+        "description_it": "Campus hyperscale Rai Way a Pomezia sull’area dell’ex centro trasmittente in onde medie (Santa Palomba). Quattro edifici indipendenti, ~16.000 mq di data hall, 35,2 MW IT dichiarati; preparazione area avviata (set 2026), costruzione edifici in fase successiva. Distinto dal TIM Data Center di Pomezia (dc_011).",
+        "description_en": "Rai Way hyperscale campus at Pomezia on the former medium-wave transmitter site (Santa Palomba). Four independent buildings, ~16,000 m² of data halls, 35.2 MW IT declared; site preparation started (Sep 2026), building construction later. Distinct from TIM’s Pomezia data center (dc_011).",
+        "country": "IT",
+        "city": "Pomezia",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 35.2,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 14,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "FV di supporto ~5,5 MW in autorizzazione secondo cronaca; allaccio RTN non nominato in fonti aperte → nessun arco in questa wave."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Preparazione area in corso; organico di cantiere/esercizio non dettagliato.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Riconversione di sito radiotelevisivo a Pomezia; accordo comunale su cessione terreno per viabilità.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "DCD — Rai Way approval hyperscale near Rome / Pomezia",
+            "url": "https://www.datacenterdynamics.com/en/news/rai-way-gets-approval-for-400m-hyperscale-data-center-near-rome-italy/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "JLC News — Rai Way preparazione area Pomezia",
+            "url": "https://www.jlcnews.it/post/rai-way-avvia-la-preparazione-dell-area-per-il-data-center-di-pomezia",
+            "accessed_at": "2026-09-29",
+            "note": "35,2 MW; ex centro onde medie"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.47462,
+          41.83343
+        ]
+      },
+      "properties": {
+        "id": "dc_052",
+        "name": "Retelit — RMLET Roma (Viale della Letteratura)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "Colocation metro; MW IT non pubblicati in scheda aperta consultata",
+        "description_it": "Data center Retelit RMLET a Roma EUR, Viale della Letteratura 17. Nodo colo/carrier del gruppo (ex Irideos) nel secondo polo italiano, distinto da Avalon Milano (dc_008) e dagli IBX Equinix. Serve imprese, PA e operatori sul corridoio romano.",
+        "description_en": "Retelit RMLET data center in Rome EUR, Viale della Letteratura 17. Group colo/carrier node (ex Irideos) in Italy’s second metro, distinct from Milan Avalon (dc_008) and Equinix IBXs.",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Presenza colo consolidata all’EUR; impatto tipico di facility metro.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OCOLO — Retelit RMLET Roma",
+            "url": "https://www.ocolo.io/colocation/retelit/",
+            "accessed_at": "2026-09-29",
+            "note": "Viale della Letteratura 17"
+          },
+          {
+            "title": "Retelit — gruppo / rete DC nazionali",
+            "url": "https://www.retelit.it/en",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.38249,
+          41.89031
+        ]
+      },
+      "properties": {
+        "id": "dc_053",
+        "name": "Retelit — Cornelia Roma",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "~0,3 MW (directory commerciali)",
+        "description_it": "Data center Retelit a Roma, Via Cornelia 498 (Aurelio). Facility colo di piccola/media taglia nel network nazionale Retelit; distinta da RMLET (EUR) e Perrier (nord-est).",
+        "description_en": "Retelit data center in Rome, Via Cornelia 498 (Aurelio). Small/medium colo in the national Retelit network; distinct from RMLET (EUR) and Perrier (north-east).",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 0.3,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Taglia colo metro; allaccio non nominato in fonti aperte."
+        },
+        "community_impact_it": "Facility urbana di piccola taglia sul corridoio Cornelia.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OCOLO — Retelit CORNELIA Roma",
+            "url": "https://www.ocolo.io/colocation/retelit/cornelia-roma/",
+            "accessed_at": "2026-09-29",
+            "note": "Via Cornelia 498; ~0.3 MW"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.53202,
+          41.92247
+        ]
+      },
+      "properties": {
+        "id": "dc_054",
+        "name": "Retelit — Perrier Roma",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "~0,3 MW (directory); sito in certificazione ISO 50001 di gruppo",
+        "description_it": "Data center Retelit a Roma, Via Carlo Perrier 4 / 9a (Municipio IV). Nodo colo del network nazionale; elenco sedi ISO 50001 Retelit Datacenter S.r.l.",
+        "description_en": "Retelit data center in Rome, Via Carlo Perrier 4 / 9a (Municipio IV). National colo network node; listed in Retelit Datacenter S.r.l. ISO 50001 sites.",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 0.3,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Taglia colo metro; allaccio non nominato in fonti aperte."
+        },
+        "community_impact_it": "Facility urbana nord-est; impatto tipico colo di piccola taglia.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OCOLO — Retelit PERRIER Roma",
+            "url": "https://www.ocolo.io/data-centers/italy/lazio/",
+            "accessed_at": "2026-09-29",
+            "note": "Via Carlo Perrier 4"
+          },
+          {
+            "title": "Retelit — certificato ISO 50001 (sedi DC)",
+            "url": "https://www.retelit.it/public/CMS/Files/10556/Certificato-ISO-50001-EN.pdf",
+            "accessed_at": "2026-09-29",
+            "note": "Via Carlo Perrier 4 e 9/a"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.34569,
+          41.76454
+        ]
+      },
+      "properties": {
+        "id": "dc_055",
+        "name": "TIM Noovle — Acilia (Roma)",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "TIM Noovle / TIM Enterprise",
+        "capacity": "Core DC TIER IV (Uptime); MW IT non pubblicati in scheda aperta consultata",
+        "description_it": "Core data center TIM Noovle ad Acilia (Via di Macchia Palocco 223), certificato TIER IV Uptime Institute insieme a Rozzano (dc_010). Nodo strategico del secondo polo romano per cloud/colocation enterprise TIM; distinto da Pomezia (dc_011), Digital Realty ROM1 e Aruba IT4.",
+        "description_en": "TIM Noovle core data center at Acilia (Via di Macchia Palocco 223), Uptime Institute Tier IV certified together with Rozzano (dc_010). Strategic Rome-metro node for TIM enterprise cloud/colocation; distinct from Pomezia (dc_011), Digital Realty ROM1 and Aruba IT4.",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Operatore cita autoproduzione da solare/geotermia sul sito TIER IV; dettaglio MW e allaccio RTN non in scheda aperta consultata."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Core enterprise TIM; organico non dettagliato in fonti aperte.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Grande facility a sud-ovest di Roma (Acilia/Casal Palocco); pressione tipica di un core DC telco.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Noovle — Data Centers (Acilia TIER IV)",
+            "url": "https://www.noovle.com/en/datacenter/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — TIER IV Via di Macchia Palocco 223",
+            "url": "https://www.openstreetmap.org/search?query=Via%20di%20Macchia%20Palocco%20223%20Roma",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "DataCenterMap — Noovle DC Acilia",
+            "url": "https://www.datacentermap.com/c/noovle-spa/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.46418,
+          41.9642
+        ]
+      },
+      "properties": {
+        "id": "dc_056",
+        "name": "TIM Noovle — Roma Oriolo Romano",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "TIM Noovle / TIM Enterprise",
+        "capacity": "Core DC rete Noovle; MW IT non pubblicati in scheda aperta consultata",
+        "description_it": "Data center TIM Noovle a Roma, Via Oriolo Romano 257 (Tor di Quinto / nord). Parte della rete core nazionale Noovle; distinto da Acilia TIER IV (dc_055) e da Pomezia (dc_011).",
+        "description_en": "TIM Noovle data center in Rome, Via Oriolo Romano 257 (Tor di Quinto / north). Part of Noovle’s national core network; distinct from Acilia Tier IV (dc_055) and Pomezia (dc_011).",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Facility telco urbana a nord di Roma.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "DataCenterMap — Noovle DC Roma Oriolo Romano",
+            "url": "https://www.datacentermap.com/c/noovle-spa/",
+            "accessed_at": "2026-09-29",
+            "note": "Via Oriolo Romano 257"
+          },
+          {
+            "title": "Noovle — Data Centers",
+            "url": "https://www.noovle.com/en/datacenter/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.27139,
+          41.63285
+        ]
+      },
+      "properties": {
+        "id": "dc_057",
+        "name": "Seeweb — Frosinone",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Seeweb",
+        "capacity": "fino a ~1 MW dichiarato; campus ~2000 mq",
+        "description_it": "Data center Seeweb a Frosinone, Via Armando Vona 66. Secondo sito italiano dell’operatore (oltre Milano Caldera, non pinato separatamente perché nello stesso comprensorio di Avalon). Nodo colo/hosting nel Lazio meridionale con peering verso MIX/NaMeX e backup indipendente da Milano.",
+        "description_en": "Seeweb data center in Frosinone, Via Armando Vona 66. Operator’s second Italian site (besides Milan Caldera, not separately pinned because it sits in the Avalon campus complex). Lazio colo/hosting node with MIX/NaMeX peering and Milan-independent backup.",
+        "country": "IT",
+        "city": "Frosinone",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 1,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in scheda aperta; focus connettività multi-carrier."
+        },
+        "community_impact_it": "Polo digitale a Frosinone; scala contenuta rispetto agli hyperscale milanesi.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Seeweb — i nostri data center",
+            "url": "https://www.seeweb.it/data-center/i-nostri-data-center",
+            "accessed_at": "2026-09-29",
+            "note": "Via A. Vona 66, Frosinone"
+          },
+          {
+            "title": "Seeweb docs — DC locations",
+            "url": "https://docs.seeweb.it/en/datacenter/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.65225,
+          45.03822
+        ]
+      },
+      "properties": {
+        "id": "dc_058",
+        "name": "CSI Piemonte — Data Center Torino",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "CSI Piemonte",
+        "capacity": "TIA-942 Rating 3; PUE dichiarato 1,5; MW IT non pubblici",
+        "description_it": "Data center di CSI Piemonte a Torino, Corso Unione Sovietica 216. Infrastruttura per la PA regionale piemontese (TIA-942 Rating 3, PUE 1,5). Nodo enterprise/PA del nord-ovest, distinto dal boom hyperscale milanese.",
+        "description_en": "CSI Piemonte data center in Turin, Corso Unione Sovietica 216. Infrastructure for Piedmont regional public administration (TIA-942 Rating 3, PUE 1.5). North-west enterprise/PA node, distinct from the Milan hyperscale boom.",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": 1.5,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Facility PA; dettaglio allaccio/MW non in scheda aperta consultata."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico CSI su servizi ICT regionali; non isolabile al solo DC.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Infrastruttura critica per servizi digitali della PA piemontese.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "CSI Piemonte — Data center e infrastrutture",
+            "url": "https://www.csipiemonte.it/it/cosa-facciamo/temi-strategici/data-center-infrastrutture",
+            "accessed_at": "2026-09-29",
+            "note": "Corso Unione Sovietica 216, Torino"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.73842,
+          45.05013
+        ]
+      },
+      "properties": {
+        "id": "dc_059",
+        "name": "Naquadria — Piacenza",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Naquadria",
+        "capacity": "TIER III-oriented; ~400 mq + 220 mq seconda sala",
+        "description_it": "Data center Naquadria a Piacenza, Via Giuseppe Orsi 39 (Le Mose). Facility colo/cloud wholesale (PCIX on-net) collegata in dark fiber al campus Caldera di Milano e in rete geografica con Padova. Nodo emiliano tra Milano e Bologna.",
+        "description_en": "Naquadria data center in Piacenza, Via Giuseppe Orsi 39 (Le Mose). Colo/wholesale cloud facility (PCIX on-net) linked by dark fiber to Milan’s Caldera campus and a geographic network with Padua. Emilia node between Milan and Bologna.",
+        "country": "IT",
+        "city": "Piacenza",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Operatore sottolinea efficienza (dry cooler, geotermia); allaccio RTN non nominato."
+        },
+        "community_impact_it": "Facility regionale a Piacenza Sud; scala colo, non hyperscale.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Naquadria — Il Data Center",
+            "url": "https://www.naquadria.it/il-datacenter",
+            "accessed_at": "2026-09-29",
+            "note": "Via Giuseppe Orsi 39"
+          },
+          {
+            "title": "PeeringDB — Naquadria Datacenter Piacenza",
+            "url": "https://www.peeringdb.com/fac/3387",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "ACN — Datacenter Naquadria",
+            "url": "https://www.acn.gov.it/portale/w/in-2104",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.92137,
+          45.40504
+        ]
+      },
+      "properties": {
+        "id": "dc_060",
+        "name": "Planetel Edge Data Center — Padova (ZAI Vigonovese)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Planetel",
+        "capacity": "~1.200 mq sito; MW IT non pubblicati; completamento previsto ott 2026",
+        "description_it": "Edge data center Planetel in realizzazione nella ZAI di Padova, Via Vigonovese (~1.200 mq). Interconnessione dichiarata a VSIX Padova e MIX Milano. Completamento previsto ottobre 2026. Nodo Nord-Est in pipeline, distinto dal colo storico milanese.",
+        "description_en": "Planetel edge data center under construction in Padua’s ZAI, Via Vigonovese (~1,200 m²). Declared interconnection to VSIX Padua and MIX Milan. Completion targeted October 2026. North-east pipeline node.",
+        "country": "IT",
+        "city": "Padova",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 0.12,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non dettagliato in scheda aperta; focus edge/IX regionali."
+        },
+        "community_impact_it": "Nuovo edge nella zona industriale di Padova; scala contenuta.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Planetel — Edge Data Center Padova",
+            "url": "https://www.planetel.it/struttura-tecnica/datacenter/l-edge-data-center-planetel/",
+            "accessed_at": "2026-09-29",
+            "note": "ZAI Via Vigonovese; completamento ott 2026"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.11097,
+          46.09365
+        ]
+      },
+      "properties": {
+        "id": "dc_061",
+        "name": "Retelit — Trento (Via Sestan)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "Colocation regionale; MW IT non pubblicati",
+        "description_it": "Data center Retelit a Trento, Via Ernesto Sestan 5 (elenco sedi ISO 50001 Retelit Datacenter). Nodo colo del Trentino nel network nazionale ex Irideos/Retelit.",
+        "description_en": "Retelit data center in Trento, Via Ernesto Sestan 5 (Retelit Datacenter ISO 50001 site list). Trentino colo node in the national ex-Irideos/Retelit network.",
+        "country": "IT",
+        "city": "Trento",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Facility colo regionale a Trento.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Retelit — certificato ISO 50001 (Via Sestan, Trento)",
+            "url": "https://www.retelit.it/public/CMS/Files/10556/Certificato-ISO-50001-EN.pdf",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.33023,
+          46.48198
+        ]
+      },
+      "properties": {
+        "id": "dc_062",
+        "name": "Retelit — Bolzano (Via Pacinotti)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "Colocation regionale; MW IT non pubblicati",
+        "description_it": "Data center Retelit a Bolzano, Via Antonio Pacinotti 12 (zona industriale; ex Brennercom nell’elenco sedi di gruppo). Nodo colo altoatesino del network nazionale Retelit.",
+        "description_en": "Retelit data center in Bolzano, Via Antonio Pacinotti 12 (industrial zone; former Brennercom in group site lists). South Tyrol colo node in the national Retelit network.",
+        "country": "IT",
+        "city": "Bolzano",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Facility colo in zona industriale di Bolzano.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Retelit — certificato ISO 50001 (Via Pacinotti, Bolzano)",
+            "url": "https://www.retelit.it/public/CMS/Files/10556/Certificato-ISO-50001-EN.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — Via Pacinotti 12 Bolzano",
+            "url": "https://www.openstreetmap.org/search?query=Via%20Antonio%20Pacinotti%2012%20Bolzano",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.31584,
+          38.16094
+        ]
+      },
+      "properties": {
+        "id": "dc_063",
+        "name": "Sparkle Sicily Hub — Palermo (Via Ugo La Malfa)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Telecom Italia Sparkle (deal Retelit+MEF in closing)",
+        "capacity": "Hub colo/marketplace; MW IT non pubblicati in scheda aperta",
+        "description_it": "Sicily Hub di Sparkle a Palermo, Via Ugo La Malfa 99: ecosistema aperto e marketplace sul crocevia dei cavi sottomarini Europa–Africa–Asia. Asset chiave del ramo wholesale/subsea TIM in cessione a Boost BidCo (MEF + Retelit): OK UE apr 2026, long-stop closing 15 ott 2026 (waiver TIM). Distinto da NaMeX Roma e dai DC Retelit già in mappa.",
+        "description_en": "Sparkle Sicily Hub in Palermo, Via Ugo La Malfa 99: open ecosystem/marketplace on the Europe–Africa–Asia subsea cable crossroads. Key TIM wholesale/subsea asset being sold to Boost BidCo (MEF + Retelit): EU clearance Apr 2026, closing long-stop 15 Oct 2026 (TIM waiver). Distinct from NaMeX Rome and existing Retelit DCs.",
+        "country": "IT",
+        "city": "Palermo",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Ruolo primario: interconnessione e landing/marketplace, non hyperscale IT."
+        },
+        "community_impact_it": "Nodo strategico mediterraneo a Palermo; pressione tipica di hub carrier, non di campus AI.",
+        "labor_risks": [
+          "shift_work",
+          "high_skill"
+        ],
+        "sources": [
+          {
+            "title": "Sparkle — Data Centers (Sicily Hub)",
+            "url": "https://www.tisparkle.com/our-assets/data-centers",
+            "accessed_at": "2026-09-29",
+            "note": "Via Ugo la Malfa 99, Palermo"
+          },
+          {
+            "title": "TIM — long-stop Sparkle estesa al 15/10/2026",
+            "url": "https://www.gruppotim.it/en/press-archive/sparkle/2026/PR-TIM-Waiver-Sparkle.html",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Submarine Networks — EU clearance MEF+Retelit / Sparkle",
+            "url": "https://www.submarinenetworks.com/en/nv/insights/tim-secures-eu-green-light-for-%E2%82%AC700-million-sale-of-sparkle",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.92085,
+          44.42918
+        ]
+      },
+      "properties": {
+        "id": "dc_064",
+        "name": "Sparkle — Genova (Via Bartolomeo Bianco)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Telecom Italia Sparkle (deal Retelit+MEF in closing)",
+        "capacity": "Facility Sparkle IT; MW IT non pubblicati",
+        "description_it": "Data center / PoP Sparkle a Genova, Via Bartolomeo Bianco 1. Secondo sito italiano dichiarato da Sparkle oltre Sicily Hub; nel perimetro della cessione a Boost BidCo (MEF + Retelit, closing in corso). Distinto da Equinix GN1 (dc_047) nella stessa città.",
+        "description_en": "Sparkle data center / PoP in Genoa, Via Bartolomeo Bianco 1. Second Italian site declared by Sparkle besides Sicily Hub; within the Boost BidCo (MEF + Retelit) sale perimeter (closing ongoing). Distinct from Equinix GN1 (dc_047) in the same city.",
+        "country": "IT",
+        "city": "Genova",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Nodo wholesale/carrier; allaccio non nominato in scheda aperta."
+        },
+        "community_impact_it": "Facility carrier a Genova; scala contenuta rispetto agli hyperscale milanesi.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Sparkle — Data Centers (Genoa)",
+            "url": "https://www.tisparkle.com/our-assets/data-centers",
+            "accessed_at": "2026-09-29",
+            "note": "via Bartolomeo Bianco 1, Genova"
+          },
+          {
+            "title": "TIM — long-stop Sparkle 15/10/2026",
+            "url": "https://www.gruppotim.it/en/press-archive/sparkle/2026/PR-TIM-Waiver-Sparkle.html",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.08933,
+          45.43576
+        ]
+      },
+      "properties": {
+        "id": "dc_065",
+        "name": "Retelit — Corsico (ex Marcegaglia)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "In costruzione; MW IT non pubblicati",
+        "description_it": "Nuovo data center Retelit a Corsico sull’ex sito Marcegaglia, in costruzione secondo dichiarazioni del CEO (Sole 24 Ore): parte del piano investimenti DC milanese insieme ad Avalon e al Tier IV di Settimo (ex BT). Contesto post-espansione Retelit parallelo al deal Sparkle (MEF+Retelit), non un asset Sparkle.",
+        "description_en": "New Retelit data center in Corsico on the former Marcegaglia site, under construction per CEO remarks (Sole 24 Ore): part of the Milan DC investment plan with Avalon and the Settimo Tier IV (ex BT). Retelit expansion context parallel to the Sparkle deal (MEF+Retelit), not a Sparkle asset.",
+        "country": "IT",
+        "city": "Corsico",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio/STMG non nominati in intervista; nessun arco connects in questa wave."
+        },
+        "community_impact_it": "Riconversione area industriale a Corsico; densificazione DC sud-ovest Milano.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Sole 24 Ore — Retelit DC plan / Sparkle closing (EN)",
+            "url": "https://en.ilsole24ore.com/art/a-study-on-the-development-of-the-data-centre-closing-of-the-sparkle-deal-imminent-AJcLxyG",
+            "accessed_at": "2026-09-29",
+            "note": "Corsico ex Marcegaglia in construction; Sparkle closing imminent"
+          },
+          {
+            "title": "OpenStreetMap — Marcegaglia Corsico",
+            "url": "https://www.openstreetmap.org/search?query=Marcegaglia%20Corsico",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.10313,
+          45.47615
+        ]
+      },
+      "properties": {
+        "id": "dc_066",
+        "name": "MIX — Milano Internet Exchange (Via Caldera)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "MIX S.r.l.",
+        "capacity": "IXP; picchi traffico >3 Tbps; 420+ reti (report 2025)",
+        "description_it": "Internet Exchange Point principale d’Italia, sede MIX a Via Caldera 21 Building Orange/3 (campus Caldera, Milano). Non è un data center hyperscale: è il nodo di peering dove si interconnettono carrier, cloud e content. Hub con edge IX anche a Roma/Palermo/Bologna/Caserta. Contiguo all’Avalon Campus (dc_008).",
+        "description_en": "Italy’s main Internet Exchange Point, MIX HQ at Via Caldera 21 Building Orange/3 (Caldera campus, Milan). Not a hyperscale data center: the peering node where carriers, cloud and content interconnect. Hub with edge IX also in Rome/Palermo/Bologna/Caserta. Adjacent to Avalon Campus (dc_008).",
+        "country": "IT",
+        "city": "Milano",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Consumo tipico di sala IX/carrier, non di campus IT; metrica rilevante = Tbps peaking, non MW IT."
+        },
+        "community_impact_it": "Infrastruttura critica di rete sul campus Caldera; impatto locale contenuto rispetto agli hyperscale.",
+        "labor_risks": [
+          "high_skill",
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "MIX — Annual Report 2025 (sede Caldera)",
+            "url": "https://www.mix-it.net/wp-content/uploads/MIX-Report-2025-en.pdf",
+            "accessed_at": "2026-09-29",
+            "note": "Via Caldera 21 Building Orange/3; >3 Tbps peaks; 420+ networks"
+          },
+          {
+            "title": "MIX — Roma edge (contesto rete)",
+            "url": "https://www.mix-it.net/en/exchange/roma/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5118,
+          41.89883
+        ]
+      },
+      "properties": {
+        "id": "dc_067",
+        "name": "NaMeX — Roma Internet Exchange (Via dei Tizii)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "NaMeX",
+        "capacity": "IXP mediterraneo; ~275 reti connesse (scheda Roma)",
+        "description_it": "Internet Exchange Point NaMeX a Roma, Via dei Tizii 2/C–6/B (San Lorenzo): nodo di peering e colo per operatori, con PoP multipli in città (Caesar e sedi ospitate). Sparkle ha ampliato qui IP Transit/Capacity (2018). Complementare a MIX Milano per il centro-sud e il Mediterraneo.",
+        "description_en": "NaMeX Internet Exchange Point in Rome, Via dei Tizii 2/C–6/B (San Lorenzo): peering and colo node for operators, with multiple city PoPs (Caesar and hosted sites). Sparkle expanded IP Transit/Capacity here (2018). Complements MIX Milan for central-southern Italy and the Mediterranean.",
+        "country": "IT",
+        "city": "Roma",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "IXP/colo operatori; metrica primaria = reti/Tbps, non MW IT di campus."
+        },
+        "community_impact_it": "Nodo di interconnessione urbana a San Lorenzo; scala IX, non hyperscale.",
+        "labor_risks": [
+          "high_skill",
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "NaMeX — Roma / indirizzo",
+            "url": "https://www.namex.it/namex-roma/",
+            "accessed_at": "2026-09-29",
+            "note": "Via dei Tizii 6B"
+          },
+          {
+            "title": "NaMeX — ISO 27001 sedi Tizii 2/C e 6/B",
+            "url": "https://www.namex.it/wp-content/uploads/2025/07/Namex-ISOIEC-27001-2022_LUG-2025.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "TIM/Sparkle — PoP NaMeX Roma",
+            "url": "https://www.gruppotim.it/en/press-archive/sparkle/2018/CS-Sparkle-amplia-offerta-di-servizi-presso-il-Data-Center-NaMex-di-Roma.html",
+            "accessed_at": "2026-09-29"
           }
         ]
       }
