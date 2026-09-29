@@ -2406,13 +2406,13 @@
       },
       "properties": {
         "id": "dc_046",
-        "name": "CyrusOne MIL1 — Segrate (Via Reggio Emilia)",
+        "name": "CyrusOne MIL1 — Segrate / Redecesio (ex CISE)",
         "type": "data_center",
         "subtype": "hyperscale",
         "operator": "CyrusOne",
-        "capacity": "27 MW prima fase; fino a 63 MW IT totali sul sito",
-        "description_it": "Primo data center CyrusOne in Italia a Segrate (Via Reggio Emilia 39), est Milano. Breaking ground dichiarato; prima fase ~27 MW IT (tre sale da 9 MW) con target operativo Q3 2027 e potenziale di campus fino a 63 MW. Allaccio dichiarato su incomers 220 kV A/B (~100 MVA); SE Terna di dettaglio non nominata in scheda pubblica → nessun arco connects in questa wave.",
-        "description_en": "First CyrusOne data center in Italy at Segrate (Via Reggio Emilia 39), east Milan. Ground broken; first phase ~27 MW IT (three 9 MW halls) targeting Q3 2027 operations, campus potential up to 63 MW. Public datasheet cites dual 220 kV A/B incomers (~100 MVA); named Terna SE not in open sources → no connects edge in this wave.",
+        "capacity": "27 MW 1ª fase (in cantiere); 2º blocco 36 MW previsto; campus fino a 63 MW IT",
+        "description_it": "Primo data center CyrusOne in Italia (MIL1) nell’area ex CISE a Redecesio di Segrate (Via Reggio Emilia 39, tra Decathlon/McDonald’s e centro abitato). Posa simbolica e avvio cantiere marzo 2026 (Giornale di Segrate). Prima fase ~27 MW IT in edificio di tre piani (tre sale da 9 MW), target operativo fine 2027; masterplan Comune prevede secondo impianto 36 MW (titolo autonomo) sullo stesso campus (~63 MW). Demolizione ex CISE (~50 edifici) già completata. Allaccio dichiarato 220 kV A/B (~100 MVA); SE Terna non nominata in fonti aperte → nessun arco connects.",
+        "description_en": "CyrusOne’s first Italy data center (MIL1) on the former CISE site at Redecesio, Segrate (Via Reggio Emilia 39). Symbolic groundbreaking and construction start March 2026 (Giornale di Segrate). First phase ~27 MW IT in a three-storey building (three 9 MW halls), targeting operations late 2027; municipal masterplan foresees a second 36 MW plant (separate permit) on the same campus (~63 MW). Former CISE demolition (~50 buildings) already completed. Public datasheet cites dual 220 kV A/B (~100 MVA); named Terna SE not in open sources → no connects edge.",
         "country": "IT",
         "city": "Segrate",
         "status": "under_construction",
@@ -2427,19 +2427,20 @@
           "water_use_m3_year": null,
           "land_ha": 7.5,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV; senza SE nominata non si traccia un arco connects."
+          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV. CyrusOne dichiara raffreddamento water-free per i nuovi impianti e ~79% della capacità globale con chiller ad aria (Sustainability Report 2026); recupero calore residuo verso teleriscaldamento indicato per MIL1 ma operatore di rete non ancora individuato (stampa locale)."
         },
         "employment": {
-          "direct": null,
+          "direct": 25,
           "indirect_est": null,
-          "contractors_est": 30,
-          "note_it": "Comunicato: fino a ~30 addetti in cantiere al picco; organico a regime non dettagliato. Investimenti locali dichiarati su Via delle Regioni.",
+          "contractors_est": 300,
+          "note_it": "Stampa locale (mar 2026): ~300 lavoratori in fase di costruzione al picco; ~25 persone qualificate a regime operativo.",
+          "note_en": "Local press (Mar 2026): ~300 workers at construction peak; ~25 skilled staff at operational phase.",
           "conditions_tags": [
             "construction_phase",
             "high_skill"
           ]
         },
-        "community_impact_it": "Riqualificazione di area industriale abbandonata a Segrate; opere stradali e percorsi ciclo-pedonali annunciati con il Comune.",
+        "community_impact_it": "Riqualificazione area ex CISE; opere compensative con Comune (~6 M€ infrastrutture locali, piantumazioni). Controversie documentate: comitati «Re de scés» e Redecesio-Lavanderie chiedono VAS/impatti cumulativi, compensazioni effettive e blocco del secondo blocco vicino abitazioni/scuola (Il Giorno, Giornale di Segrate). A <1 km è previsto MIL2 Rubattino (Milano).",
         "labor_risks": [
           "construction_phase"
         ],
@@ -2458,8 +2459,40 @@
             "title": "CyrusOne — breaks ground on first Italy DC",
             "url": "https://www.cyrusone.com/resources/press-releases/cyrusone-breaks-ground-on-first-data-center-in-italy",
             "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Giornale di Segrate — posa prima pietra / avvio cantiere MIL1 (Redecesio)",
+            "url": "https://giornaledisegrate.it/2026/03/26/data-center-posa-della-prima-pietra-di-cyrusone-a-segrate/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Giornale di Segrate — due edifici MIL1 e impatto d’insieme",
+            "url": "https://giornaledisegrate.it/2026/09/25/data-center-sono-due-gli-edifici-previsti-di-chio-valuteremo-limpatto-dinsieme/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Il Giorno — comitato Re de scés / lettera istituzioni",
+            "url": "https://www.ilgiorno.it/milano/cronaca/noi-cittadini-mai-coinvolti-ad42be5d",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "7giorni — costituzione Comitato Redecesio-Lavanderie",
+            "url": "https://www.7giorni.info/cronaca/segrate/segrate-dalla-politica-territoriale-nasce-un-nuovo-comitato-di-cittadini-in-oltre-cento-al-confronto-sui-data-center.html",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CyrusOne — FAQ MIL1/MIL2 (Rubattino)",
+            "url": "https://giornaledisegrate.it/2026/04/16/data-center-a-redecesio-le-risposte-di-cyrusone-alle-vostre-domande/",
+            "accessed_at": "2026-09-29",
+            "note": "Risposte ufficiali CyrusOne via Giornale di Segrate"
+          },
+          {
+            "title": "CyrusOne — Sustainability Report 2026 (water-free / air-cooled)",
+            "url": "https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Redevelopment of the former CISE site; compensatory works with the municipality (~€6M local infrastructure, planting). Documented disputes: «Re de scés» and Redecesio-Lavanderie committees seek cumulative impact review, effective compensations and halting the second block near homes/school (Il Giorno, Giornale di Segrate). MIL2 Rubattino (Milan) is planned <1 km away."
       }
     },
     {
@@ -3622,6 +3655,83 @@
           {
             "title": "TIM/Sparkle — PoP NaMeX Roma",
             "url": "https://www.gruppotim.it/en/press-archive/sparkle/2018/CS-Sparkle-amplia-offerta-di-servizi-presso-il-Data-Center-NaMex-di-Roma.html",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.25337,
+          45.47767
+        ]
+      },
+      "properties": {
+        "id": "dc_068",
+        "name": "CyrusOne MIL2 — Milano (Rubattino 84)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "CyrusOne",
+        "capacity": "54 MW IT previsti (CyrusOne); PA Comune Milano in istruttoria",
+        "description_it": "Secondo data center CyrusOne nel Milanese (MIL2): piano attuativo «Rubattino 84» del Comune di Milano (Municipio 3, lotto ~66.500 m² a sud di via Rubattino, confine Segrate). Proposta: corpo di fabbrica produttivo/data center (~25 m fuori terra) + cessione/verde e quota residenziale/ERS nel PA. CyrusOne conferma via Rubattino, 54 MW IT su tre piani, ~6 km dal centro, vicino Linate (FAQ mar-apr 2026). Stato procedimento: proposta iniziale in istruttoria (scheda Comune agg. giu 2025). Distinto da MIL1 Redecesio (<1 km).",
+        "description_en": "CyrusOne’s second Milan-area data center (MIL2): City of Milan «Rubattino 84» planning instrument (Municipio 3, ~66,500 m² south of via Rubattino, Segrate border). Proposal: production/data-center building (~25 m height) plus green areas and residential/ERS components in the PA. CyrusOne confirms via Rubattino, 54 MW IT over three floors, ~6 km from the centre, near Linate (FAQ Mar–Apr 2026). Procedure status: initial proposal under review (city page updated Jun 2025). Distinct from MIL1 Redecesio (<1 km).",
+        "country": "IT",
+        "city": "Milano",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 54,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 6.65,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "CyrusOne dichiara raffreddamento water-free per i nuovi impianti (Sustainability Report 2026); dettagli tecnici MIL2 non ancora in datasheet pubblico."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico non pubblicato finché il PA non approva e non parte cantiere; analogia MIL1: pochi posti a regime, picco cantiere.",
+          "note_en": "Headcount not published until PA approval and construction; MIL1 analogy: few operational jobs, construction peak.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Polo tecnologico in area Lambarte/Rubattino; dibattito cumulativo con MIL1 Segrate e altri DC dell’est milanese. Comitati segratesi citano anche Rubattino nelle istanze su impatto d’insieme (Giornale di Segrate).",
+        "community_impact_en": "Tech pole in Lambrate/Rubattino area; cumulative debate with MIL1 Segrate and other east-Milan DCs. Segrate citizen committees also cite Rubattino in combined-impact requests (Giornale di Segrate).",
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "Comune di Milano — Rubattino 84 Piano attuativo",
+            "url": "https://www2.comune.milano.it/rubattino-84-piano-attuativo",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Comune di Milano — PA Rubattino 84 scheda tecnico-procedurale (PDF giu 2025)",
+            "url": "https://www2.comune.milano.it/rubattino-84-piano-attuativo",
+            "accessed_at": "2026-09-29",
+            "note": "Allegato PDF linked from city page"
+          },
+          {
+            "title": "CyrusOne — FAQ MIL2 via Rubattino (54 MW)",
+            "url": "https://giornaledisegrate.it/2026/04/16/data-center-a-redecesio-le-risposte-di-cyrusone-alle-vostre-domande/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Giornale di Segrate — MIL1+MIL2 e impatto cumulativo",
+            "url": "https://giornaledisegrate.it/2026/09/25/data-center-sono-due-gli-edifici-previsti-di-chio-valuteremo-limpatto-dinsieme/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CyrusOne — Sustainability Report 2026",
+            "url": "https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en",
             "accessed_at": "2026-09-29"
           }
         ]

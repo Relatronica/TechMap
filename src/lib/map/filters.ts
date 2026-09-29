@@ -51,11 +51,15 @@ export function wireFilters(ctx: MapContext) {
   function siteLayerFilter(gid) {
     const subtypes = Array.from(filterState[gid].subtypes);
     const statuses = Array.from(filterState.status);
-    return [
-      'all',
+    const parts = [
       ['in', ['get', 'subtype'], ['literal', subtypes]],
       ['in', STATUS_GET_EXPR, ['literal', statuses]]
     ];
+    // Corridor preset: show only documented corridor pins, not every site of those subtypes
+    if (corridorSiteIds && corridorSiteIds.size > 0) {
+      parts.push(['in', ['get', 'id'], ['literal', Array.from(corridorSiteIds)]]);
+    }
+    return ['all', ...parts];
   }
 
   function countVisible(groupId) {
@@ -72,9 +76,13 @@ export function wireFilters(ctx: MapContext) {
       }).length;
     }
     const state = filterState[groupId];
-    return data.features.filter(
-      f => state.subtypes.has(f.properties.subtype) && matchesStatus(f.properties)
-    ).length;
+    return data.features.filter((f) => {
+      if (!state.subtypes.has(f.properties.subtype) || !matchesStatus(f.properties)) return false;
+      if (corridorSiteIds && corridorSiteIds.size > 0) {
+        return corridorSiteIds.has(f.properties.id);
+      }
+      return true;
+    }).length;
   }
 
   function countStatusVisible() {

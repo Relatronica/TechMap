@@ -24,8 +24,11 @@ export type RawMaterialSubtype =
   | 'hbm_memory'
   | 'advanced_packaging'
   | 'battery_materials'
+  | 'battery_cell'
   | 'lithium_mine'
   | 'cobalt_mine'
+  | 'nickel_mine'
+  | 'graphite_mine'
   | 'rare_earth_mine'
   | 'ai_data_work'
   | 'model_lab';

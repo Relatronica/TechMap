@@ -350,7 +350,7 @@
         "source_id": "rm_013",
         "target_id": "rm_019",
         "source_name": "Mutanda - Miniera di Cobalto",
-        "target_name": "Umicore - Raffineria cobalto Kokkola",
+        "target_name": "Umicore - Kokkola (raffineria Co + pCAM)",
         "relationship_type": "supplies",
         "description_it": "Accordo Glencore–Umicore: idrossido di cobalto da Mutanda (RDC) verso la catena battery materials di Umicore, inclusa la raffineria di Kokkola.",
         "certainty": "confirmed",
@@ -386,7 +386,7 @@
         "source_id": "rm_014",
         "target_id": "rm_019",
         "source_name": "Kamoto - Miniera Rame-Cobalto",
-        "target_name": "Umicore - Raffineria cobalto Kokkola",
+        "target_name": "Umicore - Kokkola (raffineria Co + pCAM)",
         "relationship_type": "supplies",
         "description_it": "Stesso accordo Glencore–Umicore: cobalto da Kamoto Copper Company (KCC) verso Umicore Kokkola / battery materials.",
         "certainty": "confirmed",
@@ -1724,8 +1724,8 @@
             -1.2921
           ],
           [
-            -122.4194,
-            37.7749
+            -122.41044,
+            37.76221
           ]
         ]
       },
@@ -1736,11 +1736,11 @@
         "source_name": "Sama — hub labeling / moderazione (Nairobi)",
         "target_name": "OpenAI — San Francisco (HQ / model lab)",
         "relationship_type": "trains",
-        "description_it": "Worker Sama a Nairobi hanno etichettato e filtrato testi/immagini per progetti OpenAI (safety / ChatGPT), con pay band documentato ~1–2 $/ora. È lavoro cognitivo che addestra e igienizza il modello, non un cavo né un chip.",
-        "description_en": "Sama workers in Nairobi labeled and filtered text/images for OpenAI projects (safety / ChatGPT), with a documented ~$1–2/hour pay band. Cognitive labor that trains and sanitizes the model — not a cable and not a chip.",
+        "description_it": "Worker Sama a Nairobi hanno etichettato e filtrato testi/immagini per progetti OpenAI (safety / ChatGPT), con pay band documentato ~1–2 $/ora. Relazione storica (contratto chiuso anticipatamente nel 2022): resta l’arco confirmed sul legame di committenza documentato dalle inchieste.",
+        "description_en": "Sama workers in Nairobi labeled and filtered text/images for OpenAI projects (safety / ChatGPT), with a documented ~$1–2/hour pay band. Historical relationship (contract ended early in 2022): the confirmed edge remains on the contracting link documented by investigations.",
         "certainty": "confirmed",
-        "evidence_note_it": "Inchiesta TIME (documenti interni Sama/OpenAI, payslip): contratto OpenAI→Sama e wage worker. Confirmed sul legame committenza; non sul singolo dataset.",
-        "evidence_note_en": "TIME investigation (internal Sama/OpenAI documents, payslips): OpenAI→Sama contract and worker wages. Confirmed on the contracting link; not on a single dataset.",
+        "evidence_note_it": "TIME (documenti interni Sama/OpenAI, payslip): contratto e wage. Confirmed sul legame; non implica flusso 2026 attivo.",
+        "evidence_note_en": "TIME (internal Sama/OpenAI documents, payslips): contract and wages. Confirmed on the link; does not imply an active 2026 flow.",
         "as_of": "2023-01-18",
         "updated_at": "2026-09-29",
         "sources": [
@@ -1767,23 +1767,23 @@
             -1.2921
           ],
           [
-            22.1547,
-            65.5848
+            -122.14837,
+            37.48467
           ]
         ]
       },
       "properties": {
         "id": "conn_056",
         "source_id": "rm_021",
-        "target_id": "dc_013",
+        "target_id": "rm_039",
         "source_name": "Sama — hub labeling / moderazione (Nairobi)",
-        "target_name": "Meta Data Center - Luleå, Svezia",
+        "target_name": "Meta — Menlo Park (HQ / AI lab)",
         "relationship_type": "trains",
-        "description_it": "Sama ha moderato contenuti per Meta/Facebook dall’hub di Nairobi. Luleå è un campus hyperscale Meta europeo dove quei sistemi di piattaforma sono serviti: il legame è lavoro cognitivo→footprint, non un allaccio elettrico.",
-        "description_en": "Sama moderated content for Meta/Facebook from the Nairobi hub. Luleå is a European Meta hyperscale campus where those platform systems are served: the link is cognitive labor→footprint, not a grid connection.",
-        "certainty": "likely",
-        "evidence_note_it": "TIME/CBS documentano Sama→Meta/Facebook. Il salto al singolo campus Luleå non è in un contratto sito-sito → likely sul footprint Meta, non confirmed sul pin.",
-        "evidence_note_en": "TIME/CBS document Sama→Meta/Facebook. The jump to the single Luleå campus is not in a site-to-site contract → likely on the Meta footprint, not confirmed on the pin.",
+        "description_it": "Sama ha moderato contenuti e poi fornito AI annotation per Meta/Facebook dall’hub di Nairobi. Menlo Park è il nodo di committenza HQ: l’arco trains collega lavoro cognitivo→lab/committenza, non un data center. Engagement maggiore Nairobi chiuso da Meta apr 2026 (~1.108 layoff).",
+        "description_en": "Sama moderated content and later supplied AI annotation for Meta/Facebook from the Nairobi hub. Menlo Park is the HQ contracting node: the trains edge links cognitive labor→lab/contracting, not a data center. Meta ended the major Nairobi engagement in Apr 2026 (~1,108 layoffs).",
+        "certainty": "confirmed",
+        "evidence_note_it": "TIME/CBS: Sama→Meta/Facebook. AP/Guardian 2026: fine engagement Nairobi. Confirmed sul rapporto di committenza Meta; non su un singolo edificio Hacker Way.",
+        "evidence_note_en": "TIME/CBS: Sama→Meta/Facebook. AP/Guardian 2026: Nairobi engagement ended. Confirmed on Meta contracting relationship; not on a single Hacker Way building.",
         "as_of": "2023-01-01",
         "updated_at": "2026-09-29",
         "sources": [
@@ -1796,6 +1796,11 @@
             "title": "CBS — Sama Meta Kenya",
             "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
             "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "AP — Meta ends Sama Nairobi engagement (2026)",
+            "url": "https://apnews.com/article/kenya-meta-facebook-sama-content-moderators-902716b8037bc4063dd1101e2dbd4c3a",
+            "accessed_at": "2026-09-29"
           }
         ]
       }
@@ -1806,12 +1811,12 @@
         "type": "LineString",
         "coordinates": [
           [
-            36.8172,
-            -1.2864
+            36.8255,
+            -1.2925
           ],
           [
-            -122.4194,
-            37.7749
+            -122.41044,
+            37.76221
           ]
         ]
       },
@@ -1822,8 +1827,8 @@
         "source_name": "Remotasks / Scale AI — click-work (Nairobi)",
         "target_name": "OpenAI — San Francisco (HQ / model lab)",
         "relationship_type": "trains",
-        "description_it": "Remotasks (Scale AI) ha reclutato worker in Kenya per labeling a pezzo; Scale figura tra i fornitori di dati per laboratori AI di primo piano, incluso OpenAI secondo lettere e cronaca dei worker. Chiusura africana 2024.",
-        "description_en": "Remotasks (Scale AI) recruited Kenyan workers for piece-rate labeling; Scale figures among data suppliers to leading AI labs, including OpenAI per worker letters and reporting. African exit 2024.",
+        "description_it": "Remotasks (Scale AI) ha reclutato worker in Kenya per labeling a pezzo; Scale figura tra i fornitori di dati per lab AI di primo piano, incluso OpenAI secondo lettere e cronaca dei worker. Chiusura africana 2024. Arco diretto worker-hub→lab; vedi anche Remotasks→Scale HQ→OpenAI.",
+        "description_en": "Remotasks (Scale AI) recruited Kenyan workers for piece-rate labeling; Scale figures among data suppliers to leading AI labs, including OpenAI per worker letters and reporting. African exit 2024. Direct worker-hub→lab edge; see also Remotasks→Scale HQ→OpenAI.",
         "certainty": "likely",
         "evidence_note_it": "Foxglove/CBS: worker Remotasks in Kenya; Scale citata come fornitore per OpenAI e altri. Senza contratto OpenAI–Remotasks pubblico sito-sito → likely.",
         "evidence_note_en": "Foxglove/CBS: Remotasks workers in Kenya; Scale cited as supplier for OpenAI and others. Without a public OpenAI–Remotasks site-to-site contract → likely.",
@@ -2289,6 +2294,720 @@
           {
             "title": "Inside DeepTech — HBM on CoWoS package",
             "url": "https://www.insidedeeptech.com/tsmc-cowos-packaging-full-guide/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            23.1308,
+            63.8381
+          ],
+          [
+            17.27474,
+            50.49838
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_069",
+        "source_id": "rm_019",
+        "target_id": "rm_031",
+        "source_name": "Umicore - Kokkola (raffineria Co + pCAM)",
+        "target_name": "Umicore — Nysa (catodo CAM / NMC)",
+        "relationship_type": "supplies",
+        "description_it": "I precursori (pCAM) prodotti a Kokkola alimentano lo stabilimento CAM di Nysa nella stessa catena Umicore Battery Materials: raffinazione/precursori → catodo attivo.",
+        "description_en": "Precursors (pCAM) produced at Kokkola feed the Nysa CAM plant in the same Umicore Battery Materials chain: refining/precursors → active cathode.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Comunicati Umicore sull’acquisizione Kokkola e sul ruolo di supply di precursori verso Nysa. Confirmed sul corridoio aziendale documentato.",
+        "evidence_note_en": "Umicore releases on Kokkola acquisition and precursor supply role toward Nysa. Confirmed on the documented corporate corridor.",
+        "as_of": "2020-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Umicore — sustainable battery materials supply chain (Kokkola→Nysa)",
+            "url": "https://www.umicore.com/en/media/newsroom/sustainable-battery-materials-supply-chain/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore Finland — Kokkola pCAM",
+            "url": "https://www.umicore.fi/en/our-site/start/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.27474,
+            50.49838
+          ],
+          [
+            16.88595,
+            51.02055
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_070",
+        "source_id": "rm_031",
+        "target_id": "rm_032",
+        "source_name": "Umicore — Nysa (catodo CAM / NMC)",
+        "target_name": "LG Energy Solution — Wrocław / Kobierzyce (celle)",
+        "relationship_type": "supplies",
+        "description_it": "Accordo multi-anno Umicore–LG Chem/LGES per CAM NMC: gran parte dei volumi dal greenfield polacco (Nysa) verso la produzione celle LG in Polonia (Wrocław/Kobierzyce).",
+        "description_en": "Multi-year Umicore–LG Chem/LGES agreement for NMC CAM: a large share of volumes from the Polish greenfield (Nysa) toward LG cell production in Poland (Wrocław/Kobierzyce).",
+        "certainty": "confirmed",
+        "evidence_note_it": "Testo accordo: maggioranza volumi dal plant polacco. Confirmed sul rapporto CAM→cell maker; non su ogni lotto giornaliero.",
+        "evidence_note_en": "Agreement text: majority of volumes from the Polish plant. Confirmed on CAM→cell-maker relationship; not on every daily lot.",
+        "as_of": "2020-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Umicore — LG Chem NMC supply (Poland volumes)",
+            "url": "https://assets-002.noviams.com/novi-file-uploads/naatbatt/Conference_Material/2020/Session_2/MT-21_Introducing_Umicore_2020.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore Nysa — sells to battery cell makers",
+            "url": "https://www.umicore.pl/en/our-sites/nysa/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -68.25667,
+            -23.38362
+          ],
+          [
+            -70.31467,
+            -23.7739
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_071",
+        "source_id": "rm_012",
+        "target_id": "rm_033",
+        "source_name": "Salar de Atacama - Estrazione Litio",
+        "target_name": "Albemarle — La Negra (raffineria litio, Atacama)",
+        "relationship_type": "supplies",
+        "description_it": "Il litio da salamoia del Salar de Atacama alimenta la conversione chimica Albemarle a La Negra (stesso corridoio brine cileno). Distinto dal ramo hard-rock Greenbushes→Kwinana.",
+        "description_en": "Brine lithium from Salar de Atacama feeds Albemarle’s chemical conversion at La Negra (same Chilean brine corridor). Distinct from the Greenbushes→Kwinana hard-rock branch.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Integrazione verticale Atacama–La Negra di settore/operatore; confirmed sul ramo brine. Non implica destinazione verso Nysa/LGES.",
+        "evidence_note_en": "Industry/operator vertical integration Atacama–La Negra; confirmed on the brine branch. Does not imply destination to Nysa/LGES.",
+        "as_of": "2020-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Salar de Atacama — ubicazione estrazione",
+            "url": "https://www.openstreetmap.org/search?query=Salar%20de%20Atacama",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "La Negra Antofagasta — nodo conversione",
+            "url": "https://www.openstreetmap.org/search?query=La%20Negra%20Antofagasta",
+            "accessed_at": "2026-09-29",
+            "note": "Raffinazione locale al Salar; filiera brine ≠ spodumene AU"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            28.00345,
+            63.97809
+          ],
+          [
+            17.27474,
+            50.49838
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_072",
+        "source_id": "rm_034",
+        "target_id": "rm_031",
+        "source_name": "Terrafame — Sotkamo (nichel batteria)",
+        "target_name": "Umicore — Nysa (catodo CAM / NMC)",
+        "relationship_type": "supplies",
+        "description_it": "Accordo long-term Terrafame–Umicore: solfato di nichel battery-grade finlandese verso lo stabilimento CAM di Nysa (copre una parte sostanziale del fabbisogno di nichel del plant polacco).",
+        "description_en": "Long-term Terrafame–Umicore agreement: Finnish battery-grade nickel sulphate to the Nysa CAM plant (covers a substantial share of the Polish plant’s nickel requirements).",
+        "certainty": "confirmed",
+        "evidence_note_it": "Comunicato Umicore + Terrafame: deliveries commerciali avviate dopo qualifica; destinazione esplicita Nysa. Confirmed.",
+        "evidence_note_en": "Umicore + Terrafame releases: commercial deliveries started after qualification; Nysa destination explicit. Confirmed.",
+        "as_of": "2023-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Umicore — Terrafame nickel sulphate agreement",
+            "url": "https://www.umicore.com/en/media/newsroom/long-term-agreement-with-terrafame-for-the-supply-of-sustainable-low-carbon-nickel/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Terrafame — same agreement",
+            "url": "https://www.terrafame.com/newsroom/media-releases/umicore-signs-long-term-agreement-with-terrafame-for-the-supply-of-sustainable-low-carbon-nickel.html",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            17.27474,
+            50.49838
+          ],
+          [
+            19.16246,
+            47.67462
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_073",
+        "source_id": "rm_031",
+        "target_id": "rm_035",
+        "source_name": "Umicore — Nysa (catodo CAM / NMC)",
+        "target_name": "Samsung SDI — Göd (celle EV)",
+        "relationship_type": "supplies",
+        "description_it": "Accordo multi-anno Umicore–Samsung SDI per CAM NMC (~80 kt) verso la produzione celle Samsung (automotive EU/Asia). Göd è il gigafactory EU di Samsung SDI; i volumi iniziali dell’accordo erano prevalenti dalla Corea, quindi Nysa→Göd è likely (non confirmed lot-level).",
+        "description_en": "Multi-year Umicore–Samsung SDI agreement for NMC CAM (~80 kt) toward Samsung cell production (EU/Asia automotive). Göd is Samsung SDI’s EU gigafactory; agreement volumes were initially majority from Korea, so Nysa→Göd is likely (not lot-level confirmed).",
+        "certainty": "likely",
+        "evidence_note_it": "Accordo strategico documentato + sito Göd operativo. Senza packing list Nysa→Göd → likely.",
+        "evidence_note_en": "Documented strategic agreement + operational Göd site. Without Nysa→Göd packing list → likely.",
+        "as_of": "2020-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Umicore — Samsung SDI NMC supply agreement",
+            "url": "https://www.umicore.com/en/media/newsroom/umicore-announces-strategic-supply-agreement-with-samsung-sdi-for-nmc-cathode-materials/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore — sustainable battery materials (Samsung SDI partnership)",
+            "url": "https://www.umicore.com/en/media/newsroom/sustainable-battery-materials-supply-chain/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            38.65797,
+            -13.3056
+          ],
+          [
+            -91.42595,
+            31.56544
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_074",
+        "source_id": "rm_036",
+        "target_id": "rm_037",
+        "source_name": "Syrah — Balama (grafite naturale)",
+        "target_name": "Syrah — Vidalia (anodo AAM)",
+        "relationship_type": "supplies",
+        "description_it": "Integrazione verticale Syrah: concentrato di grafite naturale da Balama alimenta l’impianto AAM di Vidalia (feedstock dichiarato dall’operatore).",
+        "description_en": "Syrah vertical integration: natural graphite concentrate from Balama feeds the Vidalia AAM plant (operator-declared feedstock).",
+        "certainty": "confirmed",
+        "evidence_note_it": "Schede aziendali Syrah su Balama→Vidalia. Confirmed sul ramo anodo.",
+        "evidence_note_en": "Syrah company pages on Balama→Vidalia. Confirmed on the anode branch.",
+        "as_of": "2024-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Syrah — Vidalia AAM (Balama origin feedstock)",
+            "url": "https://www.syrahresources.com.au/our-business/vidalia-active-anode-material-facility",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "NS Energy — Balama processes into Vidalia AAM",
+            "url": "https://www.nsenergybusiness.com/projects/balama-graphite-project/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -91.42595,
+            31.56544
+          ],
+          [
+            19.16246,
+            47.67462
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_075",
+        "source_id": "rm_037",
+        "target_id": "rm_035",
+        "source_name": "Syrah — Vidalia (anodo AAM)",
+        "target_name": "Samsung SDI — Göd (celle EV)",
+        "relationship_type": "supplies",
+        "description_it": "MoU Syrah–Samsung SDI (ago 2023) per valutare fornitura di AAM da Vidalia verso Samsung SDI. Göd è il sito celle EU di Samsung: arco anodo→celle come likely (MoU non vincolante, non offtake firmato).",
+        "description_en": "Syrah–Samsung SDI MoU (Aug 2023) to evaluate AAM supply from Vidalia to Samsung SDI. Göd is Samsung’s EU cell site: anode→cells edge as likely (non-binding MoU, not a signed offtake).",
+        "certainty": "likely",
+        "evidence_note_it": "MoU pubblico di valutazione; senza contratto vincolante o packing list → likely, non confirmed.",
+        "evidence_note_en": "Public evaluation MoU; without binding contract or packing list → likely, not confirmed.",
+        "as_of": "2023-08-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "NS Energy — Syrah MoU with Samsung SDI (Vidalia AAM)",
+            "url": "https://www.nsenergybusiness.com/projects/balama-graphite-project/",
+            "accessed_at": "2026-09-29",
+            "note": "Non-binding MoU Aug 2023"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            4.33657,
+            51.16466
+          ],
+          [
+            17.27474,
+            50.49838
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_076",
+        "source_id": "rm_038",
+        "target_id": "rm_031",
+        "source_name": "Umicore — Hoboken (riciclo batterie)",
+        "target_name": "Umicore — Nysa (catodo CAM / NMC)",
+        "relationship_type": "supplies",
+        "description_it": "Loop Umicore: metalli recuperati a Hoboken (Ni/Co/Cu/Li) rientrano come feed battery-grade nella produzione CAM del gruppo; Nysa è il CAM plant UE. Likely sul closed-loop aziendale, non su ogni lotto Hoboken→Nysa.",
+        "description_en": "Umicore loop: metals recovered at Hoboken (Ni/Co/Cu/Li) re-enter as battery-grade feed into the group’s CAM production; Nysa is the EU CAM plant. Likely on the corporate closed loop, not on every Hoboken→Nysa lot.",
+        "certainty": "likely",
+        "evidence_note_it": "Umicore dichiara end-product battery-grade verso CAM; senza bill of lading Hoboken→Nysa → likely.",
+        "evidence_note_en": "Umicore states battery-grade end products for CAM; without Hoboken→Nysa bill of lading → likely.",
+        "as_of": "2011-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Umicore — pyro-hydro technology (recovery into CAM materials)",
+            "url": "https://www.umicore.com/en/about/battery-materials-solutions/battery-recycling-solutions/pyro-hydro-technology/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore — Hoboken battery recycling capacity",
+            "url": "https://www.umicore.com/en/markets-products/metals/nickel/recycling-refining/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            36.8255,
+            -1.2925
+          ],
+          [
+            -122.40366,
+            37.77096
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_077",
+        "source_id": "rm_022",
+        "target_id": "rm_040",
+        "source_name": "Remotasks / Scale AI — click-work (Nairobi)",
+        "target_name": "Scale AI — San Francisco (HQ)",
+        "relationship_type": "trains",
+        "description_it": "Remotasks è la piattaforma di click-work di Scale AI: il lavoro etichettato a Nairobi (e altri mercati) alimenta il prodotto Scale. Arco hub worker→HQ intermediario, stesso gruppo.",
+        "description_en": "Remotasks is Scale AI’s click-work platform: labeling done in Nairobi (and other markets) feeds Scale’s product. Worker-hub→intermediary-HQ edge within the same group.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Scale dichiara Remotasks come sussidiaria/piattaforma di labeling. Confirmed sul rapporto corporate; il mercato KE è decommissioned dal 2024.",
+        "evidence_note_en": "Scale states Remotasks as labeling subsidiary/platform. Confirmed on corporate relationship; KE market decommissioned since 2024.",
+        "as_of": "2024-03-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Wikipedia / Scale — Remotasks subsidiary",
+            "url": "https://en.wikipedia.org/wiki/Scale_AI",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Foxglove — Kenyan AI workers / Remotasks exit",
+            "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.40366,
+            37.77096
+          ],
+          [
+            -122.41044,
+            37.76221
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_078",
+        "source_id": "rm_040",
+        "target_id": "rm_023",
+        "source_name": "Scale AI — San Francisco (HQ)",
+        "target_name": "OpenAI — San Francisco (HQ / model lab)",
+        "relationship_type": "trains",
+        "description_it": "Scale AI fornisce labeling, valutazione e RLHF a laboratori AI di primo piano; OpenAI è citata tra i clienti/ecosistema dai worker e dalla cronaca. Arco HQ intermediario→lab committenza.",
+        "description_en": "Scale AI supplies labeling, evaluation and RLHF to leading AI labs; OpenAI is cited among clients/ecosystem in worker letters and reporting. Intermediary-HQ→contracting-lab edge.",
+        "certainty": "likely",
+        "evidence_note_it": "Nessun packing list pubblico Scale→OpenAI sito-sito. Foxglove/CBS + ruolo Scale come fornitore lab → likely.",
+        "evidence_note_en": "No public Scale→OpenAI site-to-site packing list. Foxglove/CBS + Scale’s role as lab supplier → likely.",
+        "as_of": "2024-03-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Foxglove — Kenyan workers letter (Scale/OpenAI ecosystem)",
+            "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CBS — Remotasks / Scale Kenya",
+            "url": "https://www.cbsnews.com/news/ai-work-kenya-exploitation-60-minutes/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.40366,
+            37.77096
+          ],
+          [
+            -122.14837,
+            37.48467
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_079",
+        "source_id": "rm_040",
+        "target_id": "rm_039",
+        "source_name": "Scale AI — San Francisco (HQ)",
+        "target_name": "Meta — Menlo Park (HQ / AI lab)",
+        "relationship_type": "trains",
+        "description_it": "Scale fornisce infrastruttura dati/annotation ai lab; dal 2025 Meta detiene una quota rilevante di Scale e ha portato leadership Scale in Meta Superintelligence Labs. Arco intermediario→committenza Meta: likely su fornitura dati/allineamento, non solo ownership.",
+        "description_en": "Scale supplies data/annotation infrastructure to labs; from 2025 Meta holds a material Scale stake and moved Scale leadership into Meta Superintelligence Labs. Intermediary→Meta contracting edge: likely on data/alignment supply, not ownership alone.",
+        "certainty": "likely",
+        "evidence_note_it": "Stake Meta–Scale e integrazione MSL sono pubblici; senza bill of lading Scale HQ→Menlo Park su un dataset specifico → likely.",
+        "evidence_note_en": "Meta–Scale stake and MSL integration are public; without a Scale HQ→Menlo Park bill of lading on a specific dataset → likely.",
+        "as_of": "2025-06-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Wikipedia — Scale AI (Meta Platforms ownership stake)",
+            "url": "https://en.wikipedia.org/wiki/Scale_AI",
+            "accessed_at": "2026-09-29",
+            "note": "Meta ~49% stake reported; Wang to Meta AI"
+          },
+          {
+            "title": "SF Standard — Scale AI SF footprint / Wang to Meta context",
+            "url": "https://sfstandard.com/2026/04/07/i-leaderboard-san-francisco-office/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            124.64215,
+            8.47564
+          ],
+          [
+            -122.40366,
+            37.77096
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_080",
+        "source_id": "rm_041",
+        "target_id": "rm_040",
+        "source_name": "Remotasks — hub Filippine (Mindanao)",
+        "target_name": "Scale AI — San Francisco (HQ)",
+        "relationship_type": "trains",
+        "description_it": "Remotasks Filippine alimenta la piattaforma Scale: worker a Cagayan de Oro/Mindanao etichettano dati via Remotasks (sussidiaria Scale), come documentato da WaPo e BHR Centre.",
+        "description_en": "Philippines Remotasks feeds Scale’s platform: workers in Cagayan de Oro/Mindanao label data via Remotasks (Scale subsidiary), as documented by WaPo and BHR Centre.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Remotasks owned by Scale; inchieste nominano esplicitamente la piattaforma e il mercato PH. Confirmed sul rapporto hub→intermediario.",
+        "evidence_note_en": "Remotasks owned by Scale; investigations explicitly name the platform and PH market. Confirmed on hub→intermediary relationship.",
+        "as_of": "2023-08-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Washington Post — Remotasks Philippines",
+            "url": "https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "BHR Centre — Remotasks Philippines / Scale",
+            "url": "https://www.business-humanrights.org/en/latest-news/philippines-scale-ai-creating-race-to-the-bottom-as-outsourced-workers-face-poor-conditions-in-digital-sweatshops-incl-low-wages-withheld-payments/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3972,
+            37.7862
+          ],
+          [
+            -122.39674,
+            37.78851
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_081",
+        "source_id": "rm_043",
+        "target_id": "rm_044",
+        "source_name": "Surge AI — San Francisco (HQ)",
+        "target_name": "Anthropic — San Francisco (HQ / lab)",
+        "relationship_type": "trains",
+        "description_it": "Anthropic usa la piattaforma RLHF Surge AI per feedback umano sui LLM; quote ufficiale di Jared Kaplan (co-founder Anthropic) sul blog Surge.",
+        "description_en": "Anthropic uses Surge AI’s RLHF platform for human feedback on LLMs; official Jared Kaplan (Anthropic co-founder) quote on Surge’s blog.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Partnership pubblicata da Surge con endorsement del co-founder. Confirmed sul legame committenza/intermediario.",
+        "evidence_note_en": "Partnership published by Surge with co-founder endorsement. Confirmed on contracting/intermediary link.",
+        "as_of": "2022-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Surge — Anthropic RLHF platform",
+            "url": "https://surgehq.ai/blog/anthropic-surge-ai-rlhf-platform-train-llm-assistant-human-feedback",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3972,
+            37.7862
+          ],
+          [
+            -122.41044,
+            37.76221
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_082",
+        "source_id": "rm_043",
+        "target_id": "rm_023",
+        "source_name": "Surge AI — San Francisco (HQ)",
+        "target_name": "OpenAI — San Francisco (HQ / model lab)",
+        "relationship_type": "trains",
+        "description_it": "Class action Surge 2025: Data Annotators assegnati a progetti OpenAI via piattaforma Surge/DataAnnotation. Likely sul legame intermediario→lab (non lot-level).",
+        "description_en": "Surge 2025 class action: Data Annotators assigned to OpenAI projects via Surge/DataAnnotation platform. Likely on intermediary→lab link (not lot-level).",
+        "certainty": "likely",
+        "evidence_note_it": "Denuncia civile nomina OpenAI tra clienti; senza contratto pubblico sito-sito → likely.",
+        "evidence_note_en": "Civil complaint names OpenAI among clients; without public site-to-site contract → likely.",
+        "as_of": "2025-05-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Clarkson — Surge class action (OpenAI projects)",
+            "url": "https://clarksonlawfirm.com/wp-content/uploads/2025/05/2025.05.20-Surge-Labs.pdf",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3972,
+            37.7862
+          ],
+          [
+            -122.14837,
+            37.48467
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_083",
+        "source_id": "rm_043",
+        "target_id": "rm_039",
+        "source_name": "Surge AI — San Francisco (HQ)",
+        "target_name": "Meta — Menlo Park (HQ / AI lab)",
+        "relationship_type": "trains",
+        "description_it": "Class action e LA Times: annotatori Surge migliorano risposte AI per Meta/OpenAI. Arco Surge→Meta Menlo Park likely (committenza, non packing list).",
+        "description_en": "Class action and LA Times: Surge annotators improve AI responses for Meta/OpenAI. Surge→Meta Menlo Park likely (contracting, not packing list).",
+        "certainty": "likely",
+        "evidence_note_it": "Meta nominata in lawsuit Surge; senza contratto sito-sito → likely.",
+        "evidence_note_en": "Meta named in Surge lawsuit; without site-to-site contract → likely.",
+        "as_of": "2025-05-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Clarkson — Surge class action (Meta projects)",
+            "url": "https://clarksonlawfirm.com/wp-content/uploads/2025/05/2025.05.20-Surge-Labs.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "LA Times — Surge AI misclassification lawsuit",
+            "url": "https://www.latimes.com/business/story/2025-05-21/surge-ai-is-latest-san-francisco-start-up-to-face-lawsuit-for-allegedly-misclassifying-data-labeling-workers",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.3972,
+            37.7862
+          ],
+          [
+            -122.08238,
+            37.419
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_084",
+        "source_id": "rm_043",
+        "target_id": "rm_045",
+        "source_name": "Surge AI — San Francisco (HQ)",
+        "target_name": "Google — Mountain View (AI committenza)",
+        "relationship_type": "trains",
+        "description_it": "Class action Surge: progetti assegnati anche a Google. Arco intermediario→committenza Google Mountain View likely.",
+        "description_en": "Surge class action: projects also assigned to Google. Intermediary→Google Mountain View contracting likely.",
+        "certainty": "likely",
+        "evidence_note_it": "Google nominata nella denuncia; BI elenca Google tra clienti Scale nel segmento parallelo. Likely, non confirmed lot-level.",
+        "evidence_note_en": "Google named in complaint; BI lists Google among Scale clients in parallel segment. Likely, not lot-level confirmed.",
+        "as_of": "2025-05-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Clarkson — Surge class action (Google projects)",
+            "url": "https://clarksonlawfirm.com/wp-content/uploads/2025/05/2025.05.20-Surge-Labs.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Business Insider — Scale clients include Google",
+            "url": "https://www.businessinsider.com/scale-ai-outlier-training-harmful-ai-prompts-2025-04",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.40366,
+            37.77096
+          ],
+          [
+            -122.08238,
+            37.419
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_085",
+        "source_id": "rm_040",
+        "target_id": "rm_045",
+        "source_name": "Scale AI — San Francisco (HQ)",
+        "target_name": "Google — Mountain View (AI committenza)",
+        "relationship_type": "trains",
+        "description_it": "Scale AI elencato tra fornitori di data labeling per Google (inchiesta BI 2025 sulle piattaforme Outlier/Scale). Arco Scale HQ→Google likely.",
+        "description_en": "Scale AI listed among data-labeling suppliers to Google (BI 2025 investigation on Outlier/Scale platforms). Scale HQ→Google likely.",
+        "certainty": "likely",
+        "evidence_note_it": "BI: Scale «working with» OpenAI, Meta, Google; senza contratto pubblico → likely.",
+        "evidence_note_en": "BI: Scale «working with» OpenAI, Meta, Google; without public contract → likely.",
+        "as_of": "2025-04-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Business Insider — Scale AI clients (Google, Meta, OpenAI)",
+            "url": "https://www.businessinsider.com/scale-ai-outlier-training-harmful-ai-prompts-2025-04",
             "accessed_at": "2026-09-29"
           }
         ]

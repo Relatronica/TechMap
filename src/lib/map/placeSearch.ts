@@ -158,6 +158,24 @@ function boundsFromGeometry(geometry: AnyGeometry): LngLatBounds | null {
   return any ? bounds : null;
 }
 
+/** Comune / città — non deve attivare l’overlay regione via state nell’indirizzo. */
+function isLocalityResult(item: Record<string, unknown>) {
+  const addresstype = String(item.addresstype || '');
+  const cls = String(item.class || '');
+  const type = String(item.type || '');
+  if (cls === 'place') {
+    return ['city', 'town', 'village', 'hamlet', 'suburb', 'municipality', 'locality'].includes(
+      type
+    );
+  }
+  return ['city', 'town', 'village', 'hamlet', 'municipality', 'locality'].includes(addresstype);
+}
+
+function isRegionLevelResult(item: Record<string, unknown>) {
+  const addresstype = String(item.addresstype || '');
+  return addresstype === 'state' || addresstype === 'region';
+}
+
 function isItalianAdminResult(item: Record<string, unknown>) {
   const address = (item.address || {}) as Record<string, string>;
   const countryCode = (address.country_code || '').toLowerCase();
@@ -166,6 +184,7 @@ function isItalianAdminResult(item: Record<string, unknown>) {
   const addresstype = String(item.addresstype || '');
   const cls = String(item.class || '');
   const type = String(item.type || '');
+  if (isLocalityResult(item)) return false;
   if (cls === 'boundary' || type === 'administrative') return true;
   return ['state', 'region', 'province', 'county'].includes(addresstype);
 }
@@ -174,14 +193,34 @@ function matchItalianRegion(
   item: Record<string, unknown>,
   regions: RegionFeature[]
 ): RegionFeature | null {
-  if (!isItalianAdminResult(item)) return null;
+  if (isLocalityResult(item)) return null;
+  if (!isItalianAdminResult(item) && !isRegionLevelResult(item)) {
+    const address = (item.address || {}) as Record<string, string>;
+    const countryCode = (address.country_code || '').toLowerCase();
+    if (countryCode && countryCode !== 'it') return null;
+    // Solo risultati il cui nome principale è una regione (es. "Lombardia" da Nominatim)
+    const primary = normalizeName(
+      String(item.name || (typeof item.display_name === 'string' ? item.display_name.split(',')[0] : ''))
+    );
+    if (!primary) return null;
+    for (const region of regions) {
+      const names = [region.properties.name, ...(region.properties.aliases || [])].map(
+        normalizeName
+      );
+      if (names.includes(primary) || names.some((n) => primary === n || primary.includes(n))) {
+        return region;
+      }
+    }
+    return null;
+  }
 
   const address = (item.address || {}) as Record<string, string>;
   const candidates = [
     item.name,
-    address.state,
-    address.region,
-    address.province,
+    ...(isRegionLevelResult(item) ? [address.state, address.region] : []),
+    ...(String(item.addresstype) === 'province' || String(item.addresstype) === 'county'
+      ? [address.province]
+      : []),
     typeof item.display_name === 'string' ? item.display_name.split(',')[0] : null
   ]
     .filter((v): v is string => typeof v === 'string' && v.trim().length > 0)
@@ -359,10 +398,12 @@ export function initPlaceSearch(map: MaplibreMap) {
     boundaryAbort = new AbortController();
     const signal = boundaryAbort.signal;
 
+    const locality = isLocalityResult(item);
+
     const regions = await loadItalianRegions();
     if (signal.aborted) return false;
 
-    if (regions) {
+    if (regions && !locality) {
       const matched = matchItalianRegion(item, regions);
       if (matched) {
         setBoundaryFeature(map, matched);
@@ -378,8 +419,12 @@ export function initPlaceSearch(map: MaplibreMap) {
       }
     }
 
-    // Other admin areas (province, abroad): Nominatim polygon if available
-    if (isItalianAdminResult(item) || String(item.class) === 'boundary') {
+    // Comune / confini admin (province, confini OSM): poligono Nominatim se disponibile
+    if (
+      locality ||
+      isItalianAdminResult(item) ||
+      String(item.class) === 'boundary'
+    ) {
       try {
         const poly = await fetchNominatimPolygon(item, signal);
         if (signal.aborted) return false;

@@ -2442,13 +2442,13 @@
       },
       "properties": {
         "id": "dc_046",
-        "name": "CyrusOne MIL1 — Segrate (Via Reggio Emilia)",
+        "name": "CyrusOne MIL1 — Segrate / Redecesio (ex CISE)",
         "type": "data_center",
         "subtype": "hyperscale",
         "operator": "CyrusOne",
-        "capacity": "27 MW prima fase; fino a 63 MW IT totali sul sito",
-        "description_it": "Primo data center CyrusOne in Italia a Segrate (Via Reggio Emilia 39), est Milano. Breaking ground dichiarato; prima fase ~27 MW IT (tre sale da 9 MW) con target operativo Q3 2027 e potenziale di campus fino a 63 MW. Allaccio dichiarato su incomers 220 kV A/B (~100 MVA); SE Terna di dettaglio non nominata in scheda pubblica → nessun arco connects in questa wave.",
-        "description_en": "First CyrusOne data center in Italy at Segrate (Via Reggio Emilia 39), east Milan. Ground broken; first phase ~27 MW IT (three 9 MW halls) targeting Q3 2027 operations, campus potential up to 63 MW. Public datasheet cites dual 220 kV A/B incomers (~100 MVA); named Terna SE not in open sources → no connects edge in this wave.",
+        "capacity": "27 MW 1ª fase (in cantiere); 2º blocco 36 MW previsto; campus fino a 63 MW IT",
+        "description_it": "Primo data center CyrusOne in Italia (MIL1) nell’area ex CISE a Redecesio di Segrate (Via Reggio Emilia 39, tra Decathlon/McDonald’s e centro abitato). Posa simbolica e avvio cantiere marzo 2026 (Giornale di Segrate). Prima fase ~27 MW IT in edificio di tre piani (tre sale da 9 MW), target operativo fine 2027; masterplan Comune prevede secondo impianto 36 MW (titolo autonomo) sullo stesso campus (~63 MW). Demolizione ex CISE (~50 edifici) già completata. Allaccio dichiarato 220 kV A/B (~100 MVA); SE Terna non nominata in fonti aperte → nessun arco connects.",
+        "description_en": "CyrusOne’s first Italy data center (MIL1) on the former CISE site at Redecesio, Segrate (Via Reggio Emilia 39). Symbolic groundbreaking and construction start March 2026 (Giornale di Segrate). First phase ~27 MW IT in a three-storey building (three 9 MW halls), targeting operations late 2027; municipal masterplan foresees a second 36 MW plant (separate permit) on the same campus (~63 MW). Former CISE demolition (~50 buildings) already completed. Public datasheet cites dual 220 kV A/B (~100 MVA); named Terna SE not in open sources → no connects edge.",
         "country": "IT",
         "city": "Segrate",
         "status": "under_construction",
@@ -2463,19 +2463,20 @@
           "water_use_m3_year": null,
           "land_ha": 7.5,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV; senza SE nominata non si traccia un arco connects."
+          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV. CyrusOne dichiara raffreddamento water-free per i nuovi impianti e ~79% della capacità globale con chiller ad aria (Sustainability Report 2026); recupero calore residuo verso teleriscaldamento indicato per MIL1 ma operatore di rete non ancora individuato (stampa locale)."
         },
         "employment": {
-          "direct": null,
+          "direct": 25,
           "indirect_est": null,
-          "contractors_est": 30,
-          "note_it": "Comunicato: fino a ~30 addetti in cantiere al picco; organico a regime non dettagliato. Investimenti locali dichiarati su Via delle Regioni.",
+          "contractors_est": 300,
+          "note_it": "Stampa locale (mar 2026): ~300 lavoratori in fase di costruzione al picco; ~25 persone qualificate a regime operativo.",
+          "note_en": "Local press (Mar 2026): ~300 workers at construction peak; ~25 skilled staff at operational phase.",
           "conditions_tags": [
             "construction_phase",
             "high_skill"
           ]
         },
-        "community_impact_it": "Riqualificazione di area industriale abbandonata a Segrate; opere stradali e percorsi ciclo-pedonali annunciati con il Comune.",
+        "community_impact_it": "Riqualificazione area ex CISE; opere compensative con Comune (~6 M€ infrastrutture locali, piantumazioni). Controversie documentate: comitati «Re de scés» e Redecesio-Lavanderie chiedono VAS/impatti cumulativi, compensazioni effettive e blocco del secondo blocco vicino abitazioni/scuola (Il Giorno, Giornale di Segrate). A <1 km è previsto MIL2 Rubattino (Milano).",
         "labor_risks": [
           "construction_phase"
         ],
@@ -2494,8 +2495,40 @@
             "title": "CyrusOne — breaks ground on first Italy DC",
             "url": "https://www.cyrusone.com/resources/press-releases/cyrusone-breaks-ground-on-first-data-center-in-italy",
             "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Giornale di Segrate — posa prima pietra / avvio cantiere MIL1 (Redecesio)",
+            "url": "https://giornaledisegrate.it/2026/03/26/data-center-posa-della-prima-pietra-di-cyrusone-a-segrate/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Giornale di Segrate — due edifici MIL1 e impatto d’insieme",
+            "url": "https://giornaledisegrate.it/2026/09/25/data-center-sono-due-gli-edifici-previsti-di-chio-valuteremo-limpatto-dinsieme/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Il Giorno — comitato Re de scés / lettera istituzioni",
+            "url": "https://www.ilgiorno.it/milano/cronaca/noi-cittadini-mai-coinvolti-ad42be5d",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "7giorni — costituzione Comitato Redecesio-Lavanderie",
+            "url": "https://www.7giorni.info/cronaca/segrate/segrate-dalla-politica-territoriale-nasce-un-nuovo-comitato-di-cittadini-in-oltre-cento-al-confronto-sui-data-center.html",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CyrusOne — FAQ MIL1/MIL2 (Rubattino)",
+            "url": "https://giornaledisegrate.it/2026/04/16/data-center-a-redecesio-le-risposte-di-cyrusone-alle-vostre-domande/",
+            "accessed_at": "2026-09-29",
+            "note": "Risposte ufficiali CyrusOne via Giornale di Segrate"
+          },
+          {
+            "title": "CyrusOne — Sustainability Report 2026 (water-free / air-cooled)",
+            "url": "https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en",
+            "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Redevelopment of the former CISE site; compensatory works with the municipality (~€6M local infrastructure, planting). Documented disputes: «Re de scés» and Redecesio-Lavanderie committees seek cumulative impact review, effective compensations and halting the second block near homes/school (Il Giorno, Giornale di Segrate). MIL2 Rubattino (Milan) is planned <1 km away."
       }
     },
     {
@@ -3692,12 +3725,89 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          9.25337,
+          45.47767
+        ]
+      },
+      "properties": {
+        "id": "dc_068",
+        "name": "CyrusOne MIL2 — Milano (Rubattino 84)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "CyrusOne",
+        "capacity": "54 MW IT previsti (CyrusOne); PA Comune Milano in istruttoria",
+        "description_it": "Secondo data center CyrusOne nel Milanese (MIL2): piano attuativo «Rubattino 84» del Comune di Milano (Municipio 3, lotto ~66.500 m² a sud di via Rubattino, confine Segrate). Proposta: corpo di fabbrica produttivo/data center (~25 m fuori terra) + cessione/verde e quota residenziale/ERS nel PA. CyrusOne conferma via Rubattino, 54 MW IT su tre piani, ~6 km dal centro, vicino Linate (FAQ mar-apr 2026). Stato procedimento: proposta iniziale in istruttoria (scheda Comune agg. giu 2025). Distinto da MIL1 Redecesio (<1 km).",
+        "description_en": "CyrusOne’s second Milan-area data center (MIL2): City of Milan «Rubattino 84» planning instrument (Municipio 3, ~66,500 m² south of via Rubattino, Segrate border). Proposal: production/data-center building (~25 m height) plus green areas and residential/ERS components in the PA. CyrusOne confirms via Rubattino, 54 MW IT over three floors, ~6 km from the centre, near Linate (FAQ Mar–Apr 2026). Procedure status: initial proposal under review (city page updated Jun 2025). Distinct from MIL1 Redecesio (<1 km).",
+        "country": "IT",
+        "city": "Milano",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 54,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 6.65,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "CyrusOne dichiara raffreddamento water-free per i nuovi impianti (Sustainability Report 2026); dettagli tecnici MIL2 non ancora in datasheet pubblico."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico non pubblicato finché il PA non approva e non parte cantiere; analogia MIL1: pochi posti a regime, picco cantiere.",
+          "note_en": "Headcount not published until PA approval and construction; MIL1 analogy: few operational jobs, construction peak.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Polo tecnologico in area Lambarte/Rubattino; dibattito cumulativo con MIL1 Segrate e altri DC dell’est milanese. Comitati segratesi citano anche Rubattino nelle istanze su impatto d’insieme (Giornale di Segrate).",
+        "community_impact_en": "Tech pole in Lambrate/Rubattino area; cumulative debate with MIL1 Segrate and other east-Milan DCs. Segrate citizen committees also cite Rubattino in combined-impact requests (Giornale di Segrate).",
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "Comune di Milano — Rubattino 84 Piano attuativo",
+            "url": "https://www2.comune.milano.it/rubattino-84-piano-attuativo",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Comune di Milano — PA Rubattino 84 scheda tecnico-procedurale (PDF giu 2025)",
+            "url": "https://www2.comune.milano.it/rubattino-84-piano-attuativo",
+            "accessed_at": "2026-09-29",
+            "note": "Allegato PDF linked from city page"
+          },
+          {
+            "title": "CyrusOne — FAQ MIL2 via Rubattino (54 MW)",
+            "url": "https://giornaledisegrate.it/2026/04/16/data-center-a-redecesio-le-risposte-di-cyrusone-alle-vostre-domande/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Giornale di Segrate — MIL1+MIL2 e impatto cumulativo",
+            "url": "https://giornaledisegrate.it/2026/09/25/data-center-sono-due-gli-edifici-previsti-di-chio-valuteremo-limpatto-dinsieme/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "CyrusOne — Sustainability Report 2026",
+            "url": "https://www.cyrusone.com/hubfs/CyrusOne/2026%20Sustainability%20Report.pdf?hsLang=en",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.6306129,
           45.9367016
         ]
       },
       "properties": {
-        "id": "dc_068",
+        "id": "dc_069",
         "name": "THD Global 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -3732,7 +3842,7 @@
         ]
       },
       "properties": {
-        "id": "dc_069",
+        "id": "dc_070",
         "name": "Bitviking",
         "type": "data_center",
         "subtype": "colocation",
@@ -3767,7 +3877,7 @@
         ]
       },
       "properties": {
-        "id": "dc_070",
+        "id": "dc_071",
         "name": "OIZ",
         "type": "data_center",
         "subtype": "colocation",
@@ -3802,7 +3912,7 @@
         ]
       },
       "properties": {
-        "id": "dc_071",
+        "id": "dc_072",
         "name": "4ServiceSolutions",
         "type": "data_center",
         "subtype": "colocation",
@@ -3837,7 +3947,7 @@
         ]
       },
       "properties": {
-        "id": "dc_072",
+        "id": "dc_073",
         "name": "ACI Sede si Sarzana",
         "type": "data_center",
         "subtype": "colocation",
@@ -3872,7 +3982,7 @@
         ]
       },
       "properties": {
-        "id": "dc_073",
+        "id": "dc_074",
         "name": "Avalon 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -3907,7 +4017,7 @@
         ]
       },
       "properties": {
-        "id": "dc_074",
+        "id": "dc_075",
         "name": "24 hours fiberwork ag",
         "type": "data_center",
         "subtype": "colocation",
@@ -3942,7 +4052,7 @@
         ]
       },
       "properties": {
-        "id": "dc_075",
+        "id": "dc_076",
         "name": "Rechenzentrum Stollen Luzern",
         "type": "data_center",
         "subtype": "colocation",
@@ -3977,7 +4087,7 @@
         ]
       },
       "properties": {
-        "id": "dc_076",
+        "id": "dc_077",
         "name": "Microsoft",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -4012,7 +4122,7 @@
         ]
       },
       "properties": {
-        "id": "dc_077",
+        "id": "dc_078",
         "name": "iZOOM.it",
         "type": "data_center",
         "subtype": "colocation",
@@ -4047,7 +4157,7 @@
         ]
       },
       "properties": {
-        "id": "dc_078",
+        "id": "dc_079",
         "name": "Studio Delta Srl",
         "type": "data_center",
         "subtype": "colocation",
@@ -4082,7 +4192,7 @@
         ]
       },
       "properties": {
-        "id": "dc_079",
+        "id": "dc_080",
         "name": "colozüri.ch",
         "type": "data_center",
         "subtype": "colocation",
@@ -4117,7 +4227,7 @@
         ]
       },
       "properties": {
-        "id": "dc_080",
+        "id": "dc_081",
         "name": "Wi-Fi Communication Aulla",
         "type": "data_center",
         "subtype": "colocation",
@@ -4152,7 +4262,7 @@
         ]
       },
       "properties": {
-        "id": "dc_081",
+        "id": "dc_082",
         "name": "Factory Software | AVEVA Select Italia",
         "type": "data_center",
         "subtype": "colocation",
@@ -4187,7 +4297,7 @@
         ]
       },
       "properties": {
-        "id": "dc_082",
+        "id": "dc_083",
         "name": "Rechenzentrum Albis",
         "type": "data_center",
         "subtype": "colocation",
@@ -4222,7 +4332,7 @@
         ]
       },
       "properties": {
-        "id": "dc_083",
+        "id": "dc_084",
         "name": "GLB2",
         "type": "data_center",
         "subtype": "colocation",
@@ -4257,7 +4367,7 @@
         ]
       },
       "properties": {
-        "id": "dc_084",
+        "id": "dc_085",
         "name": "B4",
         "type": "data_center",
         "subtype": "colocation",
@@ -4292,7 +4402,7 @@
         ]
       },
       "properties": {
-        "id": "dc_085",
+        "id": "dc_086",
         "name": "Quadrivium QGEN01",
         "type": "data_center",
         "subtype": "colocation",
@@ -4327,7 +4437,7 @@
         ]
       },
       "properties": {
-        "id": "dc_086",
+        "id": "dc_087",
         "name": "Avalon 3",
         "type": "data_center",
         "subtype": "colocation",
@@ -4362,7 +4472,7 @@
         ]
       },
       "properties": {
-        "id": "dc_087",
+        "id": "dc_088",
         "name": "TAS Group",
         "type": "data_center",
         "subtype": "colocation",
@@ -4397,7 +4507,7 @@
         ]
       },
       "properties": {
-        "id": "dc_088",
+        "id": "dc_089",
         "name": "CNAF Sophia-Antipolis",
         "type": "data_center",
         "subtype": "colocation",
@@ -4432,7 +4542,7 @@
         ]
       },
       "properties": {
-        "id": "dc_089",
+        "id": "dc_090",
         "name": "Swisscom Lausanne-Savoie",
         "type": "data_center",
         "subtype": "colocation",
@@ -4467,7 +4577,7 @@
         ]
       },
       "properties": {
-        "id": "dc_090",
+        "id": "dc_091",
         "name": "NTT Zurich 1 Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -4502,7 +4612,7 @@
         ]
       },
       "properties": {
-        "id": "dc_091",
+        "id": "dc_092",
         "name": "BrainServe",
         "type": "data_center",
         "subtype": "colocation",
@@ -4537,7 +4647,7 @@
         ]
       },
       "properties": {
-        "id": "dc_092",
+        "id": "dc_093",
         "name": "Green Data Center Università di Pisa - Edificio Server",
         "type": "data_center",
         "subtype": "colocation",
@@ -4572,7 +4682,7 @@
         ]
       },
       "properties": {
-        "id": "dc_093",
+        "id": "dc_094",
         "name": "Datacube Biel",
         "type": "data_center",
         "subtype": "colocation",
@@ -4607,7 +4717,7 @@
         ]
       },
       "properties": {
-        "id": "dc_094",
+        "id": "dc_095",
         "name": "Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -4642,7 +4752,7 @@
         ]
       },
       "properties": {
-        "id": "dc_095",
+        "id": "dc_096",
         "name": "Ced 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -4677,7 +4787,7 @@
         ]
       },
       "properties": {
-        "id": "dc_096",
+        "id": "dc_097",
         "name": "Noovle DC Rivoli",
         "type": "data_center",
         "subtype": "colocation",
@@ -4712,7 +4822,7 @@
         ]
       },
       "properties": {
-        "id": "dc_097",
+        "id": "dc_098",
         "name": "DC Noovle Cebrosa",
         "type": "data_center",
         "subtype": "colocation",
@@ -4747,7 +4857,7 @@
         ]
       },
       "properties": {
-        "id": "dc_098",
+        "id": "dc_099",
         "name": "Euclyde DC1",
         "type": "data_center",
         "subtype": "colocation",
@@ -4782,7 +4892,7 @@
         ]
       },
       "properties": {
-        "id": "dc_099",
+        "id": "dc_100",
         "name": "Datacenter TIM-Google",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -4817,7 +4927,7 @@
         ]
       },
       "properties": {
-        "id": "dc_100",
+        "id": "dc_101",
         "name": "Leonardo (supercomputer)",
         "type": "data_center",
         "subtype": "colocation",
@@ -4852,7 +4962,7 @@
         ]
       },
       "properties": {
-        "id": "dc_101",
+        "id": "dc_102",
         "name": "WinEuropa",
         "type": "data_center",
         "subtype": "colocation",
@@ -4887,7 +4997,7 @@
         ]
       },
       "properties": {
-        "id": "dc_102",
+        "id": "dc_103",
         "name": "Noovle",
         "type": "data_center",
         "subtype": "colocation",
@@ -4922,7 +5032,7 @@
         ]
       },
       "properties": {
-        "id": "dc_103",
+        "id": "dc_104",
         "name": "Arctur",
         "type": "data_center",
         "subtype": "colocation",
@@ -4957,7 +5067,7 @@
         ]
       },
       "properties": {
-        "id": "dc_104",
+        "id": "dc_105",
         "name": "Podatkovni centar HR-ZOO RI",
         "type": "data_center",
         "subtype": "colocation",
@@ -4992,7 +5102,7 @@
         ]
       },
       "properties": {
-        "id": "dc_105",
+        "id": "dc_106",
         "name": "Intacture",
         "type": "data_center",
         "subtype": "colocation",
@@ -5027,7 +5137,7 @@
         ]
       },
       "properties": {
-        "id": "dc_106",
+        "id": "dc_107",
         "name": "Centrale TIM Trento Nord",
         "type": "data_center",
         "subtype": "colocation",
@@ -5062,7 +5172,7 @@
         ]
       },
       "properties": {
-        "id": "dc_107",
+        "id": "dc_108",
         "name": "Set",
         "type": "data_center",
         "subtype": "colocation",
@@ -5097,7 +5207,7 @@
         ]
       },
       "properties": {
-        "id": "dc_108",
+        "id": "dc_109",
         "name": "Data center Unipol Pilastro",
         "type": "data_center",
         "subtype": "colocation",
@@ -5132,7 +5242,7 @@
         ]
       },
       "properties": {
-        "id": "dc_109",
+        "id": "dc_110",
         "name": "Archivio di Stato di Caserta",
         "type": "data_center",
         "subtype": "colocation",
@@ -5167,7 +5277,7 @@
         ]
       },
       "properties": {
-        "id": "dc_110",
+        "id": "dc_111",
         "name": "Studio BETA SRLS",
         "type": "data_center",
         "subtype": "colocation",
@@ -5202,7 +5312,7 @@
         ]
       },
       "properties": {
-        "id": "dc_111",
+        "id": "dc_112",
         "name": "Arpac",
         "type": "data_center",
         "subtype": "colocation",
@@ -5237,7 +5347,7 @@
         ]
       },
       "properties": {
-        "id": "dc_112",
+        "id": "dc_113",
         "name": "E. D. Accounting Siena",
         "type": "data_center",
         "subtype": "colocation",
@@ -5272,7 +5382,7 @@
         ]
       },
       "properties": {
-        "id": "dc_113",
+        "id": "dc_114",
         "name": "InfreschiLab",
         "type": "data_center",
         "subtype": "colocation",
@@ -5307,7 +5417,7 @@
         ]
       },
       "properties": {
-        "id": "dc_114",
+        "id": "dc_115",
         "name": "Data Center Aruba IT2",
         "type": "data_center",
         "subtype": "colocation",
@@ -5342,7 +5452,7 @@
         ]
       },
       "properties": {
-        "id": "dc_115",
+        "id": "dc_116",
         "name": "Data Center Aruba IT1",
         "type": "data_center",
         "subtype": "colocation",
@@ -5377,7 +5487,7 @@
         ]
       },
       "properties": {
-        "id": "dc_116",
+        "id": "dc_117",
         "name": "Data Felix DF01",
         "type": "data_center",
         "subtype": "colocation",
@@ -5412,7 +5522,7 @@
         ]
       },
       "properties": {
-        "id": "dc_117",
+        "id": "dc_118",
         "name": "الهيكل الخاص الهدى لتقديم الدروس الخصوصية",
         "type": "data_center",
         "subtype": "colocation",
@@ -5447,7 +5557,7 @@
         ]
       },
       "properties": {
-        "id": "dc_118",
+        "id": "dc_119",
         "name": "Cellnex",
         "type": "data_center",
         "subtype": "colocation",
@@ -5482,7 +5592,7 @@
         ]
       },
       "properties": {
-        "id": "dc_119",
+        "id": "dc_120",
         "name": "Equinix AM7",
         "type": "data_center",
         "subtype": "colocation",
@@ -5517,7 +5627,7 @@
         ]
       },
       "properties": {
-        "id": "dc_120",
+        "id": "dc_121",
         "name": "WorldStream",
         "type": "data_center",
         "subtype": "colocation",
@@ -5552,7 +5662,7 @@
         ]
       },
       "properties": {
-        "id": "dc_121",
+        "id": "dc_122",
         "name": "LeaseWeb AMS-01",
         "type": "data_center",
         "subtype": "colocation",
@@ -5587,7 +5697,7 @@
         ]
       },
       "properties": {
-        "id": "dc_122",
+        "id": "dc_123",
         "name": "Eurofiber data center Arnhem 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -5622,7 +5732,7 @@
         ]
       },
       "properties": {
-        "id": "dc_123",
+        "id": "dc_124",
         "name": "Interconnect Eindhoven",
         "type": "data_center",
         "subtype": "colocation",
@@ -5657,7 +5767,7 @@
         ]
       },
       "properties": {
-        "id": "dc_124",
+        "id": "dc_125",
         "name": "Eurofiber Data Center Amsterdam",
         "type": "data_center",
         "subtype": "colocation",
@@ -5692,7 +5802,7 @@
         ]
       },
       "properties": {
-        "id": "dc_125",
+        "id": "dc_126",
         "name": "Databarn Amsterdam",
         "type": "data_center",
         "subtype": "colocation",
@@ -5727,7 +5837,7 @@
         ]
       },
       "properties": {
-        "id": "dc_126",
+        "id": "dc_127",
         "name": "Digital Realty AMS3",
         "type": "data_center",
         "subtype": "colocation",
@@ -5762,7 +5872,7 @@
         ]
       },
       "properties": {
-        "id": "dc_127",
+        "id": "dc_128",
         "name": "Digital Realty AMS5",
         "type": "data_center",
         "subtype": "colocation",
@@ -5797,7 +5907,7 @@
         ]
       },
       "properties": {
-        "id": "dc_128",
+        "id": "dc_129",
         "name": "Equinix Enschede",
         "type": "data_center",
         "subtype": "colocation",
@@ -5832,7 +5942,7 @@
         ]
       },
       "properties": {
-        "id": "dc_129",
+        "id": "dc_130",
         "name": "BIT-1 Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -5867,7 +5977,7 @@
         ]
       },
       "properties": {
-        "id": "dc_130",
+        "id": "dc_131",
         "name": "NorthC Datacenter Aalsmeer",
         "type": "data_center",
         "subtype": "colocation",
@@ -5902,7 +6012,7 @@
         ]
       },
       "properties": {
-        "id": "dc_131",
+        "id": "dc_132",
         "name": "Datacenter Groningen",
         "type": "data_center",
         "subtype": "colocation",
@@ -5937,7 +6047,7 @@
         ]
       },
       "properties": {
-        "id": "dc_132",
+        "id": "dc_133",
         "name": "Global Switch Amsterdam",
         "type": "data_center",
         "subtype": "colocation",
@@ -5972,7 +6082,7 @@
         ]
       },
       "properties": {
-        "id": "dc_133",
+        "id": "dc_134",
         "name": "Colt Amsterdam Van der Madeweg",
         "type": "data_center",
         "subtype": "colocation",
@@ -6007,7 +6117,7 @@
         ]
       },
       "properties": {
-        "id": "dc_134",
+        "id": "dc_135",
         "name": "Solcon Droten",
         "type": "data_center",
         "subtype": "colocation",
@@ -6042,7 +6152,7 @@
         ]
       },
       "properties": {
-        "id": "dc_135",
+        "id": "dc_136",
         "name": "Kolo NL1 Dronten",
         "type": "data_center",
         "subtype": "colocation",
@@ -6077,7 +6187,7 @@
         ]
       },
       "properties": {
-        "id": "dc_136",
+        "id": "dc_137",
         "name": "Digital Realty",
         "type": "data_center",
         "subtype": "colocation",
@@ -6112,7 +6222,7 @@
         ]
       },
       "properties": {
-        "id": "dc_137",
+        "id": "dc_138",
         "name": "KPN Amsterdam",
         "type": "data_center",
         "subtype": "colocation",
@@ -6147,7 +6257,7 @@
         ]
       },
       "properties": {
-        "id": "dc_138",
+        "id": "dc_139",
         "name": "NorthC Amsterdam 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -6182,7 +6292,7 @@
         ]
       },
       "properties": {
-        "id": "dc_139",
+        "id": "dc_140",
         "name": "Datacenter.com AMS1",
         "type": "data_center",
         "subtype": "colocation",
@@ -6217,7 +6327,7 @@
         ]
       },
       "properties": {
-        "id": "dc_140",
+        "id": "dc_141",
         "name": "KPN Telefoon Centrale",
         "type": "data_center",
         "subtype": "colocation",
@@ -6252,7 +6362,7 @@
         ]
       },
       "properties": {
-        "id": "dc_141",
+        "id": "dc_142",
         "name": "Systemec Venlo DC19",
         "type": "data_center",
         "subtype": "colocation",
@@ -6287,7 +6397,7 @@
         ]
       },
       "properties": {
-        "id": "dc_142",
+        "id": "dc_143",
         "name": "Datacenter Gemert",
         "type": "data_center",
         "subtype": "colocation",
@@ -6322,7 +6432,7 @@
         ]
       },
       "properties": {
-        "id": "dc_143",
+        "id": "dc_144",
         "name": "DataCenter Fryslân",
         "type": "data_center",
         "subtype": "colocation",
@@ -6357,7 +6467,7 @@
         ]
       },
       "properties": {
-        "id": "dc_144",
+        "id": "dc_145",
         "name": "NorthC Datacenter Eindhoven",
         "type": "data_center",
         "subtype": "colocation",
@@ -6392,7 +6502,7 @@
         ]
       },
       "properties": {
-        "id": "dc_145",
+        "id": "dc_146",
         "name": "NorthC Datacenter Delft",
         "type": "data_center",
         "subtype": "colocation",
@@ -6427,7 +6537,7 @@
         ]
       },
       "properties": {
-        "id": "dc_146",
+        "id": "dc_147",
         "name": "Digital Realty AMS15",
         "type": "data_center",
         "subtype": "colocation",
@@ -6462,7 +6572,7 @@
         ]
       },
       "properties": {
-        "id": "dc_147",
+        "id": "dc_148",
         "name": "Eurofiber Data center Brabant",
         "type": "data_center",
         "subtype": "colocation",
@@ -6497,7 +6607,7 @@
         ]
       },
       "properties": {
-        "id": "dc_148",
+        "id": "dc_149",
         "name": "Digital Realty AMS8",
         "type": "data_center",
         "subtype": "colocation",
@@ -6532,7 +6642,7 @@
         ]
       },
       "properties": {
-        "id": "dc_149",
+        "id": "dc_150",
         "name": "Equinix AM4",
         "type": "data_center",
         "subtype": "colocation",
@@ -6567,7 +6677,7 @@
         ]
       },
       "properties": {
-        "id": "dc_150",
+        "id": "dc_151",
         "name": "TDF ProxiCenter Lille Lambersart",
         "type": "data_center",
         "subtype": "colocation",
@@ -6602,7 +6712,7 @@
         ]
       },
       "properties": {
-        "id": "dc_151",
+        "id": "dc_152",
         "name": "Wiit AG DUS",
         "type": "data_center",
         "subtype": "colocation",
@@ -6637,7 +6747,7 @@
         ]
       },
       "properties": {
-        "id": "dc_152",
+        "id": "dc_153",
         "name": "Colt Telecom",
         "type": "data_center",
         "subtype": "colocation",
@@ -6672,7 +6782,7 @@
         ]
       },
       "properties": {
-        "id": "dc_153",
+        "id": "dc_154",
         "name": "CyrusOne Amsterdam I",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -6707,7 +6817,7 @@
         ]
       },
       "properties": {
-        "id": "dc_154",
+        "id": "dc_155",
         "name": "Techcréa Solutions",
         "type": "data_center",
         "subtype": "colocation",
@@ -6742,7 +6852,7 @@
         ]
       },
       "properties": {
-        "id": "dc_155",
+        "id": "dc_156",
         "name": "Microsoft Data Center",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -6777,7 +6887,7 @@
         ]
       },
       "properties": {
-        "id": "dc_156",
+        "id": "dc_157",
         "name": "Lille Boitelle",
         "type": "data_center",
         "subtype": "colocation",
@@ -6812,7 +6922,7 @@
         ]
       },
       "properties": {
-        "id": "dc_157",
+        "id": "dc_158",
         "name": "databyte",
         "type": "data_center",
         "subtype": "colocation",
@@ -6847,7 +6957,7 @@
         ]
       },
       "properties": {
-        "id": "dc_158",
+        "id": "dc_159",
         "name": "Digital Reality DUS2",
         "type": "data_center",
         "subtype": "colocation",
@@ -6882,7 +6992,7 @@
         ]
       },
       "properties": {
-        "id": "dc_159",
+        "id": "dc_160",
         "name": "Interconnect Den Bosch",
         "type": "data_center",
         "subtype": "colocation",
@@ -6917,7 +7027,7 @@
         ]
       },
       "properties": {
-        "id": "dc_160",
+        "id": "dc_161",
         "name": "FoxNetwork",
         "type": "data_center",
         "subtype": "colocation",
@@ -6952,7 +7062,7 @@
         ]
       },
       "properties": {
-        "id": "dc_161",
+        "id": "dc_162",
         "name": "NorthC Datacenter Oude Meer",
         "type": "data_center",
         "subtype": "colocation",
@@ -6987,7 +7097,7 @@
         ]
       },
       "properties": {
-        "id": "dc_162",
+        "id": "dc_163",
         "name": "NorthC Datacenter Eindhoven 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -7022,7 +7132,7 @@
         ]
       },
       "properties": {
-        "id": "dc_163",
+        "id": "dc_164",
         "name": "Digital Realty Brussels BRU4 Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -7057,7 +7167,7 @@
         ]
       },
       "properties": {
-        "id": "dc_164",
+        "id": "dc_165",
         "name": "Interoute",
         "type": "data_center",
         "subtype": "colocation",
@@ -7092,7 +7202,7 @@
         ]
       },
       "properties": {
-        "id": "dc_165",
+        "id": "dc_166",
         "name": "Equinix AM6",
         "type": "data_center",
         "subtype": "colocation",
@@ -7127,7 +7237,7 @@
         ]
       },
       "properties": {
-        "id": "dc_166",
+        "id": "dc_167",
         "name": "DC Mechelen",
         "type": "data_center",
         "subtype": "colocation",
@@ -7162,7 +7272,7 @@
         ]
       },
       "properties": {
-        "id": "dc_167",
+        "id": "dc_168",
         "name": "DC Flanders",
         "type": "data_center",
         "subtype": "colocation",
@@ -7197,7 +7307,7 @@
         ]
       },
       "properties": {
-        "id": "dc_168",
+        "id": "dc_169",
         "name": "Smart DC",
         "type": "data_center",
         "subtype": "colocation",
@@ -7232,7 +7342,7 @@
         ]
       },
       "properties": {
-        "id": "dc_169",
+        "id": "dc_170",
         "name": "Kolo NL2 Meppel",
         "type": "data_center",
         "subtype": "colocation",
@@ -7267,7 +7377,7 @@
         ]
       },
       "properties": {
-        "id": "dc_170",
+        "id": "dc_171",
         "name": "DC Evere",
         "type": "data_center",
         "subtype": "colocation",
@@ -7302,7 +7412,7 @@
         ]
       },
       "properties": {
-        "id": "dc_171",
+        "id": "dc_172",
         "name": "NorthC Rotterdam Zestienhoven 1&2",
         "type": "data_center",
         "subtype": "colocation",
@@ -7337,7 +7447,7 @@
         ]
       },
       "properties": {
-        "id": "dc_172",
+        "id": "dc_173",
         "name": "NorthC Nieuwegein",
         "type": "data_center",
         "subtype": "colocation",
@@ -7372,7 +7482,7 @@
         ]
       },
       "properties": {
-        "id": "dc_173",
+        "id": "dc_174",
         "name": "DC Antwerp",
         "type": "data_center",
         "subtype": "colocation",
@@ -7407,7 +7517,7 @@
         ]
       },
       "properties": {
-        "id": "dc_174",
+        "id": "dc_175",
         "name": "Smartdc Heerlen",
         "type": "data_center",
         "subtype": "colocation",
@@ -7442,7 +7552,7 @@
         ]
       },
       "properties": {
-        "id": "dc_175",
+        "id": "dc_176",
         "name": "Digital Realty Brussels BRU1",
         "type": "data_center",
         "subtype": "colocation",
@@ -7477,7 +7587,7 @@
         ]
       },
       "properties": {
-        "id": "dc_176",
+        "id": "dc_177",
         "name": "DC Machelen",
         "type": "data_center",
         "subtype": "colocation",
@@ -7512,7 +7622,7 @@
         ]
       },
       "properties": {
-        "id": "dc_177",
+        "id": "dc_178",
         "name": "Datacenter SNCF RESARAIL",
         "type": "data_center",
         "subtype": "colocation",
@@ -7547,7 +7657,7 @@
         ]
       },
       "properties": {
-        "id": "dc_178",
+        "id": "dc_179",
         "name": "OVHcloud Roubaix - RBX1",
         "type": "data_center",
         "subtype": "colocation",
@@ -7582,7 +7692,7 @@
         ]
       },
       "properties": {
-        "id": "dc_179",
+        "id": "dc_180",
         "name": "Comarch Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -7617,7 +7727,7 @@
         ]
       },
       "properties": {
-        "id": "dc_180",
+        "id": "dc_181",
         "name": "Oxya Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -7652,7 +7762,7 @@
         ]
       },
       "properties": {
-        "id": "dc_181",
+        "id": "dc_182",
         "name": "Cogent Lille",
         "type": "data_center",
         "subtype": "colocation",
@@ -7687,7 +7797,7 @@
         ]
       },
       "properties": {
-        "id": "dc_182",
+        "id": "dc_183",
         "name": "Alphacloud Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -7722,7 +7832,7 @@
         ]
       },
       "properties": {
-        "id": "dc_183",
+        "id": "dc_184",
         "name": "Microsoft Datacenter",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -7757,7 +7867,7 @@
         ]
       },
       "properties": {
-        "id": "dc_184",
+        "id": "dc_185",
         "name": "Google Data Center",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -7792,7 +7902,7 @@
         ]
       },
       "properties": {
-        "id": "dc_185",
+        "id": "dc_186",
         "name": "Euregiocenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -7827,7 +7937,7 @@
         ]
       },
       "properties": {
-        "id": "dc_186",
+        "id": "dc_187",
         "name": "Datacenter IBM",
         "type": "data_center",
         "subtype": "colocation",
@@ -7862,7 +7972,7 @@
         ]
       },
       "properties": {
-        "id": "dc_187",
+        "id": "dc_188",
         "name": "Worldline Dassault",
         "type": "data_center",
         "subtype": "colocation",
@@ -7897,7 +8007,7 @@
         ]
       },
       "properties": {
-        "id": "dc_188",
+        "id": "dc_189",
         "name": "SM4",
         "type": "data_center",
         "subtype": "colocation",
@@ -7932,7 +8042,7 @@
         ]
       },
       "properties": {
-        "id": "dc_189",
+        "id": "dc_190",
         "name": "Datacenter Oostkamp",
         "type": "data_center",
         "subtype": "colocation",
@@ -7967,7 +8077,7 @@
         ]
       },
       "properties": {
-        "id": "dc_190",
+        "id": "dc_191",
         "name": "S10",
         "type": "data_center",
         "subtype": "colocation",
@@ -8002,7 +8112,7 @@
         ]
       },
       "properties": {
-        "id": "dc_191",
+        "id": "dc_192",
         "name": "DC Moeskroen",
         "type": "data_center",
         "subtype": "colocation",
@@ -8037,7 +8147,7 @@
         ]
       },
       "properties": {
-        "id": "dc_192",
+        "id": "dc_193",
         "name": "O",
         "type": "data_center",
         "subtype": "colocation",
@@ -8072,7 +8182,7 @@
         ]
       },
       "properties": {
-        "id": "dc_193",
+        "id": "dc_194",
         "name": "Equinix DU1",
         "type": "data_center",
         "subtype": "colocation",
@@ -8107,7 +8217,7 @@
         ]
       },
       "properties": {
-        "id": "dc_194",
+        "id": "dc_195",
         "name": "EURaix",
         "type": "data_center",
         "subtype": "colocation",
@@ -8142,7 +8252,7 @@
         ]
       },
       "properties": {
-        "id": "dc_195",
+        "id": "dc_196",
         "name": "EURaix Evolution",
         "type": "data_center",
         "subtype": "colocation",
@@ -8177,7 +8287,7 @@
         ]
       },
       "properties": {
-        "id": "dc_196",
+        "id": "dc_197",
         "name": "Kolo NL3 Apeldoorn",
         "type": "data_center",
         "subtype": "colocation",
@@ -8212,7 +8322,7 @@
         ]
       },
       "properties": {
-        "id": "dc_197",
+        "id": "dc_198",
         "name": "NorthC Almere",
         "type": "data_center",
         "subtype": "colocation",
@@ -8247,7 +8357,7 @@
         ]
       },
       "properties": {
-        "id": "dc_198",
+        "id": "dc_199",
         "name": "AMS05",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -8282,7 +8392,7 @@
         ]
       },
       "properties": {
-        "id": "dc_199",
+        "id": "dc_200",
         "name": "Eurofiber data center Rotterdam 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -8317,7 +8427,7 @@
         ]
       },
       "properties": {
-        "id": "dc_200",
+        "id": "dc_201",
         "name": "Surfplanet GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -8352,7 +8462,7 @@
         ]
       },
       "properties": {
-        "id": "dc_201",
+        "id": "dc_202",
         "name": "Datacenter Gent",
         "type": "data_center",
         "subtype": "colocation",
@@ -8387,7 +8497,7 @@
         ]
       },
       "properties": {
-        "id": "dc_202",
+        "id": "dc_203",
         "name": "Datacenter Burcht",
         "type": "data_center",
         "subtype": "colocation",
@@ -8422,7 +8532,7 @@
         ]
       },
       "properties": {
-        "id": "dc_203",
+        "id": "dc_204",
         "name": "QTS Eemshaven Netherlands Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -8457,7 +8567,7 @@
         ]
       },
       "properties": {
-        "id": "dc_204",
+        "id": "dc_205",
         "name": "Telenet servergebouw",
         "type": "data_center",
         "subtype": "colocation",
@@ -8492,7 +8602,7 @@
         ]
       },
       "properties": {
-        "id": "dc_205",
+        "id": "dc_206",
         "name": "Rechenzentrum Hartmann GmbH & Co. KG",
         "type": "data_center",
         "subtype": "colocation",
@@ -8527,7 +8637,7 @@
         ]
       },
       "properties": {
-        "id": "dc_206",
+        "id": "dc_207",
         "name": "AMS07",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -8562,7 +8672,7 @@
         ]
       },
       "properties": {
-        "id": "dc_207",
+        "id": "dc_208",
         "name": "Bytesnet d'ROOT",
         "type": "data_center",
         "subtype": "colocation",
@@ -8597,7 +8707,7 @@
         ]
       },
       "properties": {
-        "id": "dc_208",
+        "id": "dc_209",
         "name": "CIV Anzin",
         "type": "data_center",
         "subtype": "colocation",
@@ -8632,7 +8742,7 @@
         ]
       },
       "properties": {
-        "id": "dc_209",
+        "id": "dc_210",
         "name": "RZ5 Dortmund-Huckarde",
         "type": "data_center",
         "subtype": "colocation",
@@ -8667,7 +8777,7 @@
         ]
       },
       "properties": {
-        "id": "dc_210",
+        "id": "dc_211",
         "name": "CIV Sainghin-en-Mélantois",
         "type": "data_center",
         "subtype": "colocation",
@@ -8702,7 +8812,7 @@
         ]
       },
       "properties": {
-        "id": "dc_211",
+        "id": "dc_212",
         "name": "Eurofiber data center NL South-West 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -8737,7 +8847,7 @@
         ]
       },
       "properties": {
-        "id": "dc_212",
+        "id": "dc_213",
         "name": "Equinix Zwolle ZW1",
         "type": "data_center",
         "subtype": "colocation",
@@ -8772,7 +8882,7 @@
         ]
       },
       "properties": {
-        "id": "dc_213",
+        "id": "dc_214",
         "name": "LCL Datacenter (DataCloud)",
         "type": "data_center",
         "subtype": "colocation",
@@ -8807,7 +8917,7 @@
         ]
       },
       "properties": {
-        "id": "dc_214",
+        "id": "dc_215",
         "name": "DC Hasselt 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -8842,7 +8952,7 @@
         ]
       },
       "properties": {
-        "id": "dc_215",
+        "id": "dc_216",
         "name": "Lille Etix #1",
         "type": "data_center",
         "subtype": "colocation",
@@ -8877,7 +8987,7 @@
         ]
       },
       "properties": {
-        "id": "dc_216",
+        "id": "dc_217",
         "name": "hex/AC",
         "type": "data_center",
         "subtype": "colocation",
@@ -8912,7 +9022,7 @@
         ]
       },
       "properties": {
-        "id": "dc_217",
+        "id": "dc_218",
         "name": "Colt Evere",
         "type": "data_center",
         "subtype": "colocation",
@@ -8947,7 +9057,7 @@
         ]
       },
       "properties": {
-        "id": "dc_218",
+        "id": "dc_219",
         "name": "Overheidsdatacenter Rijswijk",
         "type": "data_center",
         "subtype": "colocation",
@@ -8982,7 +9092,7 @@
         ]
       },
       "properties": {
-        "id": "dc_219",
+        "id": "dc_220",
         "name": "DC Hasselt 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -9017,7 +9127,7 @@
         ]
       },
       "properties": {
-        "id": "dc_220",
+        "id": "dc_221",
         "name": "Datacenter One GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -9052,7 +9162,7 @@
         ]
       },
       "properties": {
-        "id": "dc_221",
+        "id": "dc_222",
         "name": "Equinix AM8",
         "type": "data_center",
         "subtype": "colocation",
@@ -9087,7 +9197,7 @@
         ]
       },
       "properties": {
-        "id": "dc_222",
+        "id": "dc_223",
         "name": "Wallonie Data Center (WDC)",
         "type": "data_center",
         "subtype": "colocation",
@@ -9122,7 +9232,7 @@
         ]
       },
       "properties": {
-        "id": "dc_223",
+        "id": "dc_224",
         "name": "Google Datacenter Eemshaven",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -9157,7 +9267,7 @@
         ]
       },
       "properties": {
-        "id": "dc_224",
+        "id": "dc_225",
         "name": "Datacenter One",
         "type": "data_center",
         "subtype": "colocation",
@@ -9192,7 +9302,7 @@
         ]
       },
       "properties": {
-        "id": "dc_225",
+        "id": "dc_226",
         "name": "NorthC Data center Groningen",
         "type": "data_center",
         "subtype": "colocation",
@@ -9227,7 +9337,7 @@
         ]
       },
       "properties": {
-        "id": "dc_226",
+        "id": "dc_227",
         "name": "Google Datacenter Middenmeer",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -9262,7 +9372,7 @@
         ]
       },
       "properties": {
-        "id": "dc_227",
+        "id": "dc_228",
         "name": "NorthC Datacenter Rotterdam Waalhaven",
         "type": "data_center",
         "subtype": "colocation",
@@ -9297,7 +9407,7 @@
         ]
       },
       "properties": {
-        "id": "dc_228",
+        "id": "dc_229",
         "name": "Switch Datacenters AMS4",
         "type": "data_center",
         "subtype": "colocation",
@@ -9332,7 +9442,7 @@
         ]
       },
       "properties": {
-        "id": "dc_229",
+        "id": "dc_230",
         "name": "GBL5",
         "type": "data_center",
         "subtype": "colocation",
@@ -9367,7 +9477,7 @@
         ]
       },
       "properties": {
-        "id": "dc_230",
+        "id": "dc_231",
         "name": "DELTA Fiber",
         "type": "data_center",
         "subtype": "colocation",
@@ -9402,7 +9512,7 @@
         ]
       },
       "properties": {
-        "id": "dc_231",
+        "id": "dc_232",
         "name": "Datacenter Base-Telenet",
         "type": "data_center",
         "subtype": "colocation",
@@ -9437,7 +9547,7 @@
         ]
       },
       "properties": {
-        "id": "dc_232",
+        "id": "dc_233",
         "name": "Cogent Halfweg",
         "type": "data_center",
         "subtype": "colocation",
@@ -9472,7 +9582,7 @@
         ]
       },
       "properties": {
-        "id": "dc_233",
+        "id": "dc_234",
         "name": "KPN Haarlem",
         "type": "data_center",
         "subtype": "colocation",
@@ -9507,7 +9617,7 @@
         ]
       },
       "properties": {
-        "id": "dc_234",
+        "id": "dc_235",
         "name": "Nexus Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -9542,7 +9652,7 @@
         ]
       },
       "properties": {
-        "id": "dc_235",
+        "id": "dc_236",
         "name": "NTT Amsterdam 1 Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -9577,7 +9687,7 @@
         ]
       },
       "properties": {
-        "id": "dc_236",
+        "id": "dc_237",
         "name": "Switch Datacenters AMS2",
         "type": "data_center",
         "subtype": "colocation",
@@ -9612,7 +9722,7 @@
         ]
       },
       "properties": {
-        "id": "dc_237",
+        "id": "dc_238",
         "name": "Google Datacenter",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -9647,7 +9757,7 @@
         ]
       },
       "properties": {
-        "id": "dc_238",
+        "id": "dc_239",
         "name": "Eurofiber data center Utrecht 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -9682,7 +9792,7 @@
         ]
       },
       "properties": {
-        "id": "dc_239",
+        "id": "dc_240",
         "name": "LCL Wallonia One",
         "type": "data_center",
         "subtype": "colocation",
@@ -9717,7 +9827,7 @@
         ]
       },
       "properties": {
-        "id": "dc_240",
+        "id": "dc_241",
         "name": "ISS Data Centre South (DCS)",
         "type": "data_center",
         "subtype": "colocation",
@@ -9752,7 +9862,7 @@
         ]
       },
       "properties": {
-        "id": "dc_241",
+        "id": "dc_242",
         "name": "Digital Realty DUB11",
         "type": "data_center",
         "subtype": "colocation",
@@ -9787,7 +9897,7 @@
         ]
       },
       "properties": {
-        "id": "dc_242",
+        "id": "dc_243",
         "name": "Microsoft Ireland",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -9822,7 +9932,7 @@
         ]
       },
       "properties": {
-        "id": "dc_243",
+        "id": "dc_244",
         "name": "Digital Realty DUB10",
         "type": "data_center",
         "subtype": "colocation",
@@ -9857,7 +9967,7 @@
         ]
       },
       "properties": {
-        "id": "dc_244",
+        "id": "dc_245",
         "name": "Equinix DB4",
         "type": "data_center",
         "subtype": "colocation",
@@ -9892,7 +10002,7 @@
         ]
       },
       "properties": {
-        "id": "dc_245",
+        "id": "dc_246",
         "name": "Amazon Web Services",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -9927,7 +10037,7 @@
         ]
       },
       "properties": {
-        "id": "dc_246",
+        "id": "dc_247",
         "name": "Elfordstown Earthstation",
         "type": "data_center",
         "subtype": "colocation",
@@ -9962,7 +10072,7 @@
         ]
       },
       "properties": {
-        "id": "dc_247",
+        "id": "dc_248",
         "name": "Amazon Web Services",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -9997,7 +10107,7 @@
         ]
       },
       "properties": {
-        "id": "dc_248",
+        "id": "dc_249",
         "name": "Equinix Dublin DB1",
         "type": "data_center",
         "subtype": "colocation",
@@ -10032,7 +10142,7 @@
         ]
       },
       "properties": {
-        "id": "dc_249",
+        "id": "dc_250",
         "name": "Amazon Web Services",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10067,7 +10177,7 @@
         ]
       },
       "properties": {
-        "id": "dc_250",
+        "id": "dc_251",
         "name": "Verizon Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -10102,7 +10212,7 @@
         ]
       },
       "properties": {
-        "id": "dc_251",
+        "id": "dc_252",
         "name": "Cork Internet Exchange (CIX)",
         "type": "data_center",
         "subtype": "colocation",
@@ -10137,7 +10247,7 @@
         ]
       },
       "properties": {
-        "id": "dc_252",
+        "id": "dc_253",
         "name": "Equinix DB2",
         "type": "data_center",
         "subtype": "colocation",
@@ -10172,7 +10282,7 @@
         ]
       },
       "properties": {
-        "id": "dc_253",
+        "id": "dc_254",
         "name": "Google",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10207,7 +10317,7 @@
         ]
       },
       "properties": {
-        "id": "dc_254",
+        "id": "dc_255",
         "name": "Microsoft DUB03 / DUB04",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10242,7 +10352,7 @@
         ]
       },
       "properties": {
-        "id": "dc_255",
+        "id": "dc_256",
         "name": "Meta Clonee 1 Data Center",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10277,7 +10387,7 @@
         ]
       },
       "properties": {
-        "id": "dc_256",
+        "id": "dc_257",
         "name": "Digital Realty Dublin DUB3",
         "type": "data_center",
         "subtype": "colocation",
@@ -10312,7 +10422,7 @@
         ]
       },
       "properties": {
-        "id": "dc_257",
+        "id": "dc_258",
         "name": "Microsoft DUB07",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10347,7 +10457,7 @@
         ]
       },
       "properties": {
-        "id": "dc_258",
+        "id": "dc_259",
         "name": "Meta Clonee 3 Data Center",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10382,7 +10492,7 @@
         ]
       },
       "properties": {
-        "id": "dc_259",
+        "id": "dc_260",
         "name": "Digital Realty DUB2",
         "type": "data_center",
         "subtype": "colocation",
@@ -10417,7 +10527,7 @@
         ]
       },
       "properties": {
-        "id": "dc_260",
+        "id": "dc_261",
         "name": "Prescient Coleraine",
         "type": "data_center",
         "subtype": "colocation",
@@ -10452,7 +10562,7 @@
         ]
       },
       "properties": {
-        "id": "dc_261",
+        "id": "dc_262",
         "name": "Meta Clonee 5 Data Center",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10487,7 +10597,7 @@
         ]
       },
       "properties": {
-        "id": "dc_262",
+        "id": "dc_263",
         "name": "CyrusOne DUB1",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10522,7 +10632,7 @@
         ]
       },
       "properties": {
-        "id": "dc_263",
+        "id": "dc_264",
         "name": "Amazon Web Services",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10557,7 +10667,7 @@
         ]
       },
       "properties": {
-        "id": "dc_264",
+        "id": "dc_265",
         "name": "EdgeConneX",
         "type": "data_center",
         "subtype": "colocation",
@@ -10592,7 +10702,7 @@
         ]
       },
       "properties": {
-        "id": "dc_265",
+        "id": "dc_266",
         "name": "Amazon Web Services",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -10627,7 +10737,7 @@
         ]
       },
       "properties": {
-        "id": "dc_266",
+        "id": "dc_267",
         "name": "Дата-центр \"Вконтакте\"",
         "type": "data_center",
         "subtype": "colocation",
@@ -10662,7 +10772,7 @@
         ]
       },
       "properties": {
-        "id": "dc_267",
+        "id": "dc_268",
         "name": "Selectel Tsvetochnaya 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -10697,7 +10807,7 @@
         ]
       },
       "properties": {
-        "id": "dc_268",
+        "id": "dc_269",
         "name": "Дата-центр Миран-1",
         "type": "data_center",
         "subtype": "colocation",
@@ -10732,7 +10842,7 @@
         ]
       },
       "properties": {
-        "id": "dc_269",
+        "id": "dc_270",
         "name": "Datacenter Lund, Alfa Laval",
         "type": "data_center",
         "subtype": "colocation",
@@ -10767,7 +10877,7 @@
         ]
       },
       "properties": {
-        "id": "dc_270",
+        "id": "dc_271",
         "name": "Maan Group",
         "type": "data_center",
         "subtype": "colocation",
@@ -10802,7 +10912,7 @@
         ]
       },
       "properties": {
-        "id": "dc_271",
+        "id": "dc_272",
         "name": "The Deck",
         "type": "data_center",
         "subtype": "colocation",
@@ -10837,7 +10947,7 @@
         ]
       },
       "properties": {
-        "id": "dc_272",
+        "id": "dc_273",
         "name": "Bunkerberget",
         "type": "data_center",
         "subtype": "colocation",
@@ -10872,7 +10982,7 @@
         ]
       },
       "properties": {
-        "id": "dc_273",
+        "id": "dc_274",
         "name": "Easylinehost Finland Oy",
         "type": "data_center",
         "subtype": "colocation",
@@ -10907,7 +11017,7 @@
         ]
       },
       "properties": {
-        "id": "dc_274",
+        "id": "dc_275",
         "name": "Tietokettu",
         "type": "data_center",
         "subtype": "colocation",
@@ -10942,7 +11052,7 @@
         ]
       },
       "properties": {
-        "id": "dc_275",
+        "id": "dc_276",
         "name": "CSC – IT Center for Science",
         "type": "data_center",
         "subtype": "colocation",
@@ -10977,7 +11087,7 @@
         ]
       },
       "properties": {
-        "id": "dc_276",
+        "id": "dc_277",
         "name": "DataCenter Three Seven",
         "type": "data_center",
         "subtype": "colocation",
@@ -11012,7 +11122,7 @@
         ]
       },
       "properties": {
-        "id": "dc_277",
+        "id": "dc_278",
         "name": "Ribe Hostingcenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -11047,7 +11157,7 @@
         ]
       },
       "properties": {
-        "id": "dc_278",
+        "id": "dc_279",
         "name": "Bahnhof Pionen",
         "type": "data_center",
         "subtype": "colocation",
@@ -11082,7 +11192,7 @@
         ]
       },
       "properties": {
-        "id": "dc_279",
+        "id": "dc_280",
         "name": "31173 Service DC Malmö",
         "type": "data_center",
         "subtype": "colocation",
@@ -11117,7 +11227,7 @@
         ]
       },
       "properties": {
-        "id": "dc_280",
+        "id": "dc_281",
         "name": "VisBook AS",
         "type": "data_center",
         "subtype": "colocation",
@@ -11152,7 +11262,7 @@
         ]
       },
       "properties": {
-        "id": "dc_281",
+        "id": "dc_282",
         "name": "Elisa",
         "type": "data_center",
         "subtype": "colocation",
@@ -11187,7 +11297,7 @@
         ]
       },
       "properties": {
-        "id": "dc_282",
+        "id": "dc_283",
         "name": "Linxdatacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -11222,7 +11332,7 @@
         ]
       },
       "properties": {
-        "id": "dc_283",
+        "id": "dc_284",
         "name": "Equinix Helsinki HE3",
         "type": "data_center",
         "subtype": "colocation",
@@ -11257,7 +11367,7 @@
         ]
       },
       "properties": {
-        "id": "dc_284",
+        "id": "dc_285",
         "name": "Equinix Helsinki HE4",
         "type": "data_center",
         "subtype": "colocation",
@@ -11292,7 +11402,7 @@
         ]
       },
       "properties": {
-        "id": "dc_285",
+        "id": "dc_286",
         "name": "Glesys",
         "type": "data_center",
         "subtype": "colocation",
@@ -11327,7 +11437,7 @@
         ]
       },
       "properties": {
-        "id": "dc_286",
+        "id": "dc_287",
         "name": "Glesys",
         "type": "data_center",
         "subtype": "colocation",
@@ -11362,7 +11472,7 @@
         ]
       },
       "properties": {
-        "id": "dc_287",
+        "id": "dc_288",
         "name": "ICE Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -11397,7 +11507,7 @@
         ]
       },
       "properties": {
-        "id": "dc_288",
+        "id": "dc_289",
         "name": "Kolo DK4 Viby J.",
         "type": "data_center",
         "subtype": "colocation",
@@ -11432,7 +11542,7 @@
         ]
       },
       "properties": {
-        "id": "dc_289",
+        "id": "dc_290",
         "name": "Kolo DK5 Copenhagen",
         "type": "data_center",
         "subtype": "colocation",
@@ -11467,7 +11577,7 @@
         ]
       },
       "properties": {
-        "id": "dc_290",
+        "id": "dc_291",
         "name": "РетнНет",
         "type": "data_center",
         "subtype": "colocation",
@@ -11502,7 +11612,7 @@
         ]
       },
       "properties": {
-        "id": "dc_291",
+        "id": "dc_292",
         "name": "Equinix Data Center HE5",
         "type": "data_center",
         "subtype": "colocation",
@@ -11537,7 +11647,7 @@
         ]
       },
       "properties": {
-        "id": "dc_292",
+        "id": "dc_293",
         "name": "Digital Realty Copenhagen CPH1",
         "type": "data_center",
         "subtype": "colocation",
@@ -11572,7 +11682,7 @@
         ]
       },
       "properties": {
-        "id": "dc_293",
+        "id": "dc_294",
         "name": "Adeo Datacenter ApS",
         "type": "data_center",
         "subtype": "colocation",
@@ -11607,7 +11717,7 @@
         ]
       },
       "properties": {
-        "id": "dc_294",
+        "id": "dc_295",
         "name": "Verne Global HELSINKI",
         "type": "data_center",
         "subtype": "colocation",
@@ -11642,7 +11752,7 @@
         ]
       },
       "properties": {
-        "id": "dc_295",
+        "id": "dc_296",
         "name": "Stack Infrastructure OSLO1A",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -11677,7 +11787,7 @@
         ]
       },
       "properties": {
-        "id": "dc_296",
+        "id": "dc_297",
         "name": "IMAQLIQ Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -11712,7 +11822,7 @@
         ]
       },
       "properties": {
-        "id": "dc_297",
+        "id": "dc_298",
         "name": "Bulk Data Centers Oslo Internet Exchange",
         "type": "data_center",
         "subtype": "colocation",
@@ -11747,7 +11857,7 @@
         ]
       },
       "properties": {
-        "id": "dc_298",
+        "id": "dc_299",
         "name": "Equinix Data Center HE6",
         "type": "data_center",
         "subtype": "colocation",
@@ -11782,7 +11892,7 @@
         ]
       },
       "properties": {
-        "id": "dc_299",
+        "id": "dc_300",
         "name": "ЦОД \"Дубровка-1\"",
         "type": "data_center",
         "subtype": "colocation",
@@ -11817,7 +11927,7 @@
         ]
       },
       "properties": {
-        "id": "dc_300",
+        "id": "dc_301",
         "name": "Metas datacenter i Luleå",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -11852,7 +11962,7 @@
         ]
       },
       "properties": {
-        "id": "dc_301",
+        "id": "dc_302",
         "name": "Kolo SE3 Piteå",
         "type": "data_center",
         "subtype": "colocation",
@@ -11887,7 +11997,7 @@
         ]
       },
       "properties": {
-        "id": "dc_302",
+        "id": "dc_303",
         "name": "LPP",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -11922,7 +12032,7 @@
         ]
       },
       "properties": {
-        "id": "dc_303",
+        "id": "dc_304",
         "name": "Google Data Center Fredericia",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -11957,7 +12067,7 @@
         ]
       },
       "properties": {
-        "id": "dc_304",
+        "id": "dc_305",
         "name": "Hetzner data center - HEL1",
         "type": "data_center",
         "subtype": "colocation",
@@ -11992,7 +12102,7 @@
         ]
       },
       "properties": {
-        "id": "dc_305",
+        "id": "dc_306",
         "name": "Prime Data Centers - Saeby Campus AAL01",
         "type": "data_center",
         "subtype": "colocation",
@@ -12027,7 +12137,7 @@
         ]
       },
       "properties": {
-        "id": "dc_306",
+        "id": "dc_307",
         "name": "Telia HDC",
         "type": "data_center",
         "subtype": "colocation",
@@ -12062,7 +12172,7 @@
         ]
       },
       "properties": {
-        "id": "dc_307",
+        "id": "dc_308",
         "name": "Meta Odense Data center",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12097,7 +12207,7 @@
         ]
       },
       "properties": {
-        "id": "dc_308",
+        "id": "dc_309",
         "name": "Equinix Stockholm SK2",
         "type": "data_center",
         "subtype": "colocation",
@@ -12132,7 +12242,7 @@
         ]
       },
       "properties": {
-        "id": "dc_309",
+        "id": "dc_310",
         "name": "AWS eu-north-1 Availability Zone V",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12167,7 +12277,7 @@
         ]
       },
       "properties": {
-        "id": "dc_310",
+        "id": "dc_311",
         "name": "EcoDataCenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -12202,7 +12312,7 @@
         ]
       },
       "properties": {
-        "id": "dc_311",
+        "id": "dc_312",
         "name": "EIA1",
         "type": "data_center",
         "subtype": "colocation",
@@ -12237,7 +12347,7 @@
         ]
       },
       "properties": {
-        "id": "dc_312",
+        "id": "dc_313",
         "name": "Bulk Infrastructure DK01 Campus",
         "type": "data_center",
         "subtype": "colocation",
@@ -12272,7 +12382,7 @@
         ]
       },
       "properties": {
-        "id": "dc_313",
+        "id": "dc_314",
         "name": "Global DC OY",
         "type": "data_center",
         "subtype": "colocation",
@@ -12307,7 +12417,7 @@
         ]
       },
       "properties": {
-        "id": "dc_314",
+        "id": "dc_315",
         "name": "Signal",
         "type": "data_center",
         "subtype": "colocation",
@@ -12342,7 +12452,7 @@
         ]
       },
       "properties": {
-        "id": "dc_315",
+        "id": "dc_316",
         "name": "AWS eu-north-1 Availability Zone K",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12377,7 +12487,7 @@
         ]
       },
       "properties": {
-        "id": "dc_316",
+        "id": "dc_317",
         "name": "Green Mountain Ytre Enebakk",
         "type": "data_center",
         "subtype": "colocation",
@@ -12412,7 +12522,7 @@
         ]
       },
       "properties": {
-        "id": "dc_317",
+        "id": "dc_318",
         "name": "AWS eu-north-1 Availability Zone E",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12447,7 +12557,7 @@
         ]
       },
       "properties": {
-        "id": "dc_318",
+        "id": "dc_319",
         "name": "Microsoft",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12482,7 +12592,7 @@
         ]
       },
       "properties": {
-        "id": "dc_319",
+        "id": "dc_320",
         "name": "Microsoft",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12517,7 +12627,7 @@
         ]
       },
       "properties": {
-        "id": "dc_320",
+        "id": "dc_321",
         "name": "Ficolo The Rock",
         "type": "data_center",
         "subtype": "colocation",
@@ -12552,7 +12662,7 @@
         ]
       },
       "properties": {
-        "id": "dc_321",
+        "id": "dc_322",
         "name": "CPH01",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12587,7 +12697,7 @@
         ]
       },
       "properties": {
-        "id": "dc_322",
+        "id": "dc_323",
         "name": "Microsoft",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12622,7 +12732,7 @@
         ]
       },
       "properties": {
-        "id": "dc_323",
+        "id": "dc_324",
         "name": "CPH07",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12657,7 +12767,7 @@
         ]
       },
       "properties": {
-        "id": "dc_324",
+        "id": "dc_325",
         "name": "Troll Housing",
         "type": "data_center",
         "subtype": "colocation",
@@ -12692,7 +12802,7 @@
         ]
       },
       "properties": {
-        "id": "dc_325",
+        "id": "dc_326",
         "name": "Digital Realty Stockholm STO1-STO5",
         "type": "data_center",
         "subtype": "colocation",
@@ -12727,7 +12837,7 @@
         ]
       },
       "properties": {
-        "id": "dc_326",
+        "id": "dc_327",
         "name": "STACK Infrastructure OSL04",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -12762,7 +12872,7 @@
         ]
       },
       "properties": {
-        "id": "dc_327",
+        "id": "dc_328",
         "name": "ЦОД Ростелеком",
         "type": "data_center",
         "subtype": "colocation",
@@ -12797,7 +12907,7 @@
         ]
       },
       "properties": {
-        "id": "dc_328",
+        "id": "dc_329",
         "name": "ForHLR II",
         "type": "data_center",
         "subtype": "colocation",
@@ -12832,7 +12942,7 @@
         ]
       },
       "properties": {
-        "id": "dc_329",
+        "id": "dc_330",
         "name": "Association ReptiGo",
         "type": "data_center",
         "subtype": "colocation",
@@ -12867,7 +12977,7 @@
         ]
       },
       "properties": {
-        "id": "dc_330",
+        "id": "dc_331",
         "name": "GWDG - Außenstelle",
         "type": "data_center",
         "subtype": "colocation",
@@ -12902,7 +13012,7 @@
         ]
       },
       "properties": {
-        "id": "dc_331",
+        "id": "dc_332",
         "name": "VSHosting s.r.o",
         "type": "data_center",
         "subtype": "colocation",
@@ -12937,7 +13047,7 @@
         ]
       },
       "properties": {
-        "id": "dc_332",
+        "id": "dc_333",
         "name": "Informationstechnikzentrum Bund (ITZBund)",
         "type": "data_center",
         "subtype": "colocation",
@@ -12972,7 +13082,7 @@
         ]
       },
       "properties": {
-        "id": "dc_333",
+        "id": "dc_334",
         "name": "TelemaxX IPC2",
         "type": "data_center",
         "subtype": "colocation",
@@ -13007,7 +13117,7 @@
         ]
       },
       "properties": {
-        "id": "dc_334",
+        "id": "dc_335",
         "name": "NorthC Nürnberg 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -13042,7 +13152,7 @@
         ]
       },
       "properties": {
-        "id": "dc_335",
+        "id": "dc_336",
         "name": "ColocationIX",
         "type": "data_center",
         "subtype": "colocation",
@@ -13077,7 +13187,7 @@
         ]
       },
       "properties": {
-        "id": "dc_336",
+        "id": "dc_337",
         "name": "IT- und Medienzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -13112,7 +13222,7 @@
         ]
       },
       "properties": {
-        "id": "dc_337",
+        "id": "dc_338",
         "name": "Rechenzentrum Citeq",
         "type": "data_center",
         "subtype": "colocation",
@@ -13147,7 +13257,7 @@
         ]
       },
       "properties": {
-        "id": "dc_338",
+        "id": "dc_339",
         "name": "European Business Reliance Centre (EBRC)",
         "type": "data_center",
         "subtype": "colocation",
@@ -13182,7 +13292,7 @@
         ]
       },
       "properties": {
-        "id": "dc_339",
+        "id": "dc_340",
         "name": "Rechenzentrum Paulstrasse 12",
         "type": "data_center",
         "subtype": "colocation",
@@ -13217,7 +13327,7 @@
         ]
       },
       "properties": {
-        "id": "dc_340",
+        "id": "dc_341",
         "name": "SFR Netcenter Strasbourg",
         "type": "data_center",
         "subtype": "colocation",
@@ -13252,7 +13362,7 @@
         ]
       },
       "properties": {
-        "id": "dc_341",
+        "id": "dc_342",
         "name": "Rechenzentrum Akquinet",
         "type": "data_center",
         "subtype": "colocation",
@@ -13287,7 +13397,7 @@
         ]
       },
       "properties": {
-        "id": "dc_342",
+        "id": "dc_343",
         "name": "earthDATAsafe",
         "type": "data_center",
         "subtype": "colocation",
@@ -13322,7 +13432,7 @@
         ]
       },
       "properties": {
-        "id": "dc_343",
+        "id": "dc_344",
         "name": "noris network AG Rechenzentrum Hof",
         "type": "data_center",
         "subtype": "colocation",
@@ -13357,7 +13467,7 @@
         ]
       },
       "properties": {
-        "id": "dc_344",
+        "id": "dc_345",
         "name": "Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -13392,7 +13502,7 @@
         ]
       },
       "properties": {
-        "id": "dc_345",
+        "id": "dc_346",
         "name": "Open Skies One",
         "type": "data_center",
         "subtype": "colocation",
@@ -13427,7 +13537,7 @@
         ]
       },
       "properties": {
-        "id": "dc_346",
+        "id": "dc_347",
         "name": "Colobâle",
         "type": "data_center",
         "subtype": "colocation",
@@ -13462,7 +13572,7 @@
         ]
       },
       "properties": {
-        "id": "dc_347",
+        "id": "dc_348",
         "name": "Datacenter MGEN",
         "type": "data_center",
         "subtype": "colocation",
@@ -13497,7 +13607,7 @@
         ]
       },
       "properties": {
-        "id": "dc_348",
+        "id": "dc_349",
         "name": "Nepustil RZ4",
         "type": "data_center",
         "subtype": "colocation",
@@ -13532,7 +13642,7 @@
         ]
       },
       "properties": {
-        "id": "dc_349",
+        "id": "dc_350",
         "name": "forpsi DC CZ1",
         "type": "data_center",
         "subtype": "colocation",
@@ -13567,7 +13677,7 @@
         ]
       },
       "properties": {
-        "id": "dc_350",
+        "id": "dc_351",
         "name": "IPB Internet Provider in Berlin GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -13602,7 +13712,7 @@
         ]
       },
       "properties": {
-        "id": "dc_351",
+        "id": "dc_352",
         "name": "Datacenter Thurgau",
         "type": "data_center",
         "subtype": "colocation",
@@ -13637,7 +13747,7 @@
         ]
       },
       "properties": {
-        "id": "dc_352",
+        "id": "dc_353",
         "name": "CarrierColo Berlin K",
         "type": "data_center",
         "subtype": "colocation",
@@ -13672,7 +13782,7 @@
         ]
       },
       "properties": {
-        "id": "dc_353",
+        "id": "dc_354",
         "name": "RZ CAMPUS",
         "type": "data_center",
         "subtype": "colocation",
@@ -13707,7 +13817,7 @@
         ]
       },
       "properties": {
-        "id": "dc_354",
+        "id": "dc_355",
         "name": "MasterDC Praha",
         "type": "data_center",
         "subtype": "colocation",
@@ -13742,7 +13852,7 @@
         ]
       },
       "properties": {
-        "id": "dc_355",
+        "id": "dc_356",
         "name": "DC6.cz",
         "type": "data_center",
         "subtype": "colocation",
@@ -13777,7 +13887,7 @@
         ]
       },
       "properties": {
-        "id": "dc_356",
+        "id": "dc_357",
         "name": "Datové centrum Zeleneč",
         "type": "data_center",
         "subtype": "colocation",
@@ -13812,7 +13922,7 @@
         ]
       },
       "properties": {
-        "id": "dc_357",
+        "id": "dc_358",
         "name": "Universitätsrechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -13847,7 +13957,7 @@
         ]
       },
       "properties": {
-        "id": "dc_358",
+        "id": "dc_359",
         "name": "Iron Mountain FRA-2",
         "type": "data_center",
         "subtype": "colocation",
@@ -13882,7 +13992,7 @@
         ]
       },
       "properties": {
-        "id": "dc_359",
+        "id": "dc_360",
         "name": "Microsoft",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -13917,7 +14027,7 @@
         ]
       },
       "properties": {
-        "id": "dc_360",
+        "id": "dc_361",
         "name": "T-Mobile",
         "type": "data_center",
         "subtype": "colocation",
@@ -13952,7 +14062,7 @@
         ]
       },
       "properties": {
-        "id": "dc_361",
+        "id": "dc_362",
         "name": "Rechenzentrum AtlasEdge HAM002",
         "type": "data_center",
         "subtype": "colocation",
@@ -13987,7 +14097,7 @@
         ]
       },
       "properties": {
-        "id": "dc_362",
+        "id": "dc_363",
         "name": "NIC",
         "type": "data_center",
         "subtype": "colocation",
@@ -14022,7 +14132,7 @@
         ]
       },
       "properties": {
-        "id": "dc_363",
+        "id": "dc_364",
         "name": "Gauß-IT-Zentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -14057,7 +14167,7 @@
         ]
       },
       "properties": {
-        "id": "dc_364",
+        "id": "dc_365",
         "name": "TTC DC1",
         "type": "data_center",
         "subtype": "colocation",
@@ -14092,7 +14202,7 @@
         ]
       },
       "properties": {
-        "id": "dc_365",
+        "id": "dc_366",
         "name": "IT- und Data Center Linz",
         "type": "data_center",
         "subtype": "colocation",
@@ -14127,7 +14237,7 @@
         ]
       },
       "properties": {
-        "id": "dc_366",
+        "id": "dc_367",
         "name": "IT- und Data Center Linz",
         "type": "data_center",
         "subtype": "colocation",
@@ -14162,7 +14272,7 @@
         ]
       },
       "properties": {
-        "id": "dc_367",
+        "id": "dc_368",
         "name": "stoltenhoff.net",
         "type": "data_center",
         "subtype": "colocation",
@@ -14197,7 +14307,7 @@
         ]
       },
       "properties": {
-        "id": "dc_368",
+        "id": "dc_369",
         "name": "ennit GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -14232,7 +14342,7 @@
         ]
       },
       "properties": {
-        "id": "dc_369",
+        "id": "dc_370",
         "name": "Rechenzentrum Nürnberg Zentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -14267,7 +14377,7 @@
         ]
       },
       "properties": {
-        "id": "dc_370",
+        "id": "dc_371",
         "name": "Equinix MU1",
         "type": "data_center",
         "subtype": "colocation",
@@ -14302,7 +14412,7 @@
         ]
       },
       "properties": {
-        "id": "dc_371",
+        "id": "dc_372",
         "name": "NorthC München 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -14337,7 +14447,7 @@
         ]
       },
       "properties": {
-        "id": "dc_372",
+        "id": "dc_373",
         "name": "INGATE GmbH Rechenzentrum München",
         "type": "data_center",
         "subtype": "colocation",
@@ -14372,7 +14482,7 @@
         ]
       },
       "properties": {
-        "id": "dc_373",
+        "id": "dc_374",
         "name": "CSA Computer Service Agentur GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -14407,7 +14517,7 @@
         ]
       },
       "properties": {
-        "id": "dc_374",
+        "id": "dc_375",
         "name": "euNetworks Colocation Hannover",
         "type": "data_center",
         "subtype": "colocation",
@@ -14442,7 +14552,7 @@
         ]
       },
       "properties": {
-        "id": "dc_375",
+        "id": "dc_376",
         "name": "DATAC",
         "type": "data_center",
         "subtype": "colocation",
@@ -14477,7 +14587,7 @@
         ]
       },
       "properties": {
-        "id": "dc_376",
+        "id": "dc_377",
         "name": "Universitätsrechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -14512,7 +14622,7 @@
         ]
       },
       "properties": {
-        "id": "dc_377",
+        "id": "dc_378",
         "name": "Neo Center Est",
         "type": "data_center",
         "subtype": "colocation",
@@ -14547,7 +14657,7 @@
         ]
       },
       "properties": {
-        "id": "dc_378",
+        "id": "dc_379",
         "name": "DC Tower",
         "type": "data_center",
         "subtype": "colocation",
@@ -14582,7 +14692,7 @@
         ]
       },
       "properties": {
-        "id": "dc_379",
+        "id": "dc_380",
         "name": "Kyndryl Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -14617,7 +14727,7 @@
         ]
       },
       "properties": {
-        "id": "dc_380",
+        "id": "dc_381",
         "name": "NorthC München 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -14652,7 +14762,7 @@
         ]
       },
       "properties": {
-        "id": "dc_381",
+        "id": "dc_382",
         "name": "SafeDX s.r.o.",
         "type": "data_center",
         "subtype": "colocation",
@@ -14687,7 +14797,7 @@
         ]
       },
       "properties": {
-        "id": "dc_382",
+        "id": "dc_383",
         "name": "Rechenzentrum Garching",
         "type": "data_center",
         "subtype": "colocation",
@@ -14722,7 +14832,7 @@
         ]
       },
       "properties": {
-        "id": "dc_383",
+        "id": "dc_384",
         "name": "Equinix FR4",
         "type": "data_center",
         "subtype": "colocation",
@@ -14757,7 +14867,7 @@
         ]
       },
       "properties": {
-        "id": "dc_384",
+        "id": "dc_385",
         "name": "T-Systems Magdeburg",
         "type": "data_center",
         "subtype": "colocation",
@@ -14792,7 +14902,7 @@
         ]
       },
       "properties": {
-        "id": "dc_385",
+        "id": "dc_386",
         "name": "BER1",
         "type": "data_center",
         "subtype": "colocation",
@@ -14827,7 +14937,7 @@
         ]
       },
       "properties": {
-        "id": "dc_386",
+        "id": "dc_387",
         "name": "EWE NETZ GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -14862,7 +14972,7 @@
         ]
       },
       "properties": {
-        "id": "dc_387",
+        "id": "dc_388",
         "name": "NSA Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -14897,7 +15007,7 @@
         ]
       },
       "properties": {
-        "id": "dc_388",
+        "id": "dc_389",
         "name": "Verizon Luxembourg",
         "type": "data_center",
         "subtype": "colocation",
@@ -14932,7 +15042,7 @@
         ]
       },
       "properties": {
-        "id": "dc_389",
+        "id": "dc_390",
         "name": "NorthC Hamburg 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -14967,7 +15077,7 @@
         ]
       },
       "properties": {
-        "id": "dc_390",
+        "id": "dc_391",
         "name": "Kyndryl Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -15002,7 +15112,7 @@
         ]
       },
       "properties": {
-        "id": "dc_391",
+        "id": "dc_392",
         "name": "Quiri",
         "type": "data_center",
         "subtype": "colocation",
@@ -15037,7 +15147,7 @@
         ]
       },
       "properties": {
-        "id": "dc_392",
+        "id": "dc_393",
         "name": "noris network NBG6 BA1",
         "type": "data_center",
         "subtype": "colocation",
@@ -15072,7 +15182,7 @@
         ]
       },
       "properties": {
-        "id": "dc_393",
+        "id": "dc_394",
         "name": "Interoute Strasbourg",
         "type": "data_center",
         "subtype": "colocation",
@@ -15107,7 +15217,7 @@
         ]
       },
       "properties": {
-        "id": "dc_394",
+        "id": "dc_395",
         "name": "Digital Realty FRA4",
         "type": "data_center",
         "subtype": "colocation",
@@ -15142,7 +15252,7 @@
         ]
       },
       "properties": {
-        "id": "dc_395",
+        "id": "dc_396",
         "name": "iNTERWERK Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -15177,7 +15287,7 @@
         ]
       },
       "properties": {
-        "id": "dc_396",
+        "id": "dc_397",
         "name": "DC Stodůlky",
         "type": "data_center",
         "subtype": "colocation",
@@ -15212,7 +15322,7 @@
         ]
       },
       "properties": {
-        "id": "dc_397",
+        "id": "dc_398",
         "name": "TTC TELEPORT - DC2",
         "type": "data_center",
         "subtype": "colocation",
@@ -15247,7 +15357,7 @@
         ]
       },
       "properties": {
-        "id": "dc_398",
+        "id": "dc_399",
         "name": "DC Vega",
         "type": "data_center",
         "subtype": "colocation",
@@ -15282,7 +15392,7 @@
         ]
       },
       "properties": {
-        "id": "dc_399",
+        "id": "dc_400",
         "name": "TelemaxX IPC1",
         "type": "data_center",
         "subtype": "colocation",
@@ -15317,7 +15427,7 @@
         ]
       },
       "properties": {
-        "id": "dc_400",
+        "id": "dc_401",
         "name": "DARZ - Darmstädter Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -15352,7 +15462,7 @@
         ]
       },
       "properties": {
-        "id": "dc_401",
+        "id": "dc_402",
         "name": "WEDOS DC 1 Masarykova",
         "type": "data_center",
         "subtype": "colocation",
@@ -15387,7 +15497,7 @@
         ]
       },
       "properties": {
-        "id": "dc_402",
+        "id": "dc_403",
         "name": "Equinix",
         "type": "data_center",
         "subtype": "colocation",
@@ -15422,7 +15532,7 @@
         ]
       },
       "properties": {
-        "id": "dc_403",
+        "id": "dc_404",
         "name": "Telekom-Tower",
         "type": "data_center",
         "subtype": "colocation",
@@ -15457,7 +15567,7 @@
         ]
       },
       "properties": {
-        "id": "dc_404",
+        "id": "dc_405",
         "name": "Equinix FR7",
         "type": "data_center",
         "subtype": "colocation",
@@ -15492,7 +15602,7 @@
         ]
       },
       "properties": {
-        "id": "dc_405",
+        "id": "dc_406",
         "name": "I.T.E.N.O.S. Frankfurt - B",
         "type": "data_center",
         "subtype": "colocation",
@@ -15527,7 +15637,7 @@
         ]
       },
       "properties": {
-        "id": "dc_406",
+        "id": "dc_407",
         "name": "ITSMZ",
         "type": "data_center",
         "subtype": "colocation",
@@ -15562,7 +15672,7 @@
         ]
       },
       "properties": {
-        "id": "dc_407",
+        "id": "dc_408",
         "name": "NTT",
         "type": "data_center",
         "subtype": "colocation",
@@ -15597,7 +15707,7 @@
         ]
       },
       "properties": {
-        "id": "dc_408",
+        "id": "dc_409",
         "name": "Datacenter Mutualisé Lorrain",
         "type": "data_center",
         "subtype": "colocation",
@@ -15632,7 +15742,7 @@
         ]
       },
       "properties": {
-        "id": "dc_409",
+        "id": "dc_410",
         "name": "Rechenzentrum PFALZKOM, DCRN I",
         "type": "data_center",
         "subtype": "colocation",
@@ -15667,7 +15777,7 @@
         ]
       },
       "properties": {
-        "id": "dc_410",
+        "id": "dc_411",
         "name": "Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -15702,7 +15812,7 @@
         ]
       },
       "properties": {
-        "id": "dc_411",
+        "id": "dc_412",
         "name": "Inexio",
         "type": "data_center",
         "subtype": "colocation",
@@ -15737,7 +15847,7 @@
         ]
       },
       "properties": {
-        "id": "dc_412",
+        "id": "dc_413",
         "name": "Boreus Rechenzentrum GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -15772,7 +15882,7 @@
         ]
       },
       "properties": {
-        "id": "dc_413",
+        "id": "dc_414",
         "name": "DC Chodov",
         "type": "data_center",
         "subtype": "colocation",
@@ -15807,7 +15917,7 @@
         ]
       },
       "properties": {
-        "id": "dc_414",
+        "id": "dc_415",
         "name": "EBRC Resilience Centre Luxembourg West",
         "type": "data_center",
         "subtype": "colocation",
@@ -15842,7 +15952,7 @@
         ]
       },
       "properties": {
-        "id": "dc_415",
+        "id": "dc_416",
         "name": "Dernbach 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -15877,7 +15987,7 @@
         ]
       },
       "properties": {
-        "id": "dc_416",
+        "id": "dc_417",
         "name": "net.DE AG",
         "type": "data_center",
         "subtype": "colocation",
@@ -15912,7 +16022,7 @@
         ]
       },
       "properties": {
-        "id": "dc_417",
+        "id": "dc_418",
         "name": "CE Colo",
         "type": "data_center",
         "subtype": "colocation",
@@ -15947,7 +16057,7 @@
         ]
       },
       "properties": {
-        "id": "dc_418",
+        "id": "dc_419",
         "name": "Datenstelle der Rentenversicherung",
         "type": "data_center",
         "subtype": "colocation",
@@ -15982,7 +16092,7 @@
         ]
       },
       "properties": {
-        "id": "dc_419",
+        "id": "dc_420",
         "name": "ICT Campus Bettembourg DC 1.2",
         "type": "data_center",
         "subtype": "colocation",
@@ -16017,7 +16127,7 @@
         ]
       },
       "properties": {
-        "id": "dc_420",
+        "id": "dc_421",
         "name": "EBRC Resilience Centre Luxembourg South",
         "type": "data_center",
         "subtype": "colocation",
@@ -16052,7 +16162,7 @@
         ]
       },
       "properties": {
-        "id": "dc_421",
+        "id": "dc_422",
         "name": "Vantage Data Center (FRA1)",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -16087,7 +16197,7 @@
         ]
       },
       "properties": {
-        "id": "dc_422",
+        "id": "dc_423",
         "name": "NTT DATA Business Solutions Global Managed Services",
         "type": "data_center",
         "subtype": "colocation",
@@ -16122,7 +16232,7 @@
         ]
       },
       "properties": {
-        "id": "dc_423",
+        "id": "dc_424",
         "name": "Planet IC",
         "type": "data_center",
         "subtype": "colocation",
@@ -16157,7 +16267,7 @@
         ]
       },
       "properties": {
-        "id": "dc_424",
+        "id": "dc_425",
         "name": "NorthC Berlin 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -16192,7 +16302,7 @@
         ]
       },
       "properties": {
-        "id": "dc_425",
+        "id": "dc_426",
         "name": "Vantage Data Center FRA31",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -16227,7 +16337,7 @@
         ]
       },
       "properties": {
-        "id": "dc_426",
+        "id": "dc_427",
         "name": "Siemens EAGLE Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -16262,7 +16372,7 @@
         ]
       },
       "properties": {
-        "id": "dc_427",
+        "id": "dc_428",
         "name": "EBRC Resilience Centre Luxembourg East",
         "type": "data_center",
         "subtype": "colocation",
@@ -16297,7 +16407,7 @@
         ]
       },
       "properties": {
-        "id": "dc_428",
+        "id": "dc_429",
         "name": "Rechenzentrum Ellhofen",
         "type": "data_center",
         "subtype": "colocation",
@@ -16332,7 +16442,7 @@
         ]
       },
       "properties": {
-        "id": "dc_429",
+        "id": "dc_430",
         "name": "WKNJ00",
         "type": "data_center",
         "subtype": "colocation",
@@ -16367,7 +16477,7 @@
         ]
       },
       "properties": {
-        "id": "dc_430",
+        "id": "dc_431",
         "name": "OVHcloud LIM1-3 Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -16402,7 +16512,7 @@
         ]
       },
       "properties": {
-        "id": "dc_431",
+        "id": "dc_432",
         "name": "General Logistics Systems Germany GmbH & Co. OHG",
         "type": "data_center",
         "subtype": "colocation",
@@ -16437,7 +16547,7 @@
         ]
       },
       "properties": {
-        "id": "dc_432",
+        "id": "dc_433",
         "name": "NorthC Frankfurt 3",
         "type": "data_center",
         "subtype": "colocation",
@@ -16472,7 +16582,7 @@
         ]
       },
       "properties": {
-        "id": "dc_433",
+        "id": "dc_434",
         "name": "Stadtwerke Lüdenscheid GmbH (ENERVIE-Gruppe)",
         "type": "data_center",
         "subtype": "colocation",
@@ -16507,7 +16617,7 @@
         ]
       },
       "properties": {
-        "id": "dc_434",
+        "id": "dc_435",
         "name": "TelemaxX IPC4",
         "type": "data_center",
         "subtype": "colocation",
@@ -16542,7 +16652,7 @@
         ]
       },
       "properties": {
-        "id": "dc_435",
+        "id": "dc_436",
         "name": "T-Systems Biere Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -16577,7 +16687,7 @@
         ]
       },
       "properties": {
-        "id": "dc_436",
+        "id": "dc_437",
         "name": "noris network FRA1",
         "type": "data_center",
         "subtype": "colocation",
@@ -16612,7 +16722,7 @@
         ]
       },
       "properties": {
-        "id": "dc_437",
+        "id": "dc_438",
         "name": "Bundesnachrichtendienst Pullach Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -16647,7 +16757,7 @@
         ]
       },
       "properties": {
-        "id": "dc_438",
+        "id": "dc_439",
         "name": "TelemaxX IPC3",
         "type": "data_center",
         "subtype": "colocation",
@@ -16682,7 +16792,7 @@
         ]
       },
       "properties": {
-        "id": "dc_439",
+        "id": "dc_440",
         "name": "Equinix FR2",
         "type": "data_center",
         "subtype": "colocation",
@@ -16717,7 +16827,7 @@
         ]
       },
       "properties": {
-        "id": "dc_440",
+        "id": "dc_441",
         "name": "GAD-Rechenzentrum 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -16752,7 +16862,7 @@
         ]
       },
       "properties": {
-        "id": "dc_441",
+        "id": "dc_442",
         "name": "Rechenzentrum KÜS Data",
         "type": "data_center",
         "subtype": "colocation",
@@ -16787,7 +16897,7 @@
         ]
       },
       "properties": {
-        "id": "dc_442",
+        "id": "dc_443",
         "name": "noris Munich MUC5",
         "type": "data_center",
         "subtype": "colocation",
@@ -16822,7 +16932,7 @@
         ]
       },
       "properties": {
-        "id": "dc_443",
+        "id": "dc_444",
         "name": "Mainova WebHouse",
         "type": "data_center",
         "subtype": "colocation",
@@ -16857,7 +16967,7 @@
         ]
       },
       "properties": {
-        "id": "dc_444",
+        "id": "dc_445",
         "name": "Datové centrum Kokura",
         "type": "data_center",
         "subtype": "colocation",
@@ -16892,7 +17002,7 @@
         ]
       },
       "properties": {
-        "id": "dc_445",
+        "id": "dc_446",
         "name": "synaforce GmbH",
         "type": "data_center",
         "subtype": "colocation",
@@ -16927,7 +17037,7 @@
         ]
       },
       "properties": {
-        "id": "dc_446",
+        "id": "dc_447",
         "name": "TelemaxX IPC5",
         "type": "data_center",
         "subtype": "colocation",
@@ -16962,7 +17072,7 @@
         ]
       },
       "properties": {
-        "id": "dc_447",
+        "id": "dc_448",
         "name": "Servergebäude",
         "type": "data_center",
         "subtype": "colocation",
@@ -16997,7 +17107,7 @@
         ]
       },
       "properties": {
-        "id": "dc_448",
+        "id": "dc_449",
         "name": "Hetzner – Rechenzentrumspark Falkenstein",
         "type": "data_center",
         "subtype": "colocation",
@@ -17032,7 +17142,7 @@
         ]
       },
       "properties": {
-        "id": "dc_449",
+        "id": "dc_450",
         "name": "Telekom Vermittlungsstelle",
         "type": "data_center",
         "subtype": "colocation",
@@ -17067,7 +17177,7 @@
         ]
       },
       "properties": {
-        "id": "dc_450",
+        "id": "dc_451",
         "name": "Datové centrum DC7",
         "type": "data_center",
         "subtype": "colocation",
@@ -17102,7 +17212,7 @@
         ]
       },
       "properties": {
-        "id": "dc_451",
+        "id": "dc_452",
         "name": "SAP WDF51",
         "type": "data_center",
         "subtype": "colocation",
@@ -17137,7 +17247,7 @@
         ]
       },
       "properties": {
-        "id": "dc_452",
+        "id": "dc_453",
         "name": "VegaSystems GmbH & Co. KG",
         "type": "data_center",
         "subtype": "colocation",
@@ -17172,7 +17282,7 @@
         ]
       },
       "properties": {
-        "id": "dc_453",
+        "id": "dc_454",
         "name": "LEITWERK Rechenzentrum Appenweier",
         "type": "data_center",
         "subtype": "colocation",
@@ -17207,7 +17317,7 @@
         ]
       },
       "properties": {
-        "id": "dc_454",
+        "id": "dc_455",
         "name": "Rechenzentrum Ostermiething",
         "type": "data_center",
         "subtype": "colocation",
@@ -17242,7 +17352,7 @@
         ]
       },
       "properties": {
-        "id": "dc_455",
+        "id": "dc_456",
         "name": "Hetzner Online GmbH - NBG1",
         "type": "data_center",
         "subtype": "colocation",
@@ -17277,7 +17387,7 @@
         ]
       },
       "properties": {
-        "id": "dc_456",
+        "id": "dc_457",
         "name": "NorthC data centers Basel",
         "type": "data_center",
         "subtype": "colocation",
@@ -17312,7 +17422,7 @@
         ]
       },
       "properties": {
-        "id": "dc_457",
+        "id": "dc_458",
         "name": "Gebäude 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -17347,7 +17457,7 @@
         ]
       },
       "properties": {
-        "id": "dc_458",
+        "id": "dc_459",
         "name": "Rechenzentrum PFALZKOM, DCRN II",
         "type": "data_center",
         "subtype": "colocation",
@@ -17382,7 +17492,7 @@
         ]
       },
       "properties": {
-        "id": "dc_459",
+        "id": "dc_460",
         "name": "MLH1",
         "type": "data_center",
         "subtype": "colocation",
@@ -17417,7 +17527,7 @@
         ]
       },
       "properties": {
-        "id": "dc_460",
+        "id": "dc_461",
         "name": "WEDOS DC2 Podskalí",
         "type": "data_center",
         "subtype": "colocation",
@@ -17452,7 +17562,7 @@
         ]
       },
       "properties": {
-        "id": "dc_461",
+        "id": "dc_462",
         "name": "PoP-Hauptverteiler",
         "type": "data_center",
         "subtype": "colocation",
@@ -17487,7 +17597,7 @@
         ]
       },
       "properties": {
-        "id": "dc_462",
+        "id": "dc_463",
         "name": "PoP Hauptverteiler",
         "type": "data_center",
         "subtype": "colocation",
@@ -17522,7 +17632,7 @@
         ]
       },
       "properties": {
-        "id": "dc_463",
+        "id": "dc_464",
         "name": "PoP-Hauptverteiler",
         "type": "data_center",
         "subtype": "colocation",
@@ -17557,7 +17667,7 @@
         ]
       },
       "properties": {
-        "id": "dc_464",
+        "id": "dc_465",
         "name": "CyrusOne FRA3",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -17592,7 +17702,7 @@
         ]
       },
       "properties": {
-        "id": "dc_465",
+        "id": "dc_466",
         "name": "Conova Communications",
         "type": "data_center",
         "subtype": "colocation",
@@ -17627,7 +17737,7 @@
         ]
       },
       "properties": {
-        "id": "dc_466",
+        "id": "dc_467",
         "name": "OVHcloud Strasbourg - SBG-3",
         "type": "data_center",
         "subtype": "colocation",
@@ -17662,7 +17772,7 @@
         ]
       },
       "properties": {
-        "id": "dc_467",
+        "id": "dc_468",
         "name": "EVF-Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -17697,7 +17807,7 @@
         ]
       },
       "properties": {
-        "id": "dc_468",
+        "id": "dc_469",
         "name": "ZRH1",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -17732,7 +17842,7 @@
         ]
       },
       "properties": {
-        "id": "dc_469",
+        "id": "dc_470",
         "name": "STACK Infrastructre - ZUR01A",
         "type": "data_center",
         "subtype": "colocation",
@@ -17767,7 +17877,7 @@
         ]
       },
       "properties": {
-        "id": "dc_470",
+        "id": "dc_471",
         "name": "Advanced Mediomatrix",
         "type": "data_center",
         "subtype": "colocation",
@@ -17802,7 +17912,7 @@
         ]
       },
       "properties": {
-        "id": "dc_471",
+        "id": "dc_472",
         "name": "Rechenzentrum Thüringer Netkom",
         "type": "data_center",
         "subtype": "colocation",
@@ -17837,7 +17947,7 @@
         ]
       },
       "properties": {
-        "id": "dc_472",
+        "id": "dc_473",
         "name": "BER2",
         "type": "data_center",
         "subtype": "colocation",
@@ -17872,7 +17982,7 @@
         ]
       },
       "properties": {
-        "id": "dc_473",
+        "id": "dc_474",
         "name": "CA31",
         "type": "data_center",
         "subtype": "colocation",
@@ -17907,7 +18017,7 @@
         ]
       },
       "properties": {
-        "id": "dc_474",
+        "id": "dc_475",
         "name": "BER11",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -17942,7 +18052,7 @@
         ]
       },
       "properties": {
-        "id": "dc_475",
+        "id": "dc_476",
         "name": "DC7 - Euclyde Datacenters",
         "type": "data_center",
         "subtype": "colocation",
@@ -17977,7 +18087,7 @@
         ]
       },
       "properties": {
-        "id": "dc_476",
+        "id": "dc_477",
         "name": "rockenstein AG",
         "type": "data_center",
         "subtype": "colocation",
@@ -18012,7 +18122,7 @@
         ]
       },
       "properties": {
-        "id": "dc_477",
+        "id": "dc_478",
         "name": "T-Mobile Rechenzentrum Graz",
         "type": "data_center",
         "subtype": "colocation",
@@ -18047,7 +18157,7 @@
         ]
       },
       "properties": {
-        "id": "dc_478",
+        "id": "dc_479",
         "name": "Digital Realty FRA17",
         "type": "data_center",
         "subtype": "colocation",
@@ -18082,7 +18192,7 @@
         ]
       },
       "properties": {
-        "id": "dc_479",
+        "id": "dc_480",
         "name": "CloudHQ",
         "type": "data_center",
         "subtype": "colocation",
@@ -18117,7 +18227,7 @@
         ]
       },
       "properties": {
-        "id": "dc_480",
+        "id": "dc_481",
         "name": "nexspace Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -18152,7 +18262,7 @@
         ]
       },
       "properties": {
-        "id": "dc_481",
+        "id": "dc_482",
         "name": "Vantage Data Center FRA21",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -18187,7 +18297,7 @@
         ]
       },
       "properties": {
-        "id": "dc_482",
+        "id": "dc_483",
         "name": "2539",
         "type": "data_center",
         "subtype": "colocation",
@@ -18222,7 +18332,7 @@
         ]
       },
       "properties": {
-        "id": "dc_483",
+        "id": "dc_484",
         "name": "Datové centrum Nagoja",
         "type": "data_center",
         "subtype": "colocation",
@@ -18257,7 +18367,7 @@
         ]
       },
       "properties": {
-        "id": "dc_484",
+        "id": "dc_485",
         "name": "Rechenzentrum BER01",
         "type": "data_center",
         "subtype": "colocation",
@@ -18292,7 +18402,7 @@
         ]
       },
       "properties": {
-        "id": "dc_485",
+        "id": "dc_486",
         "name": "Wavehouse",
         "type": "data_center",
         "subtype": "colocation",
@@ -18327,7 +18437,7 @@
         ]
       },
       "properties": {
-        "id": "dc_486",
+        "id": "dc_487",
         "name": "Vantage Berlin II (BER2)",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -18362,7 +18472,7 @@
         ]
       },
       "properties": {
-        "id": "dc_487",
+        "id": "dc_488",
         "name": "Destination Earth Data Bridge",
         "type": "data_center",
         "subtype": "colocation",
@@ -18397,7 +18507,7 @@
         ]
       },
       "properties": {
-        "id": "dc_488",
+        "id": "dc_489",
         "name": "Digital Realty FRA33",
         "type": "data_center",
         "subtype": "colocation",
@@ -18432,7 +18542,7 @@
         ]
       },
       "properties": {
-        "id": "dc_489",
+        "id": "dc_490",
         "name": "Yondr - Rechenzentrum",
         "type": "data_center",
         "subtype": "colocation",
@@ -18467,7 +18577,7 @@
         ]
       },
       "properties": {
-        "id": "dc_490",
+        "id": "dc_491",
         "name": "DMO",
         "type": "data_center",
         "subtype": "colocation",
@@ -18502,7 +18612,7 @@
         ]
       },
       "properties": {
-        "id": "dc_491",
+        "id": "dc_492",
         "name": "EdgeConneX",
         "type": "data_center",
         "subtype": "colocation",
@@ -18537,7 +18647,7 @@
         ]
       },
       "properties": {
-        "id": "dc_492",
+        "id": "dc_493",
         "name": "Hub Europe",
         "type": "data_center",
         "subtype": "colocation",
@@ -18572,7 +18682,7 @@
         ]
       },
       "properties": {
-        "id": "dc_493",
+        "id": "dc_494",
         "name": "ZUR02",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -18607,7 +18717,7 @@
         ]
       },
       "properties": {
-        "id": "dc_494",
+        "id": "dc_495",
         "name": "Datenverarbeitungszentrum Mecklenburg-Vorpommern",
         "type": "data_center",
         "subtype": "colocation",
@@ -18642,7 +18752,7 @@
         ]
       },
       "properties": {
-        "id": "dc_495",
+        "id": "dc_496",
         "name": "ekom21",
         "type": "data_center",
         "subtype": "colocation",
@@ -18677,7 +18787,7 @@
         ]
       },
       "properties": {
-        "id": "dc_496",
+        "id": "dc_497",
         "name": "DXC Technology Company",
         "type": "data_center",
         "subtype": "colocation",
@@ -18712,7 +18822,7 @@
         ]
       },
       "properties": {
-        "id": "dc_497",
+        "id": "dc_498",
         "name": "Höchstleistungsrechenzentrum der Universität Stuttgart",
         "type": "data_center",
         "subtype": "colocation",
@@ -18747,7 +18857,7 @@
         ]
       },
       "properties": {
-        "id": "dc_498",
+        "id": "dc_499",
         "name": "Gebäude 94/95",
         "type": "data_center",
         "subtype": "colocation",
@@ -18782,7 +18892,7 @@
         ]
       },
       "properties": {
-        "id": "dc_499",
+        "id": "dc_500",
         "name": "SFR Netcenter Courbevoie",
         "type": "data_center",
         "subtype": "colocation",
@@ -18817,7 +18927,7 @@
         ]
       },
       "properties": {
-        "id": "dc_500",
+        "id": "dc_501",
         "name": "LyonIX 1 IN2P3",
         "type": "data_center",
         "subtype": "colocation",
@@ -18852,7 +18962,7 @@
         ]
       },
       "properties": {
-        "id": "dc_501",
+        "id": "dc_502",
         "name": "Telehouse Paris Voltaire",
         "type": "data_center",
         "subtype": "colocation",
@@ -18887,7 +18997,7 @@
         ]
       },
       "properties": {
-        "id": "dc_502",
+        "id": "dc_503",
         "name": "Scitis-Zen DataCenter Hitachi",
         "type": "data_center",
         "subtype": "colocation",
@@ -18922,7 +19032,7 @@
         ]
       },
       "properties": {
-        "id": "dc_503",
+        "id": "dc_504",
         "name": "Telehouse 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -18957,7 +19067,7 @@
         ]
       },
       "properties": {
-        "id": "dc_504",
+        "id": "dc_505",
         "name": "Interxion PAR6",
         "type": "data_center",
         "subtype": "colocation",
@@ -18992,7 +19102,7 @@
         ]
       },
       "properties": {
-        "id": "dc_505",
+        "id": "dc_506",
         "name": "TDF ProxiCenter Bordeaux Bouliac",
         "type": "data_center",
         "subtype": "colocation",
@@ -19027,7 +19137,7 @@
         ]
       },
       "properties": {
-        "id": "dc_506",
+        "id": "dc_507",
         "name": "TDF ProxiCenter de Rennes-Cesson",
         "type": "data_center",
         "subtype": "colocation",
@@ -19062,7 +19172,7 @@
         ]
       },
       "properties": {
-        "id": "dc_507",
+        "id": "dc_508",
         "name": "Colt Paris 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -19097,7 +19207,7 @@
         ]
       },
       "properties": {
-        "id": "dc_508",
+        "id": "dc_509",
         "name": "Colt Paris 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -19132,7 +19242,7 @@
         ]
       },
       "properties": {
-        "id": "dc_509",
+        "id": "dc_510",
         "name": "Colt Lyon",
         "type": "data_center",
         "subtype": "colocation",
@@ -19167,7 +19277,7 @@
         ]
       },
       "properties": {
-        "id": "dc_510",
+        "id": "dc_511",
         "name": "Bouygues Telecom Montigny-le-Bretonneux",
         "type": "data_center",
         "subtype": "colocation",
@@ -19202,7 +19312,7 @@
         ]
       },
       "properties": {
-        "id": "dc_511",
+        "id": "dc_512",
         "name": "Equinix PA7",
         "type": "data_center",
         "subtype": "colocation",
@@ -19237,7 +19347,7 @@
         ]
       },
       "properties": {
-        "id": "dc_512",
+        "id": "dc_513",
         "name": "Cogent Nantes",
         "type": "data_center",
         "subtype": "colocation",
@@ -19272,7 +19382,7 @@
         ]
       },
       "properties": {
-        "id": "dc_513",
+        "id": "dc_514",
         "name": "Cogent Paris 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -19307,7 +19417,7 @@
         ]
       },
       "properties": {
-        "id": "dc_514",
+        "id": "dc_515",
         "name": "Cogent Poitiers",
         "type": "data_center",
         "subtype": "colocation",
@@ -19342,7 +19452,7 @@
         ]
       },
       "properties": {
-        "id": "dc_515",
+        "id": "dc_516",
         "name": "LASOTEL PIXEL69",
         "type": "data_center",
         "subtype": "colocation",
@@ -19377,7 +19487,7 @@
         ]
       },
       "properties": {
-        "id": "dc_516",
+        "id": "dc_517",
         "name": "ELB Group - DATACENTER LYON 3",
         "type": "data_center",
         "subtype": "colocation",
@@ -19412,7 +19522,7 @@
         ]
       },
       "properties": {
-        "id": "dc_517",
+        "id": "dc_518",
         "name": "SynAApS - SaaS, PaaS, Housing",
         "type": "data_center",
         "subtype": "colocation",
@@ -19447,7 +19557,7 @@
         ]
       },
       "properties": {
-        "id": "dc_518",
+        "id": "dc_519",
         "name": "Etix Vendée #2",
         "type": "data_center",
         "subtype": "colocation",
@@ -19482,7 +19592,7 @@
         ]
       },
       "properties": {
-        "id": "dc_519",
+        "id": "dc_520",
         "name": "OVHcloud Paris",
         "type": "data_center",
         "subtype": "colocation",
@@ -19517,7 +19627,7 @@
         ]
       },
       "properties": {
-        "id": "dc_520",
+        "id": "dc_521",
         "name": "Scaleway Datacenter DC4",
         "type": "data_center",
         "subtype": "colocation",
@@ -19552,7 +19662,7 @@
         ]
       },
       "properties": {
-        "id": "dc_521",
+        "id": "dc_522",
         "name": "Telia ROSY Villepinte",
         "type": "data_center",
         "subtype": "colocation",
@@ -19587,7 +19697,7 @@
         ]
       },
       "properties": {
-        "id": "dc_522",
+        "id": "dc_523",
         "name": "Ad Valem technologies TDF",
         "type": "data_center",
         "subtype": "colocation",
@@ -19622,7 +19732,7 @@
         ]
       },
       "properties": {
-        "id": "dc_523",
+        "id": "dc_524",
         "name": "Level (3) Le Capitole Nanterre",
         "type": "data_center",
         "subtype": "colocation",
@@ -19657,7 +19767,7 @@
         ]
       },
       "properties": {
-        "id": "dc_524",
+        "id": "dc_525",
         "name": "Prosodie Boulogne",
         "type": "data_center",
         "subtype": "colocation",
@@ -19692,7 +19802,7 @@
         ]
       },
       "properties": {
-        "id": "dc_525",
+        "id": "dc_526",
         "name": "KHEOPS Organisation Vélizy-Villacoublay",
         "type": "data_center",
         "subtype": "colocation",
@@ -19727,7 +19837,7 @@
         ]
       },
       "properties": {
-        "id": "dc_526",
+        "id": "dc_527",
         "name": "Cogent Paris 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -19762,7 +19872,7 @@
         ]
       },
       "properties": {
-        "id": "dc_527",
+        "id": "dc_528",
         "name": "KHEOPS Organisation Plessis-Robinson",
         "type": "data_center",
         "subtype": "colocation",
@@ -19797,7 +19907,7 @@
         ]
       },
       "properties": {
-        "id": "dc_528",
+        "id": "dc_529",
         "name": "Acropolis Telecom Paris-Nation",
         "type": "data_center",
         "subtype": "colocation",
@@ -19832,7 +19942,7 @@
         ]
       },
       "properties": {
-        "id": "dc_529",
+        "id": "dc_530",
         "name": "Sungard AS IT",
         "type": "data_center",
         "subtype": "colocation",
@@ -19867,7 +19977,7 @@
         ]
       },
       "properties": {
-        "id": "dc_530",
+        "id": "dc_531",
         "name": "Alionis DC1",
         "type": "data_center",
         "subtype": "colocation",
@@ -19902,7 +20012,7 @@
         ]
       },
       "properties": {
-        "id": "dc_531",
+        "id": "dc_532",
         "name": "Cogent",
         "type": "data_center",
         "subtype": "colocation",
@@ -19937,7 +20047,7 @@
         ]
       },
       "properties": {
-        "id": "dc_532",
+        "id": "dc_533",
         "name": "Cogent",
         "type": "data_center",
         "subtype": "colocation",
@@ -19972,7 +20082,7 @@
         ]
       },
       "properties": {
-        "id": "dc_533",
+        "id": "dc_534",
         "name": "Datacenter Aqua Ray",
         "type": "data_center",
         "subtype": "colocation",
@@ -20007,7 +20117,7 @@
         ]
       },
       "properties": {
-        "id": "dc_534",
+        "id": "dc_535",
         "name": "Salle Technique TV5MONDE",
         "type": "data_center",
         "subtype": "colocation",
@@ -20042,7 +20152,7 @@
         ]
       },
       "properties": {
-        "id": "dc_535",
+        "id": "dc_536",
         "name": "Datacenter Orange Archives",
         "type": "data_center",
         "subtype": "colocation",
@@ -20077,7 +20187,7 @@
         ]
       },
       "properties": {
-        "id": "dc_536",
+        "id": "dc_537",
         "name": "Salle technique TDF",
         "type": "data_center",
         "subtype": "colocation",
@@ -20112,7 +20222,7 @@
         ]
       },
       "properties": {
-        "id": "dc_537",
+        "id": "dc_538",
         "name": "Salle technique TF1",
         "type": "data_center",
         "subtype": "colocation",
@@ -20147,7 +20257,7 @@
         ]
       },
       "properties": {
-        "id": "dc_538",
+        "id": "dc_539",
         "name": "Salle technique TDF",
         "type": "data_center",
         "subtype": "colocation",
@@ -20182,7 +20292,7 @@
         ]
       },
       "properties": {
-        "id": "dc_539",
+        "id": "dc_540",
         "name": "Salle Technique France Télévisions",
         "type": "data_center",
         "subtype": "colocation",
@@ -20217,7 +20327,7 @@
         ]
       },
       "properties": {
-        "id": "dc_540",
+        "id": "dc_541",
         "name": "Salle technique Eurosport",
         "type": "data_center",
         "subtype": "colocation",
@@ -20252,7 +20362,7 @@
         ]
       },
       "properties": {
-        "id": "dc_541",
+        "id": "dc_542",
         "name": "Salle technique Groupe M6",
         "type": "data_center",
         "subtype": "colocation",
@@ -20287,7 +20397,7 @@
         ]
       },
       "properties": {
-        "id": "dc_542",
+        "id": "dc_543",
         "name": "Data Center Bluecom",
         "type": "data_center",
         "subtype": "colocation",
@@ -20322,7 +20432,7 @@
         ]
       },
       "properties": {
-        "id": "dc_543",
+        "id": "dc_544",
         "name": "Datacenter Thales Nungesser",
         "type": "data_center",
         "subtype": "colocation",
@@ -20357,7 +20467,7 @@
         ]
       },
       "properties": {
-        "id": "dc_544",
+        "id": "dc_545",
         "name": "Salle technique Euronews",
         "type": "data_center",
         "subtype": "colocation",
@@ -20392,7 +20502,7 @@
         ]
       },
       "properties": {
-        "id": "dc_545",
+        "id": "dc_546",
         "name": "Datacenter RTE",
         "type": "data_center",
         "subtype": "colocation",
@@ -20427,7 +20537,7 @@
         ]
       },
       "properties": {
-        "id": "dc_546",
+        "id": "dc_547",
         "name": "Serverhouse",
         "type": "data_center",
         "subtype": "colocation",
@@ -20462,7 +20572,7 @@
         ]
       },
       "properties": {
-        "id": "dc_547",
+        "id": "dc_548",
         "name": "Datacenter RTE",
         "type": "data_center",
         "subtype": "colocation",
@@ -20497,7 +20607,7 @@
         ]
       },
       "properties": {
-        "id": "dc_548",
+        "id": "dc_549",
         "name": "Datacenter RTE",
         "type": "data_center",
         "subtype": "colocation",
@@ -20532,7 +20642,7 @@
         ]
       },
       "properties": {
-        "id": "dc_549",
+        "id": "dc_550",
         "name": "France Travail datacenter Orléans",
         "type": "data_center",
         "subtype": "colocation",
@@ -20567,7 +20677,7 @@
         ]
       },
       "properties": {
-        "id": "dc_550",
+        "id": "dc_551",
         "name": "Lyon Sévigné",
         "type": "data_center",
         "subtype": "colocation",
@@ -20602,7 +20712,7 @@
         ]
       },
       "properties": {
-        "id": "dc_551",
+        "id": "dc_552",
         "name": "Datacenter Bouygues Télécom",
         "type": "data_center",
         "subtype": "colocation",
@@ -20637,7 +20747,7 @@
         ]
       },
       "properties": {
-        "id": "dc_552",
+        "id": "dc_553",
         "name": "osm32;osm33;osm34;osm35;osm36;osm37",
         "type": "data_center",
         "subtype": "colocation",
@@ -20672,7 +20782,7 @@
         ]
       },
       "properties": {
-        "id": "dc_553",
+        "id": "dc_554",
         "name": "GEN01",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -20707,7 +20817,7 @@
         ]
       },
       "properties": {
-        "id": "dc_554",
+        "id": "dc_555",
         "name": "DTC",
         "type": "data_center",
         "subtype": "colocation",
@@ -20742,7 +20852,7 @@
         ]
       },
       "properties": {
-        "id": "dc_555",
+        "id": "dc_556",
         "name": "Insight Data Ltd",
         "type": "data_center",
         "subtype": "colocation",
@@ -20777,7 +20887,7 @@
         ]
       },
       "properties": {
-        "id": "dc_556",
+        "id": "dc_557",
         "name": "Datagrex",
         "type": "data_center",
         "subtype": "colocation",
@@ -20812,7 +20922,7 @@
         ]
       },
       "properties": {
-        "id": "dc_557",
+        "id": "dc_558",
         "name": "DTiX",
         "type": "data_center",
         "subtype": "colocation",
@@ -20847,7 +20957,7 @@
         ]
       },
       "properties": {
-        "id": "dc_558",
+        "id": "dc_559",
         "name": "Mozoilo AJVP",
         "type": "data_center",
         "subtype": "colocation",
@@ -20882,7 +20992,7 @@
         ]
       },
       "properties": {
-        "id": "dc_559",
+        "id": "dc_560",
         "name": "Crypteo",
         "type": "data_center",
         "subtype": "colocation",
@@ -20917,7 +21027,7 @@
         ]
       },
       "properties": {
-        "id": "dc_560",
+        "id": "dc_561",
         "name": "AWS Bracknell Data Centre",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -20952,7 +21062,7 @@
         ]
       },
       "properties": {
-        "id": "dc_561",
+        "id": "dc_562",
         "name": "Telehouse THM1",
         "type": "data_center",
         "subtype": "colocation",
@@ -20987,7 +21097,7 @@
         ]
       },
       "properties": {
-        "id": "dc_562",
+        "id": "dc_563",
         "name": "Datacenter Sud",
         "type": "data_center",
         "subtype": "colocation",
@@ -21022,7 +21132,7 @@
         ]
       },
       "properties": {
-        "id": "dc_563",
+        "id": "dc_564",
         "name": "Equinix GV1",
         "type": "data_center",
         "subtype": "colocation",
@@ -21057,7 +21167,7 @@
         ]
       },
       "properties": {
-        "id": "dc_564",
+        "id": "dc_565",
         "name": "Phocea DC",
         "type": "data_center",
         "subtype": "colocation",
@@ -21092,7 +21202,7 @@
         ]
       },
       "properties": {
-        "id": "dc_565",
+        "id": "dc_566",
         "name": "Eclairion",
         "type": "data_center",
         "subtype": "colocation",
@@ -21127,7 +21237,7 @@
         ]
       },
       "properties": {
-        "id": "dc_566",
+        "id": "dc_567",
         "name": "ServerHouse",
         "type": "data_center",
         "subtype": "colocation",
@@ -21162,7 +21272,7 @@
         ]
       },
       "properties": {
-        "id": "dc_567",
+        "id": "dc_568",
         "name": "Euro-Information EIP (Data Center)",
         "type": "data_center",
         "subtype": "colocation",
@@ -21197,7 +21307,7 @@
         ]
       },
       "properties": {
-        "id": "dc_568",
+        "id": "dc_569",
         "name": "Okantis",
         "type": "data_center",
         "subtype": "colocation",
@@ -21232,7 +21342,7 @@
         ]
       },
       "properties": {
-        "id": "dc_569",
+        "id": "dc_570",
         "name": "Data Vault - Bournemouth BCP01",
         "type": "data_center",
         "subtype": "colocation",
@@ -21267,7 +21377,7 @@
         ]
       },
       "properties": {
-        "id": "dc_570",
+        "id": "dc_571",
         "name": "CPD Gobierno de Navarra",
         "type": "data_center",
         "subtype": "colocation",
@@ -21302,7 +21412,7 @@
         ]
       },
       "properties": {
-        "id": "dc_571",
+        "id": "dc_572",
         "name": "LIFO",
         "type": "data_center",
         "subtype": "colocation",
@@ -21337,7 +21447,7 @@
         ]
       },
       "properties": {
-        "id": "dc_572",
+        "id": "dc_573",
         "name": "Asanti - Farnborough",
         "type": "data_center",
         "subtype": "colocation",
@@ -21372,7 +21482,7 @@
         ]
       },
       "properties": {
-        "id": "dc_573",
+        "id": "dc_574",
         "name": "CustodianDC Maidstone",
         "type": "data_center",
         "subtype": "colocation",
@@ -21407,7 +21517,7 @@
         ]
       },
       "properties": {
-        "id": "dc_574",
+        "id": "dc_575",
         "name": "Microsoft Thames Valley Park Data Centre",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -21442,7 +21552,7 @@
         ]
       },
       "properties": {
-        "id": "dc_575",
+        "id": "dc_576",
         "name": "Vision 247",
         "type": "data_center",
         "subtype": "colocation",
@@ -21477,7 +21587,7 @@
         ]
       },
       "properties": {
-        "id": "dc_576",
+        "id": "dc_577",
         "name": "Sky Chilworth",
         "type": "data_center",
         "subtype": "colocation",
@@ -21512,7 +21622,7 @@
         ]
       },
       "properties": {
-        "id": "dc_577",
+        "id": "dc_578",
         "name": "Digital Realty LHR17",
         "type": "data_center",
         "subtype": "colocation",
@@ -21547,7 +21657,7 @@
         ]
       },
       "properties": {
-        "id": "dc_578",
+        "id": "dc_579",
         "name": "Segro Croydon (Morgan Stanley)",
         "type": "data_center",
         "subtype": "colocation",
@@ -21582,7 +21692,7 @@
         ]
       },
       "properties": {
-        "id": "dc_579",
+        "id": "dc_580",
         "name": "4D Data Centers - Gatwick",
         "type": "data_center",
         "subtype": "colocation",
@@ -21617,7 +21727,7 @@
         ]
       },
       "properties": {
-        "id": "dc_580",
+        "id": "dc_581",
         "name": "Digital Realty LHR13",
         "type": "data_center",
         "subtype": "colocation",
@@ -21652,7 +21762,7 @@
         ]
       },
       "properties": {
-        "id": "dc_581",
+        "id": "dc_582",
         "name": "CustodianDC DA2",
         "type": "data_center",
         "subtype": "colocation",
@@ -21687,7 +21797,7 @@
         ]
       },
       "properties": {
-        "id": "dc_582",
+        "id": "dc_583",
         "name": "LON-1",
         "type": "data_center",
         "subtype": "colocation",
@@ -21722,7 +21832,7 @@
         ]
       },
       "properties": {
-        "id": "dc_583",
+        "id": "dc_584",
         "name": "Digital Realty LGW14",
         "type": "data_center",
         "subtype": "colocation",
@@ -21757,7 +21867,7 @@
         ]
       },
       "properties": {
-        "id": "dc_584",
+        "id": "dc_585",
         "name": "Data4 Campus Paris Saclay",
         "type": "data_center",
         "subtype": "colocation",
@@ -21792,7 +21902,7 @@
         ]
       },
       "properties": {
-        "id": "dc_585",
+        "id": "dc_586",
         "name": "Equinix PA3",
         "type": "data_center",
         "subtype": "colocation",
@@ -21827,7 +21937,7 @@
         ]
       },
       "properties": {
-        "id": "dc_586",
+        "id": "dc_587",
         "name": "Morgan Stanley Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -21862,7 +21972,7 @@
         ]
       },
       "properties": {
-        "id": "dc_587",
+        "id": "dc_588",
         "name": "Pulsant Maidenhead",
         "type": "data_center",
         "subtype": "colocation",
@@ -21897,7 +22007,7 @@
         ]
       },
       "properties": {
-        "id": "dc_588",
+        "id": "dc_589",
         "name": "Green DataCenter Eolas",
         "type": "data_center",
         "subtype": "colocation",
@@ -21932,7 +22042,7 @@
         ]
       },
       "properties": {
-        "id": "dc_589",
+        "id": "dc_590",
         "name": "Fujitsu Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -21967,7 +22077,7 @@
         ]
       },
       "properties": {
-        "id": "dc_590",
+        "id": "dc_591",
         "name": "Redcentric Byfleet",
         "type": "data_center",
         "subtype": "colocation",
@@ -22002,7 +22112,7 @@
         ]
       },
       "properties": {
-        "id": "dc_591",
+        "id": "dc_592",
         "name": "Orange Lyon Lumière - Centrale",
         "type": "data_center",
         "subtype": "colocation",
@@ -22037,7 +22147,7 @@
         ]
       },
       "properties": {
-        "id": "dc_592",
+        "id": "dc_593",
         "name": "Datacenter Société Generale",
         "type": "data_center",
         "subtype": "colocation",
@@ -22072,7 +22182,7 @@
         ]
       },
       "properties": {
-        "id": "dc_593",
+        "id": "dc_594",
         "name": "O2Switch DC2",
         "type": "data_center",
         "subtype": "colocation",
@@ -22107,7 +22217,7 @@
         ]
       },
       "properties": {
-        "id": "dc_594",
+        "id": "dc_595",
         "name": "Datacenter Groupe Casino",
         "type": "data_center",
         "subtype": "colocation",
@@ -22142,7 +22252,7 @@
         ]
       },
       "properties": {
-        "id": "dc_595",
+        "id": "dc_596",
         "name": "Interxion PAR3",
         "type": "data_center",
         "subtype": "colocation",
@@ -22177,7 +22287,7 @@
         ]
       },
       "properties": {
-        "id": "dc_596",
+        "id": "dc_597",
         "name": "Pulsant Reading East",
         "type": "data_center",
         "subtype": "colocation",
@@ -22212,7 +22322,7 @@
         ]
       },
       "properties": {
-        "id": "dc_597",
+        "id": "dc_598",
         "name": "Datacenter Vega",
         "type": "data_center",
         "subtype": "colocation",
@@ -22247,7 +22357,7 @@
         ]
       },
       "properties": {
-        "id": "dc_598",
+        "id": "dc_599",
         "name": "ETIX Toulouse #1",
         "type": "data_center",
         "subtype": "colocation",
@@ -22282,7 +22392,7 @@
         ]
       },
       "properties": {
-        "id": "dc_599",
+        "id": "dc_600",
         "name": "Cogent Rouen",
         "type": "data_center",
         "subtype": "colocation",
@@ -22317,7 +22427,7 @@
         ]
       },
       "properties": {
-        "id": "dc_600",
+        "id": "dc_601",
         "name": "Sartera",
         "type": "data_center",
         "subtype": "colocation",
@@ -22352,7 +22462,7 @@
         ]
       },
       "properties": {
-        "id": "dc_601",
+        "id": "dc_602",
         "name": "Datacenter IBO",
         "type": "data_center",
         "subtype": "colocation",
@@ -22387,7 +22497,7 @@
         ]
       },
       "properties": {
-        "id": "dc_602",
+        "id": "dc_603",
         "name": "Datacenter IBM",
         "type": "data_center",
         "subtype": "colocation",
@@ -22422,7 +22532,7 @@
         ]
       },
       "properties": {
-        "id": "dc_603",
+        "id": "dc_604",
         "name": "Hôtel des Telecoms",
         "type": "data_center",
         "subtype": "colocation",
@@ -22457,7 +22567,7 @@
         ]
       },
       "properties": {
-        "id": "dc_604",
+        "id": "dc_605",
         "name": "Sota Datacentre",
         "type": "data_center",
         "subtype": "colocation",
@@ -22492,7 +22602,7 @@
         ]
       },
       "properties": {
-        "id": "dc_605",
+        "id": "dc_606",
         "name": "Marseille Nedelec",
         "type": "data_center",
         "subtype": "colocation",
@@ -22527,7 +22637,7 @@
         ]
       },
       "properties": {
-        "id": "dc_606",
+        "id": "dc_607",
         "name": "Groupe ADISTA",
         "type": "data_center",
         "subtype": "colocation",
@@ -22562,7 +22672,7 @@
         ]
       },
       "properties": {
-        "id": "dc_607",
+        "id": "dc_608",
         "name": "Datacenter Bouygues Télécom",
         "type": "data_center",
         "subtype": "colocation",
@@ -22597,7 +22707,7 @@
         ]
       },
       "properties": {
-        "id": "dc_608",
+        "id": "dc_609",
         "name": "Asanti - Reading",
         "type": "data_center",
         "subtype": "colocation",
@@ -22632,7 +22742,7 @@
         ]
       },
       "properties": {
-        "id": "dc_609",
+        "id": "dc_610",
         "name": "Orange - Aubervilliers",
         "type": "data_center",
         "subtype": "colocation",
@@ -22667,7 +22777,7 @@
         ]
       },
       "properties": {
-        "id": "dc_610",
+        "id": "dc_611",
         "name": "Interxion PAR2 - Bâtiment 501",
         "type": "data_center",
         "subtype": "colocation",
@@ -22702,7 +22812,7 @@
         ]
       },
       "properties": {
-        "id": "dc_611",
+        "id": "dc_612",
         "name": "Equinix PA4",
         "type": "data_center",
         "subtype": "colocation",
@@ -22737,7 +22847,7 @@
         ]
       },
       "properties": {
-        "id": "dc_612",
+        "id": "dc_613",
         "name": "SFR",
         "type": "data_center",
         "subtype": "colocation",
@@ -22772,7 +22882,7 @@
         ]
       },
       "properties": {
-        "id": "dc_613",
+        "id": "dc_614",
         "name": "Datacenter BNP",
         "type": "data_center",
         "subtype": "colocation",
@@ -22807,7 +22917,7 @@
         ]
       },
       "properties": {
-        "id": "dc_614",
+        "id": "dc_615",
         "name": "Global Switch",
         "type": "data_center",
         "subtype": "colocation",
@@ -22842,7 +22952,7 @@
         ]
       },
       "properties": {
-        "id": "dc_615",
+        "id": "dc_616",
         "name": "Oscar",
         "type": "data_center",
         "subtype": "colocation",
@@ -22877,7 +22987,7 @@
         ]
       },
       "properties": {
-        "id": "dc_616",
+        "id": "dc_617",
         "name": "Zayo Montpellier",
         "type": "data_center",
         "subtype": "colocation",
@@ -22912,7 +23022,7 @@
         ]
       },
       "properties": {
-        "id": "dc_617",
+        "id": "dc_618",
         "name": "Cogent Montpellier",
         "type": "data_center",
         "subtype": "colocation",
@@ -22947,7 +23057,7 @@
         ]
       },
       "properties": {
-        "id": "dc_618",
+        "id": "dc_619",
         "name": "Cogent Toulouse",
         "type": "data_center",
         "subtype": "colocation",
@@ -22982,7 +23092,7 @@
         ]
       },
       "properties": {
-        "id": "dc_619",
+        "id": "dc_620",
         "name": "OPCORE DC1",
         "type": "data_center",
         "subtype": "colocation",
@@ -23017,7 +23127,7 @@
         ]
       },
       "properties": {
-        "id": "dc_620",
+        "id": "dc_621",
         "name": "Colt Paris 3",
         "type": "data_center",
         "subtype": "colocation",
@@ -23052,7 +23162,7 @@
         ]
       },
       "properties": {
-        "id": "dc_621",
+        "id": "dc_622",
         "name": "Paris St Amand",
         "type": "data_center",
         "subtype": "colocation",
@@ -23087,7 +23197,7 @@
         ]
       },
       "properties": {
-        "id": "dc_622",
+        "id": "dc_623",
         "name": "SFR Netcenter Vénissieux",
         "type": "data_center",
         "subtype": "colocation",
@@ -23122,7 +23232,7 @@
         ]
       },
       "properties": {
-        "id": "dc_623",
+        "id": "dc_624",
         "name": "Equinix GV2",
         "type": "data_center",
         "subtype": "colocation",
@@ -23157,7 +23267,7 @@
         ]
       },
       "properties": {
-        "id": "dc_624",
+        "id": "dc_625",
         "name": "Orange Eastview",
         "type": "data_center",
         "subtype": "colocation",
@@ -23192,7 +23302,7 @@
         ]
       },
       "properties": {
-        "id": "dc_625",
+        "id": "dc_626",
         "name": "SFR Netcenter Rennes",
         "type": "data_center",
         "subtype": "colocation",
@@ -23227,7 +23337,7 @@
         ]
       },
       "properties": {
-        "id": "dc_626",
+        "id": "dc_627",
         "name": "Datacenter IBM - Grabels",
         "type": "data_center",
         "subtype": "colocation",
@@ -23262,7 +23372,7 @@
         ]
       },
       "properties": {
-        "id": "dc_627",
+        "id": "dc_628",
         "name": "BT Blue",
         "type": "data_center",
         "subtype": "colocation",
@@ -23297,7 +23407,7 @@
         ]
       },
       "properties": {
-        "id": "dc_628",
+        "id": "dc_629",
         "name": "Albiréo",
         "type": "data_center",
         "subtype": "colocation",
@@ -23332,7 +23442,7 @@
         ]
       },
       "properties": {
-        "id": "dc_629",
+        "id": "dc_630",
         "name": "Datacenter Colt",
         "type": "data_center",
         "subtype": "colocation",
@@ -23367,7 +23477,7 @@
         ]
       },
       "properties": {
-        "id": "dc_630",
+        "id": "dc_631",
         "name": "ETIX Nantes #3",
         "type": "data_center",
         "subtype": "colocation",
@@ -23402,7 +23512,7 @@
         ]
       },
       "properties": {
-        "id": "dc_631",
+        "id": "dc_632",
         "name": "TDF ProxiCenter Aix Marseille",
         "type": "data_center",
         "subtype": "colocation",
@@ -23437,7 +23547,7 @@
         ]
       },
       "properties": {
-        "id": "dc_632",
+        "id": "dc_633",
         "name": "Restore Records Management",
         "type": "data_center",
         "subtype": "colocation",
@@ -23472,7 +23582,7 @@
         ]
       },
       "properties": {
-        "id": "dc_633",
+        "id": "dc_634",
         "name": "Datacenter IBM",
         "type": "data_center",
         "subtype": "colocation",
@@ -23507,7 +23617,7 @@
         ]
       },
       "properties": {
-        "id": "dc_634",
+        "id": "dc_635",
         "name": "Redcentric Reading",
         "type": "data_center",
         "subtype": "colocation",
@@ -23542,7 +23652,7 @@
         ]
       },
       "properties": {
-        "id": "dc_635",
+        "id": "dc_636",
         "name": "Pulsant Reading SL3",
         "type": "data_center",
         "subtype": "colocation",
@@ -23577,7 +23687,7 @@
         ]
       },
       "properties": {
-        "id": "dc_636",
+        "id": "dc_637",
         "name": "Keppel Data Centres (Vodafone) - London",
         "type": "data_center",
         "subtype": "colocation",
@@ -23612,7 +23722,7 @@
         ]
       },
       "properties": {
-        "id": "dc_637",
+        "id": "dc_638",
         "name": "Pulsant",
         "type": "data_center",
         "subtype": "colocation",
@@ -23647,7 +23757,7 @@
         ]
       },
       "properties": {
-        "id": "dc_638",
+        "id": "dc_639",
         "name": "Interoute Marseille",
         "type": "data_center",
         "subtype": "colocation",
@@ -23682,7 +23792,7 @@
         ]
       },
       "properties": {
-        "id": "dc_639",
+        "id": "dc_640",
         "name": "Datacenter des Douanes",
         "type": "data_center",
         "subtype": "colocation",
@@ -23717,7 +23827,7 @@
         ]
       },
       "properties": {
-        "id": "dc_640",
+        "id": "dc_641",
         "name": "OPCORE DC5",
         "type": "data_center",
         "subtype": "colocation",
@@ -23752,7 +23862,7 @@
         ]
       },
       "properties": {
-        "id": "dc_641",
+        "id": "dc_642",
         "name": "Datacenter France Travail",
         "type": "data_center",
         "subtype": "colocation",
@@ -23787,7 +23897,7 @@
         ]
       },
       "properties": {
-        "id": "dc_642",
+        "id": "dc_643",
         "name": "Salle Serveurs CCCM",
         "type": "data_center",
         "subtype": "colocation",
@@ -23822,7 +23932,7 @@
         ]
       },
       "properties": {
-        "id": "dc_643",
+        "id": "dc_644",
         "name": "Datacenter IBM",
         "type": "data_center",
         "subtype": "colocation",
@@ -23857,7 +23967,7 @@
         ]
       },
       "properties": {
-        "id": "dc_644",
+        "id": "dc_645",
         "name": "BNP Paribas Centre de Traitement Informatique (CTI) Marne Nord",
         "type": "data_center",
         "subtype": "colocation",
@@ -23892,7 +24002,7 @@
         ]
       },
       "properties": {
-        "id": "dc_645",
+        "id": "dc_646",
         "name": "Datacenter Sirius",
         "type": "data_center",
         "subtype": "colocation",
@@ -23927,7 +24037,7 @@
         ]
       },
       "properties": {
-        "id": "dc_646",
+        "id": "dc_647",
         "name": "Telstra London Hosting Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -23962,7 +24072,7 @@
         ]
       },
       "properties": {
-        "id": "dc_647",
+        "id": "dc_648",
         "name": "BNP Paribas Marne Sud",
         "type": "data_center",
         "subtype": "colocation",
@@ -23997,7 +24107,7 @@
         ]
       },
       "properties": {
-        "id": "dc_648",
+        "id": "dc_649",
         "name": "Datacenter Oxya",
         "type": "data_center",
         "subtype": "colocation",
@@ -24032,7 +24142,7 @@
         ]
       },
       "properties": {
-        "id": "dc_649",
+        "id": "dc_650",
         "name": "Euclyde DC6",
         "type": "data_center",
         "subtype": "colocation",
@@ -24067,7 +24177,7 @@
         ]
       },
       "properties": {
-        "id": "dc_650",
+        "id": "dc_651",
         "name": "Datacenter Banque de France",
         "type": "data_center",
         "subtype": "colocation",
@@ -24102,7 +24212,7 @@
         ]
       },
       "properties": {
-        "id": "dc_651",
+        "id": "dc_652",
         "name": "Datacenter Banque de France",
         "type": "data_center",
         "subtype": "colocation",
@@ -24137,7 +24247,7 @@
         ]
       },
       "properties": {
-        "id": "dc_652",
+        "id": "dc_653",
         "name": "Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -24172,7 +24282,7 @@
         ]
       },
       "properties": {
-        "id": "dc_653",
+        "id": "dc_654",
         "name": "Datacenter ArteOne",
         "type": "data_center",
         "subtype": "colocation",
@@ -24207,7 +24317,7 @@
         ]
       },
       "properties": {
-        "id": "dc_654",
+        "id": "dc_655",
         "name": "Cogent Dijon",
         "type": "data_center",
         "subtype": "colocation",
@@ -24242,7 +24352,7 @@
         ]
       },
       "properties": {
-        "id": "dc_655",
+        "id": "dc_656",
         "name": "IBM Horsham",
         "type": "data_center",
         "subtype": "colocation",
@@ -24277,7 +24387,7 @@
         ]
       },
       "properties": {
-        "id": "dc_656",
+        "id": "dc_657",
         "name": "Datacenter Groupama",
         "type": "data_center",
         "subtype": "colocation",
@@ -24312,7 +24422,7 @@
         ]
       },
       "properties": {
-        "id": "dc_657",
+        "id": "dc_658",
         "name": "Datacenter Bouygues Télécom",
         "type": "data_center",
         "subtype": "colocation",
@@ -24347,7 +24457,7 @@
         ]
       },
       "properties": {
-        "id": "dc_658",
+        "id": "dc_659",
         "name": "Tata Communications Highbridge Datacentre",
         "type": "data_center",
         "subtype": "colocation",
@@ -24382,7 +24492,7 @@
         ]
       },
       "properties": {
-        "id": "dc_659",
+        "id": "dc_660",
         "name": "Albiréo",
         "type": "data_center",
         "subtype": "colocation",
@@ -24417,7 +24527,7 @@
         ]
       },
       "properties": {
-        "id": "dc_660",
+        "id": "dc_661",
         "name": "Greenfield",
         "type": "data_center",
         "subtype": "colocation",
@@ -24452,7 +24562,7 @@
         ]
       },
       "properties": {
-        "id": "dc_661",
+        "id": "dc_662",
         "name": "Webaxys",
         "type": "data_center",
         "subtype": "colocation",
@@ -24487,7 +24597,7 @@
         ]
       },
       "properties": {
-        "id": "dc_662",
+        "id": "dc_663",
         "name": "Datacenter Orange",
         "type": "data_center",
         "subtype": "colocation",
@@ -24522,7 +24632,7 @@
         ]
       },
       "properties": {
-        "id": "dc_663",
+        "id": "dc_664",
         "name": "OPCORE DC2",
         "type": "data_center",
         "subtype": "colocation",
@@ -24557,7 +24667,7 @@
         ]
       },
       "properties": {
-        "id": "dc_664",
+        "id": "dc_665",
         "name": "OPCORE DC3",
         "type": "data_center",
         "subtype": "colocation",
@@ -24592,7 +24702,7 @@
         ]
       },
       "properties": {
-        "id": "dc_665",
+        "id": "dc_666",
         "name": "Interoute Bordeaux",
         "type": "data_center",
         "subtype": "colocation",
@@ -24627,7 +24737,7 @@
         ]
       },
       "properties": {
-        "id": "dc_666",
+        "id": "dc_667",
         "name": "Lumen",
         "type": "data_center",
         "subtype": "colocation",
@@ -24662,7 +24772,7 @@
         ]
       },
       "properties": {
-        "id": "dc_667",
+        "id": "dc_668",
         "name": "DATA4 Paris Marcoussis PAR2",
         "type": "data_center",
         "subtype": "colocation",
@@ -24697,7 +24807,7 @@
         ]
       },
       "properties": {
-        "id": "dc_668",
+        "id": "dc_669",
         "name": "SFR Netcenter Bordeaux",
         "type": "data_center",
         "subtype": "colocation",
@@ -24732,7 +24842,7 @@
         ]
       },
       "properties": {
-        "id": "dc_669",
+        "id": "dc_670",
         "name": "Serverfarm LON1 – London Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -24767,7 +24877,7 @@
         ]
       },
       "properties": {
-        "id": "dc_670",
+        "id": "dc_671",
         "name": "Digital Realty MRS2",
         "type": "data_center",
         "subtype": "colocation",
@@ -24802,7 +24912,7 @@
         ]
       },
       "properties": {
-        "id": "dc_671",
+        "id": "dc_672",
         "name": "Pulsant South London",
         "type": "data_center",
         "subtype": "colocation",
@@ -24837,7 +24947,7 @@
         ]
       },
       "properties": {
-        "id": "dc_672",
+        "id": "dc_673",
         "name": "Verizon UK4",
         "type": "data_center",
         "subtype": "colocation",
@@ -24872,7 +24982,7 @@
         ]
       },
       "properties": {
-        "id": "dc_673",
+        "id": "dc_674",
         "name": "British Telecom Computer Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -24907,7 +25017,7 @@
         ]
       },
       "properties": {
-        "id": "dc_674",
+        "id": "dc_675",
         "name": "WRN Broadcast",
         "type": "data_center",
         "subtype": "colocation",
@@ -24942,7 +25052,7 @@
         ]
       },
       "properties": {
-        "id": "dc_675",
+        "id": "dc_676",
         "name": "BA Boadicea House Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -24977,7 +25087,7 @@
         ]
       },
       "properties": {
-        "id": "dc_676",
+        "id": "dc_677",
         "name": "Centrilogic",
         "type": "data_center",
         "subtype": "colocation",
@@ -25012,7 +25122,7 @@
         ]
       },
       "properties": {
-        "id": "dc_677",
+        "id": "dc_678",
         "name": "Centro de Procesamiento de Datos Norte",
         "type": "data_center",
         "subtype": "colocation",
@@ -25047,7 +25157,7 @@
         ]
       },
       "properties": {
-        "id": "dc_678",
+        "id": "dc_679",
         "name": "Datacenter EDF",
         "type": "data_center",
         "subtype": "colocation",
@@ -25082,7 +25192,7 @@
         ]
       },
       "properties": {
-        "id": "dc_679",
+        "id": "dc_680",
         "name": "Proginov",
         "type": "data_center",
         "subtype": "colocation",
@@ -25117,7 +25227,7 @@
         ]
       },
       "properties": {
-        "id": "dc_680",
+        "id": "dc_681",
         "name": "Datacenter Groupama",
         "type": "data_center",
         "subtype": "colocation",
@@ -25152,7 +25262,7 @@
         ]
       },
       "properties": {
-        "id": "dc_681",
+        "id": "dc_682",
         "name": "Interxion PAR7",
         "type": "data_center",
         "subtype": "colocation",
@@ -25187,7 +25297,7 @@
         ]
       },
       "properties": {
-        "id": "dc_682",
+        "id": "dc_683",
         "name": "Digital Realty LHR20",
         "type": "data_center",
         "subtype": "colocation",
@@ -25222,7 +25332,7 @@
         ]
       },
       "properties": {
-        "id": "dc_683",
+        "id": "dc_684",
         "name": "Ecocenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -25257,7 +25367,7 @@
         ]
       },
       "properties": {
-        "id": "dc_684",
+        "id": "dc_685",
         "name": "Centre de Processament de Dades IBM",
         "type": "data_center",
         "subtype": "colocation",
@@ -25292,7 +25402,7 @@
         ]
       },
       "properties": {
-        "id": "dc_685",
+        "id": "dc_686",
         "name": "Six Degrees Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -25327,7 +25437,7 @@
         ]
       },
       "properties": {
-        "id": "dc_686",
+        "id": "dc_687",
         "name": "Citibank Riverdale Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -25362,7 +25472,7 @@
         ]
       },
       "properties": {
-        "id": "dc_687",
+        "id": "dc_688",
         "name": "Venture West",
         "type": "data_center",
         "subtype": "colocation",
@@ -25397,7 +25507,7 @@
         ]
       },
       "properties": {
-        "id": "dc_688",
+        "id": "dc_689",
         "name": "The Bunker - South East Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -25432,7 +25542,7 @@
         ]
       },
       "properties": {
-        "id": "dc_689",
+        "id": "dc_690",
         "name": "Unit 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -25467,7 +25577,7 @@
         ]
       },
       "properties": {
-        "id": "dc_690",
+        "id": "dc_691",
         "name": "Greenfield",
         "type": "data_center",
         "subtype": "colocation",
@@ -25502,7 +25612,7 @@
         ]
       },
       "properties": {
-        "id": "dc_691",
+        "id": "dc_692",
         "name": "Nexeren",
         "type": "data_center",
         "subtype": "colocation",
@@ -25537,7 +25647,7 @@
         ]
       },
       "properties": {
-        "id": "dc_692",
+        "id": "dc_693",
         "name": "Centre de Calcul de l’Université de Bourgogne",
         "type": "data_center",
         "subtype": "colocation",
@@ -25572,7 +25682,7 @@
         ]
       },
       "properties": {
-        "id": "dc_693",
+        "id": "dc_694",
         "name": "Castle IT",
         "type": "data_center",
         "subtype": "colocation",
@@ -25607,7 +25717,7 @@
         ]
       },
       "properties": {
-        "id": "dc_694",
+        "id": "dc_695",
         "name": "EXA Infrastructure - St James House",
         "type": "data_center",
         "subtype": "colocation",
@@ -25642,7 +25752,7 @@
         ]
       },
       "properties": {
-        "id": "dc_695",
+        "id": "dc_696",
         "name": "ETIX Nantes #2",
         "type": "data_center",
         "subtype": "colocation",
@@ -25677,7 +25787,7 @@
         ]
       },
       "properties": {
-        "id": "dc_696",
+        "id": "dc_697",
         "name": "ETIX Nantes #1",
         "type": "data_center",
         "subtype": "colocation",
@@ -25712,7 +25822,7 @@
         ]
       },
       "properties": {
-        "id": "dc_697",
+        "id": "dc_698",
         "name": "OVHcloud Gravelines",
         "type": "data_center",
         "subtype": "colocation",
@@ -25747,7 +25857,7 @@
         ]
       },
       "properties": {
-        "id": "dc_698",
+        "id": "dc_699",
         "name": "Ark Data Centres",
         "type": "data_center",
         "subtype": "colocation",
@@ -25782,7 +25892,7 @@
         ]
       },
       "properties": {
-        "id": "dc_699",
+        "id": "dc_700",
         "name": "Bouygues Telecom",
         "type": "data_center",
         "subtype": "colocation",
@@ -25817,7 +25927,7 @@
         ]
       },
       "properties": {
-        "id": "dc_700",
+        "id": "dc_701",
         "name": "Free Pro - Datacenter Rock (LYO03)",
         "type": "data_center",
         "subtype": "colocation",
@@ -25852,7 +25962,7 @@
         ]
       },
       "properties": {
-        "id": "dc_701",
+        "id": "dc_702",
         "name": "Fil d'Ariane",
         "type": "data_center",
         "subtype": "colocation",
@@ -25887,7 +25997,7 @@
         ]
       },
       "properties": {
-        "id": "dc_702",
+        "id": "dc_703",
         "name": "Station d'atterrage",
         "type": "data_center",
         "subtype": "colocation",
@@ -25922,7 +26032,7 @@
         ]
       },
       "properties": {
-        "id": "dc_703",
+        "id": "dc_704",
         "name": "Datacenter Marilyn",
         "type": "data_center",
         "subtype": "colocation",
@@ -25957,7 +26067,7 @@
         ]
       },
       "properties": {
-        "id": "dc_704",
+        "id": "dc_705",
         "name": "Interxion PAR4",
         "type": "data_center",
         "subtype": "colocation",
@@ -25992,7 +26102,7 @@
         ]
       },
       "properties": {
-        "id": "dc_705",
+        "id": "dc_706",
         "name": "Digital Realty LGW15",
         "type": "data_center",
         "subtype": "colocation",
@@ -26027,7 +26137,7 @@
         ]
       },
       "properties": {
-        "id": "dc_706",
+        "id": "dc_707",
         "name": "VIRTUS LONDON2",
         "type": "data_center",
         "subtype": "colocation",
@@ -26062,7 +26172,7 @@
         ]
       },
       "properties": {
-        "id": "dc_707",
+        "id": "dc_708",
         "name": "Surrey Data Park",
         "type": "data_center",
         "subtype": "colocation",
@@ -26097,7 +26207,7 @@
         ]
       },
       "properties": {
-        "id": "dc_708",
+        "id": "dc_709",
         "name": "Gravity Edge LDN1",
         "type": "data_center",
         "subtype": "colocation",
@@ -26132,7 +26242,7 @@
         ]
       },
       "properties": {
-        "id": "dc_709",
+        "id": "dc_710",
         "name": "CGI Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -26167,7 +26277,7 @@
         ]
       },
       "properties": {
-        "id": "dc_710",
+        "id": "dc_711",
         "name": "Centro de Procesamiento de Datos del Gobierno de Cantabria",
         "type": "data_center",
         "subtype": "colocation",
@@ -26202,7 +26312,7 @@
         ]
       },
       "properties": {
-        "id": "dc_711",
+        "id": "dc_712",
         "name": "Aliénor.net",
         "type": "data_center",
         "subtype": "colocation",
@@ -26237,7 +26347,7 @@
         ]
       },
       "properties": {
-        "id": "dc_712",
+        "id": "dc_713",
         "name": "Cogent Tours",
         "type": "data_center",
         "subtype": "colocation",
@@ -26272,7 +26382,7 @@
         ]
       },
       "properties": {
-        "id": "dc_713",
+        "id": "dc_714",
         "name": "Digital Realty PAR12",
         "type": "data_center",
         "subtype": "colocation",
@@ -26307,7 +26417,7 @@
         ]
       },
       "properties": {
-        "id": "dc_714",
+        "id": "dc_715",
         "name": "Thésée DataCenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -26342,7 +26452,7 @@
         ]
       },
       "properties": {
-        "id": "dc_715",
+        "id": "dc_716",
         "name": "Site technique SFR",
         "type": "data_center",
         "subtype": "colocation",
@@ -26377,7 +26487,7 @@
         ]
       },
       "properties": {
-        "id": "dc_716",
+        "id": "dc_717",
         "name": "Site technique SFR",
         "type": "data_center",
         "subtype": "colocation",
@@ -26412,7 +26522,7 @@
         ]
       },
       "properties": {
-        "id": "dc_717",
+        "id": "dc_718",
         "name": "Site Technique SFR",
         "type": "data_center",
         "subtype": "colocation",
@@ -26447,7 +26557,7 @@
         ]
       },
       "properties": {
-        "id": "dc_718",
+        "id": "dc_719",
         "name": "Bâtiment Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -26482,7 +26592,7 @@
         ]
       },
       "properties": {
-        "id": "dc_719",
+        "id": "dc_720",
         "name": "Equinix",
         "type": "data_center",
         "subtype": "colocation",
@@ -26517,7 +26627,7 @@
         ]
       },
       "properties": {
-        "id": "dc_720",
+        "id": "dc_721",
         "name": "Datacenter Data17",
         "type": "data_center",
         "subtype": "colocation",
@@ -26552,7 +26662,7 @@
         ]
       },
       "properties": {
-        "id": "dc_721",
+        "id": "dc_722",
         "name": "Regit4u",
         "type": "data_center",
         "subtype": "colocation",
@@ -26587,7 +26697,7 @@
         ]
       },
       "properties": {
-        "id": "dc_722",
+        "id": "dc_723",
         "name": "Centre de données MAIF",
         "type": "data_center",
         "subtype": "colocation",
@@ -26622,7 +26732,7 @@
         ]
       },
       "properties": {
-        "id": "dc_723",
+        "id": "dc_724",
         "name": "Amazon Web Services",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -26657,7 +26767,7 @@
         ]
       },
       "properties": {
-        "id": "dc_724",
+        "id": "dc_725",
         "name": "Webaxys",
         "type": "data_center",
         "subtype": "colocation",
@@ -26692,7 +26802,7 @@
         ]
       },
       "properties": {
-        "id": "dc_725",
+        "id": "dc_726",
         "name": "Adam",
         "type": "data_center",
         "subtype": "colocation",
@@ -26727,7 +26837,7 @@
         ]
       },
       "properties": {
-        "id": "dc_726",
+        "id": "dc_727",
         "name": "Amazon Data Services Spain S.L.U.",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -26762,7 +26872,7 @@
         ]
       },
       "properties": {
-        "id": "dc_727",
+        "id": "dc_728",
         "name": "SostraData",
         "type": "data_center",
         "subtype": "colocation",
@@ -26797,7 +26907,7 @@
         ]
       },
       "properties": {
-        "id": "dc_728",
+        "id": "dc_729",
         "name": "Data Center Bilbao Arasur",
         "type": "data_center",
         "subtype": "colocation",
@@ -26832,7 +26942,7 @@
         ]
       },
       "properties": {
-        "id": "dc_729",
+        "id": "dc_730",
         "name": "XL 360 - Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -26867,7 +26977,7 @@
         ]
       },
       "properties": {
-        "id": "dc_730",
+        "id": "dc_731",
         "name": "Datacenter BNP Paribas Marne Est 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -26902,7 +27012,7 @@
         ]
       },
       "properties": {
-        "id": "dc_731",
+        "id": "dc_732",
         "name": "Prosoluce SG1",
         "type": "data_center",
         "subtype": "colocation",
@@ -26937,7 +27047,7 @@
         ]
       },
       "properties": {
-        "id": "dc_732",
+        "id": "dc_733",
         "name": "Nation Data Center Rennes",
         "type": "data_center",
         "subtype": "colocation",
@@ -26972,7 +27082,7 @@
         ]
       },
       "properties": {
-        "id": "dc_733",
+        "id": "dc_734",
         "name": "CDG1",
         "type": "data_center",
         "subtype": "colocation",
@@ -27007,7 +27117,7 @@
         ]
       },
       "properties": {
-        "id": "dc_734",
+        "id": "dc_735",
         "name": "Ark Data Centres - Longcross Park",
         "type": "data_center",
         "subtype": "colocation",
@@ -27042,7 +27152,7 @@
         ]
       },
       "properties": {
-        "id": "dc_735",
+        "id": "dc_736",
         "name": "CPD Gobierno de Navarra",
         "type": "data_center",
         "subtype": "colocation",
@@ -27077,7 +27187,7 @@
         ]
       },
       "properties": {
-        "id": "dc_736",
+        "id": "dc_737",
         "name": "Datacenter IBM",
         "type": "data_center",
         "subtype": "colocation",
@@ -27112,7 +27222,7 @@
         ]
       },
       "properties": {
-        "id": "dc_737",
+        "id": "dc_738",
         "name": "Centre Régional de Ressources Informatiques (CRRI)",
         "type": "data_center",
         "subtype": "colocation",
@@ -27147,7 +27257,7 @@
         ]
       },
       "properties": {
-        "id": "dc_738",
+        "id": "dc_739",
         "name": "CINES",
         "type": "data_center",
         "subtype": "colocation",
@@ -27182,7 +27292,7 @@
         ]
       },
       "properties": {
-        "id": "dc_739",
+        "id": "dc_740",
         "name": "CSquare London LHR3",
         "type": "data_center",
         "subtype": "colocation",
@@ -27217,7 +27327,7 @@
         ]
       },
       "properties": {
-        "id": "dc_740",
+        "id": "dc_741",
         "name": "Datum Farnborough Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -27252,7 +27362,7 @@
         ]
       },
       "properties": {
-        "id": "dc_741",
+        "id": "dc_742",
         "name": "Free Pro - Datacenter Limonest (LYO02 - DCForData)",
         "type": "data_center",
         "subtype": "colocation",
@@ -27287,7 +27397,7 @@
         ]
       },
       "properties": {
-        "id": "dc_742",
+        "id": "dc_743",
         "name": "The Weaver",
         "type": "data_center",
         "subtype": "colocation",
@@ -27322,7 +27432,7 @@
         ]
       },
       "properties": {
-        "id": "dc_743",
+        "id": "dc_744",
         "name": "PT",
         "type": "data_center",
         "subtype": "colocation",
@@ -27357,7 +27467,7 @@
         ]
       },
       "properties": {
-        "id": "dc_744",
+        "id": "dc_745",
         "name": "inforland.com",
         "type": "data_center",
         "subtype": "colocation",
@@ -27392,7 +27502,7 @@
         ]
       },
       "properties": {
-        "id": "dc_745",
+        "id": "dc_746",
         "name": "Centro de Datos Alcalá (Alcalá Data Center)",
         "type": "data_center",
         "subtype": "colocation",
@@ -27427,7 +27537,7 @@
         ]
       },
       "properties": {
-        "id": "dc_746",
+        "id": "dc_747",
         "name": "NTT",
         "type": "data_center",
         "subtype": "colocation",
@@ -27462,7 +27572,7 @@
         ]
       },
       "properties": {
-        "id": "dc_747",
+        "id": "dc_748",
         "name": "Centro de Computação Avançada do Minho",
         "type": "data_center",
         "subtype": "colocation",
@@ -27497,7 +27607,7 @@
         ]
       },
       "properties": {
-        "id": "dc_748",
+        "id": "dc_749",
         "name": "Equinix LS1",
         "type": "data_center",
         "subtype": "colocation",
@@ -27532,7 +27642,7 @@
         ]
       },
       "properties": {
-        "id": "dc_749",
+        "id": "dc_750",
         "name": "NOS Imopolis II",
         "type": "data_center",
         "subtype": "colocation",
@@ -27567,7 +27677,7 @@
         ]
       },
       "properties": {
-        "id": "dc_750",
+        "id": "dc_751",
         "name": "Seixal Colocation Site",
         "type": "data_center",
         "subtype": "colocation",
@@ -27602,7 +27712,7 @@
         ]
       },
       "properties": {
-        "id": "dc_751",
+        "id": "dc_752",
         "name": "Cloud Center Andalucía",
         "type": "data_center",
         "subtype": "colocation",
@@ -27637,7 +27747,7 @@
         ]
       },
       "properties": {
-        "id": "dc_752",
+        "id": "dc_753",
         "name": "Data Center Portugal Telecom da Covilhã",
         "type": "data_center",
         "subtype": "colocation",
@@ -27672,7 +27782,7 @@
         ]
       },
       "properties": {
-        "id": "dc_753",
+        "id": "dc_754",
         "name": "centro de datos trasbase Negratín",
         "type": "data_center",
         "subtype": "colocation",
@@ -27707,7 +27817,7 @@
         ]
       },
       "properties": {
-        "id": "dc_754",
+        "id": "dc_755",
         "name": "D-102",
         "type": "data_center",
         "subtype": "colocation",
@@ -27742,7 +27852,7 @@
         ]
       },
       "properties": {
-        "id": "dc_755",
+        "id": "dc_756",
         "name": "Equinix MD6",
         "type": "data_center",
         "subtype": "colocation",
@@ -27777,7 +27887,7 @@
         ]
       },
       "properties": {
-        "id": "dc_756",
+        "id": "dc_757",
         "name": "Data Center KIO Murcia",
         "type": "data_center",
         "subtype": "colocation",
@@ -27812,7 +27922,7 @@
         ]
       },
       "properties": {
-        "id": "dc_757",
+        "id": "dc_758",
         "name": "Data Center KIO Valencia",
         "type": "data_center",
         "subtype": "colocation",
@@ -27847,7 +27957,7 @@
         ]
       },
       "properties": {
-        "id": "dc_758",
+        "id": "dc_759",
         "name": "Data Center IPT",
         "type": "data_center",
         "subtype": "colocation",
@@ -27882,7 +27992,7 @@
         ]
       },
       "properties": {
-        "id": "dc_759",
+        "id": "dc_760",
         "name": "Start SIN01",
         "type": "data_center",
         "subtype": "colocation",
@@ -27917,7 +28027,7 @@
         ]
       },
       "properties": {
-        "id": "dc_760",
+        "id": "dc_761",
         "name": "CPD Titan Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -27952,7 +28062,7 @@
         ]
       },
       "properties": {
-        "id": "dc_761",
+        "id": "dc_762",
         "name": "Data 4 MAD2 Campus",
         "type": "data_center",
         "subtype": "colocation",
@@ -27987,7 +28097,7 @@
         ]
       },
       "properties": {
-        "id": "dc_762",
+        "id": "dc_763",
         "name": "DATA4 - MAD1",
         "type": "data_center",
         "subtype": "colocation",
@@ -28022,7 +28132,7 @@
         ]
       },
       "properties": {
-        "id": "dc_763",
+        "id": "dc_764",
         "name": "Microsoft MAD02",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -28057,7 +28167,7 @@
         ]
       },
       "properties": {
-        "id": "dc_764",
+        "id": "dc_765",
         "name": "Altia Datacenter",
         "type": "data_center",
         "subtype": "colocation",
@@ -28092,7 +28202,7 @@
         ]
       },
       "properties": {
-        "id": "dc_765",
+        "id": "dc_766",
         "name": "UoS IT Services",
         "type": "data_center",
         "subtype": "colocation",
@@ -28127,7 +28237,7 @@
         ]
       },
       "properties": {
-        "id": "dc_766",
+        "id": "dc_767",
         "name": "Hive IT",
         "type": "data_center",
         "subtype": "colocation",
@@ -28162,7 +28272,7 @@
         ]
       },
       "properties": {
-        "id": "dc_767",
+        "id": "dc_768",
         "name": "Equinix MA1",
         "type": "data_center",
         "subtype": "colocation",
@@ -28197,7 +28307,7 @@
         ]
       },
       "properties": {
-        "id": "dc_768",
+        "id": "dc_769",
         "name": "Asanti Manchester",
         "type": "data_center",
         "subtype": "colocation",
@@ -28232,7 +28342,7 @@
         ]
       },
       "properties": {
-        "id": "dc_769",
+        "id": "dc_770",
         "name": "Iron Mountain",
         "type": "data_center",
         "subtype": "colocation",
@@ -28267,7 +28377,7 @@
         ]
       },
       "properties": {
-        "id": "dc_770",
+        "id": "dc_771",
         "name": "Verizon Warrington",
         "type": "data_center",
         "subtype": "colocation",
@@ -28302,7 +28412,7 @@
         ]
       },
       "properties": {
-        "id": "dc_771",
+        "id": "dc_772",
         "name": "The Babbage Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -28337,7 +28447,7 @@
         ]
       },
       "properties": {
-        "id": "dc_772",
+        "id": "dc_773",
         "name": "Experian",
         "type": "data_center",
         "subtype": "colocation",
@@ -28372,7 +28482,7 @@
         ]
       },
       "properties": {
-        "id": "dc_773",
+        "id": "dc_774",
         "name": "nLighten Leeds",
         "type": "data_center",
         "subtype": "colocation",
@@ -28407,7 +28517,7 @@
         ]
       },
       "properties": {
-        "id": "dc_774",
+        "id": "dc_775",
         "name": "Lunar 1&2",
         "type": "data_center",
         "subtype": "colocation",
@@ -28442,7 +28552,7 @@
         ]
       },
       "properties": {
-        "id": "dc_775",
+        "id": "dc_776",
         "name": "Datum Datacentres (MCR2)",
         "type": "data_center",
         "subtype": "colocation",
@@ -28477,7 +28587,7 @@
         ]
       },
       "properties": {
-        "id": "dc_776",
+        "id": "dc_777",
         "name": "VocaLink",
         "type": "data_center",
         "subtype": "colocation",
@@ -28512,7 +28622,7 @@
         ]
       },
       "properties": {
-        "id": "dc_777",
+        "id": "dc_778",
         "name": "Lloyds Banking Group Copley",
         "type": "data_center",
         "subtype": "colocation",
@@ -28547,7 +28657,7 @@
         ]
       },
       "properties": {
-        "id": "dc_778",
+        "id": "dc_779",
         "name": "Joule House",
         "type": "data_center",
         "subtype": "colocation",
@@ -28582,7 +28692,7 @@
         ]
       },
       "properties": {
-        "id": "dc_779",
+        "id": "dc_780",
         "name": "Digital Space DC - Newark",
         "type": "data_center",
         "subtype": "colocation",
@@ -28617,7 +28727,7 @@
         ]
       },
       "properties": {
-        "id": "dc_780",
+        "id": "dc_781",
         "name": "DXC Wynyard Data Center",
         "type": "data_center",
         "subtype": "colocation",
@@ -28652,7 +28762,7 @@
         ]
       },
       "properties": {
-        "id": "dc_781",
+        "id": "dc_782",
         "name": "Redcentric Elland Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -28687,7 +28797,7 @@
         ]
       },
       "properties": {
-        "id": "dc_782",
+        "id": "dc_783",
         "name": "GridJet",
         "type": "data_center",
         "subtype": "colocation",
@@ -28722,7 +28832,7 @@
         ]
       },
       "properties": {
-        "id": "dc_783",
+        "id": "dc_784",
         "name": "nLighten Nottingham",
         "type": "data_center",
         "subtype": "colocation",
@@ -28757,7 +28867,7 @@
         ]
       },
       "properties": {
-        "id": "dc_784",
+        "id": "dc_785",
         "name": "HSBC Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -28792,7 +28902,7 @@
         ]
       },
       "properties": {
-        "id": "dc_785",
+        "id": "dc_786",
         "name": "nLighten Chester",
         "type": "data_center",
         "subtype": "colocation",
@@ -28827,7 +28937,7 @@
         ]
       },
       "properties": {
-        "id": "dc_786",
+        "id": "dc_787",
         "name": "Thales",
         "type": "data_center",
         "subtype": "colocation",
@@ -28862,7 +28972,7 @@
         ]
       },
       "properties": {
-        "id": "dc_787",
+        "id": "dc_788",
         "name": "HSBC Wakefield Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -28897,7 +29007,7 @@
         ]
       },
       "properties": {
-        "id": "dc_788",
+        "id": "dc_789",
         "name": "CDL Strata Campus Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -28932,7 +29042,7 @@
         ]
       },
       "properties": {
-        "id": "dc_789",
+        "id": "dc_790",
         "name": "Stellium Newcastle Campus",
         "type": "data_center",
         "subtype": "colocation",
@@ -28967,7 +29077,7 @@
         ]
       },
       "properties": {
-        "id": "dc_790",
+        "id": "dc_791",
         "name": "nLighten Edge Data Centre Liverpool",
         "type": "data_center",
         "subtype": "colocation",
@@ -29002,7 +29112,7 @@
         ]
       },
       "properties": {
-        "id": "dc_791",
+        "id": "dc_792",
         "name": "Evolution @ Agecroft Commerce Park",
         "type": "data_center",
         "subtype": "colocation",
@@ -29037,7 +29147,7 @@
         ]
       },
       "properties": {
-        "id": "dc_792",
+        "id": "dc_793",
         "name": "Brightsolid",
         "type": "data_center",
         "subtype": "colocation",
@@ -29072,7 +29182,7 @@
         ]
       },
       "properties": {
-        "id": "dc_793",
+        "id": "dc_794",
         "name": "DataVita DV2",
         "type": "data_center",
         "subtype": "colocation",
@@ -29107,7 +29217,7 @@
         ]
       },
       "properties": {
-        "id": "dc_794",
+        "id": "dc_795",
         "name": "Pulsant Edinburgh South Gyle SC-1",
         "type": "data_center",
         "subtype": "colocation",
@@ -29142,7 +29252,7 @@
         ]
       },
       "properties": {
-        "id": "dc_795",
+        "id": "dc_796",
         "name": "RBS Melville Gate Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -29177,7 +29287,7 @@
         ]
       },
       "properties": {
-        "id": "dc_796",
+        "id": "dc_797",
         "name": "iomart Glasgow Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -29212,7 +29322,7 @@
         ]
       },
       "properties": {
-        "id": "dc_797",
+        "id": "dc_798",
         "name": "Sungard Availability Services",
         "type": "data_center",
         "subtype": "colocation",
@@ -29247,7 +29357,7 @@
         ]
       },
       "properties": {
-        "id": "dc_798",
+        "id": "dc_799",
         "name": "RBS Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -29282,7 +29392,7 @@
         ]
       },
       "properties": {
-        "id": "dc_799",
+        "id": "dc_800",
         "name": "Edinburgh SC-3",
         "type": "data_center",
         "subtype": "colocation",
@@ -29317,7 +29427,7 @@
         ]
       },
       "properties": {
-        "id": "dc_800",
+        "id": "dc_801",
         "name": "DataVita DV1",
         "type": "data_center",
         "subtype": "colocation",
@@ -29352,7 +29462,7 @@
         ]
       },
       "properties": {
-        "id": "dc_801",
+        "id": "dc_802",
         "name": "Asanti Hamilton",
         "type": "data_center",
         "subtype": "colocation",
@@ -29387,7 +29497,7 @@
         ]
       },
       "properties": {
-        "id": "dc_802",
+        "id": "dc_803",
         "name": "Centerprise International Newport",
         "type": "data_center",
         "subtype": "colocation",
@@ -29422,7 +29532,7 @@
         ]
       },
       "properties": {
-        "id": "dc_803",
+        "id": "dc_804",
         "name": "Centerprise International (Distribution)",
         "type": "data_center",
         "subtype": "colocation",
@@ -29457,7 +29567,7 @@
         ]
       },
       "properties": {
-        "id": "dc_804",
+        "id": "dc_805",
         "name": "Netwise London East",
         "type": "data_center",
         "subtype": "colocation",
@@ -29492,7 +29602,7 @@
         ]
       },
       "properties": {
-        "id": "dc_805",
+        "id": "dc_806",
         "name": "AWS Swindon Data Centre",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -29527,7 +29637,7 @@
         ]
       },
       "properties": {
-        "id": "dc_806",
+        "id": "dc_807",
         "name": "University Shared Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -29562,7 +29672,7 @@
         ]
       },
       "properties": {
-        "id": "dc_807",
+        "id": "dc_808",
         "name": "nLighten Bristol",
         "type": "data_center",
         "subtype": "colocation",
@@ -29597,7 +29707,7 @@
         ]
       },
       "properties": {
-        "id": "dc_808",
+        "id": "dc_809",
         "name": "Equinix LD3",
         "type": "data_center",
         "subtype": "colocation",
@@ -29632,7 +29742,7 @@
         ]
       },
       "properties": {
-        "id": "dc_809",
+        "id": "dc_810",
         "name": "Verne Global London Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -29667,7 +29777,7 @@
         ]
       },
       "properties": {
-        "id": "dc_810",
+        "id": "dc_811",
         "name": "Telehouse West",
         "type": "data_center",
         "subtype": "colocation",
@@ -29702,7 +29812,7 @@
         ]
       },
       "properties": {
-        "id": "dc_811",
+        "id": "dc_812",
         "name": "Rackspace London 8",
         "type": "data_center",
         "subtype": "colocation",
@@ -29737,7 +29847,7 @@
         ]
       },
       "properties": {
-        "id": "dc_812",
+        "id": "dc_813",
         "name": "Elasticity Slough",
         "type": "data_center",
         "subtype": "colocation",
@@ -29772,7 +29882,7 @@
         ]
       },
       "properties": {
-        "id": "dc_813",
+        "id": "dc_814",
         "name": "LDeX 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -29807,7 +29917,7 @@
         ]
       },
       "properties": {
-        "id": "dc_814",
+        "id": "dc_815",
         "name": "Pure DC London Brent Cross",
         "type": "data_center",
         "subtype": "colocation",
@@ -29842,7 +29952,7 @@
         ]
       },
       "properties": {
-        "id": "dc_815",
+        "id": "dc_816",
         "name": "Visa London",
         "type": "data_center",
         "subtype": "colocation",
@@ -29877,7 +29987,7 @@
         ]
       },
       "properties": {
-        "id": "dc_816",
+        "id": "dc_817",
         "name": "Soverign Data Centre - Metro Point",
         "type": "data_center",
         "subtype": "colocation",
@@ -29912,7 +30022,7 @@
         ]
       },
       "properties": {
-        "id": "dc_817",
+        "id": "dc_818",
         "name": "Stellanor London North",
         "type": "data_center",
         "subtype": "colocation",
@@ -29947,7 +30057,7 @@
         ]
       },
       "properties": {
-        "id": "dc_818",
+        "id": "dc_819",
         "name": "Equinix LD9",
         "type": "data_center",
         "subtype": "colocation",
@@ -29982,7 +30092,7 @@
         ]
       },
       "properties": {
-        "id": "dc_819",
+        "id": "dc_820",
         "name": "Spectrum House",
         "type": "data_center",
         "subtype": "colocation",
@@ -30017,7 +30127,7 @@
         ]
       },
       "properties": {
-        "id": "dc_820",
+        "id": "dc_821",
         "name": "NTT Hemel Hempstead 2",
         "type": "data_center",
         "subtype": "colocation",
@@ -30052,7 +30162,7 @@
         ]
       },
       "properties": {
-        "id": "dc_821",
+        "id": "dc_822",
         "name": "Rackspace London Slough (LON3)",
         "type": "data_center",
         "subtype": "colocation",
@@ -30087,7 +30197,7 @@
         ]
       },
       "properties": {
-        "id": "dc_822",
+        "id": "dc_823",
         "name": "Equinix LD5",
         "type": "data_center",
         "subtype": "colocation",
@@ -30122,7 +30232,7 @@
         ]
       },
       "properties": {
-        "id": "dc_823",
+        "id": "dc_824",
         "name": "Colt London North Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -30157,7 +30267,7 @@
         ]
       },
       "properties": {
-        "id": "dc_824",
+        "id": "dc_825",
         "name": "Stellanor London East",
         "type": "data_center",
         "subtype": "colocation",
@@ -30192,7 +30302,7 @@
         ]
       },
       "properties": {
-        "id": "dc_825",
+        "id": "dc_826",
         "name": "Ark Data Centres Meridian Park",
         "type": "data_center",
         "subtype": "colocation",
@@ -30227,7 +30337,7 @@
         ]
       },
       "properties": {
-        "id": "dc_826",
+        "id": "dc_827",
         "name": "Redcentric London City",
         "type": "data_center",
         "subtype": "colocation",
@@ -30262,7 +30372,7 @@
         ]
       },
       "properties": {
-        "id": "dc_827",
+        "id": "dc_828",
         "name": "Vodafone",
         "type": "data_center",
         "subtype": "colocation",
@@ -30297,7 +30407,7 @@
         ]
       },
       "properties": {
-        "id": "dc_828",
+        "id": "dc_829",
         "name": "Nationwide Swindon Technology Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -30332,7 +30442,7 @@
         ]
       },
       "properties": {
-        "id": "dc_829",
+        "id": "dc_830",
         "name": "Starwood House",
         "type": "data_center",
         "subtype": "colocation",
@@ -30367,7 +30477,7 @@
         ]
       },
       "properties": {
-        "id": "dc_830",
+        "id": "dc_831",
         "name": "Hertfordshire Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -30402,7 +30512,7 @@
         ]
       },
       "properties": {
-        "id": "dc_831",
+        "id": "dc_832",
         "name": "R89",
         "type": "data_center",
         "subtype": "colocation",
@@ -30437,7 +30547,7 @@
         ]
       },
       "properties": {
-        "id": "dc_832",
+        "id": "dc_833",
         "name": "BT Computer Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -30472,7 +30582,7 @@
         ]
       },
       "properties": {
-        "id": "dc_833",
+        "id": "dc_834",
         "name": "Kyndryl UK Ltd",
         "type": "data_center",
         "subtype": "colocation",
@@ -30507,7 +30617,7 @@
         ]
       },
       "properties": {
-        "id": "dc_834",
+        "id": "dc_835",
         "name": "CyrusOne LON2",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -30542,7 +30652,7 @@
         ]
       },
       "properties": {
-        "id": "dc_835",
+        "id": "dc_836",
         "name": "Kao Data KLON-05",
         "type": "data_center",
         "subtype": "colocation",
@@ -30577,7 +30687,7 @@
         ]
       },
       "properties": {
-        "id": "dc_836",
+        "id": "dc_837",
         "name": "Virgin Media O2 Slough",
         "type": "data_center",
         "subtype": "colocation",
@@ -30612,7 +30722,7 @@
         ]
       },
       "properties": {
-        "id": "dc_837",
+        "id": "dc_838",
         "name": "Virtus LONDON1",
         "type": "data_center",
         "subtype": "colocation",
@@ -30647,7 +30757,7 @@
         ]
       },
       "properties": {
-        "id": "dc_838",
+        "id": "dc_839",
         "name": "Digital Realty London LON3",
         "type": "data_center",
         "subtype": "colocation",
@@ -30682,7 +30792,7 @@
         ]
       },
       "properties": {
-        "id": "dc_839",
+        "id": "dc_840",
         "name": "Kao Data KLON-06",
         "type": "data_center",
         "subtype": "colocation",
@@ -30717,7 +30827,7 @@
         ]
       },
       "properties": {
-        "id": "dc_840",
+        "id": "dc_841",
         "name": "UBS Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -30752,7 +30862,7 @@
         ]
       },
       "properties": {
-        "id": "dc_841",
+        "id": "dc_842",
         "name": "The Chess Building",
         "type": "data_center",
         "subtype": "colocation",
@@ -30787,7 +30897,7 @@
         ]
       },
       "properties": {
-        "id": "dc_842",
+        "id": "dc_843",
         "name": "DXC Technology",
         "type": "data_center",
         "subtype": "colocation",
@@ -30822,7 +30932,7 @@
         ]
       },
       "properties": {
-        "id": "dc_843",
+        "id": "dc_844",
         "name": "nLighten Swindon",
         "type": "data_center",
         "subtype": "colocation",
@@ -30857,7 +30967,7 @@
         ]
       },
       "properties": {
-        "id": "dc_844",
+        "id": "dc_845",
         "name": "NTT Hemel Hempstead 3",
         "type": "data_center",
         "subtype": "colocation",
@@ -30892,7 +31002,7 @@
         ]
       },
       "properties": {
-        "id": "dc_845",
+        "id": "dc_846",
         "name": "Virtus London6",
         "type": "data_center",
         "subtype": "colocation",
@@ -30927,7 +31037,7 @@
         ]
       },
       "properties": {
-        "id": "dc_846",
+        "id": "dc_847",
         "name": "Options Park Royal Data Centre",
         "type": "data_center",
         "subtype": "colocation",
@@ -30962,7 +31072,7 @@
         ]
       },
       "properties": {
-        "id": "dc_847",
+        "id": "dc_848",
         "name": "CryrusOne LON4",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -30997,7 +31107,7 @@
         ]
       },
       "properties": {
-        "id": "dc_848",
+        "id": "dc_849",
         "name": "Google Datacentre Waltham Cross",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -31032,7 +31142,7 @@
         ]
       },
       "properties": {
-        "id": "dc_849",
+        "id": "dc_850",
         "name": "NTT Hemel Hempstead 4",
         "type": "data_center",
         "subtype": "colocation",
@@ -31067,7 +31177,7 @@
         ]
       },
       "properties": {
-        "id": "dc_850",
+        "id": "dc_851",
         "name": "Microsoft Newport data centre",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -31102,7 +31212,7 @@
         ]
       },
       "properties": {
-        "id": "dc_851",
+        "id": "dc_852",
         "name": "AWS Didcot Data Centre",
         "type": "data_center",
         "subtype": "hyperscale",
@@ -31137,7 +31247,7 @@
         ]
       },
       "properties": {
-        "id": "dc_852",
+        "id": "dc_853",
         "name": "Colt London 4",
         "type": "data_center",
         "subtype": "colocation",
@@ -31172,7 +31282,7 @@
         ]
       },
       "properties": {
-        "id": "dc_853",
+        "id": "dc_854",
         "name": "Redwire",
         "type": "data_center",
         "subtype": "colocation",
@@ -31207,7 +31317,7 @@
         ]
       },
       "properties": {
-        "id": "dc_854",
+        "id": "dc_855",
         "name": "Verizon UK5",
         "type": "data_center",
         "subtype": "colocation",
@@ -31242,7 +31352,7 @@
         ]
       },
       "properties": {
-        "id": "dc_855",
+        "id": "dc_856",
         "name": "IP House London Datacentre",
         "type": "data_center",
         "subtype": "colocation",
@@ -31277,7 +31387,7 @@
         ]
       },
       "properties": {
-        "id": "dc_856",
+        "id": "dc_857",
         "name": "Kao Data KLON-01",
         "type": "data_center",
         "subtype": "colocation",
@@ -31312,7 +31422,7 @@
         ]
       },
       "properties": {
-        "id": "dc_857",
+        "id": "dc_858",
         "name": "NTT London 1",
         "type": "data_center",
         "subtype": "colocation",
@@ -31347,7 +31457,7 @@
         ]
       },
       "properties": {
-        "id": "dc_858",
+        "id": "dc_859",
         "name": "Virtual Internet UK",
         "type": "data_center",
         "subtype": "colocation",
@@ -31382,7 +31492,7 @@
         ]
       },
       "properties": {
-        "id": "dc_859",
+        "id": "dc_860",
         "name": "Tata Stratford",
         "type": "data_center",
         "subtype": "colocation",

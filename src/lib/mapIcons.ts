@@ -47,10 +47,19 @@ export const ICON_PATHS = {
   // Battery materials / refining
   battery_materials:
     'M9 4.5h6v2H9zM7.5 6.5h9v13h-9zM10 10h4M10 13.5h4M10 17h4',
+  // Cell gigafactory — stacked pouch/prism silhouette
+  battery_cell:
+    'M6 5h12v14H6zM8 7.5h8v2H8zM8 11h8v2H8zM8 14.5h8v2H8z',
   lithium_mine:
     'M13.5 3.5L11 9h3.2L9.5 20.5M5.5 20.5h13M8 20.5l1.8-5.5M16.5 20.5l-1.2-3.8',
   cobalt_mine:
     'M12 3v3.5M9.5 6.5h5l1.2 3.2H8.3L9.5 6.5zM7.5 9.7L5.5 20.5h13L16.5 9.7M12 13v5',
+  // Nickel — mine silhouette + Ni cue
+  nickel_mine:
+    'M12 3v3.5M8.5 6.5h7l1.5 4H7L8.5 6.5zM6.5 10.5L5 20.5h14L17.5 10.5M9 14h6M10.5 17h3',
+  // Natural graphite — layered flake
+  graphite_mine:
+    'M5 18.5h14M6.5 15.5h11M8 12.5h8M9.5 9.5h5M11 6.5h2M7 18.5l2-9M17 18.5l-2-9',
   rare_earth_mine:
     'M3.5 18.5l4.2-8.2 2.8 4.2 2.6-6.5 7.4 10.5H3.5zM12 5.5l1.3-2.5 1.3 2.5',
   // Lavoro cognitivo AI — persona + schermo (labeling / moderazione)
@@ -86,8 +95,11 @@ export const SUBTYPE_COLORS: Record<SubtypeKey, string> = {
   hbm_memory: '#2F6F8A',
   advanced_packaging: '#5A7A6A',
   battery_materials: '#8A6B4A',
+  battery_cell: '#6B5A3A',
   lithium_mine: '#8A9AA8',
   cobalt_mine: '#3F6F9E',
+  nickel_mine: '#5A7A6E',
+  graphite_mine: '#6A6A6A',
   rare_earth_mine: '#8B6B7A',
   ai_data_work: '#8B4A5C',
   model_lab: '#4A5A8A'
@@ -132,8 +144,11 @@ export const FILTER_GROUPS = {
       'hbm_memory',
       'advanced_packaging',
       'battery_materials',
+      'battery_cell',
       'lithium_mine',
       'cobalt_mine',
+      'nickel_mine',
+      'graphite_mine',
       'rare_earth_mine',
       'ai_data_work',
       'model_lab'
@@ -181,9 +196,31 @@ export const CORRIDOR_PRESETS = [
   {
     id: 'cobalt_battery',
     icon: 'cobalt_mine' as SubtypeKey,
-    siteIds: ['rm_013', 'rm_014', 'rm_019', 'rm_011', 'rm_024'],
+    siteIds: [
+      'rm_013',
+      'rm_014',
+      'rm_019',
+      'rm_031',
+      'rm_032',
+      'rm_035',
+      'rm_034',
+      'rm_011',
+      'rm_024',
+      'rm_012',
+      'rm_033',
+      'rm_036',
+      'rm_037',
+      'rm_038'
+    ],
     subtypes: {
-      raw_materials: ['cobalt_mine', 'battery_materials', 'lithium_mine'] as SubtypeKey[],
+      raw_materials: [
+        'cobalt_mine',
+        'nickel_mine',
+        'graphite_mine',
+        'battery_materials',
+        'battery_cell',
+        'lithium_mine'
+      ] as SubtypeKey[],
       data_centers: [] as SubtypeKey[],
       energy_plants: [] as SubtypeKey[],
       grid_nodes: [] as SubtypeKey[]
@@ -193,10 +230,21 @@ export const CORRIDOR_PRESETS = [
   {
     id: 'ai_labor',
     icon: 'ai_data_work' as SubtypeKey,
-    siteIds: ['rm_021', 'rm_022', 'rm_023', 'dc_013'],
+    siteIds: [
+      'rm_021',
+      'rm_022',
+      'rm_041',
+      'rm_042',
+      'rm_040',
+      'rm_043',
+      'rm_023',
+      'rm_044',
+      'rm_039',
+      'rm_045'
+    ],
     subtypes: {
       raw_materials: ['ai_data_work', 'model_lab'] as SubtypeKey[],
-      data_centers: ['hyperscale'] as SubtypeKey[],
+      data_centers: [] as SubtypeKey[],
       energy_plants: [] as SubtypeKey[],
       grid_nodes: [] as SubtypeKey[]
     },

@@ -45,7 +45,8 @@ traccia copertura vs candidati e il racconto proliferazione (operativi vs pipeli
 | dc_042 | Equinix ML7 / ML8 | Castelletto | under_construction | |
 | dc_044 | Hscale MXP1 | Arluno | planned | **Wave 3** ≠ Vantage MXP1 |
 | dc_045 | Hscale MXP2 | Settimo (NO MI) | planned | **Wave 3** ≠ Vantage MXP2; pin comunale |
-| dc_046 | CyrusOne MIL1 | Segrate | under_construction | **Wave 3** |
+| dc_046 | CyrusOne MIL1 | Segrate / Redecesio (ex CISE) | under_construction | **Wave 3**; arricchito 2026-09-29 (stamp a locale, comitati) |
+| dc_068 | CyrusOne MIL2 | Milano Rubattino 84 | planned | PA Comune MI in istruttoria; 54 MW (CyrusOne) |
 | dc_048 | Equinix ML3 | Basiglio | operational | **Wave 3** |
 | dc_049 | Equinix ML4 | Milano (Cascia) | operational | **Wave 3** |
 | dc_050 | Data4 MIL02 | Vittuone | under_construction | **Wave 3** |
@@ -71,7 +72,7 @@ traccia copertura vs candidati e il racconto proliferazione (operativi vs pipeli
 | Cornaredo “DC12” (Equans / ETS) | Proponente finale unclear | Bassa |
 | Core Stack / Green Arrow–Lazzari | Pipeline nazionale senza comuni LO | Watchlist |
 | NTT / Compass / CloudHQ wholesale MI | Directory commerciali | Media |
-| CyrusOne MIL2 | Annunciato secondo sito MI | Watchlist |
+| ~~CyrusOne MIL2~~ | Rubattino 84 | **dc_068** (2026-09-29) |
 
 ---
 
@@ -86,7 +87,8 @@ traccia copertura vs candidati e il racconto proliferazione (operativi vs pipeli
 | K2 Strategic | Zibido, Lacchiarella | dc_031 |
 | Eni–Khazna | Ferrera Erbognone | **dc_036** |
 | Hscale (~250 MW) | Arluno, Settimo NO | **dc_044** + **dc_045** |
-| CyrusOne MIL1 | Segrate | **dc_046** |
+| CyrusOne MIL1 | Segrate / Redecesio | **dc_046** |
+| CyrusOne MIL2 | Milano Rubattino | **dc_068** |
 | Data4 Vittuone | Vittuone | **dc_050** |
 
 ---
@@ -97,7 +99,7 @@ traccia copertura vs candidati e il racconto proliferazione (operativi vs pipeli
 | --- | ---: |
 | operational | 12 |
 | under_construction | 9 |
-| planned | 13 |
+| planned | 14 |
 
 Segnale geografico: ovest Milano (Cornaredo–Settimo–Cusago–Arluno–Vittuone), sud-ovest (Noviglio–Zibido–Lacchiarella–Opera–Pieve), sud/est (Melegnano, Vignate, Segrate), Lodigiano (Tavazzano, Bertonico), Pavese (Siziano, Bornasco, Ferrera Erbognone), Basiglio (ML3).
 

@@ -483,8 +483,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -68.2,
-          -23.5
+          -68.25667,
+          -23.38362
         ]
       },
       "properties": {
@@ -494,14 +494,14 @@
         "subtype": "lithium_mine",
         "operator": "SQM / Albemarle",
         "capacity": "36% quota mercato globale combinata (2022)",
-        "description_it": "Il più grande salar del Cile, 55 km a sud di San Pedro de Atacama. SQM (20% mercato globale) e Albemarle (16%) estraggono litio dalla salamoia. La più grande operazione di estrazione di litio visibile da satellite al mondo. Prima operazione mineraria di litio a ottenere la certificazione IRMA 75 (settembre 2023).",
+        "description_it": "Il più grande salar del Cile, 55 km a sud di San Pedro de Atacama. SQM (20% mercato globale) e Albemarle (16%) estraggono litio dalla salamoia. La più grande operazione di estrazione di litio visibile da satellite al mondo. Prima operazione mineraria di litio a ottenere la certificazione IRMA 75 (settembre 2023). Ramo brine distinto dallo spodumene Greenbushes→Kwinana. Arco verso raffineria Albemarle La Negra (rm_033).",
         "country": "CL",
         "city": "San Pedro de Atacama",
         "site_category": "extraction",
         "status": "operational",
         "updated_at": "2026-09-29",
         "confidence": "medium",
-        "description_en": "Salar de Atacama brine lithium extraction (Chile): SQM and Albemarle. Largest visible lithium brine operation from orbit. Indigenous and water-stress conflicts documented; no curated edge to a named cathode plant in this dataset yet.",
+        "description_en": "Salar de Atacama brine lithium extraction (Chile): SQM and Albemarle. Largest visible lithium brine operation from orbit. Indigenous and water-stress conflicts documented; no curated edge to a named cathode plant in this dataset yet. Brine path distinct from Greenbushes→Kwinana spodumene. Edge to Albemarle La Negra refinery (rm_033).",
         "community_impact_it": "Conflitti con comunità indigene e stress idrico sul salar: l’estrazione da salamoia compete con usi locali dell’acqua. Contesto, senza arco verso un catodo nominato.",
         "community_impact_en": "Conflicts with Indigenous communities and water stress on the salar: brine extraction competes with local water uses. Context pin, no edge to a named cathode plant.",
         "labor_risks": [
@@ -818,12 +818,12 @@
       },
       "properties": {
         "id": "rm_019",
-        "name": "Umicore - Raffineria cobalto Kokkola",
+        "name": "Umicore - Kokkola (raffineria Co + pCAM)",
         "type": "raw_material",
         "subtype": "battery_materials",
         "operator": "Umicore",
-        "capacity": "Raffineria cobalto / precursori battery materials",
-        "description_it": "Raffineria di cobalto a Kokkola (Finlandia), acquisita da Umicore (ex Freeport Cobalt). Nodo europeo della filiera battery materials: riceve idrossido di cobalto da miniere industriali Glencore in RDC (Mutanda, KCC) e lo trasforma in materiali per catodi. La stessa chimica alimenta batterie stazionarie e sistemi di backup usati nell'infrastruttura digitale — senza saltare direttamente a un fab di chip.",
+        "capacity": "Raffineria Co + pCAM; ~400 addetti dichiarati",
+        "description_it": "Impianto Umicore a Kokkola (Finlandia): maggiore raffineria di cobalto fuori dalla Cina e grande sito europeo di precursori catodici (pCAM / NMC). Riceve idrossido di cobalto Glencore da Mutanda e Kamoto (conn_016/017); alimenta la produzione CAM di Nysa (rm_031). Chimica NMC: cobalto + nichel + manganese (Ni non pinato a parte senza contratto miniera→sito pubblico).",
         "country": "FI",
         "city": "Kokkola",
         "status": "operational",
@@ -859,7 +859,7 @@
         "labor_risks": [
           "chemical_exposure"
         ],
-        "description_en": "Umicore cobalt refinery / battery precursors at Kokkola, Finland (~400 people). Intermediate European chemical link between DRC mines (Mutanda/Kamoto via Glencore offtake) and battery cathodes.",
+        "description_en": "Umicore plant at Kokkola (Finland): largest cobalt refinery outside China and a major European cathode-precursor (pCAM / NMC) site. Receives Glencore cobalt hydroxide from Mutanda and Kamoto (conn_016/017); feeds CAM production at Nysa (rm_031). NMC chemistry: cobalt + nickel + manganese (Ni not separately pinned without a public mine→site contract).",
         "community_impact_en": "Finnish chemical hub on the critical cobalt chain; pressure for due diligence and traceability toward African extraction."
       }
     },
@@ -985,9 +985,9 @@
         "type": "raw_material",
         "subtype": "ai_data_work",
         "operator": "Sama (Samasource)",
-        "capacity": "N/D (migliaia di worker nell’hub KE; progetti NLP/moderazione poi usciti)",
-        "description_it": "Hub keniano di Sama (Bay Area) per data labeling e moderazione contenuti conto clienti Silicon Valley (tra cui OpenAI e Meta, documentati da inchieste TIME e CBS). Lavoratori pagati ~1–2 $/ora su materiali anche traumatici; uscite successive dai progetti di contenuto sensibile. Pin sul nodo Nairobi: il lavoro è cognitivo, non una fabbrica.",
-        "description_en": "Kenyan Sama (Bay Area) hub for data labeling and content moderation for Silicon Valley clients (including OpenAI and Meta, documented by TIME and CBS investigations). Workers paid ~$1–2/hour on often traumatic material; later exits from sensitive-content projects. Nairobi pin: cognitive labor, not a factory.",
+        "capacity": "Storicamente >3.000 worker KE; apr 2026: ~1.108 layoff dopo fine engagement Meta",
+        "description_it": "Hub keniano di Sama (Bay Area) per data labeling e, in passato, moderazione contenuti per clienti Silicon Valley (OpenAI, Meta — TIME/CBS). Contratto OpenAI chiuso anticipatamente nel 2022; uscita da NLP/moderazione sensibile ~mar 2023. Restava labeling/AI annotation per Meta fino alla fine di un «major engagement» Nairobi (apr 2026), con ~1.108 layoff dichiarati. Pin sul nodo Nairobi: lavoro cognitivo outsourcato, non una fabbrica. Status ancora operational come azienda, ma il corridoio documentato è in gran parte storico.",
+        "description_en": "Kenyan Sama (Bay Area) hub for data labeling and, historically, content moderation for Silicon Valley clients (OpenAI, Meta — TIME/CBS). OpenAI contract ended early in 2022; exit from sensitive NLP/moderation ~Mar 2023. AI annotation for Meta continued until Meta ended a major Nairobi engagement (Apr 2026), with ~1,108 declared layoffs. Nairobi pin: outsourced cognitive labor, not a factory. Still operational as a company, but the documented corridor is largely historical.",
         "country": "KE",
         "city": "Nairobi",
         "status": "operational",
@@ -998,9 +998,9 @@
         "employment": {
           "direct": null,
           "indirect_est": null,
-          "contractors_est": 3000,
-          "note_it": "Sama ha impiegato oltre 3.000 worker in Kenya (stima CBS). Pay band documentato ~1,32–2 $/ora take-home su progetti OpenAI; contratti di outsourcing, non organico Big Tech.",
-          "note_en": "Sama employed over 3,000 workers in Kenya (CBS estimate). Documented take-home pay band ~$1.32–2/hour on OpenAI projects; outsourcing contracts, not Big Tech payroll.",
+          "contractors_est": 1108,
+          "note_it": "CBS: >3.000 worker KE al picco. Pay band OpenAI ~1,32–2 $/ora (storico). Apr 2026: Sama dichiara layoff notice per 1.108 staff dopo fine engagement Meta a Nairobi.",
+          "note_en": "CBS: >3,000 KE workers at peak. OpenAI pay band ~$1.32–2/hour (historical). Apr 2026: Sama declares layoff notice for 1,108 staff after Meta ended the Nairobi engagement.",
           "conditions_tags": [
             "outsourced_gig",
             "precarious_contracts",
@@ -1013,8 +1013,8 @@
           "outsourced_gig",
           "union_busting"
         ],
-        "community_impact_it": "Nairobi come hub di «human in the loop»: lavoro cognitivo a basso salario che addestra e igienizza i modelli usati in Occidente. Cause e lettere aperte (Foxglove) documentano danni psichici e anti-sindacale.",
-        "community_impact_en": "Nairobi as a «human in the loop» hub: low-wage cognitive labor that trains and sanitizes models used in the West. Lawsuits and open letters (Foxglove) document psychological harm and union busting.",
+        "community_impact_it": "Nairobi come hub «human in the loop»: salari bassi, danni psichici documentati, e precarietà quando il cliente Big Tech chiude il contratto (OpenAI 2022; Meta engagement 2026).",
+        "community_impact_en": "Nairobi as a «human in the loop» hub: low wages, documented psychological harm, and precarity when the Big Tech client ends the contract (OpenAI 2022; Meta engagement 2026).",
         "sources": [
           {
             "title": "TIME — OpenAI / Sama Kenya workers <$2/hour",
@@ -1030,6 +1030,17 @@
             "title": "Foxglove — open letter Kenyan AI workers",
             "url": "https://www.foxglove.org.uk/open-letter-to-president-biden-from-tech-workers-in-kenya/",
             "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "AP — Sama lays off 1,000+ after Meta ends Nairobi contract (2026)",
+            "url": "https://apnews.com/article/kenya-meta-facebook-sama-content-moderators-902716b8037bc4063dd1101e2dbd4c3a",
+            "accessed_at": "2026-09-29",
+            "note": "1,108 layoff notice; major Nairobi engagement ended"
+          },
+          {
+            "title": "Guardian — Kenyan firm sacks 1,000+ after losing Meta contract",
+            "url": "https://www.theguardian.com/technology/2026/apr/17/kenyan-outsourcing-company-for-meta-sacks-workers",
+            "accessed_at": "2026-09-29"
           }
         ]
       }
@@ -1039,8 +1050,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8172,
-          -1.2864
+          36.8255,
+          -1.2925
         ]
       },
       "properties": {
@@ -1050,8 +1061,8 @@
         "subtype": "ai_data_work",
         "operator": "Scale AI (Remotasks)",
         "capacity": "Piattaforma gig; uscita dal mercato KE/NG/PK nel 2024",
-        "description_it": "Piattaforma Remotasks (Scale AI) per click-work di labeling a distanza. Worker keniani segnalano salari non pagati e chiusura improvvisa del mercato africano (marzo 2024). Clienti di Scale includono laboratori AI di primo piano. Pin Nairobi come hub di reclutamento/lavoro remoto, non uno stabilimento fisico.",
-        "description_en": "Remotasks (Scale AI) platform for remote labeling click-work. Kenyan workers report unpaid wages and an abrupt African market exit (March 2024). Scale clients include leading AI labs. Nairobi pin as recruitment/remote-work hub, not a physical plant.",
+        "description_it": "Piattaforma Remotasks (sussidiaria Scale AI) per click-work di labeling a distanza. Worker keniani segnalano salari non pagati e chiusura del mercato africano (mar 2024). Il pin Nairobi è hub di reclutamento/lavoro remoto storico, non uno stabilimento fisico; la committenza corporate passa da Scale HQ (San Francisco).",
+        "description_en": "Remotasks platform (Scale AI subsidiary) for remote labeling click-work. Kenyan workers report unpaid wages and an African market exit (Mar 2024). Nairobi pin is a historical recruitment/remote-work hub, not a physical plant; corporate contracting sits at Scale HQ (San Francisco).",
         "country": "KE",
         "city": "Nairobi",
         "status": "decommissioned",
@@ -1096,8 +1107,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.4194,
-          37.7749
+          -122.41044,
+          37.76221
         ]
       },
       "properties": {
@@ -1107,8 +1118,8 @@
         "subtype": "model_lab",
         "operator": "OpenAI",
         "capacity": "Lab modelli generativi (non un data center di training nominato qui)",
-        "description_it": "Sede / lab OpenAI a San Francisco. Nodo di committenza del lavoro di labeling e safety (RLHF, moderazione) esternalizzato — documentato verso Sama in Kenya. Non è la fabbrica dei GPU né il campus dove girano i cluster: è dove si concentra il controllo sul modello e sulla catena di fornitori di «intelligenza umana».",
-        "description_en": "OpenAI San Francisco HQ / lab. Contracting node for outsourced labeling and safety work (RLHF, moderation) — documented toward Sama in Kenya. Not the GPU factory and not the campus where clusters run: it is where control over the model and the «human intelligence» supplier chain concentrates.",
+        "description_it": "Sede / lab OpenAI a San Francisco (Mission / Florida St). Nodo di committenza del lavoro di labeling e safety (RLHF, moderazione) esternalizzato — documentato verso Sama in Kenya; Scale AI figura tra i fornitori di dati dei lab di primo piano. Non è la fabbrica GPU né il campus cluster: è dove si concentra il controllo sul modello e sulla catena di «intelligenza umana».",
+        "description_en": "OpenAI San Francisco HQ / lab (Mission / Florida St). Contracting node for outsourced labeling and safety work (RLHF, moderation) — documented toward Sama in Kenya; Scale AI figures among data suppliers to leading labs. Not the GPU factory and not the cluster campus: where control over the model and the «human intelligence» chain concentrates.",
         "country": "US",
         "city": "San Francisco",
         "status": "operational",
@@ -1138,6 +1149,11 @@
           {
             "title": "OpenAI — company",
             "url": "https://openai.com/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — OpenAI Florida Street, San Francisco",
+            "url": "https://www.openstreetmap.org/search?query=OpenAI%20Florida%20Street%20San%20Francisco",
             "accessed_at": "2026-09-29"
           }
         ]
@@ -1496,6 +1512,919 @@
           {
             "title": "OpenStreetMap — Samsung Electronics Hwaseong campus",
             "url": "https://www.openstreetmap.org/search?query=Samsung%20Electronics%20Hwaseong",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.27474,
+          50.49838
+        ]
+      },
+      "properties": {
+        "id": "rm_031",
+        "name": "Umicore — Nysa (catodo CAM / NMC)",
+        "type": "raw_material",
+        "subtype": "battery_materials",
+        "operator": "Umicore",
+        "capacity": "Primo impianto CAM in Europa (greenfield 2021); ~400 addetti dichiarati a regime",
+        "description_it": "Stabilimento Umicore a Nysa/Radzikowice (Polonia): prima fabbrica europea di materiali catodici (CAM NMC) per batterie Li-ion. Riceve precursori da Kokkola e nichel solfato da Terrafame (accordo long-term); vende CAM ai cell maker (accordo LG Chem con volumi prevalenti da Polonia; accordo Samsung SDI multi-regionale verso EU/Asia).",
+        "description_en": "Umicore plant at Nysa/Radzikowice (Poland): Europe’s first cathode active materials (NMC CAM) plant for Li-ion batteries. Receives precursors from Kokkola and nickel sulphate from Terrafame (long-term agreement); sells CAM to cell makers (LG Chem agreement with majority volumes from Poland; multi-region Samsung SDI agreement for EU/Asia).",
+        "country": "PL",
+        "city": "Nysa",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": 2021,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Manifattura CAM; intensità energetica industriale, non modellata qui."
+        },
+        "employment": {
+          "direct": 400,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Umicore dichiara ~400 posti a regime sul sito di Nysa.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Polo CAM nell’Opole; anello UE tra raffinazione finlandese e gigafactory polacche.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Umicore Poland — Nysa site",
+            "url": "https://www.umicore.pl/en/our-sites/nysa/",
+            "accessed_at": "2026-09-29",
+            "note": "Radzikowice 1c; first cathode plant in Europe"
+          },
+          {
+            "title": "Umicore — sustainable battery materials / Kokkola→Nysa precursors",
+            "url": "https://www.umicore.com/en/media/newsroom/sustainable-battery-materials-supply-chain/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore — long-term nickel sulphate agreement with Terrafame",
+            "url": "https://www.umicore.com/en/media/newsroom/long-term-agreement-with-terrafame-for-the-supply-of-sustainable-low-carbon-nickel/",
+            "accessed_at": "2026-09-29",
+            "note": "Covers substantial part of Nysa nickel requirements"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.88595,
+          51.02055
+        ]
+      },
+      "properties": {
+        "id": "rm_032",
+        "name": "LG Energy Solution — Wrocław / Kobierzyce (celle)",
+        "type": "raw_material",
+        "subtype": "battery_cell",
+        "operator": "LG Energy Solution",
+        "capacity": "Gigafactory EV Li-ion; tra i maggiori siti cell Europe",
+        "description_it": "Stabilimento LG Energy Solution a Biskupice Podgórne / Kobierzyce (Wrocław): produzione celle Li-ion per automotive. Cliente documentato di CAM Umicore: accordo LG Chem/LGES con volumi in larga parte dal greenfield polacco (Nysa).",
+        "description_en": "LG Energy Solution plant at Biskupice Podgórne / Kobierzyce (Wrocław): Li-ion cell production for automotive. Documented Umicore CAM customer: LG Chem/LGES agreement with a large share of volumes from the Polish greenfield (Nysa).",
+        "country": "PL",
+        "city": "Kobierzyce",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Gigafactory: alto prelievo elettrico; non modellato qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico di gigafactory (migliaia in area); non fissato in scheda.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Mega-sito cellulare in Bassa Slesia; pressione su rete, suolo e lavoro locale.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OpenStreetMap — LG Energy Solution Wrocław",
+            "url": "https://www.openstreetmap.org/search?query=LG%20Energy%20Solution%20Wrocław",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore — supply agreement LG Chem (volumes from Poland plant)",
+            "url": "https://assets-002.noviams.com/novi-file-uploads/naatbatt/Conference_Material/2020/Session_2/MT-21_Introducing_Umicore_2020.pdf",
+            "accessed_at": "2026-09-29",
+            "note": "Majority of agreement volumes from Poland greenfield"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.31467,
+          -23.7739
+        ]
+      },
+      "properties": {
+        "id": "rm_033",
+        "name": "Albemarle — La Negra (raffineria litio, Atacama)",
+        "type": "raw_material",
+        "subtype": "battery_materials",
+        "operator": "Albemarle",
+        "capacity": "Conversione chimica litio da salamoia Atacama",
+        "description_it": "Complesso Albemarle a La Negra (Antofagasta): raffinazione/conversione del litio estratto dal Salar de Atacama. Chiude il ramo brine cileno in parallelo allo spodumene Greenbushes→Kwinana (non mescolare i due).",
+        "description_en": "Albemarle complex at La Negra (Antofagasta): refining/conversion of lithium from Salar de Atacama brine. Closes the Chilean brine branch in parallel to Greenbushes→Kwinana spodumene (do not conflate the two).",
+        "country": "CL",
+        "city": "Antofagasta",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Raffinazione litio; impatto idrico regionale legato alla catena Atacama."
+        },
+        "community_impact_it": "Nodo chimico nel deserto di Atacama; dibattiti su acqua e comunità locali a monte sul Salar.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OpenStreetMap — La Negra, Antofagasta",
+            "url": "https://www.openstreetmap.org/search?query=La%20Negra%20Antofagasta",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Contesto Albemarle Atacama–La Negra (filiera brine)",
+            "url": "https://www.umicore.com/en/media/newsroom/sustainable-battery-materials-supply-chain/",
+            "accessed_at": "2026-09-29",
+            "note": "Metodologia: brine ≠ hard-rock; pin raffineria locale al Salar"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.00345,
+          63.97809
+        ]
+      },
+      "properties": {
+        "id": "rm_034",
+        "name": "Terrafame — Sotkamo (nichel batteria)",
+        "type": "raw_material",
+        "subtype": "nickel_mine",
+        "operator": "Terrafame",
+        "capacity": "NiSO4 battery-grade; linea chimici per ~1M EV/anno (dichiarazione operatore)",
+        "description_it": "Complesso integrato Terrafame a Sotkamo/Talvivaara (Finlandia): miniera e produzione di solfato di nichel a basso carbonio per catodi NMC. Accordo long-term con Umicore: copre una parte sostanziale del fabbisogno di nichel dello stabilimento CAM di Nysa.",
+        "description_en": "Integrated Terrafame complex at Sotkamo/Talvivaara (Finland): mine plus low-carbon battery-grade nickel sulphate for NMC cathodes. Long-term agreement with Umicore covering a substantial share of nickel needs at the Nysa CAM plant.",
+        "country": "FI",
+        "city": "Sotkamo",
+        "site_category": "extraction",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Processo bioheap leaching a basso carbonio dichiarato; intensità non modellata qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Sito industriale di scala in Kainuu; headcount non fissato in scheda.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Polo europeo del nichel batteria; eredità ambientale Talvivaara e dibattiti locali su acqua/suolo.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Umicore — long-term agreement with Terrafame (NiSO4 → Nysa)",
+            "url": "https://www.umicore.com/en/media/newsroom/long-term-agreement-with-terrafame-for-the-supply-of-sustainable-low-carbon-nickel/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Terrafame — same agreement (commercial deliveries started)",
+            "url": "https://www.terrafame.com/newsroom/media-releases/umicore-signs-long-term-agreement-with-terrafame-for-the-supply-of-sustainable-low-carbon-nickel.html",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — Terrafame / Talvivaara Sotkamo",
+            "url": "https://www.openstreetmap.org/search?query=Terrafame%20Sotkamo",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.16246,
+          47.67462
+        ]
+      },
+      "properties": {
+        "id": "rm_035",
+        "name": "Samsung SDI — Göd (celle EV)",
+        "type": "raw_material",
+        "subtype": "battery_cell",
+        "operator": "Samsung SDI",
+        "capacity": "Gigafactory EV Li-ion in Ungheria (Göd)",
+        "description_it": "Stabilimento Samsung SDI a Göd (Ungheria): produzione celle Li-ion per automotive in UE. Secondo cell maker del corridoio dopo LGES Wrocław. Accordo multi-anno Umicore–Samsung SDI per CAM NMC (volumi multi-regione, inizialmente prevalenti dalla Corea; destinazione EU include questo sito).",
+        "description_en": "Samsung SDI plant at Göd (Hungary): Li-ion cell production for automotive in the EU. Second cell maker on the corridor after LGES Wrocław. Multi-year Umicore–Samsung SDI NMC CAM agreement (multi-region volumes, initially majority from Korea; EU destination includes this site).",
+        "country": "HU",
+        "city": "Göd",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Gigafactory: alto prelievo elettrico; non modellato qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico di gigafactory; non fissato in scheda.",
+          "conditions_tags": [
+            "shift_work",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Mega-sito cellulare sull’asse Budapest nord; pressione su rete e lavoro locale.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OpenStreetMap — Samsung SDI Göd",
+            "url": "https://www.openstreetmap.org/search?query=Samsung%20SDI%20Göd",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore — strategic supply agreement with Samsung SDI (NMC CAM)",
+            "url": "https://www.umicore.com/en/media/newsroom/umicore-announces-strategic-supply-agreement-with-samsung-sdi-for-nmc-cathode-materials/",
+            "accessed_at": "2026-09-29",
+            "note": "Multi-region; majority initially Korea; EU/Asia automotive"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.65797,
+          -13.3056
+        ]
+      },
+      "properties": {
+        "id": "rm_036",
+        "name": "Syrah — Balama (grafite naturale)",
+        "type": "raw_material",
+        "subtype": "graphite_mine",
+        "operator": "Syrah Resources",
+        "capacity": "~350 ktpa concentrato grafite (capacità impianto dichiarata)",
+        "description_it": "Miniera a cielo aperto Syrah a Balama (Cabo Delgado, Mozambico): una delle maggiori fonti di grafite flake naturale fuori Cina. Feedstock del ramo anodo Verticale Balama→Vidalia (AAM). Ramo parallelo al catodo NMC (cobalto/nichel/litio): chiude il materiale dell’anodo sulla stessa mappa batterie.",
+        "description_en": "Syrah open-pit mine at Balama (Cabo Delgado, Mozambique): a major natural flake graphite source outside China. Feedstock for the vertical Balama→Vidalia anode (AAM) branch. Parallel to the NMC cathode branch (cobalt/nickel/lithium): closes anode material on the same battery map.",
+        "country": "MZ",
+        "city": "Balama",
+        "site_category": "extraction",
+        "status": "operational",
+        "opened_year": 2017,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Estrazione open-pit; impatto territoriale tipico, non quantificato qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Lavoro minerario in Cabo Delgado; headcount non fissato in scheda.",
+          "conditions_tags": [
+            "shift_work",
+            "hazardous"
+          ]
+        },
+        "community_impact_it": "Grande progetto minerario nel nord Mozambico; contesto di sicurezza regionale Cabo Delgado.",
+        "labor_risks": [
+          "shift_work",
+          "hazardous"
+        ],
+        "sources": [
+          {
+            "title": "Syrah — Balama Graphite Operation (company)",
+            "url": "https://www.syrahresources.com.au/our-business/balama-graphite-operation",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "NS Energy — Balama Graphite Project",
+            "url": "https://www.nsenergybusiness.com/projects/balama-graphite-project/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.42595,
+          31.56544
+        ]
+      },
+      "properties": {
+        "id": "rm_037",
+        "name": "Syrah — Vidalia (anodo AAM)",
+        "type": "raw_material",
+        "subtype": "battery_materials",
+        "operator": "Syrah Resources",
+        "capacity": "11,25 ktpa active anode material (AAM); avvio produzione Q1 2024",
+        "description_it": "Impianto Syrah a Vidalia (Louisiana): primo AAM a scala commerciale da grafite naturale fuori Cina. Processa concentrato da Balama (milling, purificazione, coating). Offtake con OEM (es. Lucid); MoU non vincolante con Samsung SDI per valutare fornitura AAM. Nodo anodo del corridoio batterie, distinto dal ramo catodo Umicore.",
+        "description_en": "Syrah plant at Vidalia (Louisiana): first commercial-scale natural-graphite AAM facility outside China. Processes Balama concentrate (milling, purification, coating). Offtake with OEMs (e.g. Lucid); non-binding MoU with Samsung SDI to evaluate AAM supply. Anode node on the battery corridor, distinct from the Umicore cathode branch.",
+        "country": "US",
+        "city": "Vidalia",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": 2024,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Manifattura AAM; GWP dichiarato da Syrah su catena Balama→cliente, non modellato qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Impianto di processo batteria; headcount non fissato in scheda.",
+          "conditions_tags": [
+            "high_skill",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Nodo US IRA-aligned per anodo ex-China; legame diretto con miniera mozambicana.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Syrah — Vidalia Active Anode Material Facility",
+            "url": "https://www.syrahresources.com.au/our-business/vidalia-active-anode-material-facility",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "NS Energy — Balama→Vidalia vertical integration",
+            "url": "https://www.nsenergybusiness.com/projects/balama-graphite-project/",
+            "accessed_at": "2026-09-29",
+            "note": "Also notes MoU Samsung SDI Aug 2023"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.33657,
+          51.16466
+        ]
+      },
+      "properties": {
+        "id": "rm_038",
+        "name": "Umicore — Hoboken (riciclo batterie)",
+        "type": "raw_material",
+        "subtype": "battery_materials",
+        "operator": "Umicore",
+        "capacity": "~7.000 t/anno smelter Li-ion dedicato (capacità dichiarata Umicore)",
+        "description_it": "Impianto Umicore a Hoboken (Anversa): smelter dedicato al riciclo di batterie Li-ion e scrap di produzione (pyro-hydro). Recupera Ni, Co, Cu e Li verso sali battery-grade che rientrano nella filiera CAM dello stesso gruppo. Chiude il loop del corridoio batterie UE accanto a Kokkola/Nysa.",
+        "description_en": "Umicore plant at Hoboken (Antwerp): dedicated Li-ion battery and production-scrap smelter (pyro-hydro). Recovers Ni, Co, Cu and Li into battery-grade salts that re-enter the group’s CAM chain. Closes the EU battery corridor loop beside Kokkola/Nysa.",
+        "country": "BE",
+        "city": "Hoboken",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": 2011,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Pyrometallurgia + idro; intensità non modellata qui."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Sito refining storico Umicore; organico riciclo batterie non separato in scheda.",
+          "conditions_tags": [
+            "high_skill",
+            "hazardous",
+            "shift_work"
+          ]
+        },
+        "community_impact_it": "Polo recycling in area Anversa; dibattiti storici su emissioni del sito Hoboken più ampio.",
+        "labor_risks": [
+          "hazardous",
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "Umicore — pyro-hydro battery recycling (Hoboken)",
+            "url": "https://www.umicore.com/en/about/battery-materials-solutions/battery-recycling-solutions/pyro-hydro-technology/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Umicore — nickel recycling & refining (Hoboken pilot capacity)",
+            "url": "https://www.umicore.com/en/markets-products/metals/nickel/recycling-refining/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — Umicore Hoboken",
+            "url": "https://www.openstreetmap.org/search?query=Umicore%20Hoboken",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.14837,
+          37.48467
+        ]
+      },
+      "properties": {
+        "id": "rm_039",
+        "name": "Meta — Menlo Park (HQ / AI lab)",
+        "type": "raw_material",
+        "subtype": "model_lab",
+        "operator": "Meta Platforms",
+        "capacity": "HQ + Meta Superintelligence Labs (Menlo Park); committenza AI/moderazione",
+        "description_it": "Sede Meta a 1 Hacker Way, Menlo Park: nodo di committenza del lavoro di moderazione e AI annotation esternalizzato (Sama Nairobi documentato da TIME/CBS; engagement maggiore chiuso apr 2026). Meglio di un singolo data center come estremità del corridoio trains: qui si decide il contratto, non dove gira il rack. Distinto da Luleå (footprint hyperscale, fuori da questo preset).",
+        "description_en": "Meta HQ at 1 Hacker Way, Menlo Park: contracting node for outsourced moderation and AI annotation (Sama Nairobi documented by TIME/CBS; major engagement ended Apr 2026). Better trains endpoint than a single data center: contracts are decided here, not where the rack runs. Distinct from Luleå (hyperscale footprint, outside this preset).",
+        "country": "US",
+        "city": "Menlo Park",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico HQ high-skill; il contrasto editoriale è con i worker Sama a Nairobi, non con l’headcount campus.",
+          "note_en": "High-skill HQ staff; editorial contrast is with Sama workers in Nairobi, not campus headcount.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "Polo corporate Bay Area: leverage sulla filiera globale di lavoro cognitivo outsourcato.",
+        "community_impact_en": "Bay Area corporate hub: leverage on the global outsourced cognitive-labor chain.",
+        "sources": [
+          {
+            "title": "OpenStreetMap — 1 Hacker Way, Menlo Park",
+            "url": "https://www.openstreetmap.org/search?query=1%20Hacker%20Way%20Menlo%20Park",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "TIME — Facebook’s African sweatshop / Sama",
+            "url": "https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "AP — Meta ends major Sama Nairobi engagement (2026)",
+            "url": "https://apnews.com/article/kenya-meta-facebook-sama-content-moderators-902716b8037bc4063dd1101e2dbd4c3a",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.40366,
+          37.77096
+        ]
+      },
+      "properties": {
+        "id": "rm_040",
+        "name": "Scale AI — San Francisco (HQ)",
+        "type": "raw_material",
+        "subtype": "ai_data_work",
+        "operator": "Scale AI",
+        "capacity": "HQ ~180k sq ft (650 Townsend); piattaforme Remotasks + Outlier",
+        "description_it": "Sede Scale AI a San Francisco (650 Townsend St): intermediario corporate del labeling/RLHF. Opera Remotasks (click-work; uscita Africa 2024, hub Filippine documentato) e Outlier (feedback LLM). Fornisce dati e valutazione a lab AI di primo piano; Meta detiene una quota rilevante (2025).",
+        "description_en": "Scale AI HQ in San Francisco (650 Townsend St): corporate intermediary for labeling/RLHF. Runs Remotasks (click-work; Africa exit 2024, documented Philippines hub) and Outlier (LLM feedback). Supplies data and evaluation to leading AI labs; Meta holds a material stake (2025).",
+        "country": "US",
+        "city": "San Francisco",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": 2016,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": 1200,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "~1.200 dipendenti Scale (stima 2025); i worker Remotasks/Outlier sono gig/contractor fuori organico HQ.",
+          "note_en": "~1,200 Scale employees (2025 estimate); Remotasks/Outlier workers are gig/contractors outside HQ payroll.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "HQ che cattura il margine del lavoro cognitivo distribuito; il rischio resta sui worker Remotasks/Outlier.",
+        "community_impact_en": "HQ that captures margin on distributed cognitive labor; risk stays with Remotasks/Outlier workers.",
+        "sources": [
+          {
+            "title": "SF Standard — Scale AI office 650 Townsend (~180k sq ft)",
+            "url": "https://sfstandard.com/2026/04/07/i-leaderboard-san-francisco-office/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Craft — Scale AI HQ 650 Townsend Street",
+            "url": "https://craft.co/scale/locations",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Wikipedia — Scale AI (Remotasks, Outlier; Meta stake)",
+            "url": "https://en.wikipedia.org/wiki/Scale_AI",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Washington Post — Remotasks workers Philippines",
+            "url": "https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          124.64215,
+          8.47564
+        ]
+      },
+      "properties": {
+        "id": "rm_041",
+        "name": "Remotasks — hub Filippine (Mindanao)",
+        "type": "raw_material",
+        "subtype": "ai_data_work",
+        "operator": "Scale AI (Remotasks)",
+        "capacity": "Migliaia di worker in internet café/uffici (stima WaPo 2023); mercato KE chiuso 2024",
+        "description_it": "Hub documentato di Remotasks nel sud delle Filippine (Cagayan de Oro / Mindanao): worker etichettano video, immagini e testo per modelli AI americani via piattaforma Scale. WaPo descrive «digital sweatshops» con pay bassi e ritardi pagamenti; BHR Centre cita ~10.000 worker Remotasks in PH. Pin regionale Mindanao; distinto da Nairobi (chiusura Africa 2024).",
+        "description_en": "Documented Remotasks hub in the southern Philippines (Cagayan de Oro / Mindanao): workers label video, images and text for US AI models via Scale’s platform. WaPo describes «digital sweatshops» with low pay and delayed payments; BHR Centre cites ~10,000 Remotasks workers in PH. Regional Mindanao pin; distinct from Nairobi (Africa exit 2024).",
+        "country": "PH",
+        "city": "Cagayan de Oro",
+        "site_category": "extraction",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": 10000,
+          "contractors_est": null,
+          "note_it": "Gig/contractor Remotasks, non dipendenti Scale; stime giornalistiche ~10k in Filippine (2023).",
+          "note_en": "Remotasks gig/contractors, not Scale employees; press estimates ~10k in Philippines (2023).",
+          "conditions_tags": [
+            "outsourced_gig",
+            "precarious_contracts"
+          ]
+        },
+        "labor_risks": [
+          "outsourced_gig",
+          "precarious_contracts"
+        ],
+        "community_impact_it": "Filippine tra i maggiori mercati globali di annotazione AI; regolazione «informale» ammessa dal governo locale nelle inchieste.",
+        "community_impact_en": "Philippines among the largest global AI annotation markets; local government interviews describe the sector as «informal» and hard to regulate.",
+        "sources": [
+          {
+            "title": "Washington Post — Remotasks Philippines digital sweatshops",
+            "url": "https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Business & Human Rights Centre — Scale AI Philippines",
+            "url": "https://www.business-humanrights.org/en/latest-news/philippines-scale-ai-creating-race-to-the-bottom-as-outsourced-workers-face-poor-conditions-in-digital-sweatshops-incl-low-wages-withheld-payments/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.93658,
+          14.42902
+        ]
+      },
+      "properties": {
+        "id": "rm_042",
+        "name": "Appen — Imus, Cavite (BPO annotation)",
+        "type": "raw_material",
+        "subtype": "ai_data_work",
+        "operator": "Appen",
+        "capacity": "Centro BPO on-site; survey Fairwork 129 worker (2024–25)",
+        "description_it": "Centro BPO Appen a Imus, Cavite (Calabarzon): worker impiegati in fila davanti ai PC per labeling e moderazione contenuti per clienti globali. Fairwork AI Supply Chain Assessment 2025: 4/10, site visit + 129 survey; 15 miglioramenti documentati (salute mentale, forum worker). Pin fisico vs gig Remotasks: stesso corridoio lavoro dati, modello employment diverso.",
+        "description_en": "Appen BPO centre at Imus, Cavite (Calabarzon): employed workers at rows of PCs labeling and moderating content for global clients. Fairwork AI Supply Chain Assessment 2025: 4/10, site visit + 129-worker survey; 15 documented improvements (mental health, worker forum). Physical-site pin vs Remotasks gig: same data-labor corridor, different employment model.",
+        "country": "PH",
+        "city": "Imus",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Impiegati formalmente on-site (BPO), distinti dalla «crowd» remota Appen; condizioni valutate da Fairwork 2025.",
+          "note_en": "Formally employed on-site (BPO), distinct from Appen’s remote crowd; conditions assessed by Fairwork 2025.",
+          "conditions_tags": [
+            "shift_work",
+            "psychological_harm"
+          ]
+        },
+        "labor_risks": [
+          "psychological_harm",
+          "shift_work"
+        ],
+        "community_impact_it": "Parco industriale Cavite: materialità fisica del lavoro AI export-oriented verso clienti US/Cina.",
+        "community_impact_en": "Cavite industrial park: physical materiality of export-oriented AI labor toward US/China clients.",
+        "sources": [
+          {
+            "title": "Fairwork — AI Supply Chain Assessment: Appen 2025 (Imus, Cavite)",
+            "url": "https://fair.work/en/fw/publications/fairwork-ai-supply-chain-assessment-appen-2025/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Fairwork Appen 2025 report (PDF)",
+            "url": "https://www.bmz-digital.global/wp-content/uploads/2025/12/Fairwork-Report-Appen_2025.pdf",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3972,
+          37.7862
+        ]
+      },
+      "properties": {
+        "id": "rm_043",
+        "name": "Surge AI — San Francisco (HQ)",
+        "type": "raw_material",
+        "subtype": "ai_data_work",
+        "operator": "Surge AI (Surge Labs)",
+        "capacity": "Intermediario RLHF; piattaforma DataAnnotation.tech",
+        "description_it": "Surge AI (San Francisco): competitor/intermediario di Scale per RLHF e annotation ad alta qualità. Clienti documentati includono Anthropic (blog ufficiale Surge); class action 2025 cita assegnazione progetti Google, Anthropic, OpenAI, Meta. Workforce distribuita in decine di paesi via contractor «Data Annotators».",
+        "description_en": "Surge AI (San Francisco): Scale peer intermediary for high-quality RLHF and annotation. Documented clients include Anthropic (Surge official blog); 2025 class action cites project assignment for Google, Anthropic, OpenAI, Meta. Workforce distributed across dozens of countries via «Data Annotator» contractors.",
+        "country": "US",
+        "city": "San Francisco",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": 2020,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": 459,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "LinkedIn stima ~459 dipendenti HQ; annotatori sono contractor via DataAnnotation.tech (lawsuit misclassification).",
+          "note_en": "LinkedIn estimates ~459 HQ employees; annotators are contractors via DataAnnotation.tech (misclassification lawsuit).",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "Secondo polo Bay Area del labeling premium; indagine DoL su pay FLSA (2025).",
+        "community_impact_en": "Second Bay Area pole for premium labeling; DoL fair-pay investigation (2025).",
+        "sources": [
+          {
+            "title": "Surge — Anthropic RLHF partnership (Kaplan quote)",
+            "url": "https://surgehq.ai/blog/anthropic-surge-ai-rlhf-platform-train-llm-assistant-human-feedback",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Clarkson Law Firm — Surge AI class action (clients named)",
+            "url": "https://clarksonlawfirm.com/wp-content/uploads/2025/05/2025.05.20-Surge-Labs.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "SiliconANGLE — DoL investigation Scale/Surge labor context",
+            "url": "https://siliconangle.com/2025/03/06/scale-ai-faces-probe-amid-allegations-underpaying-data-labeling-contractors/",
+            "accessed_at": "2026-09-29",
+            "note": "Industry context on labeling labor probes"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.39674,
+          37.78851
+        ]
+      },
+      "properties": {
+        "id": "rm_044",
+        "name": "Anthropic — San Francisco (HQ / lab)",
+        "type": "raw_material",
+        "subtype": "model_lab",
+        "operator": "Anthropic",
+        "capacity": "Claude / alignment research; HQ ~500 Howard St",
+        "description_it": "Anthropic PBC a San Francisco (500 Howard St): lab modelli Claude e ricerca alignment. Committenza documentata di RLHF via Surge AI (blog con quote Jared Kaplan). Requisiti dichiarati su pay minimo ~16 $/h per subcontractor labeling e regole wellbeing su contenuti sensibili (Straits Times).",
+        "description_en": "Anthropic PBC in San Francisco (500 Howard St): Claude models and alignment research. Documented RLHF contracting via Surge AI (blog with Jared Kaplan quote). Stated requirements for subcontractor labeling pay floors ~$16/h and wellbeing rules on sensitive content (Straits Times).",
+        "country": "US",
+        "city": "San Francisco",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": 2021,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "employment": {
+          "direct": 2500,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "~2.500 dipendenti (stima 2026); contrasto con annotatori Surge/Scale outsourced.",
+          "note_en": "~2,500 employees (2026 estimate); contrast with outsourced Surge/Scale annotators.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "Terzo polo lab SF nel preset insieme a OpenAI e Meta Menlo Park.",
+        "community_impact_en": "Third SF-area lab pole in the preset alongside OpenAI and Meta Menlo Park.",
+        "sources": [
+          {
+            "title": "Wikipedia — Anthropic HQ 500 Howard Street",
+            "url": "https://en.wikipedia.org/wiki/Anthropic",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Surge — Anthropic uses Surge RLHF platform",
+            "url": "https://surgehq.ai/blog/anthropic-surge-ai-rlhf-platform-train-llm-assistant-human-feedback",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Straits Times — Anthropic subcontractor pay / wellbeing rules",
+            "url": "https://www.straitstimes.com/world/gruelling-low-paid-human-work-behind-generative-ai-curtain",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.08238,
+          37.419
+        ]
+      },
+      "properties": {
+        "id": "rm_045",
+        "name": "Google — Mountain View (AI committenza)",
+        "type": "raw_material",
+        "subtype": "model_lab",
+        "operator": "Google (Alphabet)",
+        "capacity": "Gemini / Google AI; committenza labeling via intermediari",
+        "description_it": "Campus Google a Mountain View: nodo di committenza AI (Gemini e prodotti Google). Surge AI cita assegnazione progetti Google verso Data Annotators (class action 2025); Scale BI elenca Google tra clienti labeling. Pin HQ, non un data center di training.",
+        "description_en": "Google campus at Mountain View: AI contracting node (Gemini and Google products). Surge AI class action cites Google project assignment to Data Annotators (2025); Business Insider lists Google among Scale labeling clients. HQ pin, not a training data center.",
+        "country": "US",
+        "city": "Mountain View",
+        "site_category": "manufacturing",
+        "status": "operational",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Organico Google non fissato in scheda; arco trains via Surge/Scale, non payroll Google→Filippine.",
+          "note_en": "Google headcount not fixed here; trains edge via Surge/Scale, not Google payroll→Philippines.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "community_impact_it": "Quarto lab Big Tech nel corridoio lavoro dati (con OpenAI, Meta, Anthropic).",
+        "community_impact_en": "Fourth Big Tech lab on the data-labor corridor (with OpenAI, Meta, Anthropic).",
+        "sources": [
+          {
+            "title": "Clarkson — Surge assigns projects for Google (complaint)",
+            "url": "https://clarksonlawfirm.com/wp-content/uploads/2025/05/2025.05.20-Surge-Labs.pdf",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Business Insider — Scale AI clients include Google",
+            "url": "https://www.businessinsider.com/scale-ai-outlier-training-harmful-ai-prompts-2025-04",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — Google Mountain View",
+            "url": "https://www.openstreetmap.org/search?query=Googleplex%20Mountain%20View",
             "accessed_at": "2026-09-29"
           }
         ]
