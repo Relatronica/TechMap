@@ -1,6 +1,8 @@
 import type { Map as MaplibreMap } from 'maplibre-gl';
 import type { Locale } from '../../i18n';
 import type { MapI18n } from './i18n';
+import type { ProximityInsight, SettlementFeature } from '../proximity';
+import type { NoiseInsight, NoiseInput } from '../noiseEstimates';
 
 export type GeoJSONCollection = {
   type: string;
@@ -17,6 +19,7 @@ export type MapContext = {
   rawMaterialsData: GeoJSONCollection | null;
   energyPlantsData: GeoJSONCollection | null;
   gridNodesData: GeoJSONCollection | null;
+  lombardiaSettlements?: SettlementFeature[];
   tooltip: HTMLElement;
   detailSidebar: HTMLElement;
   detailTitle: HTMLElement;
@@ -45,4 +48,27 @@ export type MapContext = {
   resolveConnectionProperties: (mapProps: any) => any;
   highlightConnectionEdge: (props: any) => void;
   frameConnection: (props: any) => void;
+  clearProximity: () => void;
+  showProximityAt: (lon: number, lat: number, options?: { city?: string | null }) => ProximityInsight | null;
+  frameProximity: (insight: ProximityInsight) => void;
+  clearNoise: () => void;
+  showNoiseAt: (
+    lon: number,
+    lat: number,
+    options?: {
+      noise?: NoiseInput | null;
+      subtype?: string | null;
+      capacityMw?: number | null;
+      force?: boolean;
+    }
+  ) => NoiseInsight | null;
+  frameNoise: (insight: NoiseInsight, extraCoords?: [number, number][]) => void;
+  showSelectionLegend: (options: {
+    name: string;
+    lon: number;
+    lat: number;
+    proximity: ProximityInsight | null;
+    noise: NoiseInsight | null;
+  }) => void;
+  hideSelectionLegend: () => void;
 };

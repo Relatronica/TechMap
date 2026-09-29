@@ -52,6 +52,7 @@
           "items": { "$ref": "#/$defs/sourceRef" }
         },
         "impact": { "$ref": "#/$defs/impact" },
+        "noise": { "$ref": "#/$defs/noise" },
         "employment": { "$ref": "#/$defs/employment" },
         "community_impact_it": { "type": "string" },
         "community_impact_en": { "type": "string" },
@@ -85,6 +86,20 @@
         "co2_t_year_est": { "type": ["number", "null"] },
         "energy_mix_note_it": { "type": "string" },
         "energy_mix_note_en": { "type": "string" }
+      }
+    },
+    "noise": {
+      "type": "object",
+      "description": "Scenario acustico tipico (prova genset / HVAC). lw_dba = potenza sonora; isolinee Lp derivate in UI.",
+      "properties": {
+        "lw_dba": { "type": ["number", "null"] },
+        "backup_mwt": { "type": ["number", "null"] },
+        "scenario": {
+          "enum": ["emergency_test", "hvac_cooling", "mixed"]
+        },
+        "origin": { "enum": ["declared", "estimated"] },
+        "note_it": { "type": "string" },
+        "note_en": { "type": "string" }
       }
     },
     "employment": {

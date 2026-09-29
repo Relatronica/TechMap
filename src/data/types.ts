@@ -106,6 +106,20 @@ export interface Impact {
   energy_mix_note_en?: string;
 }
 
+/**
+ * Rumore — scenario tipico «prova gruppi di emergenza» salvo nota.
+ * lw_dba = livello di potenza sonora; se assente la UI stima da subtype/MW (MVP Lombardia).
+ */
+export interface SiteNoise {
+  lw_dba?: number | null;
+  /** Potenza termica backup (MWt) usata per scalare la stima se lw manca */
+  backup_mwt?: number | null;
+  scenario?: 'emergency_test' | 'hvac_cooling' | 'mixed';
+  origin?: 'declared' | 'estimated';
+  note_it?: string;
+  note_en?: string;
+}
+
 export interface SitePropertiesBase {
   id: string;
   name: string;
@@ -128,6 +142,7 @@ export interface SitePropertiesBase {
   sources?: SourceRef[];
 
   impact?: Impact;
+  noise?: SiteNoise;
   employment?: Employment;
   community_impact_it?: string;
   community_impact_en?: string;

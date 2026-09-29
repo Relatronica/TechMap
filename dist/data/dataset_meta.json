@@ -111,14 +111,27 @@
       ],
       "note_it": "Geometrie semplificate per evidenziare temporaneamente una regione dalla ricerca luogo (non overlay permanente).",
       "note_en": "Simplified geometries used to temporarily highlight an Italian region from place search (not a permanent overlay)."
+    },
+    {
+      "id": "lombardia_settlements",
+      "title": "Comuni Lombardia — centroidi e popolazione (ISTAT 2021)",
+      "url": "https://github.com/opendatasicilia/comuni-italiani",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "used_for": [
+        "overlays"
+      ],
+      "note_it": "MVP prossimità: comuni ≥1.000 ab. con centroide (Open Data Sicilia / ISTAT). Mostrato al click su data center in Lombardia.",
+      "note_en": "Proximity MVP: municipalities ≥1,000 residents with centroid (Open Data Sicilia / ISTAT). Shown on data-center click in Lombardy."
     }
   ],
   "overlays": {
     "power_grid": "OpenInfraMap vector tiles",
     "water_stress": "EU HydroBASINS L6 choropleth from Aqueduct 4.0 baseline water stress",
     "submarine_cables": "Europe-filtered historical TeleGeography GeoJSON",
-    "it_regions": "Simplified ISTAT/Openpolis regions for temporary place-search highlight"
+    "it_regions": "Simplified ISTAT/Openpolis regions for temporary place-search highlight",
+    "lombardia_settlements": "Lombardy municipal centroids + ISTAT 2021 population (proximity MVP)"
   },
-  "methodology_it": "I record curati editorialmente (descrizioni, impatto, subtype) hanno sempre priorità sui candidati automatici. Gli import integrano WRI (tutti gli impianti IT + EU ≥ 100 MW) e OSM per data center in area EU; i campus cloud OSM sono classificati come hyperscale. Duplicati per prossimità vengono accorpati senza sovrascrivere i curati. Filiera (raw_materials + connections): solo corridoi documentati in data/curated/, con certainty obbligatoria; powers senza PPA resta inferred/likely. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.",
-  "methodology_en": "Editorially curated records (descriptions, impact, subtype) always take priority over automatic candidates. Imports combine WRI (all IT plants + EU ≥ 100 MW) and OSM data centers in the EU area; OSM cloud campuses are classified as hyperscale. Near-duplicates are merged without overwriting curated records. Supply chain (raw_materials + connections): only corridors documented in data/curated/, with required certainty; powers without a PPA stay inferred/likely. Context overlays (grid, water stress, cables) are off by default."
+  "methodology_it": "I record curati editorialmente (descrizioni, impatto, subtype) hanno sempre priorità sui candidati automatici. Gli import integrano WRI (tutti gli impianti IT + EU ≥ 100 MW) e OSM per data center in area EU; i campus cloud OSM sono classificati come hyperscale. Duplicati per prossimità vengono accorpati senza sovrascrivere i curati. Filiera (raw_materials + connections): solo corridoi documentati in data/curated/, con certainty obbligatoria; powers senza PPA resta inferred/likely. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default. Prossimità centri abitati (MVP Lombardia): distanza al centroide comunale ISTAT, non popolazione nel raggio esatto.",
+  "methodology_en": "Editorially curated records (descriptions, impact, subtype) always take priority over automatic candidates. Imports combine WRI (all IT plants + EU ≥ 100 MW) and OSM data centers in the EU area; OSM cloud campuses are classified as hyperscale. Near-duplicates are merged without overwriting curated records. Supply chain (raw_materials + connections): only corridors documented in data/curated/, with required certainty; powers without a PPA stay inferred/likely. Context overlays (grid, water stress, cables) are off by default. Settlement proximity (Lombardy MVP): distance to ISTAT municipal centroid, not exact in-radius population."
 }

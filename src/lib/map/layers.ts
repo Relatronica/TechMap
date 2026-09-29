@@ -26,6 +26,8 @@ import {
   CONNECTS_DASHARRAY_BY_CERTAINTY
 } from './constants';
 import { fetchJson, showMapLoadError } from './domUtils';
+import { attachProximityLayers } from './proximityLayers';
+import { attachNoiseLayers } from './noiseLayers';
 import type { MapContext } from './types';
 
 /** Load GeoJSON, register icons, add sources and style layers. */
@@ -431,4 +433,7 @@ export async function setupLayers(ctx: MapContext) {
     },
     paint: pointLayerPaint
   });
+
+  await attachProximityLayers(ctx);
+  attachNoiseLayers(ctx);
 }

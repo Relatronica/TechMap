@@ -1,4 +1,6 @@
 import { buildImpactModel } from '../impactEstimates';
+import type { ProximityInsight } from '../proximity';
+import type { NoiseInsight } from '../noiseEstimates';
 import { localizedText, numberLocale } from '../localizedField';
 import {
   ICON_SIZE_HIGHLIGHT_BY_ZOOM,
@@ -188,8 +190,148 @@ export function attachDetailSidebar(ctx: MapContext) {
     return html;
   }
 
+  function formatProximityDist(km: number) {
+    if (km < 10) {
+      return km.toLocaleString(numLocale, { maximumFractionDigits: 1 });
+    }
+    return Math.round(km).toLocaleString(numLocale);
+  }
+
+  function buildProximityHtml(insight: ProximityInsight | null) {
+    if (!insight || (!insight.host && !insight.nearestOther)) return '';
+    const pop = ctx.i18n.popup;
+
+    let html = `<div class="detail-section detail-proximity">
+      <h4>${escapeHtml(pop.proximity || 'Proximity')}</h4>
+      <div class="proximity-nearest">
+        <span class="impact-card-badge is-estimated">${escapeHtml(pop.impact_badge_estimated)}</span>`;
+
+    if (insight.host) {
+      const host = insight.host;
+      html += `<p class="proximity-nearest-line">${escapeHtml(
+        (pop.proximity_host || 'In the municipality of {name} (centroid {dist} km · ≈{pop} residents)')
+          .replace('{name}', host.name)
+          .replace('{dist}', formatProximityDist(host.distanceKm))
+          .replace('{pop}', formatCompactNumber(host.population))
+      )}</p>`;
+    }
+
+    if (insight.nearestOther) {
+      const other = insight.nearestOther;
+      const template = insight.host
+        ? pop.proximity_nearest_other ||
+          'Nearest other municipality: {name} ({dist} km · ≈{pop} residents)'
+        : pop.proximity_nearest ||
+          '{dist} km from {name} (≈{pop} residents)';
+      html += `<p class="proximity-nearest-line${insight.host ? ' is-secondary' : ''}">${escapeHtml(
+        template
+          .replace('{dist}', formatProximityDist(other.distanceKm))
+          .replace('{name}', other.name)
+          .replace('{pop}', formatCompactNumber(other.population))
+      )}</p>`;
+    }
+
+    html += `</div>
+      <div class="proximity-rings">`;
+
+    (insight.comuniWithin || []).forEach((row) => {
+      html += `<div class="proximity-ring-row">
+        <span class="proximity-ring-label">${escapeHtml(
+          (pop.proximity_within || 'Within {n} km').replace('{n}', String(row.radiusKm))
+        )}</span>
+        <span class="proximity-ring-value">${escapeHtml(
+          (pop.proximity_comuni || '{n} municipalities').replace('{n}', String(row.count))
+        )}</span>
+      </div>`;
+    });
+
+    html += `</div>
+      <p class="impact-disclaimer">${escapeHtml(pop.proximity_disclaimer || '')}</p>
+    </div>`;
+    return html;
+  }
+
+  function buildNoiseHtml(insight: NoiseInsight | null, status?: string | null) {
+    if (!insight) return '';
+    const pop = ctx.i18n.popup;
+    const badge =
+      insight.dataOrigin === 'declared'
+        ? pop.impact_badge_declared
+        : pop.impact_badge_estimated;
+    const badgeClass = insight.dataOrigin === 'declared' ? 'is-declared' : 'is-estimated';
+    const scenarioLabels: Record<string, string | undefined> = {
+      emergency_test: pop.noise_scenario_emergency_test,
+      hvac_cooling: pop.noise_scenario_hvac_cooling,
+      mixed: pop.noise_scenario_mixed
+    };
+    const scenarioLabel = scenarioLabels[insight.scenario] || insight.scenario;
+
+    const dist55 =
+      insight.distanceTo55m >= 1000
+        ? `${(insight.distanceTo55m / 1000).toLocaleString(numLocale, { maximumFractionDigits: 1 })} km`
+        : `${Math.round(insight.distanceTo55m).toLocaleString(numLocale)} m`;
+
+    const statusKey =
+      status && (ctx.i18n.status[status] || ctx.i18n.controls?.status_short?.[status])
+        ? status
+        : null;
+    const statusLabel = statusKey
+      ? ctx.i18n.status[statusKey] || ctx.i18n.controls.status_short[statusKey] || statusKey
+      : null;
+
+    let html = `<div class="detail-section detail-noise">
+      <h4>${escapeHtml(pop.noise || 'Noise')}</h4>
+      <div class="proximity-nearest">
+        <div class="noise-badges">
+          <span class="impact-card-badge ${badgeClass}">${escapeHtml(badge)}</span>`;
+    if (statusLabel && statusKey) {
+      html += `<span class="noise-status-chip status-${escapeHtml(statusKey)}">
+        <span class="status-swatch status-${escapeHtml(statusKey)}" aria-hidden="true"></span>
+        ${escapeHtml(statusLabel)}
+      </span>`;
+    }
+    html += `</div>
+        <p class="proximity-nearest-line">${escapeHtml(
+          (pop.noise_summary || 'Lw ≈ {lw} dB(A) — {scenario}')
+            .replace('{lw}', String(insight.lwDba))
+            .replace('{scenario}', scenarioLabel)
+        )}</p>
+        <p class="proximity-nearest-line is-secondary">${escapeHtml(
+          (pop.noise_reach || 'Indicative 55 dB(A) contour ≈ {dist}')
+            .replace('{dist}', dist55)
+        )}</p>
+      </div>
+      <div class="noise-legend">`;
+
+    insight.contours.forEach((c) => {
+      const rLabel =
+        c.radiusM >= 1000
+          ? `${(c.radiusKm).toLocaleString(numLocale, { maximumFractionDigits: 2 })} km`
+          : `${Math.round(c.radiusM).toLocaleString(numLocale)} m`;
+      html += `<div class="noise-legend-row noise-lp-${c.lpDba}">
+        <span class="noise-legend-swatch" aria-hidden="true"></span>
+        <span class="noise-legend-label">${c.lpDba} dB(A)</span>
+        <span class="noise-legend-value">≈ ${escapeHtml(rLabel)}</span>
+      </div>`;
+    });
+
+    html += `</div>`;
+    const note = ctx.locale === 'en' ? insight.note_en || insight.note_it : insight.note_it || insight.note_en;
+    if (note) {
+      html += `<p class="detail-note">${escapeHtml(note)}</p>`;
+    }
+    html += `<p class="impact-disclaimer">${escapeHtml(pop.noise_disclaimer || '')}</p>
+    </div>`;
+    return html;
+  }
+
   // Build detail sidebar HTML for a point feature
-  function buildPointDetail(properties, featureType) {
+  function buildPointDetail(
+    properties,
+    featureType,
+    proximityInsight: ProximityInsight | null = null,
+    noiseInsight: NoiseInsight | null = null
+  ) {
     const accentColor =
       (properties.subtype && SUBTYPE_COLORS[properties.subtype]) ||
       (featureType === 'data_center' ? ctx.COLORS.dc :
@@ -366,6 +508,8 @@ export function attachDetailSidebar(ctx: MapContext) {
     }
 
     html += buildImpactHtml(properties, featureType);
+    html += buildProximityHtml(proximityInsight);
+    html += buildNoiseHtml(noiseInsight, properties.status);
     html += buildEmploymentHtml(properties);
     html += buildSourcesHtml(properties.sources);
 
@@ -388,7 +532,50 @@ export function attachDetailSidebar(ctx: MapContext) {
   // Open detail sidebar for a point feature
   function openPointDetail(properties, featureType, options = {}) {
     const resolved = ctx.resolveSiteProperties(properties, featureType);
-    const { html, accentColor, shapeClass, typeLabel } = buildPointDetail(resolved, featureType);
+    const site = ctx.findSiteById(resolved.id);
+    const coords = site?.feature?.geometry?.coordinates;
+
+    let proximityInsight: ProximityInsight | null = null;
+    let noiseInsight: NoiseInsight | null = null;
+    ctx.clearProximity?.();
+    ctx.clearNoise?.();
+    if (featureType === 'data_center' && coords) {
+      if (ctx.showProximityAt) {
+        proximityInsight = ctx.showProximityAt(coords[0], coords[1], {
+          city: resolved.city
+        });
+      }
+      if (ctx.showNoiseAt) {
+        const hasCuratedNoise =
+          resolved.noise &&
+          (typeof resolved.noise.lw_dba === 'number' ||
+            typeof resolved.noise.backup_mwt === 'number');
+        noiseInsight = ctx.showNoiseAt(coords[0], coords[1], {
+          noise: resolved.noise || null,
+          subtype: resolved.subtype,
+          capacityMw: resolved.impact?.capacity_mw ?? null,
+          force: !!hasCuratedNoise
+        });
+      }
+    }
+    if (coords && (proximityInsight || noiseInsight)) {
+      ctx.showSelectionLegend?.({
+        name: resolved.name,
+        lon: coords[0],
+        lat: coords[1],
+        proximity: proximityInsight,
+        noise: noiseInsight
+      });
+    } else {
+      ctx.hideSelectionLegend?.();
+    }
+
+    const { html, accentColor, shapeClass, typeLabel } = buildPointDetail(
+      resolved,
+      featureType,
+      proximityInsight,
+      noiseInsight
+    );
     ctx.detailTitle.textContent = resolved.name;
     ctx.detailSidebar.style.setProperty('--accent', accentColor);
     if (ctx.detailType) {
@@ -408,7 +595,19 @@ export function attachDetailSidebar(ctx: MapContext) {
     const searchToggleBtn = document.getElementById('map-search-toggle');
     if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
     ctx.highlightConnections(resolved.id);
-    if (options.frame !== false) ctx.frameSelection(resolved.id);
+    if (options.frame !== false) {
+      if (noiseInsight && ctx.frameNoise) {
+        const extra: [number, number][] = [];
+        if (proximityInsight?.nearby) {
+          proximityInsight.nearby.forEach((s) => extra.push([s.lon, s.lat]));
+        }
+        ctx.frameNoise(noiseInsight, extra);
+      } else if (proximityInsight && ctx.frameProximity) {
+        ctx.frameProximity(proximityInsight);
+      } else {
+        ctx.frameSelection(resolved.id);
+      }
+    }
     clearPlaceBoundary(ctx.map);
     window.SubstratoMapChrome?.dismissMapHint?.();
     ctx.hideTooltip();
@@ -416,9 +615,9 @@ export function attachDetailSidebar(ctx: MapContext) {
     ctx.detailBody.querySelectorAll('[data-site-id]').forEach(btn => {
       btn.addEventListener('click', () => {
         const siteId = btn.getAttribute('data-site-id');
-        const site = ctx.findSiteById(siteId);
-        if (!site) return;
-        openPointDetail(site.properties, site.featureType);
+        const next = ctx.findSiteById(siteId);
+        if (!next) return;
+        openPointDetail(next.properties, next.featureType);
       });
     });
   }
@@ -581,6 +780,9 @@ export function attachDetailSidebar(ctx: MapContext) {
     const props = ctx.resolveConnectionProperties(properties);
     const { html, accentColor, typeLabel, title } = buildConnectionDetail(props);
 
+    ctx.clearProximity?.();
+    ctx.clearNoise?.();
+    ctx.hideSelectionLegend?.();
     ctx.detailTitle.textContent = title;
     ctx.detailSidebar.style.setProperty('--accent', accentColor);
     if (ctx.detailType) {

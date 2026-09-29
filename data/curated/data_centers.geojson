@@ -1023,7 +1023,7 @@
         "status": "under_construction",
         "site_category": "infrastructure",
         "opened_year": 2026,
-        "updated_at": "2026-09-28",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 100,
@@ -1062,7 +1062,14 @@
             "accessed_at": "2026-09-28",
             "note": "Determina Città metropolitana di Milano 2234 del 21/03/2022"
           }
-        ]
+        ],
+        "noise": {
+          "lw_dba": 112,
+          "scenario": "emergency_test",
+          "origin": "estimated",
+          "note_it": "Stima Lw da campus hyperscale ~100 MW; il conflitto locale sul rumore è documentato in community_impact, senza Lw di progetto pubblico.",
+          "note_en": "Lw estimate for ~100 MW hyperscale campus; local noise conflict is documented in community_impact, without a public design Lw."
+        }
       }
     },
     {
@@ -1126,7 +1133,14 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Expansion of the AWS Europe (Milan) region at Zibido San Giacomo (Building A), beyond the Rho/Pero sites. National MASE EIA under review. The Parco Agricolo Sud Milano opinion on the file cites a new user substation and an HV cable (~2.7 km) to the new 220 kV SE on the Lacchiarella–Zibido border (the node under authorisation as Lacchiarella Ovest / EL-647). Part of AWS’s ~€1.2bn nationally strategic programme."
+        "description_en": "Expansion of the AWS Europe (Milan) region at Zibido San Giacomo (Building A), beyond the Rho/Pero sites. National MASE EIA under review. The Parco Agricolo Sud Milano opinion on the file cites a new user substation and an HV cable (~2.7 km) to the new 220 kV SE on the Lacchiarella–Zibido border (the node under authorisation as Lacchiarella Ovest / EL-647). Part of AWS’s ~€1.2bn nationally strategic programme.",
+        "noise": {
+          "backup_mwt": 139,
+          "scenario": "emergency_test",
+          "origin": "estimated",
+          "note_it": "Avviso VIA: generatori di emergenza ~139 MWt termici (non capacità IT). Scenario prova.",
+          "note_en": "EIA notice: emergency generators ~139 MWt thermal (not IT capacity). Test scenario."
+        }
       }
     },
     {
@@ -1630,7 +1644,14 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Microsoft self-build campus at Bornasco (PV) — MIL05/MIL06 — south of Milan (Via dei Pioppi / Via Rimembranze). Site works from 2025; data-building construction from 2026. Connection works: dual 132 kV lines toward the new Terna Bornasco SE and Enel Est Pavia primary cabin (alignments under evaluation in the EIA)."
+        "description_en": "Microsoft self-build campus at Bornasco (PV) — MIL05/MIL06 — south of Milan (Via dei Pioppi / Via Rimembranze). Site works from 2025; data-building construction from 2026. Connection works: dual 132 kV lines toward the new Terna Bornasco SE and Enel Est Pavia primary cabin (alignments under evaluation in the EIA).",
+        "noise": {
+          "backup_mwt": 50,
+          "scenario": "emergency_test",
+          "origin": "estimated",
+          "note_it": "Backup generators ~50 MW riportati in fonti aperte; Lw scalato dalla potenza termica di emergenza (non misura in situ).",
+          "note_en": "~50 MW backup generators reported in open sources; Lw scaled from emergency thermal power (not an in-situ measurement)."
+        }
       }
     },
     {
@@ -1729,7 +1750,7 @@
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": null,
@@ -1768,7 +1789,14 @@
             "accessed_at": "2026-09-27",
             "note": "Giudizio positivo 30/06/2026; realizzazione entro 5 anni"
           }
-        ]
+        ],
+        "noise": {
+          "backup_mwt": 298,
+          "scenario": "emergency_test",
+          "origin": "estimated",
+          "note_it": "VIA: ~50 gruppi elettrogeni di emergenza (~298 MWt). Isolinee = scenario prova banco gruppi, non esercizio continuo.",
+          "note_en": "EIA: ~50 emergency gensets (~298 MWt). Isolines = genset test-bank scenario, not continuous operation."
+        }
       }
     },
     {
@@ -2188,7 +2216,14 @@
             "url": "https://www.openstreetmap.org/way/1482049979",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "noise": {
+          "backup_mwt": 130,
+          "scenario": "emergency_test",
+          "origin": "estimated",
+          "note_it": "Generazione emergenza dichiarata ~125–134 MWt (ML7+ML8). Lw stimato da MWt; mitigazioni e orari prova non modellati.",
+          "note_en": "Declared emergency generation ~125–134 MWt (ML7+ML8). Lw estimated from MWt; mitigations and test schedules not modeled."
+        }
       }
     },
     {

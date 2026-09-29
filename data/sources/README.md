@@ -44,8 +44,11 @@ L'output normalizzato va in `data/candidates/`; la mappa legge da `public/data/`
 - **Confini regioni italiane** (evidenziazione temporanea in ricerca luogo): `public/data/overlays/it_regions.geojson`
   - Sorgente grezza: `data/sources/it_regions.geojson` (geometrie semplificate da confini ISTAT/Openpolis, con alias IT/EN)
   - Uso UI: highlight fill/line su selezione regione da Nominatim; non è un layer filtro permanente
+- **Comuni Lombardia** (prossimità al click su data center): `public/data/overlays/lombardia_settlements.geojson`
+  - Sorgente: `data/sources/lombardia_settlements.geojson` (centroidi + popolazione ISTAT 2021 via opendatasicilia/comuni-italiani, comuni ≥1.000 ab.)
+  - Fetch: `npm run data:fetch:settlements`
 
 Fetch bacini Aqueduct: `npm run data:fetch:aqueduct`  
 Rigenera overlay locali: `npm run data:overlays`
 
-Sorgenti grezze: `cables_raw.json`, `landing_raw.json`, `aqueduct40_eu_bws_basins.geojson`, `it_regions.geojson`.
+Sorgenti grezze: `cables_raw.json`, `landing_raw.json`, `aqueduct40_eu_bws_basins.geojson`, `it_regions.geojson`, `lombardia_settlements.geojson`.

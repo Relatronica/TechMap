@@ -2,10 +2,12 @@
  * Build map context overlays into public/data/overlays/
  * - submarine cables / landings (TeleGeography CC BY-NC-SA historical extract)
  * - EU water stress choropleth at HydroBASINS L6 (WRI Aqueduct 4.0 baseline)
+ * - Lombardia settlements (ISTAT comuni centroids + pop 2021) for proximity MVP
  *
  * Power grid uses live OpenInfraMap vector tiles (no local file).
  *
  * Prerequisite for water: npm run data:fetch:aqueduct
+ * Prerequisite for settlements: npm run data:fetch:settlements (or committed source file)
  */
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import { createReadStream } from 'node:fs';
@@ -120,12 +122,29 @@ async function buildWaterStress() {
   return { basins: waterFeats.length };
 }
 
+async function buildLombardiaSettlements() {
+  const path = new URL('lombardia_settlements.geojson', SOURCE_DIR);
+  try {
+    await access(path);
+  } catch {
+    console.warn(
+      'Missing lombardia_settlements.geojson — run: npm run data:fetch:settlements (skipping)'
+    );
+    return { settlements: 0 };
+  }
+
+  const raw = JSON.parse(await readFile(path, 'utf8'));
+  await writeFile(new URL('lombardia_settlements.geojson', OUT_DIR), JSON.stringify(raw));
+  return { settlements: (raw.features || []).length };
+}
+
 async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   const cables = await buildCables();
   const water = await buildWaterStress();
+  const settlements = await buildLombardiaSettlements();
   console.log(
-    `Overlays: cables=${cables.cables}, landings=${cables.landings}, water_basins=${water.basins}`
+    `Overlays: cables=${cables.cables}, landings=${cables.landings}, water_basins=${water.basins}, lombardia_settlements=${settlements.settlements}`
   );
 }
 

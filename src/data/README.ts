@@ -15,6 +15,7 @@
  *    con stime etichettate (src/lib/impactEstimates.ts).
  * 4. employment (anche solo note_it/note_en se i numeri mancano) + community_impact_it/_en
  *    Priorità: nodi dei corridoi documentati (contrasto DC ↔ fab ↔ miniera ↔ ODM)
+ * 4b. noise (opzionale): lw_dba e/o backup_mwt + scenario — isolinee in mappa (MVP Lombardia)
  * 5. connections.certainty + evidence_note_it/_en (obbligatori per ogni nuovo legame)
  *
  * Locale UI: la mappa preferisce *_en su /en, altrimenti fallback a *_it (src/lib/localizedField.ts).

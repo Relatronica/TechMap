@@ -48,6 +48,7 @@ npm run data:fetch:wri        # impianti energetici (WRI)
 npm run data:fetch:osm        # data center (OpenStreetMap / Overpass)
 npm run data:fetch:dc         # DataCentersExposed (US)
 npm run data:fetch:aqueduct   # stress idrico (Aqueduct)
+npm run data:fetch:settlements # comuni Lombardia (prossimità MVP)
 npm run data:normalize        # → data/candidates/
 npm run data:merge            # curated + candidates → public/data/ (+ supply-chain)
 npm run data:supply-chain     # raw_materials + connections da curated
@@ -69,6 +70,7 @@ Metodologia pubblica (certainty, fonti, limiti): [substrato.eu/metodologia](http
 - **DataCentersExposed** — ODbL 1.0
 - **Aqueduct 4.0 × HydroBASINS** — stress idrico
 - Overlay rete elettrica: tile live [OpenInfraMap](https://openinframap.org/)
+- Comuni Lombardia (prossimità al click): ISTAT 2021 via [opendatasicilia/comuni-italiani](https://github.com/opendatasicilia/comuni-italiani)
 
 Dettagli e workflow: `data/sources/README.md`.
 

@@ -35,6 +35,9 @@ export function attachSelection(ctx: MapContext) {
         ctx.map.setPaintProperty(layerId, 'icon-opacity', STATUS_BADGE_OPACITY_EXPR);
       }
     });
+    ctx.clearProximity?.();
+    ctx.clearNoise?.();
+    ctx.hideSelectionLegend?.();
   }
   
   // Helper: get country name
@@ -134,11 +137,12 @@ export function attachSelection(ctx: MapContext) {
       if (!ctx.map.getLayer(layerId)) return;
       ctx.map.setPaintProperty(layerId, 'icon-opacity', [
         'case',
+        // Hide status chip on the selected site — shown in the detail noise panel instead
         ['==', ['get', 'id'], featureId],
-        1,
+        0,
         ['in', ['get', 'id'], ['literal', relatedList]],
-        0.9,
-        0.12
+        0.55,
+        0.08
       ]);
     });
   }

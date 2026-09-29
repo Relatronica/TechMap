@@ -10,6 +10,7 @@ import { initPlaceSearch } from './placeSearch';
 import { attachSelection } from './selection';
 import { attachDetailSidebar } from './detailSidebar';
 import { attachTooltips } from './tooltips';
+import { attachSelectionLegend } from './selectionLegend';
 import { setupLayers } from './layers';
 import { wireInteractions } from './interactions';
 import { wireFilters } from './filters';
@@ -85,10 +86,19 @@ export function initMap() {
     resolveSiteProperties: (p) => p,
     resolveConnectionProperties: (p) => p,
     highlightConnectionEdge: () => {},
-    frameConnection: () => {}
+    frameConnection: () => {},
+    clearProximity: () => {},
+    showProximityAt: () => null,
+    frameProximity: () => {},
+    clearNoise: () => {},
+    showNoiseAt: () => null,
+    frameNoise: () => {},
+    showSelectionLegend: () => {},
+    hideSelectionLegend: () => {}
   } as MapContext;
 
   attachSelection(ctx);
+  attachSelectionLegend(ctx);
   attachDetailSidebar(ctx);
   attachTooltips(ctx);
 
