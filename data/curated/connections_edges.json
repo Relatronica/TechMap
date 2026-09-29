@@ -1,5 +1,5 @@
 {
-  "version": "0.3.8",
+  "version": "0.3.10",
   "methodology_it": "Unità di lavoro = corridoio documentato, non densità di archi. Cinque tipi: powers, connects, supplies, manufactures_for, trains. Silicio AI (2026-09-29): ASML→foundry→(HBM+CoWoS/OSAT)→design NVIDIA/AMD→ODM→campus. HBM e packaging sono anelli distinti dalla logica front-end. Metalli batteria e labeling restano filiere separate. Certainty distingue peso visivo; inferred non rimossi. Batterie (2026-09-29): cobalto Glencore→Kokkola pCAM→Nysa CAM→LGES celle; litio AU Greenbushes→Kwinana; litio brine Atacama→La Negra. Nichel NMC citato in scheda senza miniera dedicata. Preset corridor mostra solo siteIds. Lavoro dati AI: hub KE/PH → Scale/Surge SF → OpenAI/Meta/Anthropic/Google; preset siteIds.",
   "edges": [
     {
@@ -706,6 +706,30 @@
           "title": "Al Nutisiari — testo comunicato su SE 380 kV e FV",
           "url": "https://alnutisiari.it/index.php/2026/07/24/via-libera-del-governo-a-cavour-hyperscale-campus-il-data-center-che-nascera-a-leri-cavour-che-avra-una-media-di-1200-lavoratori-in-fase-di-costruzione/",
           "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_086",
+      "source_id": "ep_002",
+      "target_id": "dc_028",
+      "relationship_type": "powers",
+      "certainty": "likely",
+      "description_it": "Il parco fotovoltaico Enel Trino (~87 MW, ep_002) è operativo sullo stesso brownfield industriale di Trino / Leri Cavour dove è previsto il Cavour Hyperscale Campus (dc_028). Il comunicato MIMIT cita esplicitamente il FV già presente sul nodo, ma non un PPA Enel→campus: co-localizzazione energetica, non cavo dedicato.",
+      "description_en": "The Enel Trino solar park (~87 MW, ep_002) operates on the same Trino / Leri Cavour industrial brownfield where the Cavour Hyperscale Campus (dc_028) is planned. The MIMIT release explicitly cites PV already on the node, but not an Enel→campus PPA: energy co-location, not a dedicated cable.",
+      "evidence_note_it": "MIMIT + scheda Enel Trino: stesso sito/nodo documentato. Nessun contratto di fornitura nominato → likely, analogo a Tavazzano→MXP4 (conn_045), mai confirmed senza PPA.",
+      "evidence_note_en": "MIMIT + Enel Trino factsheet: same documented site/node. No named supply contract → likely, analogous to Tavazzano→MXP4 (conn_045), never confirmed without a PPA.",
+      "as_of": "2026-07-24",
+      "sources": [
+        {
+          "title": "MIMIT — Cavour Hyperscale Campus (FV 87,5 MW sul nodo)",
+          "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+          "accessed_at": "2026-09-29"
+        },
+        {
+          "title": "Enel Green Power — Trino Solar Park",
+          "accessed_at": "2026-09-29",
+          "note": "Parco operativo giu 2024 sull’area ex Galileo Ferraris"
         }
       ]
     },
@@ -1626,7 +1650,45 @@
           "accessed_at": "2026-09-29"
         }
       ]
+    },
+    {
+      "id": "conn_087",
+      "source_id": "gn_010",
+      "target_id": "dc_076",
+      "relationship_type": "connects",
+      "certainty": "likely",
+      "description_it": "Per il data center Hines/SATAC a Caselle, Terna ha rilasciato il 31 ott 2023 una soluzione di connessione a 170 MW (sottostazione utente in doppia antenna 380 kV verso una nuova SE RTN in entra-esce sulla linea Leinì–Piossasco). Il 25 ott 2024 SATAC ha chiesto di aggiornare la pratica a 250 MW alimentando dalla SE esistente di Leinì. Non è ancora una STMG definitiva pubblica sul solo punto Leinì, ma il corridoio e il nodo sono nominati.",
+      "description_en": "For the Hines/SATAC Caselle data center, Terna issued a 170 MW connection solution on 31 Oct 2023 (user substation, double-antenna 380 kV to a new NTG SE cut into the Leinì–Piossasco line). On 25 Oct 2024 SATAC asked to update the file to 250 MW fed from the existing Leinì SE. It is not yet a final public STMG solely on Leinì, but the corridor and node are named.",
+      "evidence_note_it": "Cronaca tecnica locale (Cosenostre) riporta date, MW e nomi SE/linea Terna. Aggiornamento Leinì richiesto, non confermato in fascicolo MASE pubblico → likely, non confirmed.",
+      "evidence_note_en": "Local technical reporting (Cosenostre) gives dates, MW and Terna SE/line names. Leinì update requested, not confirmed in a public MASE file → likely, not confirmed.",
+      "as_of": "2024-10-25",
+      "sources": [
+        {
+          "title": "Cosenostre — Caselle: STMG Terna e richiesta alimentazione da Leinì",
+          "url": "https://www.cosenostre-online.it/2025/01/a-caselle-il-primo-data-center-hyperscale-del-piemonte/",
+          "accessed_at": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "id": "conn_088",
+      "source_id": "gn_011",
+      "target_id": "dc_077",
+      "relationship_type": "connects",
+      "certainty": "likely",
+      "description_it": "Il promotore del progetto sull’ex Pininfarina a Grugliasco dichiara pubblicamente che il campus «sarà connesso alla sotto-centrale di Piossasco» e non preleverà dalla rete di distribuzione di Grugliasco. Nessuna STMG/VIA pubblica consultata che detti cavo o baia.",
+      "description_en": "The promoter of the former-Pininfarina Grugliasco project publicly states the campus «will be connected to the Piossasco sub-station» and will not draw from Grugliasco’s distribution grid. No consulted public STMG/EIA specifying cable or bay.",
+      "evidence_note_it": "Dichiarazione nominata (Corriere, Massimini). Senza fascicolo Terna/MASE → likely, analogo a Trino SE→Cavour (conn_046).",
+      "evidence_note_en": "Named statement (Corriere, Massimini). Without a Terna/MASE filing → likely, analogous to Trino SE→Cavour (conn_046).",
+      "as_of": "2026-06-26",
+      "sources": [
+        {
+          "title": "Corriere Torino — Grugliasco Pininfarina: allaccio Piossasco",
+          "url": "https://torino.corriere.it/notizie/economia/26_giugno_26/torino-grugliasco-si-spacca-sul-data-center-nelle-ex-area-pininfarina-i-pro-e-contro-all-impianto-da-4-miliardi-di-investimenti-57cabd4b-6960-493b-b3f8-a26a5fc53xlk.shtml",
+          "accessed_at": "2026-09-29"
+        }
+      ]
     }
   ],
-  "removed_from_v1_note_it": "Rimossi archi non filiera e i salti NVIDIA→campus senza ODM. 2026-09-28: rimossi gli otto powers inferred Turbigo→campus milanesi. 2026-09-29: rimossi conn_008/021 e conn_014/015; Trino→Cavour come powers likely; otto connects inferred Turbigo stazione→cluster Milano. 2026-09-29 (razionalizzazione): eliminati i tipi injects e contributes — immissione centrale→stazione e allacci diventano connects; contributi di bacino senza PPA diventano powers likely|inferred. 2026-09-29: aggiunti connects confirmed Baggio→MIL03, Lacchiarella→Apto, Melegnano→Vantage MXP1; powers Neoen Arena Po→Equinix ML5 (confirmed) e ML2 (likely). 2026-09-29: Baggio→MXP2 e Baggio→Equinix ML7/ML8 (connects confirmed); Tavazzano TTEP→MXP4 (powers likely); fonti VIA/pareri in scheda. 2026-09-29: fuori LO — gn_006 Trino 380 kV→Cavour connects likely; Edison FV Viterbo→Data4 powers confirmed; schede Sulcis/ROM1/Pomezia aggiornate; pin Aruba IT4 Tiburtino; Enfinity→MS solo nota in scheda (sito non divulgato). 2026-09-29 (miglioramenti): mantenuti otto connects inferred Turbigo→cluster Milano (insieme agli allacci documentati); aggiunti gn_007 Lacchiarella Ovest, gn_008 Bornasco Terna, gn_009 cabina Ponte; STACK→Lacchiarella confirmed; AWS Zibido e K2→Lacchiarella Ovest likely; MS Bornasco→SE Bornasco likely; Aruba IT3→cabina Ponte confirmed; Blue Power Ferrera→Eni–Khazna powers likely. 2026-09-29 (filiera+lavoro): Greenbushes→Kwinana supplies confirmed; Sama→OpenAI trains confirmed; Sama→Meta Luleå trains likely; Remotasks→OpenAI trains likely; siti ai_data_work/model_lab; labor fill su corridoi silicio/cobalto/litio. 2026-09-29 (batterie+): Terrafame→Nysa confirmed; Nysa→Samsung Göd likely; Balama→Vidalia confirmed; Vidalia→Göd likely (MoU); Hoboken→Nysa likely (closed loop). 2026-09-29 (ai_labor+): Sama scheda 2026; conn_056 Sama→Meta Menlo Park confirmed (ex Luleå); Scale HQ SF; Remotasks→Scale confirmed; Scale→OpenAI/Meta likely; Luleå fuori preset. 2026-09-29 (ai_labor++): PH Remotasks+Appen Imus; Surge SF; Anthropic+Google lab; 10 trains nel preset; Appen senza arco client-specific."
+  "removed_from_v1_note_it": "Rimossi archi non filiera e i salti NVIDIA→campus senza ODM. 2026-09-29 (Piemonte++): dc_076 Caselle↔gn_010 Leinì connects likely; dc_077 Grugliasco↔gn_011 Piossasco connects likely; nessuno inferred colo. 2026-09-29 (Piemonte): Wave Torino dc_069–075 (Retelit, ITGate, Host.it, COLT, BBBell, Noovle Rivoli/Cebrosa); conn_086 ep_002→dc_028 powers likely; nessun arco colo↔colo senza fascicolo. 2026-09-28: rimossi gli otto powers inferred Turbigo→campus milanesi. 2026-09-29: rimossi conn_008/021 e conn_014/015; Trino→Cavour come powers likely; otto connects inferred Turbigo stazione→cluster Milano. 2026-09-29 (razionalizzazione): eliminati i tipi injects e contributes — immissione centrale→stazione e allacci diventano connects; contributi di bacino senza PPA diventano powers likely|inferred. 2026-09-29: aggiunti connects confirmed Baggio→MIL03, Lacchiarella→Apto, Melegnano→Vantage MXP1; powers Neoen Arena Po→Equinix ML5 (confirmed) e ML2 (likely). 2026-09-29: Baggio→MXP2 e Baggio→Equinix ML7/ML8 (connects confirmed); Tavazzano TTEP→MXP4 (powers likely); fonti VIA/pareri in scheda. 2026-09-29: fuori LO — gn_006 Trino 380 kV→Cavour connects likely; Edison FV Viterbo→Data4 powers confirmed; schede Sulcis/ROM1/Pomezia aggiornate; pin Aruba IT4 Tiburtino; Enfinity→MS solo nota in scheda (sito non divulgato). 2026-09-29 (miglioramenti): mantenuti otto connects inferred Turbigo→cluster Milano (insieme agli allacci documentati); aggiunti gn_007 Lacchiarella Ovest, gn_008 Bornasco Terna, gn_009 cabina Ponte; STACK→Lacchiarella confirmed; AWS Zibido e K2→Lacchiarella Ovest likely; MS Bornasco→SE Bornasco likely; Aruba IT3→cabina Ponte confirmed; Blue Power Ferrera→Eni–Khazna powers likely. 2026-09-29 (filiera+lavoro): Greenbushes→Kwinana supplies confirmed; Sama→OpenAI trains confirmed; Sama→Meta Luleå trains likely; Remotasks→OpenAI trains likely; siti ai_data_work/model_lab; labor fill su corridoi silicio/cobalto/litio. 2026-09-29 (batterie+): Terrafame→Nysa confirmed; Nysa→Samsung Göd likely; Balama→Vidalia confirmed; Vidalia→Göd likely (MoU); Hoboken→Nysa likely (closed loop). 2026-09-29 (ai_labor+): Sama scheda 2026; conn_056 Sama→Meta Menlo Park confirmed (ex Luleå); Scale HQ SF; Remotasks→Scale confirmed; Scale→OpenAI/Meta likely; Luleå fuori preset. 2026-09-29 (ai_labor++): PH Remotasks+Appen Imus; Surge SF; Anthropic+Google lab; 10 trains nel preset; Appen senza arco client-specific."
 }

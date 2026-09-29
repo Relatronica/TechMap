@@ -386,6 +386,92 @@
         ],
         "community_impact_it": "Nodo di distribuzione locale; il rinforzo Mozzo ha generato opposizione comunale. L’impatto del prelievo si legge sul campus Aruba, non sulla cabina."
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.735,
+          45.212
+        ]
+      },
+      "properties": {
+        "id": "gn_010",
+        "name": "Stazione 380 kV Leinì (Terna)",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "Terna",
+        "capacity": "380 / 220 / 132 kV",
+        "description_it": "Stazione di trasmissione Terna a Leinì (TO), nodo magliato 380/220/132 kV sulla dorsale Leinì–Piossasco. Nella soluzione di connessione discussa per il data center Hines/SATAC a Caselle (dc_076), SATAC ha chiesto (ott 2024) di alimentare in «doppia antenna» 380 kV dalla SE esistente di Leinì, in alternativa a una nuova SE RTN in entra-esce sulla stessa linea. Non è una centrale. Pin approssimato su Via Lombardore (indirizzo pubblico della stazione; senza way OSM nominata al momento della cura).",
+        "description_en": "Terna transmission station at Leinì (TO), a meshed 380/220/132 kV node on the Leinì–Piossasco corridor. In the connection solution discussed for the Hines/SATAC Caselle data center (dc_076), SATAC asked (Oct 2024) for double-antenna 380 kV feed from the existing Leinì SE, instead of a new NTG SE cut into the same line. It is not a power plant. Approximate pin on Via Lombardore (public station address; no named OSM way at curation time).",
+        "country": "IT",
+        "city": "Leinì",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Cosenostre — Caselle hyperscale: soluzione Terna e richiesta Leinì (250 MW)",
+            "url": "https://www.cosenostre-online.it/2025/01/a-caselle-il-primo-data-center-hyperscale-del-piemonte/",
+            "accessed_at": "2026-09-29",
+            "note": "STMG 31 ott 2023 (170 MW, nuova SE su Leini–Piossasco); aggiornamento 25 ott 2024 verso SE Leinì esistente a 250 MW"
+          },
+          {
+            "title": "Indirizzo pubblico — Via Lombardore 260, Leinì (TO)",
+            "accessed_at": "2026-09-29",
+            "note": "Pin geocodificato sul tratto Via Lombardore; verificare OSM quando disponibile"
+          }
+        ],
+        "community_impact_it": "Nodo di trasmissione primario del nord-torinese. Eventuali nuovi elettrodotti «doppia antenna» verso Caselle avranno impatto locale distinto dal prelievo del campus."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.445,
+          45.037
+        ]
+      },
+      "properties": {
+        "id": "gn_011",
+        "name": "Stazione 380 kV Piossasco (Terna)",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "Terna",
+        "capacity": "380 / 220 / 150 kV (+ conversione HVDC Piemonte–Savoia)",
+        "description_it": "Stazione di trasmissione Terna a Piossasco (TO), 380/220/150 kV, sede anche della stazione di conversione HVDC Italia–Francia «Piemonte–Savoia». Nodo strategico della RTN nord-occidentale. Citata dal promotore del progetto data center sull’ex Pininfarina a Grugliasco (dc_077) come «sotto-centrale» di allaccio. Non è una centrale. Pin approssimato sul comprensorio stazione/converter (senza way OSM nominata dedicata al momento della cura).",
+        "description_en": "Terna transmission station at Piossasco (TO), 380/220/150 kV, also hosting the Italy–France «Piemonte–Savoia» HVDC converter. Strategic north-west NTG node. Cited by the promoter of the former-Pininfarina Grugliasco data-center project (dc_077) as the connection «sub-station». It is not a power plant. Approximate pin on the station/converter compound (no dedicated named OSM way at curation time).",
+        "country": "IT",
+        "city": "Piossasco",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "Corriere Torino — Grugliasco Pininfarina: «connessi alla sotto-centrale di Piossasco»",
+            "url": "https://torino.corriere.it/notizie/economia/26_giugno_26/torino-grugliasco-si-spacca-sul-data-center-nelle-ex-area-pininfarina-i-pro-e-contro-all-impianto-da-4-miliardi-di-investimenti-57cabd4b-6960-493b-b3f8-a26a5fc53xlk.shtml",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "FRED — restyling SE Terna Piossasco (GIS 132-220-380 kV)",
+            "url": "https://www.fred-me.com/portfolio-item/terna-piossasco/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Gazzetta Ufficiale — HVDC Piemonte–Savoia, conversione in SE Piossasco",
+            "url": "https://www.gazzettaufficiale.it/atto/parte_seconda/caricaDettaglioAtto/originario?atto.codiceRedazionale=TV21ADA2793&atto.dataPubblicazioneGazzetta=2021-03-23",
+            "accessed_at": "2026-09-29"
+          }
+        ],
+        "community_impact_it": "Hub di trasmissione e interconnessione Francia. Un eventuale allaccio hyperscale a Grugliasco graverà su questo nodo, non sulla rete di distribuzione locale del comune."
+      }
     }
   ]
 }

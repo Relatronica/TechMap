@@ -134,6 +134,41 @@ Segnale geografico: ovest Milano (Cornaredo–Settimo–Cusago–Arluno–Vittuo
 
 Archi `inferred` esistenti **non** rimossi in Wave 3–4. Nessun nuovo arco filiera in Wave 4 (manca evidence STMG/PPA sito-sito).
 
+### Wave 5 — Piemonte (polo Torino + nodo Trino)
+| id | Nome | Status | Note |
+| --- | --- | --- | --- |
+| dc_028 | Cavour Hyperscale Trino | planned | già in mappa |
+| dc_058 | CSI Piemonte Torino | operational | già Wave 4 |
+| dc_069 | Retelit Torino | operational | PeeringDB 2574 |
+| dc_070 | ITGate PdF TRN1/TRN2 | operational | PeeringDB 294 |
+| dc_071 | Host.it DC1 Torino | operational | PeeringDB 1442 |
+| dc_072 | COLT Datacenter Torino | operational | PeeringDB 5887 |
+| dc_073 | BBBell Torino | operational | PeeringDB 708 |
+| dc_074 | TIM Noovle Rivoli | operational | OSM + Noovle |
+| dc_075 | TIM Noovle Cebrosa | operational | Settimo Torinese |
+
+| arco | Tipo | Certainty | Note |
+| --- | --- | --- | --- |
+| conn_046 | gn_006 → dc_028 | connects | likely (MIMIT SE 380 kV) |
+| conn_086 | ep_002 → dc_028 | powers | likely (FV co-localizzato, no PPA) |
+
+Nessun arco tra DC colo torinesi (manca fascicolo). Import OSM duplicati (Noovle Rivoli/Cebrosa) assorbiti dal merge con schede curate. **Nessun `inferred`** Piemonte: mancano hub di immissione + cluster hyperscale documentato stile Turbigo.
+
+### Wave 5b — Piemonte hyperscale (Caselle + Grugliasco)
+| id | Nome | Status | Note |
+| --- | --- | --- | --- |
+| dc_076 | Hines/SATAC Caselle ATA | planned | 250 MW richiesti; piano ATA giu 2026 |
+| dc_077 | ex Pininfarina Grugliasco | planned | ~400 MW dichiarati; dibattito comunale |
+| gn_010 | SE Terna Leinì 380 kV | operational | pin medio Via Lombardore |
+| gn_011 | SE Terna Piossasco 380 kV | operational | pin medio comprensorio HVDC |
+
+| arco | Tipo | Certainty | Note |
+| --- | --- | --- | --- |
+| conn_087 | gn_010 → dc_076 | connects | likely (STMG 2023 + richiesta Leinì 2024) |
+| conn_088 | gn_011 → dc_077 | connects | likely (dichiarazione promotore) |
+
+Moncalieri ex Ilte (~576 MW citati): **non** pinato — SE di allaccio non nominata in fonti aperte consultate.
+
 ---
 
 ## 6. Prossimi passi

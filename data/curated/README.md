@@ -4,7 +4,7 @@ I GeoJSON in questa cartella sono la **fonte di verità** per i siti con descriz
 
 | File | Ruolo |
 | --- | --- |
-| `data_centers.geojson` | Campus e DC curati (merge con candidati OSM). Priorità Italia: cluster Milano, secondo polo Roma/Lazio, Torino/Nord-Est, Trino Cavour, Bologna HPC, Sulcis |
+| `data_centers.geojson` | Campus e DC curati (merge con candidati OSM). Priorità Italia: cluster Milano, secondo polo Roma/Lazio, **polo Torino (dc_058–075)**, **hyperscale Caselle/Grugliasco (dc_076–077)**, Trino Cavour, Bologna HPC, Sulcis |
 | `energy_plants.geojson` | Impianti curati + nodi PPA (merge con WRI) |
 | `raw_materials.geojson` | Estrazione, fab, **HBM**, **packaging CoWoS/OSAT**, design, ODM, **batterie (Co/Ni/Li → pCAM/CAM → celle; grafite→anodo; riciclo)**, **lavoro dati AI**, lab modelli |
 | `connections_edges.json` | Archi di filiera **senza** geometria (fonte): powers, connects, supplies, manufactures_for, **trains** |

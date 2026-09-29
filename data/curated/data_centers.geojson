@@ -3736,6 +3736,480 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.66162,
+          45.09132
+        ]
+      },
+      "properties": {
+        "id": "dc_069",
+        "name": "Retelit — Torino",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Retelit",
+        "capacity": "Colocation metro; MW IT non pubblicati",
+        "description_it": "Data center Retelit a Torino (PeeringDB fac/2574), nel cluster colo di Corso Marche / Lingotto nord. Nodo carrier del network nazionale ex Irideos/Retelit nel polo piemontese, distinto da CSI Piemonte (dc_058, PA) e dal campus Noovle di Rivoli (dc_074).",
+        "description_en": "Retelit data center in Turin (PeeringDB fac/2574), in the Corso Marche / north Lingotto colo cluster. National ex-Irideos/Retelit carrier node in the Piedmont metro, distinct from CSI Piemonte (dc_058, public sector) and Noovle Rivoli (dc_074).",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Facility colo consolidata nel tessuto industriale torinese; scala metro, non hyperscale.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "PeeringDB — Retelit S.p.A. Torino (fac/2574)",
+            "url": "https://www.peeringdb.com/fac/2574",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Retelit — certificato ISO 50001 (elenco sedi DC)",
+            "url": "https://www.retelit.it/public/CMS/Files/10556/Certificato-ISO-50001-EN.pdf",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.66083,
+          45.09069
+        ]
+      },
+      "properties": {
+        "id": "dc_070",
+        "name": "ITGate — PdF (TRN1/TRN2)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "ITGate",
+        "capacity": "Due sale TRN1/TRN2; MW IT non pubblicati in PeeringDB",
+        "description_it": "Data center ITGate PdF a Torino (PeeringDB fac/294, TRN1/TRN2). Colocation e housing nel medesimo cluster carrier di Corso Marche, spesso citato insieme a Host.it e Retelit sul corridoio torinese.",
+        "description_en": "ITGate PdF data center in Turin (PeeringDB fac/294, TRN1/TRN2). Colocation/housing in the same Corso Marche carrier cluster, often listed alongside Host.it and Retelit on the Turin corridor.",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non dettagliato in scheda PeeringDB consultata."
+        },
+        "community_impact_it": "Nodo colo urbano a Torino.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "PeeringDB — ITGate PdF (TRN1/TRN2, fac/294)",
+            "url": "https://www.peeringdb.com/fac/294",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.66015,
+          45.08177
+        ]
+      },
+      "properties": {
+        "id": "dc_071",
+        "name": "Host.it — DC1 Torino",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Host.it",
+        "capacity": "Colocation; MW IT non pubblicati",
+        "description_it": "Data center Host.it DC1 a Torino (PeeringDB fac/1442). Facility colo/hosting nel quadrante sud del cluster Lingotto–Corso Marche, distinta da ITGate PdF (dc_070) e Retelit (dc_069) pur restando nello stesso ecosistema carrier torinese.",
+        "description_en": "Host.it DC1 data center in Turin (PeeringDB fac/1442). Colo/hosting facility in the southern Lingotto–Corso Marche cluster, distinct from ITGate PdF (dc_070) and Retelit (dc_069) while remaining in the same Turin carrier ecosystem.",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non dettagliato in fonti aperte consultate."
+        },
+        "community_impact_it": "Presenza colo/hosting consolidata a Torino.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "PeeringDB — Host.it DC1 (fac/1442)",
+            "url": "https://www.peeringdb.com/fac/1442",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.67178,
+          45.08816
+        ]
+      },
+      "properties": {
+        "id": "dc_072",
+        "name": "COLT — Datacenter Torino",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "COLT Technology Services",
+        "capacity": "Colocation carrier; MW IT non pubblicati",
+        "description_it": "Datacenter COLT a Torino (PeeringDB fac/5887). Nodo colo internazionale nel polo torinese, complementare ai DC Retelit/ITGate/Host.it e distinto dalla PA regionale CSI (dc_058).",
+        "description_en": "COLT datacenter in Turin (PeeringDB fac/5887). International colo node in the Turin metro, complementary to Retelit/ITGate/Host.it DCs and distinct from regional PA facility CSI (dc_058).",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non dettagliato in scheda PeeringDB consultata."
+        },
+        "community_impact_it": "Facility telco colo nel tessuto urbano torinese.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "PeeringDB — COLT Datacenter Turin (fac/5887)",
+            "url": "https://www.peeringdb.com/fac/5887",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.65888,
+          45.09062
+        ]
+      },
+      "properties": {
+        "id": "dc_073",
+        "name": "BBBell — Torino",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "BBBell",
+        "capacity": "Colocation regionale; MW IT non pubblicati",
+        "description_it": "Data center BBBell a Torino (PeeringDB fac/708). Operatore piemontese con facility colo nel cluster Lingotto–Corso Marche, spesso interconnesso al marketplace carrier locale.",
+        "description_en": "BBBell data center in Turin (PeeringDB fac/708). Piedmont operator with a colo facility in the Lingotto–Corso Marche cluster, often interconnected with the local carrier marketplace.",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non dettagliato in fonti aperte consultate."
+        },
+        "community_impact_it": "Operator locale con DC urbano a Torino.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "PeeringDB — BBBell Torino (fac/708)",
+            "url": "https://www.peeringdb.com/fac/708",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.55102,
+          45.06255
+        ]
+      },
+      "properties": {
+        "id": "dc_074",
+        "name": "TIM Noovle — Rivoli",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "TIM Noovle / TIM Enterprise",
+        "capacity": "Core DC rete Noovle; MW IT non pubblicati in scheda aperta consultata",
+        "description_it": "Data center TIM Noovle a Rivoli (OSM way/1419931331, tag telecom=data_center). Nodo del network core Noovle nel cinturone ovest di Torino, distinto dal campus CSI (dc_058) e da Cebrosa/Settimo (dc_075).",
+        "description_en": "TIM Noovle data center in Rivoli (OSM way/1419931331, telecom=data_center tag). Noovle core-network node in Turin’s western belt, distinct from CSI (dc_058) and Cebrosa/Settimo (dc_075).",
+        "country": "IT",
+        "city": "Rivoli",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Facility telco TIM/Noovle nel comune di Rivoli.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OpenStreetMap — Noovle DC Rivoli (way/1419931331)",
+            "url": "https://www.openstreetmap.org/way/1419931331",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Noovle — Data Centers",
+            "url": "https://www.noovle.com/en/datacenter/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.74232,
+          45.14632
+        ]
+      },
+      "properties": {
+        "id": "dc_075",
+        "name": "TIM Noovle — Cebrosa (Settimo Torinese)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "TIM Noovle / TIM Enterprise",
+        "capacity": "Core DC rete Noovle; MW IT non pubblicati",
+        "description_it": "Data center TIM Noovle «Cebrosa» a Settimo Torinese (OSM way/1433345058). Polo TIM/Noovle a nord-est di Torino, complementare a Rivoli (dc_074) e al cluster colo urbano (dc_069–073).",
+        "description_en": "TIM Noovle «Cebrosa» data center in Settimo Torinese (OSM way/1433345058). TIM/Noovle node north-east of Turin, complementary to Rivoli (dc_074) and the urban colo cluster (dc_069–073).",
+        "country": "IT",
+        "city": "Settimo Torinese",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+        },
+        "community_impact_it": "Facility TIM/Noovle in area industriale settimese.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "OpenStreetMap — DC Noovle Cebrosa (way/1433345058)",
+            "url": "https://www.openstreetmap.org/way/1433345058",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Noovle — Data Centers",
+            "url": "https://www.noovle.com/en/datacenter/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.665,
+          45.178
+        ]
+      },
+      "properties": {
+        "id": "dc_076",
+        "name": "Hines / SATAC — Hyperscale Caselle Torinese (aree ATA)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Hines (SATAC)",
+        "capacity": "250 MW richiesti a Terna (aggiornamento ott 2024; soluzione iniziale 170 MW)",
+        "description_it": "Progetto hyperscale Hines sulle aree ATA di Caselle Torinese (ex destinazione commerciale), ~150.000 mq, sei edifici fino a ~30 m, investimento >500 mln. Piano particolareggiato approvato all’unanimità dal Consiglio comunale (26 giu 2026); 18 mesi dal BUR per avvio lavori. Connessione RTN: Terna ha rilasciato il 31 ott 2023 una soluzione a 170 MW (sottostazione utente in doppia antenna 380 kV verso nuova SE RTN in entra-esce sulla linea Leinì–Piossasco); il 25 ott 2024 SATAC ha chiesto aggiornamento a 250 MW con alimentazione dalla SE esistente di Leinì (gn_010). Cliente finale non nominato pubblicamente. Pin comunale sulle ATA a ridosso ferrovia/aeroporto.",
+        "description_en": "Hines hyperscale project on Caselle Torinese ATA lands (former retail destination), ~150,000 m², six buildings up to ~30 m, >€500m. Detailed plan approved unanimously by the town council (26 Jun 2026); 18 months from regional gazette to start works. NTG connection: Terna issued a 170 MW solution on 31 Oct 2023 (user substation, double-antenna 380 kV to a new NTG SE cut into the Leinì–Piossasco line); on 25 Oct 2024 SATAC asked to update to 250 MW fed from the existing Leinì SE (gn_010). End customer not publicly named. Municipal pin on the ATA strip beside railway/airport.",
+        "country": "IT",
+        "city": "Caselle Torinese",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 250,
+          "power_draw_mw_est": 250,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 15,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio proposto dalla SE Leinì 380 kV (gn_010): richiesta di aggiornamento STMG, non ancora STMG definitiva pubblica sul punto Leinì. Raffreddamento a circuito chiuso imposto in delibera comunale."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Occupazione a regime non dettagliata in fonti aperte consultate; focus urbanistico/energia.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Polo digitale a ridosso dell’aeroporto; dibattito su elettrodotti «doppia antenna», rumore, falda e rischio incendio rispetto alle attività aeroportuali. Delibera comunale con vincoli su raffreddamento e monitoraggi.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Cosenostre — Caselle hyperscale: STMG Terna e richiesta Leinì 250 MW",
+            "url": "https://www.cosenostre-online.it/2025/01/a-caselle-il-primo-data-center-hyperscale-del-piemonte/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Il Risveglio — piano ATA Caselle approvato (26 giu 2026)",
+            "url": "https://www.ilrisveglio-online.it/2026/06/27/caselle-approvato-unanimita-piano-data-center/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "IATO — Hines Caselle >500 mln / 150.000 mq",
+            "url": "https://www.iato.news/2025/04/11/il-nuovo-data-center-da-oltre-500-milioni/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6224,
+          45.0536
+        ]
+      },
+      "properties": {
+        "id": "dc_077",
+        "name": "Hyperscale — ex Pininfarina Grugliasco (Borgata Lesna)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Added Value Capital / sviluppatore (operatore DC non nominato)",
+        "capacity": "~400 MW citati dal promotore; investimento ~4 mld",
+        "description_it": "Progetto di riconversione dell’ex area Pininfarina a Borgata Lesna (Grugliasco), ~58.000 mq in vendita, in data center hyperscale (~4 mld, ~400 posti dichiarati). Il promotore Alfiero Massimini (Added Value Capital) afferma allaccio alla «sotto-centrale di Piossasco» (gn_011), raffreddamento a circuito chiuso, deroga di altezza fino a 22 m. Operatore finale non reso pubblico. Consiglio comunale e territorio divisi (giu 2026); progetto ancora in fase autorizzativa/urbanistica. Pin sulla Galleria del Vento / comprensorio Pininfarina.",
+        "description_en": "Proposed conversion of the former Pininfarina site at Borgata Lesna (Grugliasco), ~58,000 m² for sale, into a hyperscale data center (~€4bn, ~400 jobs claimed). Promoter Alfiero Massimini (Added Value Capital) states connection to the Piossasco «sub-station» (gn_011), closed-loop cooling, height waiver up to 22 m. End operator not disclosed. Town council and community split (Jun 2026); still in planning/authorisation. Pin on the Pininfarina wind-tunnel / campus compound.",
+        "country": "IT",
+        "city": "Grugliasco",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 400,
+          "power_draw_mw_est": 400,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 5.8,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio dichiarato a Piossasco (gn_011) dal promotore; nessuna STMG/VIA pubblica consultata → connects likely, non confirmed. Corriere riporta «~400 megawattora» in contesto di potenza di impianto."
+        },
+        "employment": {
+          "direct": 400,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Stima dichiarata dal promotore (~400 posti); da verificare a regime.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "community_impact_it": "Brownfield industriale a Grugliasco; forte dibattito locale su energia, acqua e destinazione d’uso (ex automotive vs hyperscale).",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Corriere Torino — Grugliasco si spacca sul data center ex Pininfarina",
+            "url": "https://torino.corriere.it/notizie/economia/26_giugno_26/torino-grugliasco-si-spacca-sul-data-center-nelle-ex-area-pininfarina-i-pro-e-contro-all-impianto-da-4-miliardi-di-investimenti-57cabd4b-6960-493b-b3f8-a26a5fc53xlk.shtml",
+            "accessed_at": "2026-09-29",
+            "note": "Massimini: connessione a Piossasco; ~400 MW; 4 mld"
+          },
+          {
+            "title": "TorinoNews24 — maxi DC area Pininfarina",
+            "url": "https://torinonews24.it/news/torino-maxi-impianto-data-center-nellarea-pininfarina-4-miliardi-di-investimenti-e-400-posti-di-lavoro-ce-chi-dice-no-grugliasco-si-spacca-sul-nuovo-progetto-il-caso/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
     }
   ]
 }

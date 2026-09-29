@@ -1360,6 +1360,49 @@
         "type": "LineString",
         "coordinates": [
           [
+            8.29,
+            45.19
+          ],
+          [
+            8.295,
+            45.188
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_086",
+        "source_id": "ep_002",
+        "target_id": "dc_028",
+        "source_name": "Enel Trino Solar Park",
+        "target_name": "Cavour Hyperscale Campus — Trino (ex Galileo Ferraris)",
+        "relationship_type": "powers",
+        "description_it": "Il parco fotovoltaico Enel Trino (~87 MW, ep_002) è operativo sullo stesso brownfield industriale di Trino / Leri Cavour dove è previsto il Cavour Hyperscale Campus (dc_028). Il comunicato MIMIT cita esplicitamente il FV già presente sul nodo, ma non un PPA Enel→campus: co-localizzazione energetica, non cavo dedicato.",
+        "description_en": "The Enel Trino solar park (~87 MW, ep_002) operates on the same Trino / Leri Cavour industrial brownfield where the Cavour Hyperscale Campus (dc_028) is planned. The MIMIT release explicitly cites PV already on the node, but not an Enel→campus PPA: energy co-location, not a dedicated cable.",
+        "certainty": "likely",
+        "evidence_note_it": "MIMIT + scheda Enel Trino: stesso sito/nodo documentato. Nessun contratto di fornitura nominato → likely, analogo a Tavazzano→MXP4 (conn_045), mai confirmed senza PPA.",
+        "evidence_note_en": "MIMIT + Enel Trino factsheet: same documented site/node. No named supply contract → likely, analogous to Tavazzano→MXP4 (conn_045), never confirmed without a PPA.",
+        "as_of": "2026-07-24",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "MIMIT — Cavour Hyperscale Campus (FV 87,5 MW sul nodo)",
+            "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-piemonte-per-8-mld",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Enel Green Power — Trino Solar Park",
+            "accessed_at": "2026-09-29",
+            "note": "Parco operativo giu 2024 sull’area ex Galileo Ferraris"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
             11.9488,
             42.4168
           ],
@@ -3008,6 +3051,82 @@
           {
             "title": "Business Insider — Scale AI clients (Google, Meta, OpenAI)",
             "url": "https://www.businessinsider.com/scale-ai-outlier-training-harmful-ai-prompts-2025-04",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.735,
+            45.212
+          ],
+          [
+            7.665,
+            45.178
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_087",
+        "source_id": "gn_010",
+        "target_id": "dc_076",
+        "source_name": "Stazione 380 kV Leinì (Terna)",
+        "target_name": "Hines / SATAC — Hyperscale Caselle Torinese (aree ATA)",
+        "relationship_type": "connects",
+        "description_it": "Per il data center Hines/SATAC a Caselle, Terna ha rilasciato il 31 ott 2023 una soluzione di connessione a 170 MW (sottostazione utente in doppia antenna 380 kV verso una nuova SE RTN in entra-esce sulla linea Leinì–Piossasco). Il 25 ott 2024 SATAC ha chiesto di aggiornare la pratica a 250 MW alimentando dalla SE esistente di Leinì. Non è ancora una STMG definitiva pubblica sul solo punto Leinì, ma il corridoio e il nodo sono nominati.",
+        "description_en": "For the Hines/SATAC Caselle data center, Terna issued a 170 MW connection solution on 31 Oct 2023 (user substation, double-antenna 380 kV to a new NTG SE cut into the Leinì–Piossasco line). On 25 Oct 2024 SATAC asked to update the file to 250 MW fed from the existing Leinì SE. It is not yet a final public STMG solely on Leinì, but the corridor and node are named.",
+        "certainty": "likely",
+        "evidence_note_it": "Cronaca tecnica locale (Cosenostre) riporta date, MW e nomi SE/linea Terna. Aggiornamento Leinì richiesto, non confermato in fascicolo MASE pubblico → likely, non confirmed.",
+        "evidence_note_en": "Local technical reporting (Cosenostre) gives dates, MW and Terna SE/line names. Leinì update requested, not confirmed in a public MASE file → likely, not confirmed.",
+        "as_of": "2024-10-25",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Cosenostre — Caselle: STMG Terna e richiesta alimentazione da Leinì",
+            "url": "https://www.cosenostre-online.it/2025/01/a-caselle-il-primo-data-center-hyperscale-del-piemonte/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.445,
+            45.037
+          ],
+          [
+            7.6224,
+            45.0536
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_088",
+        "source_id": "gn_011",
+        "target_id": "dc_077",
+        "source_name": "Stazione 380 kV Piossasco (Terna)",
+        "target_name": "Hyperscale — ex Pininfarina Grugliasco (Borgata Lesna)",
+        "relationship_type": "connects",
+        "description_it": "Il promotore del progetto sull’ex Pininfarina a Grugliasco dichiara pubblicamente che il campus «sarà connesso alla sotto-centrale di Piossasco» e non preleverà dalla rete di distribuzione di Grugliasco. Nessuna STMG/VIA pubblica consultata che detti cavo o baia.",
+        "description_en": "The promoter of the former-Pininfarina Grugliasco project publicly states the campus «will be connected to the Piossasco sub-station» and will not draw from Grugliasco’s distribution grid. No consulted public STMG/EIA specifying cable or bay.",
+        "certainty": "likely",
+        "evidence_note_it": "Dichiarazione nominata (Corriere, Massimini). Senza fascicolo Terna/MASE → likely, analogo a Trino SE→Cavour (conn_046).",
+        "evidence_note_en": "Named statement (Corriere, Massimini). Without a Terna/MASE filing → likely, analogous to Trino SE→Cavour (conn_046).",
+        "as_of": "2026-06-26",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Corriere Torino — Grugliasco Pininfarina: allaccio Piossasco",
+            "url": "https://torino.corriere.it/notizie/economia/26_giugno_26/torino-grugliasco-si-spacca-sul-data-center-nelle-ex-area-pininfarina-i-pro-e-contro-all-impianto-da-4-miliardi-di-investimenti-57cabd4b-6960-493b-b3f8-a26a5fc53xlk.shtml",
             "accessed_at": "2026-09-29"
           }
         ]
