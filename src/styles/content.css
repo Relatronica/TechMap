@@ -295,3 +295,64 @@ html.is-content {
 .method-scale-item.is-disputed {
   border-left-color: var(--rm, #b87a4a);
 }
+
+.changelog-release {
+  margin: 0 0 1.75rem;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(230, 232, 235, 0.03);
+}
+
+.changelog-release:last-of-type {
+  margin-bottom: 0;
+}
+
+.changelog-release-header {
+  margin-bottom: 0.65rem;
+}
+
+.changelog-release-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem 0.85rem;
+  margin: 0 0 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.changelog-version {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.changelog-release h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.changelog-release-lead {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.changelog-release ul {
+  margin: 0.55rem 0 0;
+}
+
+.changelog-release li {
+  margin-bottom: 0.35rem;
+}
+
+.changelog-release li:last-child {
+  margin-bottom: 0;
+}
+

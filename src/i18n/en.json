@@ -17,6 +17,7 @@
     "nav_press": "Press",
     "nav_report": "Report",
     "nav_methodology": "Methodology",
+    "nav_changelog": "What's new",
     "updated_label": "Updated",
     "privacy": {
       "title": "Privacy",
@@ -636,6 +637,66 @@
     "cta_map": "Open the map",
     "cta_report": "Report an error",
     "cta_press": "Press contacts"
+  },
+  "changelog": {
+    "title": "What's new",
+    "kicker": "Changelog",
+    "heading": "What's new",
+    "lead": "Updates to the map, dataset, and interface — from the mid-September launch to today.",
+    "intro": "We group changes into thematic releases, not commit-by-commit. Dates and content reflect what shipped on substrato.eu.",
+    "cta_map": "Open the map",
+    "cta_methodology": "Methodology",
+    "releases": [
+      {
+        "version": "0.4",
+        "date": "2026-09-29",
+        "date_label": "29 September 2026",
+        "title": "Indicators and new data",
+        "lead": "More supply-chain corridors, region search, and distance and noise indicators on the map.",
+        "items": [
+          "Supply-chain corridors for cognitive labor, materials, and batteries, with preset icons for faster navigation",
+          "Updates on AI silicon and Samsung sites, Torino data-center cluster, and a Trino link",
+          "Map search by region, clearer filters, and connections to grid nodes",
+          "Distance and noise indicators, with simplified acoustic layers"
+        ]
+      },
+      {
+        "version": "0.3",
+        "date": "2026-09-27",
+        "date_label": "27 September 2026",
+        "title": "Corridors and method",
+        "lead": "The map tells supply-chain stories; the public methodology explains certainty, sources, and limits.",
+        "items": [
+          "Deeper supply-chain corridors, with notes on labor and territorial impact",
+          "Methodology page: confidence/certainty scales, sources, and how to cite",
+          "Lombardy pipeline and data-center status on the map, with refined badges and icons",
+          "MapLibre as ESM and self-hosted fonts for more stable loading"
+        ]
+      },
+      {
+        "version": "0.2",
+        "date": "2026-09-23",
+        "date_label": "23 September 2026",
+        "title": "Brand and navigation",
+        "lead": "Visual identity, SEO, and a clearer home path into the map.",
+        "items": [
+          "Branding and map UX refresh; redesigned hero and header with a scroll cue",
+          "Mobile map search and more direct home navigation",
+          "SEO, sitemap, and social metadata; deployment prep and licensing"
+        ]
+      },
+      {
+        "version": "0.1",
+        "date": "2026-09-16",
+        "date_label": "15–16 September 2026",
+        "title": "Launch",
+        "lead": "First public version: home, interactive map, and initial dataset.",
+        "items": [
+          "Project home and map of the physical infrastructure behind cloud and AI",
+          "Initial dataset of data centers and power plants, focused on Italy and Europe"
+        ]
+      }
+    ]
   },
   "countries": {
     "IT": "Italy",

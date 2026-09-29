@@ -1,0 +1,43 @@
+---
+import ContentPage from '../components/ContentPage.astro';
+import { getMessages, resolveLocale, localePath } from '../i18n';
+
+const locale = resolveLocale(Astro.currentLocale);
+const i18n = getMessages(locale);
+const m = i18n.changelog;
+---
+
+<ContentPage
+  title={m.title}
+  description={m.lead}
+  kicker={m.kicker}
+  heading={m.heading}
+  lead={m.lead}
+>
+  <article class="content-prose">
+    <p>{m.intro}</p>
+
+    {m.releases.map((release) => (
+      <section class="changelog-release" aria-labelledby={`release-${release.version}`}>
+        <header class="changelog-release-header">
+          <p class="changelog-release-meta">
+            <span class="changelog-version">v{release.version}</span>
+            <time datetime={release.date}>{release.date_label}</time>
+          </p>
+          <h2 id={`release-${release.version}`}>{release.title}</h2>
+          <p class="changelog-release-lead">{release.lead}</p>
+        </header>
+        <ul>
+          {release.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <div class="content-actions">
+      <a class="btn btn-accent" href={localePath('/mappa', locale)}>{m.cta_map}</a>
+      <a class="btn btn-ghost-light" href={localePath('/metodologia', locale)}>{m.cta_methodology}</a>
+    </div>
+  </article>
+</ContentPage>

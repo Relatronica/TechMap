@@ -17,6 +17,7 @@
     "nav_press": "Stampa",
     "nav_report": "Segnala",
     "nav_methodology": "Metodologia",
+    "nav_changelog": "Novità",
     "updated_label": "Aggiornato",
     "privacy": {
       "title": "Privacy",
@@ -636,6 +637,66 @@
     "cta_map": "Apri la mappa",
     "cta_report": "Segnala un errore",
     "cta_press": "Contatti stampa"
+  },
+  "changelog": {
+    "title": "Novità",
+    "kicker": "Changelog",
+    "heading": "Cosa c’è di nuovo",
+    "lead": "Aggiornamenti della mappa, del dataset e dell’interfaccia — dalla messa online di metà settembre a oggi.",
+    "intro": "Raccogliamo le novità per release tematiche, non commit per commit. Date e contenuti riflettono il lavoro pubblicato su substrato.eu.",
+    "cta_map": "Apri la mappa",
+    "cta_methodology": "Metodologia",
+    "releases": [
+      {
+        "version": "0.4",
+        "date": "2026-09-29",
+        "date_label": "29 settembre 2026",
+        "title": "Indicatori e nuovi dati",
+        "lead": "Più corridoi di filiera, ricerca per regione e indicatori di distanza e rumore sulla mappa.",
+        "items": [
+          "Corridoi di filiera su lavoro cognitivo, materiali e batterie, con icone preset per navigarli più in fretta",
+          "Aggiornamenti su silicio AI e siti Samsung, cluster data center a Torino e collegamento a Trino",
+          "Ricerca mappa per regioni, filtri più chiari e connessioni ai nodi di rete",
+          "Indicatori di distanza e rumore, con layer acustici semplificati"
+        ]
+      },
+      {
+        "version": "0.3",
+        "date": "2026-09-27",
+        "date_label": "27 settembre 2026",
+        "title": "Corridoi e metodo",
+        "lead": "La mappa racconta le filiere; la metodologia pubblica spiega certainty, fonti e limiti.",
+        "items": [
+          "Corridoi di supply chain approfonditi, con note su lavoro e impatto territoriale",
+          "Pagina metodologia: scale di confidence/certainty, fonti e come citare",
+          "Pipeline Lombardia e stato dei data center in mappa, con badge e icone raffinati",
+          "MapLibre in ESM e font self-hosted per un caricamento più stabile"
+        ]
+      },
+      {
+        "version": "0.2",
+        "date": "2026-09-23",
+        "date_label": "23 settembre 2026",
+        "title": "Brand e navigazione",
+        "lead": "Identità visiva, SEO e una home più chiara per entrare in mappa.",
+        "items": [
+          "Refresh di branding e UX mappa; hero e header ridisegnati con scroll cue",
+          "Ricerca mappa su mobile e navigazione home più diretta",
+          "SEO, sitemap e metadati social; preparazione al deploy e licensing"
+        ]
+      },
+      {
+        "version": "0.1",
+        "date": "2026-09-16",
+        "date_label": "15–16 settembre 2026",
+        "title": "Lancio",
+        "lead": "Prima versione pubblica: home, mappa interattiva e dataset iniziale.",
+        "items": [
+          "Home del progetto e mappa dell’infrastruttura fisica di cloud e IA",
+          "Dataset iniziale di data center e impianti energetici, con focus Italia ed Europa"
+        ]
+      }
+    ]
   },
   "countries": {
     "IT": "Italia",
