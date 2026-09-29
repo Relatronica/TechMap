@@ -28,9 +28,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Colocation di piccola/media taglia; prelievo dipendente dall’occupazione rack."
+          "energy_mix_note_it": "Colocation di piccola/media taglia; prelievo dipendente dall’occupazione rack.",
+          "energy_mix_note_en": "Small/medium colocation; draw depends on rack occupancy."
         },
-        "updated_at": "2026-09-23"
+        "updated_at": "2026-09-23",
+        "description_en": "Aruba IT1 colocation data center in Arezzo, with 1,500 sqm of space and power capacity up to 40 kW per rack. One of Aruba’s first data centers in Italy, operational since 2000."
       }
     },
     {
@@ -75,7 +77,8 @@
           "conditions_tags": [
             "high_skill",
             "construction_phase"
-          ]
+          ],
+          "note_en": "No stable public headcount for IT3. Hyperscale pattern: few facility technicians relative to the 60 MW campus; employment peaks during construction and maintenance contracts."
         },
         "community_impact_it": "Consumo elettrico e pressione sulla rete bergamasca; riqualificazione di ex sito industriale. Occupazione diretta tipicamente limitata rispetto alla potenza installata.",
         "labor_risks": [
@@ -99,7 +102,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Aruba IT3 hyperscale campus at Ponte San Pietro (Bergamo), among Italy’s largest (~200,000 sqm). Completion (Data Center D) with a direct connection to the contiguous E-Distribuzione «Ponte» primary cabin; upstream, the authorised Terna Mozzo 132 kV SE reinforces that cabin. The operator declares renewable coverage."
+        "description_en": "Aruba IT3 hyperscale campus at Ponte San Pietro (Bergamo), among Italy’s largest (~200,000 sqm). Completion (Data Center D) with a direct connection to the contiguous E-Distribuzione «Ponte» primary cabin; upstream, the authorised Terna Mozzo 132 kV SE reinforces that cabin. The operator declares renewable coverage.",
+        "community_impact_en": "Electricity consumption and pressure on the Bergamo-area grid; redevelopment of a former industrial site. Direct employment typically limited relative to installed power."
       }
     },
     {
@@ -133,7 +137,8 @@
             "accessed_at": "2026-09-27",
             "note": "Regione cloud ospitata; pin città-level, non campus fisico Google"
           }
-        ]
+        ],
+        "description_en": "Google cloud region in Milan, operational since June 2022, hosted in TIM data centers. Used by large Italian enterprises such as Intesa Sanpaolo for their digital infrastructure."
       }
     },
     {
@@ -263,7 +268,8 @@
             "url": "https://www.equinix.com/data-centers/europe-colocation/italy-colocation/milan-data-centers/ml5",
             "accessed_at": "2026-09-27"
           }
-        ]
+        ],
+        "description_en": "Equinix IBX® ML5 data center in Settimo Milanese, near Via Caldera, Milan’s most connected interconnection point. Offers virtual connections to major cloud providers. Part of the Equinix Milan campus that recovers heat from servers to warm Milanese homes (2026 project)."
       }
     },
     {
@@ -295,7 +301,8 @@
             "url": "https://www.equinix.com/data-centers/europe-colocation/italy-colocation/milan-data-centers/ml2",
             "accessed_at": "2026-09-27"
           }
-        ]
+        ],
+        "description_en": "Equinix ML2 data center at Via Savona 125, Milan. Carrier-neutral facility offering interconnection options and security certifications. One of the main data-exchange hubs in southern Europe."
       }
     },
     {
@@ -328,7 +335,8 @@
             "accessed_at": "2026-09-27",
             "note": "Hub Caldera; verificare pagina campus aggiornata"
           }
-        ]
+        ],
+        "description_en": "Irideos Avalon Campus at Via Caldera 21, Milan, Italy’s largest neutral interconnection hub with over 2,600 racks across 13,000 sqm. Irideos operates 16 data centers in Italy across Milan, Rome, Verona and Trento, with 27,000 km of optical fibre."
       }
     },
     {
@@ -387,7 +395,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "STACK Infrastructure hyperscale campus at Siziano (PV), former Supernap / Infrastructure Italia Land 2, with over 100,000 sqm on ~12 ha. Documented connection to Terna’s Lacchiarella SE (132 kV line and STMG in double-antenna on adjacent future bays). MASE scoping/EIA for campus expansion ongoing."
+        "description_en": "STACK Infrastructure hyperscale campus at Siziano (PV), former Supernap / Infrastructure Italia Land 2, with over 100,000 sqm on ~12 ha. Documented connection to Terna’s Lacchiarella SE (132 kV line and STMG in double-antenna on adjacent future bays). MASE scoping/EIA for campus expansion ongoing.",
+        "community_impact_en": "Data-center expansion in the Milan metro area: pressure on the power grid, land and local water resources; direct employment typically limited relative to power."
       }
     },
     {
@@ -420,7 +429,8 @@
             "accessed_at": "2026-09-27",
             "note": "Capacity 125 MW = rete nazionale, non solo Rozzano"
           }
-        ]
+        ],
+        "description_en": "TIM/Noovle data center in Rozzano (Milan), part of the TIM Enterprise network of 17 data centers in Italy with total installed capacity of 125 MW. TIM has announced a €1 billion investment plan to expand its data-center infrastructure."
       }
     },
     {
@@ -454,7 +464,8 @@
           "water_use_m3_year": null,
           "land_ha": 5.1,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Dibattito locale concentrato sui gruppi di emergenza; punto di allaccio RTN non nominato nelle fonti usate."
+          "energy_mix_note_it": "Dibattito locale concentrato sui gruppi di emergenza; punto di allaccio RTN non nominato nelle fonti usate.",
+          "energy_mix_note_en": "Local debate focused on emergency gensets; RTN connection point not named in the sources used."
         },
         "community_impact_it": "Pressione acustica e autorizzativa sui generatori di emergenza a Pomezia; campus già operativo.",
         "labor_risks": [
@@ -468,7 +479,8 @@
           "conditions_tags": [
             "shift_work",
             "high_skill"
-          ]
+          ],
+          "note_en": "Employment not detailed in the open sources consulted."
         },
         "sources": [
           {
@@ -477,7 +489,8 @@
             "accessed_at": "2026-09-29",
             "note": "Campus 51.000 mq; tre DC; ~25 MW citati"
           }
-        ]
+        ],
+        "community_impact_en": "Noise and permitting pressure over emergency generators in Pomezia; campus already operational."
       }
     },
     {
@@ -507,7 +520,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore dichiara mix prevalentemente carbon-free; recupero calore verso la comunità di Hamina."
+          "energy_mix_note_it": "Operatore dichiara mix prevalentemente carbon-free; recupero calore verso la comunità di Hamina.",
+          "energy_mix_note_en": "Operator declares a predominantly carbon-free mix; heat recovery to the Hamina community."
         },
         "community_impact_it": "Grande domanda elettrica regionale; recupero calore verso teleriscaldamento Hamina (partenariato Haminan Energia). Occupazione locale reale ma bassa rispetto alla potenza: il «lavoro» del cloud qui è facility e cantiere, non migliaia di impiegati IT in sala.",
         "updated_at": "2026-09-27",
@@ -520,7 +534,8 @@
             "high_skill",
             "shift_work",
             "construction_phase"
-          ]
+          ],
+          "note_en": "Hamina campus: ~400 people in full-time and contractor roles (technicians, facility, security, catering) per Business Finland (May 2024); with expansions Google aims for ~500. Direct employment contained relative to MW and investment: typical of hyperscale."
         },
         "labor_risks": [
           "construction_phase"
@@ -532,7 +547,9 @@
             "accessed_at": "2026-09-27",
             "note": "~400 FTE+contractor; +100 FTE previsti con espansione"
           }
-        ]
+        ],
+        "description_en": "Finland’s largest data center, built in 2009 with a €3.5 billion investment. Operates on 97% carbon-free energy. Google’s first off-site heat-recovery project, supplying heat to the local Hamina community.",
+        "community_impact_en": "Large regional electricity demand; heat recovery to Hamina district heating (Haminan Energia partnership). Real but low local employment relative to power: cloud «work» here is facility and construction, not thousands of IT staff on the floor."
       }
     },
     {
@@ -562,7 +579,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Stima di potenza di campus (~100 MW); clima freddo e idroelettrico nordico riducono fabbisogno di raffreddamento e intensità carbonica."
+          "energy_mix_note_it": "Stima di potenza di campus (~100 MW); clima freddo e idroelettrico nordico riducono fabbisogno di raffreddamento e intensità carbonica.",
+          "energy_mix_note_en": "Campus power estimate (~100 MW); cold climate and Nordic hydropower reduce cooling demand and carbon intensity."
         },
         "community_impact_it": "Infrastruttura artica ad alto consumo elettrico idroelettrico; Meta dichiara investimenti locali in formazione e comunità. Occupazione diretta ~300 a fronte di un campus multi-edificio: contrasto netto con i siti estrattivi a monte della filiera.",
         "updated_at": "2026-09-27",
@@ -574,7 +592,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Meta declares over 300 full-time roles linked to the Luleå campus (Meta sustainability fact sheet). Facility operations and critical facility engineers: lean operating headcount relative to compute capacity."
         },
         "labor_risks": [],
         "sources": [
@@ -584,7 +603,9 @@
             "accessed_at": "2026-09-27",
             "note": "300+ fully employed (heltidsanställda)"
           }
-        ]
+        ],
+        "description_en": "Meta’s first data center (formerly Facebook), opened in 2013 in Luleå, northern Sweden, just below the Arctic Circle. Three buildings totaling about 93,000 sqm. Uses the naturally cold climate to cut cooling costs and local hydropower.",
+        "community_impact_en": "Arctic infrastructure with high hydropower electricity use; Meta declares local investments in training and community. Direct employment ~300 across a multi-building campus: a sharp contrast with upstream extractive sites in the supply chain."
       }
     },
     {
@@ -614,9 +635,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Colocation in hub DE-CIX; potenza riferita alla struttura FR13."
+          "energy_mix_note_it": "Colocation in hub DE-CIX; potenza riferita alla struttura FR13.",
+          "energy_mix_note_en": "Colocation in the DE-CIX hub; power refers to the FR13 facility."
         },
-        "updated_at": "2026-09-23"
+        "updated_at": "2026-09-23",
+        "description_en": "Equinix data center in Frankfurt, home to the world’s largest Internet exchange point (DE-CIX). Equinix operates multiple colocation facilities in Frankfurt, including FR2, FR4, FR10x (16.8 MW) and FR13 (7.75 MW, opened in 2024)."
       }
     },
     {
@@ -638,7 +661,8 @@
         "description_it": "Data center Equinix AM3 ad Amsterdam Science Park 610, importante gateway digitale verso l'Europa. Ospita l'Amsterdam Internet Exchange (AMS-IX) e offre opportunità di peering con i principali provider cloud. Equinix gestisce anche AM1, AM2, AM5 e AM7 ad Amsterdam.",
         "country": "NL",
         "city": "Amsterdam",
-        "confidence": "medium"
+        "confidence": "medium",
+        "description_en": "Equinix AM3 data center at Amsterdam Science Park 610, a major digital gateway into Europe. Hosts the Amsterdam Internet Exchange (AMS-IX) and offers peering with major cloud providers. Equinix also operates AM1, AM2, AM5 and AM7 in Amsterdam."
       }
     },
     {
@@ -669,13 +693,16 @@
           "conditions_tags": [
             "high_skill",
             "construction_phase"
-          ]
+          ],
+          "note_en": "Microsoft does not publish site-by-site headcount for Azure North Europe (Dublin). Typical roles: facility, network, security; strong construction phase in Irish expansions. Compare with PPAs (e.g. Lenalea): energy is named, campus labour remains opaque."
         },
         "labor_risks": [
           "construction_phase"
         ],
         "community_impact_it": "Cluster data center intorno a Dublino sotto pressione di rete (EirGrid); dibattito pubblico su consumo elettrico vs occupazione locale limitata.",
-        "updated_at": "2026-09-27"
+        "updated_at": "2026-09-27",
+        "description_en": "Microsoft operates 17 data centers in Ireland, most in the Dublin area at the Grange Castle campus. Powers cloud and AI services for businesses, governments and organisations in Ireland, the UK and surrounding regions. New data centers planned in County Kildare.",
+        "community_impact_en": "Data-center cluster around Dublin under grid pressure (EirGrid); public debate over electricity consumption vs limited local employment."
       }
     },
     {
@@ -697,7 +724,8 @@
         "description_it": "Data center Google nel Profile Park di Dublino, struttura a due piani di 30.360 mq. Parte dell'espansione irlandese di Google che include un terzo data center pianificato con investimento stimato di 250 milioni di euro.",
         "country": "IE",
         "city": "Dublino",
-        "confidence": "high"
+        "confidence": "high",
+        "description_en": "Google data center at Dublin’s Profile Park, a two-storey 30,360 sqm facility. Part of Google’s Irish expansion including a third planned data center with an estimated €250 million investment."
       }
     },
     {
@@ -719,7 +747,8 @@
         "description_it": "Data center OVHcloud SBG5 a Strasburgo, parte della rete globale di 46 data center su 4 continenti con 100 Tbps di capacità di rete. Strasburgo è designata come parte della prima regione SecNumCloud di OVHcloud.",
         "country": "FR",
         "city": "Strasburgo",
-        "confidence": "medium"
+        "confidence": "medium",
+        "description_en": "OVHcloud SBG5 data center in Strasbourg, part of a global network of 46 data centers across 4 continents with 100 Tbps of network capacity. Strasbourg is designated as part of OVHcloud’s first SecNumCloud region."
       }
     },
     {
@@ -750,13 +779,16 @@
           "conditions_tags": [
             "high_skill",
             "construction_phase"
-          ]
+          ],
+          "note_en": "AWS does not publish headcounts for individual Europe (Stockholm) AZs. As with other Nordic hyperscale: few operators at steady state, many more workers in construction and the upstream energy chain (wind PPAs)."
         },
         "labor_risks": [
           "construction_phase"
         ],
         "community_impact_it": "Espansione AWS in Svezia (Eskilstuna/Katrineholm/Västerås) legata a grandi PPA eolici: il lavoro visibile sul territorio è spesso più nei cantieri rinnovabili che nelle sale server.",
-        "updated_at": "2026-09-27"
+        "updated_at": "2026-09-27",
+        "description_en": "AWS Europe (Stockholm) region with three Availability Zones across Eskilstuna, Katrineholm and Västerås. Operational since late 2018. AWS uses low-carbon steel (SSAB) in the construction of new Swedish data centers.",
+        "community_impact_en": "AWS expansion in Sweden (Eskilstuna/Katrineholm/Västerås) tied to large wind PPAs: visible work on the ground is often more in renewable construction than in server halls."
       }
     },
     {
@@ -790,7 +822,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Carico elettrico rilevante per HPC/AI pubblico; mix dipendente dalla rete emiliana e da contratti CINECA (da verificare sito per sito)."
+          "energy_mix_note_it": "Carico elettrico rilevante per HPC/AI pubblico; mix dipendente dalla rete emiliana e da contratti CINECA (da verificare sito per sito).",
+          "energy_mix_note_en": "Significant electricity load for public HPC/AI; mix depends on the Emilia grid and CINECA contracts (to be verified site by site)."
         },
         "employment": {
           "direct": null,
@@ -799,7 +832,8 @@
           "note_it": "Organico CINECA/ICSC e partner scientifici sul campus; profilo diverso dagli hyperscale commerciali (ricerca, operazioni HPC, facility).",
           "conditions_tags": [
             "high_skill"
-          ]
+          ],
+          "note_en": "CINECA/ICSC and scientific partners’ staff on campus; different profile from commercial hyperscale (research, HPC operations, facility)."
         },
         "community_impact_it": "Riconversione dell’ex Manifattura Tabacchi in Data Valley: polo strategico per ricerca, meteo e AI pubblica, con domanda energetica e pressione infrastrutturale sul territorio bolognese.",
         "labor_risks": [],
@@ -814,7 +848,9 @@
             "url": "https://leonardo-supercomputer.cineca.eu/it/home-it/",
             "accessed_at": "2026-09-27"
           }
-        ]
+        ],
+        "description_en": "National high-performance computing hub at Bologna’s Tecnopolo DAMA: hosts Leonardo (EuroHPC pre-exascale system), AI/quantum clusters (including LISA and ICSC systems) and shares the site with ECMWF and INFN. Central node of the Data Valley and the Italian AI Factory — public AI infrastructure, not only commercial cloud.",
+        "community_impact_en": "Conversion of the former Manifattura Tabacchi into the Data Valley: strategic hub for research, weather and public AI, with energy demand and infrastructure pressure on the Bologna area."
       }
     },
     {
@@ -848,7 +884,8 @@
           "water_use_m3_year": null,
           "land_ha": 28,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Campus wholesale/colocation ad alta densità sul cluster ovest milanese; domanda elettrica rilevante sulla rete lombarda. PPA Edison Energia (mar 2025): FV 148 MWp in provincia di Viterbo, >500 GWh/10 anni (~10% consumi Data4 Italia); arco powers verso ep_019."
+          "energy_mix_note_it": "Campus wholesale/colocation ad alta densità sul cluster ovest milanese; domanda elettrica rilevante sulla rete lombarda. PPA Edison Energia (mar 2025): FV 148 MWp in provincia di Viterbo, >500 GWh/10 anni (~10% consumi Data4 Italia); arco powers verso ep_019.",
+          "energy_mix_note_en": "High-density wholesale/colocation campus on the Milan west cluster; significant electricity demand on the Lombardy grid. Edison Energia PPA (Mar 2025): 148 MWp PV in Viterbo province, >500 GWh/10 years (~10% of Data4 Italy consumption); powers arc toward ep_019."
         },
         "community_impact_it": "Pressione cumulativa di suolo, rete e traffico nel corridoio Cornaredo–Settimo Milanese, già saturo di campus data center.",
         "labor_risks": [
@@ -871,7 +908,9 @@
             "url": "https://www.data4group.com/wp-content/uploads/2025/04/PPA-Data4-x-Edison-Italy_Ita_eng.pdf",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "description_en": "One of Italy’s largest colocation campuses, in Cornaredo (Milan west cluster). Multiple operational buildings (MIL01) and expansion toward Vittuone/MIL02 (dc_050). Interconnection hub with MIX/TOP-IX POPs and access to dozens of carriers and public clouds.",
+        "community_impact_en": "Cumulative pressure on land, grid and traffic in the Cornaredo–Settimo Milanese corridor, already saturated with data-center campuses."
       }
     },
     {
@@ -905,7 +944,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "VIA di MXP1: doppia fornitura 220 kV dalla nuova stazione Terna 220 kV Melegnano (gn_005) contigua; in attesa della messa in servizio il prelievo è in media tensione. Decreto Terna EL 488 / STMG 202000961. Nessun PPA nominato."
+          "energy_mix_note_it": "VIA di MXP1: doppia fornitura 220 kV dalla nuova stazione Terna 220 kV Melegnano (gn_005) contigua; in attesa della messa in servizio il prelievo è in media tensione. Decreto Terna EL 488 / STMG 202000961. Nessun PPA nominato.",
+          "energy_mix_note_en": "MXP1 EIA: dual 220 kV supply from the new contiguous Terna 220 kV Melegnano substation (gn_005); until commissioning, offtake is at medium voltage. Terna decree EL 488 / STMG 202000961. No named PPA."
         },
         "employment": {
           "direct": null,
@@ -915,7 +955,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Construction phase dominant; at steady state, facility headcount typically contained relative to MW."
         },
         "community_impact_it": "Nuovo polo a sud di Milano: consumo di suolo agricolo/industriale, connessione di rete e dibattiti locali su energia e ambiente.",
         "labor_risks": [
@@ -940,7 +981,9 @@
             "accessed_at": "2026-09-28",
             "note": "Stazione Terna contigua; cavo AT limitato al confine tra le due stazioni"
           }
-        ]
+        ],
+        "description_en": "Vantage campus at Melegnano (south Milan), first node of the Italian programme declared of outstanding national strategic interest (~€8bn with MXP4): Melegnano (MXP1), Settimo Milanese (MXP2, dc_023), Cornaredo (dc_039) and Tavazzano (MXP4, dc_034). Aimed at hyperscale cloud/AI loads in the Milan market. The planned high-voltage connection is the new Terna 220 kV Melegnano substation, contiguous with the campus: the cable crosses only the boundary between the two substations. The substation is on the map as gn_005 (approximate pin: not in OpenStreetMap). Naming caveat: MXP1/MXP2 codes are also used by Hscale (dc_044/dc_045) on different sites — do not confuse with Vantage.",
+        "community_impact_en": "New hub south of Milan: agricultural/industrial land take, grid connection and local debates on energy and environment."
       }
     },
     {
@@ -974,7 +1017,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio nominato in documentazione regionale: SE Terna Baggio (insieme a MIL03 e Equinix ML7/ML8). È il punto di connessione, non la centrale che produce l’elettricità."
+          "energy_mix_note_it": "Allaccio nominato in documentazione regionale: SE Terna Baggio (insieme a MIL03 e Equinix ML7/ML8). È il punto di connessione, non la centrale che produce l’elettricità.",
+          "energy_mix_note_en": "Connection named in regional documentation: Terna Baggio SE (together with MIL03 and Equinix ML7/ML8). It is the connection point, not the plant that generates the electricity."
         },
         "community_impact_it": "Densificazione ulteriore del corridoio Settimo–Cornaredo: effetto cumulativo su rete, suolo e qualità ambientale locale.",
         "labor_risks": [
@@ -998,7 +1042,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Second Vantage campus in the west-Milan cluster (Castelletto / Settimo Milanese), next to the Data4–Equinix corridor. Part of the same nationally strategic programme. The regional opinion on Microsoft MIL03 lists MXP2 among data centers connected to Terna’s Baggio station, together with MIL03 and Equinix ML7/ML8."
+        "description_en": "Second Vantage campus in the west-Milan cluster (Castelletto / Settimo Milanese), next to the Data4–Equinix corridor. Part of the same nationally strategic programme. The regional opinion on Microsoft MIL03 lists MXP2 among data centers connected to Terna’s Baggio station, together with MIL03 and Equinix ML7/ML8.",
+        "community_impact_en": "Further densification of the Settimo–Cornaredo corridor: cumulative effect on grid, land and local environmental quality."
       }
     },
     {
@@ -1032,7 +1077,8 @@
           "water_use_m3_year": null,
           "land_ha": 23,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio: cavo interrato 132 kV dalla stazione Terna di Lacchiarella alla sottostazione del campus (determina Città metropolitana 2234/2022). È il punto di connessione, non la centrale che produce l’elettricità."
+          "energy_mix_note_it": "Allaccio: cavo interrato 132 kV dalla stazione Terna di Lacchiarella alla sottostazione del campus (determina Città metropolitana 2234/2022). È il punto di connessione, non la centrale che produce l’elettricità.",
+          "energy_mix_note_en": "Connection: 132 kV underground cable from the Terna Lacchiarella substation to the campus substation (Metropolitan City determination 2234/2022). It is the connection point, not the plant that generates the electricity."
         },
         "employment": {
           "direct": null,
@@ -1042,7 +1088,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Employment peak during construction; at steady state, typical hyperscale facility headcount."
         },
         "community_impact_it": "Conflitto locale su rumore, consumi energetici/idrici e compensazioni; caso emblematico del trade-off IA/cloud vs territorio.",
         "labor_risks": [
@@ -1069,7 +1116,9 @@
           "origin": "estimated",
           "note_it": "Stima Lw da campus hyperscale ~100 MW; il conflitto locale sul rumore è documentato in community_impact, senza Lw di progetto pubblico.",
           "note_en": "Lw estimate for ~100 MW hyperscale campus; local noise conflict is documented in community_impact, without a public design Lw."
-        }
+        },
+        "description_en": "Microsoft campus at Santa Corinna (Noviglio), south-west of Milan: about 230,000 sqm of site area, ~95,000 sqm built, authorised electrical connection of 100 MW. The first building (Building MXP-I) is connected by a 132 kV underground cable to the Terna Lacchiarella substation, authorised by the Metropolitan City of Milan with determination 2234 of 21 March 2022. Phased operational start (first phase September 2026). Completes the Azure Italy North region beyond Settala and the other campuses under construction.",
+        "community_impact_en": "Local conflict over noise, energy/water consumption and compensation; emblematic case of the AI/cloud vs territory trade-off."
       }
     },
     {
@@ -1140,7 +1189,8 @@
           "origin": "estimated",
           "note_it": "Avviso VIA: generatori di emergenza ~139 MWt termici (non capacità IT). Scenario prova.",
           "note_en": "EIA notice: emergency generators ~139 MWt thermal (not IT capacity). Test scenario."
-        }
+        },
+        "community_impact_en": "New hub south of Milan with associated grid works; public consultations and municipal observations underway."
       }
     },
     {
@@ -1174,7 +1224,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "CdM: intero fabbisogno coperto da rinnovabili tramite accordo già sottoscritto (PPA/offtake da nominare quando pubblico)."
+          "energy_mix_note_it": "CdM: intero fabbisogno coperto da rinnovabili tramite accordo già sottoscritto (PPA/offtake da nominare quando pubblico).",
+          "energy_mix_note_en": "Council of Ministers: entire demand covered by renewables via an already signed agreement (PPA/offtake to be named when public)."
         },
         "employment": {
           "direct": 500,
@@ -1184,7 +1235,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "MIMIT estimate: ~1,500 workers during construction; over 500 direct and indirect jobs at steady state."
         },
         "community_impact_it": "Ulteriore densificazione del cluster ovest milanese; Occupazione di cantiere rilevante rispetto ai MW a regime.",
         "labor_risks": [
@@ -1203,7 +1255,8 @@
             "note": "Due nuovi edifici: ML5 Edificio 2 (ML5.4) e ML6"
           }
         ],
-        "description_en": "Equinix programme at Settimo Milanese / Cornaredo (former Italtel «Il Castelletto» area): ML5 expansion (building ML5.4) and new ML6, with construction from Q4 2027 per the EIA. Distinct from the ML7–ML8 hyperscale campus (dc_042) already tied to Baggio. Check the EIA file for connection status."
+        "description_en": "Equinix programme at Settimo Milanese / Cornaredo (former Italtel «Il Castelletto» area): ML5 expansion (building ML5.4) and new ML6, with construction from Q4 2027 per the EIA. Distinct from the ML7–ML8 hyperscale campus (dc_042) already tied to Baggio. Check the EIA file for connection status.",
+        "community_impact_en": "Further densification of the Milan west cluster; significant construction employment relative to steady-state MW."
       }
     },
     {
@@ -1237,7 +1290,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus (>300 MW totali dichiarati); non potenza IT certificata del solo Opera."
+          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus (>300 MW totali dichiarati); non potenza IT certificata del solo Opera.",
+          "energy_mix_note_en": "Indicative share 1/3 of the multi-campus programme (>300 MW total declared); not certified IT power for Opera alone."
         },
         "community_impact_it": "Nuova cintura hyperscale a sud di Milano/Lodigiano: suolo, rete e pressione cumulativa con AWS/Microsoft/Vantage.",
         "labor_risks": [
@@ -1261,7 +1315,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "EdgeConneX campus at Opera (~60 MW stated in a public presentation), one of three Campus Italia nodes (~€3bn, nationally strategic) with Pieve Emanuele/Fizzonasco and Bertonico. Municipal presentation: supply from a dedicated Terna substation, not from the town grid. SE name / STMG not published → no connects edge until a filing is available."
+        "description_en": "EdgeConneX campus at Opera (~60 MW stated in a public presentation), one of three Campus Italia nodes (~€3bn, nationally strategic) with Pieve Emanuele/Fizzonasco and Bertonico. Municipal presentation: supply from a dedicated Terna substation, not from the town grid. SE name / STMG not published → no connects edge until a filing is available.",
+        "community_impact_en": "New hyperscale belt south of Milan/Lodi area: land, grid and cumulative pressure with AWS/Microsoft/Vantage."
       }
     },
     {
@@ -1295,7 +1350,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "SE 380 kV sul sito (gn_006) e FV Enel (ep_002): contesto documentato dal comunicato MIMIT. Niente STMG pubblica consultata → connects likely, non confirmed. Niente PPA nominato Enel→Cavour → powers likely."
+          "energy_mix_note_it": "SE 380 kV sul sito (gn_006) e FV Enel (ep_002): contesto documentato dal comunicato MIMIT. Niente STMG pubblica consultata → connects likely, non confirmed. Niente PPA nominato Enel→Cavour → powers likely.",
+          "energy_mix_note_en": "380 kV SE on site (gn_006) and Enel PV (ep_002): context documented by the MIMIT press release. No public STMG consulted → connects likely, not confirmed. No named Enel→Cavour PPA → powers likely."
         },
         "employment": {
           "direct": 325,
@@ -1305,7 +1361,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "MIMIT estimate: ~1,200 average on site during construction (peaks >2,000); at steady state ~300–350 skilled + ~1,000 induced."
         },
         "community_impact_it": "Riqualificazione brownfield e nuovo carico elettrico enorme in un territorio già segnato dalla storia nucleare/termoelettrica.",
         "labor_risks": [
@@ -1328,7 +1385,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Conversion of the former Galileo Ferraris thermal plant at Trino (VC) / Leri Cavour into a hyperscale campus (Techbau / BentallGreenOak), 300–400 MW, ~€4bn. National strategic status: services conference by end-2026, single authorisation ~2027, first lot ~2028. On the same node: Enel ~87 MW PV (powers likely) and a 380 kV station (connects likely to the campus). Electrochemical storage 100–120 MW / 200–240 MWh also planned."
+        "description_en": "Conversion of the former Galileo Ferraris thermal plant at Trino (VC) / Leri Cavour into a hyperscale campus (Techbau / BentallGreenOak), 300–400 MW, ~€4bn. National strategic status: services conference by end-2026, single authorisation ~2027, first lot ~2028. On the same node: Enel ~87 MW PV (powers likely) and a 380 kV station (connects likely to the campus). Electrochemical storage 100–120 MW / 200–240 MWh also planned.",
+        "community_impact_en": "Brownfield redevelopment and a huge new electricity load in a territory already marked by nuclear/thermal power history."
       }
     },
     {
@@ -1362,7 +1420,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Modello dichiarato: DC + rinnovabili + storage sullo stesso sito. Connessione di rete «in avanzamento» (dichiarazioni azienda) ma senza fascicolo STMG/VIA consultabile che nomini cabina/stazione → niente connects."
+          "energy_mix_note_it": "Modello dichiarato: DC + rinnovabili + storage sullo stesso sito. Connessione di rete «in avanzamento» (dichiarazioni azienda) ma senza fascicolo STMG/VIA consultabile che nomini cabina/stazione → niente connects.",
+          "energy_mix_note_en": "Declared model: DC + renewables + storage on the same site. Grid connection «in progress» (company statements) but no consultable STMG/EIA dossier naming a cabin/substation → no connects."
         },
         "employment": {
           "direct": null,
@@ -1372,7 +1431,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "MIMIT estimate: ~400 jobs/year between direct and induced at steady state."
         },
         "community_impact_it": "Riconversione di un territorio minerario in crisi (Sulcis): narrazione di transizione giusta da verificare su tempi, occupazione reale e impatto ambientale.",
         "labor_risks": [
@@ -1395,7 +1455,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Digital Vault Sulcis (Energy Vault): Edge AI data center at the former Monte Sinni mine in Nuraxi Figus (Gonnesa), ~€1.49bn, up to ~30 MW (expansions cited to 50–60 MW). Integrates renewable generation and storage on the Carbosulcis brownfield. National strategic status (Aug 2026); indicative works ~2028, commercial operation ~2030. Energy Vault reports grid-connection progress, but the RTN/STMG scheme is not yet public: no connects edge."
+        "description_en": "Digital Vault Sulcis (Energy Vault): Edge AI data center at the former Monte Sinni mine in Nuraxi Figus (Gonnesa), ~€1.49bn, up to ~30 MW (expansions cited to 50–60 MW). Integrates renewable generation and storage on the Carbosulcis brownfield. National strategic status (Aug 2026); indicative works ~2028, commercial operation ~2030. Energy Vault reports grid-connection progress, but the RTN/STMG scheme is not yet public: no connects edge.",
+        "community_impact_en": "Conversion of a mining territory in crisis (Sulcis): just-transition narrative to be verified on timelines, real employment and environmental impact."
       }
     },
     {
@@ -1429,7 +1490,8 @@
           "water_use_m3_year": null,
           "land_ha": 22,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore dichiara focus su energia green; dettaglio PPA da verificare."
+          "energy_mix_note_it": "Operatore dichiara focus su energia green; dettaglio PPA da verificare.",
+          "energy_mix_note_en": "Operator declares a focus on green energy; PPA detail to be verified."
         },
         "community_impact_it": "Nuovo campus a sud di Roma; espansione futura rilevante rispetto alla prima fase da 3 MW.",
         "labor_risks": [
@@ -1452,7 +1514,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Digital Realty’s first Italian data center (ROM1), Via delle Testuggini 98–100, Trigoria (Rome). Ground broken; first phase targeted for 2027 (~3 MW IT in modules). Campus up to ~22 ha at full build-out. Operator address published; named RTN connection not found in open sources consulted."
+        "description_en": "Digital Realty’s first Italian data center (ROM1), Via delle Testuggini 98–100, Trigoria (Rome). Ground broken; first phase targeted for 2027 (~3 MW IT in modules). Campus up to ~22 ha at full build-out. Operator address published; named RTN connection not found in open sources consulted.",
+        "community_impact_en": "New campus south of Rome; future expansion significant relative to the first 3 MW phase."
       }
     },
     {
@@ -1496,7 +1559,8 @@
           "note_it": "Stima riportata: media ~2.000 occupati/anno in quattro anni di cantiere.",
           "conditions_tags": [
             "construction_phase"
-          ]
+          ],
+          "note_en": "Reported estimate: average ~2,000 workers/year over four years of construction."
         },
         "community_impact_it": "Concentrazione estrema di MW nel sud Milano insieme ad AWS e altri programmi: rischio saturazione rete e conflitto d’uso del suolo.",
         "labor_risks": [
@@ -1520,7 +1584,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "K2 hyperscale campus in Zibido San Giacomo and Lacchiarella, nationally strategic (~€5.3bn, ~400 MW). Institutional reporting links supply to the future Terna Lacchiarella Ovest SE (EL-647). Distinct from the Apto campus (confirmed connection on the existing Lacchiarella SE)."
+        "description_en": "K2 hyperscale campus in Zibido San Giacomo and Lacchiarella, nationally strategic (~€5.3bn, ~400 MW). Institutional reporting links supply to the future Terna Lacchiarella Ovest SE (EL-647). Distinct from the Apto campus (confirmed connection on the existing Lacchiarella SE).",
+        "community_impact_en": "Extreme MW concentration in south Milan together with AWS and other programmes: risk of grid saturation and land-use conflict."
       }
     },
     {
@@ -1554,7 +1619,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Microsoft dichiara energia da fonti rinnovabili tramite Terna; nessun prelievo da falda potabile locale secondo screening MASE riportato."
+          "energy_mix_note_it": "Microsoft dichiara energia da fonti rinnovabili tramite Terna; nessun prelievo da falda potabile locale secondo screening MASE riportato.",
+          "energy_mix_note_en": "Microsoft declares energy from renewable sources via Terna; no draw from the local potable aquifer per reported MASE screening."
         },
         "employment": {
           "direct": null,
@@ -1564,7 +1630,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Demolition/remediation and construction phase; steady-state headcount typical of hyperscale facility."
         },
         "community_impact_it": "Riconversione brownfield ex commerciale; dibattito locale su sostenibilità, traffico e opportunità di lavoro; contributi a infrastrutture scolastiche dichiarati da Microsoft.",
         "labor_risks": [
@@ -1576,7 +1643,9 @@
             "url": "https://local.microsoft.com/it/blog/san-bovio-datacenter-construction-update/",
             "accessed_at": "2026-09-27"
           }
-        ]
+        ],
+        "description_en": "Microsoft campus on the former Postalmarket site at San Bovio (Peschiera Borromeo), Via Trieste. Demolition and remediation started in February 2025; MASE environmental screening with a favourable outcome on water, noise and traffic per Microsoft community communications. Part of the Azure Italy North expansion alongside Settala (dc_004), Noviglio (dc_024) and Bornasco (dc_033).",
+        "community_impact_en": "Former commercial brownfield conversion; local debate on sustainability, traffic and job opportunities; school-infrastructure contributions declared by Microsoft."
       }
     },
     {
@@ -1621,7 +1690,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Construction active from 2026; steady-state headcount to be verified."
         },
         "community_impact_it": "Nuovo polo hyperscale nel Pavese a sud di Milano: pressione su rete e suolo in area già interessata da altri campus (Siziano, Ferrera Erbognone).",
         "labor_risks": [
@@ -1651,7 +1721,8 @@
           "origin": "estimated",
           "note_it": "Backup generators ~50 MW riportati in fonti aperte; Lw scalato dalla potenza termica di emergenza (non misura in situ).",
           "note_en": "~50 MW backup generators reported in open sources; Lw scaled from emergency thermal power (not an in-situ measurement)."
-        }
+        },
+        "community_impact_en": "New hyperscale hub in the Pavia area south of Milan: pressure on grid and land in an area already affected by other campuses (Siziano, Ferrera Erbognone)."
       }
     },
     {
@@ -1685,7 +1756,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Co-locazione con centrale a gas TTEP (ep_018): sinergia territoriale documentata dalla cronaca/incontri tecnici; nessun offtake/PPA nominato → non elevare a confirmed."
+          "energy_mix_note_it": "Co-locazione con centrale a gas TTEP (ep_018): sinergia territoriale documentata dalla cronaca/incontri tecnici; nessun offtake/PPA nominato → non elevare a confirmed.",
+          "energy_mix_note_en": "Co-location with the TTEP gas plant (ep_018): territorial synergy documented by reporting/technical meetings; no named offtake/PPA → do not elevate to confirmed."
         },
         "employment": {
           "direct": null,
@@ -1695,7 +1767,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Predominantly planning/permitting phase; construction headcount to be defined."
         },
         "community_impact_it": "Estensione del cluster Vantage verso il Lodigiano; dibattiti locali su energia, suolo e ruolo della centrale esistente.",
         "labor_risks": [
@@ -1725,7 +1798,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "Fourth Italian Vantage campus (MXP4) planned in Tavazzano con Villavesco and Montanaso (LO), inside/beside the TTEP thermal plant perimeter. The government extended national strategic status (~€3.79bn additional). Local reporting (MIMIT/commissioner technical meeting): plant location confirmed; building plans still to be filed. Not a named PPA: the map link is powers likely for same-node co-location."
+        "description_en": "Fourth Italian Vantage campus (MXP4) planned in Tavazzano con Villavesco and Montanaso (LO), inside/beside the TTEP thermal plant perimeter. The government extended national strategic status (~€3.79bn additional). Local reporting (MIMIT/commissioner technical meeting): plant location confirmed; building plans still to be filed. Not a named PPA: the map link is powers likely for same-node co-location.",
+        "community_impact_en": "Extension of the Vantage cluster toward the Lodi area; local debates on energy, land and the role of the existing power plant."
       }
     },
     {
@@ -1770,7 +1844,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Authorised; construction not yet started as of the EIA decree date."
         },
         "community_impact_it": "Trasformazione di area agricola già prevista a destinazione produttiva/commerciale dal PGT; confine con Parco Agricolo Sud Milano; mitigazioni paesaggistiche (duna verde) negli atti.",
         "labor_risks": [
@@ -1796,7 +1871,9 @@
           "origin": "estimated",
           "note_it": "VIA: ~50 gruppi elettrogeni di emergenza (~298 MWt). Isolinee = scenario prova banco gruppi, non esercizio continuo.",
           "note_en": "EIA: ~50 emergency gensets (~298 MWt). Isolines = genset test-bank scenario, not continuous operation."
-        }
+        },
+        "description_en": "New MIL05 data center in Vignate (MI), along SP 103 Nuova Cassanese / Via Galileo Galilei. National EIA concluded with a positive environmental compatibility ruling (DM 411 of 30/06/2026). Planned supply via two 220 kV cable ducts and a dedicated substation; net intervention area ~73,000 sqm + expansion reserve (~21,000 sqm). Clear case of an authorised project awaiting construction (5-year term from the decree).",
+        "community_impact_en": "Conversion of agricultural land already zoned for productive/commercial use in the PGT; border with Parco Agricolo Sud Milano; landscape mitigations (green dune) in the acts."
       }
     },
     {
@@ -1841,7 +1918,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Modular development and construction planned; first operational modules declared toward the end of the decade in secondary sources."
         },
         "community_impact_it": "Uno dei più grandi campus AI annunciati in Italia: impatto energetico e territoriale di scala nazionale sul Pavese.",
         "labor_risks": [
@@ -1865,7 +1943,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "description_en": "AI hyperscale campus up to 500 MW IT at Ferrera Erbognone (PV), on the same hub as Eni’s Green Data Center (HPC). Eni–Khazna Head of Terms (July 2025); JV cleared by the European Commission. Declared supply: Eni «Blue Power» (new CCGT with CCS to Ravenna). Not yet an executed PPA."
+        "description_en": "AI hyperscale campus up to 500 MW IT at Ferrera Erbognone (PV), on the same hub as Eni’s Green Data Center (HPC). Eni–Khazna Head of Terms (July 2025); JV cleared by the European Commission. Declared supply: Eni «Blue Power» (new CCGT with CCS to Ravenna). Not yet an executed PPA.",
+        "community_impact_en": "One of the largest AI campuses announced in Italy: national-scale energy and territorial impact on the Pavia area."
       }
     },
     {
@@ -1899,7 +1978,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus; non potenza IT certificata del sito."
+          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus; non potenza IT certificata del sito.",
+          "energy_mix_note_en": "Indicative share 1/3 of the multi-campus programme; not certified IT power for the site."
         },
         "community_impact_it": "Densificazione ulteriore della cintura sud-milanese già satura di progetti hyperscale.",
         "labor_risks": [
@@ -1912,7 +1992,9 @@
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27"
           }
-        ]
+        ],
+        "description_en": "Second node of the EdgeConneX Campus Italia programme (~€3bn, national strategic interest), in the municipalities of Pieve Emanuele / Fizzonasco south of Milan. Same programme as Opera (dc_027) and Bertonico (dc_038). Pin on the Fizzonasco core (Nominatim); exact building lot to be refined with acts.",
+        "community_impact_en": "Further densification of the south-Milan belt already saturated with hyperscale projects."
       }
     },
     {
@@ -1946,7 +2028,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus; non potenza IT certificata del sito."
+          "energy_mix_note_it": "Quota indicativa 1/3 del programma multi-campus; non potenza IT certificata del sito.",
+          "energy_mix_note_en": "Indicative share 1/3 of the multi-campus programme; not certified IT power for the site."
         },
         "community_impact_it": "Estensione della proliferazione data center oltre la cintura milanese, verso il Lodigiano.",
         "labor_risks": [
@@ -1959,7 +2042,9 @@
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27"
           }
-        ]
+        ],
+        "description_en": "Third node of the EdgeConneX Campus Italia programme in the Lodi area (Bertonico). Same programme as Opera (dc_027) and Pieve Emanuele (dc_037). Pin on the municipal centroid (Nominatim); exact building lot to be refined with acts.",
+        "community_impact_en": "Extension of data-center proliferation beyond the Milan belt, toward the Lodi area."
       }
     },
     {
@@ -1993,7 +2078,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Stesso corridoio ovest-Milano di Data4 ed Equinix; dettaglio MW IT non pubblico."
+          "energy_mix_note_it": "Stesso corridoio ovest-Milano di Data4 ed Equinix; dettaglio MW IT non pubblico.",
+          "energy_mix_note_en": "Same Milan-west corridor as Data4 and Equinix; IT MW detail not public."
         },
         "community_impact_it": "Ulteriore densificazione del corridoio Cornaredo–Settimo già saturo di campus colo/hyperscale.",
         "labor_risks": [
@@ -2007,7 +2093,9 @@
             "accessed_at": "2026-09-27",
             "note": "Vantage: Melegnano, Settimo Milanese, Cornaredo, Tavazzano"
           }
-        ]
+        ],
+        "description_en": "Cornaredo node of the Vantage programme of national strategic interest (together with Melegnano/MXP1, Settimo/MXP2 and Tavazzano/MXP4). Distinct from the already operational Data4 MIL01 campus in the same municipality (dc_021). Lot and IT power to be refined; pin on the Cornaredo municipal centroid (Nominatim); lot distinct from Data4 MIL01 (dc_021).",
+        "community_impact_en": "Further densification of the Cornaredo–Settimo corridor already saturated with colo/hyperscale campuses."
       }
     },
     {
@@ -2042,7 +2130,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio documentato: due cavi 132 kV interrati verso SE Terna Baggio. È il punto di connessione, non la centrale che produce l’elettricità."
+          "energy_mix_note_it": "Allaccio documentato: due cavi 132 kV interrati verso SE Terna Baggio. È il punto di connessione, non la centrale che produce l’elettricità.",
+          "energy_mix_note_en": "Documented connection: two underground 132 kV cables toward Terna Baggio SE. It is the connection point, not the plant that generates the electricity."
         },
         "employment": {
           "direct": null,
@@ -2051,7 +2140,8 @@
           "note_it": "Cantiere e istruttoria VIA in corso; organico operativo non dichiarato in fonti aperte.",
           "conditions_tags": [
             "construction_phase"
-          ]
+          ],
+          "note_en": "Construction and EIA review underway; operating headcount not declared in open sources."
         },
         "community_impact_it": "Pressione cumulativa di suolo e rete nel corridoio Castelletto–Seguro insieme a Equinix e Vantage.",
         "labor_risks": [
@@ -2070,7 +2160,8 @@
             "accessed_at": "2026-09-29",
             "note": "Collegamento alla stazione Terna Baggio a ~1,2 km"
           }
-        ]
+        ],
+        "community_impact_en": "Cumulative land and grid pressure in the Castelletto–Seguro corridor together with Equinix and Vantage."
       }
     },
     {
@@ -2105,7 +2196,8 @@
           "water_use_m3_year": null,
           "land_ha": 22.8,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio nominato: SE Lacchiarella esistente (STMG 202400955). Lacchiarella Ovest resta un progetto Terna distinto."
+          "energy_mix_note_it": "Allaccio nominato: SE Lacchiarella esistente (STMG 202400955). Lacchiarella Ovest resta un progetto Terna distinto.",
+          "energy_mix_note_en": "Named connection: existing Lacchiarella SE (STMG 202400955). Lacchiarella Ovest remains a distinct Terna project."
         },
         "employment": {
           "direct": null,
@@ -2114,7 +2206,8 @@
           "note_it": "Investimento dichiarato ~3 mld; organico operativo non ancora dettagliato in fonti aperte.",
           "conditions_tags": [
             "construction_phase"
-          ]
+          ],
+          "note_en": "Declared investment ~€3bn; operating headcount not yet detailed in open sources."
         },
         "community_impact_it": "Concentrazione di MW a Lacchiarella insieme a K2 e al corridoio AWS Zibido; pressione su rete e suolo agricolo sud Milano.",
         "labor_risks": [
@@ -2138,7 +2231,8 @@
             "accessed_at": "2026-09-29",
             "note": "Allaccio cavo sotterraneo alla SE esistente 380/132 kV Lacchiarella"
           }
-        ]
+        ],
+        "community_impact_en": "MW concentration at Lacchiarella together with K2 and the AWS Zibido corridor; pressure on grid and agricultural land south of Milan."
       }
     },
     {
@@ -2173,7 +2267,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio documentato: doppio cavo interrato verso SE Terna Baggio. Non è un PPA e non indica quale centrale produce l’energia."
+          "energy_mix_note_it": "Allaccio documentato: doppio cavo interrato verso SE Terna Baggio. Non è un PPA e non indica quale centrale produce l’energia.",
+          "energy_mix_note_en": "Documented connection: dual underground cable toward Terna Baggio SE. It is not a PPA and does not indicate which plant generates the energy."
         },
         "employment": {
           "direct": null,
@@ -2183,7 +2278,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "ML7 construction started; ML8 in later phases. Operating headcount not declared in open sources."
         },
         "community_impact_it": "Pressione cumulativa a Castelletto insieme a Data4, Vantage MXP2 e Microsoft MIL03; prossimità al Parco Agricolo Sud Milano.",
         "labor_risks": [
@@ -2223,7 +2319,8 @@
           "origin": "estimated",
           "note_it": "Generazione emergenza dichiarata ~125–134 MWt (ML7+ML8). Lw stimato da MWt; mitigazioni e orari prova non modellati.",
           "note_en": "Declared emergency generation ~125–134 MWt (ML7+ML8). Lw estimated from MWt; mitigations and test schedules not modeled."
-        }
+        },
+        "community_impact_en": "Cumulative pressure at Castelletto together with Data4, Vantage MXP2 and Microsoft MIL03; proximity to Parco Agricolo Sud Milano."
       }
     },
     {
@@ -2258,7 +2355,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio di rete non nominato in fonti aperte consultate; fascicolo VIA riguarda i gruppi di emergenza, non il punto di connessione RTN."
+          "energy_mix_note_it": "Allaccio di rete non nominato in fonti aperte consultate; fascicolo VIA riguarda i gruppi di emergenza, non il punto di connessione RTN.",
+          "energy_mix_note_en": "Grid connection not named in open sources consulted; EIA dossier concerns emergency gensets, not the RTN connection point."
         },
         "employment": {
           "direct": null,
@@ -2268,7 +2366,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Campus employment not detailed in the generator dossier; typical of a metropolitan cloud/colocation node."
         },
         "community_impact_it": "Polo digitale sull’asse Tiburtino; pressione locale soprattutto su rumore/emissioni dei gruppi di emergenza in istruttoria.",
         "labor_risks": [
@@ -2292,7 +2391,8 @@
             "accessed_at": "2026-09-29",
             "note": "Lat 41.93133 Lon 12.631676"
           }
-        ]
+        ],
+        "community_impact_en": "Digital hub on the Tiburtina corridor; local pressure mainly over noise/emissions from emergency gensets under review."
       }
     },
     {
@@ -2327,7 +2427,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "STMG ~70 MVA dichiarata dall’operatore; SE di allaccio non nominata in fonti aperte consultate → nessun arco connects in questa wave."
+          "energy_mix_note_it": "STMG ~70 MVA dichiarata dall’operatore; SE di allaccio non nominata in fonti aperte consultate → nessun arco connects in questa wave.",
+          "energy_mix_note_en": "STMG ~70 MVA declared by the operator; connection SE not named in open sources consulted → no connects arc in this wave."
         },
         "employment": {
           "direct": null,
@@ -2337,7 +2438,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Pre-construction/procurement underway (May 2026); operating headcount not declared."
         },
         "community_impact_it": "Nuovo polo hyperscale a ovest di Milano (Arluno), fuori dal corridoio Castelletto–Zibido già saturo.",
         "labor_risks": [
@@ -2360,7 +2462,8 @@
             "accessed_at": "2026-09-29",
             "note": "Via Padre Massimiliano Kolbe, Arluno"
           }
-        ]
+        ],
+        "community_impact_en": "New hyperscale hub west of Milan (Arluno), outside the already saturated Castelletto–Zibido corridor."
       }
     },
     {
@@ -2395,7 +2498,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "STMG ~180 MVA dichiarata; SE nominata non pubblica in fonti aperte → nessun arco connects in questa wave."
+          "energy_mix_note_it": "STMG ~180 MVA dichiarata; SE nominata non pubblica in fonti aperte → nessun arco connects in questa wave.",
+          "energy_mix_note_en": "STMG ~180 MVA declared; named SE not public in open sources → no connects arc in this wave."
         },
         "employment": {
           "direct": null,
@@ -2405,7 +2509,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Campus closing announced May 2026; pre-construction underway."
         },
         "community_impact_it": "Ulteriore densificazione del nord-ovest milanese già carico di campus hyperscale (Vantage, Equinix, Microsoft).",
         "labor_risks": [
@@ -2427,7 +2532,8 @@
             "url": "https://mlq.ai/news/bain-backed-hscale-closes-second-milan-campus-commits-2b-to-250mw-buildout/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Further densification of north-west Milan already loaded with hyperscale campuses (Vantage, Equinix, Microsoft)."
       }
     },
     {
@@ -2462,7 +2568,8 @@
           "water_use_m3_year": null,
           "land_ha": 7.5,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV. CyrusOne dichiara raffreddamento water-free per i nuovi impianti e ~79% della capacità globale con chiller ad aria (Sustainability Report 2026); recupero calore residuo verso teleriscaldamento indicato per MIL1 ma operatore di rete non ancora individuato (stampa locale)."
+          "energy_mix_note_it": "Operatore dichiara 100% renewable e doppia alimentazione 220 kV. CyrusOne dichiara raffreddamento water-free per i nuovi impianti e ~79% della capacità globale con chiller ad aria (Sustainability Report 2026); recupero calore residuo verso teleriscaldamento indicato per MIL1 ma operatore di rete non ancora individuato (stampa locale).",
+          "energy_mix_note_en": "Operator declares 100% renewable and dual 220 kV supply. CyrusOne declares water-free cooling for new facilities and ~79% of global capacity with air chillers (Sustainability Report 2026); residual heat recovery toward district heating indicated for MIL1 but the network operator not yet identified (local press)."
         },
         "employment": {
           "direct": 25,
@@ -2562,7 +2669,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "PPA virtuale Neoen–Equinix sul footprint Italia (Milano e Genova); non è un cavo dedicato al sito."
+          "energy_mix_note_it": "PPA virtuale Neoen–Equinix sul footprint Italia (Milano e Genova); non è un cavo dedicato al sito.",
+          "energy_mix_note_en": "Neoen–Equinix virtual PPA on the Italy footprint (Milan and Genoa); not a dedicated cable to the site."
         },
         "employment": {
           "direct": null,
@@ -2572,7 +2680,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "IBX employment typical of metropolitan colo facility; headcount not public."
         },
         "community_impact_it": "Nodo di interconnessione sul corridoio mediterraneo genovese; pressione locale contenuta rispetto ai campus hyperscale milanesi.",
         "labor_risks": [
@@ -2590,7 +2699,8 @@
             "url": "https://neoen.com/en/news/2024/neoen-and-equinix-sign-their-first-ppa-in-italy-supporting-decarbonization-of-the-local-grid/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Interconnection node on the Genoa Mediterranean corridor; local pressure contained relative to Milan hyperscale campuses."
       }
     },
     {
@@ -2625,7 +2735,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Rientra nel footprint Equinix Italia del PPA Neoen (portfolio); senza naming sito-sito → non si aggiunge un arco dedicato oltre ML5/ML2/GN1."
+          "energy_mix_note_it": "Rientra nel footprint Equinix Italia del PPA Neoen (portfolio); senza naming sito-sito → non si aggiunge un arco dedicato oltre ML5/ML2/GN1.",
+          "energy_mix_note_en": "Falls under the Equinix Italy footprint of the Neoen PPA (portfolio); without site-by-site naming → no dedicated arc added beyond ML5/ML2/GN1."
         },
         "community_impact_it": "Presenza colo consolidata a Basiglio; impatto locale tipico di IBX di media taglia.",
         "labor_risks": [
@@ -2644,7 +2755,8 @@
             "accessed_at": "2026-09-29",
             "note": "Via Francesco Sforza 13; ~3 MW"
           }
-        ]
+        ],
+        "community_impact_en": "Established colo presence in Basiglio; local impact typical of a mid-size IBX."
       }
     },
     {
@@ -2679,7 +2791,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Footprint Equinix Italia (PPA Neoen); senza naming sito-sito non si aggiunge arco dedicato."
+          "energy_mix_note_it": "Footprint Equinix Italia (PPA Neoen); senza naming sito-sito non si aggiunge arco dedicato.",
+          "energy_mix_note_en": "Equinix Italy footprint (Neoen PPA); without site-by-site naming no dedicated arc is added."
         },
         "community_impact_it": "IBX urbano consolidato; impatto tipico di facility colo in tessuto residenziale/produttivo.",
         "labor_risks": [
@@ -2697,7 +2810,8 @@
             "accessed_at": "2026-09-29",
             "note": "Elenca Equinix ML4 nel metro milanese"
           }
-        ]
+        ],
+        "community_impact_en": "Established urban IBX; impact typical of a colo facility in a residential/productive fabric."
       }
     },
     {
@@ -2732,7 +2846,8 @@
           "water_use_m3_year": null,
           "land_ha": 22,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Stesso operatore del PPA Edison–Data4 (ep_019→dc_021); senza naming esplicito MIL02 nel comunicato PPA non si duplica l’arco powers."
+          "energy_mix_note_it": "Stesso operatore del PPA Edison–Data4 (ep_019→dc_021); senza naming esplicito MIL02 nel comunicato PPA non si duplica l’arco powers.",
+          "energy_mix_note_en": "Same operator as the Edison–Data4 PPA (ep_019→dc_021); without explicit MIL02 naming in the PPA release the powers arc is not duplicated."
         },
         "employment": {
           "direct": null,
@@ -2742,7 +2857,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Development/construction phase; headcount not declared in open sources consulted."
         },
         "community_impact_it": "Estensione del cluster Data4 dal Cornaredo verso Vittuone; pressione cumulativa ovest-Milano su suolo e rete.",
         "labor_risks": [
@@ -2760,7 +2876,8 @@
             "accessed_at": "2026-09-29",
             "note": "Via Giovanni Pascoli, Vittuone; ~100 MW masterplan"
           }
-        ]
+        ],
+        "community_impact_en": "Extension of the Data4 cluster from Cornaredo toward Vittuone; cumulative Milan-west pressure on land and grid."
       }
     },
     {
@@ -2795,7 +2912,8 @@
           "water_use_m3_year": null,
           "land_ha": 14,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "FV di supporto ~5,5 MW in autorizzazione secondo cronaca; allaccio RTN non nominato in fonti aperte → nessun arco in questa wave."
+          "energy_mix_note_it": "FV di supporto ~5,5 MW in autorizzazione secondo cronaca; allaccio RTN non nominato in fonti aperte → nessun arco in questa wave.",
+          "energy_mix_note_en": "Support PV ~5.5 MW under authorisation per reporting; RTN connection not named in open sources → no arc in this wave."
         },
         "employment": {
           "direct": null,
@@ -2805,7 +2923,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Site preparation underway; construction/operations headcount not detailed."
         },
         "community_impact_it": "Riconversione di sito radiotelevisivo a Pomezia; accordo comunale su cessione terreno per viabilità.",
         "labor_risks": [
@@ -2823,7 +2942,8 @@
             "accessed_at": "2026-09-29",
             "note": "35,2 MW; ex centro onde medie"
           }
-        ]
+        ],
+        "community_impact_en": "Conversion of a broadcast site in Pomezia; municipal agreement on land transfer for roadworks."
       }
     },
     {
@@ -2858,7 +2978,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "RTN connection not named in open sources consulted."
         },
         "community_impact_it": "Presenza colo consolidata all’EUR; impatto tipico di facility metro.",
         "labor_risks": [
@@ -2876,7 +2997,8 @@
             "url": "https://www.retelit.it/en",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Established colo presence at the EUR; impact typical of a metro facility."
       }
     },
     {
@@ -2911,7 +3033,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Taglia colo metro; allaccio non nominato in fonti aperte."
+          "energy_mix_note_it": "Taglia colo metro; allaccio non nominato in fonti aperte.",
+          "energy_mix_note_en": "Metro colo scale; connection not named in open sources."
         },
         "community_impact_it": "Facility urbana di piccola taglia sul corridoio Cornelia.",
         "labor_risks": [
@@ -2924,7 +3047,8 @@
             "accessed_at": "2026-09-29",
             "note": "Via Cornelia 498; ~0.3 MW"
           }
-        ]
+        ],
+        "community_impact_en": "Small urban facility on the Cornelia corridor."
       }
     },
     {
@@ -2959,7 +3083,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Taglia colo metro; allaccio non nominato in fonti aperte."
+          "energy_mix_note_it": "Taglia colo metro; allaccio non nominato in fonti aperte.",
+          "energy_mix_note_en": "Metro colo scale; connection not named in open sources."
         },
         "community_impact_it": "Facility urbana nord-est; impatto tipico colo di piccola taglia.",
         "labor_risks": [
@@ -2978,7 +3103,8 @@
             "accessed_at": "2026-09-29",
             "note": "Via Carlo Perrier 4 e 9/a"
           }
-        ]
+        ],
+        "community_impact_en": "North-east urban facility; impact typical of small colo."
       }
     },
     {
@@ -3013,7 +3139,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore cita autoproduzione da solare/geotermia sul sito TIER IV; dettaglio MW e allaccio RTN non in scheda aperta consultata."
+          "energy_mix_note_it": "Operatore cita autoproduzione da solare/geotermia sul sito TIER IV; dettaglio MW e allaccio RTN non in scheda aperta consultata.",
+          "energy_mix_note_en": "Operator cites on-site solar/geothermal self-generation at the TIER IV site; MW detail and RTN connection not in the open fact sheet consulted."
         },
         "employment": {
           "direct": null,
@@ -3023,7 +3150,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "TIM enterprise core; headcount not detailed in open sources."
         },
         "community_impact_it": "Grande facility a sud-ovest di Roma (Acilia/Casal Palocco); pressione tipica di un core DC telco.",
         "labor_risks": [
@@ -3045,7 +3173,8 @@
             "url": "https://www.datacentermap.com/c/noovle-spa/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Large facility south-west of Rome (Acilia/Casal Palocco); pressure typical of a telco core DC."
       }
     },
     {
@@ -3080,7 +3209,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "RTN connection not named in open sources consulted."
         },
         "community_impact_it": "Facility telco urbana a nord di Roma.",
         "labor_risks": [
@@ -3098,7 +3228,8 @@
             "url": "https://www.noovle.com/en/datacenter/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Urban telco facility north of Rome."
       }
     },
     {
@@ -3133,7 +3264,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non nominato in scheda aperta; focus connettività multi-carrier."
+          "energy_mix_note_it": "Allaccio non nominato in scheda aperta; focus connettività multi-carrier.",
+          "energy_mix_note_en": "Connection not named in open fact sheet; focus on multi-carrier connectivity."
         },
         "community_impact_it": "Polo digitale a Frosinone; scala contenuta rispetto agli hyperscale milanesi.",
         "labor_risks": [
@@ -3151,7 +3283,8 @@
             "url": "https://docs.seeweb.it/en/datacenter/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Digital hub in Frosinone; contained scale relative to Milan hyperscale."
       }
     },
     {
@@ -3186,7 +3319,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Facility PA; dettaglio allaccio/MW non in scheda aperta consultata."
+          "energy_mix_note_it": "Facility PA; dettaglio allaccio/MW non in scheda aperta consultata.",
+          "energy_mix_note_en": "PA facility; connection/MW detail not in the open fact sheet consulted."
         },
         "employment": {
           "direct": null,
@@ -3196,7 +3330,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "CSI headcount on regional ICT services; not isolable to the DC alone."
         },
         "community_impact_it": "Infrastruttura critica per servizi digitali della PA piemontese.",
         "labor_risks": [
@@ -3209,7 +3344,8 @@
             "accessed_at": "2026-09-29",
             "note": "Corso Unione Sovietica 216, Torino"
           }
-        ]
+        ],
+        "community_impact_en": "Critical infrastructure for Piedmont public-administration digital services."
       }
     },
     {
@@ -3244,7 +3380,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Operatore sottolinea efficienza (dry cooler, geotermia); allaccio RTN non nominato."
+          "energy_mix_note_it": "Operatore sottolinea efficienza (dry cooler, geotermia); allaccio RTN non nominato.",
+          "energy_mix_note_en": "Operator stresses efficiency (dry cooler, geothermal); RTN connection not named."
         },
         "community_impact_it": "Facility regionale a Piacenza Sud; scala colo, non hyperscale.",
         "labor_risks": [
@@ -3267,7 +3404,8 @@
             "url": "https://www.acn.gov.it/portale/w/in-2104",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Regional facility in Piacenza Sud; colo scale, not hyperscale."
       }
     },
     {
@@ -3302,7 +3440,8 @@
           "water_use_m3_year": null,
           "land_ha": 0.12,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non dettagliato in scheda aperta; focus edge/IX regionali."
+          "energy_mix_note_it": "Allaccio non dettagliato in scheda aperta; focus edge/IX regionali.",
+          "energy_mix_note_en": "Connection not detailed in open fact sheet; focus on regional edge/IX."
         },
         "community_impact_it": "Nuovo edge nella zona industriale di Padova; scala contenuta.",
         "labor_risks": [
@@ -3315,7 +3454,8 @@
             "accessed_at": "2026-09-29",
             "note": "ZAI Via Vigonovese; completamento ott 2026"
           }
-        ]
+        ],
+        "community_impact_en": "New edge in Padova’s industrial zone; contained scale."
       }
     },
     {
@@ -3350,7 +3490,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not named in open sources consulted."
         },
         "community_impact_it": "Facility colo regionale a Trento.",
         "labor_risks": [
@@ -3362,7 +3503,8 @@
             "url": "https://www.retelit.it/public/CMS/Files/10556/Certificato-ISO-50001-EN.pdf",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Regional colo facility in Trento."
       }
     },
     {
@@ -3397,7 +3539,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not named in open sources consulted."
         },
         "community_impact_it": "Facility colo in zona industriale di Bolzano.",
         "labor_risks": [
@@ -3414,7 +3557,8 @@
             "url": "https://www.openstreetmap.org/search?query=Via%20Antonio%20Pacinotti%2012%20Bolzano",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Colo facility in Bolzano’s industrial zone."
       }
     },
     {
@@ -3449,7 +3593,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Ruolo primario: interconnessione e landing/marketplace, non hyperscale IT."
+          "energy_mix_note_it": "Ruolo primario: interconnessione e landing/marketplace, non hyperscale IT.",
+          "energy_mix_note_en": "Primary role: interconnection and landing/marketplace, not IT hyperscale."
         },
         "community_impact_it": "Nodo strategico mediterraneo a Palermo; pressione tipica di hub carrier, non di campus AI.",
         "labor_risks": [
@@ -3473,7 +3618,8 @@
             "url": "https://www.submarinenetworks.com/en/nv/insights/tim-secures-eu-green-light-for-%E2%82%AC700-million-sale-of-sparkle",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Strategic Mediterranean node in Palermo; pressure typical of a carrier hub, not an AI campus."
       }
     },
     {
@@ -3508,7 +3654,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Nodo wholesale/carrier; allaccio non nominato in scheda aperta."
+          "energy_mix_note_it": "Nodo wholesale/carrier; allaccio non nominato in scheda aperta.",
+          "energy_mix_note_en": "Wholesale/carrier node; connection not named in open fact sheet."
         },
         "community_impact_it": "Facility carrier a Genova; scala contenuta rispetto agli hyperscale milanesi.",
         "labor_risks": [
@@ -3526,7 +3673,8 @@
             "url": "https://www.gruppotim.it/en/press-archive/sparkle/2026/PR-TIM-Waiver-Sparkle.html",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Carrier facility in Genoa; contained scale relative to Milan hyperscale."
       }
     },
     {
@@ -3561,7 +3709,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio/STMG non nominati in intervista; nessun arco connects in questa wave."
+          "energy_mix_note_it": "Allaccio/STMG non nominati in intervista; nessun arco connects in questa wave.",
+          "energy_mix_note_en": "Connection/STMG not named in interview; no connects arc in this wave."
         },
         "community_impact_it": "Riconversione area industriale a Corsico; densificazione DC sud-ovest Milano.",
         "labor_risks": [
@@ -3579,7 +3728,8 @@
             "url": "https://www.openstreetmap.org/search?query=Marcegaglia%20Corsico",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Industrial-area conversion in Corsico; DC densification south-west of Milan."
       }
     },
     {
@@ -3614,7 +3764,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Consumo tipico di sala IX/carrier, non di campus IT; metrica rilevante = Tbps peaking, non MW IT."
+          "energy_mix_note_it": "Consumo tipico di sala IX/carrier, non di campus IT; metrica rilevante = Tbps peaking, non MW IT.",
+          "energy_mix_note_en": "Consumption typical of an IX/carrier hall, not an IT campus; relevant metric = Tbps peaking, not IT MW."
         },
         "community_impact_it": "Infrastruttura critica di rete sul campus Caldera; impatto locale contenuto rispetto agli hyperscale.",
         "labor_risks": [
@@ -3633,7 +3784,8 @@
             "url": "https://www.mix-it.net/en/exchange/roma/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Critical network infrastructure on the Caldera campus; local impact contained relative to hyperscale."
       }
     },
     {
@@ -3668,7 +3820,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "IXP/colo operatori; metrica primaria = reti/Tbps, non MW IT di campus."
+          "energy_mix_note_it": "IXP/colo operatori; metrica primaria = reti/Tbps, non MW IT di campus.",
+          "energy_mix_note_en": "IXP/colo operators; primary metric = networks/Tbps, not campus IT MW."
         },
         "community_impact_it": "Nodo di interconnessione urbana a San Lorenzo; scala IX, non hyperscale.",
         "labor_risks": [
@@ -3692,7 +3845,8 @@
             "url": "https://www.gruppotim.it/en/press-archive/sparkle/2018/CS-Sparkle-amplia-offerta-di-servizi-presso-il-Data-Center-NaMex-di-Roma.html",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Urban interconnection node at San Lorenzo; IX scale, not hyperscale."
       }
     },
     {
@@ -3727,7 +3881,8 @@
           "water_use_m3_year": null,
           "land_ha": 6.65,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "CyrusOne dichiara raffreddamento water-free per i nuovi impianti (Sustainability Report 2026); dettagli tecnici MIL2 non ancora in datasheet pubblico."
+          "energy_mix_note_it": "CyrusOne dichiara raffreddamento water-free per i nuovi impianti (Sustainability Report 2026); dettagli tecnici MIL2 non ancora in datasheet pubblico.",
+          "energy_mix_note_en": "CyrusOne declares water-free cooling for new facilities (Sustainability Report 2026); MIL2 technical details not yet in a public datasheet."
         },
         "employment": {
           "direct": null,
@@ -3804,7 +3959,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio RTN non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "RTN connection not named in open sources consulted."
         },
         "community_impact_it": "Facility colo consolidata nel tessuto industriale torinese; scala metro, non hyperscale.",
         "labor_risks": [
@@ -3821,7 +3977,8 @@
             "url": "https://www.retelit.it/public/CMS/Files/10556/Certificato-ISO-50001-EN.pdf",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Established colo facility in Turin’s industrial fabric; metro scale, not hyperscale."
       }
     },
     {
@@ -3856,7 +4013,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non dettagliato in scheda PeeringDB consultata."
+          "energy_mix_note_it": "Allaccio non dettagliato in scheda PeeringDB consultata.",
+          "energy_mix_note_en": "Connection not detailed in the PeeringDB fact sheet consulted."
         },
         "community_impact_it": "Nodo colo urbano a Torino.",
         "labor_risks": [
@@ -3868,7 +4026,8 @@
             "url": "https://www.peeringdb.com/fac/294",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Urban colo node in Turin."
       }
     },
     {
@@ -3903,7 +4062,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non dettagliato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio non dettagliato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not detailed in open sources consulted."
         },
         "community_impact_it": "Presenza colo/hosting consolidata a Torino.",
         "labor_risks": [
@@ -3915,7 +4075,8 @@
             "url": "https://www.peeringdb.com/fac/1442",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Established colo/hosting presence in Turin."
       }
     },
     {
@@ -3950,7 +4111,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non dettagliato in scheda PeeringDB consultata."
+          "energy_mix_note_it": "Allaccio non dettagliato in scheda PeeringDB consultata.",
+          "energy_mix_note_en": "Connection not detailed in the PeeringDB fact sheet consulted."
         },
         "community_impact_it": "Facility telco colo nel tessuto urbano torinese.",
         "labor_risks": [
@@ -3962,7 +4124,8 @@
             "url": "https://www.peeringdb.com/fac/5887",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Telco colo facility in Turin’s urban fabric."
       }
     },
     {
@@ -3997,7 +4160,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non dettagliato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio non dettagliato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not detailed in open sources consulted."
         },
         "community_impact_it": "Operator locale con DC urbano a Torino.",
         "labor_risks": [
@@ -4009,7 +4173,8 @@
             "url": "https://www.peeringdb.com/fac/708",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Local operator with an urban DC in Turin."
       }
     },
     {
@@ -4044,7 +4209,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not named in open sources consulted."
         },
         "community_impact_it": "Facility telco TIM/Noovle nel comune di Rivoli.",
         "labor_risks": [
@@ -4061,7 +4227,8 @@
             "url": "https://www.noovle.com/en/datacenter/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "TIM/Noovle telco facility in the municipality of Rivoli."
       }
     },
     {
@@ -4096,7 +4263,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate."
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not named in open sources consulted."
         },
         "community_impact_it": "Facility TIM/Noovle in area industriale settimese.",
         "labor_risks": [
@@ -4113,7 +4281,8 @@
             "url": "https://www.noovle.com/en/datacenter/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "TIM/Noovle facility in Settimo Torinese industrial area."
       }
     },
     {
@@ -4148,7 +4317,8 @@
           "water_use_m3_year": null,
           "land_ha": 15,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio proposto dalla SE Leinì 380 kV (gn_010): richiesta di aggiornamento STMG, non ancora STMG definitiva pubblica sul punto Leinì. Raffreddamento a circuito chiuso imposto in delibera comunale."
+          "energy_mix_note_it": "Allaccio proposto dalla SE Leinì 380 kV (gn_010): richiesta di aggiornamento STMG, non ancora STMG definitiva pubblica sul punto Leinì. Raffreddamento a circuito chiuso imposto in delibera comunale.",
+          "energy_mix_note_en": "Proposed connection from Leinì 380 kV SE (gn_010): STMG update request, not yet a definitive public STMG on the Leinì point. Closed-loop cooling imposed in the municipal resolution."
         },
         "employment": {
           "direct": null,
@@ -4158,7 +4328,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Steady-state employment not detailed in open sources consulted; focus on planning/energy."
         },
         "community_impact_it": "Polo digitale a ridosso dell’aeroporto; dibattito su elettrodotti «doppia antenna», rumore, falda e rischio incendio rispetto alle attività aeroportuali. Delibera comunale con vincoli su raffreddamento e monitoraggi.",
         "labor_risks": [
@@ -4180,7 +4351,8 @@
             "url": "https://www.iato.news/2025/04/11/il-nuovo-data-center-da-oltre-500-milioni/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Digital hub next to the airport; debate over «double antenna» power lines, noise, aquifer and fire risk relative to airport activities. Municipal resolution with constraints on cooling and monitoring."
       }
     },
     {
@@ -4215,7 +4387,8 @@
           "water_use_m3_year": null,
           "land_ha": 5.8,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Allaccio dichiarato a Piossasco (gn_011) dal promotore; nessuna STMG/VIA pubblica consultata → connects likely, non confirmed. Corriere riporta «~400 megawattora» in contesto di potenza di impianto."
+          "energy_mix_note_it": "Allaccio dichiarato a Piossasco (gn_011) dal promotore; nessuna STMG/VIA pubblica consultata → connects likely, non confirmed. Corriere riporta «~400 megawattora» in contesto di potenza di impianto.",
+          "energy_mix_note_en": "Connection declared at Piossasco (gn_011) by the promoter; no public STMG/EIA consulted → connects likely, not confirmed. Corriere reports «~400 megawattora» in a plant-power context."
         },
         "employment": {
           "direct": 400,
@@ -4225,7 +4398,8 @@
           "conditions_tags": [
             "construction_phase",
             "high_skill"
-          ]
+          ],
+          "note_en": "Estimate declared by the promoter (~400 jobs); to be verified at steady state."
         },
         "community_impact_it": "Brownfield industriale a Grugliasco; forte dibattito locale su energia, acqua e destinazione d’uso (ex automotive vs hyperscale).",
         "labor_risks": [
@@ -4243,7 +4417,8 @@
             "url": "https://torinonews24.it/news/torino-maxi-impianto-data-center-nellarea-pininfarina-4-miliardi-di-investimenti-e-400-posti-di-lavoro-ce-chi-dice-no-grugliasco-si-spacca-sul-nuovo-progetto-il-caso/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Industrial brownfield in Grugliasco; strong local debate on energy, water and land use (former automotive vs hyperscale)."
       }
     }
   ]

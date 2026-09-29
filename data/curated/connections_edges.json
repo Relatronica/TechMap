@@ -17,7 +17,9 @@
           "url": "https://news.cision.com/se/vattenfall/r/vattenfall-levererar-fornybar-el-fran-lule-alv-till-facebook,c9427579",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Vattenfall–Facebook (Meta) supply agreement for 100% hydropower from the Lule Älv basin to the Luleå campus.",
+      "evidence_note_en": "Vattenfall release (2013): multi-year renewable supply contract from the Lule Älv. Harsprånget is one of the basin’s main plants."
     },
     {
       "id": "conn_002",
@@ -34,7 +36,9 @@
           "url": "https://news.cision.com/se/vattenfall/r/vattenfall-levererar-fornybar-el-fran-lule-alv-till-facebook,c9427579",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Porjus is part of the same Vattenfall hydropower system on the Lule Älv cited in the supply agreement for Meta’s Luleå campus.",
+      "evidence_note_en": "Same operator and same basin as the Vattenfall–Facebook agreement; the release does not name the individual plant, so certainty likely rather than confirmed."
     },
     {
       "id": "conn_003",
@@ -56,7 +60,9 @@
           "url": "https://energydigital.com/sustainability/google-signs-agreements-190mw-wind-projects-finland",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Google–CPC Finland PPA: electricity from Lakiakangas 2 feeds the same grid from which Google draws for Hamina.",
+      "evidence_note_en": "Google’s first Finnish wind PPA (2018), explicitly linked to the Hamina data center."
     },
     {
       "id": "conn_004",
@@ -73,7 +79,9 @@
           "url": "https://ilmatar.com/news/ilmatar-energy-announces-new-wind-farm-adding-new-clean-energy-to-the-grid/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Google–Ilmatar PPA: Google buys 125 MW from Piiparinmäki (211 MW) for the Hamina campus demand.",
+      "evidence_note_en": "Public Ilmatar–Google agreement (2019); Ilmatar confirms that most of the output serves Hamina."
     },
     {
       "id": "conn_009",
@@ -90,7 +98,9 @@
           "url": "https://www.asml.com/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "ASML supplies TSMC with the EUV lithography machines essential for the advanced nodes used in AI chips.",
+      "evidence_note_en": "Documented market dependency: ASML is the monopoly supplier of EUV scanners; TSMC is the main customer by advanced-node volume."
     },
     {
       "id": "conn_010",
@@ -107,7 +117,9 @@
           "accessed_at": "2026-09-27",
           "note": "Joint venture TSMC in Saxony; tool litografiche ASML standard di settore"
         }
-      ]
+      ],
+      "description_en": "ASML supplies the lithography equipment needed for the ESMC/TSMC fab in Dresden (EU Chips Act).",
+      "evidence_note_en": "The ESMC fab is a TSMC node in Europe: ASML tools are a prerequisite of the stated production roadmap. No public site-to-site ASML→Dresden contract, so likely rather than confirmed."
     },
     {
       "id": "conn_011",
@@ -124,7 +136,9 @@
           "url": "https://pr.tsmc.com/english/news/1236",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "TSMC is NVIDIA’s primary foundry: it manufactures the AI GPUs/accelerators designed by NVIDIA.",
+      "evidence_note_en": "Long-standing public foundry partnership (TSMC–NVIDIA releases); Jensen Huang has restated the dependency («No TSMC, no Nvidia»)."
     },
     {
       "id": "conn_012",
@@ -141,7 +155,9 @@
           "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "NVIDIA supplies AI GPUs/accelerators and reference designs that Quanta (QCT) integrates into servers and racks for hyperscalers.",
+      "evidence_note_en": "Quanta is among NVIDIA’s main ODMs for AI servers (NVL36 and related systems); the GPU→rack chain typically runs through Taiwanese ODMs, not from design HQ to campus."
     },
     {
       "id": "conn_013",
@@ -158,7 +174,9 @@
           "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Quanta is a primary ODM server supplier for Meta (about half of orders per industry estimates); AI racks also end up in European campuses such as Luleå.",
+      "evidence_note_en": "No public Luleå packing list. Certainty likely: Quanta is a key Meta ODM; not confirmed for the individual Swedish building."
     },
     {
       "id": "conn_016",
@@ -175,7 +193,9 @@
           "url": "https://www.umicore.com/en/media/newsroom/umicore-and-glencore-develop-partnership-for-sustainable-cobalt-supply-in-battery-materials/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Glencore–Umicore agreement: cobalt hydroxide from Mutanda (DRC) into Umicore’s battery-materials chain, including the Kokkola refinery.",
+      "evidence_note_en": "Joint release 2019: Mutanda and KCC named as sources; destination Umicore refineries including Kokkola (FI)."
     },
     {
       "id": "conn_017",
@@ -192,7 +212,9 @@
           "url": "https://www.umicore.com/en/media/newsroom/umicore-and-glencore-develop-partnership-for-sustainable-cobalt-supply-in-battery-materials/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Same Glencore–Umicore agreement: cobalt from Kamoto Copper Company (KCC) toward Umicore Kokkola / battery materials.",
+      "evidence_note_en": "KCC is named explicitly in the release alongside Mutanda. It is not a mine↔mine link."
     },
     {
       "id": "conn_018",
@@ -209,7 +231,9 @@
           "accessed_at": "2026-09-27",
           "note": "Quanta citata come ODM rilevante per Google/Meta/AWS nelle analisi di settore"
         }
-      ]
+      ],
+      "description_en": "Quanta is among the main AI server assemblers for Google; Hamina is a European hyperscale node where this class of rack is typical.",
+      "evidence_note_en": "ODM↔CSP market link, not a Hamina site BOM: likely."
     },
     {
       "id": "conn_019",
@@ -226,7 +250,9 @@
           "url": "https://lenaleawindfarm.com/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Microsoft–SSE/FuturEnergy CPPA on Lenalea Wind Farm: the park’s electricity contributes to renewable supply for Microsoft data centers in Ireland (Azure North Europe, Dublin).",
+      "evidence_note_en": "Public agreement on the Lenalea site and Microsoft Ireland releases: CPPA explicitly tied to Irish data-center operations."
     },
     {
       "id": "conn_020",
@@ -248,7 +274,9 @@
           "url": "https://www.eolus.com/en/projects/fagelas/",
           "accessed_at": "2026-09-27"
         }
-      ]
+      ],
+      "description_en": "Amazon PPA on Fågelås (Saena portfolio): contracted wind electricity for Swedish operations, including the AWS Europe (Stockholm) region with an AZ at Eskilstuna.",
+      "evidence_note_en": "Amazon Sverige release: Fågelås named among wind PPAs; AWS Stockholm operates via AZs in Sweden (Eskilstuna/Katrineholm/Västerås). The PPA is grid-level (not a dedicated cable to a single building)."
     },
     {
       "id": "conn_027",

@@ -386,7 +386,8 @@
           ]
         },
         "community_impact_it": "Progetto litio finlandese (Keliber): organico a regime non curato; contesto EU battery chain.",
-        "community_impact_en": "Finnish lithium project (Keliber): steady-state headcount not curated; EU battery-chain context."
+        "community_impact_en": "Finnish lithium project (Keliber): steady-state headcount not curated; EU battery-chain context.",
+        "description_en": "Advanced lithium project at Kaustinen and Kokkola, in Finland's Central Ostrobothnia region. Aims to become Europe's first producer of battery-grade lithium. Deposits spanning over 500 km², with a refinery in the Kokkola Industrial Park. EU financing of €150 million (August 2024)."
       }
     },
     {
@@ -426,7 +427,8 @@
           ]
         },
         "community_impact_it": "Jadar (Rio Tinto) in Serbia: progetto contestato e sospeso/ripreso a più riprese; forte opposizione locale.",
-        "community_impact_en": "Jadar (Rio Tinto) in Serbia: contested project repeatedly paused/restarted; strong local opposition."
+        "community_impact_en": "Jadar (Rio Tinto) in Serbia: contested project repeatedly paused/restarted; strong local opposition.",
+        "description_en": "Lithium and boron deposit in the Jadar Valley, western Serbia, near Loznica. Project suspended by Rio Tinto in September 2024 amid strong local opposition from Serbian farmers. Intended for lithium carbonate production for European EV batteries. The most controversial investment in Serbia's recent history."
       }
     },
     {
@@ -551,7 +553,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Produzione dichiarata ~27.300 t cobalto/anno (2018); alto impatto territoriale e idrico tipico dell'estrazione."
+          "energy_mix_note_it": "Produzione dichiarata ~27.300 t cobalto/anno (2018); alto impatto territoriale e idrico tipico dell'estrazione.",
+          "energy_mix_note_en": "Declared production ~27,300 t cobalt/year (2018); high territorial and water impact typical of extraction."
         },
         "employment": {
           "direct": 3500,
@@ -672,7 +675,8 @@
           ]
         },
         "community_impact_it": "Norra Kärr (Svezia): deposito terre rare in fase di progetto; conflitto ambientale/locale tipico dei REE europei.",
-        "community_impact_en": "Norra Kärr (Sweden): rare-earth deposit at project stage; typical EU REE environmental/local conflict."
+        "community_impact_en": "Norra Kärr (Sweden): rare-earth deposit at project stage; typical EU REE environmental/local conflict.",
+        "description_en": "One of Europe's richest rare-earth deposits, in southern Sweden, 11 km northeast of Gränna, Jönköping County, near Lake Vättern. Contains significant concentrations of dysprosium, terbium and yttrium. Leading Edge Materials obtained a 25-year mining concession in July 2026, positioning it as Europe's first heavy rare-earth mine."
       }
     },
     {
@@ -710,7 +714,8 @@
           "conditions_tags": []
         },
         "community_impact_it": "Kvanefjeld/Kuannersuit (Groenlandia): progetto REE/uranio politicamente bloccato; nessun arco.",
-        "community_impact_en": "Kvanefjeld/Kuannersuit (Greenland): politically blocked REE/uranium project; no edge."
+        "community_impact_en": "Kvanefjeld/Kuannersuit (Greenland): politically blocked REE/uranium project; no edge.",
+        "description_en": "Rare-earth, uranium and zinc deposit in southern Greenland, near Narsaq. Would be the world's second-largest rare-earth source and the fifth-largest uranium mine. After 13 years of work, Greenlandic authorities refused the mining licence in June 2026. Strategic project for European independence from Chinese rare earths."
       }
     },
     {
@@ -1191,7 +1196,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Fab memoria ad alta intensità energetica/idrica tipica dei nodi HBM; non quantificato qui."
+          "energy_mix_note_it": "Fab memoria ad alta intensità energetica/idrica tipica dei nodi HBM; non quantificato qui.",
+          "energy_mix_note_en": "High energy/water-intensity memory fab typical of HBM nodes; not quantified here."
         },
         "employment": {
           "direct": null,
@@ -1201,7 +1207,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "HBM fab headcount not fixed in this card; high-tech industrial shift work."
         },
         "community_impact_it": "Competizione geopolitica Corea–US–CN sulla memoria AI; pressione locale tipica di mega-fab.",
         "labor_risks": [
@@ -1219,7 +1226,8 @@
             "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Korea–US–CN geopolitical competition over AI memory; local pressure typical of a mega-fab."
       }
     },
     {
@@ -1254,7 +1262,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Packaging AP ad alta densità di tool; consumo non modellato qui."
+          "energy_mix_note_it": "Packaging AP ad alta densità di tool; consumo non modellato qui.",
+          "energy_mix_note_en": "High tool-density advanced packaging; consumption not modelled here."
         },
         "employment": {
           "direct": null,
@@ -1264,7 +1273,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "CoWoS line headcount not public site-by-site; typical high-skill fab/OSAT labor."
         },
         "community_impact_it": "Espansione capacità CoWoS in Taiwan come vincolo sistemico dell’AI globale.",
         "labor_risks": [
@@ -1282,7 +1292,8 @@
             "url": "https://mohammed-sumon.com/research/semiconductor-cohort/docs/NVDA/supply-chain.html",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "CoWoS capacity expansion in Taiwan as a systemic constraint on global AI."
       }
     },
     {
@@ -1317,7 +1328,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "OSAT; intensità energetica minore di un mega-fab front-end, rilevante a scala di volume AI."
+          "energy_mix_note_it": "OSAT; intensità energetica minore di un mega-fab front-end, rilevante a scala di volume AI.",
+          "energy_mix_note_en": "OSAT; lower energy intensity than a front-end mega-fab, relevant at AI volume scale."
         },
         "community_impact_it": "Polo packaging sud Taiwan; pressione cumulativa con altre OSAT sulla stessa isola.",
         "labor_risks": [
@@ -1334,7 +1346,8 @@
             "url": "https://www.openstreetmap.org/search?query=ASE%20Kaohsiung",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Southern Taiwan packaging hub; cumulative pressure with other OSAT on the same island."
       }
     },
     {
@@ -1369,7 +1382,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "HQ design: consumo da campus uffici/lab, non fab."
+          "energy_mix_note_it": "HQ design: consumo da campus uffici/lab, non fab.",
+          "energy_mix_note_en": "Design HQ: office/lab campus consumption, not a fab."
         },
         "employment": {
           "direct": null,
@@ -1378,7 +1392,8 @@
           "note_it": "Occupazione HQ design/engineering; non confrontabile con headcount fab o DC.",
           "conditions_tags": [
             "high_skill"
-          ]
+          ],
+          "note_en": "Design/engineering HQ employment; not comparable to fab or DC headcount."
         },
         "community_impact_it": "Nodo Silicon Valley del duopolio GPU AI con NVIDIA.",
         "labor_risks": [],
@@ -1393,7 +1408,8 @@
             "url": "https://valueaddvc.com/blog/ai-chip-supply-ranked-2026-nvidia-amd-broadcom-tsmc-and-whos-actually-unconstrained",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Silicon Valley node of the AI GPU duopoly with NVIDIA."
       }
     },
     {
@@ -1428,7 +1444,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Assembly ODM; intensità minore di fab, rilevante a volume rack AI."
+          "energy_mix_note_it": "Assembly ODM; intensità minore di fab, rilevante a volume rack AI.",
+          "energy_mix_note_en": "ODM assembly; lower intensity than a fab, relevant at AI rack volume."
         },
         "community_impact_it": "Mega-employer manifatturiero taiwanese; catena del valore verso campus cloud globali.",
         "labor_risks": [
@@ -1446,7 +1463,8 @@
             "accessed_at": "2026-09-29",
             "note": "ODM come anello post-package; Foxconn tra i grandi assembler AI"
           }
-        ]
+        ],
+        "community_impact_en": "Major Taiwanese manufacturing employer; value chain toward global cloud campuses."
       }
     },
     {
@@ -1481,7 +1499,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Mega-fab memoria; intensità energetica/idrica tipica, non quantificata qui."
+          "energy_mix_note_it": "Mega-fab memoria; intensità energetica/idrica tipica, non quantificata qui.",
+          "energy_mix_note_en": "Memory mega-fab; typical energy/water intensity, not quantified here."
         },
         "employment": {
           "direct": null,
@@ -1491,7 +1510,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Campus headcount not fixed in this card; high-tech industrial shift work."
         },
         "community_impact_it": "Secondo polo HBM coreano: competizione SK Hynix–Samsung sulla memoria AI.",
         "labor_risks": [
@@ -1514,7 +1534,8 @@
             "url": "https://www.openstreetmap.org/search?query=Samsung%20Electronics%20Hwaseong",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Second Korean HBM hub: SK Hynix–Samsung competition over AI memory."
       }
     },
     {
@@ -1549,7 +1570,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Manifattura CAM; intensità energetica industriale, non modellata qui."
+          "energy_mix_note_it": "Manifattura CAM; intensità energetica industriale, non modellata qui.",
+          "energy_mix_note_en": "CAM manufacturing; industrial energy intensity, not modelled here."
         },
         "employment": {
           "direct": 400,
@@ -1559,7 +1581,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Umicore declares ~400 jobs at steady state on the Nysa site."
         },
         "community_impact_it": "Polo CAM nell’Opole; anello UE tra raffinazione finlandese e gigafactory polacche.",
         "labor_risks": [
@@ -1583,7 +1606,8 @@
             "accessed_at": "2026-09-29",
             "note": "Covers substantial part of Nysa nickel requirements"
           }
-        ]
+        ],
+        "community_impact_en": "CAM hub in Opole; EU link between Finnish refining and Polish gigafactories."
       }
     },
     {
@@ -1618,7 +1642,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Gigafactory: alto prelievo elettrico; non modellato qui."
+          "energy_mix_note_it": "Gigafactory: alto prelievo elettrico; non modellato qui.",
+          "energy_mix_note_en": "Gigafactory: high electricity draw; not modelled here."
         },
         "employment": {
           "direct": null,
@@ -1628,7 +1653,8 @@
           "conditions_tags": [
             "shift_work",
             "high_skill"
-          ]
+          ],
+          "note_en": "Gigafactory headcount (thousands in the area); not fixed in this card."
         },
         "community_impact_it": "Mega-sito cellulare in Bassa Slesia; pressione su rete, suolo e lavoro locale.",
         "labor_risks": [
@@ -1646,7 +1672,8 @@
             "accessed_at": "2026-09-29",
             "note": "Majority of agreement volumes from Poland greenfield"
           }
-        ]
+        ],
+        "community_impact_en": "Cell mega-site in Lower Silesia; pressure on grid, land and local labor."
       }
     },
     {
@@ -1681,7 +1708,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Raffinazione litio; impatto idrico regionale legato alla catena Atacama."
+          "energy_mix_note_it": "Raffinazione litio; impatto idrico regionale legato alla catena Atacama.",
+          "energy_mix_note_en": "Lithium refining; regional water impact tied to the Atacama chain."
         },
         "community_impact_it": "Nodo chimico nel deserto di Atacama; dibattiti su acqua e comunità locali a monte sul Salar.",
         "labor_risks": [
@@ -1699,7 +1727,8 @@
             "accessed_at": "2026-09-29",
             "note": "Metodologia: brine ≠ hard-rock; pin raffineria locale al Salar"
           }
-        ]
+        ],
+        "community_impact_en": "Chemical node in the Atacama Desert; upstream debates on water and local communities on the Salar."
       }
     },
     {
@@ -1734,7 +1763,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Processo bioheap leaching a basso carbonio dichiarato; intensità non modellata qui."
+          "energy_mix_note_it": "Processo bioheap leaching a basso carbonio dichiarato; intensità non modellata qui.",
+          "energy_mix_note_en": "Declared low-carbon bioheap leaching process; intensity not modelled here."
         },
         "employment": {
           "direct": null,
@@ -1744,7 +1774,8 @@
           "conditions_tags": [
             "shift_work",
             "high_skill"
-          ]
+          ],
+          "note_en": "Industrial-scale site in Kainuu; headcount not fixed in this card."
         },
         "community_impact_it": "Polo europeo del nichel batteria; eredità ambientale Talvivaara e dibattiti locali su acqua/suolo.",
         "labor_risks": [
@@ -1766,7 +1797,8 @@
             "url": "https://www.openstreetmap.org/search?query=Terrafame%20Sotkamo",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "European battery-nickel hub; Talvivaara environmental legacy and local debates on water/soil."
       }
     },
     {
@@ -1801,7 +1833,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Gigafactory: alto prelievo elettrico; non modellato qui."
+          "energy_mix_note_it": "Gigafactory: alto prelievo elettrico; non modellato qui.",
+          "energy_mix_note_en": "Gigafactory: high electricity draw; not modelled here."
         },
         "employment": {
           "direct": null,
@@ -1811,7 +1844,8 @@
           "conditions_tags": [
             "shift_work",
             "high_skill"
-          ]
+          ],
+          "note_en": "Gigafactory headcount; not fixed in this card."
         },
         "community_impact_it": "Mega-sito cellulare sull’asse Budapest nord; pressione su rete e lavoro locale.",
         "labor_risks": [
@@ -1829,7 +1863,8 @@
             "accessed_at": "2026-09-29",
             "note": "Multi-region; majority initially Korea; EU/Asia automotive"
           }
-        ]
+        ],
+        "community_impact_en": "Cell mega-site on the northern Budapest axis; pressure on grid and local labor."
       }
     },
     {
@@ -1864,7 +1899,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Estrazione open-pit; impatto territoriale tipico, non quantificato qui."
+          "energy_mix_note_it": "Estrazione open-pit; impatto territoriale tipico, non quantificato qui.",
+          "energy_mix_note_en": "Open-pit extraction; typical territorial impact, not quantified here."
         },
         "employment": {
           "direct": null,
@@ -1874,7 +1910,8 @@
           "conditions_tags": [
             "shift_work",
             "hazardous"
-          ]
+          ],
+          "note_en": "Mining labor in Cabo Delgado; headcount not fixed in this card."
         },
         "community_impact_it": "Grande progetto minerario nel nord Mozambico; contesto di sicurezza regionale Cabo Delgado.",
         "labor_risks": [
@@ -1892,7 +1929,8 @@
             "url": "https://www.nsenergybusiness.com/projects/balama-graphite-project/",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Large mining project in northern Mozambique; regional security context in Cabo Delgado."
       }
     },
     {
@@ -1927,7 +1965,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Manifattura AAM; GWP dichiarato da Syrah su catena Balama→cliente, non modellato qui."
+          "energy_mix_note_it": "Manifattura AAM; GWP dichiarato da Syrah su catena Balama→cliente, non modellato qui.",
+          "energy_mix_note_en": "AAM manufacturing; GWP declared by Syrah on the Balama→customer chain, not modelled here."
         },
         "employment": {
           "direct": null,
@@ -1937,7 +1976,8 @@
           "conditions_tags": [
             "high_skill",
             "shift_work"
-          ]
+          ],
+          "note_en": "Battery process plant; headcount not fixed in this card."
         },
         "community_impact_it": "Nodo US IRA-aligned per anodo ex-China; legame diretto con miniera mozambicana.",
         "labor_risks": [
@@ -1955,7 +1995,8 @@
             "accessed_at": "2026-09-29",
             "note": "Also notes MoU Samsung SDI Aug 2023"
           }
-        ]
+        ],
+        "community_impact_en": "US IRA-aligned anode node outside China; direct link to the Mozambican mine."
       }
     },
     {
@@ -1990,7 +2031,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Pyrometallurgia + idro; intensità non modellata qui."
+          "energy_mix_note_it": "Pyrometallurgia + idro; intensità non modellata qui.",
+          "energy_mix_note_en": "Pyrometallurgy + hydro; intensity not modelled here."
         },
         "employment": {
           "direct": null,
@@ -2001,7 +2043,8 @@
             "high_skill",
             "hazardous",
             "shift_work"
-          ]
+          ],
+          "note_en": "Historic Umicore refining site; battery-recycling headcount not separated in this card."
         },
         "community_impact_it": "Polo recycling in area Anversa; dibattiti storici su emissioni del sito Hoboken più ampio.",
         "labor_risks": [
@@ -2024,7 +2067,8 @@
             "url": "https://www.openstreetmap.org/search?query=Umicore%20Hoboken",
             "accessed_at": "2026-09-29"
           }
-        ]
+        ],
+        "community_impact_en": "Recycling hub in the Antwerp area; historical debates on emissions from the wider Hoboken site."
       }
     },
     {

@@ -33,13 +33,15 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Gas a ciclo combinato: elevata densità di potenza, emissioni di CO₂ e dipendenza dal gas."
+          "energy_mix_note_it": "Gas a ciclo combinato: elevata densità di potenza, emissioni di CO₂ e dipendenza dal gas.",
+          "energy_mix_note_en": "Combined-cycle gas: high power density, CO₂ emissions and gas dependence."
         },
         "employment": {
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Centrale CCGT ~1,3 GW: organico operativo contenuto (turnisti, manutenzione) rispetto alla potenza. Appalti di manutenzione rilevanti; non confrontare i MW con i posti di lavoro come se fossero proporzionali.",
+          "note_en": "CCGT plant ~1.3 GW: modest operating staff (shift workers, maintenance) relative to capacity. Significant maintenance contracting; do not treat MW and jobs as proportional.",
           "conditions_tags": [
             "shift_work",
             "high_skill"
@@ -53,7 +55,8 @@
             "note": "Capacità ~1.280–1.334 MW inclusa unità 2022"
           }
         ],
-        "community_impact_it": "Impatto soprattutto emissivo, di gas e di rete locale. L’organico operativo è contenuto rispetto alla potenza. Non è l’allaccio dei data center milanesi."
+        "community_impact_it": "Impatto soprattutto emissivo, di gas e di rete locale. L’organico operativo è contenuto rispetto alla potenza. Non è l’allaccio dei data center milanesi.",
+        "community_impact_en": "Impact is mainly emissions, gas and local-grid related. Operating headcount is modest relative to capacity. It is not the connection point for Milan-area data centers."
       }
     },
     {
@@ -73,6 +76,7 @@
         "operator": "Enel Green Power",
         "capacity": "87 MW",
         "description_it": "Il più grande parco fotovoltaico del nord Italia, a Trino (Vercelli): ~87 MW, ~160.000 pannelli e sistema di accumulo. Operativo da giugno 2024 sull’area di un’ex centrale termoelettrica. Nello stesso territorio è previsto il Cavour Hyperscale Campus (dc_028) sulla ex Galileo Ferraris: nodo chiave energia↔AI in Piemonte.",
+        "description_en": "Northern Italy’s largest solar farm, at Trino (Vercelli): ~87 MW, ~160,000 panels and a storage system. Operational since June 2024 on the site of a former thermal power plant. In the same area the Cavour Hyperscale Campus (dc_028) is planned on the former Galileo Ferraris site: a key energy↔AI node in Piedmont.",
         "country": "IT",
         "city": "Trino",
         "updated_at": "2026-09-27",
@@ -84,7 +88,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Fotovoltaico utility-scale con accumulo; produzione stimata ~130 GWh/anno."
+          "energy_mix_note_it": "Fotovoltaico utility-scale con accumulo; produzione stimata ~130 GWh/anno.",
+          "energy_mix_note_en": "Utility-scale solar with storage; estimated output ~130 GWh/year."
         },
         "sources": [
           {
@@ -112,6 +117,7 @@
         "operator": "Enel / EDP Renewables / Iberdrola / CCE Italia",
         "capacity": "125+ MW (combinato)",
         "description_it": "Hub solare a Montalto di Castro, Lazio, con molteplici installazioni: Enel (9-10 MW nel complesso Alessandro Volta con moduli bifacciali), Castrum 13 di EDP Renewables (41 MW), Iberdrola (23 MW), CCE Italia (42 MW). Capacità combinata superiore a 125 MW, importante polo di energia rinnovabile nel Lazio.",
+        "description_en": "Solar hub at Montalto di Castro, Lazio, with multiple installations: Enel (9–10 MW in the Alessandro Volta complex with bifacial modules), EDP Renewables’ Castrum 13 (41 MW), Iberdrola (23 MW), CCE Italia (42 MW). Combined capacity above 125 MW, a major renewable energy pole in Lazio.",
         "country": "IT",
         "city": "Montalto di Castro"
       }
@@ -133,6 +139,7 @@
         "operator": "BKW",
         "capacity": "125 MW",
         "description_it": "Parco eolico di Cerignola in Puglia, circa 100 km a ovest di Bari. 29 turbine distribuite tra Cerignola Nord e Cerignola Sud, con produzione annua di oltre 310 GWh. Il più grande parco eolico di BKW fuori dalla Svizzera, commissionato nel gennaio 2026. La Puglia è leader in Italia per capacità eolica installata con 2,5 GW.",
+        "description_en": "Cerignola wind farm in Apulia, about 100 km west of Bari. 29 turbines across Cerignola Nord and Cerignola Sud, with annual output over 310 GWh. BKW’s largest wind farm outside Switzerland, commissioned in January 2026. Apulia leads Italy for installed wind capacity at 2.5 GW.",
         "country": "IT",
         "city": "Cerignola"
       }
@@ -154,6 +161,7 @@
         "operator": "IVPC Group / Eurus Energy",
         "capacity": "134 MW",
         "description_it": "Parco eolico nel Fortore, provincia di Benevento, Campania. Progetto di repowering da 187 milioni di euro che sostituisce 140 turbine legacy con 17 turbine GE Vernova da 6,1 MW ciascuna. Chiusura finanziaria nel giugno 2026, consegne turbine previste dal Q2 2027. Uno dei più grandi progetti eolici in Italia.",
+        "description_en": "Wind farm in the Fortore, Benevento province, Campania. €187 million repowering project replacing 140 legacy turbines with 17 GE Vernova turbines of 6.1 MW each. Financial close in June 2026, turbine deliveries expected from Q2 2027. One of Italy’s largest wind projects.",
         "country": "IT",
         "city": "Montefalcone di Val Fortore"
       }
@@ -175,6 +183,7 @@
         "operator": "Edison",
         "capacity": "770 MW",
         "description_it": "Centrale termoelettrica a gas a ciclo combinato di ultima generazione a Presenzano, Caserta, Campania. Investimento di 450 milioni di euro, inaugurata nell'ottobre 2024. Utilizza turbina a gas GT36 H-class di Ansaldo Energia, una delle centrali a gas più efficienti d'Italia.",
+        "description_en": "Next-generation combined-cycle gas plant at Presenzano, Caserta, Campania. €450 million investment, inaugurated in October 2024. Uses Ansaldo Energia’s GT36 H-class gas turbine; one of Italy’s most efficient gas plants.",
         "country": "IT",
         "city": "Presenzano"
       }
@@ -196,6 +205,7 @@
         "operator": "Vattenfall",
         "capacity": "811 MW",
         "description_it": "Una delle più grandi centrali idroelettriche della Svezia, sul fiume Lule (Lule Älv) nella contea di Norrbotten, circa 8 km a valle di Porjus. Parte del portafoglio idroelettrico di Vattenfall di circa 100 centrali in Svezia (8.500 MW totali). Fonte di energia rinnovabile chiave per i data center del nord della Svezia, incluso il data center Meta di Luleå.",
+        "description_en": "One of Sweden’s largest hydropower plants, on the Lule River (Lule Älv) in Norrbotten County, about 8 km downstream of Porjus. Part of Vattenfall’s hydropower portfolio of about 100 plants in Sweden (8,500 MW total). A key renewable source for northern Sweden data centers, including Meta’s Luleå facility.",
         "country": "SE",
         "city": "Jokkmokk",
         "employment": {
@@ -203,6 +213,7 @@
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Grande idroelettrico Vattenfall: organico di centrale tipicamente ridotto e altamente specializzato. Alimenta Meta Luleå via accordo di fornitura: il contrasto lavoro è tra pochi operatori di diga/centrale e i ~300 del campus Meta a valle.",
+          "note_en": "Large Vattenfall hydro: plant staff typically small and highly specialized. Supplies Meta Luleå via a supply agreement: the labor contrast is between a few dam/plant operators and the ~300 at Meta’s downstream campus.",
           "conditions_tags": [
             "high_skill",
             "shift_work"
@@ -210,6 +221,7 @@
         },
         "labor_risks": [],
         "community_impact_it": "Bacino del Lule Älv: infrastruttura energetica storica del Norrbotten, oggi anche «carburante» dei data center artici.",
+        "community_impact_en": "Lule Älv basin: historic Norrbotten energy infrastructure, today also «fuel» for Arctic data centers.",
         "updated_at": "2026-09-27"
       }
     },
@@ -230,6 +242,7 @@
         "operator": "Vattenfall",
         "capacity": "422 MW",
         "description_it": "Centrale idroelettrica sotterranea sul fiume Stora Luleälv nel comune di Jokkmokk, Svezia. Parte del sistema idroelettrico del fiume Lule che alimenta i data center nel nord della Svezia. Vattenfall sta pianificando espansioni con capacità aggiuntiva di 720 MW a partire dal 2026.",
+        "description_en": "Underground hydropower plant on the Stora Luleälv in Jokkmokk municipality, Sweden. Part of the Lule River hydro system that supplies data centers in northern Sweden. Vattenfall is planning expansions with 720 MW of additional capacity from 2026.",
         "country": "SE",
         "city": "Jokkmokk"
       }
@@ -251,6 +264,7 @@
         "operator": "Vattenfall (70,4%) / Uniper (29,6%)",
         "capacity": "2.190 MW (2 reattori operativi)",
         "description_it": "La più grande centrale elettrica della Scandinavia, sulla penisola di Värö, circa 60 km a sud di Göteborg. Due reattori operativi (Unità 3: 1.074 MW, Unità 4: 1.130 MW) che generano circa il 20% dell'energia elettrica svedese (circa 24 TWh/anno). Vattenfall sta esplorando nuova capacità nucleare con piccoli reattori modulari (SMR) per ulteriori 1.500 MW.",
+        "description_en": "Scandinavia’s largest power plant, on the Värö peninsula about 60 km south of Gothenburg. Two operating reactors (Unit 3: 1,074 MW, Unit 4: 1,130 MW) generating about 20% of Sweden’s electricity (around 24 TWh/year). Vattenfall is exploring new nuclear capacity with small modular reactors (SMR) for a further 1,500 MW.",
         "country": "SE",
         "city": "Varberg"
       }
@@ -272,6 +286,7 @@
         "operator": "Teollisuuden Voima (TVO)",
         "capacity": "2.800 MW (3 reattori)",
         "description_it": "Centrale nucleare a Eurajoki, Satakunta, nel sud-ovest della Finlandia. Tre reattori: Olkiluoto 1 e 2 (BWR, 860-890 MW ciascuno) e Olkiluoto 3 (EPR, 1.600 MW), il primo reattore EPR in Europa, operativo commercialmente dall'aprile 2023. Olkiluoto 3 produce circa il 14% dell'elettricità finlandese.",
+        "description_en": "Nuclear plant at Eurajoki, Satakunta, in southwestern Finland. Three reactors: Olkiluoto 1 and 2 (BWR, 860–890 MW each) and Olkiluoto 3 (EPR, 1,600 MW), Europe’s first EPR reactor, commercially operational since April 2023. Olkiluoto 3 produces about 14% of Finland’s electricity.",
         "country": "FI",
         "city": "Eurajoki"
       }
@@ -293,6 +308,7 @@
         "operator": "Enel Green Power",
         "capacity": "170 MW (circa)",
         "description_it": "Il più grande impianto agrivoltaico d'Italia, in costruzione a Tarquinia, Lazio. Circa 170 MW di capacità, annunciato nel marzo 2023 da Enel Green Power. Combina produzione di energia solare con attività agricole, rappresentando un modello innovativo di uso del suolo.",
+        "description_en": "Italy’s largest agrivoltaic plant, under construction at Tarquinia, Lazio. About 170 MW capacity, announced in March 2023 by Enel Green Power. Combines solar generation with farming, an innovative land-use model.",
         "country": "IT",
         "city": "Tarquinia"
       }
@@ -340,6 +356,7 @@
         "operator": "CPC Finland / Ardian",
         "capacity": "57,3 MW",
         "description_it": "Parco eolico a Isojoki/Kristiinankaupunki (Finlandia occidentale), 14 turbine Vestas per 57,3 MW. Lakiakangas 2 è stato finanziato con il primo PPA eolico finlandese di Google, esplicitamente collegato al data center di Hamina.",
+        "description_en": "Wind farm at Isojoki/Kristiinankaupunki (western Finland), 14 Vestas turbines for 57.3 MW. Lakiakangas 2 was financed with Google’s first Finnish wind PPA, explicitly tied to the Hamina data center.",
         "country": "FI",
         "city": "Isojoki",
         "status": "operational",
@@ -354,7 +371,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore; PPA Google verso la rete di Hamina."
+          "energy_mix_note_it": "Eolico onshore; PPA Google verso la rete di Hamina.",
+          "energy_mix_note_en": "Onshore wind; Google PPA toward the Hamina grid."
         },
         "sources": [
           {
@@ -368,6 +386,7 @@
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Parco eolico: pochi posti permanenti di O&M dopo il cantiere. Il PPA Google→Hamina sposta valore energetico, non crea un polo occupazionale comparabile a una fab o a una miniera.",
+          "note_en": "Wind farm: few permanent O&M jobs after construction. The Google→Hamina PPA shifts energy value; it does not create an employment pole comparable to a fab or a mine.",
           "conditions_tags": [
             "construction_phase"
           ]
@@ -375,7 +394,8 @@
         "labor_risks": [
           "construction_phase"
         ],
-        "community_impact_it": "Impatto locale tipico dell’eolico onshore (paesaggio, cantiere breve, O&M ridotto)."
+        "community_impact_it": "Impatto locale tipico dell’eolico onshore (paesaggio, cantiere breve, O&M ridotto).",
+        "community_impact_en": "Typical local impact of onshore wind (landscape, short construction phase, limited O&M)."
       }
     },
     {
@@ -395,6 +415,7 @@
         "operator": "Ilmatar Energy",
         "capacity": "211 MW",
         "description_it": "Uno dei maggiori parchi eolici finlandesi (41 turbine, 211 MW) sul confine Kajaani–Pyhäntä. Google ha firmato un PPA per 125 MW della produzione a servizio del campus di Hamina.",
+        "description_en": "One of Finland’s largest wind farms (41 turbines, 211 MW) on the Kajaani–Pyhäntä border. Google signed a PPA for 125 MW of output serving the Hamina campus.",
         "country": "FI",
         "city": "Pyhäntä / Kajaani",
         "status": "operational",
@@ -409,7 +430,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore; 125 MW sotto PPA Google per Hamina."
+          "energy_mix_note_it": "Eolico onshore; 125 MW sotto PPA Google per Hamina.",
+          "energy_mix_note_en": "Onshore wind; 125 MW under Google PPA for Hamina."
         },
         "sources": [
           {
@@ -423,6 +445,7 @@
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "211 MW, 41 turbine: occupazione permanente di gestione molto inferiore al carico di lavoro del cantiere. Serve Hamina via PPA, non come fabbrica di posti locali.",
+          "note_en": "211 MW, 41 turbines: permanent operating jobs far below construction workload. Serves Hamina via PPA, not as a local job factory.",
           "conditions_tags": [
             "construction_phase"
           ]
@@ -430,7 +453,8 @@
         "labor_risks": [
           "construction_phase"
         ],
-        "community_impact_it": "Ricavi fiscali locali rilevanti per i comuni ospitanti; posti permanenti limitati rispetto alla potenza."
+        "community_impact_it": "Ricavi fiscali locali rilevanti per i comuni ospitanti; posti permanenti limitati rispetto alla potenza.",
+        "community_impact_en": "Meaningful local tax revenue for host municipalities; permanent jobs limited relative to capacity."
       }
     },
     {
@@ -450,6 +474,7 @@
         "operator": "SSE Renewables / FuturEnergy Ireland",
         "capacity": "30,1 MW",
         "description_it": "Parco eolico onshore da 7 turbine Vestas (30,1 MW) a sud-ovest di Letterkenny, Donegal. Operativo dalla fine del 2023. Sotto CPPA Microsoft: l'elettricità contribuisce all'obiettivo di alimentare i data center irlandesi al 100% con rinnovabili entro il 2025.",
+        "description_en": "Onshore wind farm with 7 Vestas turbines (30.1 MW) southwest of Letterkenny, Donegal. Operational since late 2023. Under a Microsoft CPPA: the power contributes to the goal of supplying Irish data centers with 100% renewables by 2025.",
         "country": "IE",
         "city": "Letterkenny",
         "status": "operational",
@@ -464,7 +489,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore; CPPA Microsoft verso i data center in Irlanda."
+          "energy_mix_note_it": "Eolico onshore; CPPA Microsoft verso i data center in Irlanda.",
+          "energy_mix_note_en": "Onshore wind; Microsoft CPPA toward data centers in Ireland."
         },
         "sources": [
           {
@@ -478,6 +504,7 @@
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "7 turbine / 30 MW: dopo il commissioning restano principalmente ruoli O&M. Il CPPA Microsoft è un contratto energetico, non un piano occupazionale per Donegal.",
+          "note_en": "7 turbines / 30 MW: after commissioning mainly O&M roles remain. The Microsoft CPPA is an energy contract, not an employment plan for Donegal.",
           "conditions_tags": [
             "construction_phase"
           ]
@@ -485,7 +512,8 @@
         "labor_risks": [
           "construction_phase"
         ],
-        "community_impact_it": "Progetto rurale in Donegal: beneficio energetico/fiscale più che occupazionale di massa."
+        "community_impact_it": "Progetto rurale in Donegal: beneficio energetico/fiscale più che occupazionale di massa.",
+        "community_impact_en": "Rural Donegal project: energy/fiscal benefit more than mass employment."
       }
     },
     {
@@ -505,6 +533,7 @@
         "operator": "Eolus / Mirova",
         "capacity": "31,5 MW",
         "description_it": "Parco eolico onshore a Hjo (Västra Götaland), 7 turbine per 31,5 MW, parte del portafoglio Saena. Operativo; Amazon ha firmato un PPA sul progetto nell'ambito di circa 1 GW di capacità eolica contrattata in Svezia a supporto della regione AWS Europe (Stoccolma).",
+        "description_en": "Onshore wind farm at Hjo (Västra Götaland), 7 turbines for 31.5 MW, part of the Saena portfolio. Operational; Amazon signed a PPA on the project within about 1 GW of wind capacity contracted in Sweden to support the AWS Europe region (Stockholm).",
         "country": "SE",
         "city": "Hjo",
         "status": "operational",
@@ -519,7 +548,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore SE3; PPA Amazon per operazioni svedesi / regione Stoccolma."
+          "energy_mix_note_it": "Eolico onshore SE3; PPA Amazon per operazioni svedesi / regione Stoccolma.",
+          "energy_mix_note_en": "Onshore wind SE3; Amazon PPA for Swedish operations / Stockholm region."
         },
         "sources": [
           {
@@ -538,6 +568,7 @@
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Parco Saena operativo: pochi posti O&M permanenti. Il PPA Amazon collega il lavoro del cantiere eolico alla regione AWS Stoccolma, dove l’occupazione DC resta opaca e contenuta.",
+          "note_en": "Operational Saena farm: few permanent O&M jobs. The Amazon PPA links wind-construction work to the AWS Stockholm region, where DC employment remains opaque and limited.",
           "conditions_tags": [
             "construction_phase"
           ]
@@ -545,7 +576,8 @@
         "labor_risks": [
           "construction_phase"
         ],
-        "community_impact_it": "Eolico in SE3: pressione paesaggistica locale vs contributi a rete e contratti PPA hyperscale."
+        "community_impact_it": "Eolico in SE3: pressione paesaggistica locale vs contributi a rete e contratti PPA hyperscale.",
+        "community_impact_en": "Wind in SE3: local landscape pressure vs grid contributions and hyperscale PPA contracts."
       }
     },
     {
@@ -580,13 +612,15 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Fotovoltaico; PPA virtuale Equinix (portfolio 53 MW)."
+          "energy_mix_note_it": "Fotovoltaico; PPA virtuale Equinix (portfolio 53 MW).",
+          "energy_mix_note_en": "Solar; virtual Equinix PPA (53 MW portfolio)."
         },
         "employment": {
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Impianto FV di piccola-media taglia: organico operativo contenuto.",
+          "note_en": "Small-to-medium solar plant: modest operating staff.",
           "conditions_tags": [
             "high_skill"
           ]
@@ -605,7 +639,8 @@
             "note": "Portfolio di sette progetti nel Nord Italia; virtual PPA"
           }
         ],
-        "community_impact_it": "Impatto locale tipico di un FV di piccola-media taglia su suolo agricolo. Il legame con Equinix è contrattuale (PPA), non un allaccio fisico al campus."
+        "community_impact_it": "Impatto locale tipico di un FV di piccola-media taglia su suolo agricolo. Il legame con Equinix è contrattuale (PPA), non un allaccio fisico al campus.",
+        "community_impact_en": "Typical local impact of a small-to-medium solar plant on agricultural land. The Equinix link is contractual (PPA), not a physical campus connection."
       }
     },
     {
@@ -640,13 +675,15 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Gas termoelettrico; densità di potenza elevata. Il data center MXP4 è co-locato, non un offtake documentato."
+          "energy_mix_note_it": "Gas termoelettrico; densità di potenza elevata. Il data center MXP4 è co-locato, non un offtake documentato.",
+          "energy_mix_note_en": "Thermal gas; high power density. The MXP4 data center is co-located, not a documented offtake."
         },
         "employment": {
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Centrale CCGT di grande taglia: organico operativo contenuto rispetto ai MW; manutenzione in appalto.",
+          "note_en": "Large CCGT plant: modest operating staff relative to MW; contracted maintenance.",
           "conditions_tags": [
             "shift_work",
             "high_skill"
@@ -671,7 +708,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "community_impact_it": "Nodo energetico lodigiano già carico; l’arrivo di MXP4 riapre il dibattito su emissioni, suolo e ruolo della centrale."
+        "community_impact_it": "Nodo energetico lodigiano già carico; l’arrivo di MXP4 riapre il dibattito su emissioni, suolo e ruolo della centrale.",
+        "community_impact_en": "Already loaded Lodi-area energy node; MXP4’s arrival reopens debate on emissions, land use and the plant’s role."
       }
     },
     {
@@ -706,13 +744,15 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Fotovoltaico; PPA Data4 (baseload dichiarato >500 GWh/10 anni)."
+          "energy_mix_note_it": "Fotovoltaico; PPA Data4 (baseload dichiarato >500 GWh/10 anni).",
+          "energy_mix_note_en": "Solar; Data4 PPA (declared baseload >500 GWh/10 years)."
         },
         "employment": {
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
           "note_it": "Impianto FV utility-scale: organico operativo contenuto; dettaglio non in comunicato.",
+          "note_en": "Utility-scale solar plant: modest operating staff; detail not in the release.",
           "conditions_tags": [
             "high_skill"
           ]
@@ -731,7 +771,8 @@
             "accessed_at": "2026-09-29"
           }
         ],
-        "community_impact_it": "Nuovo FV utility-scale nel Viterbese a servizio contrattuale di un operatore data center; impatto suolo/paesaggio locale tipico del fotovoltaico a terra."
+        "community_impact_it": "Nuovo FV utility-scale nel Viterbese a servizio contrattuale di un operatore data center; impatto suolo/paesaggio locale tipico del fotovoltaico a terra.",
+        "community_impact_en": "New utility-scale solar in the Viterbo area under contract to a data-center operator; typical ground-mounted PV land/landscape impact."
       }
     },
     {
@@ -766,7 +807,8 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Gas con cattura CO₂ dichiarata (Blue Power). Impianto non ancora in esercizio; legame col campus = HoT, non PPA eseguito."
+          "energy_mix_note_it": "Gas con cattura CO₂ dichiarata (Blue Power). Impianto non ancora in esercizio; legame col campus = HoT, non PPA eseguito.",
+          "energy_mix_note_en": "Gas with declared CO₂ capture (Blue Power). Plant not yet in operation; campus link = HoT, not an executed PPA."
         },
         "sources": [
           {
@@ -814,9 +856,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore puglieses; MW del singolo sito non pubblicati nella scheda Edison consultata."
+          "energy_mix_note_it": "Eolico onshore puglieses; MW del singolo sito non pubblicati nella scheda Edison consultata.",
+          "energy_mix_note_en": "Apulian onshore wind; single-site MW not published in the consulted Edison factsheet."
         },
         "community_impact_it": "Pressione tipica di parco eolico su crinale/agro pugliese; dibattito locale su paesaggio e allacci.",
+        "community_impact_en": "Typical wind-farm pressure on Apulian ridge/farmland; local debate on landscape and grid connections.",
         "sources": [
           {
             "title": "Edison — Wind power (portfolio Sud, Troia FG)",
@@ -859,9 +903,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore siciliano; MW sito non in scheda aperta consultata."
+          "energy_mix_note_it": "Eolico onshore siciliano; MW sito non in scheda aperta consultata.",
+          "energy_mix_note_en": "Sicilian onshore wind; site MW not in the consulted open factsheet."
         },
         "community_impact_it": "Impatto paesaggistico tipico dell’eolico costiero/entroterra trapanese.",
+        "community_impact_en": "Typical landscape impact of coastal/inland Trapani-area wind.",
         "sources": [
           {
             "title": "Edison — Wind power (Mazara del Vallo)",
@@ -903,9 +949,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore; ERG leader nazionale. Capacità post-repowering da fonti di settore."
+          "energy_mix_note_it": "Eolico onshore; ERG leader nazionale. Capacità post-repowering da fonti di settore.",
+          "energy_mix_note_en": "Onshore wind; ERG national leader. Post-repowering capacity from industry sources."
         },
         "community_impact_it": "Repowering: meno turbine, potenze unitarie maggiori; dibattiti tipici su crinali siciliani.",
+        "community_impact_en": "Repowering: fewer turbines, higher unit capacities; typical debates on Sicilian ridges.",
         "sources": [
           {
             "title": "ERG — Integrated Annual Report 2025 (wind IT leadership)",
@@ -954,9 +1002,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore abruzzese; MW sito non in scheda aperta consultata."
+          "energy_mix_note_it": "Eolico onshore abruzzese; MW sito non in scheda aperta consultata.",
+          "energy_mix_note_en": "Abruzzo onshore wind; site MW not in the consulted open factsheet."
         },
         "community_impact_it": "Impatto tipico di parco su area interna abruzzese.",
+        "community_impact_en": "Typical farm impact on an inland Abruzzo area.",
         "sources": [
           {
             "title": "Edison — Wind power (Castiglione Messer Marino)",
@@ -998,9 +1048,11 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Eolico onshore abruzzese; MW sito non in scheda aperta consultata."
+          "energy_mix_note_it": "Eolico onshore abruzzese; MW sito non in scheda aperta consultata.",
+          "energy_mix_note_en": "Abruzzo onshore wind; site MW not in the consulted open factsheet."
         },
         "community_impact_it": "Impatto tipico di parco su area interna abruzzese.",
+        "community_impact_en": "Typical farm impact on an inland Abruzzo area.",
         "sources": [
           {
             "title": "Edison — Wind power (Schiavi d’Abruzzo)",
