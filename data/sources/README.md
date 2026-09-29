@@ -41,8 +41,11 @@ L'output normalizzato va in `data/candidates/`; la mappa legge da `public/data/`
 - **Rete elettrica**: tile live OpenInfraMap (`power_line`)
 - **Stress idrico**: `public/data/overlays/water_stress_eu.geojson` (Aqueduct 4.0 × HydroBASINS L6)
 - **Cavi sottomarini**: `public/data/overlays/submarine_cables.geojson` + `cable_landings.geojson`
+- **Confini regioni italiane** (evidenziazione temporanea in ricerca luogo): `public/data/overlays/it_regions.geojson`
+  - Sorgente grezza: `data/sources/it_regions.geojson` (geometrie semplificate da confini ISTAT/Openpolis, con alias IT/EN)
+  - Uso UI: highlight fill/line su selezione regione da Nominatim; non è un layer filtro permanente
 
 Fetch bacini Aqueduct: `npm run data:fetch:aqueduct`  
 Rigenera overlay locali: `npm run data:overlays`
 
-Sorgenti grezze: `cables_raw.json`, `landing_raw.json`, `aqueduct40_eu_bws_basins.geojson`.
+Sorgenti grezze: `cables_raw.json`, `landing_raw.json`, `aqueduct40_eu_bws_basins.geojson`, `it_regions.geojson`.

@@ -260,12 +260,25 @@ async function main() {
           'Dataset storico non commerciale; rotte e landing in Europa. Non aggiornato in tempo reale.',
         note_en:
           'Non-commercial historical dataset; routes and landings in Europe. Not updated in real time.'
+      },
+      {
+        id: 'it_regions',
+        title: 'Confini regioni italiane (ISTAT / Openpolis)',
+        url: 'https://github.com/openpolis/geojson-italy',
+        license: 'CC BY 4.0',
+        license_url: 'https://creativecommons.org/licenses/by/4.0/',
+        used_for: ['overlays'],
+        note_it:
+          'Geometrie semplificate per evidenziare temporaneamente una regione dalla ricerca luogo (non overlay permanente).',
+        note_en:
+          'Simplified geometries used to temporarily highlight an Italian region from place search (not a permanent overlay).'
       }
     ],
     overlays: {
       power_grid: 'OpenInfraMap vector tiles',
       water_stress: 'EU HydroBASINS L6 choropleth from Aqueduct 4.0 baseline water stress',
-      submarine_cables: 'Europe-filtered historical TeleGeography GeoJSON'
+      submarine_cables: 'Europe-filtered historical TeleGeography GeoJSON',
+      it_regions: 'Simplified ISTAT/Openpolis regions for temporary place-search highlight'
     },
     methodology_it:
       'I record curati editorialmente (descrizioni, impatto, subtype) hanno sempre priorità sui candidati automatici. ' +

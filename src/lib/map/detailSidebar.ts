@@ -7,6 +7,7 @@ import {
 } from '../mapIcons';
 import { POINT_LAYERS, STATUS_BADGE_LAYERS, CONNECTION_LAYER_IDS } from './constants';
 import { escapeHtml, sanitizeUrl } from './domUtils';
+import { clearPlaceBoundary } from './placeSearch';
 import type { MapContext } from './types';
 
 export function attachDetailSidebar(ctx: MapContext) {
@@ -408,6 +409,7 @@ export function attachDetailSidebar(ctx: MapContext) {
     if (searchToggleBtn) searchToggleBtn.setAttribute('aria-expanded', 'false');
     ctx.highlightConnections(resolved.id);
     if (options.frame !== false) ctx.frameSelection(resolved.id);
+    clearPlaceBoundary(ctx.map);
     window.SubstratoMapChrome?.dismissMapHint?.();
     ctx.hideTooltip();
 
@@ -601,6 +603,7 @@ export function attachDetailSidebar(ctx: MapContext) {
 
     ctx.highlightConnectionEdge(props);
     if (options.frame !== false) ctx.frameConnection(props);
+    clearPlaceBoundary(ctx.map);
     window.SubstratoMapChrome?.dismissMapHint?.();
     ctx.hideTooltip();
 
