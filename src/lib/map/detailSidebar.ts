@@ -1,14 +1,17 @@
 import { buildImpactModel } from '../impactEstimates';
+import { localizedText, numberLocale } from '../localizedField';
 import {
   ICON_SIZE_HIGHLIGHT_BY_ZOOM,
   ICON_SIZE_DIMMED_BY_ZOOM,
   SUBTYPE_COLORS
 } from '../mapIcons';
-import { POINT_LAYERS, STATUS_BADGE_LAYERS } from './constants';
+import { POINT_LAYERS, STATUS_BADGE_LAYERS, CONNECTION_LAYER_IDS } from './constants';
 import { escapeHtml, sanitizeUrl } from './domUtils';
 import type { MapContext } from './types';
 
 export function attachDetailSidebar(ctx: MapContext) {
+  const numLocale = numberLocale(ctx.locale);
+
   function closeDetailSidebar() {
     ctx.detailSidebar.classList.remove('open');
     ctx.detailSidebar.classList.remove('is-pulse');
@@ -18,16 +21,16 @@ export function attachDetailSidebar(ctx: MapContext) {
 
   function formatNumber(value) {
     if (value === null || value === undefined || value === '') return null;
-    return typeof value === 'number' ? value.toLocaleString('it-IT') : String(value);
+    return typeof value === 'number' ? value.toLocaleString(numLocale) : String(value);
   }
 
   function formatCompactNumber(value) {
     if (value === null || value === undefined || Number.isNaN(value)) return '—';
     const abs = Math.abs(value);
-    if (abs >= 1_000_000) return `${(value / 1_000_000).toLocaleString('it-IT', { maximumFractionDigits: 1 })}M`;
-    if (abs >= 10_000) return `${Math.round(value).toLocaleString('it-IT')}`;
-    if (abs >= 100) return Math.round(value).toLocaleString('it-IT');
-    return value.toLocaleString('it-IT', { maximumFractionDigits: 2 });
+    if (abs >= 1_000_000) return `${(value / 1_000_000).toLocaleString(numLocale, { maximumFractionDigits: 1 })}M`;
+    if (abs >= 10_000) return `${Math.round(value).toLocaleString(numLocale)}`;
+    if (abs >= 100) return Math.round(value).toLocaleString(numLocale);
+    return value.toLocaleString(numLocale, { maximumFractionDigits: 2 });
   }
 
   const IMPACT_CARD_LABELS = {
@@ -50,7 +53,8 @@ export function attachDetailSidebar(ctx: MapContext) {
         });
 
     const hasCards = model && model.cards && model.cards.length > 0;
-    const hasNote = !!(impact && impact.energy_mix_note_it);
+    const energyMixNote = localizedText(impact, 'energy_mix_note', ctx.locale);
+    const hasNote = !!energyMixNote;
     if (!hasCards && !hasNote && !impact) return '';
 
     let html = `<div class="detail-section detail-impact"><h4>${ctx.i18n.popup.impact}</h4>`;
@@ -95,7 +99,7 @@ export function attachDetailSidebar(ctx: MapContext) {
     if (hasNote) {
       html += `<div class="detail-field">
         <div class="detail-field-label">${escapeHtml(ctx.i18n.popup.energy_mix)}</div>
-        <div class="detail-field-value">${escapeHtml(impact.energy_mix_note_it)}</div>
+        <div class="detail-field-value">${escapeHtml(energyMixNote)}</div>
       </div>`;
     }
     html += '</div>';
@@ -127,7 +131,7 @@ export function attachDetailSidebar(ctx: MapContext) {
   function buildEmploymentHtml(properties) {
     const emp = properties.employment;
     const risks = properties.labor_risks;
-    const community = properties.community_impact_it;
+    const community = localizedText(properties, 'community_impact', ctx.locale);
     if (!emp && !(risks && risks.length) && !community) return '';
 
     let html = '';
@@ -149,8 +153,9 @@ export function attachDetailSidebar(ctx: MapContext) {
             <div class="detail-field-value">${value}</div>
           </div>`;
         });
-        if (emp.note_it) {
-          html += `<p class="detail-note">${escapeHtml(emp.note_it)}</p>`;
+        const empNote = localizedText(emp, 'note', ctx.locale);
+        if (empNote) {
+          html += `<p class="detail-note">${escapeHtml(empNote)}</p>`;
         }
         if (Array.isArray(emp.conditions_tags) && emp.conditions_tags.length) {
           html += `<div class="detail-field">
@@ -187,11 +192,14 @@ export function attachDetailSidebar(ctx: MapContext) {
     const accentColor =
       (properties.subtype && SUBTYPE_COLORS[properties.subtype]) ||
       (featureType === 'data_center' ? ctx.COLORS.dc :
-        featureType === 'raw_material' ? ctx.COLORS.rm : ctx.COLORS.ep);
+        featureType === 'raw_material' ? ctx.COLORS.rm :
+        featureType === 'grid_node' ? ctx.COLORS.gn : ctx.COLORS.ep);
     const shapeClass = featureType === 'data_center' ? '' :
-                       featureType === 'raw_material' ? 'shape-rm' : 'shape-ep';
+                       featureType === 'raw_material' ? 'shape-rm' :
+                       featureType === 'grid_node' ? 'shape-gn' : 'shape-ep';
     const typeLabel = featureType === 'data_center' ? ctx.i18n.layers.data_centers :
                       featureType === 'raw_material' ? ctx.i18n.layers.raw_materials :
+                      featureType === 'grid_node' ? ctx.i18n.layers.grid_nodes :
                       ctx.i18n.layers.energy_plants;
 
     const place = [properties.city, ctx.getCountryName(properties.country)].filter(Boolean).join(', ');
@@ -201,8 +209,9 @@ export function attachDetailSidebar(ctx: MapContext) {
       html += `<p class="detail-place">${escapeHtml(place)}</p>`;
     }
 
-    if (properties.description_it) {
-      html += `<p class="detail-description">${escapeHtml(properties.description_it)}</p>`;
+    const description = localizedText(properties, 'description', ctx.locale);
+    if (description) {
+      html += `<p class="detail-description">${escapeHtml(description)}</p>`;
     }
 
     const facts = [];
@@ -259,6 +268,12 @@ export function attachDetailSidebar(ctx: MapContext) {
 
     if (featureType === 'data_center') {
       pushConnGroup(
+        ctx.i18n.popup.connected_to,
+        incoming.filter(c => c.properties.relationship_type === 'connects'),
+        'is-connect',
+        p => p.source_id
+      );
+      pushConnGroup(
         ctx.i18n.popup.powered_by,
         incoming.filter(c => c.properties.relationship_type === 'powers'),
         'is-power',
@@ -296,7 +311,31 @@ export function attachDetailSidebar(ctx: MapContext) {
         p => p.source_id
       );
     } else if (featureType === 'energy_plant') {
-      pushConnGroup(ctx.i18n.popup.powers_to, outgoing, 'is-power', p => p.target_id);
+      pushConnGroup(
+        ctx.i18n.popup.connects_to,
+        outgoing.filter(c => c.properties.relationship_type === 'connects'),
+        'is-connect',
+        p => p.target_id
+      );
+      pushConnGroup(
+        ctx.i18n.popup.powers_to,
+        outgoing.filter(c => c.properties.relationship_type === 'powers'),
+        'is-power',
+        p => p.target_id
+      );
+    } else if (featureType === 'grid_node') {
+      pushConnGroup(
+        ctx.i18n.popup.connected_to,
+        incoming.filter(c => c.properties.relationship_type === 'connects'),
+        'is-connect',
+        p => p.source_id
+      );
+      pushConnGroup(
+        ctx.i18n.popup.connects_to,
+        outgoing.filter(c => c.properties.relationship_type === 'connects'),
+        'is-connect',
+        p => p.target_id
+      );
     }
 
     if (connBlocks.length) {
@@ -367,12 +406,14 @@ export function attachDetailSidebar(ctx: MapContext) {
   function connAccent(relType) {
     if (relType === 'powers') return ctx.COLORS.ep;
     if (relType === 'supplies') return ctx.COLORS.rm;
+    if (relType === 'connects') return ctx.COLORS.gn;
     return ctx.COLORS.dc;
   }
 
   function connIconClass(relType) {
     if (relType === 'powers') return 'is-power';
     if (relType === 'supplies') return 'is-supply';
+    if (relType === 'connects') return 'is-connect';
     return 'is-mfg';
   }
 
@@ -385,10 +426,10 @@ export function attachDetailSidebar(ctx: MapContext) {
           ['==', ['get', 'source_id'], props.source_id],
           ['==', ['get', 'target_id'], props.target_id]
         ];
-    ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+    CONNECTION_LAYER_IDS.forEach(layerId => {
       if (!ctx.map.getLayer(layerId)) return;
-      ctx.map.setPaintProperty(layerId, 'line-opacity', ['case', isThisEdge, 0.95, 0.1]);
-      ctx.map.setPaintProperty(layerId, 'line-width', ['case', isThisEdge, 3.6, 0.9]);
+      ctx.map.setPaintProperty(layerId, 'line-opacity', ['case', isThisEdge, 0.95, 0.08]);
+      ctx.map.setPaintProperty(layerId, 'line-width', ['case', isThisEdge, 3.6, 0.7]);
     });
     POINT_LAYERS.forEach(layerId => {
       if (!ctx.map.getLayer(layerId)) return;
@@ -466,14 +507,16 @@ export function attachDetailSidebar(ctx: MapContext) {
       </div>`;
     }
 
-    if (props.description_it) {
-      html += `<p class="detail-description">${escapeHtml(props.description_it)}</p>`;
+    const description = localizedText(props, 'description', ctx.locale);
+    if (description) {
+      html += `<p class="detail-description">${escapeHtml(description)}</p>`;
     }
 
-    if (props.evidence_note_it) {
+    const evidence = localizedText(props, 'evidence_note', ctx.locale);
+    if (evidence) {
       html += `<div class="detail-section">
         <h4>${ctx.i18n.popup.evidence}</h4>
-        <p class="detail-description detail-evidence">${escapeHtml(props.evidence_note_it)}</p>
+        <p class="detail-description detail-evidence">${escapeHtml(evidence)}</p>
       </div>`;
     }
 

@@ -250,6 +250,7 @@
     "share_title": "Take the topic beyond this page",
     "share_body": "Copy the link or share it where your community discusses — including Mastodon.",
     "share_copy": "Copy link",
+    "share_url_aria": "Page URL",
     "share_copied": "Link copied",
     "share_native": "Share…",
     "share_mastodon": "Mastodon",
@@ -268,6 +269,7 @@
     "data_centers": "Data Centers",
     "raw_materials": "Raw Materials and Production",
     "energy_plants": "Energy Plants",
+    "grid_nodes": "Grid nodes",
     "connections": "Connections"
   },
   "subtypes": {
@@ -286,12 +288,14 @@
     "solar": "Solar photovoltaic",
     "wind": "Wind",
     "hydro": "Hydroelectric",
-    "nuclear": "Nuclear"
+    "nuclear": "Nuclear",
+    "substation": "Grid node (substation)"
   },
   "relationships": {
-    "powers": "Powers",
+    "powers": "Energy contract",
     "supplies": "Supplies materials",
-    "manufactures_for": "Manufactures components for"
+    "manufactures_for": "Manufactures components for",
+    "connects": "Grid connection"
   },
   "popup": {
     "operator": "Operator",
@@ -301,13 +305,15 @@
     "country": "Country",
     "description": "Description",
     "connections": "Connections",
-    "connections_hint": "Follow a link to move to the connected site.",
+    "connections_hint": "Follow a link to move to the connected site. Inferred edges are drawn lighter on the map.",
     "open_connected": "Open on the map",
     "linked_sites": "Linked sites",
-    "powered_by": "Powered by",
+    "powered_by": "Contract with",
+    "connected_to": "Connected at",
     "components_from": "Components from",
     "supplies_from": "Supplies from",
-    "powers_to": "Powers",
+    "powers_to": "Contracts to",
+    "connects_to": "Connects",
     "supplies_to": "Supplies to",
     "receives_from": "Receives from",
     "manufactures_to": "Manufactures for",
@@ -433,15 +439,17 @@
     "solar": "Solar",
     "wind": "Wind",
     "hydro": "Hydro",
-    "nuclear": "Nuclear"
+    "nuclear": "Nuclear",
+    "substation": "Grid node"
   },
   "legend": {
     "title": "Legend",
     "points": "Points",
     "lines": "Connections",
-    "line_powers": "Energy supply",
+    "line_powers": "Energy contract",
     "line_supplies": "Material supply",
     "line_manufactures": "Component manufacturing",
+    "line_connects": "Grid connection",
     "status_halo_construction": "Solid warm = under construction",
     "status_halo_planned": "Fine hatch = planned",
     "status_style_operational": "Solid = operational",
@@ -512,7 +520,7 @@
       }
     ],
     "certainty_title": "Certainty on the link",
-    "certainty_lead": "Measures how well documented the relationship between two sites is (powers, supplies, manufactures_for). Every new edge requires certainty and an evidence note in Italian.",
+    "certainty_lead": "Measures how well documented the relationship between two sites is (powers, connects, supplies, manufactures_for). Every new edge requires certainty and an evidence note in Italian. Inferred edges are drawn lighter on the map.",
     "certainty_levels": [
       {
         "id": "confirmed",
@@ -527,7 +535,7 @@
       {
         "id": "inferred",
         "label": "Inferred",
-        "body": "Transparent working hypothesis: grid proximity, same product class, energy cluster. Never presented as fact. Example: Turbigo → Milan campuses without a public PPA."
+        "body": "Transparent working hypothesis: grid proximity, same product class, energy cluster. Never presented as fact. A link to a substation named in a filing does not say which plant produced the electricity: that link is a grid connection, not a power supply."
       },
       {
         "id": "disputed",
@@ -540,7 +548,8 @@
     "ladder": [
       "From inferred to likely: coherent evidence is required (same operator/basin contract, documented market supply chain) and a note explaining why it is not yet confirmed.",
       "From likely to confirmed: a named primary document is required (PPA, joint statement, report naming both parties). Without that the link stays likely or drops.",
-      "powers without a named PPA or offtake: never confirmed.",
+      "powers without a named PPA or offtake: never confirmed. A local energy asset on the same site/municipality without a named contract stays powers likely.",
+      "Grid connection (connects): confirmed when an EIA/screening/STMG names campus and substation, or when the plant is adjacent to its injection station. It does not say which plant produced electricity for a campus. connects inferred is allowed from a transmission injection node to campuses on the same grid cluster: the card must state it is not the campus connection and not an offtake (e.g. Turbigo 380 kV → Milan cluster). Inferred edges are drawn lighter on the map.",
       "supplies / manufactures_for only if the material or product belongs to that supply chain (no lithium→chip or cobalt→logic foundry).",
       "A site without an edge is valid: projects, context, inventories. We do not invent links to fill the map."
     ],

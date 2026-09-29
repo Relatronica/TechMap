@@ -49,13 +49,13 @@
         "subtype": "hyperscale",
         "operator": "Aruba S.p.A.",
         "capacity": "60 MW (campus totale)",
-        "description_it": "Campus hyperscale di Aruba a Ponte San Pietro (Bergamo), il più grande data center campus in Italia con 200.000 mq. Alimentato al 100% da energia rinnovabile, con 15 MW di potenza disponibile e capacità totale del campus di 60 MW. Costruito su un ex sito industriale riqualificato.",
+        "description_it": "Campus hyperscale di Aruba a Ponte San Pietro (Bergamo), il più grande data center campus in Italia con 200.000 mq. L’operatore dichiara alimentazione al 100% da energia rinnovabile, con 15 MW di potenza disponibile e capacità totale del campus di 60 MW. Costruito su un ex sito industriale riqualificato. Non risulta un PPA o un allaccio nominato verso una centrale specifica: il prelievo è dalla rete.",
         "country": "IT",
         "city": "Ponte San Pietro",
         "status": "operational",
         "site_category": "infrastructure",
         "opened_year": 2021,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 60,
@@ -64,7 +64,7 @@
           "water_use_m3_year": null,
           "land_ha": 20,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Campus hyperscale; mix elettrico dipendente dalla rete lombarda e da PPA/rinnovabili dichiarati dall'operatore (da verificare)."
+          "energy_mix_note_it": "Dichiarazione Aruba: campus 100% rinnovabile. Nessun PPA né cabina/stazione nominati in un fascicolo pubblico. Il FV Enel di Trino è sul territorio piemontese vicino, ma non è un offtake verso IT3."
         },
         "employment": {
           "direct": null,
@@ -140,7 +140,8 @@
         "subtype": "hyperscale",
         "operator": "Microsoft",
         "capacity": "N/D",
-        "description_it": "Regione cloud Microsoft Azure Italy North nella zona metropolitana di Milano. Campus operativo a Settala; altri siti in costruzione: San Bovio / Peschiera Borromeo (dc_032), Bornasco (dc_033) e Noviglio–Santa Corinna (dc_024).",
+        "description_it": "Regione cloud Microsoft Azure Italy North nella zona metropolitana di Milano. Campus operativo a Settala (unità RDD e Ballard, MIL01/MIL02); altri siti in costruzione: San Bovio / Peschiera Borromeo (dc_032), Bornasco (dc_033) e Noviglio–Santa Corinna (dc_024). L’esercizio elettrico, dichiarato da Microsoft in ottemperanza allo screening VIA (ID VIP 6197), è su tre linee in media tensione di E-Distribuzione: RDD e Ballard dalla cabina primaria di Caleppio di Settala, backup di Ballard dalla sottostazione di Zelo Buon Persico (nominata, senza pin: il punto non è in OpenStreetMap). Il contratto con Enel Energia include una garanzia d’origine rinnovabile per ogni MWh: è un certificato, non il percorso del cavo.",
+        "description_en": "Microsoft Azure Italy North cloud region in the Milan metro area. Operational campus at Settala (RDD and Ballard units, MIL01/MIL02); other sites under construction: San Bovio / Peschiera Borromeo (dc_032), Bornasco (dc_033) and Noviglio–Santa Corinna (dc_024). Operating power, as Microsoft stated in the EIA-screening compliance file (ID VIP 6197), is three E-Distribuzione medium-voltage lines: RDD and Ballard from the Caleppio di Settala primary substation, with a Ballard backup from the Zelo Buon Persico substation (named, but no pin: the point is not in OpenStreetMap). The Enel Energia supply contract includes a renewable guarantee of origin for each MWh: a certificate, not the path of the cable.",
         "country": "IT",
         "city": "Settala",
         "confidence": "high",
@@ -152,8 +153,24 @@
             "title": "Microsoft Azure — Italy North",
             "url": "https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/",
             "accessed_at": "2026-09-27"
+          },
+          {
+            "title": "Microsoft — ottemperanza screening Caleppio di Settala (ID VIP 6197)",
+            "url": "https://va.mite.gov.it/File/Documento/770887",
+            "accessed_at": "2026-09-28",
+            "note": "Linee MT E-Distribuzione da Caleppio; backup Zelo Buon Persico; contratto Enel Energia con garanzia d’origine"
           }
-        ]
+        ],
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Punto di allaccio: cabina primaria E-Distribuzione di Caleppio (132 kV) e, in backup, sottostazione di Zelo Buon Persico. Contratto Enel Energia con garanzia d’origine rinnovabile. Nessuna centrale nominata.",
+          "energy_mix_note_en": "Connection point: E-Distribuzione primary substation at Caleppio (132 kV) and, as backup, the Zelo Buon Persico substation. Enel Energia contract with renewable guarantees of origin. No power plant is named."
+        }
       }
     },
     {
@@ -774,13 +791,13 @@
         "subtype": "hyperscale",
         "operator": "Vantage Data Centers",
         "capacity": "~64 MW IT (campus); programma strategico nazionale multi-sito ~8 mld",
-        "description_it": "Campus Vantage a Melegnano (sud Milano), primo nodo del programma italiano dichiarato di preminente interesse strategico nazionale (~8 mld con MXP4): Melegnano (MXP1), Settimo Milanese (MXP2, dc_023), Cornaredo (dc_039) e Tavazzano (MXP4, dc_034). Destinato a carichi cloud/AI hyperscale nel mercato milanese.",
+        "description_it": "Campus Vantage a Melegnano (sud Milano), primo nodo del programma italiano dichiarato di preminente interesse strategico nazionale (~8 mld con MXP4): Melegnano (MXP1), Settimo Milanese (MXP2, dc_023), Cornaredo (dc_039) e Tavazzano (MXP4, dc_034). Destinato a carichi cloud/AI hyperscale nel mercato milanese. L’allaccio in alta tensione previsto è la nuova stazione Terna 220 kV Melegnano, contigua al campus: il cavo attraversa solo il confine tra le due stazioni. La stazione è in mappa come gn_005 (pin approssimato: non è in OpenStreetMap).",
         "country": "IT",
         "city": "Melegnano",
         "status": "under_construction",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 64,
@@ -789,7 +806,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Campus hyperscale; fabbisogno elettrico elevato; dettaglio PPA da verificare."
+          "energy_mix_note_it": "VIA di MXP1: doppia fornitura 220 kV dalla nuova stazione Terna 220 kV Melegnano (gn_005) contigua; in attesa della messa in servizio il prelievo è in media tensione. Decreto Terna EL 488 / STMG 202000961. Nessun PPA nominato."
         },
         "employment": {
           "direct": null,
@@ -811,6 +828,18 @@
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27",
             "note": "Vantage tra i 7 programmi strategici; siti Melegnano, Settimo M., Cornaredo, Tavazzano"
+          },
+          {
+            "title": "MASE — decreto EL 488, nuova SE 220 kV Melegnano",
+            "url": "https://www.mase.gov.it/portale/documents/d/guest/dec_el-488_firmato26-8-22-pdf",
+            "accessed_at": "2026-09-28",
+            "note": "STMG 202000961, 100 MW, entra-esce sulla linea Ricevitrice Sud Milano–Tavazzano"
+          },
+          {
+            "title": "MASE VIA — completamento MXP1 Melegnano",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/10753",
+            "accessed_at": "2026-09-28",
+            "note": "Stazione Terna contigua; cavo AT limitato al confine tra le due stazioni"
           }
         ]
       }
@@ -877,13 +906,13 @@
         "subtype": "hyperscale",
         "operator": "Microsoft / Noviglio Datacenters MXP I (Compass / Hines)",
         "capacity": "~100 MW connessione elettrica autorizzata",
-        "description_it": "Campus Microsoft a Santa Corinna (Noviglio), sud-ovest di Milano: circa 230.000 mq di area, ~95.000 mq coperti, connessione elettrica autorizzata da 100 MW. Avvio operativo a fasi (prima fase settembre 2026). Completa la regione Azure Italy North oltre Settala e gli altri campus in costruzione.",
+        "description_it": "Campus Microsoft a Santa Corinna (Noviglio), sud-ovest di Milano: circa 230.000 mq di area, ~95.000 mq coperti, connessione elettrica autorizzata da 100 MW. Il primo edificio (Building MXP-I) è allacciato con un cavo interrato a 132 kV alla stazione Terna di Lacchiarella, autorizzato dalla Città metropolitana di Milano con determina 2234 del 21 marzo 2022. Avvio operativo a fasi (prima fase settembre 2026). Completa la regione Azure Italy North oltre Settala e gli altri campus in costruzione.",
         "country": "IT",
         "city": "Noviglio",
         "status": "under_construction",
         "site_category": "infrastructure",
         "opened_year": 2026,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-28",
         "confidence": "high",
         "impact": {
           "capacity_mw": 100,
@@ -892,7 +921,7 @@
           "water_use_m3_year": null,
           "land_ha": 23,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "100 MW autorizzati; impatto su rete e risorse idriche locali oggetto di dibattito e atti amministrativi."
+          "energy_mix_note_it": "Allaccio: cavo interrato 132 kV dalla stazione Terna di Lacchiarella alla sottostazione del campus (determina Città metropolitana 2234/2022). È il punto di connessione, non la centrale che produce l’elettricità."
         },
         "employment": {
           "direct": null,
@@ -915,6 +944,12 @@
             "url": "https://www.napoli365.it/data-center-noviglio-milano-cloud-microsoft-inaugura-limpianto-il-22/",
             "accessed_at": "2026-09-27",
             "note": "Dati dimensionali e 100 MW da atti amministrativi riportati in cronaca"
+          },
+          {
+            "title": "SIA — ampliamento data center Noviglio, cavo 132 kV",
+            "url": "https://va.mite.gov.it/File/Documento/1186222",
+            "accessed_at": "2026-09-28",
+            "note": "Determina Città metropolitana di Milano 2234 del 21/03/2022"
           }
         ]
       }
@@ -935,13 +970,13 @@
         "subtype": "hyperscale",
         "operator": "Amazon Data Services Italy",
         "capacity": "N/D (espansione regione Europe Milan; VIA in corso)",
-        "description_it": "Espansione della regione AWS Europe (Milan) a Zibido San Giacomo (Edificio A), oltre ai siti Rho/Pero. Procedura VIA nazionale MASE; collegata a nuove opere di rete Terna (SE Lacchiarella Ovest). Parte del programma AWS da ~1,2 mld dichiarato di interesse strategico nazionale.",
+        "description_it": "Espansione della regione AWS Europe (Milan) a Zibido San Giacomo (Edificio A), oltre ai siti Rho/Pero. Procedura VIA nazionale MASE ancora in istruttoria: l’avviso al pubblico riguarda i gruppi elettrogeni di emergenza, non un cavo verso una stazione nominata. La futura SE Terna Lacchiarella Ovest è un progetto di rete a sé, pensato come nodo per più data center del corridoio, e non è l’allaccio di questo campus. Parte del programma AWS da ~1,2 mld dichiarato di interesse strategico nazionale.",
         "country": "IT",
         "city": "Zibido San Giacomo",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-28",
         "confidence": "high",
         "impact": {
           "capacity_mw": null,
@@ -950,7 +985,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Espansione hyperscale con nuove sottostazioni/raccordi RTN; dettagli MW IT da atti VIA."
+          "energy_mix_note_it": "Avviso VIA: 19 gruppi di emergenza, circa 139 MWt termici, non la potenza IT. Nessuna stazione nominata come allaccio di questo edificio. Lacchiarella Ovest resta un progetto Terna distinto."
         },
         "community_impact_it": "Nuovo polo a sud di Milano con opere di rete associate; consultazioni pubbliche e osservazioni comunali in corso.",
         "labor_risks": [
@@ -1095,13 +1130,13 @@
         "subtype": "hyperscale",
         "operator": "Techbau (BentallGreenOak)",
         "capacity": "300–400 MW (progetto); investimento ~4 mld",
-        "description_it": "Riconversione dell’ex centrale termoelettrica Galileo Ferraris di Trino (VC) in campus hyperscale di rilevanza nazionale/europea. Interesse strategico CdM; conferenza di servizi prevista entro fine 2026, autorizzazione 2027, primo lotto ~2028. Stesso territorio del grande FV Enel e vicino all’ex nucleare Enrico Fermi: caso-studio italiano di AI + energia + brownfield.",
+        "description_it": "Riconversione dell’ex centrale termoelettrica Galileo Ferraris di Trino (VC) in campus hyperscale di rilevanza nazionale/europea. Interesse strategico CdM; conferenza di servizi prevista entro fine 2026, autorizzazione 2027, primo lotto ~2028. Stesso territorio del grande FV Enel e vicino all’ex nucleare Enrico Fermi: caso-studio italiano di AI + energia + brownfield. Il parco Enel resta contesto territoriale, non un offtake nominato verso il campus.",
         "country": "IT",
         "city": "Trino",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "confidence": "high",
         "impact": {
           "capacity_mw": 350,
@@ -1110,7 +1145,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Sito con stazione 380 kV esistente; press e Regione citano il vicino FV Enel di Trino come supporto energetico regionale (non PPA esclusivo dimostrato)."
+          "energy_mix_note_it": "Sito con stazione 380 kV esistente. Il FV Enel di Trino è sul medesimo territorio (contributo di bacino, non PPA e non cavo). Il campus preleverà dalla rete."
         },
         "employment": {
           "direct": 325,
@@ -1253,13 +1288,13 @@
         "subtype": "hyperscale",
         "operator": "K2 Strategic Infrastructure Italy",
         "capacity": "~400 MW; investimento ~5,3 mld",
-        "description_it": "Campus hyperscale nei comuni di Zibido San Giacomo e Lacchiarella, dichiarato di interesse strategico nazionale (~5,3 mld, ~400 MW). Quattro anni di cantiere stimati con media ~2.000 occupati/anno. Stesso corridoio sud-milanese di AWS Zibido e delle opere Terna Lacchiarella Ovest.",
+        "description_it": "Campus hyperscale nei comuni di Zibido San Giacomo e Lacchiarella, dichiarato di interesse strategico nazionale (~5,3 mld, ~400 MW). Quattro anni di cantiere stimati con media ~2.000 occupati/anno. Stesso corridoio sud-milanese di AWS Zibido. La futura SE Terna Lacchiarella Ovest è un progetto di rete a sé, non l’allaccio nominato di questo campus.",
         "country": "IT",
         "city": "Lacchiarella",
         "status": "planned",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-28",
         "confidence": "high",
         "impact": {
           "capacity_mw": 400,
@@ -1268,7 +1303,7 @@
           "water_use_m3_year": null,
           "land_ha": null,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Hyperscale di taglia nazionale; connessione di rete critica sul nodo Lacchiarella/Zibido."
+          "energy_mix_note_it": "Nessun fascicolo nomina la cabina o la stazione di questo campus. Lacchiarella Ovest è un progetto Terna distinto, baricentrico rispetto a più data center del corridoio."
         },
         "employment": {
           "direct": null,
@@ -1499,7 +1534,8 @@
           "water_use_m3_year": null,
           "land_ha": 9.4,
           "co2_t_year_est": null,
-          "energy_mix_note_it": "Connessione RTN 220 kV; FV su copertura previsto negli atti. Potenza IT non espressa in MW nel pin (GE emergenza ~298 MWt)."
+          "energy_mix_note_it": "Due cavi interrati 220 kV, ciascuno in grado di portare l’intero carico. Il primo (circa 244 m) parte dal traliccio n. 14 della linea aerea Cassano–Ricevitrice Nord, nel comune di Vignate. Il secondo (circa 628 m) si attesta su una buca giunti della linea interrata in progetto dalla futura stazione Terna di Pioltello verso la cabina di Infrastructure Italia Land 6 a Liscate. Non è un cavo disegnato fino a Pioltello, e quella stazione non ha ancora un punto pubblicabile.",
+          "energy_mix_note_en": "Two buried 220 kV cables, each able to carry the full load. The first (about 244 m) leaves pylon 14 of the Cassano–Ricevitrice Nord overhead line, in Vignate. The second (about 628 m) ends at a joint bay on the planned underground line from the future Terna Pioltello station toward the Infrastructure Italia Land 6 primary cabin in Liscate. It is not a cable drawn all the way to Pioltello, and that station does not yet have a publishable point."
         },
         "employment": {
           "direct": null,
@@ -1731,6 +1767,137 @@
             "url": "https://www.mimit.gov.it/it/notizie-stampa/data-center-ok-cdm-a-strategicita-per-due-investimenti-in-lombardia-e-sardegna-per-6-8-mld",
             "accessed_at": "2026-09-27",
             "note": "Vantage: Melegnano, Settimo Milanese, Cornaredo, Tavazzano"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.0425,
+          45.4762
+        ]
+      },
+      "properties": {
+        "id": "dc_040",
+        "name": "Microsoft Azure — MIL03 (Castelletto / Settimo Milanese)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft",
+        "capacity": "MIL03; allaccio 132 kV verso SE Baggio",
+        "description_it": "Campus Microsoft MIL03 a Settimo Milanese, al margine sud di Castelletto presso via Reiss Romoli. Distinto da Equinix ML5 e da Vantage MXP2 nello stesso corridoio. Il collegamento elettrico previsto è un doppio elettrodotto AT 132 kV interrato (~2,4 km) dalla sottostazione del sito alla stazione Terna di Baggio (via Edison, frazione Seguro). Pin approssimato sul corridoio Via Reiss Romoli indicato in VIA.",
+        "description_en": "Microsoft MIL03 campus at Settimo Milanese, on the southern edge of Castelletto near Via Reiss Romoli. Distinct from Equinix ML5 and Vantage MXP2 in the same corridor. The planned electrical link is a dual buried 132 kV line (~2.4 km) from the site substation to Terna’s Baggio station (Via Edison, Seguro). Approximate pin on the Via Reiss Romoli corridor named in the EIA.",
+        "country": "IT",
+        "city": "Settimo Milanese",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio documentato: due cavi 132 kV interrati verso SE Terna Baggio. È il punto di connessione, non la centrale che produce l’elettricità."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Cantiere e istruttoria VIA in corso; organico operativo non dichiarato in fonti aperte.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Pressione cumulativa di suolo e rete nel corridoio Castelletto–Seguro insieme a Equinix e Vantage.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "MASE — integrazione elettrodotto MIL03 / SE Baggio (ID VIP 9549)",
+            "url": "https://va.mite.gov.it/File/Documento/833908",
+            "accessed_at": "2026-09-29",
+            "note": "Due elettrodotti AT 132 kV interrati ~2,433 km verso SE Baggio"
+          },
+          {
+            "title": "Regione Lombardia — parere istruttoria MIL03 Settimo Milanese",
+            "url": "https://va.mite.gov.it/File/Documento/1251809",
+            "accessed_at": "2026-09-29",
+            "note": "Collegamento alla stazione Terna Baggio a ~1,2 km"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1355,
+          45.3248
+        ]
+      },
+      "properties": {
+        "id": "dc_041",
+        "name": "Apto — Campus Lacchiarella",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Apto Italia",
+        "capacity": "~300 MVA pianificati; investimento dichiarato ~3 mld",
+        "description_it": "Campus hyperscale Apto a Lacchiarella (~228.000 mq, fino a cinque edifici). Distinto da K2 (dc_031) nello stesso comune. STMG Terna 202400955 (7 marzo 2024): allaccio con cavo sotterraneo alla stazione esistente 380/132 kV Lacchiarella — non alla futura SE Lacchiarella Ovest. VIA nazionale in corso (ID VIP 13535). Pin approssimato sull’area industriale sud del comune.",
+        "description_en": "Apto hyperscale campus at Lacchiarella (~228,000 m², up to five buildings). Distinct from K2 (dc_031) in the same municipality. Terna STMG 202400955 (7 March 2024): underground cable to the existing Lacchiarella 380/132 kV station — not the future Lacchiarella Ovest station. National EIA ongoing (VIP 13535). Approximate pin on the southern industrial area.",
+        "country": "IT",
+        "city": "Lacchiarella",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 300,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 22.8,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio nominato: SE Lacchiarella esistente (STMG 202400955). Lacchiarella Ovest resta un progetto Terna distinto."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Investimento dichiarato ~3 mld; organico operativo non ancora dettagliato in fonti aperte.",
+          "conditions_tags": [
+            "construction_phase"
+          ]
+        },
+        "community_impact_it": "Concentrazione di MW a Lacchiarella insieme a K2 e al corridoio AWS Zibido; pressione su rete e suolo agricolo sud Milano.",
+        "labor_risks": [
+          "construction_phase",
+          "land_use_conflict"
+        ],
+        "sources": [
+          {
+            "title": "Apto — campus Lacchiarella",
+            "url": "https://aptodc.com/apto-announces-plans-for-italys-largest-data-centre-campus/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MASE VIA — Data Center Lacchiarella (Apto Italia, ID VIP 13535)",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11503",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Apto — controdeduzioni: STMG 202400955 verso SE Lacchiarella",
+            "url": "https://va.mite.gov.it/File/Documento/1406478",
+            "accessed_at": "2026-09-29",
+            "note": "Allaccio cavo sotterraneo alla SE esistente 380/132 kV Lacchiarella"
           }
         ]
       }

@@ -250,6 +250,7 @@
     "share_title": "Porta il tema fuori da questa pagina",
     "share_body": "Copia il link o condividilo dove discute la tua comunità — compresa Mastodon.",
     "share_copy": "Copia link",
+    "share_url_aria": "URL della pagina",
     "share_copied": "Link copiato",
     "share_native": "Condividi…",
     "share_mastodon": "Mastodon",
@@ -268,6 +269,7 @@
     "data_centers": "Data Center",
     "raw_materials": "Materie Prime e Produzione",
     "energy_plants": "Impianti Energetici",
+    "grid_nodes": "Nodi di rete",
     "connections": "Connessioni"
   },
   "subtypes": {
@@ -286,12 +288,14 @@
     "solar": "Solare fotovoltaico",
     "wind": "Eolico",
     "hydro": "Idroelettrico",
-    "nuclear": "Nucleare"
+    "nuclear": "Nucleare",
+    "substation": "Nodo di rete (cabina o stazione)"
   },
   "relationships": {
-    "powers": "Alimenta",
+    "powers": "Contratto energetico",
     "supplies": "Fornisce materiali",
-    "manufactures_for": "Produce componenti per"
+    "manufactures_for": "Produce componenti per",
+    "connects": "Allacciato a"
   },
   "popup": {
     "operator": "Operatore",
@@ -301,13 +305,15 @@
     "country": "Paese",
     "description": "Descrizione",
     "connections": "Connessioni",
-    "connections_hint": "Segui un legame per spostarti al sito collegato.",
+    "connections_hint": "Segui un legame per spostarti al sito collegato. Gli archi inferiti sono più leggeri in mappa.",
     "open_connected": "Apri sulla mappa",
     "linked_sites": "Siti del legame",
-    "powered_by": "Alimentato da",
+    "powered_by": "Contratto con",
+    "connected_to": "Allacciato a",
     "components_from": "Componenti da",
     "supplies_from": "Forniture da",
-    "powers_to": "Alimenta",
+    "powers_to": "Contratto verso",
+    "connects_to": "Allaccia",
     "supplies_to": "Fornisce a",
     "receives_from": "Riceve da",
     "manufactures_to": "Produce per",
@@ -433,15 +439,17 @@
     "solar": "Solare",
     "wind": "Eolico",
     "hydro": "Idro",
-    "nuclear": "Nucleare"
+    "nuclear": "Nucleare",
+    "substation": "Nodo di rete"
   },
   "legend": {
     "title": "Legenda",
     "points": "Punti",
     "lines": "Connessioni",
-    "line_powers": "Alimentazione energetica",
+    "line_powers": "Contratto energetico",
     "line_supplies": "Fornitura materiali",
     "line_manufactures": "Produzione componenti",
+    "line_connects": "Allaccio di rete",
     "status_halo_construction": "Pieno caldo = in costruzione",
     "status_halo_planned": "Tratteggio fine = pianificato",
     "status_style_operational": "Pieno = operativo",
@@ -512,7 +520,7 @@
       }
     ],
     "certainty_title": "Certainty sul legame",
-    "certainty_lead": "Misura quanto è documentato il rapporto tra due siti (powers, supplies, manufactures_for). Ogni nuovo arco richiede certainty e una nota di evidenza in italiano.",
+    "certainty_lead": "Misura quanto è documentato il rapporto tra due siti (powers, connects, supplies, manufactures_for). Ogni nuovo arco richiede certainty e una nota di evidenza in italiano. In mappa gli archi inferred sono più leggeri.",
     "certainty_levels": [
       {
         "id": "confirmed",
@@ -527,7 +535,7 @@
       {
         "id": "inferred",
         "label": "Inferito",
-        "body": "Ipotesi di lavoro trasparente: prossimità di rete, stessa classe di prodotto, cluster energetico. Mai presentata come fatto. Esempio: Turbigo → campus milanesi senza PPA pubblico."
+        "body": "Ipotesi di lavoro trasparente: prossimità di rete, stessa classe di prodotto, cluster energetico. Mai presentata come fatto. Un allaccio a una cabina o stazione nominata in un fascicolo non dice quale centrale ha prodotto l’energia: quel legame si chiama allaccio, non alimentazione."
       },
       {
         "id": "disputed",
@@ -540,7 +548,8 @@
     "ladder": [
       "Da inferred a likely: serve evidenza coerente (stesso operatore/contratto di bacino, filiera di mercato documentata) e una nota che spiega perché non è ancora confirmed.",
       "Da likely a confirmed: serve documento primario nominato (PPA, comunicato congiunto, report con entrambe le parti). Senza quello il legame resta likely o scende.",
-      "powers senza PPA o offtake nominato: mai confirmed.",
+      "powers senza PPA o offtake nominato: mai confirmed. Un asset energetico locale sullo stesso sito/comune senza contratto nominato resta powers likely.",
+      "Allaccio (connects): confirmed se un fascicolo VIA/screening/STMG nomina campus e cabina/stazione, oppure se la centrale è attigua alla stazione di immissione. Non indica quale centrale ha prodotto l’elettricità verso un campus. connects inferred ammesso dal nodo di immissione verso campus dello stesso cluster di rete: in scheda deve restare esplicito che non è l’allaccio del campus né un offtake (es. Turbigo 380 kV → cluster Milano). In mappa gli archi inferred sono più leggeri.",
       "supplies / manufactures_for solo se il materiale o il prodotto appartiene a quella filiera (niente litio→chip o cobalto→fonderia logica).",
       "Un sito senza arco è valido: progetti, contesto, inventari. Non inventiamo collegamenti per riempire la mappa."
     ],

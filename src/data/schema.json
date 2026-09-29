@@ -25,9 +25,9 @@
       "type": "object",
       "required": ["id", "name", "type", "subtype", "operator", "country", "city"],
       "properties": {
-        "id": { "type": "string", "pattern": "^(dc|ep|rm)_[0-9]{3,}$" },
+        "id": { "type": "string", "pattern": "^(dc|ep|rm|gn)_[0-9]{3,}$" },
         "name": { "type": "string" },
-        "type": { "enum": ["data_center", "energy_plant", "raw_material"] },
+        "type": { "enum": ["data_center", "energy_plant", "raw_material", "grid_node"] },
         "subtype": { "type": "string" },
         "operator": { "type": "string" },
         "capacity": {
@@ -35,6 +35,7 @@
           "description": "Etichetta display legacy; preferire impact.capacity_mw per confronti"
         },
         "description_it": { "type": "string" },
+        "description_en": { "type": "string" },
         "country": { "type": "string", "minLength": 2, "maxLength": 2 },
         "city": { "type": "string" },
         "status": {
@@ -53,6 +54,7 @@
         "impact": { "$ref": "#/$defs/impact" },
         "employment": { "$ref": "#/$defs/employment" },
         "community_impact_it": { "type": "string" },
+        "community_impact_en": { "type": "string" },
         "labor_risks": {
           "type": "array",
           "items": { "type": "string" },
@@ -81,7 +83,8 @@
         "water_use_m3_year": { "type": ["number", "null"] },
         "land_ha": { "type": ["number", "null"] },
         "co2_t_year_est": { "type": ["number", "null"] },
-        "energy_mix_note_it": { "type": "string" }
+        "energy_mix_note_it": { "type": "string" },
+        "energy_mix_note_en": { "type": "string" }
       }
     },
     "employment": {
@@ -91,6 +94,7 @@
         "indirect_est": { "type": ["integer", "null"] },
         "contractors_est": { "type": ["integer", "null"] },
         "note_it": { "type": "string" },
+        "note_en": { "type": "string" },
         "conditions_tags": {
           "type": "array",
           "items": { "type": "string" }
@@ -107,13 +111,15 @@
         "source_name": { "type": "string" },
         "target_name": { "type": "string" },
         "relationship_type": {
-          "enum": ["powers", "supplies", "manufactures_for"]
+          "enum": ["powers", "supplies", "manufactures_for", "connects"]
         },
         "description_it": { "type": "string" },
+        "description_en": { "type": "string" },
         "certainty": {
           "enum": ["confirmed", "likely", "inferred", "disputed"]
         },
         "evidence_note_it": { "type": "string" },
+        "evidence_note_en": { "type": "string" },
         "as_of": { "type": "string", "format": "date" },
         "updated_at": { "type": "string", "format": "date" },
         "sources": {

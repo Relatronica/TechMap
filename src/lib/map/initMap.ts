@@ -48,14 +48,17 @@ export function initMap() {
     return;
   }
 
+  const clientLocale = detectClientLocale();
   const ctx = {
     map,
-    i18n: getMapI18n(detectClientLocale()),
+    locale: clientLocale,
+    i18n: getMapI18n(clientLocale),
     COLORS,
     connectionsData: null,
     dataCentersData: null,
     rawMaterialsData: null,
     energyPlantsData: null,
+    gridNodesData: null,
     tooltip,
     detailSidebar,
     detailTitle,

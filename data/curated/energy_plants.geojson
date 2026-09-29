@@ -17,13 +17,14 @@
         "subtype": "gas",
         "operator": "Iren",
         "capacity": "1.280-1.334 MW",
-        "description_it": "Centrale termoelettrica a gas a ciclo combinato a Turbigo, Lombardia, vicino a Milano e Torino. Capacità totale di circa 1.280-1.334 MW, inclusa una nuova unità da 430 MW aggiunta nel 2022 con investimento di 105 milioni di euro. Importante fonte di energia per il cluster di data center della zona di Milano.",
+        "description_it": "Centrale termoelettrica a gas a ciclo combinato a Turbigo (Iren), circa 1.280–1.334 MW, inclusa un’unità da 430 MW entrata nel 2022. Immette nella stazione di trasmissione a 380 kV che le sta accanto. Da lì partono le linee il cui nome inizia per Turbigo, tra cui Turbigo–Ospiate verso la futura stazione di Poglianasca (Nerviano). Non risulta un offtake o un PPA verso un data center.",
+        "description_en": "Combined-cycle gas plant at Turbigo (Iren), about 1,280–1,334 MW, including a 430 MW unit added in 2022. It injects into the 380 kV transmission station beside it. The lines whose names begin with Turbigo leave from there, including Turbigo–Ospiate toward the future Poglianasca substation at Nerviano. No offtake or PPA toward a data center is on record.",
         "country": "IT",
         "city": "Turbigo",
         "status": "operational",
         "site_category": "infrastructure",
         "opened_year": null,
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-28",
         "confidence": "medium",
         "impact": {
           "capacity_mw": 1300,
@@ -52,7 +53,7 @@
             "note": "Capacità ~1.280–1.334 MW inclusa unità 2022"
           }
         ],
-        "community_impact_it": "Nodo energetico del cluster data center milanese: impatto principalmente emissivo e di rete, non occupazionale di massa."
+        "community_impact_it": "Impatto soprattutto emissivo, di gas e di rete locale. L’organico operativo è contenuto rispetto alla potenza. Non è l’allaccio dei data center milanesi."
       }
     },
     {
@@ -540,6 +541,66 @@
           "construction_phase"
         ],
         "community_impact_it": "Eolico in SE3: pressione paesaggistica locale vs contributi a rete e contratti PPA hyperscale."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.355,
+          45.094
+        ]
+      },
+      "properties": {
+        "id": "ep_017",
+        "name": "Neoen Arena Po — Parco fotovoltaico",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Neoen",
+        "capacity": "7.4 MWp",
+        "description_it": "Primo parco solare Neoen in Italia, nel comune di Arena Po (Pavia/Lombardia): 7,4 MWp, iniezione in rete dall’inizio del 2026, produzione attesa ~11,9 GWh/anno. Fa parte del portfolio di sette impianti nord-italiani del PPA decennale da 53 MW con Equinix (novembre 2024), a supporto dei data center Equinix di Milano e Genova. È un PPA virtuale di portfolio, non un cavo dedicato a un singolo campus. Pin approssimato sul comune di Arena Po.",
+        "description_en": "Neoen’s first solar farm in Italy, in the municipality of Arena Po (Pavia/Lombardy): 7.4 MWp, injecting into the grid since early 2026, expected output ~11.9 GWh/year. It is part of the seven northern-Italy plants under Neoen’s 10-year 53 MW PPA with Equinix (November 2024), supporting Equinix data centers in Milan and Genoa. It is a virtual portfolio PPA, not a dedicated cable to a single campus. Approximate pin on the Arena Po municipality.",
+        "country": "IT",
+        "city": "Arena Po",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2026,
+        "updated_at": "2026-09-29",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 7.4,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Fotovoltaico; PPA virtuale Equinix (portfolio 53 MW)."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Impianto FV di piccola-media taglia: organico operativo contenuto.",
+          "conditions_tags": [
+            "high_skill"
+          ]
+        },
+        "labor_risks": [],
+        "sources": [
+          {
+            "title": "Neoen — inaugurazione Arena Po (PPA Equinix)",
+            "url": "https://neoen.com/en/news/2026/neoen-inaugurates-arena-po-its-first-solar-farm-in-italy-contracted-with-equinix/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Neoen — primo PPA italiano con Equinix (53 MW)",
+            "url": "https://neoen.com/en/news/2024/neoen-and-equinix-sign-their-first-ppa-in-italy-supporting-decarbonization-of-the-local-grid/",
+            "accessed_at": "2026-09-29",
+            "note": "Portfolio di sette progetti nel Nord Italia; virtual PPA"
+          }
+        ],
+        "community_impact_it": "Impatto locale tipico di un FV di piccola-media taglia su suolo agricolo. Il legame con Equinix è contrattuale (PPA), non un allaccio fisico al campus."
       }
     }
   ]

@@ -9,16 +9,19 @@ import { LngLatBounds } from 'maplibre-gl';
 import {
   POINT_LAYERS,
   STATUS_BADGE_LAYERS,
-  STATUS_BADGE_OPACITY_EXPR
+  STATUS_BADGE_OPACITY_EXPR,
+  CONNECTION_LAYER_IDS,
+  CONNECTION_OPACITY_BY_CERTAINTY,
+  CONNECTION_WIDTH_BY_CERTAINTY
 } from './constants';
 import type { MapContext } from './types';
 
 export function attachSelection(ctx: MapContext) {
   function resetHighlights() {
-    ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+    CONNECTION_LAYER_IDS.forEach(layerId => {
       if (ctx.map.getLayer(layerId)) {
-        ctx.map.setPaintProperty(layerId, 'line-opacity', 0.7);
-        ctx.map.setPaintProperty(layerId, 'line-width', 1.6);
+        ctx.map.setPaintProperty(layerId, 'line-opacity', CONNECTION_OPACITY_BY_CERTAINTY);
+        ctx.map.setPaintProperty(layerId, 'line-width', CONNECTION_WIDTH_BY_CERTAINTY);
       }
     });
     POINT_LAYERS.forEach(layerId => {
@@ -76,10 +79,36 @@ export function attachSelection(ctx: MapContext) {
       ['==', ['get', 'target_id'], featureId]
     ];
   
-    ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach(layerId => {
+    CONNECTION_LAYER_IDS.forEach(layerId => {
       if (!ctx.map.getLayer(layerId)) return;
-      ctx.map.setPaintProperty(layerId, 'line-opacity', ['case', isDirectEdge, 0.95, 0.1]);
-      ctx.map.setPaintProperty(layerId, 'line-width', ['case', isDirectEdge, 3.4, 0.9]);
+      ctx.map.setPaintProperty(layerId, 'line-opacity', [
+        'case',
+        isDirectEdge,
+        [
+          'match',
+          ['coalesce', ['get', 'certainty'], 'likely'],
+          'inferred',
+          0.82,
+          'likely',
+          0.9,
+          0.95
+        ],
+        0.1
+      ]);
+      ctx.map.setPaintProperty(layerId, 'line-width', [
+        'case',
+        isDirectEdge,
+        [
+          'match',
+          ['coalesce', ['get', 'certainty'], 'likely'],
+          'inferred',
+          2.8,
+          'likely',
+          3.1,
+          3.4
+        ],
+        0.75
+      ]);
     });
   
     POINT_LAYERS.forEach(layerId => {
@@ -118,7 +147,8 @@ export function attachSelection(ctx: MapContext) {
     const catalogs = [
       ['data_center', ctx.dataCentersData],
       ['raw_material', ctx.rawMaterialsData],
-      ['energy_plant', ctx.energyPlantsData]
+      ['energy_plant', ctx.energyPlantsData],
+      ['grid_node', ctx.gridNodesData]
     ];
     for (const [featureType, collection] of catalogs) {
       if (!collection) continue;
@@ -183,7 +213,8 @@ export function attachSelection(ctx: MapContext) {
     const collections = {
       data_center: ctx.dataCentersData,
       raw_material: ctx.rawMaterialsData,
-      energy_plant: ctx.energyPlantsData
+      energy_plant: ctx.energyPlantsData,
+      grid_node: ctx.gridNodesData
     };
     const collection = collections[featureType];
     if (collection && mapProps?.id) {

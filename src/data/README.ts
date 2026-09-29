@@ -8,22 +8,29 @@
  * - public/data/*.geojson (output servito)
  *
  * Priorità di compilazione (per record):
- * 1. id, name, type, subtype, operator, city, country, description_it
+ * 1. id, name, type, subtype, operator, city, country, description_it (+ description_en se disponibile)
  * 2. sources[] + confidence + updated_at
  * 3. impact.capacity_mw (numero) — tenere capacity come etichetta display
  *    Con MW presenti, il pannello dettaglio mostra card (elettricità/CO₂/acqua)
  *    con stime etichettate (src/lib/impactEstimates.ts).
- * 4. employment (anche solo note_it se i numeri mancano) + community_impact_it
+ * 4. employment (anche solo note_it/note_en se i numeri mancano) + community_impact_it/_en
  *    Priorità: nodi dei corridoi documentati (contrasto DC ↔ fab ↔ miniera ↔ ODM)
- * 5. connections.certainty + evidence_note_it (obbligatori per ogni nuovo legame)
+ * 5. connections.certainty + evidence_note_it/_en (obbligatori per ogni nuovo legame)
+ *
+ * Locale UI: la mappa preferisce *_en su /en, altrimenti fallback a *_it (src/lib/localizedField.ts).
  *
  * Unità di lavoro = corridoio documentato (non densità di archi).
  * Fonte archi: data/curated/connections_edges.json → npm run data:supply-chain
  *
  * Regole:
  * - null = sconosciuto (non usare 0 come placeholder)
- * - powers senza PPA/documento → certainty: "inferred" o "likely", mai "confirmed"
- * - supplies/manufactures_for solo se il materiale appartiene a quella filiera
+ * - powers = contratto energetico (PPA/CPPA/offtake). Senza documento nominato →
+ *   certainty: "inferred" o "likely", mai "confirmed"
+ * - connects = fisica di rete (cabina/stazione↔campus, oppure centrale→stazione
+ *   di immissione attigua). confirmed solo con fascicolo o adiacenza documentata.
+ *   connects inferred ammesso dal nodo di immissione verso campus dello stesso
+ *   cluster di rete (scheda: non è l'allaccio né un offtake).
+ * - supplies / manufactures_for solo se il materiale appartiene a quella filiera
  *   (niente litio→chip, cobalto→TSMC, miniera↔miniera come "fornitura")
  * - siti senza arco restano validi (progetti, contesto) — non inventare legami
  * - lavoro artigianale vs industriale: dichiararlo in employment.note_it e labor_risks

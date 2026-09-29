@@ -13,6 +13,7 @@ export function wireFilters(ctx: MapContext) {
   const filterState = {
     data_centers: { subtypes: new Set(FILTER_GROUPS.data_centers.subtypes) },
     energy_plants: { subtypes: new Set(FILTER_GROUPS.energy_plants.subtypes) },
+    grid_nodes: { subtypes: new Set(FILTER_GROUPS.grid_nodes.subtypes) },
     raw_materials: { subtypes: new Set(FILTER_GROUPS.raw_materials.subtypes) },
     connections: { types: new Set(CONNECTION_TYPES) },
     status: new Set(SITE_STATUSES)
@@ -21,6 +22,7 @@ export function wireFilters(ctx: MapContext) {
   const dataByGroup = {
     data_centers: () => ctx.dataCentersData,
     energy_plants: () => ctx.energyPlantsData,
+    grid_nodes: () => ctx.gridNodesData,
     raw_materials: () => ctx.rawMaterialsData,
     connections: () => ctx.connectionsData
   };
@@ -28,7 +30,8 @@ export function wireFilters(ctx: MapContext) {
   const connLayerByRel = {
     powers: 'connections-powers',
     supplies: 'connections-supplies',
-    manufactures_for: 'connections-manufactures'
+    manufactures_for: 'connections-manufactures',
+    connects: 'connections-connects'
   };
 
   function featureStatus(props) {
@@ -65,7 +68,7 @@ export function wireFilters(ctx: MapContext) {
 
   function countStatusVisible() {
     let n = 0;
-    ['data_centers', 'energy_plants', 'raw_materials'].forEach((gid) => {
+    ['data_centers', 'energy_plants', 'grid_nodes', 'raw_materials'].forEach((gid) => {
       const data = dataByGroup[gid]();
       if (!data) return;
       const subtypes = filterState[gid].subtypes;
@@ -95,7 +98,7 @@ export function wireFilters(ctx: MapContext) {
 
   function updateFilterCounts() {
     let total = 0;
-    ['data_centers', 'energy_plants', 'raw_materials', 'connections'].forEach((id) => {
+    ['data_centers', 'energy_plants', 'grid_nodes', 'raw_materials', 'connections'].forEach((id) => {
       const n = countVisible(id);
       total += n;
       const el = document.querySelector(`[data-count-for="${id}"]`);
@@ -116,6 +119,7 @@ export function wireFilters(ctx: MapContext) {
     const badgeLayerByGroup = {
       data_centers: 'data-centers-status-badges',
       energy_plants: 'energy-plants-status-badges',
+      grid_nodes: 'grid-nodes-status-badges',
       raw_materials: 'raw-materials-status-badges'
     };
     Object.keys(FILTER_GROUPS).forEach((gid) => {

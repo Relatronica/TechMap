@@ -20,7 +20,10 @@ import {
 import {
   STATUS_BADGE_OPACITY_EXPR,
   STATUS_BADGE_SIZE_EXPR,
-  STATUS_BADGE_TRANSLATE_EXPR
+  STATUS_BADGE_TRANSLATE_EXPR,
+  CONNECTION_OPACITY_BY_CERTAINTY,
+  CONNECTION_WIDTH_BY_CERTAINTY,
+  CONNECTS_DASHARRAY_BY_CERTAINTY
 } from './constants';
 import { fetchJson, showMapLoadError } from './domUtils';
 import type { MapContext } from './types';
@@ -29,16 +32,18 @@ import type { MapContext } from './types';
 export async function setupLayers(ctx: MapContext) {
   try {
     // Fetch all GeoJSON data
-    const [dc, rm, ep, conn] = await Promise.all([
+    const [dc, rm, ep, gn, conn] = await Promise.all([
       fetchJson('/data/data_centers.geojson'),
       fetchJson('/data/raw_materials.geojson'),
       fetchJson('/data/energy_plants.geojson'),
+      fetchJson('/data/grid_nodes.geojson'),
       fetchJson('/data/connections.geojson')
     ]);
 
     ctx.dataCentersData = dc;
     ctx.rawMaterialsData = rm;
     ctx.energyPlantsData = ep;
+    ctx.gridNodesData = gn;
     ctx.connectionsData = conn;
   } catch (err) {
     console.error('Map data load failed', err);
@@ -97,6 +102,7 @@ export async function setupLayers(ctx: MapContext) {
   ctx.map.addSource('data-centers', { type: 'geojson', data: ctx.dataCentersData });
   ctx.map.addSource('raw-materials', { type: 'geojson', data: ctx.rawMaterialsData });
   ctx.map.addSource('energy-plants', { type: 'geojson', data: ctx.energyPlantsData });
+  ctx.map.addSource('grid-nodes', { type: 'geojson', data: ctx.gridNodesData });
   ctx.map.addSource('connections', { type: 'geojson', data: ctx.connectionsData });
 
   // Context overlays (below site layers)
@@ -234,7 +240,7 @@ export async function setupLayers(ctx: MapContext) {
     }
   });
 
-  // Add connection line layers (below points)
+  // Add connection line layers (below points) — certainty drives weight
   ctx.map.addLayer({
     id: 'connections-powers',
     type: 'line',
@@ -242,9 +248,9 @@ export async function setupLayers(ctx: MapContext) {
     filter: ['==', ['get', 'relationship_type'], 'powers'],
     paint: {
       'line-color': ctx.COLORS.ep,
-      'line-width': 1.6,
+      'line-width': CONNECTION_WIDTH_BY_CERTAINTY,
       'line-dasharray': [2, 2.5],
-      'line-opacity': 0.7
+      'line-opacity': CONNECTION_OPACITY_BY_CERTAINTY
     }
   });
 
@@ -255,9 +261,9 @@ export async function setupLayers(ctx: MapContext) {
     filter: ['==', ['get', 'relationship_type'], 'supplies'],
     paint: {
       'line-color': ctx.COLORS.rm,
-      'line-width': 1.6,
+      'line-width': CONNECTION_WIDTH_BY_CERTAINTY,
       'line-dasharray': [1.5, 2.5],
-      'line-opacity': 0.7
+      'line-opacity': CONNECTION_OPACITY_BY_CERTAINTY
     }
   });
 
@@ -268,9 +274,22 @@ export async function setupLayers(ctx: MapContext) {
     filter: ['==', ['get', 'relationship_type'], 'manufactures_for'],
     paint: {
       'line-color': ctx.COLORS.dc,
-      'line-width': 1.6,
+      'line-width': CONNECTION_WIDTH_BY_CERTAINTY,
       'line-dasharray': [4, 3],
-      'line-opacity': 0.7
+      'line-opacity': CONNECTION_OPACITY_BY_CERTAINTY
+    }
+  });
+
+  ctx.map.addLayer({
+    id: 'connections-connects',
+    type: 'line',
+    source: 'connections',
+    filter: ['==', ['get', 'relationship_type'], 'connects'],
+    paint: {
+      'line-color': ctx.COLORS.gn,
+      'line-width': CONNECTION_WIDTH_BY_CERTAINTY,
+      'line-dasharray': CONNECTS_DASHARRAY_BY_CERTAINTY,
+      'line-opacity': CONNECTION_OPACITY_BY_CERTAINTY
     }
   });
 
@@ -334,6 +353,15 @@ export async function setupLayers(ctx: MapContext) {
     paint: statusBadgePaint
   });
 
+  ctx.map.addLayer({
+    id: 'grid-nodes-status-badges',
+    type: 'symbol',
+    source: 'grid-nodes',
+    filter: statusBadgeFilterBase,
+    layout: statusBadgeLayout,
+    paint: statusBadgePaint
+  });
+
   // Point layers — silhouette per sottotipo + variante di stato
   ctx.map.addLayer({
     id: 'data-centers-layer',
@@ -372,6 +400,20 @@ export async function setupLayers(ctx: MapContext) {
       'icon-image': buildStatusAwareIconExpression(
         FILTER_GROUPS.energy_plants.subtypes,
         'gas'
+      )
+    },
+    paint: pointLayerPaint
+  });
+
+  ctx.map.addLayer({
+    id: 'grid-nodes-layer',
+    type: 'symbol',
+    source: 'grid-nodes',
+    layout: {
+      ...pointLayerLayout,
+      'icon-image': buildStatusAwareIconExpression(
+        FILTER_GROUPS.grid_nodes.subtypes,
+        'substation'
       )
     },
     paint: pointLayerPaint

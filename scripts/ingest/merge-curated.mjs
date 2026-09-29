@@ -195,7 +195,8 @@ async function main() {
         license: 'CC BY 4.0',
         license_url: 'https://creativecommons.org/licenses/by/4.0/',
         used_for: ['energy_plants'],
-        note_it: 'Impianti importati con confidence media; record curati editorialmente hanno priorità.'
+        note_it: 'Impianti importati con confidence media; record curati editorialmente hanno priorità.',
+        note_en: 'Imported plants with medium confidence; editorially curated records take priority.'
       },
       {
         id: 'osm_overpass',
@@ -204,7 +205,8 @@ async function main() {
         license: 'ODbL 1.0',
         license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         used_for: ['data_centers'],
-        note_it: 'Tag telecom=data_center; confidence bassa. Campus di operatori cloud classificati come hyperscale via euristica su nome/operatore.'
+        note_it: 'Tag telecom=data_center; confidence bassa. Campus di operatori cloud classificati come hyperscale via euristica su nome/operatore.',
+        note_en: 'Tag telecom=data_center; low confidence. Cloud-operator campuses classified as hyperscale via name/operator heuristics.'
       },
       {
         id: 'dce',
@@ -213,7 +215,8 @@ async function main() {
         license: 'ODbL 1.0',
         license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         used_for: [],
-        note_it: 'Dataset US-only; non incluso nella mappa EU salvo record curati.'
+        note_it: 'Dataset US-only; non incluso nella mappa EU salvo record curati.',
+        note_en: 'US-only dataset; not included in the EU map except curated records.'
       },
       {
         id: 'carto',
@@ -221,7 +224,8 @@ async function main() {
         url: 'https://carto.com/attributions/',
         license: 'Proprietary basemap',
         used_for: ['basemap'],
-        note_it: 'Tile di base © OpenStreetMap contributors, © CARTO.'
+        note_it: 'Tile di base © OpenStreetMap contributors, © CARTO.',
+        note_en: 'Basemap tiles © OpenStreetMap contributors, © CARTO.'
       },
       {
         id: 'openinframap',
@@ -230,7 +234,8 @@ async function main() {
         license: 'ODbL 1.0',
         license_url: 'https://opendatacommons.org/licenses/odbl/1-0/',
         used_for: ['overlays'],
-        note_it: 'Linee di trasmissione da OpenStreetMap via tile vettoriali OpenInfraMap.'
+        note_it: 'Linee di trasmissione da OpenStreetMap via tile vettoriali OpenInfraMap.',
+        note_en: 'Transmission lines from OpenStreetMap via OpenInfraMap vector tiles.'
       },
       {
         id: 'wri_aqueduct',
@@ -240,7 +245,9 @@ async function main() {
         license_url: 'https://creativecommons.org/licenses/by/4.0/',
         used_for: ['overlays'],
         note_it:
-          'Baseline water stress su sottobacini HydroBASINS L6 (non confini amministrativi). Mostra variazioni locali entro le regioni italiane.'
+          'Baseline water stress su sottobacini HydroBASINS L6 (non confini amministrativi). Mostra variazioni locali entro le regioni italiane.',
+        note_en:
+          'Baseline water stress on HydroBASINS L6 sub-basins (not administrative borders). Shows local variation within Italian regions.'
       },
       {
         id: 'telegeography_cables',
@@ -250,7 +257,9 @@ async function main() {
         license_url: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
         used_for: ['overlays'],
         note_it:
-          'Dataset storico non commerciale; rotte e landing in Europa. Non aggiornato in tempo reale.'
+          'Dataset storico non commerciale; rotte e landing in Europa. Non aggiornato in tempo reale.',
+        note_en:
+          'Non-commercial historical dataset; routes and landings in Europe. Not updated in real time.'
       }
     ],
     overlays: {
@@ -264,7 +273,14 @@ async function main() {
       `${ENERGY_EU_MIN_MW} MW) e OSM per data center in area EU; i campus cloud OSM sono classificati come hyperscale. ` +
       'Duplicati per prossimità vengono accorpati senza sovrascrivere i curati. ' +
       'Filiera (raw_materials + connections): solo corridoi documentati in data/curated/, con certainty obbligatoria; ' +
-      'powers senza PPA resta inferred/likely. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.'
+      'powers senza PPA resta inferred/likely. Gli overlay di contesto (rete, stress idrico, cavi) sono disattivati di default.',
+    methodology_en:
+      'Editorially curated records (descriptions, impact, subtype) always take priority over automatic candidates. ' +
+      'Imports combine WRI (all IT plants + EU ≥ ' +
+      `${ENERGY_EU_MIN_MW} MW) and OSM data centers in the EU area; OSM cloud campuses are classified as hyperscale. ` +
+      'Near-duplicates are merged without overwriting curated records. ' +
+      'Supply chain (raw_materials + connections): only corridors documented in data/curated/, with required certainty; ' +
+      'powers without a PPA stay inferred/likely. Context overlays (grid, water stress, cables) are off by default.'
   };
 
   await writeFile(

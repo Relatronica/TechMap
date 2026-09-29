@@ -27,7 +27,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Comunicato Vattenfall (2013): contratto pluriennale di fornitura rinnovabile dal Lule Älv. Harsprånget è una delle principali centrali del bacino.",
         "as_of": "2013-06-12",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Vattenfall — fornitura idroelettrica a Facebook Luleå",
@@ -63,7 +63,7 @@
         "certainty": "likely",
         "evidence_note_it": "Stesso operatore e stesso bacino dell'accordo Vattenfall–Facebook; non è nominata la singola centrale nel comunicato, quindi certainty likely e non confirmed.",
         "as_of": "2013-06-12",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Vattenfall — fornitura idroelettrica a Facebook Luleå",
@@ -99,7 +99,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Primo PPA eolico finlandese di Google (2018), esplicitamente collegato al data center di Hamina.",
         "as_of": "2018-09-18",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "CPC Finland — Lakiakangas 1+2 (PPA Google)",
@@ -140,155 +140,12 @@
         "certainty": "confirmed",
         "evidence_note_it": "Accordo pubblico Ilmatar–Google (2019); Ilmatar conferma che gran parte della produzione serve Hamina.",
         "as_of": "2019-09-20",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Ilmatar — Piiparinmäki e accordo Google",
             "url": "https://ilmatar.com/news/ilmatar-energy-announces-new-wind-farm-adding-new-clean-energy-to-the-grid/",
             "accessed_at": "2026-09-27"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            8.7424,
-            45.5202
-          ],
-          [
-            9.09,
-            45.52
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_005",
-        "source_id": "ep_001",
-        "target_id": "dc_005",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
-        "target_name": "AWS Europe (Milano) - Rho/Pero",
-        "relationship_type": "powers",
-        "description_it": "Turbigo (gas CCGT) è un nodo rilevante della rete lombarda che serve il cluster data center di Milano, inclusa la regione AWS Rho/Pero.",
-        "certainty": "inferred",
-        "evidence_note_it": "Prossimità di rete / stesso cluster energetico. Nessun PPA pubblico esclusivo Turbigo→AWS: non elevare a confirmed.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27",
-            "note": "Inferenza geografica di rete, non contratto dimostrato"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            8.7424,
-            45.5202
-          ],
-          [
-            9.38,
-            45.45
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_006",
-        "source_id": "ep_001",
-        "target_id": "dc_004",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
-        "target_name": "Microsoft Azure Italy North - Settala",
-        "relationship_type": "powers",
-        "description_it": "La centrale di Turbigo contribuisce alla rete lombarda che serve il campus Microsoft Azure Italy North a Settala.",
-        "certainty": "inferred",
-        "evidence_note_it": "Stesso criterio di prossimità di rete del legame Turbigo→AWS: inferred, non PPA.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            8.7424,
-            45.5202
-          ],
-          [
-            9.0387,
-            45.4755
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_007",
-        "source_id": "ep_001",
-        "target_id": "dc_006",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
-        "target_name": "Equinix ML5 - Settimo Milanese",
-        "relationship_type": "powers",
-        "description_it": "Turbigo alimenta la rete che serve Equinix ML5 a Settimo Milanese, nello stesso cluster milanese.",
-        "certainty": "inferred",
-        "evidence_note_it": "Inferenza di rete locale; nessun offtake nominato.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            8.29,
-            45.19
-          ],
-          [
-            9.5878,
-            45.6955
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_008",
-        "source_id": "ep_002",
-        "target_id": "dc_002",
-        "source_name": "Enel Trino Solar Park",
-        "target_name": "Aruba Global Cloud Data Center IT3 - Ponte San Pietro",
-        "relationship_type": "powers",
-        "description_it": "Il parco solare Enel di Trino (87 MW) è un contributo rinnovabile regionale coerente con la dichiarazione di Aruba IT3 di operare al 100% con energia rinnovabile.",
-        "certainty": "likely",
-        "evidence_note_it": "Aruba dichiara campus 100% rinnovabile; Trino è il maggiore FV del Nord Italia. Non risulta un PPA esclusivo Trino→IT3, quindi likely e non confirmed.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Aruba — Global Cloud Data Center IT3",
-            "url": "https://www.aruba.it/",
-            "accessed_at": "2026-09-27",
-            "note": "Dichiarazione operatore su mix rinnovabile del campus"
           }
         ]
       }
@@ -319,7 +176,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Dipendenza di mercato documentata: ASML è il fornitore monopolista di scanner EUV; TSMC è il principale cliente per volume di nodi avanzati.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "ASML — sede Veldhoven / ruolo EUV",
@@ -352,10 +209,10 @@
         "target_name": "ESMC/TSMC Fab - Dresda",
         "relationship_type": "supplies",
         "description_it": "ASML fornisce le attrezzature litografiche necessarie al fab ESMC/TSMC di Dresda (EU Chips Act).",
-        "certainty": "confirmed",
-        "evidence_note_it": "Il fab ESMC è un nodo TSMC in Europa: le tool ASML sono prerequisito della roadmap produttiva dichiarata.",
+        "certainty": "likely",
+        "evidence_note_it": "Il fab ESMC è un nodo TSMC in Europa: le tool ASML sono prerequisito della roadmap produttiva dichiarata. Nessun contratto sito-sito pubblico ASML→Dresda, quindi likely e non confirmed.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "ESMC / TSMC Dresda — EU Chips Act",
@@ -391,7 +248,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Partnership foundry storica e pubblica (comunicati TSMC–NVIDIA); Jensen Huang ha ribadito la dipendenza («No TSMC, no Nvidia»).",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "TSMC and NVIDIA Reaffirm Partnership",
@@ -427,7 +284,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Quanta è tra i principali ODM NVIDIA per server AI (NVL36 e sistemi correlati); la filiera GPU→rack passa tipicamente da ODM taiwanesi, non dal design HQ al campus.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "TrendForce — Quanta e partner ODM NVIDIA AI",
@@ -463,81 +320,11 @@
         "certainty": "likely",
         "evidence_note_it": "Nessun packing list pubblico Luleå. Certainty likely: Quanta è ODM chiave Meta; non confirmed sul singolo edificio svedese.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "TrendForce — Quanta quota ordini Meta",
             "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
-            "accessed_at": "2026-09-27"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            15.05,
-            37.45
-          ],
-          [
-            9.5878,
-            45.6955
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_014",
-        "source_id": "rm_002",
-        "target_id": "dc_002",
-        "source_name": "STMicroelectronics - Catania (Silicon Carbide Campus)",
-        "target_name": "Aruba Global Cloud Data Center IT3 - Ponte San Pietro",
-        "relationship_type": "manufactures_for",
-        "description_it": "ST Catania produce SiC e dispositivi di potenza usati nei sistemi di alimentazione dei data center; Aruba IT3 è un campus italiano plausibile come utilizzatore di questa classe di componenti.",
-        "certainty": "inferred",
-        "evidence_note_it": "Filiera elettronica di potenza (non silicio logico AI). Nessuna distinta base pubblica ST→Aruba: inferred.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Nota metodologica Substrato — elettronica di potenza EU",
-            "accessed_at": "2026-09-27"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            13.78,
-            46.61
-          ],
-          [
-            9.5878,
-            45.6955
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_015",
-        "source_id": "rm_006",
-        "target_id": "dc_002",
-        "source_name": "Infineon - Villach",
-        "target_name": "Aruba Global Cloud Data Center IT3 - Ponte San Pietro",
-        "relationship_type": "manufactures_for",
-        "description_it": "Infineon Villach è specializzata in semiconduttori di potenza per gestione energetica; stessa filiera di alimentazione dei campus, non dei GPU AI.",
-        "certainty": "inferred",
-        "evidence_note_it": "Legame di classe prodotto (power semiconductors), non contratto sito-sito.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Nota metodologica Substrato — elettronica di potenza EU",
             "accessed_at": "2026-09-27"
           }
         ]
@@ -569,7 +356,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Comunicato congiunto 2019: Mutanda e KCC nominati come fonti; destinazione raffinerie Umicore inclusa Kokkola (FI).",
         "as_of": "2019-05-29",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Umicore × Glencore — cobalt supply partnership",
@@ -605,7 +392,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "KCC è nominata esplicitamente nel comunicato insieme a Mutanda. Non è un legame miniera↔miniera.",
         "as_of": "2019-05-29",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Umicore × Glencore — cobalt supply partnership",
@@ -641,7 +428,7 @@
         "certainty": "likely",
         "evidence_note_it": "Legame di mercato ODM↔CSP, non BOM del sito Hamina: likely.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Nota metodologica Substrato — ODM→hyperscale",
@@ -677,7 +464,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Accordo pubblico sul sito Lenalea e comunicati Microsoft Ireland: CPPA esplicitamente legato alle operazioni data center irlandesi.",
         "as_of": "2024-05-10",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Lenalea Wind Farm — CPPA Microsoft",
@@ -713,7 +500,7 @@
         "certainty": "confirmed",
         "evidence_note_it": "Comunicato Amazon Sverige: Fågelås nominato tra i PPA eolici; AWS Stockholm opera tramite AZ in Svezia (Eskilstuna/Katrineholm/Västerås). Il PPA è di rete (non cavo dedicato al singolo edificio).",
         "as_of": "2026-08-28",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "Amazon Sverige — PPA eolici in Svezia",
@@ -744,17 +531,19 @@
         ]
       },
       "properties": {
-        "id": "conn_021",
+        "id": "conn_030",
         "source_id": "ep_002",
         "target_id": "dc_028",
         "source_name": "Enel Trino Solar Park",
         "target_name": "Cavour Hyperscale Campus — Trino (ex Galileo Ferraris)",
         "relationship_type": "powers",
-        "description_it": "Il FV Enel di Trino è il maggiore apportatore rinnovabile locale citato a supporto energetico del territorio dove sorge il Cavour Hyperscale Campus (ex Galileo Ferraris).",
+        "description_it": "Il FV Enel di Trino e il Cavour Hyperscale Campus condividono lo stesso territorio (ex Galileo Ferraris / brownfield di Trino). Comunicazione istituzionale e cronaca citano il parco come asset energetico locale del progetto. Non è un PPA nominato né un cavo dedicato: certainty likely.",
+        "description_en": "Enel’s Trino solar park and the Cavour Hyperscale Campus share the same territory (former Galileo Ferraris / Trino brownfield). Institutional and press coverage cite the park as a local energy asset for the project. It is not a named PPA and not a dedicated cable: certainty likely.",
         "certainty": "likely",
-        "evidence_note_it": "Comunicazione istituzionale/Regionale e cronaca sul progetto Cavour citano il vicino parco Enel come asset energetico del sito. Non risulta un PPA esclusivo nominato Enel Trino→Cavour: quindi likely, non confirmed.",
+        "evidence_note_it": "MIMIT e cronaca locale collegano esplicitamente il FV Enel al territorio del campus. Certainty likely: narrativa territoriale sullo stesso comune, non offtake nominato. Mai confirmed.",
+        "evidence_note_en": "MIMIT and local press explicitly link the Enel PV park to the campus territory. Certainty likely: same-municipality territorial narrative, not a named offtake. Never confirmed.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "MIMIT — Cavour Hyperscale Campus",
@@ -765,7 +554,7 @@
             "title": "Cronaca — Cavour e FV Enel a Trino",
             "url": "https://torinonews24.it/news/il-piemonte-sara-centro-europeo-dellintelligenza-artificiale-al-via-un-maxi-piano-da-4-miliardi-per-lex-centrale-nucleare-ecco-il-progetto/",
             "accessed_at": "2026-09-27",
-            "note": "Cita il FV Enel come supporto ai consumi del campus"
+            "note": "Cita il FV Enel come supporto ai consumi del campus sul territorio di Trino"
           }
         ]
       }
@@ -776,31 +565,40 @@
         "type": "LineString",
         "coordinates": [
           [
-            8.7424,
-            45.5202
+            9.379813,
+            45.434851
           ],
           [
-            9.03706,
-            45.47154
+            9.38,
+            45.45
           ]
         ]
       },
       "properties": {
-        "id": "conn_022",
-        "source_id": "ep_001",
-        "target_id": "dc_021",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
-        "target_name": "Data4 Campus MIL01 — Cornaredo",
-        "relationship_type": "powers",
-        "description_it": "Turbigo (CCGT) è un nodo della rete lombarda che serve il cluster ovest milanese, incluso il campus Data4 di Cornaredo.",
-        "certainty": "inferred",
-        "evidence_note_it": "Prossimità di rete / stesso cluster. Nessun PPA pubblico Turbigo→Data4.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "id": "conn_027",
+        "source_id": "gn_001",
+        "target_id": "dc_004",
+        "source_name": "Cabina primaria Caleppio — Settala",
+        "target_name": "Microsoft Azure Italy North - Settala",
+        "relationship_type": "connects",
+        "description_it": "Le unità RDD e Ballard del campus Microsoft a Caleppio di Settala sono allacciate in media tensione alla cabina primaria di Caleppio. Nello stesso atto il backup di Ballard è la sottostazione di Zelo Buon Persico: è nominata, ma non è in mappa perché il punto non compare in OpenStreetMap.",
+        "description_en": "Microsoft’s RDD and Ballard units at Caleppio di Settala take medium-voltage feeders from the Caleppio primary substation. The same filing names Zelo Buon Persico as Ballard’s backup; that point is not on the map because it is not in OpenStreetMap.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Integrazione di ottemperanza Microsoft allo screening ID VIP 6197: tre linee MT E-Distribuzione, due da Caleppio di Settala (RDD e Ballard) e una di backup da Zelo Buon Persico. È il punto di allaccio, non la centrale che ha prodotto l’energia. Contratto Enel Energia con garanzia d’origine: certificato, non cavo.",
+        "evidence_note_en": "Microsoft compliance filing for screening ID VIP 6197: three E-Distribuzione MV lines, two from Caleppio di Settala (RDD and Ballard) and a Ballard backup from Zelo Buon Persico. This is the connection point, not the plant that generated the power. The Enel Energia contract with guarantees of origin is a certificate, not a cable.",
+        "as_of": "2023-02-03",
+        "updated_at": "2026-09-29",
         "sources": [
           {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27"
+            "title": "Microsoft — ottemperanza screening Datacenter Italy Caleppio di Settala",
+            "url": "https://va.mite.gov.it/File/Documento/770887",
+            "accessed_at": "2026-09-28",
+            "note": "ID VIP 6197; linee MT da Caleppio e backup Zelo Buon Persico"
+          },
+          {
+            "title": "MASE — opera Datacenter Italy Caleppio di Settala",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/7922",
+            "accessed_at": "2026-09-28"
           }
         ]
       }
@@ -811,43 +609,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            8.7424,
-            45.5202
-          ],
-          [
-            9.31835,
-            45.35517
-          ]
-        ]
-      },
-      "properties": {
-        "id": "conn_023",
-        "source_id": "ep_001",
-        "target_id": "dc_022",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
-        "target_name": "Vantage MXP1 — Melegnano",
-        "relationship_type": "powers",
-        "description_it": "La rete lombarda alimentata anche da Turbigo serve l’area sud/ovest di Milano dove sorge Vantage MXP1 a Melegnano.",
-        "certainty": "inferred",
-        "evidence_note_it": "Inferenza di cluster energetico regionale, non offtake nominato.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
-        "sources": [
-          {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27"
-          }
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            8.7424,
-            45.5202
+            9.13181,
+            45.3446
           ],
           [
             9.09359,
@@ -856,21 +619,30 @@
         ]
       },
       "properties": {
-        "id": "conn_024",
-        "source_id": "ep_001",
+        "id": "conn_028",
+        "source_id": "gn_002",
         "target_id": "dc_024",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "source_name": "Stazione Terna Lacchiarella",
         "target_name": "Microsoft Azure — Noviglio (Santa Corinna)",
-        "relationship_type": "powers",
-        "description_it": "Il campus Microsoft di Noviglio preleva dalla rete lombarda a cui contribuisce Turbigo, nello stesso corridoio sud-ovest milanese.",
-        "certainty": "inferred",
-        "evidence_note_it": "Nessun PPA Turbigo→Microsoft Noviglio; inferred di rete.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "relationship_type": "connects",
+        "description_it": "Il primo edificio del campus Microsoft a Santa Corinna (Building MXP-I) è collegato alla stazione Terna di Lacchiarella con un cavo interrato a 132 kV, fino alla sottostazione interna al sito. È l’allaccio di questo campus, non quello di AWS Zibido o di K2, e non è la futura SE Lacchiarella Ovest.",
+        "description_en": "The first building of the Microsoft campus at Santa Corinna (Building MXP-I) is linked to the Terna station at Lacchiarella by a buried 132 kV cable, ending at the substation on the site. This is that campus’s connection, not AWS Zibido’s or K2’s, and it is not the future Lacchiarella Ovest station.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Studio di impatto dell’ampliamento a Noviglio: il cavo 132 kV è stato autorizzato dalla Città metropolitana di Milano con determina 2234 del 21 marzo 2022, con conclusione prevista al 31 dicembre 2024 compreso il collaudo. È il punto di allaccio, non la centrale che ha prodotto l’energia.",
+        "evidence_note_en": "Impact study for the Noviglio expansion: the 132 kV cable was authorized by the Metropolitan City of Milan with determination 2234 of 21 March 2022, with completion expected by 31 December 2024 including testing. This is the connection point, not the plant that generated the power.",
+        "as_of": "2022-03-21",
+        "updated_at": "2026-09-29",
         "sources": [
           {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27"
+            "title": "SIA — ampliamento data center Noviglio, via XXV Aprile",
+            "url": "https://va.mite.gov.it/File/Documento/1186222",
+            "accessed_at": "2026-09-28",
+            "note": "Cavo interrato 132 kV; determina Città metropolitana 2234 del 21/03/2022"
+          },
+          {
+            "title": "MASE — screening data center Santa Corinna, Noviglio",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Documentazione/9499/13947",
+            "accessed_at": "2026-09-28"
           }
         ]
       }
@@ -883,6 +655,292 @@
           [
             8.7424,
             45.5202
+          ],
+          [
+            8.74652,
+            45.51862
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_029",
+        "source_id": "ep_001",
+        "target_id": "gn_003",
+        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "target_name": "Stazione 380 kV Turbigo",
+        "relationship_type": "connects",
+        "description_it": "La centrale Iren di Turbigo è allacciata alla stazione di trasmissione a 380 kV che le sta accanto (nodo di immissione). Da quella stazione partono le linee il cui nome inizia per Turbigo. Non è un offtake verso un data center.",
+        "description_en": "The Iren plant at Turbigo is connected to the 380 kV transmission station beside it (injection node). The lines whose names begin with Turbigo leave from that station. This is not an offtake toward a data center.",
+        "certainty": "confirmed",
+        "evidence_note_it": "OpenStreetMap: stazione Turbigo, operator Edipower (precedente proprietario della centrale), 380 kV, substation=transmission, poche centinaia di metri a est dell’impianto. Allaccio di immissione documentato per adiacenza; non è un PPA e non è un allaccio di campus.",
+        "evidence_note_en": "OpenStreetMap: Turbigo station, operator Edipower (the plant’s previous owner), 380 kV, substation=transmission, a few hundred metres east of the plant. Documented injection connection by adjacency; not a PPA and not a campus connection.",
+        "as_of": "2026-09-28",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-28",
+            "note": "380 kV, transmission, operator Edipower"
+          },
+          {
+            "title": "OpenStreetMap — centrale termoelettrica di Turbigo (way 51601405)",
+            "url": "https://www.openstreetmap.org/way/51601405",
+            "accessed_at": "2026-09-28",
+            "note": "Impianto Iren adiacente alla stazione"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
+          ],
+          [
+            9.09,
+            45.52
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_030",
+        "source_id": "gn_003",
+        "target_id": "dc_005",
+        "source_name": "Stazione 380 kV Turbigo",
+        "target_name": "AWS Europe (Milano) - Rho/Pero",
+        "relationship_type": "connects",
+        "description_it": "La stazione 380 kV Turbigo è un nodo di immissione della rete di trasmissione nord-occidentale da cui preleva anche il cluster milanese, inclusa la regione AWS a Rho/Pero. Non è l’allaccio del campus né un offtake da Turbigo.",
+        "description_en": "The Turbigo 380 kV station is an injection node on the north-western transmission grid that also serves the Milan cluster, including the AWS region at Rho/Pero. It is not that campus’s connection point and not an offtake from Turbigo.",
+        "certainty": "inferred",
+        "evidence_note_it": "Inferenza di cluster di rete: stessa rete di trasmissione lombarda, nessun fascicolo che nomini Turbigo come cabina/stazione di allaccio del campus. Certainty inferred; non elevare senza STMG/VIA.",
+        "evidence_note_en": "Grid-cluster inference: same Lombardy transmission system, no filing that names Turbigo as the campus connection substation. Certainty inferred; do not raise without an STMG/EIA.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29",
+            "note": "Nodo di immissione 380 kV; non è un allaccio di campus"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
+          ],
+          [
+            9.38,
+            45.45
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_031",
+        "source_id": "gn_003",
+        "target_id": "dc_004",
+        "source_name": "Stazione 380 kV Turbigo",
+        "target_name": "Microsoft Azure Italy North - Settala",
+        "relationship_type": "connects",
+        "description_it": "La stazione Turbigo immette nella rete di trasmissione che serve anche il campus Microsoft a Settala. L’allaccio documentato di quel campus resta la cabina primaria di Caleppio (media tensione), non Turbigo.",
+        "description_en": "Turbigo station injects into the transmission grid that also serves Microsoft’s Settala campus. That campus’s documented connection remains the Caleppio primary substation (medium voltage), not Turbigo.",
+        "certainty": "inferred",
+        "evidence_note_it": "Inferenza di rete regionale. L’allaccio confirmed è Caleppio→Settala (conn_027). Turbigo non compare nel fascicolo VIP 6197.",
+        "evidence_note_en": "Regional-grid inference. The confirmed connection is Caleppio→Settala (conn_027). Turbigo is not named in VIP 6197.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Microsoft — ottemperanza screening Settala (ID VIP 6197)",
+            "url": "https://va.mite.gov.it/File/Documento/770887",
+            "accessed_at": "2026-09-29",
+            "note": "Allaccio nominato: Caleppio / Zelo Buon Persico, non Turbigo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
+          ],
+          [
+            9.0387,
+            45.4755
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_032",
+        "source_id": "gn_003",
+        "target_id": "dc_006",
+        "source_name": "Stazione 380 kV Turbigo",
+        "target_name": "Equinix ML5 - Settimo Milanese",
+        "relationship_type": "connects",
+        "description_it": "Equinix ML5 a Settimo Milanese preleva dalla rete lombarda a cui immette anche la stazione Turbigo. Nessun fascicolo pubblico nomina Turbigo come punto di allaccio di ML5.",
+        "description_en": "Equinix ML5 at Settimo Milanese draws from the Lombardy grid that Turbigo station also injects into. No public filing names Turbigo as ML5’s connection point.",
+        "certainty": "inferred",
+        "evidence_note_it": "Inferenza di cluster ovest milanese. Nessuna STMG/VIA che colleghi ML5 alla stazione Turbigo.",
+        "evidence_note_en": "West-Milan cluster inference. No STMG/EIA linking ML5 to Turbigo station.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
+          ],
+          [
+            9.03706,
+            45.47154
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_033",
+        "source_id": "gn_003",
+        "target_id": "dc_021",
+        "source_name": "Stazione 380 kV Turbigo",
+        "target_name": "Data4 Campus MIL01 — Cornaredo",
+        "relationship_type": "connects",
+        "description_it": "Il campus Data4 a Cornaredo rientra nel cluster ovest milanese sulla rete di trasmissione a cui contribuisce l’immissione da Turbigo. Non è un cavo né un allaccio nominato verso Cornaredo.",
+        "description_en": "Data4’s Cornaredo campus sits in the west-Milan cluster on the transmission grid that receives injection from Turbigo. It is neither a cable nor a named connection to Cornaredo.",
+        "certainty": "inferred",
+        "evidence_note_it": "Prossimità di rete / stesso cluster. Nessun fascicolo che nomini Turbigo come stazione di allaccio Data4.",
+        "evidence_note_en": "Grid proximity / same cluster. No filing that names Turbigo as Data4’s connection station.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
+          ],
+          [
+            9.31835,
+            45.35517
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_034",
+        "source_id": "gn_003",
+        "target_id": "dc_022",
+        "source_name": "Stazione 380 kV Turbigo",
+        "target_name": "Vantage MXP1 — Melegnano",
+        "relationship_type": "connects",
+        "description_it": "Vantage MXP1 a Melegnano preleva dalla rete sud/ovest milanese alimentata anche dall’immissione in stazione Turbigo. Inferenza di rete, non allaccio documentato.",
+        "description_en": "Vantage MXP1 at Melegnano draws from the south/west Milan grid that also receives injection at Turbigo station. Grid inference, not a documented connection.",
+        "certainty": "inferred",
+        "evidence_note_it": "Stesso cluster di trasmissione. Nessuna prova sito-sito Turbigo↔MXP1.",
+        "evidence_note_en": "Same transmission cluster. No site-to-site evidence Turbigo↔MXP1.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
+          ],
+          [
+            9.09359,
+            45.33921
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_035",
+        "source_id": "gn_003",
+        "target_id": "dc_024",
+        "source_name": "Stazione 380 kV Turbigo",
+        "target_name": "Microsoft Azure — Noviglio (Santa Corinna)",
+        "relationship_type": "connects",
+        "description_it": "Il campus Microsoft di Noviglio preleva dalla rete lombarda a cui immette Turbigo. L’allaccio documentato del Building MXP-I resta il cavo 132 kV verso Lacchiarella, non la stazione Turbigo.",
+        "description_en": "Microsoft’s Noviglio campus draws from the Lombardy grid that Turbigo injects into. Building MXP-I’s documented connection remains the 132 kV cable to Lacchiarella, not Turbigo station.",
+        "certainty": "inferred",
+        "evidence_note_it": "Inferenza di rete. L’allaccio confirmed è Lacchiarella→Noviglio (conn_028). Turbigo non è nominata nel SIA.",
+        "evidence_note_en": "Grid inference. The confirmed connection is Lacchiarella→Noviglio (conn_028). Turbigo is not named in the impact study.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "SIA — ampliamento data center Noviglio, via XXV Aprile",
+            "url": "https://va.mite.gov.it/File/Documento/1186222",
+            "accessed_at": "2026-09-29",
+            "note": "Allaccio nominato: Lacchiarella 132 kV, non Turbigo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            8.74652,
+            45.51862
           ],
           [
             9.11167,
@@ -891,22 +949,29 @@
         ]
       },
       "properties": {
-        "id": "conn_025",
-        "source_id": "ep_001",
+        "id": "conn_036",
+        "source_id": "gn_003",
         "target_id": "dc_025",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "source_name": "Stazione 380 kV Turbigo",
         "target_name": "AWS Europe (Milano) — Zibido San Giacomo",
-        "relationship_type": "powers",
-        "description_it": "L’espansione AWS a Zibido San Giacomo rientra nel cluster milanese servito dalla rete a cui contribuisce Turbigo, con nuove opere Terna a Lacchiarella.",
+        "relationship_type": "connects",
+        "description_it": "L’espansione AWS a Zibido San Giacomo rientra nel cluster sud-milanese sulla rete a cui immette Turbigo. La VIA cita opere a Lacchiarella, non un allaccio alla stazione Turbigo.",
+        "description_en": "AWS’s expansion at Zibido San Giacomo sits in the south-Milan cluster on the grid Turbigo injects into. The EIA cites works at Lacchiarella, not a connection to Turbigo station.",
         "certainty": "inferred",
-        "evidence_note_it": "Inferenza di rete; la VIA cita SE Lacchiarella Ovest, non un offtake da Turbigo.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "evidence_note_it": "Inferenza di rete; la VIA AWS Zibido nomina SE Lacchiarella Ovest, non Turbigo come punto di allaccio.",
+        "evidence_note_en": "Grid inference; the AWS Zibido EIA names Lacchiarella Ovest, not Turbigo as the connection point.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
         "sources": [
           {
             "title": "MASE VIA — AWS Zibido",
             "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11970",
-            "accessed_at": "2026-09-27"
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
           }
         ]
       }
@@ -917,8 +982,8 @@
         "type": "LineString",
         "coordinates": [
           [
-            8.7424,
-            45.5202
+            8.74652,
+            45.51862
           ],
           [
             9.13732,
@@ -927,21 +992,230 @@
         ]
       },
       "properties": {
-        "id": "conn_026",
-        "source_id": "ep_001",
+        "id": "conn_037",
+        "source_id": "gn_003",
         "target_id": "dc_031",
-        "source_name": "Turbigo - Centrale a Ciclo Combinato",
+        "source_name": "Stazione 380 kV Turbigo",
         "target_name": "K2 Strategic Infrastructure — Zibido / Lacchiarella",
-        "relationship_type": "powers",
-        "description_it": "Il campus K2 Zibido/Lacchiarella (~400 MW) graverà sulla stessa rete sud-milanese a cui contribuisce Turbigo.",
+        "relationship_type": "connects",
+        "description_it": "Il campus K2 Zibido/Lacchiarella (~400 MW) graverà sulla stessa rete sud-milanese a cui immette la stazione Turbigo. Inferenza di scala di rete, non allaccio nominato.",
+        "description_en": "The K2 campus at Zibido/Lacchiarella (~400 MW) will load the same south-Milan grid that Turbigo station injects into. Grid-scale inference, not a named connection.",
         "certainty": "inferred",
-        "evidence_note_it": "Prossimità e scala di rete; nessun contratto nominato.",
-        "as_of": "2026-09-27",
-        "updated_at": "2026-09-27",
+        "evidence_note_it": "Prossimità e scala di rete; nessun contratto o fascicolo che nomini Turbigo come stazione di allaccio K2.",
+        "evidence_note_en": "Proximity and grid scale; no contract or filing that names Turbigo as K2’s connection station.",
+        "as_of": "2026-09-29",
+        "updated_at": "2026-09-29",
         "sources": [
           {
-            "title": "Nota metodologica Substrato — legami energetici inferred",
-            "accessed_at": "2026-09-27"
+            "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
+            "url": "https://www.openstreetmap.org/way/162828577",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.0585,
+            45.4688
+          ],
+          [
+            9.0425,
+            45.4762
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_038",
+        "source_id": "gn_004",
+        "target_id": "dc_040",
+        "source_name": "Stazione Terna Baggio",
+        "target_name": "Microsoft Azure — MIL03 (Castelletto / Settimo Milanese)",
+        "relationship_type": "connects",
+        "description_it": "Il campus Microsoft MIL03 a Settimo Milanese (Castelletto) è collegato alla stazione Terna di Baggio con due elettrodotti AT 132 kV interrati, affiancati e paralleli (~2,4 km). È l’allaccio di questo campus, non di Equinix o Vantage nello stesso comune.",
+        "description_en": "Microsoft’s MIL03 campus at Settimo Milanese (Castelletto) is linked to Terna’s Baggio station by two parallel buried 132 kV lines (~2.4 km). This is that campus’s connection, not Equinix’s or Vantage’s in the same municipality.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Integrazione spontanea VIA ID VIP 9549 e parere regionale: doppio cavo 132 kV dalla sottostazione del sito alla SE Baggio (via Edison, Seguro). Confirmed sul punto di connessione, non sull’origine dell’energia.",
+        "evidence_note_en": "VIP 9549 voluntary EIA integration and regional opinion: dual 132 kV cable from the site substation to Baggio SE (Via Edison, Seguro). Confirmed on the connection point, not on the origin of the power.",
+        "as_of": "2024-01-01",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "MASE — integrazione elettrodotto MIL03 / SE Baggio",
+            "url": "https://va.mite.gov.it/File/Documento/833908",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Regione Lombardia — parere MIL03",
+            "url": "https://va.mite.gov.it/File/Documento/1251809",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.13181,
+            45.3446
+          ],
+          [
+            9.1355,
+            45.3248
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_039",
+        "source_id": "gn_002",
+        "target_id": "dc_041",
+        "source_name": "Stazione Terna Lacchiarella",
+        "target_name": "Apto — Campus Lacchiarella",
+        "relationship_type": "connects",
+        "description_it": "Il campus Apto a Lacchiarella è allacciato, secondo la STMG Terna 202400955 del 7 marzo 2024, con cavo sotterraneo alla stazione esistente 380/132 kV Lacchiarella. Non è Lacchiarella Ovest e non è l’allaccio di K2 o di AWS Zibido.",
+        "description_en": "Apto’s Lacchiarella campus is connected, under Terna STMG 202400955 of 7 March 2024, by underground cable to the existing Lacchiarella 380/132 kV station. It is not Lacchiarella Ovest and not K2’s or AWS Zibido’s connection.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Controdeduzioni VIA Apto (ID VIP 13535): STMG 202400955 nomina esplicitamente la SE Lacchiarella esistente. Confirmed sul punto di connessione.",
+        "evidence_note_en": "Apto EIA counter-deductions (VIP 13535): STMG 202400955 explicitly names the existing Lacchiarella SE. Confirmed on the connection point.",
+        "as_of": "2024-03-07",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Apto — controdeduzioni STMG 202400955",
+            "url": "https://va.mite.gov.it/File/Documento/1406478",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "MASE VIA — Data Center Lacchiarella (Apto)",
+            "url": "https://va.mite.gov.it/it-IT/Oggetti/Info/11503",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.3208,
+            45.3532
+          ],
+          [
+            9.31835,
+            45.35517
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_040",
+        "source_id": "gn_005",
+        "target_id": "dc_022",
+        "source_name": "Stazione Terna 220 kV Melegnano",
+        "target_name": "Vantage MXP1 — Melegnano",
+        "relationship_type": "connects",
+        "description_it": "Il campus Vantage MXP1 a Melegnano è alimentato in 220 kV dalla nuova stazione Terna contigua: il doppio elettrodotto AT interrato attraversa solo il confine tra le due stazioni (STMG 202000961, 100 MW).",
+        "description_en": "Vantage’s MXP1 campus at Melegnano is fed at 220 kV from the contiguous new Terna station: the dual buried AT line only crosses the boundary between the two stations (STMG 202000961, 100 MW).",
+        "certainty": "confirmed",
+        "evidence_note_it": "VIA completamento MXP1 e decreto EL 488: SE 220 kV Melegnano contigua al campus; allaccio nominato. Confirmed sul punto di connessione.",
+        "evidence_note_en": "MXP1 completion EIA and decree EL 488: contiguous 220 kV Melegnano SE; named connection. Confirmed on the connection point.",
+        "as_of": "2022-08-26",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "MASE VIA — completamento MXP1 Melegnano",
+            "url": "https://va.mite.gov.it/File/Documento/1254480",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.355,
+            45.094
+          ],
+          [
+            9.0387,
+            45.4755
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_041",
+        "source_id": "ep_017",
+        "target_id": "dc_006",
+        "source_name": "Neoen Arena Po — Parco fotovoltaico",
+        "target_name": "Equinix ML5 - Settimo Milanese",
+        "relationship_type": "powers",
+        "description_it": "PPA virtuale Neoen–Equinix (53 MW, 10 anni, nov 2024): Arena Po è il primo impianto del portfolio nord-italiano che sostiene la copertura rinnovabile dei data center Equinix in Italia, incluso ML5 a Settimo Milanese. Non è un cavo dedicato al campus.",
+        "description_en": "Neoen–Equinix virtual PPA (53 MW, 10 years, Nov 2024): Arena Po is the first plant in the northern-Italy portfolio supporting renewable coverage for Equinix data centers in Italy, including ML5 at Settimo Milanese. It is not a dedicated cable to the campus.",
+        "certainty": "confirmed",
+        "evidence_note_it": "Comunicati Neoen 2024 e 2026: PPA portfolio nominato Equinix; Arena Po citata come impianto del contratto. Virtual PPA → confirmed sul contratto, non sull’allaccio fisico.",
+        "evidence_note_en": "Neoen releases 2024 and 2026: named Equinix portfolio PPA; Arena Po cited as a plant under the contract. Virtual PPA → confirmed on the contract, not on a physical connection.",
+        "as_of": "2024-11-21",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Neoen × Equinix — primo PPA in Italia",
+            "url": "https://neoen.com/en/news/2024/neoen-and-equinix-sign-their-first-ppa-in-italy-supporting-decarbonization-of-the-local-grid/",
+            "accessed_at": "2026-09-29"
+          },
+          {
+            "title": "Neoen — inaugurazione Arena Po",
+            "url": "https://neoen.com/en/news/2026/neoen-inaugurates-arena-po-its-first-solar-farm-in-italy-contracted-with-equinix/",
+            "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.355,
+            45.094
+          ],
+          [
+            9.1473,
+            45.4486
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_042",
+        "source_id": "ep_017",
+        "target_id": "dc_007",
+        "source_name": "Neoen Arena Po — Parco fotovoltaico",
+        "target_name": "Equinix ML2 - Milano Via Savona",
+        "relationship_type": "powers",
+        "description_it": "Lo stesso PPA portfolio Neoen–Equinix copre i data center Equinix in Italia (Milano e Genova). ML2 a Milano Via Savona rientra nel footprint citato; il comunicato non nomina il singolo IBX, quindi certainty likely.",
+        "description_en": "The same Neoen–Equinix portfolio PPA covers Equinix data centers in Italy (Milan and Genoa). ML2 at Milan Via Savona is part of that footprint; the release does not name the individual IBX, so certainty likely.",
+        "certainty": "likely",
+        "evidence_note_it": "Stesso contratto di Arena Po→ML5; senza naming sito-sito del singolo IBX → likely, non confirmed.",
+        "evidence_note_en": "Same contract as Arena Po→ML5; without site-to-site naming of the individual IBX → likely, not confirmed.",
+        "as_of": "2024-11-21",
+        "updated_at": "2026-09-29",
+        "sources": [
+          {
+            "title": "Neoen × Equinix — primo PPA in Italia",
+            "url": "https://neoen.com/en/news/2024/neoen-and-equinix-sign-their-first-ppa-in-italy-supporting-decarbonization-of-the-local-grid/",
+            "accessed_at": "2026-09-29",
+            "note": "Citati i data center Equinix di Milano e Genova"
           }
         ]
       }

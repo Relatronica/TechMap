@@ -700,6 +700,7 @@ body.is-map {
 .swatch-dc { background: var(--dc); }
 .swatch-rm { background: var(--rm); border-radius: 2px; transform: rotate(45deg) scale(0.85); }
 .swatch-ep { background: var(--ep); border-radius: 2px; }
+.swatch-gn { background: var(--gn); border-radius: 2px; }
 .swatch-status {
   background: transparent;
   border: 2px solid #D4892A;
@@ -826,6 +827,10 @@ body.is-map {
   flex-shrink: 0;
 }
 
+.conn-swatch.conn-connects {
+  border-top-style: solid;
+}
+
 .status-swatch {
   width: 11px;
   height: 11px;
@@ -892,6 +897,7 @@ body.is-map {
 .conn-powers { --chip-color: var(--ep); }
 .conn-supplies { --chip-color: var(--rm); }
 .conn-manufactures_for { --chip-color: var(--dc); }
+.conn-connects { --chip-color: var(--gn); }
 
 .attribution-updated,
 .attribution-note,
@@ -1024,6 +1030,11 @@ body.is-map {
 
 .detail-type-chip i.shape-ep {
   border-radius: 1px;
+}
+
+.detail-type-chip i.shape-gn {
+  border-radius: 1px;
+  background: var(--gn);
 }
 
 .detail-type-conn-swatch {
@@ -1449,6 +1460,7 @@ body.is-map {
 .detail-connection-icon.is-power { background: var(--ep); }
 .detail-connection-icon.is-supply { background: var(--rm); }
 .detail-connection-icon.is-mfg { background: var(--dc); }
+.detail-connection-icon.is-connect { background: var(--gn); }
 
 .maplibregl-ctrl-group {
   border: 1px solid var(--line) !important;
@@ -1656,6 +1668,10 @@ body.is-map {
   height: 0;
   border-top: 2px dashed var(--tooltip-accent, var(--conn));
   flex-shrink: 0;
+}
+
+.map-tooltip.is-solid-line .map-tooltip-conn-swatch {
+  border-top-style: solid;
 }
 
 /* —— Motion —— */

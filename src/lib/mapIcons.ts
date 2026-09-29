@@ -23,6 +23,10 @@ export const ICON_PATHS = {
   nuclear:
     'M6.5 21h11M8 21V12c0-1.2.8-5.8 4-8.5 3.2 2.7 4 7.3 4 8.5v9M5.5 13h13',
 
+  // Nodo di rete — cabina/stazione, non una centrale
+  substation:
+    'M12 3v4M12 17v4M3 12h4M17 12h4M8 8h8v8H8z',
+
   // Chip IC con pin vs fabbrica (assembly)
   semiconductor_fab:
     'M7.5 7.5h9v9h-9zM10 10h4v4h-4zM9.5 4.5v3M12 4.5v3M14.5 4.5v3M9.5 16.5v3M12 16.5v3M14.5 16.5v3M4.5 9.5h3M4.5 12h3M4.5 14.5h3M16.5 9.5h3M16.5 12h3M16.5 14.5h3',
@@ -60,6 +64,7 @@ export const SUBTYPE_COLORS: Record<SubtypeKey, string> = {
   wind: '#5B8FA8',
   hydro: '#3D7A9C',
   nuclear: '#7A6B9A',
+  substation: '#4C6A78',
 
   // Materie prime — terra / metallo
   semiconductor_fab: '#4A8A8A',
@@ -90,6 +95,13 @@ export const FILTER_GROUPS = {
     colorVar: 'ep',
     color: '#5B8FA8',
     subtypes: ['gas', 'solar', 'wind', 'hydro', 'nuclear'] as SubtypeKey[]
+  },
+  grid_nodes: {
+    id: 'grid_nodes',
+    layerId: 'grid-nodes-layer',
+    colorVar: 'gn',
+    color: '#4C6A78',
+    subtypes: ['substation'] as SubtypeKey[]
   },
   raw_materials: {
     id: 'raw_materials',
@@ -560,7 +572,7 @@ export const ICON_SIZE_HIGHLIGHT = 1.02;
 export const ICON_SIZE_RELATED = 0.88;
 export const ICON_SIZE_DIMMED = 0.58;
 
-export const CONNECTION_TYPES = ['powers', 'supplies', 'manufactures_for'];
+export const CONNECTION_TYPES = ['powers', 'supplies', 'manufactures_for', 'connects'];
 
 /** Overlay di contesto (off by default). */
 export const CONTEXT_OVERLAYS = [

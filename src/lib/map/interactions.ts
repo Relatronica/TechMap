@@ -1,4 +1,5 @@
 import type { MapContext } from './types';
+import { CONNECTION_LAYER_IDS } from './constants';
 
 /** Hover + click wiring for site pins and connections. */
 export function wireInteractions(ctx: MapContext) {
@@ -7,13 +8,14 @@ export function wireInteractions(ctx: MapContext) {
 
   // --- Interactivity ---
 
-  const pointLayers = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'];
-  const connectionLayers = ['connections-powers', 'connections-supplies', 'connections-manufactures'];
+  const pointLayers = ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer', 'grid-nodes-layer'];
+  const connectionLayers = [...CONNECTION_LAYER_IDS];
   const allInteractiveLayers = [...pointLayers, ...connectionLayers];
   const connLayerByRel = {
     powers: 'connections-powers',
     supplies: 'connections-supplies',
-    manufactures_for: 'connections-manufactures'
+    manufactures_for: 'connections-manufactures',
+    connects: 'connections-connects'
   };
 
   // Cursor pointer on hover
@@ -31,7 +33,8 @@ export function wireInteractions(ctx: MapContext) {
   const siteHoverLayers = [
     { layerId: 'data-centers-layer', featureType: 'data_center' },
     { layerId: 'raw-materials-layer', featureType: 'raw_material' },
-    { layerId: 'energy-plants-layer', featureType: 'energy_plant' }
+    { layerId: 'energy-plants-layer', featureType: 'energy_plant' },
+    { layerId: 'grid-nodes-layer', featureType: 'grid_node' }
   ];
   siteHoverLayers.forEach(({ layerId, featureType }) => {
     ctx.map.on('mousemove', layerId, (e) => {
@@ -95,6 +98,14 @@ export function wireInteractions(ctx: MapContext) {
     }
   });
 
+  ctx.map.on('click', 'grid-nodes-layer', (e) => {
+    if (e.features && e.features.length > 0) {
+      const properties = e.features[0].properties;
+      ctx.openPointDetail(properties, 'grid_node');
+      e.originalEvent.stopPropagation();
+    }
+  });
+
   // Click on connection lines
   connectionLayers.forEach(layerId => {
     ctx.map.on('click', layerId, (e) => {
@@ -115,12 +126,12 @@ export function wireInteractions(ctx: MapContext) {
   });
 
   // Clear hover cache when leaving site layers
-  ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer'].forEach((layerId) => {
+  ['data-centers-layer', 'raw-materials-layer', 'energy-plants-layer', 'grid-nodes-layer'].forEach((layerId) => {
     ctx.map.on('mouseleave', layerId, () => {
       lastSiteHoverId = null;
     });
   });
-  ['connections-powers', 'connections-supplies', 'connections-manufactures'].forEach((layerId) => {
+  CONNECTION_LAYER_IDS.forEach((layerId) => {
     ctx.map.on('mouseleave', layerId, () => {
       lastConnHoverId = null;
     });

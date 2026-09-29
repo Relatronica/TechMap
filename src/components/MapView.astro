@@ -3,6 +3,7 @@
  * MapView.astro — chrome UI sulla mappa (filtri + dettaglio)
  */
 import { getMessages, resolveLocale, localePath } from '../i18n';
+import { localizedText } from '../lib/localizedField';
 import {
   FILTER_GROUPS,
   CONNECTION_TYPES,
@@ -19,6 +20,7 @@ const i18n = getMessages(locale);
 type DatasetMeta = {
   updated_at?: string;
   methodology_it?: string;
+  methodology_en?: string;
   layers?: Record<string, { total?: number; curated?: number; imported?: number }>;
   sources?: Array<{
     id: string;
@@ -28,6 +30,7 @@ type DatasetMeta = {
     license_url?: string;
     used_for?: string[];
     note_it?: string;
+    note_en?: string;
   }>;
 };
 
@@ -38,10 +41,15 @@ try {
   /* merge script not run yet */
 }
 
-const activeSources = (datasetMeta.sources || []).filter(
-  (s) => Array.isArray(s.used_for) && s.used_for.some((u) => u !== 'basemap')
-);
+const activeSources = (datasetMeta.sources || [])
+  .filter((s) => Array.isArray(s.used_for) && s.used_for.some((u) => u !== 'basemap'))
+  .map((src) => ({
+    ...src,
+    note: localizedText(src as Record<string, unknown>, 'note', locale)
+  }));
 const basemapSource = (datasetMeta.sources || []).find((s) => s.used_for?.includes('basemap'));
+const basemapNote = localizedText(basemapSource as Record<string, unknown> | undefined, 'note', locale);
+const methodologyNote = localizedText(datasetMeta as Record<string, unknown>, 'methodology', locale);
 
 type SubtypeKey = keyof typeof ICON_PATHS;
 
@@ -51,6 +59,19 @@ const short = (key: string) =>
   key;
 
 const pathFor = (subtype: string) => ICON_PATHS[subtype as SubtypeKey];
+
+const connChipColor = {
+  powers: 'var(--ep)',
+  supplies: 'var(--rm)',
+  manufactures_for: 'var(--dc)',
+  connects: 'var(--gn)'
+} as Record<string, string>;
+const connChipLabel = {
+  powers: i18n.legend.line_powers,
+  supplies: i18n.legend.line_supplies,
+  manufactures_for: i18n.legend.line_manufactures,
+  connects: i18n.legend.line_connects
+} as Record<string, string>;
 
 const overlayLabels = i18n.overlays as Record<string, string>;
 const overlayText = (key: string) => overlayLabels[key] || key;
@@ -328,18 +349,10 @@ const statusLabel = (key: string) =>
               data-rel={rel}
               aria-pressed="true"
               title={(i18n.relationships as Record<string, string>)[rel]}
-              style={`--chip-color: ${
-                rel === 'powers' ? 'var(--ep)' : rel === 'supplies' ? 'var(--rm)' : 'var(--dc)'
-              };`}
+              style={`--chip-color: ${connChipColor[rel] || 'var(--conn)'};`}
             >
               <span class={`conn-swatch conn-${rel}`} aria-hidden="true"></span>
-              <span>
-                {rel === 'powers'
-                  ? i18n.legend.line_powers
-                  : rel === 'supplies'
-                    ? i18n.legend.line_supplies
-                    : i18n.legend.line_manufactures}
-              </span>
+              <span>{connChipLabel[rel] || rel}</span>
             </button>
           ))}
         </div>
@@ -440,8 +453,8 @@ const statusLabel = (key: string) =>
           )}
         </ul>
       )}
-      {datasetMeta.methodology_it && (
-        <p class="attribution-note">{datasetMeta.methodology_it}</p>
+      {methodologyNote && (
+        <p class="attribution-note">{methodologyNote}</p>
       )}
       <p class="attribution-method-link">
         <a href={localePath('/metodologia', locale)}>{i18n.data_attribution.methodology_link}</a>
@@ -457,7 +470,7 @@ const statusLabel = (key: string) =>
               ) : (
                 src.license
               )}
-              {src.note_it && <span class="attribution-source-note">{src.note_it}</span>}
+              {src.note && <span class="attribution-source-note">{src.note}</span>}
             </li>
           ))}
         </ul>
@@ -466,7 +479,7 @@ const statusLabel = (key: string) =>
         <p class="attribution-basemap">
           {i18n.data_attribution.basemap}:{' '}
           <a href={basemapSource.url} target="_blank" rel="noopener noreferrer">{basemapSource.title}</a>
-          {' — '}{basemapSource.note_it}
+          {basemapNote ? <>{' — '}{basemapNote}</> : null}
         </p>
       )}
     </div>

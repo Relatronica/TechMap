@@ -31,7 +31,7 @@ export function attachTooltips(ctx: MapContext) {
   }
 
   function showTooltip(e, text) {
-    ctx.tooltip.classList.remove('is-site', 'is-conn');
+    ctx.tooltip.classList.remove('is-site', 'is-conn', 'is-solid-line');
     ctx.tooltip.classList.add('is-plain');
     ctx.tooltip.textContent = text;
     positionTooltip(e);
@@ -50,11 +50,13 @@ export function attachTooltips(ctx: MapContext) {
     const accent =
       (properties.subtype && SUBTYPE_COLORS[properties.subtype]) ||
       (featureType === 'data_center' ? ctx.COLORS.dc :
-        featureType === 'raw_material' ? ctx.COLORS.rm : ctx.COLORS.ep);
+        featureType === 'raw_material' ? ctx.COLORS.rm :
+        featureType === 'grid_node' ? ctx.COLORS.gn : ctx.COLORS.ep);
     const typeText = properties.subtype
       ? ctx.getSubtypeLabel(properties.subtype)
       : (featureType === 'data_center' ? ctx.i18n.layers.data_centers :
           featureType === 'raw_material' ? ctx.i18n.layers.raw_materials :
+          featureType === 'grid_node' ? ctx.i18n.layers.grid_nodes :
           ctx.i18n.layers.energy_plants);
     const place = [properties.city, ctx.getCountryName(properties.country)]
       .filter(Boolean)
@@ -64,7 +66,7 @@ export function attachTooltips(ctx: MapContext) {
     if (place) metaParts.push(place);
     const meta = metaParts.join(' · ');
 
-    ctx.tooltip.classList.remove('is-plain', 'is-conn');
+    ctx.tooltip.classList.remove('is-plain', 'is-conn', 'is-solid-line');
     ctx.tooltip.classList.add('is-site');
     ctx.tooltip.style.setProperty('--tooltip-accent', accent);
     ctx.tooltip.innerHTML =
@@ -94,6 +96,7 @@ export function attachTooltips(ctx: MapContext) {
     const typeColor =
       relType === 'powers' ? ctx.COLORS.ep :
       relType === 'supplies' ? ctx.COLORS.rm :
+      relType === 'connects' ? ctx.COLORS.gn :
       ctx.COLORS.dc;
     const typeLabel = ctx.getRelationshipLabel(relType);
     const certaintyKey = props.certainty;
@@ -122,11 +125,15 @@ export function attachTooltips(ctx: MapContext) {
       `</div>`;
 
     positionTooltip(e);
+    ctx.tooltip.classList.toggle(
+      'is-solid-line',
+      relType === 'connects' && props.certainty === 'confirmed'
+    );
     ctx.tooltip.classList.add('visible');
   }
 
   function hideTooltip() {
-    ctx.tooltip.classList.remove('visible');
+    ctx.tooltip.classList.remove('visible', 'is-solid-line');
   }
 
   Object.assign(ctx, {

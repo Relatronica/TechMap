@@ -1,4 +1,5 @@
 import type { Map as MaplibreMap } from 'maplibre-gl';
+import type { Locale } from '../../i18n';
 import type { MapI18n } from './i18n';
 
 export type GeoJSONCollection = {
@@ -8,12 +9,14 @@ export type GeoJSONCollection = {
 
 export type MapContext = {
   map: MaplibreMap;
+  locale: Locale;
   i18n: MapI18n;
-  COLORS: { dc: string; rm: string; ep: string };
+  COLORS: { dc: string; rm: string; ep: string; gn: string };
   connectionsData: GeoJSONCollection | null;
   dataCentersData: GeoJSONCollection | null;
   rawMaterialsData: GeoJSONCollection | null;
   energyPlantsData: GeoJSONCollection | null;
+  gridNodesData: GeoJSONCollection | null;
   tooltip: HTMLElement;
   detailSidebar: HTMLElement;
   detailTitle: HTMLElement;

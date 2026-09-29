@@ -202,7 +202,7 @@ const mapHref = localePath('/mappa', locale);
               type="text"
               readonly
               value=""
-              aria-label="URL del progetto"
+              aria-label={h.share_url_aria}
             />
             <button type="button" class="btn btn-accent" id="share-copy">{h.share_copy}</button>
           </div>
@@ -355,7 +355,11 @@ const mapHref = localePath('/mappa', locale);
       const text = panel.dataset.shareText || '';
       const copiedLabel = panel.dataset.shareCopied || 'OK';
       const mastodonPrompt = panel.dataset.mastodonPrompt || 'mastodon.social';
-      const pageUrl = window.location.origin + '/';
+      // Prefer the current locale path (/ vs /en/), strip hash/query.
+      const share = new URL(window.location.href);
+      share.hash = '';
+      share.search = '';
+      const pageUrl = share.toString();
       const encodedUrl = encodeURIComponent(pageUrl);
       const encodedText = encodeURIComponent(text);
       const encodedPair = encodeURIComponent(`${text} ${pageUrl}`);

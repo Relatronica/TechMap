@@ -10,10 +10,11 @@
  * - Le connessioni sono corridoi documentati, non densità di archi.
  */
 
-export type SiteType = 'data_center' | 'energy_plant' | 'raw_material';
+export type SiteType = 'data_center' | 'energy_plant' | 'raw_material' | 'grid_node';
 
 export type DataCenterSubtype = 'colocation' | 'hyperscale' | 'enterprise';
 export type EnergySubtype = 'gas' | 'solar' | 'wind' | 'hydro' | 'nuclear';
+export type GridSubtype = 'substation';
 export type RawMaterialSubtype =
   | 'semiconductor_fab'
   | 'component_manufacturing'
@@ -50,7 +51,7 @@ export type Confidence = 'high' | 'medium' | 'low' | 'estimated';
  */
 export type Certainty = 'confirmed' | 'likely' | 'inferred' | 'disputed';
 
-export type RelationshipType = 'powers' | 'supplies' | 'manufactures_for';
+export type RelationshipType = 'powers' | 'supplies' | 'manufactures_for' | 'connects';
 
 export interface SourceRef {
   title: string;
@@ -68,6 +69,7 @@ export interface Employment {
   /** Appalti / temporary / artigianale */
   contractors_est: number | null;
   note_it?: string;
+  note_en?: string;
   /**
    * Codici curati, es.:
    * unionized | shift_work | artisanal_mining | conflict_zone |
@@ -87,6 +89,7 @@ export interface Impact {
   land_ha?: number | null;
   co2_t_year_est?: number | null;
   energy_mix_note_it?: string;
+  energy_mix_note_en?: string;
 }
 
 export interface SitePropertiesBase {
@@ -98,6 +101,7 @@ export interface SitePropertiesBase {
   /** Stringa display legacy, es. "60 MW (campus totale)" */
   capacity?: string;
   description_it?: string;
+  description_en?: string;
   country: string;
   city: string;
 
@@ -112,6 +116,7 @@ export interface SitePropertiesBase {
   impact?: Impact;
   employment?: Employment;
   community_impact_it?: string;
+  community_impact_en?: string;
   labor_risks?: string[];
 }
 
@@ -123,6 +128,11 @@ export interface DataCenterProperties extends SitePropertiesBase {
 export interface EnergyPlantProperties extends SitePropertiesBase {
   type: 'energy_plant';
   subtype: EnergySubtype;
+}
+
+export interface GridNodeProperties extends SitePropertiesBase {
+  type: 'grid_node';
+  subtype: GridSubtype;
 }
 
 export interface RawMaterialProperties extends SitePropertiesBase {
@@ -138,8 +148,10 @@ export interface ConnectionProperties {
   target_name: string;
   relationship_type: RelationshipType;
   description_it?: string;
+  description_en?: string;
   certainty?: Certainty;
   evidence_note_it?: string;
+  evidence_note_en?: string;
   /** ISO date a cui si riferisce il legame */
   as_of?: string;
   updated_at?: string;
@@ -149,4 +161,5 @@ export interface ConnectionProperties {
 export type SiteProperties =
   | DataCenterProperties
   | EnergyPlantProperties
-  | RawMaterialProperties;
+  | RawMaterialProperties
+  | GridNodeProperties;
