@@ -483,6 +483,42 @@
         "community_impact_it": "Hub di trasmissione e interconnessione Francia. Un eventuale allaccio hyperscale a Grugliasco graverà su questo nodo, non sulla rete di distribuzione locale del comune.",
         "community_impact_en": "Transmission and France interconnection hub. A hyperscale connection at Grugliasco would load this node, not the municipality’s local distribution network."
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6540804,
+          45.0838664
+        ]
+      },
+      "properties": {
+        "id": "gn_012",
+        "name": "Stazione Terna — Corso Appio Claudio (Torino)",
+        "type": "grid_node",
+        "subtype": "substation",
+        "operator": "Terna",
+        "capacity": "220 kV (linee verso Bonafous citate in stampa)",
+        "description_it": "Stazione di trasmissione Terna citata dalla stampa tecnica (La Voce, set 2026) come origine di due linee elettriche interrate a 220 kV (una operativa e una di riserva) autorizzate dalla Regione Piemonte verso il futuro data center ex Bonafous a Lucento (dc_082). Non è una centrale. Pin approssimato su Corso Appio Claudio (geocoding del corso; senza way OSM della SE al momento della cura).",
+        "description_en": "Terna transmission station cited by technical press (La Voce, Sep 2026) as the origin of two Region-authorised buried 220 kV lines (one in service, one reserve) toward the future ex-Bonafous Lucento data center (dc_082). It is not a power plant. Approximate pin on Corso Appio Claudio (street geocode; no SE OSM way at curation time).",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "medium",
+        "sources": [
+          {
+            "title": "La Voce — linee 220 kV da SE Corso Appio Claudio verso Bonafous",
+            "url": "https://www.giornalelavoce.it/news/attualita/736561/data-center-a-chivasso-settimo-torinese-grugliasco-sara-uninvasione.html",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_it": "Nodo urbano AT; eventuali cavidotti interrati verso Lucento avranno impatto di cantiere distinto dal prelievo del campus.",
+        "community_impact_en": "Urban HV node; any buried cable works toward Lucento will have construction impact distinct from campus draw."
+      }
     }
   ]
 }

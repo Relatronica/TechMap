@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29",
+  "updated_at": "2026-10-01",
   "generated_by": "scripts/ingest/merge-curated.mjs",
   "energy_eu_min_mw": 100,
   "layers": {
@@ -11,10 +11,10 @@
       "skippedFilter": 26224
     },
     "data_centers": {
-      "total": 866,
-      "curated": 77,
-      "imported": 789,
-      "skippedDup": 396,
+      "total": 874,
+      "curated": 86,
+      "imported": 788,
+      "skippedDup": 397,
       "skippedFilter": 6142
     }
   },

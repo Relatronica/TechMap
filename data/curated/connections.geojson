@@ -24,19 +24,19 @@
         "target_name": "Meta Data Center - Luleå, Svezia",
         "relationship_type": "powers",
         "description_it": "Accordo di fornitura Vattenfall–Facebook (Meta) per elettricità idroelettrica al 100% dal bacino del Lule Älv verso il campus di Luleå.",
+        "description_en": "Vattenfall–Facebook (Meta) supply agreement for 100% hydropower from the Lule Älv basin to the Luleå campus.",
         "certainty": "confirmed",
         "evidence_note_it": "Comunicato Vattenfall (2013): contratto pluriennale di fornitura rinnovabile dal Lule Älv. Harsprånget è una delle principali centrali del bacino.",
+        "evidence_note_en": "Vattenfall release (2013): multi-year renewable supply contract from the Lule Älv. Harsprånget is one of the basin’s main plants.",
         "as_of": "2013-06-12",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Vattenfall — fornitura idroelettrica a Facebook Luleå",
             "url": "https://news.cision.com/se/vattenfall/r/vattenfall-levererar-fornybar-el-fran-lule-alv-till-facebook,c9427579",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Vattenfall–Facebook (Meta) supply agreement for 100% hydropower from the Lule Älv basin to the Luleå campus.",
-        "evidence_note_en": "Vattenfall release (2013): multi-year renewable supply contract from the Lule Älv. Harsprånget is one of the basin’s main plants."
+        ]
       }
     },
     {
@@ -62,19 +62,19 @@
         "target_name": "Meta Data Center - Luleå, Svezia",
         "relationship_type": "powers",
         "description_it": "Porjus fa parte dello stesso sistema idroelettrico Vattenfall sul Lule Älv citato nell'accordo di fornitura al campus Meta di Luleå.",
+        "description_en": "Porjus is part of the same Vattenfall hydropower system on the Lule Älv cited in the supply agreement for Meta’s Luleå campus.",
         "certainty": "likely",
         "evidence_note_it": "Stesso operatore e stesso bacino dell'accordo Vattenfall–Facebook; non è nominata la singola centrale nel comunicato, quindi certainty likely e non confirmed.",
+        "evidence_note_en": "Same operator and same basin as the Vattenfall–Facebook agreement; the release does not name the individual plant, so certainty likely rather than confirmed.",
         "as_of": "2013-06-12",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Vattenfall — fornitura idroelettrica a Facebook Luleå",
             "url": "https://news.cision.com/se/vattenfall/r/vattenfall-levererar-fornybar-el-fran-lule-alv-till-facebook,c9427579",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Porjus is part of the same Vattenfall hydropower system on the Lule Älv cited in the supply agreement for Meta’s Luleå campus.",
-        "evidence_note_en": "Same operator and same basin as the Vattenfall–Facebook agreement; the release does not name the individual plant, so certainty likely rather than confirmed."
+        ]
       }
     },
     {
@@ -100,10 +100,12 @@
         "target_name": "Google Data Center - Hamina, Finlandia",
         "relationship_type": "powers",
         "description_it": "PPA Google–CPC Finland: l'elettricità di Lakiakangas 2 alimenta la stessa rete da cui Google preleva per Hamina.",
+        "description_en": "Google–CPC Finland PPA: electricity from Lakiakangas 2 feeds the same grid from which Google draws for Hamina.",
         "certainty": "confirmed",
         "evidence_note_it": "Primo PPA eolico finlandese di Google (2018), esplicitamente collegato al data center di Hamina.",
+        "evidence_note_en": "Google’s first Finnish wind PPA (2018), explicitly linked to the Hamina data center.",
         "as_of": "2018-09-18",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "CPC Finland — Lakiakangas 1+2 (PPA Google)",
@@ -115,9 +117,7 @@
             "url": "https://energydigital.com/sustainability/google-signs-agreements-190mw-wind-projects-finland",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Google–CPC Finland PPA: electricity from Lakiakangas 2 feeds the same grid from which Google draws for Hamina.",
-        "evidence_note_en": "Google’s first Finnish wind PPA (2018), explicitly linked to the Hamina data center."
+        ]
       }
     },
     {
@@ -143,19 +143,19 @@
         "target_name": "Google Data Center - Hamina, Finlandia",
         "relationship_type": "powers",
         "description_it": "PPA Google–Ilmatar: Google acquista 125 MW da Piiparinmäki (211 MW) per il fabbisogno del campus di Hamina.",
+        "description_en": "Google–Ilmatar PPA: Google buys 125 MW from Piiparinmäki (211 MW) for the Hamina campus demand.",
         "certainty": "confirmed",
         "evidence_note_it": "Accordo pubblico Ilmatar–Google (2019); Ilmatar conferma che gran parte della produzione serve Hamina.",
+        "evidence_note_en": "Public Ilmatar–Google agreement (2019); Ilmatar confirms that most of the output serves Hamina.",
         "as_of": "2019-09-20",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Ilmatar — Piiparinmäki e accordo Google",
             "url": "https://ilmatar.com/news/ilmatar-energy-announces-new-wind-farm-adding-new-clean-energy-to-the-grid/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Google–Ilmatar PPA: Google buys 125 MW from Piiparinmäki (211 MW) for the Hamina campus demand.",
-        "evidence_note_en": "Public Ilmatar–Google agreement (2019); Ilmatar confirms that most of the output serves Hamina."
+        ]
       }
     },
     {
@@ -181,19 +181,19 @@
         "target_name": "TSMC - Hsinchu Science Park (Sede centrale e Fab 12A)",
         "relationship_type": "supplies",
         "description_it": "ASML fornisce a TSMC le macchine litografiche EUV indispensabili per i nodi avanzati usati nei chip AI.",
+        "description_en": "ASML supplies TSMC with the EUV lithography machines essential for the advanced nodes used in AI chips.",
         "certainty": "confirmed",
         "evidence_note_it": "Dipendenza di mercato documentata: ASML è il fornitore monopolista di scanner EUV; TSMC è il principale cliente per volume di nodi avanzati.",
+        "evidence_note_en": "Documented market dependency: ASML is the monopoly supplier of EUV scanners; TSMC is the main customer by advanced-node volume.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "ASML — sede Veldhoven / ruolo EUV",
             "url": "https://www.asml.com/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "ASML supplies TSMC with the EUV lithography machines essential for the advanced nodes used in AI chips.",
-        "evidence_note_en": "Documented market dependency: ASML is the monopoly supplier of EUV scanners; TSMC is the main customer by advanced-node volume."
+        ]
       }
     },
     {
@@ -219,19 +219,19 @@
         "target_name": "ESMC/TSMC Fab - Dresda",
         "relationship_type": "supplies",
         "description_it": "ASML fornisce le attrezzature litografiche necessarie al fab ESMC/TSMC di Dresda (EU Chips Act).",
+        "description_en": "ASML supplies the lithography equipment needed for the ESMC/TSMC fab in Dresden (EU Chips Act).",
         "certainty": "likely",
         "evidence_note_it": "Il fab ESMC è un nodo TSMC in Europa: le tool ASML sono prerequisito della roadmap produttiva dichiarata. Nessun contratto sito-sito pubblico ASML→Dresda, quindi likely e non confirmed.",
+        "evidence_note_en": "The ESMC fab is a TSMC node in Europe: ASML tools are a prerequisite of the stated production roadmap. No public site-to-site ASML→Dresden contract, so likely rather than confirmed.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "ESMC / TSMC Dresda — EU Chips Act",
             "accessed_at": "2026-09-27",
             "note": "Joint venture TSMC in Saxony; tool litografiche ASML standard di settore"
           }
-        ],
-        "description_en": "ASML supplies the lithography equipment needed for the ESMC/TSMC fab in Dresden (EU Chips Act).",
-        "evidence_note_en": "The ESMC fab is a TSMC node in Europe: ASML tools are a prerequisite of the stated production roadmap. No public site-to-site ASML→Dresden contract, so likely rather than confirmed."
+        ]
       }
     },
     {
@@ -257,19 +257,19 @@
         "target_name": "NVIDIA - Santa Clara (HQ / chip design)",
         "relationship_type": "manufactures_for",
         "description_it": "TSMC è la fonderia primaria di NVIDIA: produce i GPU/accelerator AI progettati da NVIDIA.",
+        "description_en": "TSMC is NVIDIA’s primary foundry: it manufactures the AI GPUs/accelerators designed by NVIDIA.",
         "certainty": "confirmed",
         "evidence_note_it": "Partnership foundry storica e pubblica (comunicati TSMC–NVIDIA); Jensen Huang ha ribadito la dipendenza («No TSMC, no Nvidia»).",
+        "evidence_note_en": "Long-standing public foundry partnership (TSMC–NVIDIA releases); Jensen Huang has restated the dependency («No TSMC, no Nvidia»).",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "TSMC and NVIDIA Reaffirm Partnership",
             "url": "https://pr.tsmc.com/english/news/1236",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "TSMC is NVIDIA’s primary foundry: it manufactures the AI GPUs/accelerators designed by NVIDIA.",
-        "evidence_note_en": "Long-standing public foundry partnership (TSMC–NVIDIA releases); Jensen Huang has restated the dependency («No TSMC, no Nvidia»)."
+        ]
       }
     },
     {
@@ -295,19 +295,19 @@
         "target_name": "Quanta Computer - Taoyuan (ODM server AI)",
         "relationship_type": "supplies",
         "description_it": "NVIDIA fornisce GPU/accelerator e reference design AI che Quanta (QCT) integra in server e rack per gli hyperscaler.",
+        "description_en": "NVIDIA supplies AI GPUs/accelerators and reference designs that Quanta (QCT) integrates into servers and racks for hyperscalers.",
         "certainty": "confirmed",
         "evidence_note_it": "Quanta è tra i principali ODM NVIDIA per server AI (NVL36 e sistemi correlati); la filiera GPU→rack passa tipicamente da ODM taiwanesi, non dal design HQ al campus.",
+        "evidence_note_en": "Quanta is among NVIDIA’s main ODMs for AI servers (NVL36 and related systems); the GPU→rack chain typically runs through Taiwanese ODMs, not from design HQ to campus.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "TrendForce — Quanta e partner ODM NVIDIA AI",
             "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "NVIDIA supplies AI GPUs/accelerators and reference designs that Quanta (QCT) integrates into servers and racks for hyperscalers.",
-        "evidence_note_en": "Quanta is among NVIDIA’s main ODMs for AI servers (NVL36 and related systems); the GPU→rack chain typically runs through Taiwanese ODMs, not from design HQ to campus."
+        ]
       }
     },
     {
@@ -333,19 +333,19 @@
         "target_name": "Meta Data Center - Luleå, Svezia",
         "relationship_type": "manufactures_for",
         "description_it": "Quanta è un fornitore ODM primario di Meta per server (circa metà degli ordini secondo stime di settore); i rack AI finiscono anche nei campus europei come Luleå.",
+        "description_en": "Quanta is a primary ODM server supplier for Meta (about half of orders per industry estimates); AI racks also end up in European campuses such as Luleå.",
         "certainty": "likely",
         "evidence_note_it": "Nessun packing list pubblico Luleå. Certainty likely: Quanta è ODM chiave Meta; non confirmed sul singolo edificio svedese.",
+        "evidence_note_en": "No public Luleå packing list. Certainty likely: Quanta is a key Meta ODM; not confirmed for the individual Swedish building.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "TrendForce — Quanta quota ordini Meta",
             "url": "https://www.trendforce.com/news/2025/05/05/news-microsoft-meta-ramp-up-ai-spend-lifting-nvidias-taiwanese-odm-partners-foxonn-quanta-and-wiwynn/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Quanta is a primary ODM server supplier for Meta (about half of orders per industry estimates); AI racks also end up in European campuses such as Luleå.",
-        "evidence_note_en": "No public Luleå packing list. Certainty likely: Quanta is a key Meta ODM; not confirmed for the individual Swedish building."
+        ]
       }
     },
     {
@@ -371,19 +371,19 @@
         "target_name": "Umicore - Kokkola (raffineria Co + pCAM)",
         "relationship_type": "supplies",
         "description_it": "Accordo Glencore–Umicore: idrossido di cobalto da Mutanda (RDC) verso la catena battery materials di Umicore, inclusa la raffineria di Kokkola.",
+        "description_en": "Glencore–Umicore agreement: cobalt hydroxide from Mutanda (DRC) into Umicore’s battery-materials chain, including the Kokkola refinery.",
         "certainty": "confirmed",
         "evidence_note_it": "Comunicato congiunto 2019: Mutanda e KCC nominati come fonti; destinazione raffinerie Umicore inclusa Kokkola (FI).",
+        "evidence_note_en": "Joint release 2019: Mutanda and KCC named as sources; destination Umicore refineries including Kokkola (FI).",
         "as_of": "2019-05-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore × Glencore — cobalt supply partnership",
             "url": "https://www.umicore.com/en/media/newsroom/umicore-and-glencore-develop-partnership-for-sustainable-cobalt-supply-in-battery-materials/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Glencore–Umicore agreement: cobalt hydroxide from Mutanda (DRC) into Umicore’s battery-materials chain, including the Kokkola refinery.",
-        "evidence_note_en": "Joint release 2019: Mutanda and KCC named as sources; destination Umicore refineries including Kokkola (FI)."
+        ]
       }
     },
     {
@@ -409,19 +409,19 @@
         "target_name": "Umicore - Kokkola (raffineria Co + pCAM)",
         "relationship_type": "supplies",
         "description_it": "Stesso accordo Glencore–Umicore: cobalto da Kamoto Copper Company (KCC) verso Umicore Kokkola / battery materials.",
+        "description_en": "Same Glencore–Umicore agreement: cobalt from Kamoto Copper Company (KCC) toward Umicore Kokkola / battery materials.",
         "certainty": "confirmed",
         "evidence_note_it": "KCC è nominata esplicitamente nel comunicato insieme a Mutanda. Non è un legame miniera↔miniera.",
+        "evidence_note_en": "KCC is named explicitly in the release alongside Mutanda. It is not a mine↔mine link.",
         "as_of": "2019-05-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore × Glencore — cobalt supply partnership",
             "url": "https://www.umicore.com/en/media/newsroom/umicore-and-glencore-develop-partnership-for-sustainable-cobalt-supply-in-battery-materials/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Same Glencore–Umicore agreement: cobalt from Kamoto Copper Company (KCC) toward Umicore Kokkola / battery materials.",
-        "evidence_note_en": "KCC is named explicitly in the release alongside Mutanda. It is not a mine↔mine link."
+        ]
       }
     },
     {
@@ -447,19 +447,19 @@
         "target_name": "Google Data Center - Hamina, Finlandia",
         "relationship_type": "manufactures_for",
         "description_it": "Quanta figura tra i principali assembler di server AI per Google; Hamina è un nodo hyperscale europeo dove questa classe di rack è tipica.",
+        "description_en": "Quanta is among the main AI server assemblers for Google; Hamina is a European hyperscale node where this class of rack is typical.",
         "certainty": "likely",
         "evidence_note_it": "Legame di mercato ODM↔CSP, non BOM del sito Hamina: likely.",
+        "evidence_note_en": "ODM↔CSP market link, not a Hamina site BOM: likely.",
         "as_of": "2026-09-27",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Nota metodologica Substrato — ODM→hyperscale",
             "accessed_at": "2026-09-27",
             "note": "Quanta citata come ODM rilevante per Google/Meta/AWS nelle analisi di settore"
           }
-        ],
-        "description_en": "Quanta is among the main AI server assemblers for Google; Hamina is a European hyperscale node where this class of rack is typical.",
-        "evidence_note_en": "ODM↔CSP market link, not a Hamina site BOM: likely."
+        ]
       }
     },
     {
@@ -485,19 +485,19 @@
         "target_name": "Microsoft Azure North Europe - Dublino",
         "relationship_type": "powers",
         "description_it": "CPPA Microsoft–SSE/FuturEnergy su Lenalea Wind Farm: l'elettricità del parco contribuisce all'alimentazione rinnovabile dei data center Microsoft in Irlanda (Azure North Europe, Dublino).",
+        "description_en": "Microsoft–SSE/FuturEnergy CPPA on Lenalea Wind Farm: the park’s electricity contributes to renewable supply for Microsoft data centers in Ireland (Azure North Europe, Dublin).",
         "certainty": "confirmed",
         "evidence_note_it": "Accordo pubblico sul sito Lenalea e comunicati Microsoft Ireland: CPPA esplicitamente legato alle operazioni data center irlandesi.",
+        "evidence_note_en": "Public agreement on the Lenalea site and Microsoft Ireland releases: CPPA explicitly tied to Irish data-center operations.",
         "as_of": "2024-05-10",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Lenalea Wind Farm — CPPA Microsoft",
             "url": "https://lenaleawindfarm.com/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Microsoft–SSE/FuturEnergy CPPA on Lenalea Wind Farm: the park’s electricity contributes to renewable supply for Microsoft data centers in Ireland (Azure North Europe, Dublin).",
-        "evidence_note_en": "Public agreement on the Lenalea site and Microsoft Ireland releases: CPPA explicitly tied to Irish data-center operations."
+        ]
       }
     },
     {
@@ -523,10 +523,12 @@
         "target_name": "AWS Europe (Stoccolma) - Eskilstuna",
         "relationship_type": "powers",
         "description_it": "PPA Amazon su Fågelås (portafoglio Saena): elettricità eolica contrattata per le operazioni svedesi, inclusa la regione AWS Europe (Stoccolma) con AZ a Eskilstuna.",
+        "description_en": "Amazon PPA on Fågelås (Saena portfolio): contracted wind electricity for Swedish operations, including the AWS Europe (Stockholm) region with an AZ at Eskilstuna.",
         "certainty": "confirmed",
         "evidence_note_it": "Comunicato Amazon Sverige: Fågelås nominato tra i PPA eolici; AWS Stockholm opera tramite AZ in Svezia (Eskilstuna/Katrineholm/Västerås). Il PPA è di rete (non cavo dedicato al singolo edificio).",
+        "evidence_note_en": "Amazon Sverige release: Fågelås named among wind PPAs; AWS Stockholm operates via AZs in Sweden (Eskilstuna/Katrineholm/Västerås). The PPA is grid-level (not a dedicated cable to a single building).",
         "as_of": "2026-08-28",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Amazon Sverige — PPA eolici in Svezia",
@@ -538,9 +540,7 @@
             "url": "https://www.eolus.com/en/projects/fagelas/",
             "accessed_at": "2026-09-27"
           }
-        ],
-        "description_en": "Amazon PPA on Fågelås (Saena portfolio): contracted wind electricity for Swedish operations, including the AWS Europe (Stockholm) region with an AZ at Eskilstuna.",
-        "evidence_note_en": "Amazon Sverige release: Fågelås named among wind PPAs; AWS Stockholm operates via AZs in Sweden (Eskilstuna/Katrineholm/Västerås). The PPA is grid-level (not a dedicated cable to a single building)."
+        ]
       }
     },
     {
@@ -571,7 +571,7 @@
         "evidence_note_it": "Integrazione di ottemperanza Microsoft allo screening ID VIP 6197: tre linee MT E-Distribuzione, due da Caleppio di Settala (RDD e Ballard) e una di backup da Zelo Buon Persico. È il punto di allaccio, non la centrale che ha prodotto l’energia. Contratto Enel Energia con garanzia d’origine: certificato, non cavo.",
         "evidence_note_en": "Microsoft compliance filing for screening ID VIP 6197: three E-Distribuzione MV lines, two from Caleppio di Settala (RDD and Ballard) and a Ballard backup from Zelo Buon Persico. This is the connection point, not the plant that generated the power. The Enel Energia contract with guarantees of origin is a certificate, not a cable.",
         "as_of": "2023-02-03",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Microsoft — ottemperanza screening Datacenter Italy Caleppio di Settala",
@@ -615,7 +615,7 @@
         "evidence_note_it": "Studio di impatto dell’ampliamento a Noviglio: il cavo 132 kV è stato autorizzato dalla Città metropolitana di Milano con determina 2234 del 21 marzo 2022, con conclusione prevista al 31 dicembre 2024 compreso il collaudo. È il punto di allaccio, non la centrale che ha prodotto l’energia.",
         "evidence_note_en": "Impact study for the Noviglio expansion: the 132 kV cable was authorized by the Metropolitan City of Milan with determination 2234 of 21 March 2022, with completion expected by 31 December 2024 including testing. This is the connection point, not the plant that generated the power.",
         "as_of": "2022-03-21",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "SIA — ampliamento data center Noviglio, via XXV Aprile",
@@ -659,7 +659,7 @@
         "evidence_note_it": "OpenStreetMap: stazione Turbigo, operator Edipower (precedente proprietario della centrale), 380 kV, substation=transmission, poche centinaia di metri a est dell’impianto. Allaccio di immissione documentato per adiacenza; non è un PPA e non è un allaccio di campus.",
         "evidence_note_en": "OpenStreetMap: Turbigo station, operator Edipower (the plant’s previous owner), 380 kV, substation=transmission, a few hundred metres east of the plant. Documented injection connection by adjacency; not a PPA and not a campus connection.",
         "as_of": "2026-09-28",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -704,7 +704,7 @@
         "evidence_note_it": "Inferenza di cluster di rete: stessa rete di trasmissione lombarda, nessun fascicolo che nomini Turbigo come cabina/stazione di allaccio del campus. Certainty inferred; non elevare senza STMG/VIA.",
         "evidence_note_en": "Grid-cluster inference: same Lombardy transmission system, no filing that names Turbigo as the campus connection substation. Certainty inferred; do not raise without an STMG/EIA.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -743,7 +743,7 @@
         "evidence_note_it": "Inferenza di rete regionale. L’allaccio confirmed è Caleppio→Settala (conn_027). Turbigo non compare nel fascicolo VIP 6197.",
         "evidence_note_en": "Regional-grid inference. The confirmed connection is Caleppio→Settala (conn_027). Turbigo is not named in VIP 6197.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -787,7 +787,7 @@
         "evidence_note_it": "Inferenza di cluster ovest milanese. Nessuna STMG/VIA che colleghi ML5 alla stazione Turbigo.",
         "evidence_note_en": "West-Milan cluster inference. No STMG/EIA linking ML5 to Turbigo station.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -825,7 +825,7 @@
         "evidence_note_it": "Prossimità di rete / stesso cluster. Nessun fascicolo che nomini Turbigo come stazione di allaccio Data4.",
         "evidence_note_en": "Grid proximity / same cluster. No filing that names Turbigo as Data4’s connection station.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -863,7 +863,7 @@
         "evidence_note_it": "Stesso cluster di trasmissione. Nessuna prova sito-sito Turbigo↔MXP1.",
         "evidence_note_en": "Same transmission cluster. No site-to-site evidence Turbigo↔MXP1.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -901,7 +901,7 @@
         "evidence_note_it": "Inferenza di rete. L’allaccio confirmed è Lacchiarella→Noviglio (conn_028). Turbigo non è nominata nel SIA.",
         "evidence_note_en": "Grid inference. The confirmed connection is Lacchiarella→Noviglio (conn_028). Turbigo is not named in the impact study.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -945,7 +945,7 @@
         "evidence_note_it": "Inferenza di rete; il VIA/parere AWS Zibido nomina SE 220 kV al confine (Lacchiarella Ovest), non Turbigo come punto di allaccio.",
         "evidence_note_en": "Grid inference; the AWS Zibido EIA/opinion names the 220 kV border SE (Lacchiarella Ovest), not Turbigo as the connection point.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MASE VIA — AWS Zibido",
@@ -988,7 +988,7 @@
         "evidence_note_it": "Prossimità e scala di rete; nessun contratto o fascicolo che nomini Turbigo come stazione di allaccio K2.",
         "evidence_note_en": "Proximity and grid scale; no contract or filing that names Turbigo as K2’s connection station.",
         "as_of": "2026-09-29",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "OpenStreetMap — stazione Turbigo (way 162828577)",
@@ -1026,7 +1026,7 @@
         "evidence_note_it": "Integrazione spontanea VIA ID VIP 9549 e parere regionale: doppio cavo 132 kV dalla sottostazione del sito alla SE Baggio (via Edison, Seguro). Confirmed sul punto di connessione, non sull’origine dell’energia.",
         "evidence_note_en": "VIP 9549 voluntary EIA integration and regional opinion: dual 132 kV cable from the site substation to Baggio SE (Via Edison, Seguro). Confirmed on the connection point, not on the origin of the power.",
         "as_of": "2024-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MASE — integrazione elettrodotto MIL03 / SE Baggio",
@@ -1069,7 +1069,7 @@
         "evidence_note_it": "Controdeduzioni VIA Apto (ID VIP 13535): STMG 202400955 nomina esplicitamente la SE Lacchiarella esistente. Confirmed sul punto di connessione.",
         "evidence_note_en": "Apto EIA counter-deductions (VIP 13535): STMG 202400955 explicitly names the existing Lacchiarella SE. Confirmed on the connection point.",
         "as_of": "2024-03-07",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Apto — controdeduzioni STMG 202400955",
@@ -1112,7 +1112,7 @@
         "evidence_note_it": "VIA completamento MXP1 e decreto EL 488: SE 220 kV Melegnano contigua al campus; allaccio nominato. Confirmed sul punto di connessione.",
         "evidence_note_en": "MXP1 completion EIA and decree EL 488: contiguous 220 kV Melegnano SE; named connection. Confirmed on the connection point.",
         "as_of": "2022-08-26",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MASE VIA — completamento MXP1 Melegnano",
@@ -1150,7 +1150,7 @@
         "evidence_note_it": "Comunicati Neoen 2024 e 2026: PPA portfolio nominato Equinix; Arena Po citata come impianto del contratto. Virtual PPA → confirmed sul contratto, non sull’allaccio fisico.",
         "evidence_note_en": "Neoen releases 2024 and 2026: named Equinix portfolio PPA; Arena Po cited as a plant under the contract. Virtual PPA → confirmed on the contract, not on a physical connection.",
         "as_of": "2024-11-21",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Neoen × Equinix — primo PPA in Italia",
@@ -1193,7 +1193,7 @@
         "evidence_note_it": "Stesso contratto di Arena Po→ML5; senza naming sito-sito del singolo IBX → likely, non confirmed.",
         "evidence_note_en": "Same contract as Arena Po→ML5; without site-to-site naming of the individual IBX → likely, not confirmed.",
         "as_of": "2024-11-21",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Neoen × Equinix — primo PPA in Italia",
@@ -1232,7 +1232,7 @@
         "evidence_note_it": "Parere Regione Lombardia (documento MASE 1251809): «i data center collegati alla sottostazione elettrica Terna di Baggio sono, oltre a MIL03, anche ML7/ML8 (Equinix) e MXP2 (VDC)». Confirmed sul punto di connessione.",
         "evidence_note_en": "Lombardy Region opinion (MASE doc 1251809): data centers connected to Terna’s Baggio substation include MIL03, Equinix ML7/ML8 and Vantage MXP2. Confirmed on the connection point.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Regione Lombardia — parere MIL03 / DC collegati a Baggio",
@@ -1271,7 +1271,7 @@
         "evidence_note_it": "SPA/integrazioni Equinix (712030, 931063): doppio cavo verso Baggio. Parere regionale 1251809: ML7/ML8 tra i collegati a Baggio. Confirmed sul punto di connessione.",
         "evidence_note_en": "Equinix SPA/integrations (712030, 931063): dual cable to Baggio. Regional opinion 1251809: ML7/ML8 among Baggio connections. Confirmed on the connection point.",
         "as_of": "2023-03-28",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Equinix — SPA ML7–ML8 (allaccio Baggio)",
@@ -1324,7 +1324,7 @@
         "evidence_note_it": "Il Cittadino (incontro tecnico): ubicazione «all’interno del perimetro della centrale». Nessun offtake nominato → likely, mai confirmed senza PPA/STMG sito-sito.",
         "evidence_note_en": "Il Cittadino (technical meeting): location «inside the plant perimeter». No named offtake → likely, never confirmed without a site-to-site PPA/STMG.",
         "as_of": "2026-06-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Il Cittadino — Vantage nella centrale di Tavazzano",
@@ -1367,7 +1367,7 @@
         "evidence_note_it": "Fonte primaria: comunicato CdM/MIMIT che nomina campus e SE 380 kV sullo stesso nodo. Senza fascicolo STMG/VIA che detti il cavo → likely, non confirmed.",
         "evidence_note_en": "Primary source: CdM/MIMIT release naming the campus and the 380 kV SE on the same node. Without an STMG/EIA filing that specifies the cable → likely, not confirmed.",
         "as_of": "2026-07-24",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MIMIT — Cavour Hyperscale Campus (SE 380 kV sul sito)",
@@ -1410,7 +1410,7 @@
         "evidence_note_it": "MIMIT + scheda Enel Trino: stesso sito/nodo documentato. Nessun contratto di fornitura nominato → likely, analogo a Tavazzano→MXP4 (conn_045), mai confirmed senza PPA.",
         "evidence_note_en": "MIMIT + Enel Trino factsheet: same documented site/node. No named supply contract → likely, analogous to Tavazzano→MXP4 (conn_045), never confirmed without a PPA.",
         "as_of": "2026-07-24",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MIMIT — Cavour Hyperscale Campus (FV 87,5 MW sul nodo)",
@@ -1453,7 +1453,7 @@
         "evidence_note_it": "Comunicato congiunto Data4/Edison (PDF): PPA nominato, MW e volume GWh espliciti. Impianto non nominato per comune → pin provincia; confirmed sul contratto.",
         "evidence_note_en": "Joint Data4/Edison release (PDF): named PPA, explicit MW and GWh. Plant municipality not named → province pin; confirmed on the contract.",
         "as_of": "2025-03-04",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Data4 × Edison Energia — PPA FV Viterbo (PDF)",
@@ -1496,7 +1496,7 @@
         "evidence_note_it": "Fascicoli MASE VIP 6230 (elettrodotto Lacchiarella→Supernap) e descrizione tecnica sottostazione AT STACK Campus: STMG nominata sulla SE Lacchiarella esistente, non su Lacchiarella Ovest. Confirmed sul punto di connessione.",
         "evidence_note_en": "MASE VIP 6230 filings (Lacchiarella→Supernap cable) and STACK Campus HV substation technical note: STMG names the existing Lacchiarella SE, not Lacchiarella Ovest. Confirmed on the connection point.",
         "as_of": "2025-05-06",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MASE — elettrodotto AT 132 kV Lacchiarella–Supernap Siziano (VIP 6230)",
@@ -1545,7 +1545,7 @@
         "evidence_note_it": "Parere Parco Agricolo Sud Milano sul VIA AWS (VIP 14476) nomina la nuova SE 220 kV al confine. EL-647 è la SE Lacchiarella Ovest 380/220 kV. Nessuna STMG pubblica consultata con codice → likely, non confirmed.",
         "evidence_note_en": "Parco Agricolo Sud Milano opinion on the AWS EIA (VIP 14476) names the new 220 kV SE at the border. EL-647 is Lacchiarella Ovest 380/220 kV. No consulted public STMG with a code → likely, not confirmed.",
         "as_of": "2026-01-06",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Parco Agricolo Sud Milano — parere VIA AWS Zibido (SE 220 kV al confine)",
@@ -1593,7 +1593,7 @@
         "evidence_note_it": "Il Giorno / comunicati comunali: Lacchiarella Ovest «andrà ad alimentare il futuro campus» Lacchiarella–Zibido. Nessuna STMG K2 pubblica consultata → likely. Distinto da conn_039 (Apto→gn_002).",
         "evidence_note_en": "Il Giorno / municipal releases: Lacchiarella Ovest «will feed the future campus» at Lacchiarella–Zibido. No consulted public K2 STMG → likely. Distinct from conn_039 (Apto→gn_002).",
         "as_of": "2026-03-02",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Il Giorno — Lacchiarella Ovest alimenta campus Lacchiarella/Zibido",
@@ -1641,7 +1641,7 @@
         "evidence_note_it": "Allegato connessioni elettriche al SIA Bornasco (MASE): nomina esplicita «Nuova Stazione Elettrica Terna a Bornasco». Tracciati non definitivi → likely, non confirmed.",
         "evidence_note_en": "Electrical-connection annex to the Bornasco EIA (MASE): explicitly names the «new Terna electrical station at Bornasco». Alignments not final → likely, not confirmed.",
         "as_of": "2024-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MASE — opere di connessione Bornasco MIL05/MIL06 (SIA)",
@@ -1684,7 +1684,7 @@
         "evidence_note_it": "Fascicolo VIA Aruba: connessione diretta alla stazione AT E-Distribuzione confinante, autorizzata (AU Provincia BG n.2700/2021). Confirmed sul punto di allaccio campus↔cabina; Mozzo è rinforzo di rete a monte.",
         "evidence_note_en": "Aruba EIA file: direct connection to the adjacent E-Distribuzione HV station, authorised (Bergamo Province AU no. 2700/2021). Confirmed on the campus↔cabin connection point; Mozzo is upstream grid reinforcement.",
         "as_of": "2021-11-24",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MASE — Aruba Ponte San Pietro, allaccio cabina AT E-Distribuzione",
@@ -1732,7 +1732,7 @@
         "evidence_note_it": "Comunicato Eni/Khazna: offtake energetico nominato (Blue Power) sullo stesso polo. HoT, non contratto definitivo → likely. Distinto dalla centrale Enipower già in esercizio nello stesso comune.",
         "evidence_note_en": "Eni/Khazna release: named energy offtake (Blue Power) on the same hub. HoT, not a final contract → likely. Distinct from the existing Enipower plant in the same municipality.",
         "as_of": "2025-07-11",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Eni — HoT con Khazna, alimentazione Blue Power",
@@ -1775,7 +1775,7 @@
         "evidence_note_it": "IGO: Kwinana «forms part of a vertically integrated lithium value chain with Greenbushes supplying» il concentrato. Confirmed sul flusso miniera→raffineria dello stesso gruppo.",
         "evidence_note_en": "IGO: Kwinana «forms part of a vertically integrated lithium value chain with Greenbushes supplying» the concentrate. Confirmed on same-group mine→refinery flow.",
         "as_of": "2024-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "IGO — Greenbushes / Kwinana vertical integration",
@@ -1813,7 +1813,7 @@
         "evidence_note_it": "TIME (documenti interni Sama/OpenAI, payslip): contratto e wage. Confirmed sul legame; non implica flusso 2026 attivo.",
         "evidence_note_en": "TIME (internal Sama/OpenAI documents, payslips): contract and wages. Confirmed on the link; does not imply an active 2026 flow.",
         "as_of": "2023-01-18",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "TIME — OpenAI Used Kenyan Workers on Less Than $2 Per Hour",
@@ -1856,7 +1856,7 @@
         "evidence_note_it": "TIME/CBS: Sama→Meta/Facebook. AP/Guardian 2026: fine engagement Nairobi. Confirmed sul rapporto di committenza Meta; non su un singolo edificio Hacker Way.",
         "evidence_note_en": "TIME/CBS: Sama→Meta/Facebook. AP/Guardian 2026: Nairobi engagement ended. Confirmed on Meta contracting relationship; not on a single Hacker Way building.",
         "as_of": "2023-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "TIME — Facebook’s African sweatshop / Sama",
@@ -1904,7 +1904,7 @@
         "evidence_note_it": "Foxglove/CBS: worker Remotasks in Kenya; Scale citata come fornitore per OpenAI e altri. Senza contratto OpenAI–Remotasks pubblico sito-sito → likely.",
         "evidence_note_en": "Foxglove/CBS: Remotasks workers in Kenya; Scale cited as supplier for OpenAI and others. Without a public OpenAI–Remotasks site-to-site contract → likely.",
         "as_of": "2024-03-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Foxglove — Kenyan AI workers letter (Scale/Remotasks)",
@@ -1947,7 +1947,7 @@
         "evidence_note_it": "Stesso contratto di Arena Po→ML5; comunicato cita esplicitamente Genova. Senza naming sito-sito del singolo IBX → likely, non confirmed.",
         "evidence_note_en": "Same contract as Arena Po→ML5; release explicitly cites Genoa. Without site-to-site naming of the individual IBX → likely, not confirmed.",
         "as_of": "2024-11-21",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Neoen × Equinix — primo PPA in Italia",
@@ -1986,7 +1986,7 @@
         "evidence_note_it": "Indirizzo MIX Report 2025 e scheda Avalon entrambi Via Caldera 21. Confirmed sulla co-ubicazione di campus.",
         "evidence_note_en": "MIX Report 2025 address and Avalon listing both Via Caldera 21. Confirmed on campus co-location.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "MIX — Annual Report 2025 (Caldera 21)",
@@ -2030,7 +2030,7 @@
         "evidence_note_it": "Architetture Hopper/Blackwell pubbliche e guide CoWoS: HBM on-package. SK Hynix è il fornitore HBM primario NVIDIA. Confirmed sul ruolo di anello; non su un lotto Icheon→Zhunan tracciato.",
         "evidence_note_en": "Public Hopper/Blackwell architectures and CoWoS guides: HBM on-package. SK Hynix is NVIDIA’s primary HBM supplier. Confirmed on ring role; not on a traced Icheon→Zhunan lot.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Inside DeepTech — CoWoS + HBM on package",
@@ -2073,7 +2073,7 @@
         "evidence_note_it": "Flusso CoWoS documentato da TSMC/analisi di settore: die da nodi N4/N3 verso AP. Confirmed sul ruolo; pin Zhunan è rappresentativo del cluster AP.",
         "evidence_note_en": "CoWoS flow documented by TSMC/industry analysis: N4/N3 dies into AP. Confirmed on role; Zhunan pin represents the AP cluster.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Inside DeepTech — TSMC CoWoS guide",
@@ -2111,7 +2111,7 @@
         "evidence_note_it": "Blackwell su CoWoS-L (analisi TechInsights/guide); allocazione NVIDIA ~60% CoWoS citata in analisi di settore. Confirmed sul rapporto packaging→NVIDIA.",
         "evidence_note_en": "Blackwell on CoWoS-L (TechInsights/guides); ~60% NVIDIA CoWoS allocation in industry analysis. Confirmed on packaging→NVIDIA relationship.",
         "as_of": "2025-03-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Inside DeepTech — Blackwell CoWoS-L",
@@ -2154,7 +2154,7 @@
         "evidence_note_it": "Cronaca 2025–26 su outsourcing CoWoS/CoW verso ASE; senza contratto sito-sito ASE→NVIDIA pubblico → likely.",
         "evidence_note_en": "2025–26 reporting on CoWoS/CoW outsourcing to ASE; no public ASE→NVIDIA site-to-site contract → likely.",
         "as_of": "2026-08-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "M1K — TSMC CoWoS outsourcing / ASE",
@@ -2192,7 +2192,7 @@
         "evidence_note_it": "Roadmap Instinct/MI300+ su TSMC documentata pubblicamente; confirmed sul rapporto foundry→AMD design.",
         "evidence_note_en": "Instinct/MI300+ on TSMC publicly documented; confirmed on foundry→AMD design relationship.",
         "as_of": "2024-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Inside DeepTech — AMD Instinct needs CoWoS",
@@ -2235,7 +2235,7 @@
         "evidence_note_it": "HBM on Instinct documentato; SK Hynix leader HBM. Likely sul fornitore dominante, non exclusive sole-source AMD.",
         "evidence_note_en": "HBM on Instinct documented; SK Hynix HBM leader. Likely on dominant supplier, not AMD exclusive sole-source.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Inside DeepTech — Instinct HBM/CoWoS",
@@ -2273,7 +2273,7 @@
         "evidence_note_it": "Guide CoWoS e ranking supply 2026: AMD compete per CoWoS. Confirmed sul bisogno packaging; quota è stima di settore.",
         "evidence_note_en": "CoWoS guides and 2026 supply rankings: AMD competes for CoWoS. Confirmed on packaging need; share is industry estimate.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "ValueAdd — AMD ~11% CoWoS",
@@ -2316,7 +2316,7 @@
         "evidence_note_it": "Ruolo ODM Foxconn su server AI è di settore; senza BOM Foxconn→singolo campus → likely sul ramo NVIDIA→ODM, non sul footprint EU.",
         "evidence_note_en": "Foxconn’s AI-server ODM role is industry-standard; without a Foxconn→single-campus BOM → likely on NVIDIA→ODM branch, not on EU footprint.",
         "as_of": "2025-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Nota ODM — Quanta/Foxconn nell’ecosistema NVIDIA AI",
@@ -2355,7 +2355,7 @@
         "evidence_note_it": "Qualifica NVIDIA HBM4 Samsung (analisi/TrendForce 2026) + architettura on-package HBM. Senza packing list Hwaseong→Zhunan → likely, non confirmed.",
         "evidence_note_en": "NVIDIA HBM4 Samsung qualification (analysis/TrendForce 2026) + on-package HBM architecture. Without Hwaseong→Zhunan packing list → likely, not confirmed.",
         "as_of": "2026-03-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "NVIDIA supply chain — Samsung HBM4 qualification",
@@ -2398,7 +2398,7 @@
         "evidence_note_it": "Comunicati Umicore sull’acquisizione Kokkola e sul ruolo di supply di precursori verso Nysa. Confirmed sul corridoio aziendale documentato.",
         "evidence_note_en": "Umicore releases on Kokkola acquisition and precursor supply role toward Nysa. Confirmed on the documented corporate corridor.",
         "as_of": "2020-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore — sustainable battery materials supply chain (Kokkola→Nysa)",
@@ -2441,7 +2441,7 @@
         "evidence_note_it": "Testo accordo: maggioranza volumi dal plant polacco. Confirmed sul rapporto CAM→cell maker; non su ogni lotto giornaliero.",
         "evidence_note_en": "Agreement text: majority of volumes from the Polish plant. Confirmed on CAM→cell-maker relationship; not on every daily lot.",
         "as_of": "2020-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore — LG Chem NMC supply (Poland volumes)",
@@ -2484,7 +2484,7 @@
         "evidence_note_it": "Integrazione verticale Atacama–La Negra di settore/operatore; confirmed sul ramo brine. Non implica destinazione verso Nysa/LGES.",
         "evidence_note_en": "Industry/operator vertical integration Atacama–La Negra; confirmed on the brine branch. Does not imply destination to Nysa/LGES.",
         "as_of": "2020-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Salar de Atacama — ubicazione estrazione",
@@ -2528,7 +2528,7 @@
         "evidence_note_it": "Comunicato Umicore + Terrafame: deliveries commerciali avviate dopo qualifica; destinazione esplicita Nysa. Confirmed.",
         "evidence_note_en": "Umicore + Terrafame releases: commercial deliveries started after qualification; Nysa destination explicit. Confirmed.",
         "as_of": "2023-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore — Terrafame nickel sulphate agreement",
@@ -2571,7 +2571,7 @@
         "evidence_note_it": "Accordo strategico documentato + sito Göd operativo. Senza packing list Nysa→Göd → likely.",
         "evidence_note_en": "Documented strategic agreement + operational Göd site. Without Nysa→Göd packing list → likely.",
         "as_of": "2020-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore — Samsung SDI NMC supply agreement",
@@ -2614,7 +2614,7 @@
         "evidence_note_it": "Schede aziendali Syrah su Balama→Vidalia. Confirmed sul ramo anodo.",
         "evidence_note_en": "Syrah company pages on Balama→Vidalia. Confirmed on the anode branch.",
         "as_of": "2024-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Syrah — Vidalia AAM (Balama origin feedstock)",
@@ -2657,7 +2657,7 @@
         "evidence_note_it": "MoU pubblico di valutazione; senza contratto vincolante o packing list → likely, non confirmed.",
         "evidence_note_en": "Public evaluation MoU; without binding contract or packing list → likely, not confirmed.",
         "as_of": "2023-08-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "NS Energy — Syrah MoU with Samsung SDI (Vidalia AAM)",
@@ -2696,7 +2696,7 @@
         "evidence_note_it": "Umicore dichiara end-product battery-grade verso CAM; senza bill of lading Hoboken→Nysa → likely.",
         "evidence_note_en": "Umicore states battery-grade end products for CAM; without Hoboken→Nysa bill of lading → likely.",
         "as_of": "2011-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Umicore — pyro-hydro technology (recovery into CAM materials)",
@@ -2739,7 +2739,7 @@
         "evidence_note_it": "Scale dichiara Remotasks come sussidiaria/piattaforma di labeling. Confirmed sul rapporto corporate; il mercato KE è decommissioned dal 2024.",
         "evidence_note_en": "Scale states Remotasks as labeling subsidiary/platform. Confirmed on corporate relationship; KE market decommissioned since 2024.",
         "as_of": "2024-03-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Wikipedia / Scale — Remotasks subsidiary",
@@ -2782,7 +2782,7 @@
         "evidence_note_it": "Nessun packing list pubblico Scale→OpenAI sito-sito. Foxglove/CBS + ruolo Scale come fornitore lab → likely.",
         "evidence_note_en": "No public Scale→OpenAI site-to-site packing list. Foxglove/CBS + Scale’s role as lab supplier → likely.",
         "as_of": "2024-03-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Foxglove — Kenyan workers letter (Scale/OpenAI ecosystem)",
@@ -2825,7 +2825,7 @@
         "evidence_note_it": "Stake Meta–Scale e integrazione MSL sono pubblici; senza bill of lading Scale HQ→Menlo Park su un dataset specifico → likely.",
         "evidence_note_en": "Meta–Scale stake and MSL integration are public; without a Scale HQ→Menlo Park bill of lading on a specific dataset → likely.",
         "as_of": "2025-06-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Wikipedia — Scale AI (Meta Platforms ownership stake)",
@@ -2869,7 +2869,7 @@
         "evidence_note_it": "Remotasks owned by Scale; inchieste nominano esplicitamente la piattaforma e il mercato PH. Confirmed sul rapporto hub→intermediario.",
         "evidence_note_en": "Remotasks owned by Scale; investigations explicitly name the platform and PH market. Confirmed on hub→intermediary relationship.",
         "as_of": "2023-08-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Washington Post — Remotasks Philippines",
@@ -2912,7 +2912,7 @@
         "evidence_note_it": "Partnership pubblicata da Surge con endorsement del co-founder. Confirmed sul legame committenza/intermediario.",
         "evidence_note_en": "Partnership published by Surge with co-founder endorsement. Confirmed on contracting/intermediary link.",
         "as_of": "2022-01-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Surge — Anthropic RLHF platform",
@@ -2950,7 +2950,7 @@
         "evidence_note_it": "Denuncia civile nomina OpenAI tra clienti; senza contratto pubblico sito-sito → likely.",
         "evidence_note_en": "Civil complaint names OpenAI among clients; without public site-to-site contract → likely.",
         "as_of": "2025-05-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Clarkson — Surge class action (OpenAI projects)",
@@ -2988,7 +2988,7 @@
         "evidence_note_it": "Meta nominata in lawsuit Surge; senza contratto sito-sito → likely.",
         "evidence_note_en": "Meta named in Surge lawsuit; without site-to-site contract → likely.",
         "as_of": "2025-05-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Clarkson — Surge class action (Meta projects)",
@@ -3031,7 +3031,7 @@
         "evidence_note_it": "Google nominata nella denuncia; BI elenca Google tra clienti Scale nel segmento parallelo. Likely, non confirmed lot-level.",
         "evidence_note_en": "Google named in complaint; BI lists Google among Scale clients in parallel segment. Likely, not lot-level confirmed.",
         "as_of": "2025-05-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Clarkson — Surge class action (Google projects)",
@@ -3074,7 +3074,7 @@
         "evidence_note_it": "BI: Scale «working with» OpenAI, Meta, Google; senza contratto pubblico → likely.",
         "evidence_note_en": "BI: Scale «working with» OpenAI, Meta, Google; without public contract → likely.",
         "as_of": "2025-04-01",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Business Insider — Scale AI clients (Google, Meta, OpenAI)",
@@ -3112,7 +3112,7 @@
         "evidence_note_it": "Cronaca tecnica locale (Cosenostre) riporta date, MW e nomi SE/linea Terna. Aggiornamento Leinì richiesto, non confermato in fascicolo MASE pubblico → likely, non confirmed.",
         "evidence_note_en": "Local technical reporting (Cosenostre) gives dates, MW and Terna SE/line names. Leinì update requested, not confirmed in a public MASE file → likely, not confirmed.",
         "as_of": "2024-10-25",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Cosenostre — Caselle: STMG Terna e richiesta alimentazione da Leinì",
@@ -3150,12 +3150,50 @@
         "evidence_note_it": "Dichiarazione nominata (Corriere, Massimini). Senza fascicolo Terna/MASE → likely, analogo a Trino SE→Cavour (conn_046).",
         "evidence_note_en": "Named statement (Corriere, Massimini). Without a Terna/MASE filing → likely, analogous to Trino SE→Cavour (conn_046).",
         "as_of": "2026-06-26",
-        "updated_at": "2026-09-29",
+        "updated_at": "2026-10-01",
         "sources": [
           {
             "title": "Corriere Torino — Grugliasco Pininfarina: allaccio Piossasco",
             "url": "https://torino.corriere.it/notizie/economia/26_giugno_26/torino-grugliasco-si-spacca-sul-data-center-nelle-ex-area-pininfarina-i-pro-e-contro-all-impianto-da-4-miliardi-di-investimenti-57cabd4b-6960-493b-b3f8-a26a5fc53xlk.shtml",
             "accessed_at": "2026-09-29"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            7.6540804,
+            45.0838664
+          ],
+          [
+            7.6346192,
+            45.0972986
+          ]
+        ]
+      },
+      "properties": {
+        "id": "conn_089",
+        "source_id": "gn_012",
+        "target_id": "dc_082",
+        "source_name": "Stazione Terna — Corso Appio Claudio (Torino)",
+        "target_name": "Asja / Reba Projects — Hyperscale ex Bonafous (Lucento)",
+        "relationship_type": "connects",
+        "description_it": "La Regione Piemonte ha autorizzato due linee elettriche interrate a 220 kV (una operativa e una di riserva) dalla stazione Terna di Corso Appio Claudio fino al futuro data center ex Bonafous (dc_082), secondo la cronaca tecnica (La Voce). Non è un offtake energetico né una STMG consultata in fascicolo primario.",
+        "description_en": "Piedmont Region authorised two buried 220 kV lines (one in service, one reserve) from Terna’s Corso Appio Claudio station to the future ex-Bonafous data center (dc_082), according to technical press (La Voce). It is neither an energy offtake nor a STMG consulted in a primary file.",
+        "certainty": "likely",
+        "evidence_note_it": "Fonte giornalistica secondaria che nomina SE, tensione e destinazione. Senza atto regionale/Terna linkato → likely, non confirmed.",
+        "evidence_note_en": "Secondary journalism naming SE, voltage and destination. No linked regional/Terna act → likely, not confirmed.",
+        "as_of": "2026-09-15",
+        "updated_at": "2026-10-01",
+        "sources": [
+          {
+            "title": "La Voce — Bonafous: elettrodotti da Corso Appio Claudio",
+            "url": "https://www.giornalelavoce.it/news/attualita/736561/data-center-a-chivasso-settimo-torinese-grugliasco-sara-uninvasione.html",
+            "accessed_at": "2026-10-01"
           }
         ]
       }

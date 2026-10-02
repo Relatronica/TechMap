@@ -4420,6 +4420,532 @@
         ],
         "community_impact_en": "Industrial brownfield in Grugliasco; strong local debate on energy, water and land use (former automotive vs hyperscale)."
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7526454,
+          45.1341432
+        ]
+      },
+      "properties": {
+        "id": "dc_078",
+        "name": "Intesa Sanpaolo — CCS Settimo Torinese",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "Intesa Sanpaolo",
+        "capacity": "Tier III Uptime (Design + Facility); ~1.000 m² sala rack (fonte seconda); completato ~2009",
+        "description_it": "Data center enterprise CCS di Intesa Sanpaolo a Settimo Torinese (Via della Costituzione). Certificato Uptime Institute Tier III per Design e Facility (cliente Intesa Sanpaolo). Facility bancaria proprietaria del polo torinese, distinta dai nodi TIM/Noovle (dc_074–075, dc_080) e dal colo urbano. Pin geocodificato su Via della Costituzione.",
+        "description_en": "Intesa Sanpaolo’s CCS enterprise data center in Settimo Torinese (Via della Costituzione). Uptime Institute Tier III certified for Design and Facility (Intesa Sanpaolo client). Proprietary banking facility in the Turin metro, distinct from TIM/Noovle nodes (dc_074–075, dc_080) and urban colo. Pin geocoded on Via della Costituzione.",
+        "country": "IT",
+        "city": "Settimo Torinese",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2009,
+        "updated_at": "2026-10-01",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not named in open sources consulted."
+        },
+        "community_impact_it": "Facility bancaria in area industriale settimese; impatto locale tipico di CED enterprise (rumore, sicurezza perimetrale).",
+        "labor_risks": [
+          "shift_work",
+          "high_skill"
+        ],
+        "sources": [
+          {
+            "title": "Uptime Institute — Data Center CCS Settimo Torinese (Intesa Sanpaolo)",
+            "url": "https://uptimeinstitute.com/uptime-institute-awards/datacenter/data-center-ccs--settimo-torinese/860",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Uptime Institute — Intesa Sanpaolo client awards (CCS, CCM, CAE)",
+            "url": "https://uptimeinstitute.com/uptime-institute-awards/client/intesa-sanpaolo-spa/554",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Banking facility in Settimo industrial area; local impact typical of enterprise CED (noise, perimeter security)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7017468,
+          44.98898
+        ]
+      },
+      "properties": {
+        "id": "dc_079",
+        "name": "Intesa Sanpaolo — CCM Moncalieri",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "Intesa Sanpaolo",
+        "capacity": "Tier III Uptime (Design + Facility); ~1.000 m² sala rack (fonte seconda); completato ~2009",
+        "description_it": "Data center enterprise CCM di Intesa Sanpaolo a Moncalieri (Corso Savona / centro contabile). Certificato Uptime Institute Tier III Design + Facility insieme al CCS di Settimo. Gemello operativo del polo bancario torinese; distinto da Noovle Via Cruto (dc_080) e dal progetto hyperscale ex Ilte (dc_081) nello stesso comune.",
+        "description_en": "Intesa Sanpaolo’s CCM enterprise data center in Moncalieri (Corso Savona / accounting centre). Uptime Institute Tier III Design + Facility certified together with Settimo’s CCS. Operational twin of the Turin banking pair; distinct from Noovle Via Cruto (dc_080) and the ex-Ilte hyperscale project (dc_081) in the same municipality.",
+        "country": "IT",
+        "city": "Moncalieri",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2009,
+        "updated_at": "2026-10-01",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato in fonti aperte consultate.",
+          "energy_mix_note_en": "Connection not named in open sources consulted."
+        },
+        "community_impact_it": "CED bancario su Corso Savona; contesto urbano/industriale di Moncalieri.",
+        "labor_risks": [
+          "shift_work",
+          "high_skill"
+        ],
+        "sources": [
+          {
+            "title": "Uptime Institute — Data Center CCM Moncalieri (Intesa Sanpaolo)",
+            "url": "https://uptimeinstitute.com/component/tierachievement/datacenter/data-center-ccm--moncalieri/867",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Uptime Institute — Intesa Sanpaolo client awards",
+            "url": "https://uptimeinstitute.com/uptime-institute-awards/client/intesa-sanpaolo-spa/554",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Banking CED on Corso Savona; urban/industrial Moncalieri context."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7232471,
+          44.9766525
+        ]
+      },
+      "properties": {
+        "id": "dc_080",
+        "name": "TIM Noovle — Moncalieri (Via Cruto)",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "TIM Noovle / TIM Enterprise",
+        "capacity": "Public Cloud (certificazioni Noovle ISO); MW IT non pubblicati in scheda aperta; aggregatori citano ~7 MW (dato indicativo, non primario)",
+        "description_it": "Data center TIM Noovle a Moncalieri, Via Alessandro Cruto 2. Nelle certificazioni ISO Noovle è etichettato «Data Center Moncalieri – Public Cloud», insieme a Rivoli (dc_074) e Cebrosa (dc_075) nel cluster torinese. Parte della rete core che ospita servizi cloud TIM/Google Cloud in Italia; non risulta una dichiarazione primaria che identifichi questo solo civico come «Google Cloud Region Torino». Distinto dal CCM Intesa (dc_079) e dall’ex Ilte (dc_081).",
+        "description_en": "TIM Noovle data center in Moncalieri, Via Alessandro Cruto 2. Noovle ISO certificates label it «Data Center Moncalieri – Public Cloud», alongside Rivoli (dc_074) and Cebrosa (dc_075) in the Turin cluster. Part of the TIM/Google Cloud Italy core network; no primary statement found that this single address alone is the «Turin Google Cloud Region». Distinct from Intesa CCM (dc_079) and ex-Ilte (dc_081).",
+        "country": "IT",
+        "city": "Moncalieri",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": 7,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato. power_draw ~7 MW solo da aggregatore secondario → estimated, non capacity ufficiale.",
+          "energy_mix_note_en": "Connection not named. ~7 MW power_draw from secondary aggregator only → estimated, not official capacity."
+        },
+        "community_impact_it": "Facility telco/cloud in zona industriale sud di Moncalieri (Vadò/Palera).",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "TIM — ISO 14001 Noovle (elenco siti: Moncalieri Public Cloud, Via Cruto 2)",
+            "url": "https://www.gruppotim.it/content/dam/gt/sostenibilit%C3%A0/doc-varie/2024/certificazioni/ita/ISO_14001_Noovle_SpA.pdf",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Baxtel — Noovle Moncalieri DC1",
+            "url": "https://baxtel.com/data-center/noovle-moncalieri-dc1",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Noovle — Data Centers",
+            "url": "https://www.noovle.com/it/datacenter/",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Telco/cloud facility in southern Moncalieri industrial zone (Vadò/Palera)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.717764,
+          44.9724387
+        ]
+      },
+      "properties": {
+        "id": "dc_081",
+        "name": "Moncalieri Logistics / LCP — Hyperscale ex Ilte",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Moncalieri Logistics (LCP)",
+        "capacity": "~384 MW IT / fino a ~576 MW elettrici dichiarati; ~270.000 m²; investimento >4,5 mld",
+        "description_it": "Progetto hyperscale sull’ex tipografia Ilte (Via Postiglione / Bauducchi, Moncalieri): quattro edifici, ~270.000 m², potenza IT ~384 MW e potenza elettrica fino a ~576 MW secondo il Piano esecutivo convenzionato depositato (set 2026), dopo parere comunale di marzo 2026. Promotore Moncalieri Logistics legato a LCP (acquirente 2022). Non è collegato a Google. Sottostazione di allaccio RTN non nominata in fonti aperte consultate → nessun arco connects finché non emerge SE. Occupazione stimata 400–500 posti. Pin sull’ex Ilte (OSM).",
+        "description_en": "Hyperscale project on the former Ilte print works (Via Postiglione / Bauducchi, Moncalieri): four buildings, ~270,000 m², ~384 MW IT and up to ~576 MW electrical per the executive plan filed (Sep 2026), after March 2026 municipal opinion. Promoter Moncalieri Logistics linked to LCP (2022 buyer). Not linked to Google. NTG connection substation not named in open sources consulted → no connects edge until an SE appears. Estimated 400–500 jobs. Pin on the ex-Ilte OSM feature.",
+        "country": "IT",
+        "city": "Moncalieri",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 384,
+          "power_draw_mw_est": 576,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 27,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "MW da PEC/cronaca (IT vs elettrico totale). SE di allaccio non nominata → niente connects. FV di sito citato in cronaca, senza PPA.",
+          "energy_mix_note_en": "MW from executive plan/press (IT vs total electrical). Connection SE not named → no connects. On-site PV cited in press, no PPA."
+        },
+        "employment": {
+          "direct": 450,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Stima stampa 400–500 posti; valore mediano in scheda.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ],
+          "note_en": "Press estimate 400–500 jobs; midpoint used in sheet."
+        },
+        "community_impact_it": "Riconversione del più grande brownfield tipografico di Moncalieri; dibattito su energia, acqua e compensazioni ambientali.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "TorinoSud — PEC ex Ilte: 384 MW IT / fino a 576 MW elettrici",
+            "url": "https://www.torinosud.it/cronaca/moncalieri-data-center-ex-ilte-35894",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Data Center Dynamics — Plans for ‘largest’ data center in Italy (Moncalieri Logistics / LCP)",
+            "url": "https://www.datacenterdynamics.com/en/news/plans-unveiled-for-largest-data-center-in-italy/",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Tom’s Hardware Italia — maxi DC 576 MW ex Ilte",
+            "url": "https://www.tomshw.it/business/lex-tipografia-delle-pagine-gialle-diventa-un-maxi-data-center-da-576-mw",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Reuse of Moncalieri’s largest print brownfield; debate on energy, water and environmental offsets."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6346192,
+          45.0972986
+        ]
+      },
+      "properties": {
+        "id": "dc_082",
+        "name": "Asja / Reba Projects — Hyperscale ex Bonafous (Lucento)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Asja Ambiente / Reba Projects",
+        "capacity": "~125 MW iniziali, espansione dichiarata >300 MW; ~90.000 m²; investimento >1 mld (stampa)",
+        "description_it": "Riconversione dell’ex Laminatoio Bonafous / ferriere a Lucento (Tra Corso Regina Margherita e Via Pianezza): data center «green» di Asja Ambiente (acquisizione CDP 2024; veicolo Reba Projects). Bonifica e demolizione avviate fine 2024; ~200 posti dichiarati. Stampa tecnica (La Voce / riprese) riporta 125 MW iniziali con possibile espansione oltre 300 MW e due linee interrate 220 kV autorizzate dalla Regione dalla stazione Terna di Corso Appio Claudio (gn_012). Recupero calore verso teleriscaldamento Iren in studio. Pin su Via Pianezza (Lucento); MW da fonte giornalistica secondaria → confidence medium sul dimensionamento.",
+        "description_en": "Conversion of the former Bonafous rolling mill / steelworks at Lucento (between Corso Regina Margherita and Via Pianezza): Asja Ambiente «green» data center (2024 CDP acquisition; Reba Projects vehicle). Remediation and demolition started late 2024; ~200 jobs claimed. Technical press (La Voce / reprints) reports 125 MW initial with possible expansion beyond 300 MW and two Region-authorised buried 220 kV lines from Terna’s Corso Appio Claudio station (gn_012). Heat recovery into Iren district heating under study. Pin on Via Pianezza (Lucento); MW from secondary journalism → medium confidence on sizing.",
+        "country": "IT",
+        "city": "Torino",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 125,
+          "power_draw_mw_est": 125,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 9,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio dichiarato su linee 220 kV da SE Corso Appio Claudio (gn_012): autorizzazione regionale riportata dalla stampa → connects likely (conn_089), non confirmed senza fascicolo primario. Espansione >300 MW non pinata come capacity.",
+          "energy_mix_note_en": "Connection reported via 220 kV lines from Corso Appio Claudio SE (gn_012): regional authorisation cited in press → connects likely (conn_089), not confirmed without primary file. >300 MW expansion not used as capacity."
+        },
+        "employment": {
+          "direct": 200,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Stima dichiarata in assemblea pubblica (~200 tecnici).",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ],
+          "note_en": "Estimate stated in public meeting (~200 technicians)."
+        },
+        "community_impact_it": "Brownfield Lucento accanto ex Thyssen; dibattito su studentato sostituito dal DC, bonifica e carico elettrico urbano (~1,09 GW di richieste Terna in città).",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "La Voce — Bonafous Lucento: 125–300 MW, linee da Corso Appio Claudio",
+            "url": "https://www.giornalelavoce.it/news/attualita/736561/data-center-a-chivasso-settimo-torinese-grugliasco-sara-uninvasione.html",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Torino Oggi — ex Bonafous datacenter green / Asja",
+            "url": "https://www.torinoggi.it/2025/05/29/leggi-notizia/argomenti/attualita-31/articolo/ex-bonafous-addio-alle-rovine-in-arrivo-un-datacenter-green.html",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Corriere Torino — DC al posto dello studentato (Reba Projects)",
+            "url": "https://torino.corriere.it/notizie/economia/25_febbraio_06/l-intelligenza-artificiale-sfratta-gli-studenti-nell-ex-ferriere-di-torino-un-data-center-al-posto-dello-studentato-51d784ad-d45c-4ba1-8b3c-aae902fcaxlk.shtml",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Lucento brownfield next to former Thyssen; debate over student housing replaced by DC, remediation and urban electrical load (~1.09 GW of Terna requests in the city)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6395028,
+          45.0604899
+        ]
+      },
+      "properties": {
+        "id": "dc_083",
+        "name": "TIM Noovle — Centro Servizi Torino (Via Issiglio)",
+        "type": "data_center",
+        "subtype": "enterprise",
+        "operator": "TIM Noovle / TIM Enterprise",
+        "capacity": "Etichettato «Centro Servizi» (non «Data Center») nelle ISO Noovle; MW non pubblicati",
+        "description_it": "Sede Noovle a Via Issiglio 90, Torino. Nelle certificazioni ISO 9001/14001 Noovle compare come «Centro Servizi Torino», a differenza di Moncalieri/Rivoli/Cebrosa etichettati «Data Center … Public Cloud». Aggregatori (ColoMap) lo elencano come DC; storicamente nodo Telecom/TOP-IX. Pin operativo con confidence medium: esiste come facility certificata, ma lo status di sala rack hyperscale/colo non è primario come per i Public Cloud.",
+        "description_en": "Noovle site at Via Issiglio 90, Turin. Noovle ISO 9001/14001 certificates list it as «Centro Servizi Torino», unlike Moncalieri/Rivoli/Cebrosa labelled «Data Center … Public Cloud». Aggregators (ColoMap) list it as a DC; historically a Telecom/TOP-IX node. Operational pin with medium confidence: certified facility exists, but hyperscale/colo rack-hall status is weaker than for the Public Cloud sites.",
+        "country": "IT",
+        "city": "Torino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Allaccio non nominato.",
+          "energy_mix_note_en": "Connection not named."
+        },
+        "community_impact_it": "Facility telco urbana a Borgo San Paolo; impatto tipico di centro servizi, non di campus hyperscale.",
+        "labor_risks": [
+          "shift_work"
+        ],
+        "sources": [
+          {
+            "title": "TIM — ISO 14001 Noovle (Centro Servizi Torino, Via Issiglio 90)",
+            "url": "https://www.gruppotim.it/content/dam/gt/sostenibilit%C3%A0/doc-varie/2024/certificazioni/ita/ISO_14001_Noovle_SpA.pdf",
+            "accessed_at": "2026-10-01",
+            "note": "Etichetta Centro Servizi, non Data Center"
+          },
+          {
+            "title": "ColoMap — Noovle DC Torino (Via Issiglio 90)",
+            "url": "https://colomap.com/facilities/noovle-dc-torino/",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Urban telco facility in Borgo San Paolo; impact typical of a service centre, not a hyperscale campus."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.8178495,
+          45.3223948
+        ]
+      },
+      "properties": {
+        "id": "dc_084",
+        "name": "Ipotesi DC — ex Pininfarina San Giorgio Canavese",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Taurus / FCV (sviluppo immobiliare; operatore DC non nominato)",
+        "capacity": "~200.000 m² area; uso dichiarato stampa «logistico e produttivo»; FCV elenca «Logistics & Data Center»",
+        "description_it": "Ex officine Pininfarina a San Giorgio Canavese (~200.000 m²), vendute a Taurus (2023) con FCV come operating partner. La cronaca locale parla di polo logistico/produttivo; il sito FCV lo classifica «Logistics & Data Center». Nessun operatore DC, MW o PEC data-center nominati in fonti aperte → pin speculativo: status planned, confidence low. Distinto dall’ex Pininfarina di Grugliasco (dc_077).",
+        "description_en": "Former Pininfarina works at San Giorgio Canavese (~200,000 m²), sold to Taurus (2023) with FCV as operating partner. Local press describes a logistics/production hub; FCV’s site lists «Logistics & Data Center». No named DC operator, MW or data-center executive plan in open sources → speculative pin: planned, low confidence. Distinct from Grugliasco’s ex-Pininfarina (dc_077).",
+        "country": "IT",
+        "city": "San Giorgio Canavese",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "low",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 20,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Nessun allaccio DC documentato. Ipotesi di portafoglio, non progetto autorizzato.",
+          "energy_mix_note_en": "No documented DC connection. Portfolio hypothesis, not an authorised project."
+        },
+        "community_impact_it": "Brownfield Canavese in riconversione; rischio di etichetta DC usata per marketing immobiliare senza cantiere.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "Pambianco Real Estate — Pininfarina vende a Taurus (polo logistico)",
+            "url": "https://realestate.pambianconews.com/2023/12/27/pininfarina-vende-a-taurus-le-ex-officine-di-collaudo-di-san-giorgio-canavese/",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "FCV Development — Ex Pininfarina (Logistics & Data Center)",
+            "url": "https://fcvdevelopment.com/projects/",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Prima il Canavese — vendita sito Pininfarina 4,15 mln",
+            "url": "https://primailcanavese.it/attualita/il-sito-pininfarina-di-san-giorgio-canavese-venduto-per-415-milioni-di-euro/",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Canavese brownfield in reuse; risk of a DC label used for real-estate marketing without a build."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7410695,
+          44.8578018
+        ]
+      },
+      "properties": {
+        "id": "dc_085",
+        "name": "Ipotesi DC — ex Teksid Carmagnola",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "FCV / sviluppatori locali (operatore DC non nominato)",
+        "capacity": "~98.000 m² area (FCV); cronaca comunale su logistica (Molino Chiavazza), non su DC",
+        "description_it": "Ex area Teksid Ghisa a Carmagnola. FCV la elenca come «Logistics & Data Center» (~98.390 m²). L’iter comunale recente riguarda variante viaria e polo logistico Molino Chiavazza, senza menzione pubblica di data center, MW o operatore. Pin speculativo: planned, confidence low — etichetta di portafoglio da verificare.",
+        "description_en": "Former Teksid Ghisa area in Carmagnola. FCV lists it as «Logistics & Data Center» (~98,390 m²). Recent municipal process covers road variant and Molino Chiavazza logistics, with no public mention of a data center, MW or operator. Speculative pin: planned, low confidence — portfolio label to verify.",
+        "country": "IT",
+        "city": "Carmagnola",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "low",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 9.8,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Nessun allaccio DC documentato.",
+          "energy_mix_note_en": "No documented DC connection."
+        },
+        "community_impact_it": "Brownfield automotive in riconversione logistica; DC non confermato dal Comune.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "FCV Development — Ex Teksid (Logistics & Data Center)",
+            "url": "https://fcvdevelopment.com/projects/",
+            "accessed_at": "2026-10-01"
+          },
+          {
+            "title": "Torino Cronaca — via libera variante ex Teksid (logistica)",
+            "url": "https://torinocronaca.it/news/257694/riconversione-dellex-teksid-arriva-il-via-libera-dal-comune.html",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Automotive brownfield shifting to logistics; DC not confirmed by the municipality."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2314367,
+          44.9060217
+        ]
+      },
+      "properties": {
+        "id": "dc_086",
+        "name": "Ipotesi DC — Asti Via Maggiora (Gabetti)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "In cerca di investitore (Gabetti Agency)",
+        "capacity": "~105.000 m² area / GLA potenziale >63.000 m²; destinazione mista logistica/industria/DC",
+        "description_it": "Area in commercializzazione esclusiva Gabetti a Via Maggiora (pressi Corso Alessandria, Asti Est): ~105.000 m², cantierabilità urbanistica avanzata, proposta anche per data center oltre a logistica/industria. Nessun operatore, MW né progetto esecutivo DC nominati → pin speculativo: planned, confidence low (ricerca investitori).",
+        "description_en": "Gabetti exclusive marketing site at Via Maggiora (near Corso Alessandria, Asti Est): ~105,000 m², advanced planning readiness, pitched for data centers as well as logistics/industry. No named operator, MW or DC executive project → speculative pin: planned, low confidence (investor search).",
+        "country": "IT",
+        "city": "Asti",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-01",
+        "confidence": "low",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 10.5,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Nessun allaccio DC documentato; marketing immobiliare.",
+          "energy_mix_note_en": "No documented DC connection; real-estate marketing."
+        },
+        "community_impact_it": "Lotto pronto urbanisticamente sull’asse Asti Est; impatto reale dipende da chi compra e da cosa costruisce.",
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "sources": [
+          {
+            "title": "La Nuova Provincia — Asti Via Maggiora: logistica e data center (Gabetti)",
+            "url": "https://www.lanuovaprovincia.it/news/attualita/502100/lavoro-e-sviluppo-ad-asti-si-continua-a-puntare-su-un-futuro-tra-logistica-e-tech.html",
+            "accessed_at": "2026-10-01"
+          }
+        ],
+        "community_impact_en": "Planning-ready lot on the Asti Est corridor; real impact depends on who buys and what they build."
+      }
     }
   ]
 }

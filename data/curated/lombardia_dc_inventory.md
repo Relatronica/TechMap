@@ -167,7 +167,25 @@ Nessun arco tra DC colo torinesi (manca fascicolo). Import OSM duplicati (Noovle
 | conn_087 | gn_010 → dc_076 | connects | likely (STMG 2023 + richiesta Leinì 2024) |
 | conn_088 | gn_011 → dc_077 | connects | likely (dichiarazione promotore) |
 
-Moncalieri ex Ilte (~576 MW citati): **non** pinato — SE di allaccio non nominata in fonti aperte consultate.
+### Wave 5c — Piemonte enterprise + Ilte/Bonafous + ipotesi portafoglio
+| id | Nome | Status | Confidence | Note |
+| --- | --- | --- | --- | --- |
+| dc_078 | Intesa Sanpaolo CCS Settimo Torinese | operational | high | Uptime Tier III Design+Facility |
+| dc_079 | Intesa Sanpaolo CCM Moncalieri | operational | high | Uptime Tier III Design+Facility |
+| dc_080 | TIM Noovle Moncalieri Via Cruto | operational | high | ISO «Public Cloud»; ≠ Google Region pin |
+| dc_081 | Moncalieri Logistics / LCP ex Ilte | planned | high | PEC set 2026; ~384 MW IT / ~576 MW el.; **no SE** → no connects |
+| dc_082 | Asja / Reba Bonafous Lucento | planned | medium | 125 MW iniziali (stampa); linee 220 kV |
+| dc_083 | Noovle Centro Servizi Via Issiglio | operational | medium | ISO «Centro Servizi», non «Data Center» |
+| dc_084 | Ipotesi ex Pininfarina San Giorgio C. | planned | low | FCV «Logistics & Data Center»; stampa = logistica |
+| dc_085 | Ipotesi ex Teksid Carmagnola | planned | low | FCV portfolio; Comune = logistica |
+| dc_086 | Ipotesi Asti Via Maggiora (Gabetti) | planned | low | Marketing investitori; no operatore/MW |
+| gn_012 | SE Terna Corso Appio Claudio | operational | medium | pin corso; origine linee Bonafous |
+
+| arco | Tipo | Certainty | Note |
+| --- | --- | --- | --- |
+| conn_089 | gn_012 → dc_082 | connects | likely (autorizzazione regionale in stampa) |
+
+**Non pinati:** CAE Intesa Parma (fuori area); 8 MOI Settimo senza sito pubblico; Alessandria senza lotto nominato; None/Volvera ex Fiat Ricambi e Montanaro FCV hub (fuori segnalazione iniziale — monitor).
 
 ---
 
