@@ -1735,6 +1735,121 @@
           "accessed_at": "2026-10-01"
         }
       ]
+    },
+    {
+      "id": "conn_090",
+      "source_id": "ep_026",
+      "target_id": "dc_017",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "PPA Google–Power Capital su Tullabeg Solar Farm (Wexford): 58 MW new-to-grid per matching rinnovabile di uffici e data center Google in Irlanda (Profile Park).",
+      "description_en": "Google–Power Capital PPA on Tullabeg Solar Farm (Wexford): 58 MW new-to-grid for renewable matching of Google’s Ireland offices and data centre (Profile Park).",
+      "evidence_note_it": "Blog ufficiale Google Ireland e comunicati Power Capital/DCD: PPA esplicitamente legato a data center e uffici irlandesi. Matching di rete, non cavo dedicato.",
+      "evidence_note_en": "Official Google Ireland blog and Power Capital/DCD releases: PPA explicitly tied to Irish data centre and offices. Grid matching, not a dedicated cable.",
+      "as_of": "2023-09-01",
+      "sources": [
+        {
+          "title": "Google — clean energy progress in Ireland",
+          "url": "https://blog.google/intl/en-ie/company-news/googles-clean-energy-progress-in-ireland/",
+          "accessed_at": "2026-10-08"
+        },
+        {
+          "title": "DCD — Google 58MW Tullabeg solar PPA",
+          "url": "https://www.datacenterdynamics.com/en/news/google-signs-58mw-solar-ppa-in-ireland/",
+          "accessed_at": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "conn_091",
+      "source_id": "ep_027",
+      "target_id": "dc_087",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "CPPA Meta–Highfield su Gillinstown Solar (Meath): parte del duo ~276 MWp che sostiene le operazioni Meta in Irlanda, incluso Clonee.",
+      "description_en": "Meta–Highfield CPPA on Gillinstown Solar (Meath): part of the ~276 MWp duo supporting Meta’s Ireland operations, including Clonee.",
+      "evidence_note_it": "DCD e dichiarazione Meta Energy Manager: solar farm in Meath «close to our Clonee data center»; accordo quindicennale Highfield. Matching di rete.",
+      "evidence_note_en": "DCD and Meta Energy Manager statement: Meath solar farm «close to our Clonee data center»; fifteen-year Highfield deal. Grid matching.",
+      "as_of": "2023-10-09",
+      "sources": [
+        {
+          "title": "DCD — Meta signs two solar PPAs in Ireland",
+          "url": "https://www.datacenterdynamics.com/en/news/meta-signs-two-solar-ppas-in-ireland/",
+          "accessed_at": "2026-10-08"
+        },
+        {
+          "title": "Highfield — Garballagh Lower Solar Farm",
+          "url": "https://www.highfieldenergy.com/SolarProjects/garballagh-lower-solar-farm",
+          "accessed_at": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "conn_092",
+      "source_id": "ep_028",
+      "target_id": "dc_087",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "CPPA Meta–Highfield su Rosspile Solar (Wexford): secondo impianto del duo ~276 MWp per operazioni Meta Irlanda / Clonee.",
+      "description_en": "Meta–Highfield CPPA on Rosspile Solar (Wexford): second plant in the ~276 MWp duo for Meta Ireland / Clonee operations.",
+      "evidence_note_it": "Stesso accordo Highfield–Meta di ottobre 2023: un impianto Wexford + uno Meath. Matching di rete.",
+      "evidence_note_en": "Same October 2023 Highfield–Meta deal: one Wexford + one Meath plant. Grid matching.",
+      "as_of": "2023-10-09",
+      "sources": [
+        {
+          "title": "DCD — Meta signs two solar PPAs in Ireland",
+          "url": "https://www.datacenterdynamics.com/en/news/meta-signs-two-solar-ppas-in-ireland/",
+          "accessed_at": "2026-10-08"
+        },
+        {
+          "title": "Highfield — Rosspile Solar Farm",
+          "url": "https://www.highfieldenergy.com/SolarProjects/rosspile-solar-farm",
+          "accessed_at": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "conn_093",
+      "source_id": "ep_029",
+      "target_id": "dc_087",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "CPPA Ørsted–Meta su Lisheen III (28.8 MW): Meta acquista l’equivalente rinnovabile immesso in rete per le operazioni irlandesi.",
+      "description_en": "Ørsted–Meta CPPA on Lisheen III (28.8 MW): Meta purchases the grid-injected renewable equivalent for Irish operations.",
+      "evidence_note_it": "Comunicato Ørsted Ireland maggio 2023: CPPA nominato con Meta; potenza immessa in national grid. Confirmed sul contratto, non su cavo Clonee.",
+      "evidence_note_en": "Ørsted Ireland May 2023 release: named Meta CPPA; power injected to the national grid. Confirmed on contract, not on a Clonee cable.",
+      "as_of": "2023-05-01",
+      "sources": [
+        {
+          "title": "Ørsted — Lisheen III wind farm CPPA with Meta",
+          "url": "https://orsted.ie/news/2023/05/orsted-irish-wind-farm-to-support-meta-with-green-energy",
+          "accessed_at": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "conn_094",
+      "source_id": "ep_030",
+      "target_id": "dc_088",
+      "relationship_type": "powers",
+      "certainty": "confirmed",
+      "description_it": "PPA AWS–Bord na Móna su Derrinlough Wind Farm (105 MW export, Offaly): matching rinnovabile per le operazioni AWS in Irlanda (pin rappresentativo Clonshaugh eu-west-1); collaborazione Eco Energy Park Midlands.",
+      "description_en": "AWS–Bord na Móna PPA on Derrinlough Wind Farm (105 MW export, Offaly): renewable matching for AWS Ireland operations (Clonshaugh eu-west-1 representative pin); Midlands Eco Energy Park collaboration.",
+      "evidence_note_it": "Comunicati BnM (2024 e apertura 2026): PPA 105 MW nominato con AWS; matching di rete verso operazioni irlandesi, non cavo dedicato a un singolo edificio Dublin.",
+      "evidence_note_en": "BnM releases (2024 and 2026 opening): named 105 MW PPA with AWS; grid matching toward Irish operations, not a dedicated cable to a single Dublin building.",
+      "as_of": "2024-04-30",
+      "sources": [
+        {
+          "title": "Bord na Móna — AWS Eco Energy Park / Derrinlough PPA",
+          "url": "https://www.bnm.ie/bord-na-mona-announces-amazon-web-services-as-first-business-to-join-eco-energy-park/",
+          "accessed_at": "2026-10-08"
+        },
+        {
+          "title": "BnM — Derrinlough opening (AWS CPPA)",
+          "url": "https://www.bnm.ie/minister-darragh-obrien-opens-bnms-126mw-derrinlough-wind-farm-in-offaly/",
+          "accessed_at": "2026-10-08"
+        }
+      ]
     }
   ],
   "removed_from_v1_note_it": "2026-10-01 (Piemonte Wave 5c): dc_078–086 (Intesa CCS/CCM, Noovle Moncalieri/Issiglio, Ilte, Bonafous, San Giorgio, Carmagnola, Asti); gn_012 Appio Claudio; conn_089 connects likely. Rimossi archi non filiera e i salti NVIDIA→campus senza ODM. 2026-09-29 (Piemonte++): dc_076 Caselle↔gn_010 Leinì connects likely; dc_077 Grugliasco↔gn_011 Piossasco connects likely; nessuno inferred colo. 2026-09-29 (Piemonte): Wave Torino dc_069–075 (Retelit, ITGate, Host.it, COLT, BBBell, Noovle Rivoli/Cebrosa); conn_086 ep_002→dc_028 powers likely; nessun arco colo↔colo senza fascicolo. 2026-09-28: rimossi gli otto powers inferred Turbigo→campus milanesi. 2026-09-29: rimossi conn_008/021 e conn_014/015; Trino→Cavour come powers likely; otto connects inferred Turbigo stazione→cluster Milano. 2026-09-29 (razionalizzazione): eliminati i tipi injects e contributes — immissione centrale→stazione e allacci diventano connects; contributi di bacino senza PPA diventano powers likely|inferred. 2026-09-29: aggiunti connects confirmed Baggio→MIL03, Lacchiarella→Apto, Melegnano→Vantage MXP1; powers Neoen Arena Po→Equinix ML5 (confirmed) e ML2 (likely). 2026-09-29: Baggio→MXP2 e Baggio→Equinix ML7/ML8 (connects confirmed); Tavazzano TTEP→MXP4 (powers likely); fonti VIA/pareri in scheda. 2026-09-29: fuori LO — gn_006 Trino 380 kV→Cavour connects likely; Edison FV Viterbo→Data4 powers confirmed; schede Sulcis/ROM1/Pomezia aggiornate; pin Aruba IT4 Tiburtino; Enfinity→MS solo nota in scheda (sito non divulgato). 2026-09-29 (miglioramenti): mantenuti otto connects inferred Turbigo→cluster Milano (insieme agli allacci documentati); aggiunti gn_007 Lacchiarella Ovest, gn_008 Bornasco Terna, gn_009 cabina Ponte; STACK→Lacchiarella confirmed; AWS Zibido e K2→Lacchiarella Ovest likely; MS Bornasco→SE Bornasco likely; Aruba IT3→cabina Ponte confirmed; Blue Power Ferrera→Eni–Khazna powers likely. 2026-09-29 (filiera+lavoro): Greenbushes→Kwinana supplies confirmed; Sama→OpenAI trains confirmed; Sama→Meta Luleå trains likely; Remotasks→OpenAI trains likely; siti ai_data_work/model_lab; labor fill su corridoi silicio/cobalto/litio. 2026-09-29 (batterie+): Terrafame→Nysa confirmed; Nysa→Samsung Göd likely; Balama→Vidalia confirmed; Vidalia→Göd likely (MoU); Hoboken→Nysa likely (closed loop). 2026-09-29 (ai_labor+): Sama scheda 2026; conn_056 Sama→Meta Menlo Park confirmed (ex Luleå); Scale HQ SF; Remotasks→Scale confirmed; Scale→OpenAI/Meta likely; Luleå fuori preset. 2026-09-29 (ai_labor++): PH Remotasks+Appen Imus; Surge SF; Anthropic+Google lab; 10 trains nel preset; Appen senza arco client-specific."

@@ -4,8 +4,8 @@ I GeoJSON in questa cartella sono la **fonte di verità** per i siti con descriz
 
 | File | Ruolo |
 | --- | --- |
-| `data_centers.geojson` | Campus e DC curati (merge con candidati OSM). Priorità Italia: cluster Milano, secondo polo Roma/Lazio, **polo Torino (dc_058–075 + Intesa/Noovle dc_078–080/083)**, **hyperscale Caselle/Grugliasco/Ilte/Bonafous (dc_076–077, 081–082)**, **ipotesi low-confidence (dc_084–086)**, Trino Cavour, Bologna HPC, Sulcis |
-| `energy_plants.geojson` | Impianti curati + nodi PPA (merge con WRI) |
+| `data_centers.geojson` | Campus e DC curati (merge con candidati OSM). Priorità Italia: cluster Milano, secondo polo Roma/Lazio, **polo Torino (dc_058–075 + Intesa/Noovle dc_078–080/083)**, **hyperscale Caselle/Grugliasco/Ilte/Bonafous (dc_076–077, 081–082)**, **ipotesi low-confidence (dc_084–086)**, Trino Cavour, Bologna HPC, Sulcis. **Irlanda (2026-10-08): Dublin metro dc_016–017 + dc_087–096; CIX Cork dc_097; Kildare/Meath/Wicklow dc_098–102 (MS Jigginstown, AWS Drogheda+Leixlip KIC, Echelon Arklow, Herbata)** — pin campus, non i ~129 edifici DCM |
+| `energy_plants.geojson` | Impianti curati + nodi PPA (merge con WRI). **Irlanda PPA: Lenalea→MS (ep_015); Tullabeg→Google (ep_026); Gillinstown+Rosspile+Lisheen III→Meta (ep_027–029); Derrinlough→AWS (ep_030)** |
 | `raw_materials.geojson` | Estrazione, fab, **HBM**, **packaging CoWoS/OSAT**, design, ODM, **batterie (Co/Ni/Li → pCAM/CAM → celle; grafite→anodo; riciclo)**, **lavoro dati AI**, lab modelli |
 | `connections_edges.json` | Archi di filiera **senza** geometria (fonte): powers, connects, supplies, manufactures_for, **trains** |
 | `grid_nodes.geojson` | Cabine e stazioni nominate in un fascicolo (non centrali) |

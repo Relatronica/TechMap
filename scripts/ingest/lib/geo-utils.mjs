@@ -95,11 +95,14 @@ export function confidenceRank(c) {
 }
 
 /** Rough EU bboxes for OSM records missing addr:country (south, west, north, east).
- *  Order matters: more specific countries before broad neighbours (e.g. GB before FR). */
+ *  Order matters: more specific countries before broad neighbours.
+ *  Northern Ireland (GB) before Republic of Ireland (IE) before the broad GB island box —
+ *  otherwise Dublin/Cork OSM pins were mis-labelled GB because the GB west edge covers Ireland. */
 const COUNTRY_BBOXES = [
   { iso2: 'IT', south: 35.5, west: 6.5, north: 47.5, east: 18.5 },
-  { iso2: 'GB', south: 49.8, west: -8.8, north: 61.0, east: 2.0 },
+  { iso2: 'GB', south: 54.05, west: -7.05, north: 55.35, east: -5.4 }, // Northern Ireland
   { iso2: 'IE', south: 51.0, west: -11.0, north: 55.5, east: -5.5 },
+  { iso2: 'GB', south: 49.8, west: -8.8, north: 61.0, east: 2.0 }, // Great Britain (+ residual)
   { iso2: 'FR', south: 41.0, west: -5.5, north: 51.2, east: 10.0 },
   { iso2: 'DE', south: 47.0, west: 5.5, north: 55.5, east: 15.5 },
   { iso2: 'ES', south: 36.0, west: -10.0, north: 44.0, east: 4.5 },

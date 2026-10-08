@@ -670,39 +670,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -6.425,
-          53.2867
+          -6.445,
+          53.322
         ]
       },
       "properties": {
         "id": "dc_016",
-        "name": "Microsoft Azure North Europe - Dublino",
+        "name": "Microsoft Azure North Europe — Grange Castle (Dublino)",
         "type": "data_center",
         "subtype": "hyperscale",
         "operator": "Microsoft",
-        "capacity": "303.000 sqft (Grange Castle)",
-        "description_it": "Microsoft gestisce 17 data center in Irlanda, la maggior parte nell'area di Dublino presso il campus Grange Castle. Alimenta servizi cloud e AI per imprese, governi e organizzazioni in Irlanda, Regno Unito e regioni circostanti. Nuovi data center pianificati nella contea di Kildare.",
+        "capacity": "Campus multi-edificio (Grange Castle / Nangor Rd); decine di MW IT aggregati non pubblicati edificio-per-edificio",
+        "description_it": "Campus hyperscale Microsoft Azure North Europe a Grange Castle Business Park (Dublino 22 / Nangor Road): uno dei nodi cloud più densi d’Europa. Il footprint irlandese Microsoft conta numerosi edifici (DUB03–DUB15 e correlati) concentrati tra Grange Castle e l’area Clonee/Meath; pin a livello campus, non edificio singolo. Alimenta cloud e carichi AI per Irlanda, UK e regioni vicine. Espansioni pianificate anche in contea di Kildare. La rete EirGrid tratta i data center come Large Energy Users con vincoli di connessione nell’area di Dublino.",
         "country": "IE",
         "city": "Dublino",
-        "confidence": "medium",
+        "confidence": "high",
         "employment": {
           "direct": null,
           "indirect_est": null,
           "contractors_est": null,
-          "note_it": "Microsoft non pubblica un headcount sito-per-sito per Azure North Europe (Dublino). Ruoli tipici: facility, network, security; forte fase di cantiere nelle espansioni irlandesi. Confronta con i PPA (es. Lenalea): l’energia è nominata, il lavoro sul campus resta opaco.",
+          "note_it": "Microsoft non pubblica un headcount sito-per-sito per Azure North Europe. Ruoli tipici: facility, network, security; forte fase di cantiere nelle espansioni. Confronta con i PPA (es. Lenalea): l’energia è nominata, il lavoro sul campus resta opaco.",
+          "note_en": "Microsoft does not publish site-by-site headcount for Azure North Europe. Typical roles: facility, network, security; strong construction phases in expansions. Compare with PPAs (e.g. Lenalea): energy is named, campus labour remains opaque.",
           "conditions_tags": [
             "high_skill",
             "construction_phase"
-          ],
-          "note_en": "Microsoft does not publish site-by-site headcount for Azure North Europe (Dublin). Typical roles: facility, network, security; strong construction phase in Irish expansions. Compare with PPAs (e.g. Lenalea): energy is named, campus labour remains opaque."
+          ]
         },
         "labor_risks": [
           "construction_phase"
         ],
-        "community_impact_it": "Cluster data center intorno a Dublino sotto pressione di rete (EirGrid); dibattito pubblico su consumo elettrico vs occupazione locale limitata.",
-        "updated_at": "2026-09-27",
-        "description_en": "Microsoft operates 17 data centers in Ireland, most in the Dublin area at the Grange Castle campus. Powers cloud and AI services for businesses, governments and organisations in Ireland, the UK and surrounding regions. New data centers planned in County Kildare.",
-        "community_impact_en": "Data-center cluster around Dublin under grid pressure (EirGrid); public debate over electricity consumption vs limited local employment."
+        "community_impact_it": "Cluster data center intorno a Dublino sotto pressione di rete (EirGrid DCCOPP / Technical Assessment 2026); dibattito pubblico su consumo elettrico vs occupazione locale limitata.",
+        "updated_at": "2026-10-08",
+        "description_en": "Microsoft Azure North Europe hyperscale campus at Grange Castle Business Park (Dublin 22 / Nangor Road): one of Europe’s densest cloud nodes. Microsoft’s Irish footprint spans many buildings (DUB03–DUB15 and related) across Grange Castle and the Clonee/Meath area; campus-level pin, not a single building. Powers cloud and AI workloads for Ireland, the UK and nearby regions. Further expansions planned in County Kildare. EirGrid treats data centres as Large Energy Users with connection constraints in the Dublin area.",
+        "community_impact_en": "Dublin-area data-centre cluster under grid pressure (EirGrid DCCOPP / Technical Assessment 2026); public debate over electricity use vs limited local employment.",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2009,
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Matching rinnovabile via CPPA (es. Lenalea Wind Farm → conn_019). Il prelievo di rete resta sul sistema EirGrid/CRU; area Dublino storicamente vincolata per nuove connessioni LEU.",
+          "energy_mix_note_en": "Renewable matching via CPPAs (e.g. Lenalea Wind Farm → conn_019). Grid draw remains on the EirGrid/CRU system; Dublin area historically constrained for new LEU connections."
+        },
+        "sources": [
+          {
+            "title": "Data Center Map — Ireland (129 facilities / 39 operators)",
+            "url": "https://www.datacentermap.com/ireland/",
+            "accessed_at": "2026-10-08",
+            "note": "Inventario di mercato; pin campus Microsoft Grange Castle / DUB03"
+          },
+          {
+            "title": "Data Center Map — Dublin (97 facilities)",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "EirGrid — Data Centre Connection Offer Process and Policy v3",
+            "url": "https://cms.eirgrid.ie/sites/default/files/publications/Data-Centre-Connection-Offer-Process-and-Policy-V3-May-2026.pdf",
+            "accessed_at": "2026-10-08",
+            "note": "Policy LEU ≥1 MVA; vincoli area Dublino"
+          },
+          {
+            "title": "OpenStreetMap — Microsoft DUB buildings (Grange Castle)",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "Coordinate campus da cluster OSM DUB03–DUB15"
+          }
+        ]
       }
     },
     {
@@ -710,22 +748,70 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -6.37,
-          53.29
+          -6.4474,
+          53.3136
         ]
       },
       "properties": {
         "id": "dc_017",
-        "name": "Google Data Center - Dublino",
+        "name": "Google Data Center — Profile Park (Dublino)",
         "type": "data_center",
         "subtype": "hyperscale",
         "operator": "Google",
-        "capacity": "30.360 mq",
-        "description_it": "Data center Google nel Profile Park di Dublino, struttura a due piani di 30.360 mq. Parte dell'espansione irlandese di Google che include un terzo data center pianificato con investimento stimato di 250 milioni di euro.",
+        "capacity": "Campus Profile Park (Grange Castle); edifici multipli; MW IT non pubblicati ufficialmente per sito",
+        "description_it": "Data center Google a Profile Park / Grange Castle (Dublino 22, Baldonnel / Nangor Road), operativo dal 2012 dopo l’acquisto del lotto nel 2011. Uno dei siti Google più efficienti in Europa per free cooling ad aria. Espansione progressiva del campus irlandese (secondo edificio e ulteriori fasi). Pin a livello campus; coordinate allineate al footprint OSM.",
         "country": "IE",
         "city": "Dublino",
         "confidence": "high",
-        "description_en": "Google data center at Dublin’s Profile Park, a two-storey 30,360 sqm facility. Part of Google’s Irish expansion including a third planned data center with an estimated €250 million investment."
+        "description_en": "Google data centre at Profile Park / Grange Castle (Dublin 22, Baldonnel / Nangor Road), operational since 2012 after the 2011 land purchase. Among Google’s more energy-efficient European sites thanks to air-side free cooling. Progressive Irish campus expansion (second building and later phases). Campus-level pin; coordinates aligned to the OSM footprint.",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2012,
+        "updated_at": "2026-10-08",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "PPA Google–Power Capital su Tullabeg Solar (Wexford, 58 MW new-to-grid) → conn_090. Matching rinnovabile anche a livello flotta; prelievo di rete su EirGrid.",
+          "energy_mix_note_en": "Google–Power Capital PPA on Tullabeg Solar (Wexford, 58 MW new-to-grid) → conn_090. Fleet-level renewable matching also applies; grid draw on EirGrid."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "All’apertura (2012) stimati ~30 ruoli operativi e fino a ~200 in cantiere; headcount attuale non pubblicato sito-per-sito.",
+          "note_en": "At opening (2012) ~30 operational roles and up to ~200 in construction were cited; current site headcount not published building-by-building.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Parte del cluster Grange Castle / Profile Park insieme a Microsoft, Digital Realty, EdgeConneX e CyrusOne; pressione su rete e suolo nell’ovest di Dublino.",
+        "community_impact_en": "Part of the Grange Castle / Profile Park cluster with Microsoft, Digital Realty, EdgeConneX and CyrusOne; grid and land pressure in west Dublin.",
+        "sources": [
+          {
+            "title": "Google — Dublin, Ireland data center",
+            "url": "https://datacenters.google/locations/dublin-ireland",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Data Center Dynamics — Google launches Dublin data center (2012)",
+            "url": "https://www.datacenterdynamics.com/en/news/google-launches-dublin-data-center/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — Google Profile Park",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "osm footprint ~53.3136, -6.4474"
+          }
+        ]
       }
     },
     {
@@ -4945,6 +5031,929 @@
           }
         ],
         "community_impact_en": "Planning-ready lot on the Asti Est corridor; real impact depends on who buys and what they build."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4331,
+          53.4169
+        ]
+      },
+      "properties": {
+        "id": "dc_087",
+        "name": "Meta Clonee Data Center Campus",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Meta",
+        "capacity": "Campus multi-edificio (Clonee, Co. Meath); MW IT aggregati non dichiarati ufficialmente per sito",
+        "description_it": "Primo data center Meta fuori dagli USA (operativo dal 2012) a Clonee, contea di Meath, nord di Dublino. Campus multi-edificio (Clonee 1–6 e correlati) con investimento dichiarato ~€1,4 mld e 300+ posti operativi supportati. LEED Gold; Meta dichiara matching 100% rinnovabile e ~219 MW di nuovi progetti renewables supportati in Irlanda. Pin campus (centro OSM Clonee 1).",
+        "description_en": "Meta’s first data centre outside the US (operational since 2012) at Clonee, County Meath, north of Dublin. Multi-building campus (Clonee 1–6 and related) with stated ~€1.4bn investment and 300+ operational jobs supported. LEED Gold; Meta states 100% renewable matching and ~219 MW of new renewables projects supported in Ireland. Campus pin (OSM Clonee 1 centroid).",
+        "country": "IE",
+        "city": "Clonee",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2012,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "CPPA Meta: Gillinstown (Meath) + Rosspile (Wexford) Highfield Solar ~276 MWp → conn_091/092; Lisheen III Ørsted 28.8 MW → conn_093. Matching 100% dichiarato; ~219 MW renewables supportati in Irlanda (scheda ufficiale).",
+          "energy_mix_note_en": "Meta CPPAs: Gillinstown (Meath) + Rosspile (Wexford) Highfield Solar ~276 MWp → conn_091/092; Lisheen III Ørsted 28.8 MW → conn_093. Stated 100% matching; ~219 MW renewables supported in Ireland (official sheet)."
+        },
+        "employment": {
+          "direct": 300,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Scheda Meta Clonee: «300+ operational jobs supported»; fino a 1.500 lavoratori skilled trade in picco di cantiere (dato ufficiale). Il figure 300 è supportati/operativi, non necessariamente FTE diretti Meta.",
+          "note_en": "Meta Clonee sheet: «300+ operational jobs supported»; up to 1,500 skilled-trade workers at peak construction (official). The 300 figure is supported/operational roles, not necessarily Meta direct FTE.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Investimento e grant locali in Meath; pressione sulla rete nord-Dublino/Meath e dibattito LEU EirGrid. Partnership peatland restoration con Microsoft e Google.",
+        "community_impact_en": "Local investment and grants in Meath; pressure on the north-Dublin/Meath grid and EirGrid LEU debate. Peatland restoration partnership with Microsoft and Google.",
+        "sources": [
+          {
+            "title": "Meta — Clonee Data Center info sheet",
+            "url": "https://datacenters.atmeta.com/asset/clonee-data-center-info-sheet/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Meta — European data centres",
+            "url": "https://datacenters.atmeta.com/asset/europe-info-sheet/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — Meta Clonee 1",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "osm_id≈518701317; coords ~53.4169, -6.4331"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2225,
+          53.4049
+        ]
+      },
+      "properties": {
+        "id": "dc_088",
+        "name": "AWS Dublin — Clonshaugh Campus (eu-west-1)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Web Services",
+        "capacity": "Campus Clonshaugh multi-edificio (eu-west-1); MW aggregati non pubblicati ufficialmente",
+        "description_it": "Campus AWS a Clonshaugh Business & Technology Park (Dublino 17 / Priorswood): nucleo nord-orientale della regione eu-west-1 (Ireland). Più edifici (DUB10/50/51 e correlati) su footprint OSM; AWS opera anche altri nodi a Citywest, Blanchardstown/Mulhuddart, Tallaght/Hibernian e Drogheda — pin campus Clonshaugh, non inventario edificio-per-edificio.",
+        "description_en": "AWS campus at Clonshaugh Business & Technology Park (Dublin 17 / Priorswood): north-east core of the eu-west-1 (Ireland) region. Multiple buildings (DUB10/50/51 and related) on OSM footprints; AWS also runs nodes at Citywest, Blanchardstown/Mulhuddart, Tallaght/Hibernian and Drogheda — Clonshaugh campus pin, not a building-by-building inventory.",
+        "country": "IE",
+        "city": "Dublino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2017,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "PPA AWS–Bord na Móna su Derrinlough Wind Farm (Offaly, 105 MW export) → conn_094; pipeline fino a 800 MW renewables e Eco Energy Park Midlands. Matching corporate 100% renewables target.",
+          "energy_mix_note_en": "AWS–Bord na Móna PPA on Derrinlough Wind Farm (Offaly, 105 MW export) → conn_094; pipeline up to 800 MW renewables and Midlands Eco Energy Park. Corporate 100% renewables matching target."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "AWS non pubblica headcount per campus Clonshaugh.",
+          "note_en": "AWS does not publish headcount for the Clonshaugh campus.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Cluster nord-est Dublino (Clonshaugh) con Digital Realty, Equinix e telco; pressione rete locale.",
+        "community_impact_en": "North-east Dublin (Clonshaugh) cluster with Digital Realty, Equinix and telcos; local grid pressure.",
+        "sources": [
+          {
+            "title": "Data Center Map — Amazon AWS DUB Clonshaugh Campus",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Data Centers Intel — Ireland facilities",
+            "url": "https://datacentersintel.com/country/ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — AWS Clonshaugh / DUB10",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "cluster ~53.40, -6.22"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4163,
+          53.2915
+        ]
+      },
+      "properties": {
+        "id": "dc_089",
+        "name": "AWS Dublin — Citywest (DUB2)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Web Services",
+        "capacity": "Sito Citywest (DUB2); MW non pubblicati ufficialmente",
+        "description_it": "Nodo AWS a Citywest Business Campus (Cooldown Commons / Citywest Avenue, Dublino 24), noto come DUB2. Parte della regione eu-west-1 insieme a Clonshaugh e altri campus. Adiacente a Equinix DB1 e impianti telco Citywest.",
+        "description_en": "AWS node at Citywest Business Campus (Cooldown Commons / Citywest Avenue, Dublin 24), known as DUB2. Part of eu-west-1 alongside Clonshaugh and other campuses. Adjacent to Equinix DB1 and Citywest telco facilities.",
+        "country": "IE",
+        "city": "Citywest",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Stesso contesto LEU/EirGrid del cluster sud-ovest Dublino (Citywest / Grange Castle).",
+          "energy_mix_note_en": "Same LEU/EirGrid context as the south-west Dublin cluster (Citywest / Grange Castle)."
+        },
+        "community_impact_it": "Citywest: densità elevata di DC hyperscale e colo a ridosso di Grange Castle.",
+        "community_impact_en": "Citywest: high density of hyperscale and colo DCs next to Grange Castle.",
+        "sources": [
+          {
+            "title": "Data Centers Intel — Amazon DUB-2 Citywest",
+            "url": "https://datacentersintel.com/facility/amazon-dub-2-citywest/",
+            "accessed_at": "2026-10-08",
+            "note": "53.29153, -6.41634"
+          },
+          {
+            "title": "OpenStreetMap — Amazon DUB-2",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4152,
+          53.2916
+        ]
+      },
+      "properties": {
+        "id": "dc_090",
+        "name": "Equinix Dublin — DB1 (Citywest) + metro",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Equinix",
+        "capacity": "Metro Dublin: DB1–DB4 + xScale DB5x/DB6x/DB7x; MW edificio-per-edificio variabili",
+        "description_it": "Pin rappresentativo Equinix DB1 a Citywest (Kingswood Rd), IBX storico con accesso carrier e peering INEX. Equinix opera anche DB2 (Kilcarbery/Nangor), DB3–DB4 (Ballycoolin / Northwest Business Park) e campus xScale a Blanchardstown (DB5x–DB7x). Unità di mappa = metro Dublin, non singolo rack.",
+        "description_en": "Representative Equinix DB1 pin at Citywest (Kingswood Rd), historic IBX with carrier access and INEX peering. Equinix also operates DB2 (Kilcarbery/Nangor), DB3–DB4 (Ballycoolin / Northwest Business Park) and the Blanchardstown xScale campus (DB5x–DB7x). Map unit = Dublin metro, not a single rack.",
+        "country": "IE",
+        "city": "Dublino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Colocation multi-tenant; prelievo dipendente da occupancy. Membro Digital Infrastructure Ireland (DII).",
+          "energy_mix_note_en": "Multi-tenant colocation; draw depends on occupancy. Digital Infrastructure Ireland (DII) member."
+        },
+        "community_impact_it": "Nodo di interconnessione del mercato colo Dublin; espansioni xScale in area Blanchardstown.",
+        "community_impact_en": "Interconnection node of the Dublin colo market; xScale expansions in the Blanchardstown area.",
+        "sources": [
+          {
+            "title": "Data Center Map — Equinix DB1 Dublin",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — Equinix Dublin DB1",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "osm_id≈37682016"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.443,
+          53.3296
+        ]
+      },
+      "properties": {
+        "id": "dc_091",
+        "name": "Digital Realty Dublin — Profile Park / Grange Castle",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Digital Realty",
+        "capacity": "Portafoglio Dublin multi-sito (DUB1–DUB16); utility power pubblicati fino a ~10 MW/edificio (DUB12)",
+        "description_it": "Pin campus Digital Realty nell’area Profile Park / Grange Castle (ex Interxion DUB3/DUB4 e campus Profile Park DUB13–DUB16). Digital Realty opera anche Parkwest (DUB1–DUB2), Blanchardstown (DUB10) e Clonshaugh (DUB11–DUB12). Maggiore operatore colo per numero di listing in Irlanda dopo gli hyperscaler.",
+        "description_en": "Digital Realty campus pin in the Profile Park / Grange Castle area (former Interxion DUB3/DUB4 and Profile Park DUB13–DUB16). Digital Realty also operates Parkwest (DUB1–DUB2), Blanchardstown (DUB10) and Clonshaugh (DUB11–DUB12). Largest colo operator by Ireland listings after the hyperscalers.",
+        "country": "IE",
+        "city": "Dublino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 10.2,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = utility power pubblicato per DUB12 (Clonshaugh), il singolo edificio più grande del portafoglio; non è la somma campus.",
+          "energy_mix_note_en": "capacity_mw = published utility power for DUB12 (Clonshaugh), the largest single building in the portfolio; not a campus sum."
+        },
+        "community_impact_it": "Presenza capillare nel cluster ovest e nord Dublino; membro DII.",
+        "community_impact_en": "Dense presence across west and north Dublin clusters; DII member.",
+        "sources": [
+          {
+            "title": "Data Center Map — Digital Realty Dublin portfolio",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Data Centers Intel — Ireland largest by utility power",
+            "url": "https://datacentersintel.com/country/ireland/",
+            "accessed_at": "2026-10-08",
+            "note": "DUB12 10.2 MW utility"
+          },
+          {
+            "title": "OpenStreetMap — Digital Realty DUB3 Profile Park",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4537,
+          53.3297
+        ]
+      },
+      "properties": {
+        "id": "dc_092",
+        "name": "EdgeConneX Dublin — Grange Castle Campus",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "EdgeConneX",
+        "capacity": "Campus Grange Castle (EDCDUB01–03 / DUB04); MW non aggregati ufficialmente",
+        "description_it": "Campus EdgeConneX a Grange Castle Business Park (Old Nangor Road): edge/colo purpose-built (EDCDUB01–03 e DUB04). Parte del cluster ovest Dublino con Microsoft, Google, Digital Realty e CyrusOne. Membro Digital Infrastructure Ireland.",
+        "description_en": "EdgeConneX campus at Grange Castle Business Park (Old Nangor Road): purpose-built edge/colo (EDCDUB01–03 and DUB04). Part of the west Dublin cluster with Microsoft, Google, Digital Realty and CyrusOne. Digital Infrastructure Ireland member.",
+        "country": "IE",
+        "city": "Dublino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Colocation edge; prelievo dipendente da tenant.",
+          "energy_mix_note_en": "Edge colocation; draw depends on tenants."
+        },
+        "community_impact_it": "Densificazione ulteriore del nodo Grange Castle.",
+        "community_impact_en": "Further densification of the Grange Castle node.",
+        "sources": [
+          {
+            "title": "Data Center Map — EdgeConneX Dublin Campus",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — EdgeConneX Grange Castle",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4562,
+          53.3167
+        ]
+      },
+      "properties": {
+        "id": "dc_093",
+        "name": "CyrusOne DUB1 — Grange Castle South",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "CyrusOne",
+        "capacity": "~14 MW IT load (pubblicato); ~246.000 sqft",
+        "description_it": "CyrusOne DUB1 a Grange Castle Business Park South (Conchobar Murray Avenue / Ballybane): wholesale colo hyperscale-friendly. Tra i pochi siti irlandesi con IT load MW pubblicato (~14 MW) e footprint tra i più grandi del mercato Dublin.",
+        "description_en": "CyrusOne DUB1 at Grange Castle Business Park South (Conchobar Murray Avenue / Ballybane): wholesale colo aimed at hyperscale. Among the few Irish sites with published IT load MW (~14 MW) and one of the largest footprints in the Dublin market.",
+        "country": "IE",
+        "city": "Dublino",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 14,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = IT load pubblicato (Data Centers Intel); membro DII.",
+          "energy_mix_note_en": "capacity_mw = published IT load (Data Centers Intel); DII member."
+        },
+        "community_impact_it": "Wholesale colo nel cuore del cluster Grange Castle.",
+        "community_impact_en": "Wholesale colo in the core of the Grange Castle cluster.",
+        "sources": [
+          {
+            "title": "Data Centers Intel — CyrusOne DUB1 (14 MW IT / ~246k sqft)",
+            "url": "https://datacentersintel.com/country/ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Data Center Map — CyrusOne DUB1 Dublin",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — CyrusOne DUB1",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "osm_id≈868909749"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.405,
+          53.325
+        ]
+      },
+      "properties": {
+        "id": "dc_094",
+        "name": "Echelon DUB10 Campus — Clondalkin",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Echelon Data Centres",
+        "capacity": "Campus DUB10 progettato per >90 MW IT (Crag Terrace, Clondalkin); fasi DUB11–DUB13",
+        "description_it": "Campus Echelon DUB10 a Clondalkin (Crag Terrace, Dublino 22): sviluppo wholesale/hyperscale su più edifici (DUB11–DUB13 nel campus). Dichiarato progettato per oltre 90 MW di IT load. Echelon ha anche siti in Co. Wicklow (DUB20 Arklow, DUB30 Kish) e piani a Grange Castle (DUB40) — pin sul campus Clondalkin.",
+        "description_en": "Echelon DUB10 campus at Clondalkin (Crag Terrace, Dublin 22): wholesale/hyperscale multi-building development (DUB11–DUB13 on campus). Designed for over 90 MW of IT load per public listings. Echelon also has County Wicklow sites (DUB20 Arklow, DUB30 Kish) and Grange Castle plans (DUB40) — pin on the Clondalkin campus.",
+        "country": "IE",
+        "city": "Clondalkin",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 90,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = target di progetto dichiarato (>90 MW IT); stato fasi edificio-per-edificio da verificare. Soggetto a vincoli connessione LEU EirGrid.",
+          "energy_mix_note_en": "capacity_mw = stated design target (>90 MW IT); per-building phase status to verify. Subject to EirGrid LEU connection constraints."
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Grande sviluppo LEU a ovest di Dublino; impatto rete e territorio locale rilevante se tutte le fasi si realizzano.",
+        "community_impact_en": "Large LEU development west of Dublin; material grid and local land impact if all phases proceed.",
+        "sources": [
+          {
+            "title": "Data Center Map — Echelon DUB10 Campus Clondalkin",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08",
+            "note": ">90 MW IT design"
+          },
+          {
+            "title": "Data Centers Intel — Echelon Ireland listings",
+            "url": "https://datacentersintel.com/country/ireland/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3515,
+          53.412
+        ]
+      },
+      "properties": {
+        "id": "dc_095",
+        "name": "K2 Data Centres — Ballycoolin (DUB1/4/5)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "K2 Data Centres",
+        "capacity": "Campus Ballycoolin: DUB1 ~18 MW IT (2019); DUB4/DUB5 ~15 MW IT ciascuno",
+        "description_it": "Campus K2 a Ballycoolin Business Park (Dublino 15): DUB1 operativo dal 2019 (~18 MW IT), DUB4 (2022) e DUB5 (2023) ~15 MW IT ciascuno secondo listing di mercato. Ulteriori fasi pianificate (es. Citywest DUB21). Wholesale colo; membro DII.",
+        "description_en": "K2 campus at Ballycoolin Business Park (Dublin 15): DUB1 operational since 2019 (~18 MW IT), DUB4 (2022) and DUB5 (2023) ~15 MW IT each per market listings. Further phases planned (e.g. Citywest DUB21). Wholesale colo; DII member.",
+        "country": "IE",
+        "city": "Ballycoolin",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2019,
+        "updated_at": "2026-10-08",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": 18,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = IT load dichiarato per DUB1; DUB4/DUB5 aggiungono ~15 MW ciascuno (non sommati nel campo).",
+          "energy_mix_note_en": "capacity_mw = stated IT load for DUB1; DUB4/DUB5 add ~15 MW each (not summed in this field)."
+        },
+        "community_impact_it": "Cluster nord-ovest (Ballycoolin) con Equinix DB3/DB4 e Keppel.",
+        "community_impact_en": "North-west (Ballycoolin) cluster with Equinix DB3/DB4 and Keppel.",
+        "sources": [
+          {
+            "title": "Data Center Map — K2 DUB1 / DUB4 / DUB5 Ballycoolin",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.448,
+          53.315
+        ]
+      },
+      "properties": {
+        "id": "dc_096",
+        "name": "Vantage DUB1 — Profile Park (Grange Castle)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Vantage Data Centers",
+        "capacity": "Campus DUB1 in sviluppo a Profile Park / Grange Castle; MW di progetto non verificati in scheda ufficiale consultata",
+        "description_it": "Campus Vantage DUB1 in costruzione / sviluppo a Profile Park, Grange Castle (Dublino 22). Parte dell’ondata di wholesale hyperscale nell’ovest di Dublino; membro Digital Infrastructure Ireland. Status e MW da aggiornare con fascicoli planning quando disponibili.",
+        "description_en": "Vantage DUB1 campus under construction / development at Profile Park, Grange Castle (Dublin 22). Part of the wholesale hyperscale wave in west Dublin; Digital Infrastructure Ireland member. Status and MW to update from planning filings when available.",
+        "country": "IE",
+        "city": "Dublino",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Soggetto a policy connessione LEU EirGrid nell’area Dublino.",
+          "energy_mix_note_en": "Subject to EirGrid LEU connection policy in the Dublin area."
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Ulteriore densificazione Profile Park / Grange Castle.",
+        "community_impact_en": "Further densification of Profile Park / Grange Castle.",
+        "sources": [
+          {
+            "title": "Data Center Map — Vantage DUB1 Campus Profile Park",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "RTE — DII / data centre constraints (context)",
+            "url": "https://www.rte.ie/news/business/2024/0517/1449569-economic-benefits-at-risk-from-data-centre-uncertainty/",
+            "accessed_at": "2026-10-08",
+            "note": "Vantage citato tra membri DII"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.5125,
+          51.9036
+        ]
+      },
+      "properties": {
+        "id": "dc_097",
+        "name": "Cork Internet Exchange (CIX)",
+        "type": "data_center",
+        "subtype": "colocation",
+        "operator": "Cork Internet Exchange (CIX)",
+        "capacity": "Colocation regionale Cork; MW non pubblicati",
+        "description_it": "Data center / exchange CIX a Cork: principale nodo colo fuori dal metro Dublin. Utile come controparte geografica al cluster LEU di Dublino — la copertura irlandese non è solo Greater Dublin.",
+        "description_en": "CIX data centre / exchange in Cork: main colo node outside the Dublin metro. Geographic counterpart to Dublin’s LEU cluster — Irish coverage is not Greater Dublin only.",
+        "country": "IE",
+        "city": "Cork",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Colocation regionale; fuori dal vincolo LEU più stringente del metro Dublin.",
+          "energy_mix_note_en": "Regional colocation; outside the tighter Dublin-metro LEU constraint."
+        },
+        "community_impact_it": "Infrastruttura digitale regionale Munster.",
+        "community_impact_en": "Regional digital infrastructure for Munster.",
+        "sources": [
+          {
+            "title": "Data Centers Intel — Cork Internet Exchange",
+            "url": "https://datacentersintel.com/country/ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — Cork Internet Exchange (CIX)",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "osm_id≈68996550"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.7,
+          53.205
+        ]
+      },
+      "properties": {
+        "id": "dc_098",
+        "name": "Microsoft — Jigginstown / Naas (Kildare)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Microsoft",
+        "capacity": "Campus multi-edificio proposto; MW non pubblicati in scheda community",
+        "description_it": "Campus Microsoft proposto a Jigginstown, vicino a Naas (Co. Kildare), su lotto zonizzato esclusivamente per data center nel Naas Local Area Plan 2021–2027. Annunciato nel 2023; exhibition boards pubblici Microsoft. Espansione fuori dal metro Dublin vincolato — distinto dal campus Grange Castle (dc_016).",
+        "description_en": "Proposed Microsoft campus at Jigginstown, near Naas (Co. Kildare), on land zoned exclusively for data centres in the Naas Local Area Plan 2021–2027. Announced 2023; public Microsoft exhibition boards. Expansion outside the constrained Dublin metro — distinct from the Grange Castle campus (dc_016).",
+        "country": "IE",
+        "city": "Naas",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Microsoft: obiettivo 100% renewables sui DC irlandesi; CPPA portfolio (es. Lenalea) già curato verso dc_016. Allaccio Kildare soggetto a policy LEU EirGrid.",
+          "energy_mix_note_en": "Microsoft: 100% renewables goal for Irish DCs; CPPA portfolio (e.g. Lenalea) already curated toward dc_016. Kildare connection subject to EirGrid LEU policy."
+        },
+        "employment": {
+          "direct": null,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "Microsoft parla di «large number of permanent jobs» a regime + cantiere; cifra non fissata in scheda community.",
+          "note_en": "Microsoft cites a «large number of permanent jobs» when operational plus construction roles; no fixed headcount on the community sheet.",
+          "conditions_tags": [
+            "construction_phase",
+            "high_skill"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Primo grande campus MS fuori South Dublin; Naas come hub digitale regionale. Debito di rete LEU da verificare in fascicoli futuri.",
+        "community_impact_en": "First major MS campus outside South Dublin; Naas as a regional digital hub. LEU grid burden to verify in future filings.",
+        "sources": [
+          {
+            "title": "Irish Times — Microsoft plans data centre campus in Co Kildare",
+            "url": "https://www.irishtimes.com/business/2023/09/21/microsoft-plans-data-centre-campus-for-kildare/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Microsoft — Jigginstown public exhibition boards",
+            "url": "https://local.microsoft.com/wp-content/uploads/2023/11/2023_11_Jigginstown-boards.pdf",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Microsoft Local — Ireland datacentres",
+            "url": "https://local.microsoft.com/communities/emea/dublin/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3827,
+          53.7042
+        ]
+      },
+      "properties": {
+        "id": "dc_099",
+        "name": "AWS Drogheda — IDA Business & Technology Park",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Web Services",
+        "capacity": "Masterplan fino a 3 edifici + SE 110 kV; Building A operativo (EPA P1181)",
+        "description_it": "Campus AWS a Drogheda IDA Business & Technology Park (Donore Road, Co. Meath), fuori dal metro Dublin. Building A operativo (licenza EPA P1181); masterplan fino a 3 data center e sottostazione 110 kV GIS (ABP-308628-20). Completamenti successivi (es. DUB072) riportati dalla stampa di settore. ~50 dipendenti full-time diurni citati in relazione EPA Building A.",
+        "description_en": "AWS campus at Drogheda IDA Business & Technology Park (Donore Road, Co. Meath), outside the Dublin metro. Building A operational (EPA licence P1181); masterplan for up to 3 data centres and a 110 kV GIS substation (ABP-308628-20). Later completions (e.g. DUB072) reported in trade press. ~50 daytime full-time staff cited in the EPA Building A report.",
+        "country": "IE",
+        "city": "Drogheda",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2023,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 18.6,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Stesso portfolio renewables AWS Irlanda (Derrinlough → conn_094 verso campus Dublin; matching corporate). Connessione 110 kV sul landholding.",
+          "energy_mix_note_en": "Same AWS Ireland renewables portfolio (Derrinlough → conn_094 toward Dublin campus; corporate matching). 110 kV connection on the landholding."
+        },
+        "employment": {
+          "direct": 50,
+          "indirect_est": null,
+          "contractors_est": null,
+          "note_it": "EPA P1181: fino a ~50 FTE diurni su Building A; non include picchi di cantiere delle fasi successive.",
+          "note_en": "EPA P1181: up to ~50 daytime FTE on Building A; excludes later-phase construction peaks.",
+          "conditions_tags": [
+            "high_skill",
+            "construction_phase"
+          ]
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "LEU a sud-ovest di Drogheda / M1 J9; espansione Meath fuori dal moratorium Dublin più stretto.",
+        "community_impact_en": "LEU southwest of Drogheda / M1 J9; Meath expansion outside the tighter Dublin moratorium.",
+        "sources": [
+          {
+            "title": "EPA — Amazon Data Services Ireland P1181 Drogheda",
+            "url": "https://epawebapp.epa.ie/terminalfour/ippc/ippc-search.jsp?name=amazon",
+            "accessed_at": "2026-10-08",
+            "note": "P1181-01/02 Donore Road"
+          },
+          {
+            "title": "An Bord Pleanála — inspector report ABP-310729 (Drogheda IDA)",
+            "url": "https://www.pleanala.ie/anbordpleanala/media/abp/cases/reports/310/r310729.pdf",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "OpenStreetMap — AWS Drogheda",
+            "url": "https://www.openstreetmap.org/",
+            "accessed_at": "2026-10-08",
+            "note": "~53.704, -6.383"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.515,
+          53.365
+        ]
+      },
+      "properties": {
+        "id": "dc_100",
+        "name": "AWS — Kildare Innovation Campus (Leixlip / Barnhall)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Amazon Web Services / AiOnX (SWI)",
+        "capacity": "Masterplan KIC ~179 MW campus; Building B1 (DUB159) in leasing AWS 20 anni; fase iniziale ~16 MW",
+        "description_it": "Kildare Innovation Campus (ex HP Leixlip / Barnhall Road): masterplan 4 data center + deep tech + energy centre (KCC 23/60047). AWS (ADSIL) è leaseholder di Building B1 / DUB159 (licenza IE EPA in corso; rent commencement previsto ago 2026). Stampa di settore: intero campus ~179 MW leased a hyperscaler US; filings EPA puntano ad Amazon. Distinto da Microsoft Jigginstown (dc_098).",
+        "description_en": "Kildare Innovation Campus (former HP Leixlip / Barnhall Road): masterplan of 4 data centres + deep tech + energy centre (KCC 23/60047). AWS (ADSIL) is leaseholder of Building B1 / DUB159 (IE EPA licence in progress; rent commencement targeted Aug 2026). Trade press: entire ~179 MW campus leased to a US hyperscaler; EPA filings point to Amazon. Distinct from Microsoft Jigginstown (dc_098).",
+        "country": "IE",
+        "city": "Leixlip",
+        "status": "under_construction",
+        "site_category": "infrastructure",
+        "opened_year": 2026,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 179,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = potenza campus dichiarata in mercato (~179 MW); Building B1 fase iniziale ~16 MW. Rinnovabili: portfolio AWS Irlanda (Derrinlough).",
+          "energy_mix_note_en": "capacity_mw = market-stated campus power (~179 MW); Building B1 initial phase ~16 MW. Renewables: AWS Ireland portfolio (Derrinlough)."
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Riconversione brownfield HP a Leixlip; grande LEU a ovest di Dublino in Co. Kildare.",
+        "community_impact_en": "HP brownfield reuse at Leixlip; large LEU west of Dublin in Co. Kildare.",
+        "sources": [
+          {
+            "title": "EPA — ADSIL DUB159 Kildare Innovation Campus IE licence application",
+            "url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b280921bc4.pdf",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "DCD — AiOnX hyperscale tenant Irish campus (filings point to Amazon)",
+            "url": "https://www.datacenterdynamics.com/en/news/aionx-secures-hyperscale-tenant-for-irish-data-center-campus-outside-dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Data Center Map — Amazon AWS DUB Kildare Innovation Campus",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.155,
+          52.797
+        ]
+      },
+      "properties": {
+        "id": "dc_101",
+        "name": "Echelon — Arklow / Wicklow (DUB20–DUB30)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Echelon Data Centres",
+        "capacity": "DUB20 Vale Rd + DUB30 Kish Business Park (Arklow); MW per fase da listing di mercato",
+        "description_it": "Sviluppi Echelon in Co. Wicklow ad Arklow: DUB20 (Vale Road / Avoca River Park) e DUB30 (Kish Business Park, ~60 acri). Campus fuori dal metro Dublin, complementari al DUB10 Clondalkin (dc_094). Status e MW edificio-per-edificio variabili; confidence medium su listing DCM.",
+        "description_en": "Echelon developments in Co. Wicklow at Arklow: DUB20 (Vale Road / Avoca River Park) and DUB30 (Kish Business Park, ~60 acres). Campuses outside the Dublin metro, complementary to DUB10 Clondalkin (dc_094). Per-building status and MW vary; medium confidence from DCM listings.",
+        "country": "IE",
+        "city": "Arklow",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "medium",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Posizionamento marketing «green» / Wicklow; allaccio LEU EirGrid da verificare per fase.",
+          "energy_mix_note_en": "Marketed as green / Wicklow siting; EirGrid LEU connection to verify per phase."
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "LEU costiero sud-est; diversificazione geografica rispetto a Grange Castle.",
+        "community_impact_en": "South-east coastal LEU; geographic diversification vs Grange Castle.",
+        "sources": [
+          {
+            "title": "Data Center Map — Echelon DUB20 / DUB30 Arklow",
+            "url": "https://www.datacentermap.com/ireland/dublin/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Data Centers Intel — Echelon Ireland",
+            "url": "https://datacentersintel.com/country/ireland/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.68,
+          53.24
+        ]
+      },
+      "properties": {
+        "id": "dc_102",
+        "name": "Herbata Campus — Osberstown (Kildare)",
+        "type": "data_center",
+        "subtype": "hyperscale",
+        "operator": "Herbata Ltd",
+        "capacity": "Proposta ~€3 mld / multi-edificio Osberstown Business Park; MW non verificati",
+        "description_it": "Proposta Herbata Ltd per campus hyperscale a Osberstown Business Park (R409, Halverstown / Naas area, Co. Kildare). DCM elenca più pin DC1–DC6 sullo stesso campus (~€3 mld). Operatore non hyperscaler noto; pin campus unico planned, confidence medium-low fino a fascicoli planning nominativi.",
+        "description_en": "Herbata Ltd proposal for a hyperscale campus at Osberstown Business Park (R409, Halverstown / Naas area, Co. Kildare). DCM lists multiple DC1–DC6 pins on the same campus (~€3bn). Operator not a known hyperscaler; single planned campus pin, medium-low confidence until named planning filings.",
+        "country": "IE",
+        "city": "Osberstown",
+        "status": "planned",
+        "site_category": "infrastructure",
+        "opened_year": null,
+        "updated_at": "2026-10-08",
+        "confidence": "low",
+        "impact": {
+          "capacity_mw": null,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Nessun PPA o allaccio documentato in fonti consultate.",
+          "energy_mix_note_en": "No PPA or connection documented in consulted sources."
+        },
+        "labor_risks": [
+          "construction_phase"
+        ],
+        "community_impact_it": "Proposta LEU Kildare; da monitorare su planning Kildare CC / ABP.",
+        "community_impact_en": "Proposed Kildare LEU; monitor via Kildare CC / ABP planning.",
+        "sources": [
+          {
+            "title": "Data Center Map — Herbata Campus Osberstown Kildare",
+            "url": "https://www.datacentermap.com/ireland/kildare/",
+            "accessed_at": "2026-10-08"
+          }
+        ]
       }
     }
   ]

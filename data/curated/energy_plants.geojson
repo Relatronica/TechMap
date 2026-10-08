@@ -1061,6 +1061,276 @@
           }
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.3888,
+          52.6161
+        ]
+      },
+      "properties": {
+        "id": "ep_026",
+        "name": "Tullabeg Solar Farm",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Power Capital Renewable Energy",
+        "capacity": "~82 MW peak; PPA Google 58 MW new-to-grid",
+        "description_it": "Parco solare a Tullabeg / Balloughter presso Camolin (Co. Wexford). PPA quattordicennale Google–Power Capital: 58 MW di capacità new-to-grid destinata a matching rinnovabile di uffici e data center Google in Irlanda.",
+        "description_en": "Solar farm at Tullabeg / Balloughter near Camolin (Co. Wexford). Fourteen-year Google–Power Capital PPA: 58 MW of new-to-grid capacity for renewable matching of Google’s Ireland offices and data centre.",
+        "country": "IE",
+        "city": "Camolin",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2024,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 58,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = quota PPA Google (58 MW); picco impianto ~82 MW.",
+          "energy_mix_note_en": "capacity_mw = Google PPA slice (58 MW); plant peak ~82 MW."
+        },
+        "sources": [
+          {
+            "title": "Google — clean energy progress in Ireland (Tullabeg PPA)",
+            "url": "https://blog.google/intl/en-ie/company-news/googles-clean-energy-progress-in-ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "DCD — Google signs 58MW solar PPA in Ireland",
+            "url": "https://www.datacenterdynamics.com/en/news/google-signs-58mw-solar-ppa-in-ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "GEM — Tullabeg solar farm",
+            "url": "https://www.gem.wiki/Tullabeg_solar_farm",
+            "accessed_at": "2026-10-08"
+          }
+        ],
+        "community_impact_it": "FV new-to-grid in Wexford; matching orario Google verso 60% CFE 2025 (dichiarato).",
+        "community_impact_en": "New-to-grid PV in Wexford; Google hourly matching toward 60% CFE 2025 (stated)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.4542,
+          53.6522
+        ]
+      },
+      "properties": {
+        "id": "ep_027",
+        "name": "Gillinstown Solar Farm (Garballagh Lower)",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Highfield Solar / Highfield Energy",
+        "capacity": "~141 MWp (impianto); parte del PPA Meta 276 MWp Meath+Wexford",
+        "description_it": "Parco solare Highfield a Gillinstown / Garballagh / Thomastown presso Duleek (Co. Meath), vicino al campus Meta Clonee. Uno dei due impianti del CPPA quindicennale Meta–Highfield (~276 MWp combinati con Rosspile).",
+        "description_en": "Highfield solar farm at Gillinstown / Garballagh / Thomastown near Duleek (Co. Meath), close to Meta’s Clonee campus. One of two plants in the fifteen-year Meta–Highfield CPPA (~276 MWp combined with Rosspile).",
+        "country": "IE",
+        "city": "Duleek",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2022,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 141,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 123,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw ≈ MWp impianto (finanziamento Highfield 141 MWp); offtake Meta sul duo Meath+Wexford.",
+          "energy_mix_note_en": "capacity_mw ≈ plant MWp (Highfield financing 141 MWp); Meta offtake on the Meath+Wexford duo."
+        },
+        "sources": [
+          {
+            "title": "DCD — Meta signs two solar PPAs in Ireland",
+            "url": "https://www.datacenterdynamics.com/en/news/meta-signs-two-solar-ppas-in-ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Highfield — Garballagh Lower / Gillinstown Solar Farm",
+            "url": "https://www.highfieldenergy.com/SolarProjects/garballagh-lower-solar-farm",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Highfield Solar — financing Gillinstown + Rosspile 282 MWp",
+            "url": "https://www.highfieldenergy.com/post/highfield-solar-a-highfield-energy-joint-venture-secures-160m-financing-for-irish-solar-pv-duo",
+            "accessed_at": "2026-10-08"
+          }
+        ],
+        "community_impact_it": "FV su terreni agricoli Meath; Meta sottolinea prossimità a Clonee.",
+        "community_impact_en": "PV on Meath farmland; Meta highlights proximity to Clonee."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.78,
+          52.35
+        ]
+      },
+      "properties": {
+        "id": "ep_028",
+        "name": "Rosspile Solar Farm",
+        "type": "energy_plant",
+        "subtype": "solar",
+        "operator": "Highfield Solar / Highfield Energy",
+        "capacity": "~141 MWp; parte del PPA Meta 276 MWp",
+        "description_it": "Parco solare Highfield a Rosspile / Foulkesmills (Co. Wexford). Secondo impianto del CPPA quindicennale Meta–Highfield insieme a Gillinstown (Meath).",
+        "description_en": "Highfield solar farm at Rosspile / Foulkesmills (Co. Wexford). Second plant in the fifteen-year Meta–Highfield CPPA with Gillinstown (Meath).",
+        "country": "IE",
+        "city": "Foulkesmills",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2022,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 141,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": 140,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw ≈ MWp impianto; offtake Meta sul duo con Gillinstown.",
+          "energy_mix_note_en": "capacity_mw ≈ plant MWp; Meta offtake on the duo with Gillinstown."
+        },
+        "sources": [
+          {
+            "title": "DCD — Meta signs two solar PPAs in Ireland",
+            "url": "https://www.datacenterdynamics.com/en/news/meta-signs-two-solar-ppas-in-ireland/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Highfield — Rosspile Solar Farm",
+            "url": "https://www.highfieldenergy.com/SolarProjects/rosspile-solar-farm",
+            "accessed_at": "2026-10-08"
+          }
+        ],
+        "community_impact_it": "Grande FV Wexford; connessione verso linea Wexford–Great Island 110 kV (progetto).",
+        "community_impact_en": "Large Wexford PV; connection toward Wexford–Great Island 110 kV line (project)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.65,
+          52.75
+        ]
+      },
+      "properties": {
+        "id": "ep_029",
+        "name": "Lisheen III Wind Farm",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Ørsted",
+        "capacity": "28.8 MW (fase III); complesso Lisheen I–III ~89 MW",
+        "description_it": "Fase III del parco eolico Lisheen (Co. Kilkenny / Laois), 28.8 MW. CPPA Ørsted–Meta: tutta la produzione di Lisheen III è immessa in rete con Meta che acquista l’equivalente rinnovabile per le operazioni irlandesi.",
+        "description_en": "Phase III of the Lisheen wind farm (Co. Kilkenny / Laois), 28.8 MW. Ørsted–Meta CPPA: all Lisheen III output is grid-injected with Meta purchasing the equivalent renewables for Irish operations.",
+        "country": "IE",
+        "city": "Lisheen",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2023,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 28.8,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "Eolico onshore; CPPA Meta (matching di rete, non cavo dedicato a Clonee).",
+          "energy_mix_note_en": "Onshore wind; Meta CPPA (grid matching, not a dedicated cable to Clonee)."
+        },
+        "sources": [
+          {
+            "title": "Ørsted — Lisheen III CPPA with Meta",
+            "url": "https://orsted.ie/news/2023/05/orsted-irish-wind-farm-to-support-meta-with-green-energy",
+            "accessed_at": "2026-10-08"
+          }
+        ],
+        "community_impact_it": "Fondo community annuo legato al progetto Ørsted.",
+        "community_impact_en": "Annual community fund tied to the Ørsted project."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.8328,
+          53.2246
+        ]
+      },
+      "properties": {
+        "id": "ep_030",
+        "name": "Derrinlough Wind Farm",
+        "type": "energy_plant",
+        "subtype": "wind",
+        "operator": "Bord na Móna",
+        "capacity": "126 MW installed / 105 MW export; PPA AWS 105 MW",
+        "description_it": "Parco eolico Bord na Móna su torbiere Clongawny/Drinagh (Boora, West Offaly): 21 turbine V150-6.0, 126 MW installati, 105 MW export. PPA AWS–BnM da 105 MW; primo tassello della collaborazione Eco Energy Park Midlands (pipeline fino a 800 MW renewables).",
+        "description_en": "Bord na Móna wind farm on Clongawny/Drinagh bogs (Boora, West Offaly): 21 V150-6.0 turbines, 126 MW installed, 105 MW export. AWS–BnM 105 MW PPA; first piece of the Midlands Eco Energy Park collaboration (pipeline up to 800 MW renewables).",
+        "country": "IE",
+        "city": "Cloghan",
+        "status": "operational",
+        "site_category": "infrastructure",
+        "opened_year": 2026,
+        "updated_at": "2026-10-08",
+        "confidence": "high",
+        "impact": {
+          "capacity_mw": 105,
+          "power_draw_mw_est": null,
+          "pue": null,
+          "water_use_m3_year": null,
+          "land_ha": null,
+          "co2_t_year_est": null,
+          "energy_mix_note_it": "capacity_mw = export / PPA AWS (105 MW); installato 126 MW.",
+          "energy_mix_note_en": "capacity_mw = export / AWS PPA (105 MW); installed 126 MW."
+        },
+        "sources": [
+          {
+            "title": "Bord na Móna — AWS Eco Energy Park / Derrinlough PPA",
+            "url": "https://www.bnm.ie/bord-na-mona-announces-amazon-web-services-as-first-business-to-join-eco-energy-park/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "BnM — Minister opens Derrinlough Wind Farm (AWS CPPA)",
+            "url": "https://www.bnm.ie/minister-darragh-obrien-opens-bnms-126mw-derrinlough-wind-farm-in-offaly/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "Derrinlough Wind Farm — overview",
+            "url": "https://www.derrinloughwindfarm.ie/overview-timeline/",
+            "accessed_at": "2026-10-08"
+          },
+          {
+            "title": "GEM — Derrinlough wind farm",
+            "url": "https://www.gem.wiki/Derrinlough_wind_farm",
+            "accessed_at": "2026-10-08"
+          }
+        ],
+        "community_impact_it": "Community Benefit Fund ~€12 mln lifetime; riconversione torbiera BnM.",
+        "community_impact_en": "Community Benefit Fund ~€12m lifetime; BnM peatland reuse."
+      }
     }
   ]
 }
